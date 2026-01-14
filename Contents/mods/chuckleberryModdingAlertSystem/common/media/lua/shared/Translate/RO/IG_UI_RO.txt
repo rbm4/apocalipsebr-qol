@@ -1,0 +1,8 @@
+IGUI_RO = {
+    IGUI_ChuckAlertTooltip_Close = "Faceți clic pentru a se prăbuși. <Br > faceți clic dreapta pentru a vă ascunde complet pentru această sesiune.",
+    IGUI_ChuckAlertTooltip_Open = "Faceți clic pentru a deschide. <Br > faceți clic dreapta pentru a vă ascunde complet pentru această sesiune.",
+    IGUI_ChuckAlertCollapse = "Colaps",
+    IGUI_ChuckAlertSeeAlerts = "Vezi %1 alertă %2",
+    IGUI_ChuckAlertHeaderMsg = "Un mesaj de la Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "În timp ce mă bucur profund de modding, necesită timp și energie semnificativă și trebuie să -l echilibrez cu alte responsabilități, în special cele financiare. Pentru a clarifica, voi continua să mențin, să susțin, să depanz și să actualizez modurile mele așa cum am avut întotdeauna. Cu toate acestea, aceste alte priorități trebuie să vină mai întâi. <Br > <Br > Această aceeași situație se poate aplica aproape tuturor modders și puteți găsi butoane de asistență pentru fiecare mod respectiv listat aici. Aceste butoane sunt personalizabile și setate de Mod-autori. Dacă v-ați bucurat de munca și dedicația Mod-Author și doriți să o susțineți, luați în considerare acest lucru. <Br > <Br> Personal, donațiile fac mai posibil pentru mine să dedic timp și efort pentru proiectele mele. Acestea fiind spuse, nu există absolut nicio presiune; Vă rugăm să donați numai dacă sunteți confortabil și capabil. Pentru mine, plăcerea dvs. de modurile mele este deja o recompensă extraordinară. <Br > <Br > Vă mulțumim pentru sprijin și înțelegere!",
+}

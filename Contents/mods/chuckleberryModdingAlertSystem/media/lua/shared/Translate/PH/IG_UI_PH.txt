@@ -1,0 +1,9 @@
+IGUI_PH = {
+    IGUI_ChuckAlertTooltip_Close = "Mag-click sa pagbagsak.",
+    IGUI_ChuckAlertTooltip_Open = "Mag-click upang buksan.",
+    IGUI_ChuckAlertAlertButtonTooltip = "Mag-click upang makita ang mga alerto. <Br> mag-click upang isara.",
+    IGUI_ChuckAlertCollapse = "Pagbagsak",
+    IGUI_ChuckAlertSeeAlerts = "Tingnan ang %1 alerto %2",
+    IGUI_ChuckAlertHeaderMsg = "Isang mensahe mula sa Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "Habang nasisiyahan ako sa modding, nangangailangan ito ng makabuluhang oras at enerhiya, at kailangan kong balansehin ito sa iba pang mga responsibilidad, lalo na ang mga pinansiyal. Upang malinaw ito, magpapatuloy akong mapanatili, suportahan, mag -troubleshoot, at i -update ang aking mga mod tulad ng lagi kong mayroon. Gayunpaman, ang iba pang mga priyoridad ay dapat na mauna. Ang mga pindutan na ito ay napapasadya at itinakda ng mga mod-authors. Kung nasiyahan ka sa anumang masipag at dedikasyon ng mod-author at nais mong suportahan ito, isaalang-alang ang paggawa nito. pagsisikap sa aking mga proyekto. Iyon ay sinabi, walang ganap na presyon; Mangyaring mag -donate lamang kung komportable ka at makakaya. Para sa akin, ang iyong kasiyahan sa aking mga mod ay isang napakalaking gantimpala. <Br> <br> Salamat sa iyong suporta at pag -unawa!",
+}

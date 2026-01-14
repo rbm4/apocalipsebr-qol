@@ -1,0 +1,9 @@
+IGUI_PL = {
+    IGUI_ChuckAlertTooltip_Close = "Kliknij, aby zwinąć się. <Br> kliknij prawym przyciskiem myszy, aby całkowicie ukryć się dla tej sesji.",
+    IGUI_ChuckAlertTooltip_Open = "Kliknij, aby otworzyć. <Br> kliknij prawym przyciskiem myszy, aby całkowicie ukryć się dla tej sesji.",
+    IGUI_ChuckAlertAlertButtonTooltip = "Kliknij, aby zobaczyć alerty. <Br> kliknij prawym przyciskiem myszy, aby zamknąć.",
+    IGUI_ChuckAlertCollapse = "Zawalić się",
+    IGUI_ChuckAlertSeeAlerts = "Patrz %1 alert %2",
+    IGUI_ChuckAlertHeaderMsg = "Wiadomość od Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "Chociaż bardzo lubię modowanie, wymaga znacznego czasu i energii, i muszę zrównoważyć go z innymi obowiązkami, szczególnie finansowymi. Aby to wyjaśnić, będę nadal utrzymywać, wspierać, rozwiązywać problemy i aktualizować moje mody, jak zawsze. Jednak te inne priorytety muszą być najważniejsze. <Br> <br> ta sama sytuacja może mieć zastosowanie do prawie wszystkich modders, a można znaleźć przyciski wsparcia dla każdego odpowiedniego modu wymienionego tutaj. Przyciski te można dostosowywać i ustawiać autorów MOD. Jeśli podobało Ci się jakakolwiek ciężka praca i poświęcenie Mod-Autor i chciałbyś go obsługiwać, rozważ to. <Br> <br> Osobiście darowizny sprawiają, że bardziej wykonalne jest poświęcenie czasu i wysiłek do moich projektów. To powiedziawszy, absolutnie nie ma presji; Proszę przekazać tylko wtedy, gdy czujesz się komfortowo i zdolny. Dla mnie przyjemność z moich modów jest już ogromną nagrodą. <Br> <Br> Dziękuję za wsparcie i zrozumienie!",
+}

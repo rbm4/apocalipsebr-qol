@@ -1,0 +1,9 @@
+IGUI_CA = {
+    IGUI_ChuckAlertTooltip_Close = "Feu clic per col·lapsar. <Br> Feu clic amb el botó dret per amagar completament aquesta sessió.",
+    IGUI_ChuckAlertTooltip_Open = "Feu clic per obrir. <Br> Feu clic amb el botó dret per amagar-se completament per a aquesta sessió.",
+    IGUI_ChuckAlertAlertButtonTooltip = "Feu clic per veure les alertes. <Br> Feu clic amb el botó dret per tancar.",
+    IGUI_ChuckAlertCollapse = "Col·lapsar",
+    IGUI_ChuckAlertSeeAlerts = "Vegeu %1 Alerta %2",
+    IGUI_ChuckAlertHeaderMsg = "Un missatge de Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "Tot i que gaudeixo profundament del modding, requereix temps i energia importants i necessito equilibrar -lo amb altres responsabilitats, especialment les financeres. Per deixar -ho clar, continuaré mantenint, recolzant, solucionant i actualitzar els meus mods com sempre. Tanmateix, aquestes altres prioritats han de ser primer. <Br> <br> Aquesta mateixa situació es pot aplicar a gairebé tots els modders i és possible que trobeu botons de suport per a cada mod respectiu que es mostra aquí. Aquests botons són personalitzables i configurats pels autors moderns. Si heu gaudit de la feina i la dedicació de qualsevol autor de Mod-Author i voleu recolzar-lo, considereu-ho. <Br> <br> esforç als meus projectes. Dit això, no hi ha cap pressió absolutament; Si us plau, només doneu si us trobeu còmodes i capaços. Per a mi, el vostre gaudi dels meus mods ja és una recompensa tremenda. <Br> <br> Gràcies pel vostre suport i comprensió.",
+}

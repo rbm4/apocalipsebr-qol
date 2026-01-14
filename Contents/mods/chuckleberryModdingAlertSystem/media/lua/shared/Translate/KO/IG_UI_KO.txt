@@ -1,0 +1,9 @@
+IGUI_KO = {
+    IGUI_ChuckAlertTooltip_Close = "붕괴하려면 클릭하십시오. <br> 마우스 오른쪽 버튼을 클릭 하여이 세션에 완전히 숨 깁니다.",
+    IGUI_ChuckAlertTooltip_Open = "열려면 클릭하십시오. <br> 마우스 오른쪽 버튼을 클릭 하여이 세션을 완전히 숨 깁니다.",
+    IGUI_ChuckAlertAlertButtonTooltip = "알림을 보려면 클릭하십시오. <br> 닫으려면 마우스 오른쪽 버튼을 클릭하십시오.",
+    IGUI_ChuckAlertCollapse = "무너지다",
+    IGUI_ChuckAlertSeeAlerts = "%1 alert %2 참조",
+    IGUI_ChuckAlertHeaderMsg = "Chuckleberry Finn의 메시지",
+    IGUI_ChuckAlertDonationMsg = "나는 모딩을 깊이 즐기는 동안 상당한 시간과 에너지가 필요하며, 다른 책임, 특히 재정적 책임과 균형을 맞춰야합니다. 명확하게하기 위해, 나는 항상 가지고있는 것처럼 모드를 계속 유지, 지원, 문제 해결 및 업데이트 할 것입니다. 그러나 이러한 다른 우선 순위는 먼저 나와야합니다. <br> <br>이 같은 상황은 거의 모든 모드에 적용될 수 있으며 여기에 나열된 각 모드에 대한 지원 버튼을 찾을 수 있습니다. 이 버튼은 사용자 정의 가능하며 Mod 저자가 설정합니다. Mod Author의 열심히 노력과 헌신을 즐기고 지원하고 싶다면 그렇게하는 것을 고려하십시오. <br> <br> 개인적으로 기부금은 시간을 전념 할 수 있도록 더욱 실현 가능합니다. 내 프로젝트에 대한 노력. 즉, 압력은 전혀 없습니다. 편안하고 가능하다면 기부하십시오. 나를 위해, 당신의 모드에 대한 당신의 즐거움은 이미 엄청난 보상입니다. <br> <br> 귀하의 지원과 이해에 감사드립니다!",
+}

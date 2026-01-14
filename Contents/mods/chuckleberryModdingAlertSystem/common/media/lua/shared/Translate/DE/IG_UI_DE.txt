@@ -1,0 +1,8 @@
+IGUI_DE = {
+    IGUI_ChuckAlertTooltip_Close = "Klicken Sie, um zusammenzubrechen. <Br> Klicken Sie mit der rechten Maustaste, um sich für diese Sitzung vollständig auszublenden.",
+    IGUI_ChuckAlertTooltip_Open = "Klicken Sie hier, um zu öffnen. <Br> Klicken Sie mit der rechten Maustaste, um sich für diese Sitzung vollständig auszublenden.",
+    IGUI_ChuckAlertCollapse = "Zusammenbruch",
+    IGUI_ChuckAlertSeeAlerts = "Siehe %1 alert %2",
+    IGUI_ChuckAlertHeaderMsg = "Eine Nachricht von Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "Während ich Modding zutiefst genieße, erfordert es erhebliche Zeit und Energie, und ich muss es mit anderen Verantwortlichkeiten, insbesondere finanziellen, in Einklang bringen. Um klar zu machen, werde ich meine Mods weiterhin wie immer unterstützen, unterstützen, beheben und aktualisieren. Diese anderen Prioritäten müssen jedoch zuerst erfolgen. <Br> <br> Die gleiche Situation kann für fast alle Modder gelten, und Sie können Unterstützungsschaltflächen für jedes hier aufgeführte Mod -Mod finden. Diese Schaltflächen sind anpassbar und von den Mod-Autoren eingestellt. Wenn Sie die harte Arbeit und das Engagement eines Mod-Autor genossen haben und es unterstützen möchten, sollten Sie dies tun. Bemühungen zu meinen Projekten. Das heißt, es gibt absolut keinen Druck. Bitte spenden Sie nur, wenn Sie sich wohl und in der Lage haben. Für mich ist Ihr Genuss meiner Mods bereits eine enorme Belohnung. <Br> <Br> Vielen Dank für Ihre Unterstützung und Ihr Verständnis!",
+}

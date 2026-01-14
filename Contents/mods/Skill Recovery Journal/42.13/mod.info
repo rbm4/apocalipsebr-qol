@@ -1,0 +1,5 @@
+name=APOCALISEBR_SRJ
+id=APOCALISEBR_SRJ
+versionMin=41.66
+loadorder=3
+require=\ApocalipseBR_AS,\ApocalipseBR_EM

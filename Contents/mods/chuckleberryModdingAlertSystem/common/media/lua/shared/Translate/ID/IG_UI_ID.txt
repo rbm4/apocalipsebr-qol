@@ -1,0 +1,8 @@
+IGUI_ID = {
+    IGUI_ChuckAlertTooltip_Close = "Klik untuk runtuh. <Br> Klik kanan untuk sepenuhnya bersembunyi untuk sesi ini.",
+    IGUI_ChuckAlertTooltip_Open = "Klik untuk membuka. <Br> Klik kanan untuk sepenuhnya menyembunyikan sesi ini.",
+    IGUI_ChuckAlertCollapse = "Runtuh",
+    IGUI_ChuckAlertSeeAlerts = "Lihat %1 peringatan %2",
+    IGUI_ChuckAlertHeaderMsg = "Pesan dari Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "Sementara saya sangat menikmati modding, itu membutuhkan waktu dan energi yang signifikan, dan saya perlu menyeimbangkannya dengan tanggung jawab lain, terutama yang finansial. Untuk memperjelas, saya akan terus mempertahankan, mendukung, memecahkan masalah, dan memperbarui mod saya seperti yang selalu saya miliki. Namun, prioritas lain ini harus lebih dulu. <Br> <br> Situasi yang sama ini dapat berlaku untuk hampir semua modder, dan Anda dapat menemukan tombol dukungan untuk setiap mod masing -masing yang tercantum di sini. Tombol-tombol ini dapat disesuaikan dan diatur oleh Mod-Authors. Jika Anda telah menikmati kerja keras dan dedikasi mod-othor dan ingin mendukungnya, pertimbangkan untuk melakukannya. <Br> <br> Secara pribadi, sumbangan membuatnya lebih layak bagi saya untuk mendedikasikan waktu dan waktu dan upaya untuk proyek saya. Yang mengatakan, sama sekali tidak ada tekanan; Harap donasi hanya jika Anda nyaman dan mampu. Bagi saya, kenikmatan Anda terhadap mod saya sudah menjadi hadiah yang luar biasa. <Br> <br> Terima kasih atas dukungan dan pengertian Anda!",
+}
