@@ -1,0 +1,8 @@
+IGUI_NL = {
+    IGUI_ChuckAlertTooltip_Close = "Klik om samen te voegen. <Br> klik met de rechtermuisknop om volledig te verbergen voor deze sessie.",
+    IGUI_ChuckAlertTooltip_Open = "Klik om te openen. <Br> klik met de rechtermuisknop om volledig te verbergen voor deze sessie.",
+    IGUI_ChuckAlertCollapse = "Instorten",
+    IGUI_ChuckAlertSeeAlerts = "Zie %1 alert %2",
+    IGUI_ChuckAlertHeaderMsg = "Een bericht van Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "Hoewel ik diep geniet van modding, vereist het veel tijd en energie, en ik moet het in evenwicht brengen met andere verantwoordelijkheden, met name financiële. Om duidelijk te maken, zal ik mijn mods blijven behouden, ondersteunen, oplossen en bijwerken zoals ik altijd heb gedaan. Deze andere prioriteiten moeten echter eerst komen. <Br> <br> Deze zelfde situatie kan van toepassing zijn op bijna alle modders, en u kunt ondersteuningsknoppen vinden voor elke respectieve mod die hier wordt vermeld. Deze knoppen zijn aanpasbaar en ingesteld door de mod-auteurs. Als u van het hardwerk en toewijding van een mod-auteur hebt genoten en deze wilt ondersteunen, overweeg dan om dit te doen. <Br> <Br> Persoonlijk maken donaties het voor mij haalbaarder om tijd en poging tot mijn projecten. Dat gezegd hebbende, er is absoluut geen druk; Doneer alleen als u comfortabel en in staat bent. Voor mij is je plezier van mijn mods al een geweldige beloning. <Br> <br> Bedankt voor je steun en begrip!",
+}

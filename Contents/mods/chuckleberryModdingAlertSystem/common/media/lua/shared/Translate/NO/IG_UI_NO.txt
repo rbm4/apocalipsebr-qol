@@ -1,0 +1,8 @@
+IGUI_NO = {
+    IGUI_ChuckAlertTooltip_Close = "Klikk for å kollapse. <Br> Høyreklikk for å gjemme deg for denne økten.",
+    IGUI_ChuckAlertTooltip_Open = "Klikk for å åpne. <Br> høyreklikk for å gjemme deg for denne økten.",
+    IGUI_ChuckAlertCollapse = "Kollapse",
+    IGUI_ChuckAlertSeeAlerts = "Se %1 varsel %2",
+    IGUI_ChuckAlertHeaderMsg = "En melding fra Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "Mens jeg liker dypt modding, krever det betydelig tid og energi, og jeg må balansere det med andre ansvarsområder, spesielt økonomiske. For å gjøre det klart, vil jeg fortsette å vedlikeholde, støtte, feilsøke og oppdatere modsene mine som jeg alltid har. Imidlertid må disse andre prioriteringene komme først. <Br> <br> Denne samme situasjonen kan gjelde for nesten alle modders, og du kan finne støtteknapper for hver respektive mod som er oppført her. Disse knappene kan tilpasses og angitt av mod-forfatterne. Hvis du har hatt glede av noen mod-forfatterens hardtarbeid og dedikasjon og ønsker å støtte det, kan du vurdere å gjøre det. <Br> <br> Personlig gjør donasjoner det mer mulig for meg å dedikere tid og og innsats for prosjektene mine. Når det er sagt, er det absolutt ikke noe press; Vennligst bare doner hvis du er komfortabel og i stand. For meg er din glede av mine mods allerede en enorm belønning. <Br> <br> Takk for din støtte og forståelse!",
+}

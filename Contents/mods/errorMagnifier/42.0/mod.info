@@ -1,0 +1,5 @@
+name=ApocalipseBR_EM
+id=ApocalipseBR_EM
+description=
+loadorder=2
+require=\ApocalipseBR_AS,

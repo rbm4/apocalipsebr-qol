@@ -1,0 +1,9 @@
+IGUI_HU = {
+    IGUI_ChuckAlertTooltip_Close = "Kattintson az összeomláshoz.",
+    IGUI_ChuckAlertTooltip_Open = "Kattintson a megnyitáshoz. <BR> Kattintson a jobb gombbal, hogy teljesen elrejtse ezt a munkamenetet.",
+    IGUI_ChuckAlertAlertButtonTooltip = "Kattintson a riasztások megtekintéséhez. <Br> Kattintson a jobb gombbal a bezáráshoz.",
+    IGUI_ChuckAlertCollapse = "Összeomlás",
+    IGUI_ChuckAlertSeeAlerts = "Lásd: %1 riasztás %2",
+    IGUI_ChuckAlertHeaderMsg = "Üzenet a Chuckleberry Finn -től",
+    IGUI_ChuckAlertDonationMsg = "Miközben mélyen élvezem a módosítást, jelentős időt és energiát igényel, és egyensúlyba kell hoznom azt más felelősségekkel, különösen a pénzügyi felelősségekkel. Annak világossá tétele érdekében, hogy továbbra is karbantartom, támogatom, hibaelhárítom és frissítem a modjaimat, mint mindig. Ezeknek a többi prioritásnak azonban az elsőnek kell lennie. <Br> <BR> Ugyanez a helyzet szinte minden modidra vonatkozhat, és megtalálhatja a támogatási gombokat az összes itt felsorolt ​​MOD -hoz. Ezek a gombok testreszabhatók és a mod-írók állítják be. Ha élvezte bármilyen mod-szerelő kemény munkáját és odaadását, és szeretné támogatni, fontolja meg ezt. Erőfeszítés a projektjeimhez. Ennek ellenére egyáltalán nincs nyomás; Kérjük, csak akkor adományozzon, ha kényelmes és képes. Számomra a modjaim élvezete már óriási jutalom.",
+}

@@ -1,0 +1,9 @@
+IGUI_IT = {
+    IGUI_ChuckAlertTooltip_Close = "Fai clic per crollare. <Br> Fai clic con il pulsante destro del mouse per nascondersi completamente per questa sessione.",
+    IGUI_ChuckAlertTooltip_Open = "Fare clic per aprire. <Br> Fai clic con il pulsante destro del mouse per nascondersi completamente per questa sessione.",
+    IGUI_ChuckAlertAlertButtonTooltip = "Fai clic per vedere gli avvisi. <Br> Fai clic con il tasto destro per chiudere.",
+    IGUI_ChuckAlertCollapse = "Crollo",
+    IGUI_ChuckAlertSeeAlerts = "Vedi %1 avviso %2",
+    IGUI_ChuckAlertHeaderMsg = "Un messaggio di Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "Mentre mi piace profondamente la modding, richiede tempo e energia significativi e devo bilanciarlo con altre responsabilità, in particolare quelle finanziarie. Per chiarire, continuerò a mantenere, supportare, risolvere i problemi e aggiornare le mie mod come ho sempre fatto. Tuttavia, queste altre priorità devono arrivare per prime. <Br> <Br> questa stessa situazione può applicarsi a quasi tutti i modder e potresti trovare pulsanti di supporto per ogni rispettiva mod elencata qui. Questi pulsanti sono personalizzabili e impostati dagli autori Mod. Se ti è piaciuto il duro lavoro e la dedizione di Mod-Auth e vorresti supportarlo, considera di farlo. <Br> <Br> Personalmente, le donazioni rendono più fattibile per me dedicare il tempo e sforzo ai miei progetti. Detto questo, non c'è assolutamente alcuna pressione; Si prega di donare solo se sei a tuo agio e capace. Per me, il tuo godimento delle mie mod è già una straordinaria ricompensa. <Br> <Br> Grazie per il tuo supporto e comprensione!",
+}

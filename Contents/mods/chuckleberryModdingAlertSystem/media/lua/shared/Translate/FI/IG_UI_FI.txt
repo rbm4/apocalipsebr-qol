@@ -1,0 +1,9 @@
+IGUI_FI = {
+    IGUI_ChuckAlertTooltip_Close = "Napsauta romahtaa. <Br> napsauta hiiren kakkospainikkeella piilottaaksesi kokonaan tähän istuntoon.",
+    IGUI_ChuckAlertTooltip_Open = "Napsauta avataksesi. <Br> napsauta hiiren kakkospainikkeella piilottaaksesi kokonaan tähän istuntoon.",
+    IGUI_ChuckAlertAlertButtonTooltip = "Napsauta nähdäksesi hälytykset. <Br> Napsauta hiiren kakkospainikkeella.",
+    IGUI_ChuckAlertCollapse = "Romahdus",
+    IGUI_ChuckAlertSeeAlerts = "Katso %1 hälytys %2",
+    IGUI_ChuckAlertHeaderMsg = "Viesti Chuckleberry Finniltä",
+    IGUI_ChuckAlertDonationMsg = "Vaikka nautin syvästi modifioinnista, se vaatii huomattavaa aikaa ja energiaa, ja minun on tasapainotettava se muihin velvollisuuksiin, erityisesti taloudellisiin vastuuseen. Jotta se olisi selvää, jatkan ylläpitämistä, tukea, vianmääritystä ja päivitän modi Näiden muiden prioriteettien on kuitenkin oltava ensin. <Br> <br> Tätä samaa tilannetta voidaan soveltaa melkein kaikkiin moddereihin, ja saatat löytää tukipainikkeita jokaiselle vastaavalle modille. Nämä painikkeet ovat muokattavissa ja mod-ohjaajien asettamat. Jos olet nauttinut Mod-Authorin ahkerasta ja omistautumisesta ja haluat tukea sitä, harkitse niin. <Br> <br> henkilökohtaisesti lahjoitukset tekevät siitä paremman minulle mahdollisuuden omistautua aikaa ja aikaa ja aikaa ja aikaa ja omistaa aikaa ja aikaa ja aikaa ja omistautua aikaa ja aikaa ja aikaa ja omistautua aikaa ja aikaa ja ajatella aikaa ja ponnistus projekteihini. Toisin sanoen ei ole mitään paineita; Lahjoita vain, jos olet mukava ja kykenevä. Minulle nautinto modistani on jo valtava palkkio. <Br> <br> Kiitos tuestasi ja ymmärryksestäsi!",
+}

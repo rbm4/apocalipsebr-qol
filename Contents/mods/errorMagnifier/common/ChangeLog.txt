@@ -1,0 +1,34 @@
+[ 12/20/24 ]
+- Initial changelog for B42 Conversion.
+[ ------ ]
+
+[ 12/23/24 ]
+- Fixed issue with alerts mod.
+[ ------ ]
+
+[ 12/23/24 Hotfix #1 ]
+- Fixes issue with printing incorrectly.
+[ ------ ]
+
+[ 12/28/24 ]
+B42:
+- Fix serious issue in print() fingerPrint override.
+[ ------ ]
+
+[ 1/18/25 ]
+- Anchored UI to handle screen size changes.
+[ ------ ]
+
+[ ALERT_CONFIG ]
+link1 = Chuck's Kofi = https://steamcommunity.com/linkfilter/?u=https://ko-fi.com/chuckleberryfinn,
+link2 = Workshop = https://steamcommunity.com/id/Chuckleberry_Finn/myworkshopfiles/?appid=108600,
+link3 = Github = https://steamcommunity.com/linkfilter/?u=https://github.com/Chuckleberry-Finn,
+[ ------ ]
+
+[ 1/25/25 ]
+- Fix first-startup edge-case where UI is not set yet.
+[ ------ ]
+
+[ 12/19/25 ]
+- Tested on B42.13 with no apparent issues.
+[ ------ ]

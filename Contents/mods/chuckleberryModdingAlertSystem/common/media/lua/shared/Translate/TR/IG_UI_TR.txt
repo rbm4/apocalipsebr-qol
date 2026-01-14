@@ -1,0 +1,8 @@
+IGUI_TR = {
+    IGUI_ChuckAlertTooltip_Close = "Çökmek için tıklayın. <Br> Bu oturum için tamamen gizlemek için sağ tıklayın.",
+    IGUI_ChuckAlertTooltip_Open = "Açmak için tıklayın. <Br> Bu oturum için tamamen gizlemek için sağ tıklayın.",
+    IGUI_ChuckAlertCollapse = "Yıkılmak",
+    IGUI_ChuckAlertSeeAlerts = "Bkz. %1 Uyarı %2",
+    IGUI_ChuckAlertHeaderMsg = "Chuckleberry Finn'den bir mesaj",
+    IGUI_ChuckAlertDonationMsg = "Modizasyondan derinden hoşlanırken, önemli zaman ve enerji gerektirir ve onu diğer sorumluluklarla, özellikle finansal olanlarla dengelemem gerekiyor. Açıklığa kavuşturmak için, modlarımı her zaman olduğu gibi korumaya, desteklemeye, sorun gidermeye ve güncellemeye devam edeceğim. Bununla birlikte, bu diğer öncelikler önce gelmelidir. Bu düğmeler özelleştirilebilir ve mod yazarı tarafından ayarlanır. Herhangi bir mod yazarının çalışması ve özveriden hoşlandıysanız ve desteklemek istiyorsanız, bunu yapmayı düşünün. projelerime çaba. Bununla birlikte, kesinlikle baskı yok; Lütfen yalnızca rahat ve mümkünse bağış yapın. Benim için, modlarımdan zevk almanız zaten muazzam bir ödül.",
+}

@@ -1,0 +1,9 @@
+IGUI_CH = {
+    IGUI_ChuckAlertTooltip_Close = "單擊要折疊。<br>右鍵單擊以完全隱藏此會話。",
+    IGUI_ChuckAlertTooltip_Open = "單擊打開。<br>右鍵單擊以完全隱藏此會話。",
+    IGUI_ChuckAlertAlertButtonTooltip = "單擊以查看警報。<br>右鍵單擊以關閉。",
+    IGUI_ChuckAlertCollapse = "坍塌",
+    IGUI_ChuckAlertSeeAlerts = "請參閱{％1}警報{％2}",
+    IGUI_ChuckAlertHeaderMsg = "Chuckleberry Finn的消息",
+    IGUI_ChuckAlertDonationMsg = "雖然我非常喜歡改裝，但它需要大量的時間和精力，我需要在其他責任（尤其是財務上的職責）中取得平衡。為了清楚地表明，我將繼續保持，支持，故障排除和更新我的mod。但是，這些其他優先級必須先出現。<br> <br>幾乎所有模塊都可以應用同樣的情況，您可能會找到此處列出的每個相應mod的支持按鈕。這些按鈕是可自定義的，由Mod-authors設置。如果您喜歡任何Mod-author的辛勤工作和奉獻精神並希望支持它，請考慮這樣做。我的項目努力。就是說，絕對沒有壓力。請只有在您舒適和有能力的情況下才捐款。對我來說，您對我的mod的享受已經是一個巨大的回報。<br> <br>感謝您的支持和理解！",
+}

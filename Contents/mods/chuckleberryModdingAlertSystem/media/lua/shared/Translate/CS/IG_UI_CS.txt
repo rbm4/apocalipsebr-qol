@@ -1,0 +1,9 @@
+IGUI_CS = {
+    IGUI_ChuckAlertTooltip_Close = "Kliknutím na sbalení.",
+    IGUI_ChuckAlertTooltip_Open = "Kliknutím otevřete. <Br> klikněte pravým tlačítkem myši na tuto relaci.",
+    IGUI_ChuckAlertAlertButtonTooltip = "Kliknutím zobrazíte upozornění.",
+    IGUI_ChuckAlertCollapse = "Kolaps",
+    IGUI_ChuckAlertSeeAlerts = "Viz %1 Alert %2",
+    IGUI_ChuckAlertHeaderMsg = "Zpráva od Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "I když si hluboce užívám moddingu, vyžaduje to značný čas a energii a musím jej vyrovnat s jinými povinnostmi, zejména s finančními. Abychom to objasnili, budu i nadále udržovat, podporovat, řešit problémy a aktualizovat své mody, jak vždycky mám. Tyto další priority však musí být na prvním místě. Tato tlačítka jsou přizpůsobitelná a nastavena modi-autory. Pokud se vám líbilo jakékoli tvrdé práce a obětavosti MOD-ATORA a chtěli byste ji podpořit, zvažte to. úsilí mých projektů. To znamená, že neexistuje absolutně žádný tlak; Prosím, darujte, pouze pokud jste pohodlní a schopni. Pro mě je vaše potěšení z mých modů již obrovskou odměnou. <Br> <Br> Děkujeme za vaši podporu a porozumění!",
+}

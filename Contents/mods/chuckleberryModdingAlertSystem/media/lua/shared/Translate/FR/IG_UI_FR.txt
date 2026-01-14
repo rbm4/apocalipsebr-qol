@@ -1,0 +1,9 @@
+IGUI_FR = {
+    IGUI_ChuckAlertTooltip_Close = "Cliquez pour s'effondrer. <Br> Cliquez avec le bouton droit pour se cacher complètement pour cette session.",
+    IGUI_ChuckAlertTooltip_Open = "Cliquez sur pour ouvrir. <Br> Cliquez avec le bouton droit pour se cacher complètement pour cette session.",
+    IGUI_ChuckAlertAlertButtonTooltip = "Cliquez pour voir les alertes. <Br> Cliquez avec le bouton droit pour fermer.",
+    IGUI_ChuckAlertCollapse = "Effondrement",
+    IGUI_ChuckAlertSeeAlerts = "Voir {% 1} alerte {% 2}",
+    IGUI_ChuckAlertHeaderMsg = "Un message de Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "Bien que j'apprécie profondément le modding, cela nécessite beaucoup de temps et d'énergie, et je dois l'équilibrer avec d'autres responsabilités, en particulier financières. Pour indiquer clairement, je continuerai à maintenir, soutenir, dépanner et mettre à jour mes mods comme je l'ai toujours fait. Cependant, ces autres priorités doivent venir en premier. <Br> <Br> Cette même situation peut s'appliquer à presque tous les modders, et vous pouvez trouver des boutons de support pour chaque mod respectif répertorié ici. Ces boutons sont personnalisables et définis par les auteurs de mod. Si vous avez apprécié le travail dur et le dévouement d'un auteur de Mod-auteur et que vous souhaitez le soutenir, envisagez de le faire. <Br> <Br> Personnellement, les dons rendent plus possible pour moi de consacrer du temps et effort pour mes projets. Cela dit, il n'y a absolument aucune pression; Veuillez faire un don uniquement si vous êtes à l'aise et capable. Pour moi, votre plaisir de mes mods est déjà une formidable récompense. <Br> <Br> Merci pour votre soutien et votre compréhension!",
+}

@@ -1,0 +1,8 @@
+IGUI_PTBR = {
+    IGUI_ChuckAlertTooltip_Close = "Clique para entrar em colapso. <Br> Clique com o botão direito do mouse para ocultar completamente esta sessão.",
+    IGUI_ChuckAlertTooltip_Open = "Clique para abrir. <Br> clique com o botão direito do mouse para ocultar completamente esta sessão.",
+    IGUI_ChuckAlertCollapse = "Colapso",
+    IGUI_ChuckAlertSeeAlerts = "Veja %1 alerta %2",
+    IGUI_ChuckAlertHeaderMsg = "Uma mensagem de Chuckleberry Finn",
+    IGUI_ChuckAlertDonationMsg = "Embora eu goste profundamente de modificar, requer tempo e energia significativos, e preciso equilibrá -lo com outras responsabilidades, principalmente as financeiras. Para deixar claro, continuarei a manter, apoiar, solucionar e atualizar meus mods como sempre. No entanto, essas outras prioridades devem vir primeiro. <Br> <br> Essa mesma situação pode se aplicar a quase todos os modders e você pode encontrar botões de suporte para cada mod listado aqui. Esses botões são personalizáveis ​​e definidos pelos autores de mod. Se você gostou de qualquer trabalho e dedicação de qualquer autor e gostaria de apoiá-lo, considere fazê-lo. <Br> <br> pessoalmente, as doações tornam mais viável para eu dedicar tempo e esforço para meus projetos. Dito isto, não há absolutamente nenhuma pressão; Por favor, doe apenas se você estiver confortável e capaz. Para mim, seu prazer dos meus mods já é uma tremenda recompensa. <Br> <br> Obrigado pelo seu apoio e entendimento!",
+}
