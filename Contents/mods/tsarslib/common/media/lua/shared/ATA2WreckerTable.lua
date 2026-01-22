@@ -1,0 +1,37 @@
+ATA2WreckerTable = ATA2WreckerTable or {}
+
+ATA2WreckerTable.TrailerAHauler = ATA2WreckerTable.TrailerAHauler or {}
+ATA2WreckerTable.TrailerAHauler["CarLights"] = true
+ATA2WreckerTable.TrailerAHauler["CarLightsPolice"] = true
+ATA2WreckerTable.TrailerAHauler["CarLuxury"] = true
+ATA2WreckerTable.TrailerAHauler["ModernCar"] = true
+ATA2WreckerTable.TrailerAHauler["ModernCar02"] = true
+ATA2WreckerTable.TrailerAHauler["CarNormal"] = true
+ATA2WreckerTable.TrailerAHauler["SmallCar"] = true
+ATA2WreckerTable.TrailerAHauler["SmallCar02"] = true
+ATA2WreckerTable.TrailerAHauler["SportsCar"] = true
+ATA2WreckerTable.TrailerAHauler["CarStationWagon"] = true
+ATA2WreckerTable.TrailerAHauler["CarStationWagon2"] = true
+ATA2WreckerTable.TrailerAHauler["OffRoad"] = true
+ATA2WreckerTable.TrailerAHauler["PickUpTruck"] = true
+ATA2WreckerTable.TrailerAHauler["PickUpTruckLights"] = true
+ATA2WreckerTable.TrailerAHauler["PickUpTruckLightsFire"] = true
+ATA2WreckerTable.TrailerAHauler["PickUpTruckMccoy"] = true
+ATA2WreckerTable.TrailerAHauler["PickUpVan"] = true
+ATA2WreckerTable.TrailerAHauler["PickUpVanLights"] = true
+ATA2WreckerTable.TrailerAHauler["PickUpVanLightsFire"] = true
+ATA2WreckerTable.TrailerAHauler["PickUpVanLightsPolice"] = true
+ATA2WreckerTable.TrailerAHauler["PickUpVanMccoy"] = true
+ATA2WreckerTable.TrailerAHauler["SUV"] = true
+ATA2WreckerTable.TrailerAHauler["CarTaxi"] = true
+ATA2WreckerTable.TrailerAHauler["CarTaxi2"] = true
+ATA2WreckerTable.TrailerAHauler["Van"] = true
+ATA2WreckerTable.TrailerAHauler["Van_KnoxDisti"] = true
+ATA2WreckerTable.TrailerAHauler["Van_LectroMax"] = true
+ATA2WreckerTable.TrailerAHauler["Van_MassGenFac"] = true
+ATA2WreckerTable.TrailerAHauler["VanSeats"] = true
+ATA2WreckerTable.TrailerAHauler["VanSpecial"] = true
+ATA2WreckerTable.TrailerAHauler["VanSpiffo"] = true
+ATA2WreckerTable.TrailerAHauler["Van_Transit"] = true
+
+ATA2WreckerTable.TrailerAMC = ATA2WreckerTable.TrailerAMC or {}

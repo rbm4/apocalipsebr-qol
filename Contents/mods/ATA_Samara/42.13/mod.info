@@ -1,0 +1,10 @@
+name=APOCALIPSE_MOTORS_sam
+poster=../common/ATA_Samara_poster.png
+icon=../common/ATA_Samara_poster.png
+poster=../common/samara.png
+id=APOCALIPSE_MOTORS_Samara
+versionMin=42.13
+require=\TSAR_APOC
+loadorder=5
+description=If you have "tsarslib" glowing red, then you do not have the obligatory "Tsar's Common Library" mod installed. The link to it can be found on the mod page under "REQUIRED ITEMS". The best place to find answers to all your questions is our Discord server: discord.gg/xkCEcwGZMW
+url=
