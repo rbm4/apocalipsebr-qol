@@ -1,0 +1,18 @@
+module Base
+{
+	item Shirt_FormalWhiteFBIIDLG
+	{
+	    DisplayCategory = Clothing,
+		Type = Clothing,
+		DisplayName = Formal Shirt with FBI ID,
+		ClothingItem = Shirt_FormalWhiteFBIIDLG,
+		BodyLocation = Shirt,
+		Icon = ShirtGeneric,
+		BloodLocation = ShirtLongSleeves,
+        Insulation = 0.25,
+        WindResistance = 0.15,
+        FabricType = Cotton,
+        WorldStaticModel = Shirt_Ground,
+	}
+
+}

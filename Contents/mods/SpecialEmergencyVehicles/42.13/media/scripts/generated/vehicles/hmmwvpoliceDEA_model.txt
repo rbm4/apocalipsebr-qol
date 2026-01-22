@@ -1,0 +1,19 @@
+module Base
+{
+	model Vehicles_hmmwvDEASEV
+	    {
+        	mesh = vehicles/Vehicles_hmmwvpoliceSev,
+	        shader = vehicle,
+        	invertX = FALSE,
+	        scale = 0.003937,
+	    } 
+	model Vehicles_hmmwvnormSEV
+	{
+		mesh = vehicles/Vehicles_HMMWVHardTopSev,
+		shader = vehicle,
+		invertX = FALSE,
+		scale = 0.004519,
+	}
+
+		
+}

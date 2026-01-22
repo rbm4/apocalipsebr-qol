@@ -1,0 +1,48 @@
+
+module SpecialEmergencyVehicles
+{
+
+	
+    item SEV_CDCnote1
+    {
+		DisplayName	    =	CDC Muldraugh report page 1,
+        DisplayCategory = Junk,
+        ItemType = base:normal,
+        Weight = 0.2,
+        Icon = SEV_CDCnote1,
+        StaticModel = CDCSEVPaperwork1,
+        WorldStaticModel = CDCSEVPaperwork1,
+    }
+    item SEV_CDCnote2
+    {
+		DisplayName	    =	CDC Muldraugh report page 2,
+        DisplayCategory = Junk,
+        ItemType = base:normal,
+        Weight = 0.2,
+        Icon = SEV_CDCnote2,
+        StaticModel = CDCSEVPaperwork2,
+        WorldStaticModel = CDCSEVPaperwork2,
+    }
+
+    item SEV_CDCnote3
+    {
+		DisplayName	    =	CDC Muldraugh report page 3,
+        DisplayCategory = Junk,
+        ItemType = base:normal,
+        Weight = 0.2,
+        Icon = SEV_CDCnote3,
+        StaticModel = CDCSEVPaperwork3,
+        WorldStaticModel = CDCSEVPaperwork3,
+    }	
+	
+    item SEV_CDCnote4
+    {
+		DisplayName	    =	Bloody CDC note,
+        DisplayCategory = Junk,
+        ItemType = base:normal,
+        Weight = 0.2,
+        Icon = SEV_CDClastwords1,
+        StaticModel = CDCSEVPaperwork4,
+        WorldStaticModel = CDCSEVPaperwork4,
+    }	
+}

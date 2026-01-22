@@ -1,0 +1,24 @@
+module Base
+{
+	fixing Fix Trunk Welding SEV
+	{
+	 Require = Base.FRSideContainerSEV1;Base.FRSideContainerSEV2;Base.FRSideContainerSEV3;Base.FRSideContainerSEV8;Base.FRTinyTrunkSEV1;Base.FRTinyTrunkSEV2;Base.FRTinyTrunkSEV3;Base.FRTinyTrunkSEV8;Base.FRSmallTrunkSEV1;Base.FRSmallTrunkSEV2;Base.FRSmallTrunkSEV3;Base.FRSmallTrunkSEV8;Base.FRNormalTrunkSEV1;Base.FRNormalTrunkSEV2;Base.FRNormalTrunkSEV3;Base.FRNormalTrunkSEV8;Base.FRBigTrunkSEV1;Base.FRBigTrunkSEV2;Base.FRBigTrunkSEV3;Base.FRBigTrunkSEV8;Base.FRLargeTrunkSEV1;Base.FRLargeTrunkSEV2;Base.FRLargeTrunkSEV3;Base.FRLargeTrunkSEV8;Base.FRCargoTrunkSEV1;Base.FRCargoTrunkSEV2;Base.FRCargoTrunkSEV3;Base.FRCargoTrunkSEV8;Base.FRCargoTrunkSEVFBOX1;Base.FRCargoTrunkSEVFBOX2;Base.FRCargoTrunkSEVFBOX3;Base.FRCargoTrunkSEVFBOX8;Base.FRXLCargoTrunkSEV1;Base.FRXLCargoTrunkSEV2;Base.FRXLCargoTrunkSEV3;Base.FRTrailerTrunkSEV1;Base.FRTrailerTrunkSEV2;Base.FRTrailerTrunkSEV3;Base.FR_VehicleArmorySEV,
+	 
+        GlobalItem = Base.BlowTorch=2,
+        ConditionModifier = 1.2,
+
+        Fixer = Base.SheetMetal; MetalWelding=3;Mechanics=2,
+        Fixer = Base.SmallSheetMetal=2; MetalWelding=3;Mechanics=2,
+	}
+	
+
+	fixing Fix Trunk SEV
+	{
+	 Require = Base.FRSideContainerSEV1;Base.FRSideContainerSEV2;Base.FRSideContainerSEV3;Base.FRSideContainerSEV8;Base.FRTinyTrunkSEV1;Base.FRTinyTrunkSEV2;Base.FRTinyTrunkSEV3;Base.FRTinyTrunkSEV8;Base.FRSmallTrunkSEV1;Base.FRSmallTrunkSEV2;Base.FRSmallTrunkSEV3;Base.FRSmallTrunkSEV8;Base.FRNormalTrunkSEV1;Base.FRNormalTrunkSEV2;Base.FRNormalTrunkSEV3;Base.FRNormalTrunkSEV8;Base.FRBigTrunkSEV1;Base.FRBigTrunkSEV2;Base.FRBigTrunkSEV3;Base.FRBigTrunkSEV8;Base.FRLargeTrunkSEV1;Base.FRLargeTrunkSEV2;Base.FRLargeTrunkSEV3;Base.FRLargeTrunkSEV8;Base.FRCargoTrunkSEV1;Base.FRCargoTrunkSEV2;Base.FRCargoTrunkSEV3;Base.FRCargoTrunkSEV8;Base.FRCargoTrunkSEVFBOX1;Base.FRCargoTrunkSEVFBOX2;Base.FRCargoTrunkSEVFBOX3;Base.FRCargoTrunkSEVFBOX8;Base.FRXLCargoTrunkSEV1;Base.FRXLCargoTrunkSEV2;Base.FRXLCargoTrunkSEV3;Base.FRTrailerTrunkSEV1;Base.FRTrailerTrunkSEV2;Base.FRTrailerTrunkSEV3;Base.FR_VehicleArmorySEV,
+	 
+        ConditionModifier = 0.7,
+        GlobalItem = Base.BlowTorch=2,
+        Fixer = Base.DuctTape=2;Base. Mechanics=1,
+        Fixer = Base.Glue=2;Base. Mechanics=1,
+	}
+}

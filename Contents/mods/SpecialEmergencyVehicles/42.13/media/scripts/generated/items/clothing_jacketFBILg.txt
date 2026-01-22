@@ -1,0 +1,347 @@
+module Base
+{
+ 
+    item Jacket_FBIlg
+    {	
+	    DisplayCategory = Clothing,
+        ItemType = base:clothing,
+        DisplayName = FBI Field Jacket,
+        Weight = 2.0,
+        Icon = Jacketfbilg,
+        BiteDefense = 20,
+        BloodLocation = Jacket,
+        BodyLocation = base:jacket,
+        ClothingItem = Jacket_FBIlg,
+        CombatSpeedModifier = 0.98,
+        FabricType = Cotton,
+        Insulation = 0.6,
+        NeckProtectionModifier = 0.5,
+        RunSpeedModifier = 0.93,
+        ScratchDefense = 30,
+        WaterResistance = 0.25,
+        WindResistance = 0.45,
+        WorldStaticModel = Jacket_Ground,
+        Tags = base:ripclothingcotton,	
+		
+    }
+
+    item Jacket_FBIlgblack
+    {
+	    DisplayCategory = Clothing,
+        ItemType = base:clothing,
+        DisplayName = FBI Field Jacket,
+        Weight = 2.0,
+        Icon = Jacketfbilgblack,
+        BiteDefense = 20,
+        BloodLocation = Jacket,
+        BodyLocation = base:jacket,
+        ClothingItem = Jacket_FBIlgblack,
+        CombatSpeedModifier = 0.98,
+        FabricType = Cotton,
+        Insulation = 0.6,
+        NeckProtectionModifier = 0.5,
+        RunSpeedModifier = 0.93,
+        ScratchDefense = 30,
+        WaterResistance = 0.25,
+        WindResistance = 0.45,
+        WorldStaticModel = Jacket_Ground,
+        Tags = base:ripclothingcotton,	
+		
+    }
+    item Jacket_FBIlgconidfbi
+    {
+
+		DisplayCategory = Clothing,
+        ItemType = base:clothing,
+        DisplayName = FBI Field Jacket with FBI ID,
+        Weight = 2.0,
+        Icon = Jacketfbilg,
+        BiteDefense = 20,
+        BloodLocation = Jacket,
+        BodyLocation = base:jacket,
+        ClothingItem = Jacket_FBIlgconIDFB,
+        CombatSpeedModifier = 0.98,
+        FabricType = Cotton,
+        Insulation = 0.6,
+        NeckProtectionModifier = 0.5,
+        RunSpeedModifier = 0.93,
+        ScratchDefense = 30,
+        WaterResistance = 0.25,
+        WindResistance = 0.45,
+        WorldStaticModel = Jacket_Ground,
+        Tags = base:ripclothingcotton,		
+    }
+
+    item Jacket_FBIlgblackconidFBI
+    {
+		DisplayCategory = Clothing,
+        ItemType = base:clothing,
+        DisplayName = FBI Field Jacket with FBI ID,
+        Weight = 2.0,
+        Icon = Jacketfbilgblack,
+        BiteDefense = 20,
+        BloodLocation = Jacket,
+        BodyLocation = base:jacket,
+        ClothingItem = Jacket_FBIlgblackconIDFB,
+        CombatSpeedModifier = 0.98,
+        FabricType = Cotton,
+        Insulation = 0.6,
+        NeckProtectionModifier = 0.5,
+        RunSpeedModifier = 0.93,
+        ScratchDefense = 30,
+        WaterResistance = 0.25,
+        WindResistance = 0.45,
+        WorldStaticModel = Jacket_Ground,
+        Tags = base:ripclothingcotton,			
+    }
+    item Jacket_RIOTlgblack
+    {
+		DisplayCategory = Clothing,
+        ItemType = base:clothing,
+        DisplayName = RIOT Field Jacket,
+        Weight = 2.0,
+        Icon = Jacketfbilgblack,
+        BiteDefense = 25,
+        BloodLocation = Jacket,
+        BodyLocation = base:jacket,
+        ClothingItem = Jacket_RIOTlgblack,
+        CombatSpeedModifier = 0.98,
+        FabricType = Cotton,
+        Insulation = 0.6,
+        NeckProtectionModifier = 0.5,
+        RunSpeedModifier = 0.93,
+        ScratchDefense = 35,
+        WaterResistance = 0.25,
+        WindResistance = 0.45,
+        WorldStaticModel = Jacket_Ground,
+        Tags = base:ripclothingcotton,				
+		
+    }
+	    item Jacket_ATFclosed
+    {
+		DisplayCategory = Clothing,
+        ItemType = base:clothing,
+        DisplayName = ATF Field Jacket,
+        Weight = 2.0,
+        Icon = Jacketfbilg,
+        BiteDefense = 20,
+        BloodLocation = Jacket,
+        BodyLocation = base:jacket,
+        ClothingItem = Jacket_ATFclosed,
+        CombatSpeedModifier = 0.98,
+        FabricType = Cotton,
+        Insulation = 0.6,
+        NeckProtectionModifier = 0.5,
+        RunSpeedModifier = 0.93,
+        ScratchDefense = 30,
+        WaterResistance = 0.25,
+        WindResistance = 0.45,
+        WorldStaticModel = Jacket_Ground,
+        Tags = base:ripclothingcotton,				
+		
+    }
+	    item Jacket_ATFblclosed
+    {
+		DisplayCategory = Clothing,
+        ItemType = base:clothing,
+        DisplayName = ATF Field Jacket,
+        Weight = 2.0,
+        Icon = Jacketfbilgblack,
+        BiteDefense = 20,
+        BloodLocation = Jacket,
+        BodyLocation = base:jacket,
+        ClothingItem = Jacket_ATFblclosed,
+        CombatSpeedModifier = 0.98,
+        FabricType = Cotton,
+        Insulation = 0.6,
+        NeckProtectionModifier = 0.5,
+        RunSpeedModifier = 0.93,
+        ScratchDefense = 30,
+        WaterResistance = 0.25,
+        WindResistance = 0.45,
+        WorldStaticModel = Jacket_Ground,
+        Tags = base:ripclothingcotton,		
+		
+    }
+	
+		item Jacket_USMSHclosed
+    {
+		DisplayCategory = Clothing,
+        ItemType = base:clothing,
+        DisplayName = U.S Marshall Field Jacket,
+        Weight = 2.0,
+        Icon = Jacketfbilg,
+        BiteDefense = 20,
+        BloodLocation = Jacket,
+        BodyLocation = base:jacket,
+        ClothingItem = Jacket_USMSHclosed,
+        CombatSpeedModifier = 0.98,
+        FabricType = Cotton,
+        Insulation = 0.6,
+        NeckProtectionModifier = 0.5,
+        RunSpeedModifier = 0.93,
+        ScratchDefense = 30,
+        WaterResistance = 0.25,
+        WindResistance = 0.45,
+        WorldStaticModel = Jacket_Ground,
+        Tags = base:ripclothingcotton,				
+		
+    }
+		item Jacket_DEAclosed
+    {	
+		DisplayCategory = Clothing,
+        ItemType = base:clothing,
+        DisplayName = DEA Field Jacket,
+        Weight = 2.0,
+        Icon = Jacketfbilg,
+        BiteDefense = 20,
+        BloodLocation = Jacket,
+        BodyLocation = base:jacket,
+        ClothingItem = Jacket_DEAclosed,
+        CombatSpeedModifier = 0.98,
+        FabricType = Cotton,
+        Insulation = 0.6,
+        NeckProtectionModifier = 0.5,
+        RunSpeedModifier = 0.93,
+        ScratchDefense = 30,
+        WaterResistance = 0.25,
+        WindResistance = 0.45,
+        WorldStaticModel = Jacket_Ground,
+        Tags = base:ripclothingcotton,		
+		
+    }
+	
+	    item Vest_BulletRIOTlggeneric
+    {		
+	    DisplayCategory = ProtectiveGear,
+        DisplayName = Anti-Riot Vest,	
+        ItemType = base:clothing,
+        Icon = Vest_BulletRiotLG,
+        BiteDefense = 60,
+        BloodLocation = ShirtNoSleeves,
+        BodyLocation = base:torsoextravestbullet,
+        BulletDefense = 300,
+        ClothingItem = Vest_BulletRIOTlggeneric,
+        Insulation = 0.65,
+        ScratchDefense = 75,
+        WindResistance = 0.3,
+        WorldStaticModel = BulletVest_Ground,
+        BreakSound = ArmourBreakKevlar,
+        Weight = 5.0,
+        DiscomfortModifier = 0.25,
+        Researchablerecipes = MakeForearmBulletproofVestArmor;MakeShinBulletproofVestArmor;MakeThighBulletproofVestArmor,
+        Tags = base:pickaramidthread,	
+		
+    }
+    item Vest_Bulletfbi
+    {
+
+        DisplayCategory = ProtectiveGear,
+        DisplayName = FBI Bulletproof Vest,		
+        ItemType = base:clothing,
+        Icon = Vest_Bulletfbiicon,
+        BiteDefense = 30,
+        BloodLocation = ShirtNoSleeves,
+        BodyLocation = base:torsoextravestbullet,
+        BulletDefense = 100,
+        ClothingItem = Vest_BulletfbiLG,
+        Insulation = 0.65,
+        ScratchDefense = 55,
+        WindResistance = 0.3,
+        WorldStaticModel = BulletVest_Ground,
+        BreakSound = ArmourBreakKevlar,
+        Weight = 5.0,
+        DiscomfortModifier = 0.25,
+        Researchablerecipes = MakeForearmBulletproofVestArmor;MakeShinBulletproofVestArmor;MakeThighBulletproofVestArmor,
+        Tags = base:pickaramidthread,
+						
+    }
+     item Vest_Bulletfbigreen
+    {	
+        DisplayCategory = ProtectiveGear,
+        DisplayName = FBI Bulletproof Vest,		
+        ItemType = base:clothing,
+        Icon = Vest_Bulletfbigreenicon,
+        BiteDefense = 30,
+        BloodLocation = ShirtNoSleeves,
+        BodyLocation = base:torsoextravestbullet,
+        BulletDefense = 100,
+        ClothingItem = Vest_BulletfbigreenLG,
+        Insulation = 0.65,
+        ScratchDefense = 55,
+        WindResistance = 0.3,
+        WorldStaticModel = BulletVest_Ground,
+        BreakSound = ArmourBreakKevlar,
+        Weight = 5.0,
+        DiscomfortModifier = 0.25,
+        Researchablerecipes = MakeForearmBulletproofVestArmor;MakeShinBulletproofVestArmor;MakeThighBulletproofVestArmor,
+        Tags = base:pickaramidthread,		
+    }
+     item Vest_BulletfbiRIOTLg
+    {
+	    DisplayCategory = ProtectiveGear,
+        DisplayName = FBI Anti-Riot Vest,
+        ItemType = base:clothing,
+        Icon = Vest_BulletfbiRIOTLg,
+        BiteDefense = 60,
+        BloodLocation = ShirtNoSleeves,
+        BodyLocation = base:torsoextravestbullet,
+        BulletDefense = 300,
+        ClothingItem = Vest_BulletRIOTlgFBI,
+        Insulation = 0.65,
+        ScratchDefense = 75,
+        WindResistance = 0.3,
+        WorldStaticModel = BulletVest_Ground,
+        BreakSound = ArmourBreakKevlar,
+        Weight = 5.0,
+        DiscomfortModifier = 0.25,
+        Researchablerecipes = MakeForearmBulletproofVestArmor;MakeShinBulletproofVestArmor;MakeThighBulletproofVestArmor,
+        Tags = base:pickaramidthread,			
+		
+    }
+     item Vest_BulletRiotLG
+    {
+
+	    DisplayCategory = ProtectiveGear,
+        DisplayName = Anti-Riot Vest,
+        ItemType = base:clothing,
+        Icon = Vest_BulletRiotLG,
+        BiteDefense = 60,
+        BloodLocation = ShirtNoSleeves,
+        BodyLocation = base:torsoextravestbullet,
+        BulletDefense = 300,
+        ClothingItem = Vest_BulletRiotLG,
+        Insulation = 0.65,
+        ScratchDefense = 75,
+        WindResistance = 0.3,
+        WorldStaticModel = BulletVest_Ground,
+        BreakSound = ArmourBreakKevlar,
+        Weight = 5.0,
+        DiscomfortModifier = 0.25,
+        Researchablerecipes = MakeForearmBulletproofVestArmor;MakeShinBulletproofVestArmor;MakeThighBulletproofVestArmor,
+        Tags = base:pickaramidthread,		
+		
+    }
+
+
+    item JacketLong_SEVcdcDoctor
+    {
+	    DisplayName = CDC Doctor Jacket,
+        DisplayCategory = Clothing,
+        ItemType = base:clothing,
+        Weight = 2.0,
+        Icon = JacketDoctor,
+        BloodLocation = LongJacket,
+        BodyLocation = base:jacketsuit,
+        ClothingItem = JacketLong_SEVcdcDoctor,
+        CombatSpeedModifier = 0.95,
+        FabricType = Cotton,
+        Insulation = 0.35,
+        NeckProtectionModifier = 0.5,
+        RunSpeedModifier = 0.93,
+        ScratchDefense = 20,
+        WindResistance = 0.25,
+        WorldStaticModel = JacketLong_Ground,
+        Tags = base:ripclothingcotton,
+    }	
+}
