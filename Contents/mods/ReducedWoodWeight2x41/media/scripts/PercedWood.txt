@@ -1,0 +1,10 @@
+module Base {
+    item PercedWood {
+        DisplayCategory = Camping,
+        DisplayName = Notched Wooden Plank,
+        Icon = TZ_PerforatedWoodenPlank,
+        Type = Normal,
+        Weight = 0.25,
+        WorldStaticModel = PercedWood,
+    }
+}

@@ -1,0 +1,12 @@
+module Base
+{
+	model Vehicles_93jeepcherokeeCDCSEV
+	{
+		mesh = vehicles/Vehicles_93jeepcherokeeCDCSEV,
+		shader = vehicle_multiuv,
+		invertX = FALSE,
+		scale = 0.004519,
+	}
+
+		
+}

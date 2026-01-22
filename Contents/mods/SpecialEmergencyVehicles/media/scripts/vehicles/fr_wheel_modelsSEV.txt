@@ -1,0 +1,241 @@
+module Base
+{
+
+	model Vehicles_WheelFR01SEV
+	{
+		mesh = vehicles/WheelFR01SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFR03SEV
+	{
+		mesh = vehicles/WheelFR03SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFR04SEV
+	{
+		mesh = vehicles/WheelFR04SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFR05SEV
+	{
+		mesh = vehicles/WheelFR05SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFR06SEV
+	{
+		mesh = vehicles/WheelFR06SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRDatsunSEV
+	{
+		mesh = vehicles/WheelFRDatsunSEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRL1SEV
+	{
+		mesh = vehicles/WheelFRL1SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRL2SEV
+	{
+		mesh = vehicles/WheelFRL2SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRL3SEV
+	{
+		mesh = vehicles/WheelFRL3SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRL3DBLSEV
+	{
+		mesh = vehicles/WheelFRL3DBLSEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRL4SEV
+	{
+		mesh = vehicles/WheelFRL4SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRL5SEV
+	{
+		mesh = vehicles/WheelFRL5SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRL5jurSEV
+	{
+		mesh = vehicles/WheelFRL5jurSEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRL6SEV
+	{
+		mesh = vehicles/WheelFRL6SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRL6jurSEV
+	{
+		mesh = vehicles/WheelFRL6jurSEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRL7SEV
+	{
+		mesh = vehicles/WheelFRL7SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRLPD1SEV
+	{
+		mesh = vehicles/WheelFRLPD1SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRPD1SEV
+	{
+		mesh = vehicles/WheelFRPD1SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFROR1SEV
+	{
+		mesh = vehicles/WheelFROR1SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRS1SEV
+	{
+		mesh = vehicles/WheelFRS1SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRS2SEV
+	{
+		mesh = vehicles/WheelFRS2SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRS3SEV
+	{
+		mesh = vehicles/WheelFRS3SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRS4SEV
+	{
+		mesh = vehicles/WheelFRS4SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRTransSEV
+	{
+		mesh = vehicles/WheelFRTransSEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRXL1SEV
+	{
+		mesh = vehicles/WheelFRXL1SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelFRXL1DBLSEV
+	{
+		mesh = vehicles/WheelFRXL1DBLSEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelMILSEV
+	{
+		mesh = vehicles/WheelMILSEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelMIL2SEV
+	{
+		mesh = vehicles/WheelMIL2SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelMIL3SEV
+	{
+		mesh = vehicles/WheelMIL3SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelMIL3DBLSEV
+	{
+		mesh = vehicles/WheelMIL3DBLSEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheelMIL3DBLFAKESEV
+	{
+		mesh = vehicles/WheelMIL3DBLFAKESEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_Wheeltrac1SEV
+	{
+		mesh = vehicles/Wheeltrac1SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+
+	model Vehicles_WheeltracXL1SEV
+	{
+		mesh = vehicles/WheeltracXL1SEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+	
+		model Vehicles_WheelFRMustangSEV
+	{
+		mesh = vehicles/WheelFRMustangSEV,
+        shader = vehiclewheel,
+		scale = 0.004519,
+	}
+}

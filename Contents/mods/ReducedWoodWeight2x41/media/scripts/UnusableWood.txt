@@ -1,0 +1,10 @@
+module Base {
+    item UnusableWood {
+        DisplayCategory = Material,
+        DisplayName = Unusable Wood,
+        Icon = UnsableWood,
+        Type = Normal,
+        Weight = 0.5,
+        WorldStaticModel = UnusableWood,
+    }
+}

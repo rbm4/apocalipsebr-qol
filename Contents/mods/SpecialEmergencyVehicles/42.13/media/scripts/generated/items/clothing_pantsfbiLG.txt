@@ -1,0 +1,23 @@
+module Base
+{
+      item Trousers_PoliceRiotfbilg
+    {	
+        DisplayCategory = Clothing,
+        DisplayName = Police Anti-Riot Pants,		
+        ItemType = base:clothing,
+        Icon = PoliceRiotpantsicon,
+        BloodLocation = Trousers,
+        BodyLocation = base:pants,
+        ClothingItem = Trousers_PoliceAntiRiotfbilg,
+        FabricType = Cotton,
+        Insulation = 0.6,
+        BiteDefense = 30,
+        ScratchDefense = 40,
+        BulletDefense = 15,
+        WindResistance = 0.3,
+        WorldStaticModel = Trousers_Ground,
+        Tags = base:ripclothingcotton,
+        Researchablerecipes = SewTrousers,		
+		
+    }
+}
