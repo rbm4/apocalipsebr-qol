@@ -1,0 +1,6 @@
+name=Tsarlib
+id=TSAR_APOC
+versionMin=42.13
+description=If you have "tsarslib" glowing red, then you do not have the obligatory "Tsar's Common Library" mod installed. The link to it can be found on the mod page under "REQUIRED ITEMS". The best place to find answers to all your questions is our Discord server: discord.gg/xkCEcwGZMW
+url=
+loadorder=4
