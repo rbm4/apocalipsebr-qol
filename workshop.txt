@@ -9,4 +9,4 @@ description=This mod is currently in use on my zomboid server: APOCALIPSE [BR], 
 description=
 description=Compatible with B42.13.1
 tags=Build 42;Multiplayer;QoL
-visibility=unlisted
+visibility=public
