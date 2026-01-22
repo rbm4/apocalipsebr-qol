@@ -1,6 +1,6 @@
-name=50% Wood Weight
+name=APOCALIPSE_WOOD
 author=Kechna
-id=ReducedWoodWeight2x41
+id=apoc_wood
 description=Reduce weight of planks, logs and a few related items to 50% of their original weight.
 modversion=3.0.3
 poster=poster.png
