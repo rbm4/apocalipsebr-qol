@@ -1,0 +1,9 @@
+name=APOCALIPSE_MOTORS - RT Twin Turbo 
+poster=../common/dadgeposter.png
+poster=../common/dadge.png
+icon=../common/dadgeposter.png
+id=APOCALIPSE_MOTORS_Dadge
+versionMin=42.13
+require=\TSAR_APOC
+description=---
+url=

@@ -107,11 +107,11 @@ NewCarTuningTable["ATASamara"].parts["ATA2Bullbar"] = {
             weight = "auto",
             animation = "ATA_PickLock",
             use = {
-                MetalPipe = 3,
-                SheetMetal = 6,
-                MetalBar=6,
+                MetalPipe = 6,
+                SheetMetal = 10,
+                MetalBar=16,
                 BlowTorch = 10,
-                Screws=6,
+                Screws=30,
             },
             tools = {
                 bodylocation = "Base.WeldingMask",
