@@ -231,8 +231,6 @@ module Base
             {
                 file = ATAMustang66_DoorFrontLeft,
             }
-            // Door animations disabled due to broken animation
-            /*
             anim Close
             {
                 anim = Anim_DoorFrontLeft_open,
@@ -251,19 +249,15 @@ module Base
                 anim = Anim_DoorFrontLeft_open,
                 animate = FALSE,
             }
-            */
             anim ActorClose
             {
                 angle = 0.0 270.0 0.0,
             }
-            /*
             anim Opened
             {
                 anim = Anim_DoorFrontLeft_open,
-                reverse = TRUE,
                 animate = FALSE,
             }
-            */
         }
         
         part DoorFrontRight
@@ -272,8 +266,6 @@ module Base
             {
                 file = ATAMustang66_DoorFrontRight,
             }
-            // Door animations disabled due to broken animation
-            /*
             anim Close
             {
                 anim = Anim_DoorFrontRight_open,
@@ -293,10 +285,8 @@ module Base
             anim Opened
             {
                 anim = Anim_DoorFrontRight_open,
-                reverse = TRUE,
                 animate = FALSE,
             }
-            */
             anim ActorOpen
             {
                 angle = 0.0 90.0 0.0,
