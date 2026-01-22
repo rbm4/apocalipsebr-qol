@@ -12,11 +12,11 @@ local function SkillRecoveryJournalRecipe()
         newScript = "{ NeedToBeLearn = ".. tostring(needToLearn == true) ..", inputs { " .. sandboxOption .. " } }"
     end
 
-    if newScript then
-        local scriptManager = getScriptManager()
-        local journalRecipe = scriptManager:getCraftRecipe("BindSkillRecoveryJournal")
-        journalRecipe:Load("BindSkillRecoveryJournal", newScript)
-    end
+    -- if newScript then
+    --     local scriptManager = getScriptManager()
+    --     local journalRecipe = scriptManager:getCraftRecipe("BindSkillRecoveryJournal")
+    --     journalRecipe:Load("BindSkillRecoveryJournal", newScript)
+    -- end
 end
 
 Events.OnGameBoot.Add(SkillRecoveryJournalRecipe)
