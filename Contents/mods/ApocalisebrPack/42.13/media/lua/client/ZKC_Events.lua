@@ -28,25 +28,6 @@ local function onZombieDead(zombie)
         ZKC_Main.recordKill(player)
         return
     end
-    
-    -- Method 2: Check if zombie is in player's kill range and recently damaged by player
-    -- This handles edge cases where getAttackedBy() might be nil
-    local distanceToPlayer = IsoUtils.DistanceTo(zombie:getX(), zombie:getY(), player:getX(), player:getY())
-    
-    -- If zombie is very close and player is wielding a weapon, attribute to player
-    if distanceToPlayer <= 2.5 then  -- Melee range
-        local weapon = player:getPrimaryHandItem()
-        if weapon and (weapon:isWeapon() or weapon:getCategory() == "Weapon") then
-            ZKC_Main.recordKill(player)
-            return
-        end
-    elseif distanceToPlayer <= 30 then  -- Ranged weapon range
-        local weapon = player:getPrimaryHandItem()
-        if weapon and weapon:isRangedWeapon() then
-            ZKC_Main.recordKill(player)
-            return
-        end
-    end
 end
 
 -- Called every tick (throttled)

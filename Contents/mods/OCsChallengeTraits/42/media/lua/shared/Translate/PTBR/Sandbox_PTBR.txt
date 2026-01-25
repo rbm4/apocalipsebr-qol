@@ -1,0 +1,7 @@
+Sandbox_PTBR = {
+    Sandbox_StartingInjuriesMod = "Características de Desafio",
+    Sandbox_StartingInjuriesMod_EnableBlackoutExplosions = "Ativar Incêndios do Blackout (CDDA)",
+    Sandbox_StartingInjuriesMod_EnableBlackoutExplosions_tooltip = "Marque para ativar os incêndios iniciais da característica Blackout (CDDA).",
+    Sandbox_StartingInjuriesMod_EnableBandageAssistance = "Ativar Bandagens Iniciais",
+    Sandbox_StartingInjuriesMod_EnableBandageAssistance_tooltip = "Marque para adicionar bandagens adesivas ao inventário inicial ao escolher certas características de desafio, reduzindo a dificuldade inicial.",
+}
