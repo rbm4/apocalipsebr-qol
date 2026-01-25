@@ -236,7 +236,7 @@ NewCarTuningTable["ATADodge"].parts["ATA2InteractiveTrunkRoofRack"] = {
     Default = {
         icon = "media/ui/tuning2/dadge_roof_rack.png",
         category = "Trunks",
-        containerCapacity = 35,
+        containerCapacity = 65,
         interactiveTrunk = {
             filling = {"Filling1", "Filling2"},
             items = {
@@ -289,7 +289,7 @@ NewCarTuningTable["ATADodge"].parts["ATA2InteractiveTrunkWindowRearRack"] = {
     Default = {
         icon = "media/ui/tuning2/dadge_window_rack.png",
         category = "Trunks",
-        containerCapacity = 30,
+        containerCapacity = 60,
         interactiveTrunk = {
             fillingOnlyOne = {"FillingOnlyOne1", "FillingOnlyOne2", "FillingOnlyOne3"},
         },

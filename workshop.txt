@@ -1,12 +1,12 @@
 version=1
 id=3646280480
 title=APOCALIPSE [BR] - QOL
-description=Pack de mods Quality of life servidor APOCALIPSE [BR]
+description=Pack de mods Quality of life servidor APOCALIPSE [BR] (NÃO É RECOMENDÁVEL USO DESTE MOD EM OUTROS SERVIDORES POIS ELE INTEGRA COM OUTROS SISTEMAS DO NOSSO SERVIDOR)
 description=
 description=
 description=This mod is currently in it's initial release stages and still a product in production.
-description=This mod is currently in use on my zomboid server: APOCALIPSE [BR], Discord: https://discord.gg/s8Rv3Kr8Y7
+description=This mod is currently in use on my zomboid server and it's specifically built for it: APOCALIPSE [BR], Discord: https://discord.gg/s8Rv3Kr8Y7
 description=
-description=Compatible with B42.13.1
+description=Compatible with B42.13.1 AND with the APOCALIPSE [BR] server, it is strongly recommended to NOT use this mod anywhere outside the server.
 tags=Build 42;Multiplayer;QoL
 visibility=public

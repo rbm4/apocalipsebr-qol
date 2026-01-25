@@ -1,0 +1,14 @@
+VERSION = 1,
+option StartingInjuriesMod.EnableBlackoutExplosions {
+    type = boolean,
+    default = true,
+    page = StartingInjuriesMod,
+    translation = StartingInjuriesMod_EnableBlackoutExplosions,
+}
+
+option StartingInjuriesMod.EnableBandageAssistance {
+    type = boolean,
+    default = false,
+    page = StartingInjuriesMod,
+    translation = StartingInjuriesMod_EnableBandageAssistance,
+}

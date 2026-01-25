@@ -1,0 +1,46 @@
+UI_PTBR = {
+	UI_trait_AllScratchedUp = "Todo Arranhado",
+    UI_trait_AllScratchedUpDesc = "Comece coberto com dez arranhões.",
+	
+	UI_trait_HouseFire = "Incêndio em Casa",
+	UI_trait_HouseFireDesc = "Comece com um incêndio furioso consumindo sua casa.",
+	
+    UI_trait_Squalor = "Deplorável",
+    UI_trait_SqualorDesc = "Comece doente, triste, assustado, despido, estressado, tenso, faminto, encharcado, sujo, bêbado, com sono e com muita sede.",
+	
+    UI_trait_Blackout = "Blackout (CDDA)",
+    UI_trait_BlackoutDesc = "Você sai do chuveiro e cai mal. Você está completamente bêbado e com um resfriado terrível. Além de tudo isso, a casa está pegando fogo!",
+	
+    UI_trait_Headshot = "Tiro na Cabeça",
+	UI_trait_HeadshotDesc = "Comece com um tiro sangrando na cabeça.",
+	
+	UI_trait_SkullFracture = "Fratura no Crânio",
+	UI_trait_SkullFractureDesc = "Comece com uma fratura no crânio.",
+	
+    UI_trait_BrokenArm = "Braço Quebrado",
+    UI_trait_BrokenArmDesc = "Comece com um braço fraturado.",
+	
+    UI_trait_BrokenLeg = "Perna Quebrada",
+    UI_trait_BrokenLegDesc = "Comece com uma perna fraturada.",
+	
+	UI_trait_Mauled = "Dilacerado",
+	UI_trait_MauledDesc = "Dilacerado por um animal, comece coberto com várias mordidas e um arranhão.",
+	
+	UI_trait_BleedingOut = "Sangrando até a Morte",
+	UI_trait_BleedingOutDesc = "Comece com um estilhaço de vidro alojado no pescoço, sangrando profusamente.",
+	
+	UI_trait_CarCrash = "Acidente de Carro",
+	UI_trait_CarCrashDesc = "Um acidente recente te deixa quebrado e sangrando.",
+	
+	UI_trait_FlamingWreckage = "Destroço em Chamas",
+	UI_trait_FlamingWreckageDesc = "Tendo rastejado para fora de um destroço em chamas, você ficou queimado, quebrado e sangrando.",
+	
+    UI_trait_BurnPatient = "Paciente Queimado",
+    UI_trait_BurnPatientDesc = "Comece coberto com queimaduras enfaixadas em vários estados de limpeza.",
+	
+	UI_trait_LeftForDead = "Deixado para Morrer",
+	UI_trait_LeftForDeadDesc = "Mal conseguindo se agarrar à vida em um estado horrível com todos os ferimentos imagináveis.",
+	
+	UI_trait_CrushedHands = "Mãos Quebradas",
+	UI_trait_CrushedHandsDesc = "Comece com duas mãos fraturadas, impedindo o uso de armas até serem engessadas.",
+}
