@@ -10,10 +10,51 @@ module ATA2
         Weight    =    0.1,
         ItemType = base:literature,
         Icon    =    ATATuningMagUniverseIcon,
-        LearnedRecipes  =   Basic Tuning;ATADodgeRecipes,
         ReplaceOnUse    =   ATADodgeTuningMag,
         Tooltip = Tooltip_item_ATADodgeTuningMag,
         StaticModel = Autotsar.ATATuningMagUniverse_Reading,
         WorldStaticModel = Autotsar.ATATuningMagUniverse_Ground,
+    }
+
+/* Engine Door (Hood)
+█──█─████─████─████──███
+█──█─█──█─█──█─█──██─█──
+████─█──█─█──█─█──██─███
+█──█─█──█─█──█─█──██───█
+█──█─████─████─████──███
+*/
+    item ATADodgeHoodItem /* Vehicle */
+    {
+        DisplayCategory = Tuning,
+        Weight    =    15.0,
+        ItemType = base:normal,
+        Icon    =    EngineDoor,
+        VehicleType =   3,
+        ChanceToSpawnDamaged = 25,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        Tags = ATA_Dodge_Hood,
+    }
+
+    craftRecipe Make ATADodgeHood
+    {
+        timedAction = Welding,
+        Time = 350,
+        NeedToBeLearn = True,
+        SkillRequired = MetalWelding:2,
+        Tags = InHandCraft;Welding,
+        category = Autotsar,
+        xpAward = MetalWelding:25,
+        AutoLearnAny = MetalWelding:4,
+        inputs
+        {
+            item 6 [Base.SheetMetal;Base.SmallSheetMetal],
+            item 2 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATADodgeHoodItem,
+        }       
     }
 }

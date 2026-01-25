@@ -11,7 +11,6 @@ module Autotsar
         Type    =    Literature,
         DisplayName    =    Autotsar Tuning - Ford Mustang,
         Icon    =    ATATuningMagUniverseIcon,
-        TeachedRecipes  =   Basic Tuning;ATAMustangRecipes,
         ReplaceOnUse    =   ATATuningFordMustang,
         Tooltip = Tooltip_item_ATATuningFordMustang,
         StaticModel = Autotsar.ATATuningMagUniverse_Reading,
@@ -86,25 +85,25 @@ module Autotsar
         WorldStaticModel = Autotsar.ATAMustangHood4World,
         tags = ATA_Mustang_Hood,
     }
-        craftRecipe ATAMustangHoodItem
+    craftRecipe Make ATAMustangHood
     {
         timedAction = Welding,
-		Time = 350,
-		NeedToBeLearn = True,
-		SkillRequired = MetalWelding:2,
-		Tags = InHandCraft;Welding,
+        Time = 350,
+        NeedToBeLearn = True,
+        SkillRequired = MetalWelding:2,
+        Tags = InHandCraft;Welding,
         category = Autotsar,
-		xpAward = MetalWelding:25,
-		AutoLearnAny = MetalWelding:4,
+        xpAward = MetalWelding:25,
+        AutoLearnAny = MetalWelding:4,
         inputs
         {
-        item 1 tags[ATA_Mustang_Hood],
-        item 8 [Base.BlowTorch],
-		item 1 tags[WeldingMask] mode:keep,
+            item 6 [Base.SheetMetal;Base.SmallSheetMetal],
+            item 2 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
         }
-               outputs
-       {
-           item 6 Base.SheetMetal,
-       }       
+        outputs
+        {
+            item 1 Autotsar.ATAMustangHood2Item3,
+        }
     }
 }

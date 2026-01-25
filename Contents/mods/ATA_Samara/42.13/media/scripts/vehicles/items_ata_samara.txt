@@ -10,7 +10,6 @@ module ATA2
         Weight    =    0.1,
         ItemType = base:literature,
         Icon    =    ATATuningMagUniverseIcon,
-        LearnedRecipes  =   Basic Tuning;ATASamaraRecipes,
         ReplaceOnUse    =   ATATuningChevalierSamara,
         Tooltip = Tooltip_item_ATATuningChevalierSamara,
         StaticModel = Autotsar.ATATuningMagUniverse_Reading,
@@ -65,7 +64,7 @@ module ATA2
         Tags = ATA_Samara_Hood,
     }
     
-    craftRecipe ATASamaraHoodItem
+    craftRecipe Make ATASamaraHood
     {
         timedAction = Welding,
 		Time = 45,
@@ -77,13 +76,13 @@ module ATA2
 		AutoLearnAny = MetalWelding:4,
         inputs
         {
-        item 1 tags[ATA_Samara_Hood],
-        item 6 [Base.BlowTorch],
+        item 2 [Base.SheetMetal;Base.SmallSheetMetal],
+        item 1 [Base.BlowTorch],
 		item 1 tags[WeldingMask] mode:keep,
         }
         outputs
        {
-           item 2 Base.SheetMetal,
+           item 1 ATA2.ATASamaraHood2Item3,
        }       
     }
 }
