@@ -11,7 +11,6 @@ module ATA2
         ItemType = base:literature,
         DisplayName    =    Autotsar Tuning - Ford Mustang,
         Icon    =    ATATuningMagUniverseIcon,
-        LearnedRecipes  =   Basic Tuning;ATAMustangRecipes,
         ReplaceOnUse    =   ATATuningFordMustang,
         Tooltip = Tooltip_item_ATATuningFordMustang,
         StaticModel = Autotsar.ATATuningMagUniverse_Reading,
@@ -85,7 +84,7 @@ module ATA2
         WorldStaticModel = Autotsar.ATAMustangHood4World,
         tags = ATA_Mustang_Hood,
     }
-        craftRecipe ATAMustangHoodItem
+        craftRecipe Make ATAMustangHood
     {
         timedAction = Welding,
 		Time = 350,
@@ -97,13 +96,13 @@ module ATA2
 		AutoLearnAny = MetalWelding:4,
         inputs
         {
-        item 1 tags[ATA_Mustang_Hood],
-        item 8 [Base.BlowTorch],
+        item 6 [Base.SheetMetal;Base.SmallSheetMetal],
+        item 2 [Base.BlowTorch],
 		item 1 tags[WeldingMask] mode:keep,
         }
                outputs
        {
-           item 6 Base.SheetMetal,
+           item 1 ATA2.ATAMustangHood2Item3,
        }       
     }
 }

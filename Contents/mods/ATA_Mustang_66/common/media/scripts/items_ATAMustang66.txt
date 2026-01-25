@@ -11,7 +11,6 @@ module ATA2
         ItemType = base:literature,
         DisplayName    =    Autotsar Tuning Atelier,
         Icon    =    ATATuningMagUniverseIcon,
-        TeachedRecipes  =   Basic Tuning;ATAMustangRecipes,
         ReplaceOnUse    =   ATATuningFordMustang,
         Tooltip = Tooltip_item_ATATuningFordMustang,
         StaticModel = Autotsar.ATATuningMagUniverse_Reading,
@@ -80,6 +79,7 @@ module ATA2
         ConditionMax = 100,
         MechanicsItem = TRUE,
         WorldStaticModel = Autotsar.ATAMustang66Hood2World,
+        Tags = ATA_Mustang66_Hood,
     }
 
     model ATAMustang66Hood3World
@@ -99,21 +99,74 @@ module ATA2
         ConditionMax = 100,
         MechanicsItem = TRUE,
         WorldStaticModel = Autotsar.ATAMustang66Hood3World,
+        Tags = ATA_Mustang66_Hood,
     }
     
-/*     recipe Cut 
+    craftRecipe Make ATAMustang66Bumper
     {
-       ATAMustang66Hood2Item3/ATAMustang66Hood3Item3,
-       BlowTorch=14,
-       keep WeldingMask,
-       Result:SheetMetal=6,
-       Time:350.0,
-       Category:Welding,
-       SkillRequired:MetalWelding=2,
-       OnCreate:Recipe.OnCreate.CutATAUnusableMetal,
-       OnGiveXP:Recipe.OnGiveXP.MetalWelding10,
-       NeedToBeLearn:false,
-    } */
+        timedAction = Welding,
+        Time = 200,
+        NeedToBeLearn = True,
+        SkillRequired = MetalWelding:2,
+        Tags = InHandCraft;Welding,
+        category = Autotsar,
+        xpAward = MetalWelding:15,
+        AutoLearnAny = MetalWelding:4,
+        inputs
+        {
+            item 4 [Base.MetalBar;Base.MetalPipe],
+            item 2 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATAMustang66BumperItem,
+        }       
+    }
+
+    craftRecipe Make ATAMustang66BumperRear
+    {
+        timedAction = Welding,
+        Time = 250,
+        NeedToBeLearn = True,
+        SkillRequired = MetalWelding:2,
+        Tags = InHandCraft;Welding,
+        category = Autotsar,
+        xpAward = MetalWelding:20,
+        AutoLearnAny = MetalWelding:4,
+        inputs
+        {
+            item 5 [Base.MetalBar;Base.MetalPipe],
+            item 3 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATAMustang66BumperRearItem,
+        }       
+    }
+
+    craftRecipe Make ATAMustang66Hood
+    {
+        timedAction = Welding,
+        Time = 350,
+        NeedToBeLearn = True,
+        SkillRequired = MetalWelding:2,
+        Tags = InHandCraft;Welding,
+        category = Autotsar,
+        xpAward = MetalWelding:25,
+        AutoLearnAny = MetalWelding:4,
+        inputs
+        {
+            item 6 [Base.SheetMetal;Base.SmallSheetMetal],
+            item 2 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATAMustang66Hood2Item3,
+        }       
+    }
 
     model ATAMustang66TrunkDoorWorld
     {
