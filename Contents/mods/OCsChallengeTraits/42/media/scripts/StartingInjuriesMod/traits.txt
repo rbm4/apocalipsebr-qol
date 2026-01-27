@@ -5,20 +5,10 @@ module StartingInjuriesMod
         IsProfessionTrait = false,
         DisabledInMultiplayer = false,
         CharacterTrait = StartingInjuriesMod:AllScratchedUp,
-        Cost = -1,
+        Cost = -2,
         UIName = UI_trait_AllScratchedUp,
         UIDescription = UI_trait_AllScratchedUpDesc,
     }
-	
-	character_trait_definition StartingInjuriesMod:HouseFire
-	{
-		IsProfessionTrait = false,
-		DisabledInMultiplayer = true,
-		CharacterTrait = StartingInjuriesMod:HouseFire,
-		Cost = -2,
-		UIName = UI_trait_HouseFire,
-		UIDescription = UI_trait_HouseFireDesc,
-	}
 	
 	character_trait_definition StartingInjuriesMod:BleedingOut
 	{
@@ -50,22 +40,12 @@ module StartingInjuriesMod
         UIDescription = UI_trait_HeadshotDesc,
     }
 	
-	character_trait_definition StartingInjuriesMod:Blackout
-	{
-		IsProfessionTrait = false,
-		DisabledInMultiplayer = true,
-		CharacterTrait = StartingInjuriesMod:Blackout,
-		Cost = -6,
-		UIName = UI_trait_Blackout,
-		UIDescription = UI_trait_BlackoutDesc,
-	}
-	
 	character_trait_definition StartingInjuriesMod:SkullFracture
 	{
 		IsProfessionTrait = false,
 		DisabledInMultiplayer = false,
 		CharacterTrait = StartingInjuriesMod:SkullFracture,
-		Cost = -5,
+		Cost = -3,
 		UIName = UI_trait_SkullFracture,
 		UIDescription = UI_trait_SkullFractureDesc,
 	}
