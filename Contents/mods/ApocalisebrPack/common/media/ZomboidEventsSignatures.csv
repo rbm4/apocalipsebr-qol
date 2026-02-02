@@ -1,0 +1,228 @@
+Event Name,Signature
+AcceptedFactionInvite,"AcceptedFactionInvite(faction: string, username: string)"
+AcceptedSafehouseInvite,"AcceptedSafehouseInvite(safehouse: string, username: string)"
+AcceptedTrade,AcceptedTrade(accepted: boolean)
+AddXP,"AddXP(character: IsoGameCharacter, perk: PerkFactory.Perk, amount: number)"
+DoSpecialTooltip,"DoSpecialTooltip(tooltip: ObjectTooltip, square: IsoGridSquare)"
+EveryDays,EveryDays()
+EveryHours,EveryHours()
+EveryOneMinute,EveryOneMinute()
+EveryTenMinutes,EveryTenMinutes()
+GrappleGrabCollisionCheck,"GrappleGrabCollisionCheck(character: IsoGameCharacter, weapon: HandWeapon)"
+GrapplerLetGo,"GrapplerLetGo(character: IsoGameCharacter, result: string)"
+LevelPerk,"LevelPerk(character: IsoGameCharacter, perk: PerkFactory.Perk, level: integer, increased: boolean)"
+LoadChunk,LoadChunk(chunk: IsoChunk)
+LoadGridsquare,LoadGridsquare(square: IsoGridSquare)
+MngInvReceiveItems,MngInvReceiveItems(inventory: umbrella.MngInvItemTable)
+OnAcceptInvite,OnAcceptInvite(connectString: string)
+OnAddForageDefs,OnAddForageDefs()
+OnAddMessage,"OnAddMessage(message: ChatMessage, tabId: integer)"
+OnAdminMessage,"OnAdminMessage(message: string, x: integer, y: integer, z: integer)"
+OnAIStateChange,"OnAIStateChange(character: IsoGameCharacter, currentState: State, previousState: State)"
+OnAlertMessage,"OnAlertMessage(message: ChatMessage, tabId: integer)"
+OnAmbientSound,"OnAmbientSound(name: string, x: number, y: number)"
+OnAnimalTracks,"OnAnimalTracks(player: IsoPlayer, tracks: ArrayList<AnimalTracks>)"
+OnCGlobalObjectSystemInit,OnCGlobalObjectSystemInit()
+OnChallengeQuery,OnChallengeQuery()
+OnCharacterCollide,"OnCharacterCollide(character: IsoGameCharacter, collidedCharacter: IsoGameCharacter)"
+OnCharacterDeath,OnCharacterDeath(character: IsoGameCharacter)
+OnChatWindowInit,OnChatWindowInit()
+OnClickedAnimalForContext,"OnClickedAnimalForContext(playerNum: integer, context: ISContextMenu, animals: IsoAnimal[], test: boolean)"
+OnClientCommand,"OnClientCommand(module: string, command: string, player: IsoPlayer, args: table or nil)"
+OnClimateManagerInit,OnClimateManagerInit(climateManager: ClimateManager)
+OnClimateTick,OnClimateTick(climateManager: ClimateManager)
+OnClimateTickDebug,OnClimateTickDebug(climateManager: ClimateManager)
+OnClothingUpdated,OnClothingUpdated(character: IsoGameCharacter)
+OnConnected,OnConnected()
+OnConnectFailed,OnConnectFailed(message: string)
+OnConnectionStateChanged,"OnConnectionStateChanged(state: string, message: string)"
+OnContainerUpdate,OnContainerUpdate(object: any)
+OnContextKey,"OnContextKey(player: IsoPlayer, timeMs: number)"
+OnCoopJoinFailed,OnCoopJoinFailed(playerNum: integer)
+OnCoopServerMessage,"OnCoopServerMessage(tag: string, cookie: string, payload: string)"
+OnCreateLivingCharacter,"OnCreateLivingCharacter(character: IsoLivingCharacter, desc: SurvivorDesc)"
+OnCreatePlayer,"OnCreatePlayer(playerNum: integer, player: IsoPlayer)"
+OnCreateSurvivor,OnCreateSurvivor(survivor: IsoSurvivor)
+OnCreateUI,OnCreateUI()
+OnCustomUIKey,OnCustomUIKey(key: integer)
+OnCustomUIKeyPressed,OnCustomUIKeyPressed(key: integer)
+OnCustomUIKeyReleased,OnCustomUIKeyReleased(key: integer)
+OnDeadBodySpawn,OnDeadBodySpawn(body: IsoDeadBody)
+OnDestroyIsoThumpable,"OnDestroyIsoThumpable(object: IsoThumpable, player: nil)"
+OnDeviceText,"OnDeviceText(guid: string, codes: string, x: number, y: number, z: number, text: string or ChatMessage, device: WaveSignalDevice)"
+OnDisableSearchMode,OnDisableSearchMode()
+OnDisconnect,OnDisconnect()
+OnDistributionMerge,OnDistributionMerge()
+OnDoTileBuilding2,"OnDoTileBuilding2(cursor: ISBuildingObject, bRender: boolean, x: integer, y: integer, z: integer, square: IsoGridSquare or nil)"
+OnDoTileBuilding3,OnDoTileBuilding3()
+OnDynamicMovableRecipe,OnDynamicMovableRecipe()
+OnEnableSearchMode,OnEnableSearchMode()
+OnEnterVehicle,OnEnterVehicle(character: IsoGameCharacter)
+OnEquipPrimary,"OnEquipPrimary(character: IsoGameCharacter, item: InventoryItem)"
+OnEquipSecondary,"OnEquipSecondary(character: IsoGameCharacter, item: InventoryItem)"
+OnExitVehicle,OnExitVehicle(character: IsoGameCharacter)
+OnFETick,OnFETick()
+OnFillContainer,"OnFillContainer(room: string, type: string, container: ItemContainer)"
+OnFillInventoryObjectContextMenu,"OnFillInventoryObjectContextMenu(playerNum: integer, context: ISContextMenu, items: ArrayList)"
+OnFillSearchIconContextMenu,"OnFillSearchIconContextMenu(playerNum: integer, context: ISContextMenu, items: ArrayList)"
+OnFillWorldObjectContextMenu,"OnFillWorldObjectContextMenu(playerNum: integer, context: ISContextMenu, worldObjects: ArrayList, test: boolean)"
+OnGameBoot,OnGameBoot()
+OnGamepadConnect,OnGamepadConnect(id: integer)
+OnGamepadDisconnect,OnGamepadDisconnect(id: integer)
+OnGameStart,OnGameStart()
+OnGameStateEnter,OnGameStateEnter(state: GameState)
+OnGameTimeLoaded,OnGameTimeLoaded()
+OnGetDBSchema,OnGetDBSchema(schema: table)
+OnGetTableResult,"OnGetTableResult(result: table, tableName: string)"
+OnGridBurnt,OnGridBurnt(square: IsoGridSquare)
+OnHitZombie,"OnHitZombie(zombie: IsoZombie, character: IsoGameCharacter, bodyPartType: BodyPartType, weapon: HandWeapon)"
+OnInitGlobalModData,OnInitGlobalModData(newGame: boolean)
+OnInitModdedWeatherStage,OnInitModdedWeatherStage(stage: WeatherStage)
+OnInitRecordedMedia,OnInitRecordedMedia(media: RecordedMedia)
+OnInitSeasons,OnInitSeasons(season: ErosionSeason)
+OnInitWorld,OnInitWorld()
+OnItemFall,"OnItemFall(item: InventoryItem, square: IsoGridSquare)"
+OnItemFound,"OnItemFound(item: InventoryItem, square: IsoGridSquare)"
+OnJoypadActivate,OnJoypadActivate(joypadId: integer)
+OnJoypadActivateUI,OnJoypadActivateUI(joypadId: integer)
+OnJoypadBeforeDeactivate,OnJoypadBeforeDeactivate(joypadId: integer)
+OnJoypadBeforeReactivate,OnJoypadBeforeReactivate(joypadId: integer)
+OnJoypadDeactivate,OnJoypadDeactivate(joypadId: integer)
+OnJoypadReactivate,OnJoypadReactivate(joypadId: integer)
+OnJoypadRenderUI,OnJoypadRenderUI()
+OnKeyKeepPressed,OnKeyKeepPressed(key: integer)
+OnKeyPressed,OnKeyPressed(key: integer)
+OnKeyStartPressed,OnKeyStartPressed(key: integer)
+OnLoad,OnLoad()
+OnLoadedMapZones,OnLoadedMapZones()
+OnLoadedTileDefinitions,OnLoadedTileDefinitions(manager: TilePropertyAliasMap)
+OnLoadMapZones,OnLoadMapZones()
+OnLoadModDataFromServer,OnLoadModDataFromServer()
+OnLoadRadioScripts,OnLoadRadioScripts()
+OnLoadSoundBanks,OnLoadSoundBanks()
+OnMainMenuEnter,OnMainMenuEnter()
+OnMechanicActionDone,"OnMechanicActionDone(character: IsoGameCharacter, success: boolean, vehicleId: string, partId: string, itemId: integer, installing: boolean)"
+OnMiniScoreboardUpdate,OnMiniScoreboardUpdate()
+OnModsModified,OnModsModified()
+OnMouseDown,"OnMouseDown(x: integer, y: integer)"
+OnMouseMove,"OnMouseMove(dx: integer, dy: integer)"
+OnMouseUp,"OnMouseUp(x: integer, y: integer)"
+OnMouseWheel,OnMouseWheel(delta: integer)
+OnMultiTriggerNPCEvent,OnMultiTriggerNPCEvent()
+OnNewFire,OnNewFire(fire: IsoFire)
+OnNewGame,"OnNewGame(player: IsoPlayer, square: IsoGridSquare)"
+OnObjectAboutToBeRemoved,OnObjectAboutToBeRemoved(object: IsoObject)
+OnObjectAdded,OnObjectAdded(object: IsoObject)
+OnObjectCollide,"OnObjectCollide(character: IsoGameCharacter, object: IsoObject)"
+OnObjectLeftMouseButtonDown,"OnObjectLeftMouseButtonDown(object: IsoObject, x: integer, y: integer)"
+OnObjectLeftMouseButtonUp,"OnObjectLeftMouseButtonUp(object: IsoObject, x: integer, y: integer)"
+OnObjectRightMouseButtonDown,"OnObjectRightMouseButtonDown(object: IsoObject, x: integer, y: integer)"
+OnObjectRightMouseButtonUp,"OnObjectRightMouseButtonUp(object: IsoObject, x: integer, y: integer)"
+OnPlayerAttackFinished,"OnPlayerAttackFinished(player: IsoPlayer, weapon: HandWeapon)"
+OnPlayerDeath,OnPlayerDeath(player: IsoPlayer)
+OnPlayerGetDamage,"OnPlayerGetDamage(player: IsoPlayer, damageType: string, damage: number)"
+OnPlayerMove,OnPlayerMove(player: IsoPlayer)
+OnPlayerUpdate,OnPlayerUpdate(player: IsoPlayer)
+OnPostDistributionMerge,OnPostDistributionMerge()
+OnPostFloorLayerDraw,"OnPostFloorLayerDraw(layer: integer, x: integer, y: integer, z: integer)"
+OnPostMapLoad,OnPostMapLoad()
+OnPostRender,OnPostRender()
+OnPostSave,OnPostSave()
+OnPostUIDraw,OnPostUIDraw()
+OnPreDistributionMerge,OnPreDistributionMerge()
+OnPreFillInventoryObjectContextMenu,"OnPreFillInventoryObjectContextMenu(playerNum: integer, context: ISContextMenu, items: ArrayList)"
+OnPreFillWorldObjectContextMenu,"OnPreFillWorldObjectContextMenu(playerNum: integer, context: ISContextMenu, worldObjects: ArrayList, test: boolean)"
+OnPreMapLoad,OnPreMapLoad()
+OnPressRackButton,"OnPressRackButton(character: IsoGameCharacter, weapon: HandWeapon)"
+OnPressReloadButton,"OnPressReloadButton(character: IsoGameCharacter, weapon: HandWeapon)"
+OnPressWalkTo,OnPressWalkTo(player: IsoPlayer)
+OnPreUIDraw,OnPreUIDraw()
+OnProcessAction,OnProcessAction()
+OnProcessTransaction,OnProcessTransaction()
+OnReceiveGlobalModData,"OnReceiveGlobalModData(key: string, modData: table)"
+OnReceiveItemListNet,OnReceiveItemListNet()
+OnReceiveUserlog,"OnReceiveUserlog(username: string, logs: ArrayList)"
+OnRefreshInventoryWindowContainers,"OnRefreshInventoryWindowContainers(inventoryPage: ISInventoryPage, state: string)"
+OnRenderTick,OnRenderTick()
+OnResetLua,OnResetLua(reason: string)
+OnResolutionChange,"OnResolutionChange(oldWidth: integer, oldHeight: integer, newWidth: integer, newHeight: integer)"
+OnRightMouseDown,"OnRightMouseDown(x: integer, y: integer)"
+OnRightMouseUp,"OnRightMouseUp(x: integer, y: integer)"
+OnSafehousesChanged,OnSafehousesChanged()
+OnSave,OnSave()
+OnScoreboardUpdate,"OnScoreboardUpdate(usernames: ArrayList, displayNames: ArrayList, steamIDs: ArrayList)"
+OnSeeNewRoom,OnSeeNewRoom(room: RoomDef)
+OnServerCommand,"OnServerCommand(module: string, command: string, args: table)"
+OnServerFinishSaving,OnServerFinishSaving()
+OnServerStarted,OnServerStarted()
+OnServerStartSaving,OnServerStartSaving()
+OnServerStatisticReceived,OnServerStatisticReceived()
+OnServerWorkshopItems,"OnServerWorkshopItems(action: string, items: ArrayList)"
+OnSetDefaultTab,OnSetDefaultTab(defaultTab: string)
+OnSGlobalObjectSystemInit,OnSGlobalObjectSystemInit()
+OnSleepingTick,OnSleepingTick(character: IsoGameCharacter)
+OnSourceWindowFileReload,OnSourceWindowFileReload()
+OnSpawnRegionsLoaded,OnSpawnRegionsLoaded()
+OnSpawnVehicleEnd,OnSpawnVehicleEnd()
+OnSpawnVehicleStart,OnSpawnVehicleStart()
+OnSteamFriendStatusChanged,OnSteamFriendStatusChanged()
+OnSteamGameJoin,OnSteamGameJoin()
+OnSteamRefreshInternetServers,OnSteamRefreshInternetServers()
+OnSteamRulesRefreshComplete,OnSteamRulesRefreshComplete()
+OnSteamServerFailedToRespond2,OnSteamServerFailedToRespond2()
+OnSteamServerResponded,OnSteamServerResponded()
+OnSteamServerResponded2,OnSteamServerResponded2()
+OnSteamWorkshopItemCreated,"OnSteamWorkshopItemCreated(itemID: string, userNeedsToAcceptWorkshopLegalAgreement: boolean)"
+OnSteamWorkshopItemNotCreated,OnSteamWorkshopItemNotCreated()
+OnSteamWorkshopItemNotUpdated,OnSteamWorkshopItemNotUpdated()
+OnSteamWorkshopItemUpdated,OnSteamWorkshopItemUpdated(userNeedsToAcceptWorkshopLegalAgreement: boolean)
+OnStopGrapple,"OnStopGrapple(grappler: IsoGameCharacter, grappled: IsoGameCharacter)"
+OnSwitchVehicleSeat,OnSwitchVehicleSeat(character: IsoGameCharacter)
+OnTabAdded,"OnTabAdded(title: string, tab: UIElement)"
+OnTabRemoved,"OnTabRemoved(title: string, tab: UIElement)"
+OnTemplateTextInit,OnTemplateTextInit()
+OnThrowableExplode,"OnThrowableExplode(throwable: MolotovCocktail, square: IsoGridSquare)"
+OnThunderEvent,"OnThunderEvent(x: integer, y: integer, strike: boolean, light: boolean, thunder: boolean)"
+OnTick,OnTick(ticks: number)
+OnTickEvenPaused,OnTickEvenPaused(ticks: number)
+OnTileRemoved,OnTileRemoved(tile: IsoObject)
+OnToggleSearchMode,OnToggleSearchMode()
+OnTriggerNPCEvent,"OnTriggerNPCEvent(build: BuildingDef, type: string, param: KahluaTable)"
+OnUpdateIcon,OnUpdateIcon()
+OnUpdateModdedWeatherStage,"OnUpdateModdedWeatherStage(stage: WeatherStage, strength: number)"
+OnUseVehicle,"OnUseVehicle(character: IsoGameCharacter, vehicle: BaseVehicle, pressed: boolean)"
+OnVehicleDamageTexture,"OnVehicleDamageTexture(character: IsoGameCharacter, vehicle: BaseVehicle)"
+OnWaterAmountChange,"OnWaterAmountChange(object: IsoObject, previousAmount: integer)"
+OnWeaponHitCharacter,"OnWeaponHitCharacter(attacker: IsoGameCharacter, target: IsoGameCharacter, weapon: HandWeapon, damage: number)"
+OnWeaponHitThumpable,"OnWeaponHitThumpable(character: IsoGameCharacter, weapon: HandWeapon, object: IsoObject)"
+OnWeaponHitTree,"OnWeaponHitTree(character: IsoGameCharacter, weapon: HandWeapon)"
+OnWeaponHitXp,"OnWeaponHitXp(owner: IsoGameCharacter, weapon: HandWeapon, object: IsoGameCharacter, damage: number)"
+OnWeaponSwing,"OnWeaponSwing(character: IsoGameCharacter, weapon: HandWeapon)"
+OnWeaponSwingHitPoint,"OnWeaponSwingHitPoint(character: IsoGameCharacter, weapon: HandWeapon)"
+OnWeatherPeriodComplete,OnWeatherPeriodComplete(period: WeatherPeriod)
+OnWeatherPeriodStage,OnWeatherPeriodStage(period: WeatherPeriod)
+OnWeatherPeriodStart,OnWeatherPeriodStart(period: WeatherPeriod)
+OnWeatherPeriodStop,OnWeatherPeriodStop(period: WeatherPeriod)
+OnWorldSound,"OnWorldSound(x: integer, y: integer, z: integer, volume: integer)"
+OnZombieCreate,OnZombieCreate(zombie: IsoZombie)
+OnZombieDead,OnZombieDead(zombie: IsoZombie)
+OnZombieUpdate,OnZombieUpdate(zombie: IsoZombie)
+PreAddCatDefs,PreAddCatDefs()
+PreAddForageDefs,PreAddForageDefs()
+PreAddItemDefs,PreAddItemDefs()
+PreAddSkillDefs,PreAddSkillDefs()
+PreAddZoneDefs,PreAddZoneDefs()
+ReceiveFactionInvite,"ReceiveFactionInvite(faction: Faction, host: string)"
+ReceiveSafehouseInvite,"ReceiveSafehouseInvite(safehouse: SafeHouse, host: string)"
+RenderOpaqueObjectsInWorld,RenderOpaqueObjectsInWorld()
+RequestTrade,RequestTrade(requester: string)
+ReuseGridsquare,ReuseGridsquare(square: IsoGridSquare)
+SendCustomModData,SendCustomModData()
+ServerPinged,"ServerPinged(ip: string, port: integer)"
+SetDragItem,SetDragItem(item: InventoryItem)
+SwitchChatStream,SwitchChatStream()
+SyncFaction,SyncFaction()
+TradingUIAddItem,"TradingUIAddItem(player: IsoPlayer, item: InventoryItem)"
+TradingUIRemoveItem,"TradingUIRemoveItem(player: IsoPlayer, item: InventoryItem)"
+TradingUIUpdateState,"TradingUIUpdateState(player: IsoPlayer, state: integer)"
+ViewTickets,ViewTickets(tickets: ArrayList)
