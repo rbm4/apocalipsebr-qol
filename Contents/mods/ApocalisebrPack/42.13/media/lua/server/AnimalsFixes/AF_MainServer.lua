@@ -1,6 +1,8 @@
 -- Animal Fixes Server Commands
 -- Handles server-side commands for testing and fixing
 local Commands = {}
+local corruptedVehiclesToClean = {}
+
 -- NEW: Function to recreate animals in new vehicle
 local function recreateAnimals(vehicle, animalData, player)
     if not animalData or #animalData == 0 then
@@ -20,7 +22,15 @@ local function recreateAnimals(vehicle, animalData, player)
 
         if newAnimal then
             -- Add to trailer using proper network command
-            sendAddAnimalInTrailer(newAnimal, player, vehicle)
+            -- sendAddAnimalInTrailer(newAnimal, player, vehicle)
+
+            -- Add directly to vehicle without spawning in world
+            local animals = vehicle:getAnimals()
+            animals:add(newAnimal)
+            newAnimal:setVehicle(vehicle)
+            -- Update the total animal size
+            vehicle:setCurrentTotalAnimalSize(vehicle:getCurrentTotalAnimalSize() + newAnimal:getAnimalTrailerSize())
+
             recreatedCount = recreatedCount + 1
         end
     end
@@ -87,6 +97,34 @@ local function snapshotVehicle(vehicle)
             end
         end
     end
+
+    -- Capture all inventory items from vehicle parts that have containers
+    pcall(function()
+        data.inventory = {}
+        local partCount = vehicle:getPartCount()
+        for i = 0, partCount - 1 do
+            local part = vehicle:getPartByIndex(i)
+            if part then
+                local itemContainer = part:getItemContainer()
+                if itemContainer then
+                    local items = itemContainer:getItems()
+                    if items then
+                        for j = 0, items:size() - 1 do
+                            local item = items:get(j)
+                            if item then
+                                table.insert(data.inventory, {
+                                    fullType = item:getFullType(),
+                                    count = item:getCount(),
+                                    condition = item:getCondition()
+                                })
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        print("SERVER: Captured " .. #data.inventory .. " inventory items from vehicle")
+    end)
 
     pcall(function()
         -- Capture towing relationships
@@ -164,6 +202,35 @@ local function applyVehicleData(vehicle, data)
             end
         end
     end
+    -- Restore inventory items to parts with containers
+    pcall(function()
+        if data.inventory and #data.inventory > 0 then
+            local addedCount = 0
+            for i = 0, vehicle:getPartCount() - 1 do
+                local part = vehicle:getPartByIndex(i)
+                if part then
+                    local itemContainer = part:getItemContainer()
+                    if itemContainer then
+                        for _, itemData in ipairs(data.inventory) do
+                            local newItem = instanceItem(itemData.fullType)
+                            if newItem then
+                                if itemData.count and itemData.count > 1 then
+                                    newItem:setCount(itemData.count)
+                                end
+                                if itemData.condition then
+                                    newItem:setCondition(itemData.condition)
+                                end
+                                itemContainer:AddItem(newItem)
+                                addedCount = addedCount + 1
+                            end
+                        end
+                        break -- Stop after first container to avoid duplicates
+                    end
+                end
+            end
+            print("SERVER: Restored " .. addedCount .. " inventory items to new vehicle")
+        end
+    end)
 
     -- Transmit all changes to clients
     vehicle:transmitEngine()
@@ -175,23 +242,31 @@ local function applyVehicleData(vehicle, data)
         if data.isTowed and data.towingVehicleId then
             local towingVehicle = getVehicleById(data.towingVehicleId)
             if towingVehicle then
-                -- Need attachment names - check vehicle script for proper names
-                towingVehicle:setVehicleTowing(vehicle, "rearattachment", "frontattachment")
-                print("SERVER: Restored towing relationship")
+                -- Get the correct attachment points from the vehicles themselves
+                towingVehicle:positionTrailer(vehicle)
+                local attachmentSelf = towingVehicle:getTowAttachmentSelf()
+                local attachmentOther = vehicle:getTowAttachmentSelf()
+                towingVehicle:setVehicleTowing(vehicle, attachmentSelf, attachmentOther)
+                print("SERVER: Restored towing relationship with attachments: " .. attachmentSelf .. " -> " ..
+                          attachmentOther)
             end
         end
     end)
 
+    -- Restore tire pressure AFTER transmit (physics must be initialized)
+    -- Only attempt if vehicle has physics
     pcall(function()
-        -- Restore tire pressure - wheels should be at normal inflation
-        if data.tires then
-            for wheelIndex, tireData in pairs(data.tires) do
-                -- Set tire inflation to 100 (fully inflated)
+        if vehicle:getController() then
+            for wheelIndex = 0, 3 do
                 vehicle:setTireInflation(wheelIndex, 100)
                 vehicle:setTireRemoved(wheelIndex, false)
             end
+            print("SERVER: Initialized all tires to 100% inflation")
+        else
+            print("SERVER: Vehicle physics not ready, skipping tire inflation")
         end
     end)
+
 
     return vehicle
 end
@@ -246,7 +321,7 @@ end
 
 -- Clean null animals from a vehicle's animals ArrayList
 -- By completely replacing the corrupted vehicle with a fresh one using /addvehicle command
-local function cleanVehicleAnimals(vehicle,player)
+local function cleanVehicleAnimals(vehicle, player)
     if not vehicle then
         print("SERVER: cleanVehicleAnimals - vehicle is nil")
         return 0
@@ -326,12 +401,37 @@ local function cleanVehicleAnimals(vehicle,player)
     print("SERVER: Cleaned vehicle animals: " .. originalCount .. " -> " .. #validAnimals .. " (removed " ..
               removedCount .. " nulls)")
 
-    print("Trying o clear the old vehicle reference")
+    print("Trying clear old null animal reference, now that the object is not locked by the main")
     local success, err = pcall(function()
         removeNullAnimalsFromVehicle(vehicle)
-        vehicle:permanentlyRemove()
+        table.insert(corruptedVehiclesToClean, {
+            vehicle = vehicle,
+            oldId = oldId
+        })
     end)
     return removedCount
+end
+
+-- Hook into server shutdown to finalize cleanup
+local function OnSave()
+    print("SERVER: OnSave  - Cleaning up " .. #corruptedVehiclesToClean .. " corrupted vehicles")
+
+    for _, vehicleData in ipairs(corruptedVehiclesToClean) do
+        local vehicle = vehicleData.vehicle
+        if vehicle then
+            pcall(function()
+                print("SERVER: Finalizing cleanup of corrupted vehicle " .. vehicleData.oldId)
+                removeNullAnimalsFromVehicle(vehicle)
+                local animals = vehicle:getAnimals()
+                animals:clear()
+                vehicle:permanentlyRemove()
+                print("SERVER: Successfully finalized cleanup of vehicle " .. vehicleData.oldId)
+            end)
+        end
+    end
+
+    corruptedVehiclesToClean = {}
+    print("SERVER: cleanup corrupted vehicles complete")
 end
 
 Commands.InsertNullAnimal = function(player, args)
@@ -382,7 +482,7 @@ Commands.CleanAnimals = function(player, args)
     print("SERVER: Found vehicle: " .. tostring(vehicle:getScript():getName()))
 
     -- Clean null animals on SERVER side
-    local removedCount = cleanVehicleAnimals(vehicle,player)
+    local removedCount = cleanVehicleAnimals(vehicle, player)
 
     -- Notify the client
     sendServerCommand(player, "AnimalFixes", "CleanResult", {
@@ -439,6 +539,7 @@ local function OnClientCommand(module, command, player, args)
     end
 end
 
+Events.EveryTenMinutes.Add(OnSave)
 Events.OnClientCommand.Add(OnClientCommand)
 
 print("Animal Fixes Server Commands Loaded")
