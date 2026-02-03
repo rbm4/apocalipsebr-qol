@@ -2,6 +2,7 @@
 -- Handles server-side commands for testing and fixing
 local Commands = {}
 local corruptedVehiclesToClean = {}
+local vehiclesNeedingTireInflation = {}
 
 -- NEW: Function to recreate animals in new vehicle
 local function recreateAnimals(vehicle, animalData, player)
@@ -232,6 +233,39 @@ local function applyVehicleData(vehicle, data)
         end
     end)
 
+    -- Check if tire pump exists in inventory, if not add one
+    pcall(function()
+        local hasTirePump = false
+        
+        -- Check if tire pump is already in the original inventory data
+        if data.inventory then
+            for _, itemData in ipairs(data.inventory) do
+                if itemData.fullType == "Base.TirePump" then
+                    hasTirePump = true
+                    break
+                end
+            end
+        end
+        
+        -- If no tire pump found, add one to the first container
+        if not hasTirePump then
+            for i = 0, vehicle:getPartCount() - 1 do
+                local part = vehicle:getPartByIndex(i)
+                if part then
+                    local itemContainer = part:getItemContainer()
+                    if itemContainer then
+                        local tirePump = instanceItem("Base.TirePump")
+                        if tirePump then
+                            itemContainer:AddItem(tirePump)
+                            print("SERVER: Added tire pump to vehicle inventory (was missing)")
+                        end
+                        break -- Stop after first container
+                    end
+                end
+            end
+        end
+    end)
+
     -- Transmit all changes to clients
     vehicle:transmitEngine()
     vehicle:transmitRust()
@@ -252,21 +286,6 @@ local function applyVehicleData(vehicle, data)
             end
         end
     end)
-
-    -- Restore tire pressure AFTER transmit (physics must be initialized)
-    -- Only attempt if vehicle has physics
-    pcall(function()
-        if vehicle:getController() then
-            for wheelIndex = 0, 3 do
-                vehicle:setTireInflation(wheelIndex, 100)
-                vehicle:setTireRemoved(wheelIndex, false)
-            end
-            print("SERVER: Initialized all tires to 100% inflation")
-        else
-            print("SERVER: Vehicle physics not ready, skipping tire inflation")
-        end
-    end)
-
 
     return vehicle
 end

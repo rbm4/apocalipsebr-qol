@@ -20,113 +20,6 @@ AF_Main.stats = {
 AF_Main.recentVehicles = {}
 AF_Main.CACHE_TIMEOUT = 5000 -- 5 seconds
 
-local function isVehicleTrailer(vehicle)
-    -- removed trailer logic because it was faulty, we should check any vehicle now
-    return true
-end
-
-local function getVehicleAnimalCount(vehicle)
-    if not vehicle then
-        print("AF_DEBUG: vehicle is nil")
-        return 0
-    end
-
-    print("AF_DEBUG: vehicle type = " .. type(vehicle))
-    print("AF_DEBUG: vehicle class = " .. tostring(vehicle:getClass()))
-
-    -- Try different ways to access animals
-    local animalCount = 0
-    local animals = nil
-
-    -- Method 1: Try getAnimals() method
-    if vehicle.getAnimals then
-        print("AF_DEBUG: Found getAnimals() method")
-        animals = vehicle:getAnimals()
-        if animals then
-            animalCount = animals:size()
-            print("AF_DEBUG: getAnimals() returned array with " .. animalCount .. " animals")
-        else
-            print("AF_DEBUG: getAnimals() returned nil")
-        end
-    else
-        print("AF_DEBUG: No getAnimals() method found")
-    end
-
-    -- Method 2: Try direct field access
-    if animalCount == 0 and vehicle.animals then
-        print("AF_DEBUG: Trying direct field access to .animals")
-        animals = vehicle.animals
-        if animals then
-            animalCount = animals:size()
-            print("AF_DEBUG: Direct field access returned array with " .. animalCount .. " animals")
-        else
-            print("AF_DEBUG: Direct field .animals is nil")
-        end
-    end
-
-    -- Method 3: Try with reflection or other approaches
-    if animalCount == 0 then
-        print("AF_DEBUG: Both methods failed, trying alternative approaches...")
-
-        -- Check if vehicle has any animal-related methods
-        local methods = {"getAnimalList", "getAnimalArray", "getAnimalCount", "getAnimalSize"}
-        for _, methodName in ipairs(methods) do
-            if vehicle[methodName] then
-                print("AF_DEBUG: Found method: " .. methodName)
-                local result = vehicle[methodName](vehicle)
-                if result then
-                    if type(result) == "number" then
-                        animalCount = result
-                        print("AF_DEBUG: " .. methodName .. " returned count: " .. animalCount)
-                        break
-                    elseif result.size then
-                        animalCount = result:size()
-                        print("AF_DEBUG: " .. methodName .. " returned array with " .. animalCount .. " animals")
-                        break
-                    end
-                end
-            end
-        end
-    end
-
-    print("AF_DEBUG: Final animal count: " .. animalCount)
-    return animalCount
-end
-
-local function hasValidAnimals(vehicle)
-    if not vehicle then
-        print("AF_DEBUG: hasValidAnimals - vehicle is nil")
-        return true
-    end
-
-    local animals = nil
-
-    -- Try same methods as getVehicleAnimalCount
-    if vehicle.getAnimals then
-        animals = vehicle:getAnimals()
-    elseif vehicle.animals then
-        animals = vehicle.animals
-    end
-
-    if not animals then
-        print("AF_DEBUG: hasValidAnimals - no animals array found")
-        return true
-    end
-
-    print("AF_DEBUG: hasValidAnimals - checking " .. animals:size() .. " animals for nulls")
-
-    for i = 0, animals:size() - 1 do
-        local animal = animals:get(i)
-        if animal == nil then
-            print("AF_DEBUG: hasValidAnimals - found null animal at index " .. i)
-            return false
-        end
-    end
-
-    print("AF_DEBUG: hasValidAnimals - all animals are valid")
-    return true
-end
-
 -- Main Event Handlers
 -----------------------------------------------------------
 -- Context Menu Builder
@@ -222,95 +115,41 @@ local function onFillWorldObjectContextMenu(playerNum, context, worldObjects, te
 
     -- Process found vehicles
     for _, vehicle in ipairs(vehiclesFound) do
-        if isVehicleTrailer(vehicle) then
-            AF_Main.stats.vehicleInteractions = AF_Main.stats.vehicleInteractions + 1
-            print("Context menu on trailer: " .. tostring(vehicle:getScript():getName()))
+        AF_Main.stats.vehicleInteractions = AF_Main.stats.vehicleInteractions + 1
+        print("Context menu on trailer: " .. tostring(vehicle:getScript():getName()))
 
-            -- Check for existing null animals before any interaction
-            if not hasValidAnimals(vehicle) then
-                AF_Main.stats.nullAnimalsFound = AF_Main.stats.nullAnimalsFound + 1
-                print("WARNING: Found null animals in trailer BEFORE interaction!")
+        if isClient() then
+            sendClientCommand("AnimalFixes", "CleanAnimals", {
+                vehicleId = v:getId()
+            })
+        end
 
-                -- Add cleanup option to context menu
-                context:addOption("Fix Animal Issues", vehicle, function(v)
-                    AF_Main.cleanVehicleAnimals(v, player)
-                end)
-            end
+        -- Cache this vehicle for post-interaction checking
+        AF_Main.recentVehicles[vehicle] = getTimestampMs() + AF_Main.CACHE_TIMEOUT
 
-            -- Cache this vehicle for post-interaction checking
-            AF_Main.recentVehicles[vehicle] = getTimestampMs() + AF_Main.CACHE_TIMEOUT
+        -- Add debug option to context menu if debug mode is on
+        if AF_Main.DEBUG_MODE then
 
-            -- Add debug option to context menu if debug mode is on
-            if AF_Main.DEBUG_MODE then
-                -- Add server-side cleanup option
-                context:addOption("AF_DEBUG: Clean Animals (Server)", vehicle, function(v)
-                    if isClient() then
-                        sendClientCommand("AnimalFixes", "CleanAnimals", {
-                            vehicleId = v:getId()
-                        })
-                        player:Say("Sent clean command to server...")
-                    end
-                end)
+            -- Add error reproduction option (sends command to server)
+            context:addOption("AF_DEBUG: Insert Null Animal (Server)", vehicle, function(v)
+                if isClient() then
+                    -- Send command to server
+                    sendClientCommand("AnimalFixes", "InsertNullAnimal", {
+                        vehicleId = v:getId()
+                    })
+                    player:Say("Sent null insertion command to server...")
+                end
+            end)
 
-                -- Add error reproduction option (sends command to server)
-                context:addOption("AF_DEBUG: Insert Null Animal (Server)", vehicle, function(v)
-                    if isClient() then
-                        -- Send command to server
-                        sendClientCommand("AnimalFixes", "InsertNullAnimal", {
-                            vehicleId = v:getId()
-                        })
-                        player:Say("Sent null insertion command to server...")
-                    end
-                end)
-
-                -- Add scan all option
-                context:addOption("AF_DEBUG: Scan & Clean All Vehicles", vehicle, function(v)
-                    if isClient() then
-                        sendClientCommand("AnimalFixes", "ScanAndCleanAll", {})
-                        player:Say("Scanning all vehicles on server...")
-                    end
-                end)
-            end
+            -- Add scan all option
+            context:addOption("AF_DEBUG: Scan & Clean All Vehicles", vehicle, function(v)
+                if isClient() then
+                    sendClientCommand("AnimalFixes", "ScanAndCleanAll", {})
+                    player:Say("Scanning all vehicles on server...")
+                end
+            end)
         end
     end
-end
-
--- Function to clean null animals from a vehicle
-function AF_Main.cleanVehicleAnimals(vehicle, player)
-    if not vehicle or not vehicle.animals then
-        print("Vehicle has no animals array to clean")
-        if player then
-            player:Say("Vehicle has no animals to clean.")
-        end
-        return 0
-    end
-
-    local originalCount = vehicle.animals:size()
-    local removedCount = 0
-
-    -- Iterate backwards to safely remove null entries
-    for i = originalCount - 1, 0, -1 do
-        local animal = vehicle.animals:get(i)
-        if animal == nil then
-            vehicle.animals:remove(i)
-            removedCount = removedCount + 1
-            print("Removed null animal at index " .. i)
-        end
-    end
-
-    local finalCount = vehicle.animals:size()
-    print("Cleaned vehicle animals: " .. originalCount .. " -> " .. finalCount .. " (removed " .. removedCount ..
-              " nulls)")
-
-    if player then
-        if removedCount > 0 then
-            player:Say("Cleaned " .. removedCount .. " null animals from trailer.")
-        else
-            player:Say("No null animals found to clean.")
-        end
-    end
-
-    return removedCount
 end
 
 -- Print statistics
@@ -336,6 +175,3 @@ Events.OnGameStart.Add(onGameStart)
 print("Animal Fixes Main Script Loaded")
 print("Debug mode: " .. tostring(AF_Main.DEBUG_MODE))
 print("Error reproduction: " .. tostring(AF_Main.REPRODUCE_ERROR))
-
-AF_Main.isVehicleTrailer = isVehicleTrailer
-AF_Main.hasValidAnimals = hasValidAnimals
