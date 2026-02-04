@@ -121,6 +121,32 @@ DAMN.Parts:processConfigV2("M101A3", {
 	},
 });
 
+
+-- Access for the TOP container (M101A3Trunk2) - controlled by top door (TrunkDoor)
+function M101A3.ContainerAccess.TruckBedTop(vehicle, part, chr)
+    if chr:getVehicle() then return false end
+    if vehicle:isInArea("TruckBed2", chr) then
+        local trunkDoor = vehicle:getPartById("TrunkDoorTwo")
+        if trunkDoor and trunkDoor:getDoor() then
+            if not trunkDoor:getInventoryItem() then return true end
+            if not trunkDoor:getDoor():isOpen() then return false end
+        end
+        return true
+    end
+
+    if vehicle:isInArea("TruckBed3", chr) then
+        local tarp = vehicle:getPartById("M101A3Tarp")
+        local cover = vehicle:getPartById("M101A3Cover")
+        if (tarp and tarp:getInventoryItem()) or (cover and cover:getInventoryItem()) then 
+            return false
+        else
+            return true 
+        end
+    end
+    return false
+end
+
+
 function M101A3.ContainerAccess.TruckBed(vehicle, part, chr)
     if chr:getVehicle() then return false end
     if vehicle:isInArea("TruckBed", chr) then
