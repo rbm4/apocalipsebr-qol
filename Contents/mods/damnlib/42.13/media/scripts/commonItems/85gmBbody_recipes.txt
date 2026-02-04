@@ -1,0 +1,820 @@
+module Base
+{
+    craftRecipe 85gmBbodyMakeTire0
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:2,
+        OnCreate = DAMN.OnCreate.PassSecondCond,
+
+        inputs
+        {
+            item 1 [damnCraft.SteelRimSmall],
+            item 1 [damnCraft.TireRubberNewSmall;damnCraft.TireRubberUsedSmall;damnCraft.TireRubberDestroyedSmall] mode:destroy,
+            item 1 [Base.Crowbar] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyTire0,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeTire1
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:2,
+        OnCreate = DAMN.OnCreate.PassSecondCond,
+
+        inputs
+        {
+            item 1 [damnCraft.SteelRimSmall],
+            item 1 [damnCraft.TireRubberNewSmall;damnCraft.TireRubberUsedSmall;damnCraft.TireRubberDestroyedSmall] mode:destroy,
+            item 1 [Base.Crowbar] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyTire1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeTire2
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:2,
+        OnCreate = DAMN.OnCreate.PassSecondCond,
+
+        inputs
+        {
+            item 1 [damnCraft.SteelRimSmall],
+            item 1 [damnCraft.TireRubberNewSmall;damnCraft.TireRubberUsedSmall;damnCraft.TireRubberDestroyedSmall] mode:destroy,
+            item 1 [Base.Crowbar] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyTire2,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeTire3
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:2,
+        OnCreate = DAMN.OnCreate.PassSecondCond,
+
+        inputs
+        {
+            item 1 [damnCraft.SteelRimSmall],
+            item 1 [damnCraft.TireRubberNewSmall;damnCraft.TireRubberUsedSmall;damnCraft.TireRubberDestroyedSmall] mode:destroy,
+            item 1 [Base.Crowbar] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyTire3,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeTire4
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:2,
+        OnCreate = DAMN.OnCreate.PassSecondCond,
+
+        inputs
+        {
+            item 1 [damnCraft.SteelRimSmall],
+            item 1 [damnCraft.TireRubberNewSmall;damnCraft.TireRubberUsedSmall;damnCraft.TireRubberDestroyedSmall] mode:destroy,
+            item 1 [Base.Crowbar] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyTire4,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeTire5
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:2,
+        OnCreate = DAMN.OnCreate.PassSecondCond,
+
+        inputs
+        {
+            item 1 [damnCraft.SteelRimSmall],
+            item 1 [damnCraft.TireRubberNewSmall;damnCraft.TireRubberUsedSmall;damnCraft.TireRubberDestroyedSmall] mode:destroy,
+            item 1 [Base.Crowbar] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyTire5,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeTire5b
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:2,
+        OnCreate = DAMN.OnCreate.PassSecondCond,
+
+        inputs
+        {
+            item 1 [damnCraft.SteelRimSmall],
+            item 1 [damnCraft.TireRubberNewSmall;damnCraft.TireRubberUsedSmall;damnCraft.TireRubberDestroyedSmall] mode:destroy,
+            item 1 [Base.Crowbar] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyTire5b,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeTire6
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:2,
+        OnCreate = DAMN.OnCreate.PassSecondCond,
+
+        inputs
+        {
+            item 1 [damnCraft.SteelRimSmall],
+            item 1 [damnCraft.TireRubberNewSmall;damnCraft.TireRubberUsedSmall;damnCraft.TireRubberDestroyedSmall] mode:destroy,
+            item 1 [Base.Crowbar] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyTire6,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeTire7
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:2,
+        OnCreate = DAMN.OnCreate.PassSecondCond,
+
+        inputs
+        {
+            item 1 [damnCraft.SteelRimSmall],
+            item 1 [damnCraft.TireRubberNewSmall;damnCraft.TireRubberUsedSmall;damnCraft.TireRubberDestroyedSmall] mode:destroy,
+            item 1 [Base.Crowbar] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyTire7,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeFrontDoor
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Mechanical,
+        xpAward = MetalWelding:25,
+        SkillRequired = MetalWelding:7,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 1 [damnCraft.HandleModern],
+            item 2 [damnCraft.HingeSmall],
+            item 2 [Base.SheetMetal],
+            item 2 [Base.SmallSheetMetal],
+            item 2 [Base.Screws],
+			item 10 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyFrontDoor1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeRearDoor
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Mechanical,
+        xpAward = MetalWelding:25,
+        SkillRequired = MetalWelding:7,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 1 [damnCraft.HandleModern],
+            item 2 [damnCraft.HingeSmall],
+            item 2 [Base.SheetMetal],
+            item 2 [Base.SmallSheetMetal],
+            item 2 [Base.Screws],
+			item 10 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyRearDoor1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeFrontWindshield
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:3,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 3 [Base.GlassPanel],
+            item 4 [damnCraft.RubberStrip],
+            item 1 [Base.Scalpel] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWindshield1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeFrontSideWindow
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:3,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 1 [Base.GlassPanel],
+            item 2 [damnCraft.RubberStrip],
+            item 1 [Base.Scalpel] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyFrontSideWindow1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeRearSideWindow
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:3,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 1 [Base.GlassPanel],
+            item 2 [damnCraft.RubberStrip],
+            item 1 [Base.Scalpel] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyRearSideWindow1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeCoupeRearSideWindow
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:3,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 1 [Base.GlassPanel],
+            item 2 [damnCraft.RubberStrip],
+            item 1 [Base.Scalpel] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyCoupeRearSideWindow1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeWagonBackSideWindow
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:3,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 2 [Base.GlassPanel],
+            item 4 [damnCraft.RubberStrip],
+            item 1 [Base.Scalpel] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWagonBackSideWindow1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeRearWindshield
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:3,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 2 [Base.GlassPanel],
+            item 4 [damnCraft.RubberStrip],
+            item 1 [Base.Scalpel] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyRearWindshield1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeWagonRearWindshield
+	{
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+        SkillRequired = Mechanics:3,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 2 [Base.GlassPanel],
+            item 1 [Base.Scalpel] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWagonRearWindshield1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeFrontWindshieldArmor
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Armoring,
+        xpAward = MetalWelding:20,
+        SkillRequired = MetalWelding:4,
+
+        inputs
+        {
+            item 1 [Base.SheetMetal],
+            item 3 [Base.SmallSheetMetal],
+            item 4 [Base.MetalPipe],
+            item 2 [Base.Screws],
+			item 9 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWindshieldArmorM,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeFrontWindowArmor
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Armoring,
+        xpAward = MetalWelding:20,
+        SkillRequired = MetalWelding:4,
+
+        inputs
+        {
+            item 1 [Base.SheetMetal],
+            item 1 [Base.SmallSheetMetal],
+            item 3 [Base.MetalPipe],
+            item 2 [Base.Screws],
+			item 5 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyFrontWindowArmorM,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeRearWindowArmor
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Armoring,
+        xpAward = MetalWelding:20,
+        SkillRequired = MetalWelding:4,
+
+        inputs
+        {
+            item 1 [Base.SheetMetal],
+            item 1 [Base.SmallSheetMetal],
+            item 3 [Base.MetalPipe],
+            item 2 [Base.Screws],
+			item 5 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyRearWindowArmorM,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeBackWindowArmor
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Armoring,
+        xpAward = MetalWelding:20,
+        SkillRequired = MetalWelding:4,
+
+        inputs
+        {
+            item 2 [Base.SheetMetal],
+            item 3 [Base.MetalPipe],
+            item 2 [Base.Screws],
+			item 6 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWagonBackWindowArmorM,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeRearWindshieldArmor
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Armoring,
+        xpAward = MetalWelding:20,
+        SkillRequired = MetalWelding:4,
+
+        inputs
+        {
+            item 2 [Base.SheetMetal],
+            item 3 [Base.MetalPipe],
+            item 3 [Base.Screws],
+			item 9 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWindshieldRearArmorM,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeFrontWindshieldWoodenArmor
+    {
+        timedAction = Making,
+        time        = 200,
+        tags = AnySurfaceCraft;Carpentry,
+        category = Armoring,
+        xpAward = Woodwork:5,
+        SkillRequired = Woodwork:2,
+
+        inputs
+        {
+            item 6 [Base.Plank],
+            item 10 [Base.Nails],
+            item 2 [Base.Screws],
+            item 1 tags[Hammer] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWindshieldArmorW,
+        }
+    }
+
+    craftRecipe 85gmBbodyMakeFrontWindowWoodenArmor
+    {
+        timedAction = Making,
+        time        = 200,
+        tags = AnySurfaceCraft;Carpentry,
+        category = Armoring,
+        xpAward = Woodwork:5,
+        SkillRequired = Woodwork:2,
+
+        inputs
+        {
+            item 4 [Base.Plank],
+            item 6 [Base.Nails],
+            item 2 [Base.Screws],
+            item 1 tags[Hammer] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyFrontWindowArmorW,
+        }
+    }
+
+    craftRecipe 85gmBbodyMakeRearWindowWoodenArmor
+    {
+        timedAction = Making,
+        time        = 200,
+        tags = AnySurfaceCraft;Carpentry,
+        category = Armoring,
+        xpAward = Woodwork:5,
+        SkillRequired = Woodwork:2,
+
+        inputs
+        {
+            item 4 [Base.Plank],
+            item 6 [Base.Nails],
+            item 2 [Base.Screws],
+            item 1 tags[Hammer] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyRearWindowArmorW,
+        }
+    }
+
+    craftRecipe 85gmBbodyMakeBackWindowWoodenArmor
+    {
+        timedAction = Making,
+        time        = 200,
+        tags = AnySurfaceCraft;Carpentry,
+        category = Armoring,
+        xpAward = Woodwork:5,
+        SkillRequired = Woodwork:2,
+
+        inputs
+        {
+            item 5 [Base.Plank],
+            item 6 [Base.Nails],
+            item 2 [Base.Screws],
+            item 1 tags[Hammer] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWagonBackWindowArmorW,
+        }
+    }
+
+    craftRecipe 85gmBbodyMakeRearWindshieldWoodenArmor
+    {
+        timedAction = Making,
+        time        = 200,
+        tags = AnySurfaceCraft;Carpentry,
+        category = Armoring,
+        xpAward = Woodwork:5,
+        SkillRequired = Woodwork:2,
+
+        inputs
+        {
+            item 5 [Base.Plank],
+            item 10 [Base.Nails],
+            item 4 [Base.Screws],
+            item 1 tags[Hammer] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWindshieldRearArmorW,
+        }
+    }
+
+    craftRecipe 85gmBbodyMakeFrontBullbar
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Armoring,
+        xpAward = MetalWelding:25,
+        SkillRequired = MetalWelding:5,
+
+        inputs
+        {
+            item 2 [Base.SmallSheetMetal],
+            item 5 [Base.MetalPipe],
+            item 3 [Base.Screws],
+			item 10 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyBullbarFrontA,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeRoofrack
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Mechanical,
+        xpAward = MetalWelding:20,
+        SkillRequired = MetalWelding:5,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 4 [Base.SheetMetal],
+            item 4 [Base.MetalPipe],
+            item 2 [Base.Screws],
+            item 1 [Base.Tarp],
+			item 7 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyRoofrack1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeRoofRails
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Mechanical,
+        xpAward = MetalWelding:20,
+        SkillRequired = MetalWelding:5,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 2 [Base.SmallSheetMetal],
+            item 6 [Base.MetalPipe],
+            item 2 [Base.Screws],
+			item 8 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWagonRoofRails1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeWagonRoofrack
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Mechanical,
+        xpAward = MetalWelding:20,
+        SkillRequired = MetalWelding:5,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 2 [Base.SmallSheetMetal],
+            item 6 [Base.MetalPipe],
+            item 2 [Base.Screws],
+            item 1 [Base.Tarp],
+			item 8 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWagonRoofrack1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeWagonRoofrack2
+	{
+        timedAction = Making,
+        time = 100,
+        Tags = InHandCraft,
+        category = Mechanical,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 1 [Base.85gmBbodyWagonRoofRails1],
+            item 1 [Base.Tarp],
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWagonRoofrack1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeTrunkLid
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Mechanical,
+        xpAward = MetalWelding:20,
+        SkillRequired = MetalWelding:7,
+        NeedToBeLearn = True,
+
+        inputs
+        {
+            item 1 [damnCraft.HandleModern],
+            item 2 [damnCraft.HingeLarge],
+            item 3 [Base.SheetMetal],
+            item 2 [Base.Screws],
+			item 8 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWagonTrunkDoor1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeRearWagonBumper1
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Armoring,
+        xpAward = MetalWelding:15,
+        SkillRequired = MetalWelding:5,
+
+        inputs
+        {
+            item 3 [Base.SheetMetal],
+            item 2 [damnCraft.RubberStrip],
+            item 2 [Base.Screws],
+			item 7 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWagonBumperRear1,
+        }
+	}
+
+    craftRecipe 85gmBbodyMakeRearWagonBumper2
+	{
+        timedAction = Welding,
+        time = 200,
+        Tags = InHandCraft;Welding,
+        category = Armoring,
+        xpAward = MetalWelding:15,
+        SkillRequired = MetalWelding:5,
+
+        inputs
+        {
+            item 3 [Base.SheetMetal],
+            item 2 [damnCraft.RubberStrip],
+            item 2 [Base.Screws],
+			item 7 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.85gmBbodyWagonBumperRear2,
+        }
+	}
+}

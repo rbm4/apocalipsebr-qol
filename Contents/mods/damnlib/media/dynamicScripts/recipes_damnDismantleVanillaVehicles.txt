@@ -1,0 +1,140 @@
+module Base
+{	
+	/************************ Tires ************************/
+
+	recipe Dismantle Vehicle Tire
+    	{
+		Base.OldTire1/Base.NormalTire1/Base.ModernTire1/Base.OldTire2/Base.NormalTire2/Base.ModernTire2/Base.OldTire3/Base.NormalTire3/Base.ModernTire3,
+		keep Base.Crowbar,
+
+		NoBrokenItems:false,
+		Result:damnCraft.SteelRimSmall=1,
+		Time:350.0,
+		Category:Recycling,
+		SkillRequired:Mechanics=2,
+		OnCreate:DAMN.OnCreate.DismantleTireSmall,
+		NeedToBeLearn:false,
+		CanBeDoneFromFloor:true,
+    }
+
+    /************************ Hoods ************************/
+
+	recipe Dismantle Vehicle Hood
+    	{
+		Base.EngineDoor1/Base.EngineDoor2/Base.EngineDoor3,
+		keep Base.WeldingMask,
+		Base.BlowTorch=4,
+
+		NoBrokenItems:false,
+		Result:Base.SheetMetal=3,
+		Time:350.0,
+		Category:Recycling,
+		SkillRequired:Mechanics=2,
+		OnCreate:DAMN.OnCreate.DismantleHood,
+		NeedToBeLearn:false,
+		CanBeDoneFromFloor:true,
+    }
+
+    /************************ Trunk Lids ************************/
+
+	recipe Dismantle Vehicle Trunk Lid
+    	{
+		Base.TrunkDoor1/Base.TrunkDoor2/Base.TrunkDoor3,
+		keep Base.WeldingMask,
+		Base.BlowTorch=3,
+
+		NoBrokenItems:false,
+		Result:Base.SheetMetal=2,
+		Time:350.0,
+		Category:Recycling,
+		SkillRequired:Mechanics=2,
+		OnCreate:DAMN.OnCreate.DismantleTrunkLid,
+		NeedToBeLearn:false,
+		CanBeDoneFromFloor:true,
+    }
+
+    /************************ Windows ************************/
+
+	recipe Cut Vehicle Windshield
+    	{
+		Base.Windshield1/Base.RearWindshield1/Base.Windshield2/Base.RearWindshield2/Base.Windshield3/Base.RearWindshield3,
+		keep Base.Scalpel,
+
+		NoBrokenItems:false,
+		Result:damnCraft.RubberStrip,
+		Time:350.0,
+		Category:Recycling,
+		SkillRequired:Mechanics=2,
+		OnCreate:DAMN.OnCreate.DismantleWindshield,
+		NeedToBeLearn:false,
+		CanBeDoneFromFloor:true,
+    }
+
+    recipe Cut Vehicle Window
+    	{
+		Base.FrontWindow1/Base.RearWindow1/Base.FrontWindow2/Base.RearWindow2/Base.FrontWindow3/Base.RearWindow3,
+		keep Base.Scalpel,
+
+		NoBrokenItems:false,
+		Result:damnCraft.RubberStrip,
+		Time:350.0,
+		Category:Recycling,
+		SkillRequired:Mechanics=2,
+		OnCreate:DAMN.OnCreate.DismantleWindow,
+		NeedToBeLearn:false,
+		CanBeDoneFromFloor:true,
+    }
+
+    /************************ Doors ************************/
+
+	recipe Dismantle Vehicle Door
+    	{
+		Base.FrontCarDoor1/Base.RearCarDoor1/Base.RearCarDoorDouble1/Base.FrontCarDoor2/Base.RearCarDoor2/Base.RearCarDoorDouble2/Base.FrontCarDoor3/Base.RearCarDoor3/Base.RearCarDoorDouble3,
+		keep Base.WeldingMask,
+		Base.BlowTorch=5,
+
+		NoBrokenItems:false,
+		Result:Base.SheetMetal=2,
+		Time:350.0,
+		Category:Recycling,
+		SkillRequired:Mechanics=2,
+		OnCreate:DAMN.OnCreate.DismantleDoor,
+		NeedToBeLearn:false,
+		CanBeDoneFromFloor:true,
+    }
+
+    /************************ Seats ************************/
+
+	recipe Dismantle Vehicle Seat
+    	{
+		Base.NormalCarSeat1/Base.NormalCarSeat2/Base.NormalCarSeat3,
+		keep [Recipe.GetItemTypes.SharpKnife]/[Recipe.GetItemTypes.DullKnife]/Base.Scalpel,
+
+		NoBrokenItems:false,
+		Result:damnCraft.SeatFrameLarge,
+		Time:350.0,
+		Category:Recycling,
+		SkillRequired:Mechanics=2,
+		OnCreate:DAMN.OnCreate.DismantleSeat,
+		NeedToBeLearn:false,
+		CanBeDoneFromFloor:true,
+    }
+
+    /************************ Mufflers ************************/
+
+	recipe Dismantle Vehicle Muffler
+    	{
+		Base.OldCarMuffler1/Base.NormalCarMuffler1/Base.ModernCarMuffler1/Base.OldCarMuffler2/Base.NormalCarMuffler2/Base.ModernCarMuffler2/Base.OldCarMuffler3/Base.NormalCarMuffler3/Base.ModernCarMuffler3,
+		keep Base.WeldingMask,
+		Base.BlowTorch=3,
+
+		NoBrokenItems:false,
+		Result:Base.SheetMetal,
+		Time:350.0,
+		Category:Recycling,
+		SkillRequired:Mechanics=2,
+		NeedToBeLearn:false,
+		CanBeDoneFromFloor:true,
+    }
+
+}

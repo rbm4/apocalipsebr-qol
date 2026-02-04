@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>damn_aim_stand_rifle</m_Name>
+	<m_AnimName>Bob_IdleAimRifle</m_AnimName>
+	<m_Priority>5</m_Priority>
+	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
+	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
+	<m_SpeedScale>IdleSpeed</m_SpeedScale>
+	<m_BlendTime>0.65</m_BlendTime>
+	<m_maxTorsoTwist>70.0</m_maxTorsoTwist>
+	<m_Conditions>
+		<m_Name>damnVehicle</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_StringValue>True</m_StringValue>
+	</m_Conditions>
+    <m_Conditions>
+		<m_Name>damnRole</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_StringValue>gunner</m_StringValue>
+	</m_Conditions>
+    <m_Conditions>
+		<m_Name>Weapon</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_StringValue>firearm</m_StringValue>
+	</m_Conditions>
+</animNode>

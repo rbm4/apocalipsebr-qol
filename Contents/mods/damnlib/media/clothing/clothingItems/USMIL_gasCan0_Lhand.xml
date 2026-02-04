@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>Skinned\USMIL_skinned_gascan0_Lhand</m_MaleModel>
+	<m_FemaleModel>Skinned\USMIL_skinned_gascan0_Lhand</m_FemaleModel>
+	<m_GUID>27025ecf-f504-4a0a-84e5-ff26d0a23729</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone/>
+	<textureChoices>Vehicles\Items_USMIL_gasCan0</textureChoices>
+</clothingItem>

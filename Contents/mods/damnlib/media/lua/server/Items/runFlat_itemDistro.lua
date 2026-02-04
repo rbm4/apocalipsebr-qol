@@ -1,0 +1,16 @@
+require "Items/ProceduralDistributions"
+-- runFlat.LargeTire
+table.insert(ProceduralDistributions.list["CarTiresModern2"].items, "runFlat.LargeTire");
+table.insert(ProceduralDistributions.list["CarTiresModern2"].items, 2);
+table.insert(ProceduralDistributions.list["MechanicShelfWheels"].items, "runFlat.LargeTire");
+table.insert(ProceduralDistributions.list["MechanicShelfWheels"].items, 1);
+-- runFlat.MediumTire
+table.insert(ProceduralDistributions.list["CarTiresModern2"].items, "runFlat.MediumTire");
+table.insert(ProceduralDistributions.list["CarTiresModern2"].items, 3);
+table.insert(ProceduralDistributions.list["MechanicShelfWheels"].items, "runFlat.MediumTire");
+table.insert(ProceduralDistributions.list["MechanicShelfWheels"].items, 1);
+-- runFlat.SmallTire
+table.insert(ProceduralDistributions.list["CarTiresNormal2"].items, "runFlat.SmallTire");
+table.insert(ProceduralDistributions.list["CarTiresNormal2"].items, 3);
+table.insert(ProceduralDistributions.list["MechanicShelfWheels"].items, "runFlat.SmallTire");
+table.insert(ProceduralDistributions.list["MechanicShelfWheels"].items, 1);

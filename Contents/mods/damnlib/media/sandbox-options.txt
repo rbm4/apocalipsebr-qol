@@ -1,0 +1,9 @@
+VERSION = 1,
+
+option DAMN.AllowVanillaVehicleDismantling = {
+	type = boolean, default = true, page = DAMN_Options, translation = DAMN_AllowVanillaVehicleDismantling,
+}
+
+option DAMN.AllowVanillaWorldItemDismantling = {
+	type = boolean, default = true, page = DAMN_Options, translation = DAMN_AllowVanillaWorldItemDismantling,
+}
