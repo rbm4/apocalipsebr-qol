@@ -1,0 +1,49 @@
+module Base
+{	
+    /************************ House Windows ************************/
+
+    recipe Dismantle House Window
+    	{
+		Moveables.fixtures_windows_01_8/Moveables.fixtures_windows_01_9/Moveables.fixtures_windows_01_10/Moveables.fixtures_windows_01_11/Moveables.fixtures_windows_01_16/Moveables.fixtures_windows_01_17/Moveables.fixtures_windows_01_18/Moveables.fixtures_windows_01_19/Moveables.fixtures_windows_01_0/Moveables.fixtures_windows_01_1/Moveables.fixtures_windows_01_2/Moveables.fixtures_windows_01_3/Moveables.fixtures_windows_01_24/Moveables.fixtures_windows_01_25/Moveables.fixtures_windows_01_26/Moveables.fixtures_windows_01_27/Moveables.fixtures_windows_01_32/Moveables.fixtures_windows_01_33/Moveables.fixtures_windows_01_34/Moveables.fixtures_windows_01_35,
+		keep Base.Scalpel,
+
+		NoBrokenItems:false,
+		Result:damnCraft.GlassPaneSmall=2,
+		Time:350.0,
+		Category:Recycling,
+		SkillRequired:Mechanics=2,
+		NeedToBeLearn:false,
+		CanBeDoneFromFloor:true,
+    }
+
+    /************************ Mirrors ************************/
+
+    recipe Cut Large Mirror
+    	{
+		Base.Mov_MirrorLarge/Base.Mov_MirrorTall/Moveables.walls_decoration_01_8/Moveables.walls_decoration_01_9/Moveables.walls_decoration_01_26/Moveables.walls_decoration_01_27/Moveables.walls_decoration_01_36/Moveables.walls_decoration_01_37/Moveables.walls_decoration_01_38/Moveables.walls_decoration_01_39/Moveables.walls_decoration_01_4/Moveables.walls_decoration_01_5/Moveables.walls_decoration_01_30/Moveables.walls_decoration_01_31,
+		keep Base.Scalpel,
+
+		NoBrokenItems:false,
+		Result:damnCraft.GlassPaneLarge,
+		Time:350.0,
+		Category:Recycling,
+		SkillRequired:Mechanics=2,
+		NeedToBeLearn:false,
+		CanBeDoneFromFloor:true,
+    }
+
+    recipe Cut Small Mirror
+    	{
+		Base.Mov_MirrorSmall/Base.Mov_MirrorWood/Base.Mirror/Moveables.walls_decoration_01_6/Moveables.walls_decoration_01_7/Moveables.walls_decoration_01_28/Moveables.walls_decoration_01_29/Moveables.walls_decoration_01_10/Moveables.walls_decoration_01_11/Moveables.walls_decoration_01_24/Moveables.walls_decoration_01_25,
+		keep Base.Scalpel,
+
+		NoBrokenItems:false,
+		Result:damnCraft.GlassPaneSmall,
+		Time:350.0,
+		Category:Recycling,
+		SkillRequired:Mechanics=2,
+		NeedToBeLearn:false,
+		CanBeDoneFromFloor:true,
+    }
+
+}

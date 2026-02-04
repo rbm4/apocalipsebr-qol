@@ -1,0 +1,357 @@
+module Base
+{
+    /************************ Seats ************************/
+
+    craftRecipe USMILMakeMilitaryVehicleSeatST1
+    {
+        timedAction = Making,
+        time        = 400,
+        NeedToBeLearn = True,
+        Tags = AnySurfaceCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+
+        inputs
+        {
+            item 1 [damnCraft.SeatFabric],
+            item 2 [damnCraft.SeatFoam],
+            item 1 [damnCraft.SeatFrameLarge],
+            item 1 [Base.Screws],
+            item 1 tags[Screwdriver] mode:keep flags[MayDegradeLight;NoBrokenItems],
+        }
+        outputs
+        {
+            item 1 USMIL.Seat0,
+        }
+    }
+
+    craftRecipe USMILMakeMilitaryVehicleSeatST2
+    {
+        timedAction = Making,
+        time        = 400,
+        NeedToBeLearn = True,
+        Tags = AnySurfaceCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+
+        inputs
+        {
+            item 1 [damnCraft.SeatFabric],
+            item 2 [damnCraft.SeatFoam],
+            item 1 [damnCraft.SeatFrameLarge],
+            item 1 [Base.Screws],
+            item 1 tags[Screwdriver] mode:keep flags[MayDegradeLight;NoBrokenItems],
+        }
+        outputs
+        {
+            item 1 USMIL.Seat1front,
+        }
+    }
+
+    craftRecipe USMILMakeMilitaryVehicleSeatST2R
+    {
+        timedAction = Making,
+        time        = 400,
+        NeedToBeLearn = True,
+        Tags = AnySurfaceCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+
+        inputs
+        {
+            item 1 [damnCraft.SeatFabric],
+            item 2 [damnCraft.SeatFoam],
+            item 1 [damnCraft.SeatFrameLarge],
+            item 1 [Base.Screws],
+            item 1 tags[Screwdriver] mode:keep flags[MayDegradeLight;NoBrokenItems],
+        }
+        outputs
+        {
+            item 1 USMIL.Seat1rear,
+        }
+    }
+
+    craftRecipe USMILMakeMilitaryVehicleSeatST3
+    {
+        timedAction = Making,
+        time        = 400,
+        NeedToBeLearn = True,
+        Tags = AnySurfaceCraft,
+        category = Mechanical,
+        xpAward = Mechanics:2,
+
+        inputs
+        {
+            item 1 [damnCraft.SeatFabric],
+            item 1 [damnCraft.SeatFoam],
+            item 1 [damnCraft.SeatFrameSmall],
+            item 1 [Base.Screws],
+            item 1 tags[Screwdriver] mode:keep flags[MayDegradeLight;NoBrokenItems],
+        }
+        outputs
+        {
+            item 1 USMIL.Seat2,
+        }
+    }
+
+    /************************ Crates ************************/
+
+	craftRecipe USMILMakeWoodenCrate
+    {
+        timedAction = Making,
+        time        = 500,
+        tags = AnySurfaceCraft;Carpentry,
+        category = Carpentry,
+        xpAward = Woodwork:5,
+        SkillRequired = Woodwork:3,
+
+        inputs
+        {
+            item 4 [Base.Plank],
+            item 8 [Base.Nails],
+            item 1 tags[Hammer] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 USMIL.Crate0,
+        }
+    }
+
+    craftRecipe USMILMakeMilitaryWoodenCrate
+    {
+        timedAction = Making,
+        time        = 200,
+        tags = InHandCraft;Carpentry,
+        category = Carpentry,
+
+        inputs
+        {
+            item 1 [USMIL.Crate0],
+            item 1 [Base.Paintbrush] mode:keep,
+        }
+        outputs
+        {
+            item 1 USMIL.Crate0military,
+        }
+    }
+
+    craftRecipe USMILMakeOpenMilitaryWoodenCrate
+    {
+        timedAction = Making,
+        time        = 200,
+        tags = InHandCraft;Carpentry,
+        category = Carpentry,
+
+        inputs
+        {
+            item 1 [USMIL.Crate0Open],
+            item 1 [Base.Paintbrush] mode:keep,
+        }
+        outputs
+        {
+            item 1 USMIL.Crate0militaryOpen,
+        }
+    }
+
+    craftRecipe USMILPryOpenWoodenCrate
+    {
+        timedAction = Making,
+        time        = 200,
+        tags = InHandCraft;Carpentry,
+
+        inputs
+        {
+            item 1 [USMIL.Crate0],
+            item 1 [Base.Crowbar] mode:keep,
+        }
+        outputs
+        {
+            item 1 USMIL.Crate0Open,
+        }
+    }
+
+    craftRecipe USMILPryOpenMilitaryWoodenCrate
+    {
+        timedAction = Making,
+        time        = 200,
+        tags = InHandCraft;Carpentry,
+
+        inputs
+        {
+            item 1 [USMIL.Crate0military],
+            item 1 [Base.Crowbar] mode:keep,
+        }
+        outputs
+        {
+            item 1 USMIL.Crate0militaryOpen,
+        }
+    }
+
+    /************************ Viewports ************************/
+
+   craftRecipe USMILMakeSmallViewport
+    {
+        timedAction = Welding,
+        time        = 300,
+        Tags = InHandCraft;Welding,
+        category = Metalworking,
+        xpAward = MetalWelding:10,
+        SkillRequired = MetalWelding:5,
+
+        inputs
+        {
+            item 1 [Base.GlassPanel],
+            item 1 [Base.SmallSheetMetal],
+			item 1 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 USMIL.SmallViewport0,
+        }
+    }
+
+    craftRecipe USMILPackSmallViewports
+    {
+        timedAction = Making,
+		Time = 25,
+		Tags = InHandCraft;Packing,
+        category = Packing,
+        OnCreate = DAMN.OnCreate.PackStuff,
+
+		inputs
+		{
+            item 4 [USMIL.SmallViewport0],
+            item 1 [Base.ScrapMetal],
+			
+		}
+		outputs
+		{
+            item 1 USMIL.SmallViewportPack0,
+		}
+    }
+
+    craftRecipe USMILUnpackSmallViewports
+    {
+        timedAction = Making,
+		Time = 25,
+		Tags = InHandCraft;Packing,
+        category = Packing,
+        OnCreate = DAMN.OnCreate.UnpackStuff,
+
+		inputs
+		{
+			item 1 [USMIL.SmallViewportPack0],
+		}
+		outputs
+		{
+            item 4 USMIL.SmallViewport0,
+		}
+    }
+
+    craftRecipe USMILMakeLargeViewport
+    {
+        timedAction = Welding,
+        time        = 400,
+        Tags = InHandCraft;Welding,
+        category = Metalworking,
+        xpAward = MetalWelding:10,
+        SkillRequired = MetalWelding:5,
+
+        inputs
+        {
+            item 1 [Base.GlassPanel],
+            item 2 [Base.SmallSheetMetal],
+			item 1 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 USMIL.LargeViewport0,
+        }
+    }
+
+    craftRecipe USMILPackLargeViewports
+    {
+        timedAction = Making,
+		Time = 25,
+		Tags = InHandCraft;Packing,
+        category = Packing,
+        OnCreate = DAMN.OnCreate.PackStuff,
+
+		inputs
+		{
+            item 4 [USMIL.LargeViewport0],
+            item 1 [Base.ScrapMetal],
+			
+		}
+		outputs
+		{
+            item 1 USMIL.LargeViewportPack0,
+		}
+    }
+
+    craftRecipe USMILUnpackLargeViewports
+    {
+        timedAction = Making,
+		Time = 25,
+		Tags = InHandCraft;Packing,
+        category = Packing,
+        OnCreate = DAMN.OnCreate.UnpackStuff,
+
+		inputs
+		{
+			item 1 [USMIL.LargeViewportPack0],
+		}
+		outputs
+		{
+            item 4 USMIL.LargeViewport0,
+		}
+    }
+
+    /************************ Gas Cans ************************/
+
+    craftRecipe USMILMakeMilitaryGasCan
+    {
+        timedAction = Welding,
+        time        = 500,
+        Tags = InHandCraft;Welding,
+        category = Metalworking,
+        xpAward = MetalWelding:10,
+        SkillRequired = MetalWelding:5,
+
+        inputs
+        {
+            item 3 [Base.SheetMetal],
+            item 2 [Base.SmallSheetMetal],
+			item 5 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 USMIL.GasCan0,
+        }
+    }
+
+    craftRecipe USMILMakeMilitaryWaterCan
+    {
+        timedAction = Welding,
+        time        = 500,
+        Tags = InHandCraft;Welding,
+        category = Metalworking,
+        xpAward = MetalWelding:10,
+        SkillRequired = MetalWelding:5,
+
+        inputs
+        {
+            item 3 [Base.SheetMetal],
+            item 2 [Base.SmallSheetMetal],
+			item 5 [Base.BlowTorch],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 USMIL.WaterCan0,
+        }
+    }
+}

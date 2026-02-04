@@ -1,0 +1,274 @@
+module USMIL
+{
+
+    /************************ Seats ************************/
+
+     item Seat0
+     {
+        DisplayCategory = VehicleMaintenance,
+        Weight =   8.0,
+        ItemType = base:normal,
+        DisplayName    =   Military Vehicle Seat ST1,
+        Icon   =   USMIL_seat0,
+        VehicleType =   2,
+        MaxCapacity = 20,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILSeat0WI,
+        Tags = base:hasmetal;damnlib:damnSeatLarge,
+     }
+
+     item Seat1front
+     {
+        DisplayCategory = VehicleMaintenance,
+        Weight =   7.0,
+        ItemType = base:normal,
+        DisplayName    =   Military Vehicle Seat ST2,
+        Icon   =   USMIL_seat2,
+        VehicleType =   2,
+        MaxCapacity = 14,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILSeat1frontWI,
+        Tags = base:hasmetal;damnlib:damnSeatLarge,
+     }
+
+     item Seat1rear
+     {
+        DisplayCategory = VehicleMaintenance,
+        Weight =   7.0,
+        ItemType = base:normal,
+        DisplayName    =   Military Vehicle Seat ST2R,
+        Icon   =   USMIL_seat1,
+        VehicleType =   2,
+        MaxCapacity = 14,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILSeat1rearWI,
+        Tags = base:hasmetal;damnlib:damnSeatLarge,
+     }
+
+     item Seat2
+     {
+        DisplayCategory = VehicleMaintenance,
+        Weight =   5.0,
+        ItemType = base:normal,
+        DisplayName    =   Military Vehicle Seat ST3,
+        Icon   =   USMIL_seat3,
+        VehicleType =   2,
+        MaxCapacity = 5,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILSeat2WI,
+        Tags = base:hasmetal;damnlib:damnSeatSmall,
+     }
+
+     /************************ Stretcher ************************/
+
+     item Stretcher0
+     {
+        DisplayCategory = VehicleMaintenance,
+        Weight =   8.0,
+        ItemType = base:normal,
+        DisplayName    =   Military Stretcher,
+        Icon   =   USMIL_Stretcher0,
+        MaxCapacity = 10,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILStretcher0WI,
+        Tags = base:hasmetal;damnlib:damnTarpLarge,
+     }
+
+     item Stretcher1
+     {
+        DisplayCategory = VehicleMaintenance,
+        Weight = 14.0,
+        ItemType = base:normal,
+        DisplayName  = Ambulance Stretcher,
+        Icon = USMIL_Stretcher1,
+        MaxCapacity = 20,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILStretcher1WI,
+        Tags = base:hasmetal;damnlib:damnSeatLarge,
+     }
+
+     /************************ Crates ************************/
+
+     item Crate0
+     {
+        DisplayCategory = VehicleMaintenance,
+        Weight =   11.0,
+        ItemType = base:normal,
+        DisplayName    =   Wooden Crate,
+        Icon   =   USMIL_crate1_civ,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILCrate1WI,
+        Tags = damnlib:damnWoodenCrate,
+     }
+
+     item Crate0military
+     {
+        DisplayCategory = VehicleMaintenance,
+        Weight =   11.0,
+        ItemType = base:normal,
+        DisplayName    =   Mlitary Wooden Crate,
+        Icon   =   USMIL_crate1_mil,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILCrate1milWI,
+        Tags = damnlib:damnWoodenCrate,
+     }
+
+     item Crate0Open
+     {
+        DisplayCategory = VehicleMaintenance,
+        Weight =   11.0,
+        ItemType = base:container,
+        WeightReduction =  60,
+        DisplayName    =   Open Wooden Crate,
+        Icon   =   USMIL_crate1_civ,
+        Capacity = 20,
+        WorldStaticModel = USMILCrate1WI,
+        Tags = damnlib:damnWoodenCrate,
+     }
+
+     item Crate0militaryOpen
+     {
+        DisplayCategory = VehicleMaintenance,
+        Weight =   11.0,
+        ItemType = base:container,
+        WeightReduction =  60,
+        DisplayName    =   Open Mlitary Wooden Crate,
+        Icon   =   USMIL_crate1_mil,
+        Capacity = 20,
+        WorldStaticModel = USMILCrate1milWI,
+        Tags = damnlib:damnWoodenCrate,
+     }
+
+     /************************ Gas Cans ************************/
+
+     item GasCan0
+     {
+        DisplayCategory = VehicleMaintenance,
+        Weight   =  3,
+        ItemType = base:normal,
+        DisplayName    =   Military Gas Can,
+        Icon   =   USMIL_gascan0_mil,
+        StaticModel = USMILGasCan0SM,
+        SurvivalGear = TRUE,
+        ReplaceInSecondHand = USMIL_gasCan0_Lhand holdingbagleft,
+        ReplaceInPrimaryHand = USMIL_gasCan0_RHand holdingbagright,
+        WorldStaticModel = USMILGasCan0WI,
+        Tags = base:petrol;base:hasmetal,
+
+            component FluidContainer
+        	{
+            		ContainerName   = MilitaryGasCan,
+            		capacity        = 10.0,
+
+            		Fluids
+            		{
+                 		fluid           = Petrol:0.0,
+            		}
+        	}
+        
+     }
+
+   /************************ Water Cans ************************/
+
+     item WaterCan0
+     {
+        DisplayCategory = Water,
+        Weight   =  3,
+        ItemType = base:normal,
+        DisplayName    =   Military Water Can,
+        Icon   =   USMIL_gascan0_mil,
+        CookingSound = BoilingFood,
+        StaticModel = USMILWaterCan0SM,
+        ReplaceInSecondHand = USMIL_gasCan0_Lhand holdingbagleft,
+        ReplaceInPrimaryHand = USMIL_gasCan0_RHand holdingbagright,
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+        FillFromLakeSound = GetWaterFromLakeMetalBig,
+        FillFromTapSound = GetWaterFromTapMetalBig,
+        WorldStaticModel = USMILWaterCan0WI,
+        Tags = base:bucket;base:cookable;base:metalbucket;base:hasmetal,
+
+            component FluidContainer
+            {
+                ContainerName   = MilitaryWaterCan,
+                capacity        = 10.0,
+                Fluids
+                {
+                    fluid           = Water:0.0,
+                }
+            }
+     }
+
+   /************************ Viewports ************************/
+
+   item SmallViewport0
+   {
+        DisplayCategory = VehicleMaintenance,
+        Weight =  2.0,
+        ItemType = base:normal,
+        DisplayName  =  Small Viewport,
+        Icon   =  USMIL_viewport_s,
+        VehicleType =   2,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILSmallViewport0WI,
+   }
+
+   item SmallViewportPack0
+   {
+        DisplayCategory = VehicleMaintenance,
+        Weight =  5.0,
+        ItemType = base:normal,
+        DisplayName  =  Small Viewport Pack,
+        Icon   =  USMIL_viewports_s,
+        VehicleType =   2,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILSmallViewportPack0WI,
+   }
+
+   item LargeViewport0
+   {
+        DisplayCategory = VehicleMaintenance,
+        Weight  =   4.0,
+        ItemType = base:normal,
+        DisplayName =   Large Viewport,
+        Icon    =   USMIL_viewport_l,
+        VehicleType =   2,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILLargeViewport0WI,
+   }
+
+   item LargeViewportPack0
+   {
+        DisplayCategory = VehicleMaintenance,
+        Weight  =   10.0,
+        ItemType = base:normal,
+        DisplayName =   Large Viewport Pack,
+        Icon    =   USMIL_viewports_l,
+        VehicleType =   2,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+        WorldStaticModel = USMILLargeViewportPack0WI,
+   }
+}

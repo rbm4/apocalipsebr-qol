@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fileGuidTable>
+
+	<files>
+		<path>media/clothing/clothingItems/USMIL_gasCan0_Lhand.xml</path>
+		<guid>27025ecf-f504-4a0a-84e5-ff26d0a23729</guid>
+	</files>
+	<files>
+		<path>media/clothing/clothingItems/USMIL_gasCan0_Rhand.xml</path>
+		<guid>c573491e-f884-4fe7-a2a0-e1a0a914aa0a</guid>
+	</files>
+</fileGuidTable>
