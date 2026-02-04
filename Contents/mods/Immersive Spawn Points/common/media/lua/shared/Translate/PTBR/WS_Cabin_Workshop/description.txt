@@ -1,0 +1,3 @@
+<CENTRE> SIZE:medium A OFICINA <LINE> <LINE>
+<LEFT> SIZE:small Um barraco, uma pequena oficina e uma casa é tudo o que você precisa neste novo mundo feio. <LINE> <LINE>
+Dificuldade: †

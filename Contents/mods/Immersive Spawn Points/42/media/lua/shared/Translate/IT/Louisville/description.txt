@@ -1,0 +1,5 @@
+<CENTRE> <SIZE:medium> Louisville, KY <LINE> <LINE>
+<LEFT> <SIZE:small> Vivi a Louisville. <LINE>
+Apparirai in una casa randomica a Louisville. <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Folle <LINE>
+<LEFT> <SIZE:small> Questo è uno spawn estremamente difficile, ovunque ti troverai sarai circondato da pericoli.

@@ -1,0 +1,5 @@
+<CENTRE> <SIZE:medium> Fallas Lake, KY <LINE> <LINE>
+<LEFT> <SIZE:small> Vivi a Fallas Lake. <LINE>
+Apparirai in una casa randomica a Fallas Lake. <LINE> <LINE>
+<LEFT> <SIZE:medium> Grado di sfida: Medio-Alto <LINE>
+<LEFT> <SIZE:small> Questo è uno spawn abbastanza incerto, potresti essere attorniato da infetti oppure in un quartiere tranquillo.

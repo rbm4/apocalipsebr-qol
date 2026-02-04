@@ -1,0 +1,4 @@
+<CENTER> <SIZE:medium> Arrived by Plane <LINE> <LINE>
+<LEFT> <SIZE:small> You've just arrived in Brandenburg by plane... but the apocalypse has just arrived, too. <LINE> <LINE>
+<SIZE:medium> Challenge Level: Hard <LINE>
+<LEFT> <SIZE:small> This is a tricky spawn, there are many infected nearby.

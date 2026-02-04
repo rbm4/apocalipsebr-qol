@@ -1,0 +1,6 @@
+<CENTRE> <SIZE:medium> Detenuto <LINE> <LINE>
+<LEFT> <SIZE:small> Sei un detenuto nel carcere di Rosewood.
+ <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Folle. <LINE> 
+<LEFT> <SIZE:small> Le celle e i corridoi sono pieni di infetti! <LINE> <LINE>
+<SIZE:medium> ATTIVA DAL SANDBOX LA POSSIBILITÀ CHE GLI ZOMBIE POSSANO SPAWNARE DENTRO L'EDIFICIO ALTRIMENTI L'INTERO CARCERE SARÀ VUOTO!

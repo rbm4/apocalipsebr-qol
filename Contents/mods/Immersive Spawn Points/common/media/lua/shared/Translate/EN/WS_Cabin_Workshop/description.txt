@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> THE WORKSHOP <LINE> <LINE>
+<LEFT> <SIZE:small>  A shack, a little workshop and a house is all you need in this ugly new world. <LINE> <LINE>
+Difficulty : †

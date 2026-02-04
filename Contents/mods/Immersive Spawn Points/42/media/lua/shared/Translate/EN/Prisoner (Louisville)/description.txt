@@ -1,0 +1,5 @@
+<CENTER> <SIZE:medium> Inmate <LINE> <LINE>
+<LEFT> <SIZE:small> You are an inmate at Louisville Prison. <LINE> <LINE>
+<SIZE:medium> Challenge Level: Insane <LINE>
+<LEFT> <SIZE:small> The cells and corridors are full of infected! <LINE> <LINE>
+<SIZE:medium> ENABLE THE POSSIBILITY OF ZOMBIES SPAWNING IN THE BUILDING FROM THE SANDBOX, OTHERWISE THE ENTIRE PRISON WILL BE EMPTY!

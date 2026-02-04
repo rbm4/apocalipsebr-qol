@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> LE CHALET DANS LE BOIS <LINE> <LINE>
+<LEFT> <SIZE:small>  Seul au milieu du bois avec une quantité très limitée d'eau. Seulement la ville la plus près peut aider avec ça... <LINE> <LINE>
+Difficulté : †††

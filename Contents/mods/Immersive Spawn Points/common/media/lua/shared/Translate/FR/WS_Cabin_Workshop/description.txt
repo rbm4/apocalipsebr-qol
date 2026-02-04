@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> L'ATELIER <LINE> <LINE>
+<LEFT> <SIZE:small>  Un cabanon, un petit atelier et une belle maison sont tout ce dont vous avez besoin dans ce terrible monde. <LINE> <LINE>
+Difficulté : †

@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> LE CAMP DE SURVIE <LINE> <LINE>
+<LEFT> <SIZE:small>  Vous êtes le dernier survivant de votre groupe et il vous reste tout le matériel que vous avez récupéré pour monter votre camp de fortune dans les entrailles d'une petite chapelle au bord d'un lac. <LINE> <LINE>
+Difficulté : †

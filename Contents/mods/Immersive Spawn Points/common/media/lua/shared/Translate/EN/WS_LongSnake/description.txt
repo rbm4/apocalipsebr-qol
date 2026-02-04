@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> THE LONG SNAKE <LINE> <LINE>
+<LEFT> <SIZE:small>  South of Louisville next to a small river, there is a shopping center further east with a large parking lot and a movie theater. <LINE> <LINE>
+Difficulty : ††

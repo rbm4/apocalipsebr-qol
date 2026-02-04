@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> O ACAMPAMENTO DO SOBREVIVENTE <LINE> <LINE>
+<LEFT> <SIZE:small>  Você é o último sobrevivente do seu grupo e ficou com todo o material que reuniu em um acampamento improvisado, montado em uma pequena capela à beira de um lago. <LINE> <LINE>
+Dificuldade: †

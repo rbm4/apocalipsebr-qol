@@ -1,0 +1,5 @@
+<CENTER> <SIZE:medium> Louisville, KY <LINE> <LINE>
+<LEFT> <SIZE:small> You live in Louisville.<LINE>
+You will appear in a random house in Louisville. <LINE> <LINE>
+<SIZE:medium> Challenge Level: Insane <LINE>
+<LEFT> <SIZE:small> This is an extremely difficult spawn; no matter where you are, you'll be surrounded by danger.

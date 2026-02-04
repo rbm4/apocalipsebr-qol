@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> LE DÉPOTOIR <LINE> <LINE>
+<LEFT> <SIZE:small>  Au nord de Muldraugh et à l'est d'une petite ferme où les rats et les souris vivent en harmonie. Le point d'eau le plus proche est assez éloigné... <LINE> <LINE>
+Difficulté : ††

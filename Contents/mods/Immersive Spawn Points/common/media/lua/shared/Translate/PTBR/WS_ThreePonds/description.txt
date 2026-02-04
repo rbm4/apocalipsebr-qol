@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> AS TRÊS LAGOAS <LINE> <LINE>
+<LEFT> <SIZE:small> A oeste de Muldraugh, há uma fazenda ao norte com alguns animais. <LINE> <LINE>
+Difficulty : ††

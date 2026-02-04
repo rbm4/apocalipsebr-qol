@@ -1,0 +1,5 @@
+<CENTER> <SIZE:medium> Hospitalized <LINE> <LINE>
+<LEFT> <SIZE:small> You've suffered an injury, an accident, surgery, or something similar. You wake up in a hospital bed like in the best zombie stories. <LINE> <LINE>
+<SIZE:medium> Challenge Level: Insane <LINE>
+<LEFT> <SIZE:small> The only hospitals in the county are in Louisville, and you'll find yourself in one of them. <LINE>
+<SIZE:medium> ENABLE THE POSSIBILITY OF ZOMBIES SPAWNING INSIDE THE BUILDING FROM THE SANDBOX, OTHERWISE THE ENTIRE HOSPITAL WILL BE EMPTY!

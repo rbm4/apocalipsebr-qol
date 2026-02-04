@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> LA MAISON DU LAC <LINE> <LINE>
+<LEFT> <SIZE:small>  Elle contient tout le nécessaire - et plus - pour vivre une belle et longue vie paisible seul dans le bois. <LINE> <LINE>
+Difficulté : †

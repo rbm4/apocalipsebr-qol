@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> LE CHALET DE LA RIVIÈRE <LINE> <LINE>
+<LEFT> <SIZE:small>  Un chalet de chasse au sud de Louisville non loins du bout de la rivière. <LINE> <LINE>
+Difficulté : †

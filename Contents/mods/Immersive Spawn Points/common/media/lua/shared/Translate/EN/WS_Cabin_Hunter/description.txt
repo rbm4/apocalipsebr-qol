@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> THE HUNTER <LINE> <LINE>
+<LEFT> <SIZE:small>  A fully equiped hunting cabins close to fields and farms. There might be a well around somewhere, but not home. <LINE> <LINE>
+Difficulty : †

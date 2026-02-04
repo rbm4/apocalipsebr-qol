@@ -1,0 +1,6 @@
+<CENTRE> <SIZE:medium> Perso nel bosco, KY <LINE> <LINE>
+<LEFT> <SIZE:small> Sei scappato dalle orde senza mai guardarti indietro finché non ti sei perso. <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Medio <LINE> 
+<LEFT> <SIZE:small> QUESTO È UN SPAWN CASUALE! Ti ritroverai in un bosco casuale. <LINE> 
+<LEFT> <SIZE:small> Questo spawn è all'interno della mappa giocabile, troverai sempre qualcosa in ogni direzione che sceglierai di prendere. <LINE>
+Questo spawn ti garantirà di non avere zombie nelle vicinanze, ma sarai molto isolato dai centri urbani.

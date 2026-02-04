@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> L'ÉTANG <LINE> <LINE>
+<LEFT> <SIZE:small>  À côté d'un petit étang au milieu du bois près de Fallas Lake. <LINE> <LINE>
+Difficulté : ††

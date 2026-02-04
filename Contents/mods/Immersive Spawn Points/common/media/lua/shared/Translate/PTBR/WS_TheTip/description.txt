@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> A PONTA <LINE> <LINE>
+<LEFT> <SIZE:small>  Bem no fim de um lago ao sul de Riverside. <LINE> <LINE>
+Dificuldade: †

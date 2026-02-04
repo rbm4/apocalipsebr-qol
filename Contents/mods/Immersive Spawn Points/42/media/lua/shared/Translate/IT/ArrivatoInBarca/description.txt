@@ -1,0 +1,4 @@
+<CENTRE> <SIZE:medium> Venuto in Barca <LINE> <LINE>
+<LEFT> <SIZE:small> Sei arrivato dall'Indiana con un traghetto, ti trovi al molo di Brandeburg adesso. <LINE> <LINE>
+<LEFT> <SIZE:medium> Grado di sfida: Alto <LINE>
+<LEFT> <SIZE:small> Questo è uno spawn complicato, ci sono molti infetti nelle vicinanze.

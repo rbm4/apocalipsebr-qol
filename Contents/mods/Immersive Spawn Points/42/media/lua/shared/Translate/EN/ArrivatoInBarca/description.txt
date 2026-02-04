@@ -1,0 +1,4 @@
+<CENTER> <SIZE:medium> Came by Boat <LINE> <LINE>
+<LEFT> <SIZE:small> You arrived from Indiana by ferry, and are now at the Brandenburg dock. <LINE> <LINE>
+<LEFT> <SIZE:medium> Challenge Level: High <LINE>
+<LEFT> <SIZE:small> This is a tricky spawn; there are many infected nearby.

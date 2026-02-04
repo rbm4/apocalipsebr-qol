@@ -1,0 +1,5 @@
+<CENTER> <SIZE:medium> Ekron, KY <LINE> <LINE>
+<LEFT> <SIZE:small> You live in Ekron.<LINE>
+You will appear in a random house in Ekron. <LINE> <LINE>
+<LEFT> <SIZE:medium> Challenge Level: Medium-High <LINE>
+<LEFT> <SIZE:small> This is a fairly uncertain spawn; you may be surrounded by infected or in a quiet neighborhood.

@@ -1,0 +1,4 @@
+<CENTRE> <SIZE:medium> Venuto da Ovest <LINE> <LINE>
+<LEFT> <SIZE:small> Sei appena arrivato nella contea di Knox da ovest, forse stai scappando in cerca di una zona rurale perché le grandi città sono mortali. Fai attenzione, dietro di te ci sono un sacco di zombie. <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Medio <LINE>
+<LEFT> <SIZE:small> Questo è uno spawn abbastanza sicuro, ma troverai orde alle tue spalle e avrai davanti la cittadina di Ekron.

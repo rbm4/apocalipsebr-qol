@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> A FOZ <LINE> <LINE>
+<LEFT> <SIZE:small> Onde o pequeno rio deságua no rio Ohio, a leste de Westpoint. <LINE> <LINE>
+Dificuldade : ††

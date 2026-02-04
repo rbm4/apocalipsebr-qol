@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> LE SERPENT <LINE> <LINE>
+<LEFT> <SIZE:small>  Au sud de Louisville tout près d'une petite rivière. À l'est se trouve un centre commerciale avec un grand stationnement et un cinéma. <LINE> <LINE>
+Difficulté : ††

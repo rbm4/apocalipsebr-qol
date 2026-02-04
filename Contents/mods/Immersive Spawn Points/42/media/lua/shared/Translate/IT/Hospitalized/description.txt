@@ -1,0 +1,5 @@
+<CENTRE> <SIZE:medium> Ricoverato in Ospedale <LINE> <LINE>
+<LEFT> <SIZE:small> Hai subito un infortunio, un incidente, un intervento chirurgico o qualcosa di simile. Ti svegli in un letto d'ospedale come nelle migliori storie di zombie. <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Folle <LINE> 
+<LEFT> <SIZE:small> Gli unici ospedali della contea sono a Louisville e ti ritroverai in uno di questi. <LINE>
+<SIZE:medium> ATTIVA DAL SANDBOX LA POSSIBILITÀ CHE GLI ZOMBIE POSSANO SPAWNARE DENTRO L'EDIFICIO ALTRIMENTI L'INTERO OSPEDALE SARÀ VUOTO!

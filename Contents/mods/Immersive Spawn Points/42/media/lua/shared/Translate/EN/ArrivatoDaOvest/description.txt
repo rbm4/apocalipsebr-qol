@@ -1,0 +1,4 @@
+<CENTER> <SIZE:medium> Coming from the West <LINE> <LINE>
+<LEFT> <SIZE:small> You've just arrived in Knox County from the west, perhaps fleeing for a rural area because the big cities are deadly. Be careful, there are a lot of zombies behind you. <LINE> <LINE>
+<SIZE:medium> Challenge Level: Medium <LINE>
+<LEFT> <SIZE:small> This is a fairly safe spawn, but you'll find hordes behind you and the town of Ekron ahead.

@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> LE CHASSEUR <LINE> <LINE>
+<LEFT> <SIZE:small>  Un chalet de chasse complètement équipé non loin de champs et de fermes. Il y a probablement des zombies qui rôdent autour, mais pas à la maison. <LINE> <LINE>
+Difficulté : †

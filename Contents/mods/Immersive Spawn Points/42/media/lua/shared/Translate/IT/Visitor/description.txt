@@ -1,0 +1,4 @@
+<CENTRE> <SIZE:medium> Visitatore <LINE> <LINE>
+<LEFT> <SIZE:small> Non sei di qui, sei arrivato nella Contea di Knox per qualche motivo e hai affittato la prima stanza disponibile che hai trovato.  <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Medio-Alto <LINE>
+<SIZE:small> QUESTO È UNO SPAWN CASUALE! Apparirai in una stanza d'albergo casuale nella contea, questo è uno spawn abbastanza incerto, potresti essere attorniato da infetti oppure in un quartiere tranquillo.

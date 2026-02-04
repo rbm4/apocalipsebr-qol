@@ -1,0 +1,5 @@
+<CENTER> <SIZE:medium> Irvington, KY <LINE> <LINE>
+<LEFT> <SIZE:small> You live in Irvington.<LINE>
+You will appear in a random house in Irvington. <LINE> <LINE>
+<SIZE:medium> Challenge Level: Medium-High <LINE>
+<LEFT> <SIZE:small> This is a fairly unstable spawn; you may be surrounded by infected or in a quiet neighborhood.

@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> CABIN BY THE RIVER <LINE> <LINE>
+<LEFT> <SIZE:small>  A hunter cabin South of Louiville not too far from the end of a river. <LINE> <LINE>
+Difficulty : †

@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> THE ABANDONNED CABIN <LINE> <LINE>
+<LEFT> <SIZE:small>  Somewhere south of Brandenburg - it's not really a cabin, because there is not roof and no walls. There is a mansion nearby, but mostly woods and a small pond. <LINE> <LINE>
+Difficulty : †

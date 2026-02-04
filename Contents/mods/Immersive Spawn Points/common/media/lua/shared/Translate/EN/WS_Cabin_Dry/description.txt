@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> THE DRY CABIN <LINE> <LINE>
+<LEFT> <SIZE:small>  Water is gonna be a challenge here... <LINE> <LINE>
+Difficulty : †††

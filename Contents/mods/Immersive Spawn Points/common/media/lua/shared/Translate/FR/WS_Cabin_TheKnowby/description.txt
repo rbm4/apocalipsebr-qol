@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> LE CHALET KNOWBY <LINE> <LINE>
+<LEFT> <SIZE:small>  On dit qu'il s'est passé des choses épouvantables à cet endroit, mais maintenant c'est assez tranquille. Une petite rivière se trouve non loin sur le chemin devant le chalet. <LINE> <LINE>
+Difficulté : †

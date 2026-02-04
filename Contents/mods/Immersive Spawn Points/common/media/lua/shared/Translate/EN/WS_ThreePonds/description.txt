@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> THE THREE PONDS <LINE> <LINE>
+<LEFT> <SIZE:small>  West of Muldraugh, there is a farm to the North with some farm animals. <LINE> <LINE>
+Difficulty : ††

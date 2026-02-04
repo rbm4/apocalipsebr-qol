@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> CASA PERTO DO INTERNATO <LINE> <LINE>
+<LEFT> <SIZE:small> À beira de um grande lago com um deque de pesca e um internato possivelmente lotado de zumbis nas proximidades. <LINE> <LINE>
+Dificuldade: †
