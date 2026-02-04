@@ -38,5 +38,42 @@ module Base
 				create = DAMN.Create.Blank,
 			}
 		}
+
+		part M101A3Trunk2
+		{
+			category = bodywork,
+			area = TruckBed,
+			itemType = damnCraft.Trunk,
+			mechanicRequireKey = false,
+			repairMechanic = true,
+			container
+			{
+				capacity = 70,
+				conditionAffectsCapacity = false,
+				test = M101A3.ContainerAccess.TruckBedTop,
+			}
+			lua
+			{
+				create = Vehicles.Create.Default,
+			}
+		}
+
+		part TruckBed2
+		{
+			category = nodisplay,
+			area = TruckBed2,
+			itemType = nil,
+			mechanicRequireKey = false,
+			repairMechanic = true,
+			container
+			{
+				conditionAffectsCapacity = false,
+				test = M101A3.ContainerAccess.TruckBedTop,
+			}
+			lua
+			{
+				create = DAMN.Create.Blank,
+			}
+		}
 	}
 }
