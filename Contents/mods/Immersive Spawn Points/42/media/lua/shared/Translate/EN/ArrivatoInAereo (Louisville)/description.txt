@@ -1,0 +1,4 @@
+<CENTER> <SIZE:medium> Arrived by Plane <LINE> <LINE>
+<LEFT> <SIZE:small> You've just arrived in Louisville by plane... but the apocalypse has also just arrived. <LINE> <LINE>
+<SIZE:medium> Challenge Level: Insane <LINE>
+<LEFT> <SIZE:small> This is a very difficult spawn, there are many infected nearby and no safe places within easy reach.

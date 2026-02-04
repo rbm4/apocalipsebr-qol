@@ -1,0 +1,4 @@
+<CENTER> <SIZE:medium> Coming from the East <LINE> <LINE>
+<LEFT> <SIZE:small> You've just arrived in Knox County from the east, perhaps fleeing in search of a rural area because the big cities are deadly. You've walked a long way through the woods before finding a road, now you can follow it, hoping to find safety. <LINE> <LINE>
+<SIZE:medium> Challenge Level: Low <LINE>
+<LEFT> <SIZE:small> This is a safe spawn; you won't find any zombies nearby.

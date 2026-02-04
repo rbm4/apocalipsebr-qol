@@ -1,0 +1,4 @@
+<CENTRE> <SIZE:medium> Centro Commerciale <LINE> <LINE>
+<LEFT> <SIZE:small> Eri al centro commerciale quando tutto è iniziato, sei riuscito ad arrivare al parcheggio ma il caos e le orde sono tutt'intorno a te. <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Folle <LINE>
+<SIZE:small> QUESTA È UNO SPAWN HARDCORE! Apparirai nel parcheggio del centro commerciale circondato da molte orde.

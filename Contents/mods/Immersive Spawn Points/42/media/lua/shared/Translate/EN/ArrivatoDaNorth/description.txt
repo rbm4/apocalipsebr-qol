@@ -1,0 +1,5 @@
+<CENTER> <SIZE:medium> Coming from the North <LINE> <LINE>
+<LEFT> <SIZE:small> You've just arrived in Knox County from the North; someone said Louisville was still safe. You were driving into Louisville over the bridge, but the apocalypse has already arrived and the roads are blocked, so you've been forced to abandon your vehicle and flee.
+Be careful, Louisville is deadly. <LINE> <LINE>
+<SIZE:medium> Challenge Level: High <LINE>
+<LEFT> <SIZE:small>This is a difficult spawn; you won't find any zombies at spawn, but you'll have the city of Louisville and its hordes ahead of you.<LINE>

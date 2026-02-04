@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> LA BARAQUE SÈCHE <LINE> <LINE>
+<LEFT> <SIZE:small>  L'eau va rapidement devenir un réel problème ici... <LINE> <LINE>
+Difficulté : †††

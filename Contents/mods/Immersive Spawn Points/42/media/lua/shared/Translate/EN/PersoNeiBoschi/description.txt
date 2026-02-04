@@ -1,0 +1,6 @@
+<CENTER> <SIZE:medium> Lost in the Woods, KY <LINE> <LINE>
+<LEFT> <SIZE:small> You ran from the hordes and never looked back until you were lost. <LINE> <LINE>
+<SIZE:medium> Challenge Level: Medium <LINE>
+<LEFT> <SIZE:small> THIS IS A RANDOM SPAWN! You'll find yourself in a random forest. <LINE>
+<LEFT> <SIZE:small> This spawn is within the playable map; you'll always find something in any direction you choose. <LINE>
+This spawn will ensure you're free of zombies, but you'll be very isolated from urban centers.

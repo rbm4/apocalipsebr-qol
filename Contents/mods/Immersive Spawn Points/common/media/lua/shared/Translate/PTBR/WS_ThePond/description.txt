@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> O LAGO <LINE> <LINE>
+<LEFT> <SIZE:small> Próximo a um pequeno lago no meio da floresta, perto do Lago Fallas. <LINE> <LINE>
+Dificuldade: ††

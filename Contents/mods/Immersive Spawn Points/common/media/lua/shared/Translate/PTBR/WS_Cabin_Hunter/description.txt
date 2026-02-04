@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> O CAÇADOR <LINE> <LINE>
+<LEFT> <SIZE:small> Uma cabana de caça totalmente equipada, próxima a campos e fazendas. Pode haver um poço por perto, mas não dentro da casa. <LINE> <LINE>
+Dificuldade: †

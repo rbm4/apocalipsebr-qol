@@ -1,0 +1,4 @@
+<CENTRE> <SIZE:medium> Venuto da Ovest <LINE> <LINE>
+<LEFT> <SIZE:small> Sei appena arrivato nella Contea di Knox dal sud, forse sei scappato in cerca di una zona rurale perché le grandi città sono mortali. Hai appena trovato una strada principale dopo una lunga camminata, forse puoi trovare un posto sicuro seguendola. <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Facile <LINE>
+<LEFT> <SIZE:small> Questo è uno spawn sicuro, Non ci sono infetti nelle vicinanze.

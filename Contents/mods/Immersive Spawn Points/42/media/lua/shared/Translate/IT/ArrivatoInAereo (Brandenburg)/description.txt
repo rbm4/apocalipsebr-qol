@@ -1,0 +1,4 @@
+<CENTRE> <SIZE:medium> Venuto in Aereo <LINE> <LINE>
+<LEFT> <SIZE:small> Sei appena arrivato a Brandeburg in aereo... ma anche l'apocalisse è appena arrivata. <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Difficile <LINE>
+<LEFT> <SIZE:small> Questo è uno spawn complicato, ci sono molti infetti nelle vicinanze.

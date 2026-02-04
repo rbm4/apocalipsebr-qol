@@ -1,0 +1,6 @@
+<CENTRE> <SIZE:medium> Valley Station, KY <LINE> <LINE>
+<LEFT> <SIZE:small> Vivi a Valley Station.
+Apparirai in una casa randomica a Valley Station.
+ <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Medio-Alto <LINE>
+<LEFT> <SIZE:small> Questo è uno spawn abbastanza incerto, potresti essere attorniato da infetti oppure in un quartiere tranquillo.

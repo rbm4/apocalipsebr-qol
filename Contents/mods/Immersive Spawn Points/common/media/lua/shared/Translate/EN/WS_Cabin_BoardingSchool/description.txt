@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> HOUSE BY THE BOARDING SCHOOL <LINE> <LINE>
+<LEFT> <SIZE:small>  Sitting by a wide lake with a fishing deck and a possibly dangerously zombie filled boarding school nearby. <LINE> <LINE>
+Difficulty : †

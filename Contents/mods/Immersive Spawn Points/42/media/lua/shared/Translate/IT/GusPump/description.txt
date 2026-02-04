@@ -1,0 +1,5 @@
+<CENTRE> <SIZE:medium> Di Passaggio <LINE> <LINE>
+<LEFT> <SIZE:small> Stavi attraversando la contea di Knox con il tuo veicolo, ma qualcosa è andato storto quando ti sei fermato a una stazione di servizio. <LINE> 
+Apparirai in una stazione di servizio casuale vicino a una strada principale della contea (non a Louisville). <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Alto <LINE>
+<LEFT> <SIZE:small> Questo è uno spawn abbastanza difficile, potresti essere attorniato da infetti fin da subito.

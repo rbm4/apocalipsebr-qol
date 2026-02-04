@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> THE POND <LINE> <LINE>
+<LEFT> <SIZE:small>  Next to a small pond in the middle of the woods nearby Fallas Lake. <LINE> <LINE>
+Difficulty : ††

@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> OTTER POND <LINE> <LINE>
+<LEFT> <SIZE:small>  East of Westpoint nearby a curved shaped ponds and a road. <LINE> <LINE>
+Difficulty : ††

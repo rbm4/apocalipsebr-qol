@@ -1,0 +1,5 @@
+<CENTER> <SIZE:medium> Train Station <LINE> <LINE>
+<LEFT> <SIZE:small> You were traveling through Knox County by train, but something went wrong and the train stopped at a station in Knox County. <LINE>
+You'll appear at a random train station in the county (not Louisville). <LINE> <LINE>
+<SIZE:medium> Challenge Level: High <LINE>
+<LEFT> <SIZE:small> This is a fairly unpredictable spawn; you might be surrounded by infected right away, or at a small station without many infected.

@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> LES TROIS ÉTANGS <LINE> <LINE>
+<LEFT> <SIZE:small>  À l'ouest de Muldraugh, il y a une petite ferme au nord où vivent quelque animaux de ferme. <LINE> <LINE>
+Difficulté : ††

@@ -1,0 +1,4 @@
+<CENTRE> <SIZE:medium> Venuto da Est <LINE> <LINE>
+<LEFT> <SIZE:small> Sei appena arrivato nella Contea di Knox da est, forse sei scappato in cerca di una zona rurale perché le grandi città sono letali. Hai camminato a lungo nei boschi prima di trovare una strada, ora puoi seguirla sperando di trovare un posto sicuro. <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Basso <LINE>
+<LEFT> <SIZE:small> Questo è uno spawn sicuro, non troverai zombie nelle vicinanze.

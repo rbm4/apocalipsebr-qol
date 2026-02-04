@@ -5,7 +5,7 @@
 AF_Main = AF_Main or {}
 
 -- Debug settings
-AF_Main.DEBUG_MODE = true
+AF_Main.DEBUG_MODE = false
 AF_Main.REPRODUCE_ERROR = false -- Set to true to test null insertion
 
 -- Statistics
@@ -120,7 +120,7 @@ local function onFillWorldObjectContextMenu(playerNum, context, worldObjects, te
 
         if isClient() then
             sendClientCommand("AnimalFixes", "CleanAnimals", {
-                vehicleId = v:getId()
+                vehicleId = vehicle:getId()
             })
         end
 
@@ -162,14 +162,9 @@ function AF_Main.printStats()
     print("Cached vehicles: " .. table.getn(AF_Main.recentVehicles))
 end
 
--- Called when game starts
-local function onGameStart()
 
-end
 -- Event Registration
 Events.OnFillWorldObjectContextMenu.Add(onFillWorldObjectContextMenu)
-
-Events.OnGameStart.Add(onGameStart)
 
 -- Initialize
 print("Animal Fixes Main Script Loaded")

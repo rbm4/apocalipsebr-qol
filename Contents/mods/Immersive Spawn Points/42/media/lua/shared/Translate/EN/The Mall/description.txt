@@ -1,0 +1,4 @@
+<CENTER> <SIZE:medium> Shopping Mall <LINE> <LINE>
+<LEFT> <SIZE:small> You were at the mall when it all started. You made it to the parking lot, but chaos and hordes are all around you. <LINE> <LINE>
+<SIZE:medium> Challenge Level: Insane <LINE>
+<SIZE:small> THIS IS A HARDCORE SPAWN! You'll appear in the mall parking lot surrounded by hordes.

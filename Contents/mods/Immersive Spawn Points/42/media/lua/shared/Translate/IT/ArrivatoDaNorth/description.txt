@@ -1,0 +1,5 @@
+<CENTRE> <SIZE:medium> Venuto da Nord <LINE> <LINE>
+<LEFT> <SIZE:small> Sei appena arrivato nella Contea di Knox dal Nord, qualcuno aveva detto che Louisville è ancora sicura. Stavi entrando a Louisville in auto passando dal ponte, ma l'apocalisse è già arrivata e le strade sono bloccate, sei quindi stato costretto a lasciare il veicolo e a scappare.
+Attenzione, Louisville è letale. <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Alto <LINE>
+<LEFT> <SIZE:small>Questo è uno spawn difficile, non troverai zombie allo spawn ma avrai davanti la città di Louisville con le sue orde.<LINE>

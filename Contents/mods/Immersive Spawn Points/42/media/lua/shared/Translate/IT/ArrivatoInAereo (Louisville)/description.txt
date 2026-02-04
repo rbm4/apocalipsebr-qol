@@ -1,0 +1,4 @@
+<CENTRE> <SIZE:medium> Venuto in Aereo <LINE> <LINE>
+<LEFT> <SIZE:small> Sei appena arrivato a Louisville in aereo... ma anche l'apocalisse è appena arrivata. <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Folle <LINE>
+<LEFT> <SIZE:small> Questo è uno spawn molto complicato, ci sono molti infetti nelle vicinanze e non ci sono posti sicuri immediatamente raggiungibili.

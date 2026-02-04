@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> DE L'EAU TOUT AUTOUR <LINE> <LINE>
+<LEFT> <SIZE:small>  Tout à l'ouest où plusieurs étangs et petits lacs commencent à prendre de l'empleur autour de l'usine de traitement des eaux. <LINE> <LINE>
+Difficulté : †††

@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> LE REPAIRE <LINE> <LINE>
+<LEFT> <SIZE:small>  Qui sait qui vivait ici avant, mais maintenant c'est vous et il n'y a que l'eau disponible dans les robinets et à Muldraugh à l'ouest. <LINE> <LINE>
+Difficulté : ††

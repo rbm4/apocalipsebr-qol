@@ -1,0 +1,5 @@
+<CENTER> <SIZE:medium> Passing Through <LINE> <LINE>
+<LEFT> <SIZE:small> You were driving through Knox County, but something went wrong when you stopped at a gas station. <LINE>
+You'll appear at a random gas station near a main road in the county (not in Louisville). <LINE> <LINE>
+<SIZE:medium> Challenge Level: High <LINE>
+<LEFT> <SIZE:small> This is a fairly difficult spawn; you may be surrounded by infected right away.

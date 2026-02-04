@@ -1,0 +1,5 @@
+<CENTRE> <SIZE:medium> Stazione Ferroviaria <LINE> <LINE>
+<LEFT> <SIZE:small> Stavi attraversando la contea di Knox in treno, ma qualcosa è andato storto e il treno si è fermato a una stazione nella contea di Knox. <LINE> 
+Apparirai in una stazione ferroviaria casuale della contea (non a Louisville). <LINE> <LINE>
+<SIZE:medium> Grado di sfida: Alto <LINE>
+<LEFT> <SIZE:small> Questo è uno spawn abbastanza imprevedibile, potresti essere attorniato da infetti fin da subito oppure in una piccola stazione senza troppi infetti.

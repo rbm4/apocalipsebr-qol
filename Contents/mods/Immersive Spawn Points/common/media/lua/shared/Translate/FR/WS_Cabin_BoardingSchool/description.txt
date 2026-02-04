@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> MAISON PRÈS DU PENSIONNAT <LINE> <LINE>
+<LEFT> <SIZE:small>  Bordant un grand lac avec son quai pour pêcher, tout près se trouve un pentionnat possiblement infesté de zombies. <LINE> <LINE>
+Difficulté : †

@@ -1,0 +1,4 @@
+<CENTER> <SIZE:medium> Coming from the West <LINE> <LINE>
+<LEFT> <SIZE:small> You've just arrived in Knox County from the south, perhaps fleeing in search of a rural area because the big cities are deadly. You've just found a main road after a long hike; perhaps you can find a safe place by following it. <LINE> <LINE>
+<SIZE:medium> Challenge Rating: Easy <LINE>
+<LEFT> <SIZE:small> This is a safe spawn. There are no infected nearby.

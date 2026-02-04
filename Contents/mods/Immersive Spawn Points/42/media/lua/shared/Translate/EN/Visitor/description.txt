@@ -1,0 +1,4 @@
+<CENTER> <SIZE:medium> Visitor <LINE> <LINE>
+<LEFT> <SIZE:small> You're not from here; you came to Knox County for some reason and rented the first available room you found. <LINE> <LINE>
+<SIZE:medium> Challenge Level: Medium-High <LINE>
+<SIZE:small> THIS IS A RANDOM SPAWN! You'll appear in a random hotel room in the county. This is a fairly uncertain spawn; you may be surrounded by infected people or in a quiet neighborhood.

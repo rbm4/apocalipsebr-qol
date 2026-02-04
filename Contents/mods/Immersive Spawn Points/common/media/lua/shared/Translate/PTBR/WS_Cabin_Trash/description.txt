@@ -1,0 +1,3 @@
+<CENTRE> SIZE:medium AS CABINES DO LIXO <LINE> <LINE>
+<LEFT> SIZE:small Ao norte de Muldraugh e a leste de uma pequena fazenda onde ratos e camundongos vivem em paz. O corpo d'água mais próximo está bem distante... <LINE> <LINE>
+Dificuldade: ††

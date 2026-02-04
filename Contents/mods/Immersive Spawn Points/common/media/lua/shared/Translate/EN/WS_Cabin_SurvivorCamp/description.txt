@@ -1,0 +1,3 @@
+<CENTRE> <SIZE:medium> THE SURVIVOR CAMP <LINE> <LINE>
+<LEFT> <SIZE:small>  You're the last survivor of your group and you're left with all the material that you gathered in a makeshift camp stationned in a small chapel by a lake. <LINE> <LINE>
+Difficulty : †
