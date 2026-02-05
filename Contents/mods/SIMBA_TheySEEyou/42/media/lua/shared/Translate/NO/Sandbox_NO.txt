@@ -1,0 +1,56 @@
+Sandbox_NO = {
+
+    Sandbox_SIMBA_TSY = "theySEE YOU | Sprinter-skrikene",
+
+    Sandbox_SIMBA_TSY_TimeMode = "Skrekktidsvindu (dag/natt)",
+    Sandbox_SIMBA_TSY_TimeMode_tooltip = "Bestemmer når sprinterne kan bruke sitt spesielle skrik. 0 = dag og natt; 1 = bare dag; 2 = bare natt. Eksempel: bruk ‘2’ for rolige dager og intense netter!",
+
+    Sandbox_SIMBA_TSY_ScreechChance = "Sjanse for skrik ved oppdagelse (%)",
+    Sandbox_SIMBA_TSY_ScreechChance_tooltip = "Sannsynligheten for at en sprinter slipper ut et skrik første gang den ser deg. 0 = aldri; 100 = nesten alle sprintere skriker med en gang. Eksempel: 60 betyr at omtrent 6 av 10 møter starter med et skrik.",
+
+    Sandbox_SIMBA_TSY_ChaseScreechChance = "Sjanse for skrik under jakt (%)",
+    Sandbox_SIMBA_TSY_ChaseScreechChance_tooltip = "Ekstra sjanse for skrik mens sprinteren allerede jager deg. Bruk lave verdier (5–20) for sporadiske skrik og høye for kaotiske jakter. Kombiner med minimumsintervallet for å unngå konstant støy.",
+
+    Sandbox_SIMBA_TSY_ChaseCooldownHours = "Minste tid mellom skrik under jakt (timer)",
+    Sandbox_SIMBA_TSY_ChaseCooldownHours_tooltip = "Minimumstid i spillet mellom skrik fra DEN SAMME sprinteren under en jakt. 0.01 ≈ omtrent 36 sekunder. Høyere verdier gir roligere opplevelse, lavere gir mer intensitet.",
+
+    Sandbox_SIMBA_TSY_GlobalVolume = "Globalt volum for theySEE YOU",
+    Sandbox_SIMBA_TSY_GlobalVolume_tooltip = "Generell volumfaktor for alle skrik. 1.0 = standard; 0.5 = halv lyd; 2.0 = dobbelt lydnivå (vær forsiktig med hørselen). Bruk dette for å balansere modden med spillets totale lydnivå.",
+
+    Sandbox_SIMBA_TSY_FarVolume = "Volum for fjernt skrik",
+    Sandbox_SIMBA_TSY_FarVolume_tooltip = "Kontrollerer volumet på oppdagelsesskriket når sprinteren fortsatt er langt unna. Eksempel: 0.1 = svak ekkoeffekt; 1.0 = tydelig skrik selv på avstand.",
+
+    Sandbox_SIMBA_TSY_NearVolume = "Volum for nært skrik",
+    Sandbox_SIMBA_TSY_NearVolume_tooltip = "Volumfaktor når sprinteren skriker rett foran deg. 1.0 eller høyere for et skikkelig sjokk; høyere verdier gir mer aggressive skrik.",
+
+    Sandbox_SIMBA_TSY_FarRange = "Rekkevidde for oppdagelsesskrik (ruter)",
+    Sandbox_SIMBA_TSY_FarRange_tooltip = "Maksimal avstand (i ruter) hvor oppdagelsesskriket kan høres i 3D. Høyere verdier lar lyden bære lenger, slik at du kan høre sprintere før du ser dem. Nyttig i åpne områder.",
+
+    Sandbox_SIMBA_TSY_AlertNearbyZombies = "Skrik tiltrekker nærliggende zombier",
+    Sandbox_SIMBA_TSY_AlertNearbyZombies_tooltip = "Når aktivert, bruker skriket spillets lydsystem for å trekke zombier innenfor en viss radius. Når deaktivert, er skriket kun for atmosfære og påvirker ikke hordenes AI. Perfekt for dem som vil ha innlevelse uten å øke vanskeligheten.",
+
+    Sandbox_SIMBA_TSY_AlertRadius = "Radius for hordetiltrekning (ruter)",
+    Sandbox_SIMBA_TSY_AlertRadius_tooltip = "Området (i ruter) hvor zombier hører skriket og beveger seg mot kilden. Eksempel: 20 = bare området rundt; 80–100 = hele nabolaget. For høye verdier gjør hvert skrik til et mini-horde-event.",
+
+    Sandbox_SIMBA_TSY_ClusterRadius = "Skrikgrupperadius (ruter)",
+    Sandbox_SIMBA_TSY_ClusterRadius_tooltip = "Bestemmer området som regnes som én skrikscene. Flere sprintere innenfor denne radiusen teller som én gruppe (klynge). Maks antall skrik per klynge gjelder for alle, noe som hindrer konstant støy.",
+
+    Sandbox_SIMBA_TSY_ClusterCooldownHours = "Varighet av skrikvindu per gruppe (timer)",
+    Sandbox_SIMBA_TSY_ClusterCooldownHours_tooltip = "Varigheten av tidsvinduet (i spilletimer) som kontrollerer hvor mange skrik hver gruppe (klynge) kan slippe ut. Eksempel: 0.01 ≈ ca. 36 sekunder for det området.",
+
+    Sandbox_SIMBA_TSY_MaxClusterScreams = "Maks skrik per gruppe",
+    Sandbox_SIMBA_TSY_MaxClusterScreams_tooltip = "Maksimalt antall skrik tillatt per gruppe i tidsvinduet. Eksempel: med verdien 2 vil bare to skrik høres, selv om ti sprintere ser deg samtidig.",
+
+    Sandbox_SIMBA_TSY_MaxProcessDistance = "Maks behandlingsavstand for sprintere (ruter)",
+    Sandbox_SIMBA_TSY_MaxProcessDistance_tooltip = "Maksimal avstand fra spilleren (i ruter) hvor theySEE YOU fortsatt beregner sprintere for skrik. Zombier utenfor denne radiusen ignoreres for bedre ytelse. Verdier mellom 180 og 250 gir god balanse mellom realisme og ytelse.",
+
+    Sandbox_SIMBA_TSY_TickRate = "Oppdateringsintervall per zombie (ticks)",
+    Sandbox_SIMBA_TSY_TickRate_tooltip = "Antall ticks spillet venter før hver sprinter behandles på nytt. Lav verdi = raskere reaksjon, men høyere CPU-belastning; høy verdi = lettere for systemet, men tregere reaksjon. 6 er anbefalt balanse for store horder og helikopterhendelser.",
+
+    Sandbox_SIMBA_TSY_EnableNearScream = "Aktiver nært skrik",
+    Sandbox_SIMBA_TSY_EnableNearScream_tooltip = "Når aktivert, slipper sprinteren ut et ekstra skrik når den kommer nært nok, i tillegg til oppdagelses- og jaktskrik. Deaktivering reduserer støy i nærkamp og holder det ryddigere i store horder.",
+
+    Sandbox_SIMBA_TSY_NearAsWorldSound = "Nært skrik som 3D-verdenslyd",
+    Sandbox_SIMBA_TSY_NearAsWorldSound_tooltip = "Når aktivert, bruker nært skrik PlayWorldSound som et 3D-lyd med retning og ekko — perfekt for hodetelefoner. Når deaktivert, brukes lokal zombielyd, som høres tørrere og mer direkte ut.",
+
+}

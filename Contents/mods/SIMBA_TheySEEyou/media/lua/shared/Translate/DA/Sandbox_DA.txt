@@ -1,0 +1,56 @@
+Sandbox_DA = {
+
+    Sandbox_SIMBA_TSY = "theySEE YOU | Sprinter-skrig",
+
+    Sandbox_SIMBA_TSY_TimeMode = "Skrigstid (dag/nat)",
+    Sandbox_SIMBA_TSY_TimeMode_tooltip = "Bestemmer, hvornår sprinterne kan bruge deres særlige skrig. 0 = dag og nat; 1 = kun dag; 2 = kun nat. Brug 2, hvis du ønsker rolige dage og intense, skræmmende nætter.",
+
+    Sandbox_SIMBA_TSY_ScreechChance = "Sandsynlighed for skrig ved syn (%)",
+    Sandbox_SIMBA_TSY_ScreechChance_tooltip = "Sandsynligheden for, at en sprinter udsender et skrig, første gang den ser dig. 0 = aldrig; 100 = næsten altid. For eksempel: 60 betyder, at cirka 6 ud af 10 møder starter med et skrig.",
+
+    Sandbox_SIMBA_TSY_ChaseScreechChance = "Sandsynlighed for skrig under jagt (%)",
+    Sandbox_SIMBA_TSY_ChaseScreechChance_tooltip = "Ekstra chance for skrig, mens sprinteren allerede jagter dig. Brug lave værdier (5–20) for lejlighedsvise skrig og høje for et mere kaotisk lydbillede. Kombinér med minimumsintervallet mellem skrig for at undgå konstant skrigeri.",
+
+    Sandbox_SIMBA_TSY_ChaseCooldownHours = "Interval mellem jagtskrig (timer)",
+    Sandbox_SIMBA_TSY_ChaseCooldownHours_tooltip = "Minimumstid i spilletimer mellem skrig fra den SAMME sprinter. 0.01 ≈ ca. 36 sekunder i spillet. Højere værdier giver mere stille jagter; lavere værdier giver hyppigere skrig.",
+
+    Sandbox_SIMBA_TSY_GlobalVolume = "Global lydstyrke for theySEE YOU",
+    Sandbox_SIMBA_TSY_GlobalVolume_tooltip = "Overordnet lydstyrkemultiplikator anvendt på alle modens skrig. 1.0 = standardvolumen; 0.5 = halv volumen; 2.0 = dobbelt så højt (passe på trommehinderne). Brug dette til at matche modens lyd med spillets øvrige lyde.",
+
+    Sandbox_SIMBA_TSY_FarVolume = "Lydstyrke for skrig på afstand",
+    Sandbox_SIMBA_TSY_FarVolume_tooltip = "Styrer lydstyrken af opdagelsesskriget, når sprinteren stadig er langt væk. Eksempel: 0.1 giver et diskret ekko; værdier tæt på 1.0 gør skriget markant selv på afstand.",
+
+    Sandbox_SIMBA_TSY_NearVolume = "Lydstyrke for skrig tæt på",
+    Sandbox_SIMBA_TSY_NearVolume_tooltip = "Volumenmultiplikator, når sprinteren skriger lige foran dig. Brug 1.0 eller mere for et stærkt chok; højere værdier gør skrigene mere aggressive.",
+
+    Sandbox_SIMBA_TSY_FarRange = "Rækkevidde for opdagelsesskrig (felter)",
+    Sandbox_SIMBA_TSY_FarRange_tooltip = "Maksimal afstand, i felter, hvor opdagelsesskriget kan høres i 3D. Højere værdier gør, at lyden rejser længere, så du kan høre sprintere før du ser dem. Praktisk på åbne kort, hvor ekko giver stemning.",
+
+    Sandbox_SIMBA_TSY_AlertNearbyZombies = "Skrig tiltrækker nærliggende zombier",
+    Sandbox_SIMBA_TSY_AlertNearbyZombies_tooltip = "Når aktiveret, bruger skriget spillets lydsystem til at kalde zombier inden for en angivet radius. Når deaktiveret, er skriget kun æstetisk: det skræmmer spilleren, men påvirker ikke horden. Godt for dem, der ønsker lydmæssig indlevelse uden ekstra sværhedsgrad.",
+
+    Sandbox_SIMBA_TSY_AlertRadius = "Horde-tiltrækningsradius (felter)",
+    Sandbox_SIMBA_TSY_AlertRadius_tooltip = "Områdets størrelse, i felter, hvor zombier hører skriget og bevæger sig mod lydkilden. Eksempel: 20 påvirker kun den nærmeste gade; 80–100 kan vække et helt nabolag. Meget høje værdier gør hvert skrig til et mini-horde-event.",
+
+    Sandbox_SIMBA_TSY_ClusterRadius = "Gruppe-radius for skrig (felter)",
+    Sandbox_SIMBA_TSY_ClusterRadius_tooltip = "Definerer størrelsen på området, der betragtes som én skrigscene. Hvis flere sprintere befinder sig inden for denne radius, tælles de som én gruppe (klynge). Grænsen for skrig per gruppe gælder samlet, så der undgås endeløs larm.",
+
+    Sandbox_SIMBA_TSY_ClusterCooldownHours = "Skrigvindue pr. gruppe (timer)",
+    Sandbox_SIMBA_TSY_ClusterCooldownHours_tooltip = "Varigheden af tidsvinduet, der styrer skrig fra hver klynge, i spilletimer. Inden for dette vindue er antallet af skrig begrænset af 'Maksimalt antal skrig pr. gruppe'. Eksempel: 0.01 ≈ ca. 36 sekunder i spillet for det område.",
+
+    Sandbox_SIMBA_TSY_MaxClusterScreams = "Maksimalt antal skrig pr. gruppe",
+    Sandbox_SIMBA_TSY_MaxClusterScreams_tooltip = "Det maksimale antal skrig, der tillades i hver gruppe inden for det angivne vindue. Eksempel: med værdi 2, selvom 10 sprintere ser dig samtidig, vil kun 2 skrig blive hørt i den scene.",
+
+    Sandbox_SIMBA_TSY_MaxProcessDistance = "Maksimal behandlingsafstand for sprintere (felter)",
+    Sandbox_SIMBA_TSY_MaxProcessDistance_tooltip = "Afstandsgrænse, i felter fra spilleren, hvor theySEE YOU stadig registrerer sprintere. Zombier uden for denne radius ignoreres fuldstændigt, hvilket sparer ydeevne. 180–250 anbefales for balance mellem realisme og letvægt.",
+
+    Sandbox_SIMBA_TSY_TickRate = "Opdateringsinterval pr. zombie (ticks)",
+    Sandbox_SIMBA_TSY_TickRate_tooltip = "Antallet af ticks spillet venter, før hver sprinter behandles igen. Lavere værdier = hurtigere reaktion men mere CPU-brug; højere = lettere men langsommere. 6 er en god balance for store horder og helikopterkaos.",
+
+    Sandbox_SIMBA_TSY_EnableNearScream = "Aktiver nærsrig",
+    Sandbox_SIMBA_TSY_EnableNearScream_tooltip = "Når aktiveret, udsender sprinteren et ekstra skrig, når den er meget tæt på (nærsrig), ud over opdagelses- og jagtskrig. Deaktivering reducerer lydkaos i nærkamp og gør modulet mere stille i tætte horder.",
+
+    Sandbox_SIMBA_TSY_NearAsWorldSound = "Nærsrig som 3D-lyd (verdenslyd)",
+    Sandbox_SIMBA_TSY_NearAsWorldSound_tooltip = "Når aktiveret, bruger nærsriget PlayWorldSound, som det fjerne skrig: 3D-lyd med retningsfornemmelse og ekko, ideel til headset. Når deaktiveret, bruges lokal lyd fra zombien – mere tør og direkte.",
+
+}
