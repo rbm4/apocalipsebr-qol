@@ -1,0 +1,51 @@
+VERSION = 1,
+
+option CustomSync.UpdateInterval
+{
+    type = integer,
+    default = 30,
+    min = 15,
+    max = 600,
+    page = CustomSync,
+    translation = CustomSync_UpdateInterval,
+}
+
+option CustomSync.SyncDistance
+{
+    type = integer,
+    default = 100,
+    min = 10,
+    max = 500,
+    page = CustomSync,
+    translation = CustomSync_SyncDistance,
+}
+
+option CustomSync.MaxZombies
+{
+    type = integer,
+    default = 100,
+    min = 1,
+    max = 500,
+    page = CustomSync,
+    translation = CustomSync_MaxZombies,
+}
+
+option CustomSync.InterpolationSpeed
+{
+    type = double,
+    default = 1.0,
+    min = 0.01,
+    max = 2.0,
+    page = CustomSync,
+    translation = CustomSync_InterpolationSpeed,
+}
+
+option CustomSync.DebugLogs
+{
+    type = integer,
+    default = 0,
+    min = 0,
+    max = 1,
+    page = CustomSync,
+    translation = CustomSync_DebugLogs,
+}
