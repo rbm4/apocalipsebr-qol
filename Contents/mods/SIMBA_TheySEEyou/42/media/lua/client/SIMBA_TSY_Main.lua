@@ -276,7 +276,7 @@ local function SIMBAproduz_TSY_ScheduleNearScream(zombie, voiceIndex, vars)
 end
 
 
-local function SIMBAproduz_TSY_TriggerAlert(playerObj, vars)
+local function SIMBAproduz_TSY_TriggerAlert(playerObj, vars, screamingZombie)
     local enabled = SIMBAproduz_TSY_AlertEnabledDefault
     local radius  = SIMBAproduz_TSY_AlertRadiusDefault
 
@@ -293,18 +293,17 @@ local function SIMBAproduz_TSY_TriggerAlert(playerObj, vars)
         return
     end
 
+    -- Mark the screaming zombie to ignore this alert temporarily
+    if screamingZombie then
+        local modData = screamingZombie:getModData()
+        modData.SIMBAproduz_TSY_IgnoreAlertUntil = SIMBA_TSY_TickCounter + 100
+    end
+
     local x = playerObj:getX()
     local y = playerObj:getY()
 
-    local function pulse()
-        addSound(playerObj, x, y, 0, radius, radius)
-    end
-
-    pulse()
-    SIMBAproduz_TSY_Delay(pulse, 20)
-    SIMBAproduz_TSY_Delay(pulse, 40)
-    SIMBAproduz_TSY_Delay(pulse, 60)
-    SIMBAproduz_TSY_Delay(pulse, 80)
+    -- Reduced to single pulse to prevent animation thrashing
+    addSound(playerObj, x, y, 0, radius, radius)
 end
 
 local function SIMBAproduz_TSY_IsSprinter(zombie)
@@ -361,6 +360,12 @@ local function SIMBA_TSY_OnZombieUpdate(zombie)
     end
 
     if not SIMBAproduz_TSY_IsSprinter(zombie) then
+        return
+    end
+    
+    -- Skip if zombie should ignore alerts (recently screamed)
+    local modData = zombie:getModData()
+    if modData.SIMBAproduz_TSY_IgnoreAlertUntil and SIMBA_TSY_TickCounter < modData.SIMBAproduz_TSY_IgnoreAlertUntil then
         return
     end
     if not SIMBAproduz_TSY_TimeAllowed() then
@@ -474,7 +479,7 @@ local function SIMBA_TSY_OnZombieUpdate(zombie)
                 if SIMBAproduz_TSY_CanClusterScream(x, y, timeNow, vars) then
                     SIMBAproduz_TSY_PlayFarScream(zombie, voiceIndex, dist, vars)
                     SIMBAproduz_TSY_RegisterClusterScream(x, y, timeNow)
-                    SIMBAproduz_TSY_TriggerAlert(player, vars)
+                    SIMBAproduz_TSY_TriggerAlert(player, vars, zombie)
 
                     totalAny = totalAny + 1
                     modData.SIMBAproduz_TSY_LastAnyScreamTime = timeNow
@@ -526,7 +531,7 @@ local function SIMBA_TSY_OnZombieUpdate(zombie)
                         if SIMBAproduz_TSY_CanClusterScream(x, y, timeNow, vars) then
                             SIMBAproduz_TSY_PlayFarScream(zombie, voiceIndex, dist, vars)
                             SIMBAproduz_TSY_RegisterClusterScream(x, y, timeNow)
-                            SIMBAproduz_TSY_TriggerAlert(player, vars)
+                            SIMBAproduz_TSY_TriggerAlert(player, vars, zombie)
 
                             totalAny = totalAny + 1
                             modData.SIMBAproduz_TSY_LastChaseTime      = timeNow
@@ -550,6 +555,7 @@ local function SIMBA_TSY_OnZombieDead(zombie)
     modData.SIMBAproduz_TSY_LastAnyScreamTime = nil
     modData.SIMBAproduz_TSY_ScreamCount       = nil
     modData.SIMBAproduz_TSY_NextTick          = nil
+    modData.SIMBAproduz_TSY_IgnoreAlertUntil  = nil
 end
 
 local function SIMBA_TSY_OnGameStart()

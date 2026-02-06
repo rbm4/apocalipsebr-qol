@@ -433,9 +433,9 @@ end
 
 -- Hook into server shutdown to finalize cleanup
 local function OnSave()
-    print("SERVER: OnSave  - Cleaning up " .. #corruptedVehiclesToClean .. " corrupted vehicles")
-
+    
     for _, vehicleData in ipairs(corruptedVehiclesToClean) do
+        print("SERVER: OnSave  - Cleaning up " .. #corruptedVehiclesToClean .. " corrupted vehicles")
         local vehicle = vehicleData.vehicle
         if vehicle then
             pcall(function()
@@ -447,10 +447,10 @@ local function OnSave()
                 print("SERVER: Successfully finalized cleanup of vehicle " .. vehicleData.oldId)
             end)
         end
+        print("SERVER: cleanup corrupted vehicles complete")
     end
 
     corruptedVehiclesToClean = {}
-    print("SERVER: cleanup corrupted vehicles complete")
 end
 
 Commands.InsertNullAnimal = function(player, args)
