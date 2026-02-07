@@ -38,6 +38,12 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
                     local zombie = zombieList:get(i)
                     if zombie and not zombie:isDead() and zombie:getOnlineID() == zombieID then
                         found = true
+                        
+                        -- Store in modData so we can reapply if game resets it
+                        local modData = zombie:getModData()
+                        modData.SIMBA_TSY_IsSprinter = true
+                        modData.SIMBA_TSY_WalkType = walkType
+                        
                         -- Apply sprinter properties
                         zombie:setWalkType(walkType)
                         
@@ -78,6 +84,27 @@ end
 
 Events.OnServerCommand.Add(SIMBA_TSY_OnServerCommand)
 
+-- Continuously validate and reapply sprinter walkType
+local function SIMBA_TSY_ValidateSprinters(zombie)
+    if not zombie or zombie:isDead() then
+        return
+    end
+
+    
+    local modData = zombie:getModData()
+    
+    if not modData.SIMBA_TSY_WalkType then
+        return
+    end
+    -- Check if walkType OR speedType needs correction
+    local currentWalkType = zombie:getVariableString("zombiewalktype")
+    if currentWalkType ~= modData.SIMBA_TSY_WalkType then
+        -- Reapply when game resets
+        zombie:setWalkType(modData.SIMBA_TSY_WalkType)
+        print("SIMBA_TSY Client: Corrected sprinter for zombie " .. zombie:getOnlineID())
+    end
+    
+end
 -- Client requests zombie sync from server
 local function SIMBA_TSY_RequestZombieSync()
     local player = getPlayer()
@@ -99,6 +126,7 @@ local function SIMBA_TSY_RequestZombieSync()
     local zombieIDs = {}
     for i = 0, zombies:size() - 1 do
         local zombie = zombies:get(i)
+        SIMBA_TSY_ValidateSprinters(zombie)
         if zombie and not zombie:isDead() then
             local zombieID = zombie:getOnlineID()
             if not SIMBA_TSY_RequestedZombies[zombieID] then
@@ -128,6 +156,7 @@ end
 
 Events.OnTick.Add(SIMBA_TSY_OnTick)
 
+
 -- Clean up tracking on zombie death
 local function SIMBA_TSY_OnZombieDead(zombie)
     if zombie then
@@ -135,6 +164,11 @@ local function SIMBA_TSY_OnZombieDead(zombie)
         if zombieID and SIMBA_TSY_RequestedZombies[zombieID] then
             SIMBA_TSY_RequestedZombies[zombieID] = nil
         end
+        
+        -- Clean up modData
+        local modData = zombie:getModData()
+        modData.SIMBA_TSY_IsSprinter = nil
+        modData.SIMBA_TSY_WalkType = nil
     end
 end
 

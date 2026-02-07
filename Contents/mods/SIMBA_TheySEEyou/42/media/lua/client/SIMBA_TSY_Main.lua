@@ -332,6 +332,20 @@ local function SIMBAproduz_TSY_IsSprinter(zombie)
         return false
     end
 
+    -- Check if this zombie SHOULD be a sprinter based on modData
+    local modData = zombie:getModData()
+    if modData.SIMBA_TSY_IsSprinter and modData.SIMBA_TSY_WalkType then
+        local currentWalkType = zombie:getVariableString("zombiewalktype")
+        
+        -- If game reset the walkType, reapply it
+        if currentWalkType ~= modData.SIMBA_TSY_WalkType then
+            zombie:setWalkType(modData.SIMBA_TSY_WalkType)
+            print("SIMBA_TSY Client: Corrected walkType from " .. tostring(currentWalkType) .. " to " .. modData.SIMBA_TSY_WalkType .. " for zombie " .. zombie:getOnlineID())
+        end
+        return true
+    end
+
+    -- Otherwise check current walkType
     local walkType = zombie:getVariableString("zombiewalktype")
     if not walkType then
         return false

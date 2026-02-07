@@ -93,7 +93,7 @@ local function collectPlayerData(player)
         playerName = player:getUsername(),
         playerId = player:getSteamID(),
         timestamp = os.time(),
-        serverName = getServerName() or "LocalServer",
+        serverName = " ",
         updateNumber = ZKC_Main.updatesSent
     }
     local steamId = player:getSteamID()
