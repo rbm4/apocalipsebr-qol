@@ -7,6 +7,7 @@ if not isServer() then
 end
 
 require "RegionManager_Config"
+require "RegionManager_AutoSafeZones"
 
 RegionManager.Server = RegionManager.Server or {}
 
@@ -135,10 +136,14 @@ end
 local function registerAllRegions()
     log("=== Starting Region Registration ===")
 
+    -- Generate auto-safe zones by subtracting PVP zones from entire map
+    local allRegions = RegionManager.AutoSafeZones.mergeWithConfigured(RegionManager.Config.Regions)
+    log("Processing " .. #allRegions .. " total regions (auto-generated + configured)")
+
     local registered = 0
     local failed = 0
 
-    for _, region in ipairs(RegionManager.Config.Regions) do
+    for _, region in ipairs(allRegions) do
         if registerRegion(region) then
             registered = registered + 1
         else

@@ -66,6 +66,14 @@ RegionManager.Config.Categories = {
         color = {r=0.5, g=0.5, b=0.5},
         announceEntry = false,
         announceExit = false
+    },
+    AUTOSAFE = {
+        name = "Auto-Generated Safe Zone",
+        color = {r=0.0, g=0.78, b=1.0},
+        pvpEnabled = false,
+        safehouse = false,
+        announceEntry = false,
+        announceExit = false
     }
 }
 
@@ -124,22 +132,22 @@ RegionManager.Config.Regions = {
     },
     
     -- Example: West Point Safe Zone
-    {
-        id = "westpoint_safezone",
-        name = "West Point Sanctuary",
-        x1 = 11500,
-        y1 = 6900,
-        x2 = 11550,  -- 50 units away
-        y2 = 6950,
-        z = 0,
-        categories = {"SAFEZONE"},
-        enabled = true,
-        customProperties = {
-            noZombies = true,
-            pvpEnabled = false,
-            message = "You've entered a safe zone. No combat allowed."
-        }
-    },
+    -- {
+    --     id = "westpoint_safezone",
+    --     name = "West Point Sanctuary",
+    --     x1 = 11500,
+    --     y1 = 6900,
+    --     x2 = 11550,  -- 50 units away
+    --     y2 = 6950,
+    --     z = 0,
+    --     categories = {"SAFEZONE"},
+    --     enabled = true,
+    --     customProperties = {
+    --         noZombies = true,
+    --         pvpEnabled = false,
+    --         message = "You've entered a safe zone. No combat allowed."
+    --     }
+    -- },
     
     -- Example: Rosewood High Loot
     {
