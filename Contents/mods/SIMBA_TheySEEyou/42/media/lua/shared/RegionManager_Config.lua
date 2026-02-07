@@ -6,6 +6,19 @@
 RegionManager = RegionManager or {}
 RegionManager.Config = RegionManager.Config or {}
 
+-- Centralized logging utility
+RegionManager.Log = function(module, msg)
+    -- Check sandbox setting for debug mode
+    local debugEnabled = false
+    if SandboxVars and SandboxVars.RegionManager and SandboxVars.RegionManager.DebugMode then
+        debugEnabled = SandboxVars.RegionManager.DebugMode
+    end
+    
+    if debugEnabled then
+        print("[RegionManager " .. tostring(module) .. "] " .. tostring(msg))
+    end
+end
+
 -- Zone categories and their default properties
 RegionManager.Config.Categories = {
     PVP = {
@@ -57,21 +70,36 @@ RegionManager.Config.Categories = {
 }
 
 -- Region definitions
--- Each region can have multiple categories applied
+-- Each region uses two opposite corner coordinates to define a rectangle
+-- Format: x1, y1 (first corner) and x2, y2 (opposite corner)
 RegionManager.Config.Regions = {
     -- Example: Muldraugh Downtown PVP
     {
         id = "muldraugh_downtown_pvp",
         name = "Downtown Muldraugh Arena",
-        x = 10500,
-        y = 9700,
+        x1 = 10500,  -- Top-left or bottom-left corner
+        y1 = 9700,
+        x2 = 10600,  -- Opposite corner (100 units away)
+        y2 = 9800,
         z = 0,
-        width = 100,
-        height = 100,
         categories = {"PVP"},
         enabled = true,
         customProperties = {
-            -- Override category defaults here
+            pvpEnabled = true,
+            message = "You've entered a PVP zone! Watch your back!"
+        }
+    },
+    {
+        id = "muldraugh_downtown_road",
+        name = "Downtown Muldraugh Road",
+        x1 = 10584,  -- Top-left or bottom-left corner
+        y1 = 8852,
+        x2 = 10598,  -- Opposite corner b42map.com/?x
+        y2 = 14250,
+        z = 0,
+        categories = {"PVP"},
+        enabled = true,
+        customProperties = {
             pvpEnabled = true,
             message = "You've entered a PVP zone! Watch your back!"
         }
@@ -81,11 +109,11 @@ RegionManager.Config.Regions = {
     {
         id = "louisville_sprinters",
         name = "Louisville Outbreak Zone",
-        x = 12000,
-        y = 2000,
+        x1 = 12000,
+        y1 = 2000,
+        x2 = 12300,  -- 300 units away
+        y2 = 2300,
         z = 0,
-        width = 300,
-        height = 300,
         categories = {"SPRINTERS", "DEADZONE"},
         enabled = true,
         customProperties = {
@@ -99,11 +127,11 @@ RegionManager.Config.Regions = {
     {
         id = "westpoint_safezone",
         name = "West Point Sanctuary",
-        x = 11500,
-        y = 6900,
+        x1 = 11500,
+        y1 = 6900,
+        x2 = 11550,  -- 50 units away
+        y2 = 6950,
         z = 0,
-        width = 50,
-        height = 50,
         categories = {"SAFEZONE"},
         enabled = true,
         customProperties = {
@@ -117,11 +145,11 @@ RegionManager.Config.Regions = {
     {
         id = "rosewood_loot",
         name = "Rosewood Supply Cache",
-        x = 8100,
-        y = 11600,
+        x1 = 8100,
+        y1 = 11600,
+        x2 = 8180,  -- 80 units away
+        y2 = 11680,
         z = 0,
-        width = 80,
-        height = 80,
         categories = {"LOOTBONUS"},
         enabled = true,
         customProperties = {
@@ -131,6 +159,7 @@ RegionManager.Config.Regions = {
     }
     
     -- Add more regions as needed
+    -- Use GetMyCoords() in console to get your current position
 }
 
 -- Export/Import paths (relative to Zomboid directory)

@@ -163,3 +163,11 @@ option SIMBAproduz_TSY.NearAsWorldSound
     page = SIMBA_TSY,
     translation = SIMBA_TSY_NearAsWorldSound,
 }
+
+option RegionManager.DebugMode
+{
+    type = boolean,
+    default = false,
+    page = RegionManager,
+    translation = RegionManager_DebugMode,
+}
