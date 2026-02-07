@@ -107,7 +107,7 @@ local function OnServerCommand(module, command, args)
         if player and args.pvpEnabled ~= nil then
             -- Reset PVP state when leaving any PVP/safe zone
             player:setFactionPvp(false)
-            -- Sync Safety state from server
+            -- Sync Safety state from server (restores toggle button)
             if args.safetyEnabled ~= nil then
                 player:getSafety():setEnabled(args.safetyEnabled)
                 log("Client: Synced Safety state to: " .. tostring(args.safetyEnabled))
