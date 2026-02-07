@@ -116,11 +116,12 @@ local function registerRegion(region)
             }
         }
         
-        -- Create SafeHouse zone for safe zones (pvpEnabled = false)
+        -- Create NonPvpZone for safe zones (pvpEnabled = false)
+        -- SafetySystemManager automatically detects NonPvpZone and manages Safety state
         if props.pvpEnabled == false then
-            local safehouseName = "SafeZone_" .. region.id
-            SafeHouse.addSafeHouse(safehouseName, "", minX, minY, maxX, maxY, true)
-            log("Created SafeHouse zone: " .. safehouseName)
+            local zoneName = "SafeZone_" .. region.id
+            NonPvpZone.addNonPvpZone(zoneName, minX, minY, maxX, maxY)
+            log("Created NonPvpZone: " .. zoneName .. " - SafetySystemManager will auto-manage this zone")
         end
 
         return true
@@ -388,30 +389,37 @@ function applyZoneEffects(player, zoneData)
     -- PVP Zone: Force skull activation to enable player damage
     if props.pvpEnabled == true then
         log("PVP Zone: Activating PVP skull for " .. player:getUsername())
-        -- Store original Safety state for restoration
+        -- Store original Safety state and cooldown for restoration
         if not modData.RegionManager.originalValues.safetyEnabled then
             modData.RegionManager.originalValues.safetyEnabled = player:getSafety():isEnabled()
+            modData.RegionManager.originalValues.safetyCooldown = player:getSafety():getCooldown()
         end
         -- Store PVP state in modData
         modData.RegionManager.isPvpZone = true
         -- Force PVP mode on (skull icon) - requires BOTH calls
         player:setFactionPvp(true)
         player:getSafety():setEnabled(false)
-        log("PVP Zone: Set factionPvp=true, Safety=false for " .. player:getUsername())
+        -- Set very high cooldown to disable Safety toggle button
+        -- isToggleAllowed() checks: cooldown == 0 && toggle == 0
+        player:getSafety():setCooldown(999999)
+        log("PVP Zone: Set factionPvp=true, Safety=false, disabled toggle button for " .. player:getUsername())
     end
 
-    -- SAFE ZONE: Player enters safe zone (SafeHouse already created at startup)
+    -- SAFE ZONE: Player enters safe zone (NonPvpZone already created at startup)
     if props.pvpEnabled == false then
         log("Safe Zone: Player " .. player:getUsername() .. " in safe zone")
-        -- Store original Safety state for restoration
+        -- Store original Safety state and cooldown for restoration
         if not modData.RegionManager.originalValues.safetyEnabled then
             modData.RegionManager.originalValues.safetyEnabled = player:getSafety():isEnabled()
+            modData.RegionManager.originalValues.safetyCooldown = player:getSafety():getCooldown()
         end
         modData.RegionManager.isPvpZone = false
         -- Disable faction PVP and enable Safety protection
         player:setFactionPvp(false)
         player:getSafety():setEnabled(true)
-        log("Safe Zone: Set factionPvp=false, Safety=true for " .. player:getUsername())
+        -- Set very high cooldown to disable Safety toggle button
+        player:getSafety():setCooldown(999999)
+        log("Safe Zone: Set factionPvp=false, Safety=true, disabled toggle button for " .. player:getUsername())
     end
 end
 
@@ -431,6 +439,13 @@ function removeZoneEffects(player, zoneData)
             player:getSafety():setEnabled(modData.RegionManager.originalValues.safetyEnabled)
             log("Restored Safety state to: " .. tostring(modData.RegionManager.originalValues.safetyEnabled))
             modData.RegionManager.originalValues.safetyEnabled = nil
+        end
+        
+        -- Restore original cooldown (re-enables toggle button)
+        if modData.RegionManager.originalValues and modData.RegionManager.originalValues.safetyCooldown ~= nil then
+            player:getSafety():setCooldown(modData.RegionManager.originalValues.safetyCooldown)
+            log("Restored Safety cooldown to: " .. tostring(modData.RegionManager.originalValues.safetyCooldown))
+            modData.RegionManager.originalValues.safetyCooldown = nil
         end
         
         modData.RegionManager.isPvpZone = nil
