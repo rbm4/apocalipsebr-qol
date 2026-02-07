@@ -19,12 +19,12 @@ local SIMBA_TSY_Delayed = {}
 
 -- Add near the top with other constants
 local SIMBA_TSY_ZombieScanInterval = 100 -- Ticks between zombie scans (about every 1.67 seconds at 60 FPS)
-local SIMBA_TSY_SprinterConversionChance = 100 -- 0-100 percentage chance to convert zombie to sprinter
-local SIMBA_TSY_ScanRadius = 100 -- Radius around players to scan for zombies
+local SIMBA_TSY_SprinterConversionChance = 50 -- 0-100 percentage chance to convert zombie to sprinter
+local SIMBA_TSY_ScanRadius = 70 -- Radius around players to scan for zombies
 local SIMBA_TSY_LastZombieScan = 0
 
 -- Sprinter walk types available in the game
-local SIMBA_TSY_SprinterWalkTypes = {"Sprint1", "Sprint2", "Sprint3", "Sprint4", "Sprint5", "Sprint6"}
+local SIMBA_TSY_SprinterWalkTypes = {"Sprint1", "Sprint2", "Sprint3", "Sprint4", "Sprint5"}
 
 -- Deterministic pseudo-random using zombie's online ID as seed
 -- This ensures all clients make the same decision for the same zombie
@@ -87,7 +87,7 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
 
                                 -- Apply walk type on server (for AI/pathfinding)
                                 zombie:setWalkType(walkType)
-                                --zombie:DoZombieSpeeds(0.85)
+                                zombie:DoZombieSpeeds(0.85)
                                 
                                 marked = marked + 1
 
@@ -139,7 +139,7 @@ Events.OnClientCommand.Add(SIMBA_TSY_OnClientCommand)
 Events.OnInitWorld.Add(function()
     local sandbox = SandboxVars
     if sandbox and sandbox.ZombieLore then
-        sandbox.ZombieLore.Speed = 4 -- Random (allows both sprinters and shamblers)
+        sandbox.ZombieLore.Speed = 2 -- Random (can't have shamblers for mod to work)
         sandbox.ZombieLore.SprinterPercentage = 0 -- We'll handle conversion manually
         sandbox.ZombieLore.ActiveOnly = 1 -- Both day and night
 
