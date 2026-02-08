@@ -332,6 +332,20 @@ local function checkPlayerZone(player)
 
                 -- Apply zone effects
                 applyZoneEffects(player, data)
+                
+                -- Broadcast PVP state change to all other players for skull icon sync
+                local allPlayers = getOnlinePlayers()
+                for i = 0, allPlayers:size() - 1 do
+                    local otherPlayer = allPlayers:get(i)
+                    if otherPlayer ~= player then
+                        sendServerCommand(otherPlayer, "RegionManager", "PlayerPvpStateChanged", {
+                            playerIndex = player:getPlayerNum(),
+                            pvpEnabled = props.pvpEnabled,
+                            safetyEnabled = false
+                        })
+                    end
+                end
+                log("Broadcasted PVP state change to " .. (allPlayers:size() - 1) .. " other players")
             end
         end
     end
@@ -356,6 +370,20 @@ local function checkPlayerZone(player)
 
                 -- Remove zone effects
                 removeZoneEffects(player, data)
+                
+                -- Broadcast PVP state reset to all other players
+                local allPlayers = getOnlinePlayers()
+                for i = 0, allPlayers:size() - 1 do
+                    local otherPlayer = allPlayers:get(i)
+                    if otherPlayer ~= player then
+                        sendServerCommand(otherPlayer, "RegionManager", "PlayerPvpStateChanged", {
+                            playerIndex = player:getPlayerNum(),
+                            pvpEnabled = false,
+                            safetyEnabled = player:getSafety():isEnabled()
+                        })
+                    end
+                end
+                log("Broadcasted PVP state reset to " .. (allPlayers:size() - 1) .. " other players")
             end
         end
     end
@@ -401,8 +429,7 @@ function applyZoneEffects(player, zoneData)
         end
         -- Store PVP state in modData
         modData.RegionManager.isPvpZone = true
-        -- Force PVP mode on (skull icon) - requires BOTH calls
-        player:setFactionPvp(true)
+        -- Force PVP mode on (skull icon) - only use Safety system
         player:getSafety():setEnabled(false)
         -- Set very high cooldown to disable Safety toggle button
         -- isToggleAllowed() checks: cooldown == 0 && toggle == 0
@@ -419,12 +446,11 @@ function applyZoneEffects(player, zoneData)
             modData.RegionManager.originalValues.safetyCooldown = player:getSafety():getCooldown()
         end
         modData.RegionManager.isPvpZone = false
-        -- Disable faction PVP and enable Safety protection
-        player:setFactionPvp(false)
+        -- Enable Safety protection
         player:getSafety():setEnabled(true)
         -- Set very high cooldown to disable Safety toggle button
         player:getSafety():setCooldown(999999)
-        log("Safe Zone: Set factionPvp=false, Safety=true, disabled toggle button for " .. player:getUsername())
+        log("Safe Zone: Set Safety=true, disabled toggle button for " .. player:getUsername())
     end
 end
 
@@ -436,8 +462,6 @@ function removeZoneEffects(player, zoneData)
     -- Restore PVP state
     if props.pvpEnabled ~= nil then
         log("Removing PVP zone effects for " .. player:getUsername())
-        -- Reset to default (no forced PVP)
-        player:setFactionPvp(false)
         
         -- Restore original Safety state
         if modData.RegionManager.originalValues and modData.RegionManager.originalValues.safetyEnabled ~= nil then

@@ -77,17 +77,15 @@ local function OnServerCommand(module, command, args)
             true
         )
         
-        -- Handle PVP skull activation on client (requires Safety sync)
+        -- Handle PVP skull activation on client (Safety system only)
         local player = getPlayer()
         if player and args.pvpEnabled ~= nil then
             if args.pvpEnabled == true then
-                -- PVP Zone: Enable skull icon (requires both factionPvp and Safety)
-                player:setFactionPvp(true)
+                -- PVP Zone: Enable skull icon (Safety system only)
                 player:getSafety():setEnabled(false)
-                log("Client: Activated PVP skull (factionPvp=true, Safety=false)")
+                log("Client: Activated PVP skull (Safety=false)")
             elseif args.pvpEnabled == false then
                 -- Safe Zone: Disable skull icon
-                player:setFactionPvp(false)
                 player:getSafety():setEnabled(true)
                 log("Client: Deactivated PVP skull (safe zone, Safety=true)")
             end
@@ -105,8 +103,6 @@ local function OnServerCommand(module, command, args)
         -- Handle PVP skull deactivation on client
         local player = getPlayer()
         if player and args.pvpEnabled ~= nil then
-            -- Reset PVP state when leaving any PVP/safe zone
-            player:setFactionPvp(false)
             -- Sync Safety state from server (restores toggle button)
             if args.safetyEnabled ~= nil then
                 player:getSafety():setEnabled(args.safetyEnabled)
@@ -134,6 +130,25 @@ local function OnServerCommand(module, command, args)
         log("Received " .. tostring(#RegionManager.Client.zoneData) .. " zone boundaries from server")
         log("Zone outlines will be drawn continuously via OnPostRender")
         drawZoneOutlines()
+        
+    elseif command == "PlayerPvpStateChanged" then
+        -- Another player's PVP state changed - update their skull icon
+        local targetPlayer = getSpecificPlayer(args.playerIndex)
+        if targetPlayer then
+            if args.pvpEnabled == true then
+                -- Other player entered PVP zone
+                targetPlayer:getSafety():setEnabled(false)
+                log("Client: Updated player " .. args.playerIndex .. " PVP state (Safety=false)")
+            elseif args.pvpEnabled == false then
+                -- Other player left PVP zone or entered safe zone
+                if args.safetyEnabled ~= nil then
+                    targetPlayer:getSafety():setEnabled(args.safetyEnabled)
+                    log("Client: Updated player " .. args.playerIndex .. " PVP state (Safety=" .. tostring(args.safetyEnabled) .. ")")
+                end
+            end
+        else
+            log("WARNING: Could not find player with index " .. args.playerIndex)
+        end
     end
 end
 
