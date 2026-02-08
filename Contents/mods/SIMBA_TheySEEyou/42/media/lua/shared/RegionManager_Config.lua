@@ -94,6 +94,7 @@ RegionManager.Config.Regions = {
         enabled = true,
         customProperties = {
             pvpEnabled = true,
+            sprinterChance = 25,  -- 25% sprinter chance (1-100, default baseline: 50)
             message = "You've entered a PVP zone! Watch your back!"
         }
     },
@@ -127,6 +128,7 @@ RegionManager.Config.Regions = {
         customProperties = {
             zombieSpeed = 3,
             zombieDensity = 5.0,
+            sprinterChance = 80,  -- 80% chance zombies become sprinters (1-100, default: 50)
             message = "WARNING: Infected runners detected in this area!"
         }
     },

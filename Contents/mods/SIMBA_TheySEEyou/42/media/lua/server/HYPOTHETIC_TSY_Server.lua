@@ -1,6 +1,20 @@
+-- 
+-- Region-Based Sprinter System:
+-- - Zombies are converted to sprinters based on region configuration
+-- - Each region can specify "sprinterChance" (1-100) in customProperties
+-- - If no region or no sprinterChance property, uses baseline (default: 50)
+-- - Conversion is deterministic based on zombie ID for client-server sync
+-- 
+-- Usage in RegionManager_Config.lua:
+--   customProperties = {
+--       sprinterChance = 80  -- 80% of zombies become sprinters in this zone
+--   }
+
 if not isServer() then
     return
 end
+
+require "RegionManager_Config"
 
 local SIMBA_TSY_MODULE = "SIMBA_TSY"
 local SIMBA_TSY_CMD_REQUEST = "ScreamRequest"
@@ -19,12 +33,38 @@ local SIMBA_TSY_Delayed = {}
 
 -- Add near the top with other constants
 local SIMBA_TSY_ZombieScanInterval = 100 -- Ticks between zombie scans (about every 1.67 seconds at 60 FPS)
-local SIMBA_TSY_SprinterConversionChance = 50 -- 0-100 percentage chance to convert zombie to sprinter
+local SIMBA_TSY_BaselineSprinterChance = 0 -- 1-100 baseline chance when region has no sprinter config
 local SIMBA_TSY_ScanRadius = 70 -- Radius around players to scan for zombies
 local SIMBA_TSY_LastZombieScan = 0
 
 -- Sprinter walk types available in the game
 local SIMBA_TSY_SprinterWalkTypes = {"Sprint1", "Sprint2", "Sprint3", "Sprint4", "Sprint5"}
+
+-- Get sprinter conversion chance for a specific position
+local function SIMBA_TSY_GetSprinterChance(x, y)
+    -- Try to access RegionManager zones
+    if RegionManager and RegionManager.Server and RegionManager.Server.registeredZones then
+        -- Check which zone contains this position
+        for id, data in pairs(RegionManager.Server.registeredZones) do
+            local bounds = data.bounds
+            -- Fast AABB collision check
+            if x >= bounds.minX and x <= bounds.maxX and y >= bounds.minY and y <= bounds.maxY then
+                local props = data.properties
+                -- Check if zone has sprinter configuration
+                if props.sprinterChance and type(props.sprinterChance) == "number" then
+                    -- Clamp to 1-100 range
+                    local chance = props.sprinterChance
+                    if chance < 1 then chance = 1 end
+                    if chance > 100 then chance = 100 end
+                    return chance
+                end
+            end
+        end
+    end
+    
+    -- No region found or region has no sprinter config, use baseline
+    return SIMBA_TSY_BaselineSprinterChance
+end
 
 -- Deterministic pseudo-random using zombie's online ID as seed
 -- This ensures all clients make the same decision for the same zombie
@@ -77,9 +117,14 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
                             checked = checked + 1
                             modData.SIMBA_TSY_Checked = true
 
+                            -- Get region-specific sprinter chance based on zombie position
+                            local zombieX = zombie:getX()
+                            local zombieY = zombie:getY()
+                            local sprinterChance = SIMBA_TSY_GetSprinterChance(zombieX, zombieY)
+
                             -- Deterministic conversion decision
                             local roll = SIMBA_TSY_GetDeterministicRandom(zombieID, 100)
-                            if roll < SIMBA_TSY_SprinterConversionChance then
+                            if roll < sprinterChance then
                                 -- Store walk type in modData (server-side tracking only)
                                 local walkType = SIMBA_TSY_GetRandomSprinterWalkType(zombieID)
                                 modData.SIMBA_TSY_WalkType = walkType
