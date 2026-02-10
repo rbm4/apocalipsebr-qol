@@ -3,14 +3,12 @@ if isServer() then
 end
 
 require "RegionManager_Config"
+require "RegionManager_ClientTick"
 
-local SIMBA_TSY_TickCounter = 0
 local SIMBA_TSY_ProcessedZombies = {} -- Track which zombies we've already processed
 local SIMBA_TSY_RegionBounds = {} -- Store region boundaries from server
 local SIMBA_TSY_BaselineSprinterChance = 0 -- Default when not in any region
 local SIMBA_TSY_SprinterWalkTypes = {"Sprint1", "Sprint2", "Sprint3", "Sprint4", "Sprint5"}
-local SIMBA_TSY_PlayerCurrentZones = {} -- Track which zones player is currently in
-local SIMBA_TSY_PlayerPreviousZones = {} -- Track previous zones for comparison
 
 -- Deterministic pseudo-random (matches server logic)
 local function SIMBA_TSY_GetDeterministicRandom(zombieID, max)
@@ -122,107 +120,6 @@ local function SIMBA_TSY_ValidateSprinters(zombie)
     zombie:setWalkType(modData.SIMBA_TSY_WalkType)
 end
 
--- Check player zone changes and notify server
-local function SIMBA_TSY_CheckPlayerZone(player)
-    if not player then return end
-    
-    -- Request zone data if not loaded yet
-    if not RegionManager or not RegionManager.Client or not RegionManager.Client.zoneData then
-        sendClientCommand("RegionManager", "RequestAllBoundaries", {})
-        print("[DEBUG CLIENT] Waiting for zone data, RequestAllBoundaries sent")
-        return
-    end
-    
-    local playerX = player:getX()
-    local playerY = player:getY()
-    
-    -- Build current zones list
-    local currentZones = {}
-    for _, zone in ipairs(RegionManager.Client.zoneData) do
-        local bounds = zone.bounds
-        -- Check if player is inside this zone (AABB collision)
-        if playerX >= bounds.minX and playerX <= bounds.maxX and 
-           playerY >= bounds.minY and playerY <= bounds.maxY then
-            currentZones[zone.id] = zone
-        end
-    end
-    
-    -- Check for zone entries (in current but not in previous)
-    for zoneId, zoneData in pairs(currentZones) do
-        if not SIMBA_TSY_PlayerPreviousZones[zoneId] then
-            -- Player ENTERED this zone
-            print("[DEBUG CLIENT] Player ENTERED zone: " .. zoneData.name)
-            
-            -- Determine zone type from properties sent by server
-            local isSafeZone = (zoneData.pvpEnabled == false)
-            local isPvpZone = (zoneData.pvpEnabled == true)
-            
-            -- Apply Safety state locally
-            if isPvpZone then
-                player:getSafety():setEnabled(false)
-                player:getSafety():setCooldown(999999)
-                print("[DEBUG CLIENT] Applied PVP state locally (Safety=false)")
-            elseif isSafeZone then
-                player:getSafety():setEnabled(true)
-                player:getSafety():setCooldown(999999)
-                print("[DEBUG CLIENT] Applied Safe Zone state locally (Safety=true)")
-            end
-            
-            -- Show notification message if announceEntry is enabled
-            if zoneData.announceEntry ~= false then
-                local message = "Entering: " .. zoneData.name
-                local color = zoneData.color or {r=255, g=255, b=255}
-                player:Say(message, color.r / 255, color.g / 255, color.b / 255, UIFont.Medium, 3, "radio")
-                print("[DEBUG CLIENT] Showed entry notification for " .. zoneData.name)
-            else
-                print("[DEBUG CLIENT] Suppressed entry notification (announceEntry=false)")
-            end
-            
-            -- Notify server to sync with other clients (always send, regardless of announceEntry)
-            sendClientCommand("RegionManager", "ClientZoneEntered", {
-                zoneId = zoneId,
-                zoneName = zoneData.name,
-                isPvpZone = isPvpZone,
-                isSafeZone = isSafeZone,
-                safetyEnabled = player:getSafety():isEnabled()
-            })
-            print("[DEBUG CLIENT] Sent ClientZoneEntered to server for sync")
-        end
-    end
-    
-    -- Check for zone exits (in previous but not in current)
-    for zoneId, zoneData in pairs(SIMBA_TSY_PlayerPreviousZones) do
-        if not currentZones[zoneId] then
-            -- Player EXITED this zone
-            print("[DEBUG CLIENT] Player EXITED zone: " .. zoneData.name)
-            
-            -- Restore Safety state locally
-            player:getSafety():setCooldown(0) -- Re-enable toggle button
-            print("[DEBUG CLIENT] Restored Safety toggle on zone exit")
-            
-            -- Show notification message if announceExit is enabled
-            if zoneData.announceExit ~= false then
-                local message = "Left: " .. zoneData.name
-                player:Say(message, 0.5, 0.5, 0.5, UIFont.Medium, 3, "radio")
-                print("[DEBUG CLIENT] Showed exit notification for " .. zoneData.name)
-            else
-                print("[DEBUG CLIENT] Suppressed exit notification (announceExit=false)")
-            end
-            
-            -- Notify server to sync with other clients (always send, regardless of announceExit)
-            sendClientCommand("RegionManager", "ClientZoneExited", {
-                zoneId = zoneId,
-                zoneName = zoneData.name,
-                safetyEnabled = player:getSafety():isEnabled()
-            })
-            print("[DEBUG CLIENT] Sent ClientZoneExited to server for sync")
-        end
-    end
-    
-    -- Update previous zones for next check
-    SIMBA_TSY_PlayerPreviousZones = currentZones
-end
-
 -- Process unmarked zombies: compute roll and propose to server
 local function SIMBA_TSY_ProcessZombies()
     local player = getPlayer()
@@ -295,37 +192,23 @@ local function SIMBA_TSY_ProcessZombies()
     print("[DEBUG CLIENT] RequestAllBoundaries sent")
 end
 
-local function SIMBA_TSY_OnTick()
-    SIMBA_TSY_TickCounter = SIMBA_TSY_TickCounter + 1
+-- ============================================================================
+-- Register with the central tick dispatcher
+-- The sprinter module hooks into onTick to process zombies every interval.
+-- ============================================================================
+RegionManager.ClientTick.registerModule({
+    name = "SIMBA_TSY_Sprinters",
 
-    -- Process zones and zombies every 120 ticks (2 seconds at 60 FPS)
-    if SIMBA_TSY_TickCounter >= 120 then
-        local player = getPlayer()
-        if player then
-            -- Check player zone changes first
-            SIMBA_TSY_CheckPlayerZone(player)
-            -- Then process zombies
-            SIMBA_TSY_ProcessZombies()
-        end
-        SIMBA_TSY_TickCounter = 0
-    end
-end
+    -- Called every tick interval by the dispatcher
+    onTick = function(player, currentZones)
+        SIMBA_TSY_ProcessZombies()
+    end,
+})
 
-Events.OnTick.Add(SIMBA_TSY_OnTick)
-
--- Request region data when player spawns and clear previous zone state
+-- Request region data for sprinter system when player spawns
 local function SIMBA_TSY_OnPlayerSpawn()
     local player = getPlayer()
     if player then
-        -- Clear previous zone state (player could spawn inside a zone)
-        SIMBA_TSY_PlayerPreviousZones = {}
-        SIMBA_TSY_PlayerCurrentZones = {}
-        print("SIMBA_TSY Client: Cleared zone state on player spawn")
-        
-        -- Request zone boundaries from RegionManager
-        sendClientCommand("RegionManager", "RequestAllBoundaries", {})
-        print("SIMBA_TSY Client: Requesting zone boundaries from server")
-        
         -- Request region data for sprinter system
         sendClientCommand(player, "SIMBA_TSY", "RequestRegionData", {})
         print("SIMBA_TSY Client: Requesting region data from server")
