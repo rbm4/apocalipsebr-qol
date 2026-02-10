@@ -236,121 +236,8 @@ local function registerAllRegions()
     getWorld():checkVehiclesZones()
 end
 
--- Player enters/exits zone detection
-local function checkPlayerZone(player)
-    if not player then
-        return
-    end
-
-    local x = player:getX()
-    local y = player:getY()
-
-    local playerData = player:getModData()
-    playerData.RegionManager = playerData.RegionManager or {}
-    
-    -- Get previous zones (deep copy to compare)
-    local previousZones = playerData.RegionManager.currentZones or {}
-    local currentZones = {}
-
-    -- Debug: Count previous zones
-    local prevCount = 0
-    for _ in pairs(previousZones) do prevCount = prevCount + 1 end
-    
-    -- Check which zones player is in using pre-calculated bounds
-    for id, data in pairs(RegionManager.Server.registeredZones or {}) do
-        local bounds = data.bounds
-        -- Fast AABB collision check
-        if x >= bounds.minX and x <= bounds.maxX and y >= bounds.minY and y <= bounds.maxY then
-            currentZones[id] = true
-
-            -- Player entered this zone (NEW zone, not in previous zones)
-            if not previousZones[id] then
-                local props = data.properties
-
-                -- Send notification to client
-                if props.announceEntry then
-                    local message = props.message or ("Entering: " .. data.region.name)
-                    sendServerCommand(player, "RegionManager", "ZoneEntered", {
-                        id = data.region.id,
-                        name = data.region.name,
-                        message = message,
-                        color = props.color,
-                        pvpEnabled = props.pvpEnabled,
-                        safetyEnabled = player:getSafety():isEnabled()
-                    })
-                    log("Player " .. player:getUsername() .. " ENTERED zone: " .. data.region.name .. " (had " .. prevCount .. " previous zones)")
-                end
-
-                -- Apply zone effects
-                applyZoneEffects(player, data)
-                
-                -- Broadcast PVP state change to all other players for skull icon sync
-                local allPlayers = getOnlinePlayers()
-                for i = 0, allPlayers:size() - 1 do
-                    local otherPlayer = allPlayers:get(i)
-                    if otherPlayer ~= player then
-                        sendServerCommand(otherPlayer, "RegionManager", "PlayerPvpStateChanged", {
-                            playerIndex = player:getPlayerNum(),
-                            pvpEnabled = props.pvpEnabled,
-                            safetyEnabled = false
-                        })
-                    end
-                end
-                log("Broadcasted PVP state change to " .. (allPlayers:size() - 1) .. " other players")
-            end
-        end
-    end
-
-    -- Check for zone exits (was in previous zones, not in current zones)
-    for id, _ in pairs(previousZones) do
-        if not currentZones[id] then
-            local data = RegionManager.Server.registeredZones[id]
-            if data then
-                local props = data.properties
-
-                -- Send notification to client
-                if props.announceExit then
-                    sendServerCommand(player, "RegionManager", "ZoneExited", {
-                        id = data.region.id,
-                        name = data.region.name,
-                        pvpEnabled = props.pvpEnabled,
-                        safetyEnabled = player:getSafety():isEnabled()
-                    })
-                    log("Player " .. player:getUsername() .. " EXITED zone: " .. data.region.name)
-                end
-
-                -- Remove zone effects
-                removeZoneEffects(player, data)
-                
-                -- Broadcast PVP state reset to all other players
-                local allPlayers = getOnlinePlayers()
-                for i = 0, allPlayers:size() - 1 do
-                    local otherPlayer = allPlayers:get(i)
-                    if otherPlayer ~= player then
-                        sendServerCommand(otherPlayer, "RegionManager", "PlayerPvpStateChanged", {
-                            playerIndex = player:getPlayerNum(),
-                            pvpEnabled = false,
-                            safetyEnabled = player:getSafety():isEnabled()
-                        })
-                    end
-                end
-                log("Broadcasted PVP state reset to " .. (allPlayers:size() - 1) .. " other players")
-            end
-        end
-    end
-
-    -- Debug: Count current zones
-    local currCount = 0
-    for _ in pairs(currentZones) do currCount = currCount + 1 end
-    
-    -- Update player's current zones (this persists the state)
-    playerData.RegionManager.currentZones = currentZones
-    
-    -- Debug logging
-    if currCount > 0 or prevCount > 0 then
-        log("DEBUG: Player " .. player:getUsername() .. " - Previous zones: " .. prevCount .. ", Current zones: " .. currCount)
-    end
-end
+-- NOTE: Player zone detection is now handled client-side (RegionManager_ClientTick.lua).
+-- Each client detects zone enter/exit and sends commands to the server for broadcast.
 -- Export configuration to JSON file
 local function exportConfig()
     log("Exporting region configuration...")
@@ -434,11 +321,6 @@ local function OnClientCommand(module, command, player, args)
         })
         
         print("Sent " .. #zoneList .. " zone boundaries to " .. player:getUsername())
-        
-    elseif command == "ApplyZoneEffectsOnLogin" then
-        -- Apply zone effects immediately on player login
-        checkPlayerZone(player)
-        log("Applied zone effects on login for " .. player:getUsername())
         
     elseif command == "RequestZoneInfo" then
         -- Send zone info to client
@@ -547,115 +429,13 @@ local function OnLoadMapZones()
 end
 
 
--- Apply zone effects to player
-function applyZoneEffects(player, zoneData)
-    local props = zoneData.properties
-    local modData = player:getModData()
-
-    -- Store original values for later restoration
-    modData.RegionManager.originalValues = modData.RegionManager.originalValues or {}
-
-    -- Example effects (you can expand these)
-    if props.zombieSpeed then
-        -- This would need server-side zombie modification
-        log("Zone effect: Zombie speed modifier for " .. player:getUsername())
-    end
-
-    if props.lootModifier then
-        log("Zone effect: Loot modifier active for " .. player:getUsername())
-    end
-
-    -- PVP Zone: Force skull activation to enable player damage
-    if props.pvpEnabled == true then
-        log("PVP Zone: Activating PVP skull for " .. player:getUsername())
-        -- Store original Safety state and cooldown for restoration
-        if not modData.RegionManager.originalValues.safetyEnabled then
-            modData.RegionManager.originalValues.safetyEnabled = player:getSafety():isEnabled()
-            modData.RegionManager.originalValues.safetyCooldown = player:getSafety():getCooldown()
-        end
-        -- Store PVP state in modData
-        modData.RegionManager.isPvpZone = true
-        -- Force PVP mode on (skull icon) - only use Safety system
-        player:getSafety():setEnabled(false)
-        -- Set very high cooldown to disable Safety toggle button
-        -- isToggleAllowed() checks: cooldown == 0 && toggle == 0
-        player:getSafety():setCooldown(999999)
-        log("PVP Zone: Set factionPvp=true, Safety=false, disabled toggle button for " .. player:getUsername())
-    end
-
-    -- SAFE ZONE: Player enters safe zone (NonPvpZone already created at startup)
-    if props.pvpEnabled == false then
-        log("Safe Zone: Player " .. player:getUsername() .. " in safe zone")
-        -- Store original Safety state and cooldown for restoration
-        if not modData.RegionManager.originalValues.safetyEnabled then
-            modData.RegionManager.originalValues.safetyEnabled = player:getSafety():isEnabled()
-            modData.RegionManager.originalValues.safetyCooldown = player:getSafety():getCooldown()
-        end
-        modData.RegionManager.isPvpZone = false
-        -- Enable Safety protection
-        player:getSafety():setEnabled(true)
-        -- Set very high cooldown to disable Safety toggle button
-        player:getSafety():setCooldown(999999)
-        log("Safe Zone: Set Safety=true, disabled toggle button for " .. player:getUsername())
-    end
-end
-
--- Remove zone effects from player
-function removeZoneEffects(player, zoneData)
-    local modData = player:getModData()
-    local props = zoneData.properties
-
-    -- Restore PVP state
-    if props.pvpEnabled ~= nil then
-        log("Removing PVP zone effects for " .. player:getUsername())
-        
-        -- Restore original Safety state
-        if modData.RegionManager.originalValues and modData.RegionManager.originalValues.safetyEnabled ~= nil then
-            player:getSafety():setEnabled(modData.RegionManager.originalValues.safetyEnabled)
-            log("Restored Safety state to: " .. tostring(modData.RegionManager.originalValues.safetyEnabled))
-            modData.RegionManager.originalValues.safetyEnabled = nil
-        end
-        
-        -- Restore original cooldown (re-enables toggle button)
-        if modData.RegionManager.originalValues and modData.RegionManager.originalValues.safetyCooldown ~= nil then
-            player:getSafety():setCooldown(modData.RegionManager.originalValues.safetyCooldown)
-            log("Restored Safety cooldown to: " .. tostring(modData.RegionManager.originalValues.safetyCooldown))
-            modData.RegionManager.originalValues.safetyCooldown = nil
-        end
-        
-        modData.RegionManager.isPvpZone = nil
-    end
-    
-    -- Restore original values
-    if modData.RegionManager.originalValues then
-        -- Restore player state
-        log("Removing zone effects for " .. player:getUsername())
-    end
-end
-
--- Tick handler for periodic checks
-local tickCounter = 0
-local function OnTick()
-    tickCounter = tickCounter + 1
-
-    -- Check every 10 second (60 ticks)
-    if tickCounter >= 60 then
-        tickCounter = 0
-
-        -- Check all online players
-        local players = getOnlinePlayers()
-        for i = 0, players:size() - 1 do
-            local player = players:get(i)
-            checkPlayerZone(player)
-        end
-    end
-end
+-- NOTE: Zone effects (PVP/Safety state) are now applied client-side.
+-- The server receives ClientZoneEntered/ClientZoneExited and broadcasts to other clients.
 
 -- Event registration
 Events.OnServerStarted.Add(OnServerStarted)
 Events.OnLoadMapZones.Add(OnLoadMapZones)
 Events.OnClientCommand.Add(OnClientCommand)
-Events.OnTick.Add(OnTick)
 
 log("RegionManager Server module loaded")
 
