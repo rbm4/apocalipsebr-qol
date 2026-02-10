@@ -13,11 +13,15 @@ local JSON = require "RegionManager_JSON"
 
 RegionManager.Server = RegionManager.Server or {}
 
+---@type table<string, RegisteredZoneData>
+RegionManager.Server.registeredZones = RegionManager.Server.registeredZones or {}
+
 local function log(msg)
     RegionManager.Log("Server", msg)
 end
 
 -- Store registered zones in ModData
+---@param allRegions RegionDefinition[]
 local function saveRegisteredZones(allRegions)
     local modData = ModData.getOrCreate(RegionManager.Config.MODDATA_KEY)
     modData.zones = allRegions or {}
@@ -26,7 +30,10 @@ local function saveRegisteredZones(allRegions)
     log("Saved " .. #modData.zones .. " zones to ModData")
 end
 
--- Merge category properties with region customProperties
+-- Merge category properties with region customProperties.
+-- Flattens category defaults + customProperties into a single ZoneProperties table.
+---@param region RegionDefinition
+---@return ZoneProperties
 local function getMergedProperties(region)
     local props = {}
 
@@ -53,6 +60,8 @@ local function getMergedProperties(region)
 end
 
 -- Register a single region as a zone
+---@param region RegionDefinition
+---@return boolean success
 local function registerRegion(region)
     if not region.enabled then
         log("Skipping disabled region: " .. region.id)
@@ -129,6 +138,8 @@ end
 -- ============================================================================
 
 -- Write current regions to the external JSON file
+---@param regions RegionDefinition[]
+---@return boolean success
 local function writeRegionsFile(regions)
     local filename = RegionManager.Config.RegionsFilePath
     log("Writing regions file: " .. filename)
@@ -155,6 +166,7 @@ local function writeRegionsFile(regions)
 end
 
 -- Read regions from the external JSON file, or create the file with defaults if missing
+---@return RegionDefinition[]
 local function loadRegionsFromFile()
     local filename = RegionManager.Config.RegionsFilePath
     log("Loading regions from file: " .. filename)
@@ -295,6 +307,10 @@ local function exportConfig()
 end
 
 -- Handle server commands
+---@param module string
+---@param command string
+---@param player IsoPlayer
+---@param args table
 local function OnClientCommand(module, command, player, args)
     if module ~= "RegionManager" then
         return
@@ -312,7 +328,8 @@ local function OnClientCommand(module, command, player, args)
                 pvpEnabled = data.properties.pvpEnabled,
                 sprinterChance = data.properties.sprinterChance or 0,
                 announceEntry = data.properties.announceEntry,
-                announceExit = data.properties.announceExit
+                announceExit = data.properties.announceExit,
+                message = data.properties.message
             })
         end
         
@@ -381,32 +398,32 @@ local function OnClientCommand(module, command, player, args)
         
     elseif command == "ClientZoneExited" then
         -- Client detected zone exit, sync with other players
-        local zoneId = args.zoneId
-        local zoneName = args.zoneName
-        local safetyEnabled = args.safetyEnabled
+        -- local zoneId = args.zoneId
+        -- local zoneName = args.zoneName
+        -- local safetyEnabled = args.safetyEnabled
         
         print("[DEBUG SERVER] Player " .. player:getUsername() .. " exited zone: " .. zoneName)
         
         -- Send zone exited notification to the player
-        sendServerCommand(player, "RegionManager", "ZoneExited", {
-            id = zoneId,
-            name = zoneName,
-            safetyEnabled = safetyEnabled
-        })
+        -- sendServerCommand(player, "RegionManager", "ZoneExited", {
+        --     id = zoneId,
+        --     name = zoneName,
+        --     safetyEnabled = safetyEnabled
+        -- })
         
         -- Broadcast PVP state reset to all other players
-        local allPlayers = getOnlinePlayers()
-        for i = 0, allPlayers:size() - 1 do
-            local otherPlayer = allPlayers:get(i)
-            if otherPlayer ~= player then
-                sendServerCommand(otherPlayer, "RegionManager", "PlayerPvpStateChanged", {
-                    playerIndex = player:getPlayerNum(),
-                    pvpEnabled = false,
-                    safetyEnabled = safetyEnabled
-                })
-            end
-        end
-        print("[DEBUG SERVER] Broadcasted zone exit to " .. (allPlayers:size() - 1) .. " other players")
+        -- local allPlayers = getOnlinePlayers()
+        -- for i = 0, allPlayers:size() - 1 do
+        --     local otherPlayer = allPlayers:get(i)
+        --     if otherPlayer ~= player then
+        --         sendServerCommand(otherPlayer, "RegionManager", "PlayerPvpStateChanged", {
+        --             playerIndex = player:getPlayerNum(),
+        --             pvpEnabled = false,
+        --             safetyEnabled = safetyEnabled
+        --         })
+        --     end
+        -- end
+        -- print("[DEBUG SERVER] Broadcasted zone exit to " .. (allPlayers:size() - 1) .. " other players")
         
     elseif command == "ExportConfig" then
         -- Admin command to export config

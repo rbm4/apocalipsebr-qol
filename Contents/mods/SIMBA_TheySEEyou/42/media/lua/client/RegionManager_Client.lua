@@ -8,6 +8,8 @@ if not isClient() then return end
 require "RegionManager_Config"
 
 RegionManager.Client = RegionManager.Client or {}
+
+---@type ClientZoneData[]|nil
 RegionManager.Client.zoneData = nil -- Store zone boundary data
 
 local function log(msg)
@@ -49,6 +51,10 @@ local function drawZoneOutlines()
 end
 
 -- Show zone notification
+---@param zoneName string
+---@param message string
+---@param color? ColorRGB
+---@param isEntry boolean
 local function showZoneNotification(zoneName, message, color, isEntry)
     local player = getPlayer()
     if not player then return end
@@ -66,6 +72,9 @@ local function showZoneNotification(zoneName, message, color, isEntry)
 end
 
 -- Handle server commands
+---@param module string
+---@param command string
+---@param args table
 local function OnServerCommand(module, command, args)
     if module ~= "RegionManager" then return end
     

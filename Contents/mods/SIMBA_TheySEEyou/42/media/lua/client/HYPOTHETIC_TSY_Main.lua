@@ -5,24 +5,39 @@ end
 require "RegionManager_Config"
 require "RegionManager_ClientTick"
 
+---@type table<number, boolean>
 local SIMBA_TSY_ProcessedZombies = {} -- Track which zombies we've already processed
+
+---@type table[]
 local SIMBA_TSY_RegionBounds = {} -- Store region boundaries from server
+
+---@type number
 local SIMBA_TSY_BaselineSprinterChance = 0 -- Default when not in any region
+
+---@type string[]
 local SIMBA_TSY_SprinterWalkTypes = {"Sprint1", "Sprint2", "Sprint3", "Sprint4", "Sprint5"}
 
 -- Deterministic pseudo-random (matches server logic)
+---@param zombieID number
+---@param max number
+---@return number
 local function SIMBA_TSY_GetDeterministicRandom(zombieID, max)
     local hash = zombieID
     hash = ((hash * 1103515245) + 12345) % 2147483648
     return (hash % max)
 end
 
+---@param zombieID number
+---@return string walkType
 local function SIMBA_TSY_GetRandomSprinterWalkType(zombieID)
     local index = SIMBA_TSY_GetDeterministicRandom(zombieID, #SIMBA_TSY_SprinterWalkTypes)
     return SIMBA_TSY_SprinterWalkTypes[index + 1]
 end
 
 -- Get sprinter chance for current position based on known regions
+---@param x number World X coordinate
+---@param y number World Y coordinate
+---@return number chance 0-100 sprinter percentage
 local function SIMBA_TSY_GetSprinterChance(x, y)
     -- Check which region contains this position
     for _, region in ipairs(RegionManager.Client.zoneData) do
@@ -47,6 +62,9 @@ local function SIMBA_TSY_GetSprinterChance(x, y)
 end
 
 -- Handle server commands
+---@param module string
+---@param command string
+---@param args table
 local function SIMBA_TSY_OnServerCommand(module, command, args)
     if module ~= "SIMBA_TSY" then
         return
@@ -104,6 +122,7 @@ end
 Events.OnServerCommand.Add(SIMBA_TSY_OnServerCommand)
 
 -- Continuously validate and reapply sprinter walkType
+---@param zombie IsoZombie
 local function SIMBA_TSY_ValidateSprinters(zombie)
     if not zombie or zombie:isDead() then
         return
@@ -196,14 +215,16 @@ end
 -- Register with the central tick dispatcher
 -- The sprinter module hooks into onTick to process zombies every interval.
 -- ============================================================================
-RegionManager.ClientTick.registerModule({
+---@type TickModuleDef
+local sprinterModule = {
     name = "SIMBA_TSY_Sprinters",
 
     -- Called every tick interval by the dispatcher
     onTick = function(player, currentZones)
         SIMBA_TSY_ProcessZombies()
     end,
-})
+}
+RegionManager.ClientTick.registerModule(sprinterModule)
 
 -- Request region data for sprinter system when player spawns
 local function SIMBA_TSY_OnPlayerSpawn()

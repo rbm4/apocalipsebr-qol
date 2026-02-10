@@ -12,7 +12,11 @@ RegionManager.ClientTick = RegionManager.ClientTick or {}
 
 local TickCounter = 0
 local TickInterval = 120 -- 2 seconds at 60 FPS
+
+---@type table<string, ClientZoneData>
 local PreviousZones = {} -- Track zones the player was in last check
+
+---@type TickModuleDef[]
 local RegisteredModules = {} -- Modules that want zone enter/exit callbacks
 
 local function log(msg)
@@ -30,6 +34,7 @@ end
 --     onTick        = function(player, currentZones) end,      -- optional (called every tick interval)
 -- })
 -- ============================================================================
+---@param moduleDef TickModuleDef
 function RegionManager.ClientTick.registerModule(moduleDef)
     if not moduleDef or not moduleDef.name then
         log("ERROR: registerModule requires a 'name' field")
@@ -40,6 +45,9 @@ function RegionManager.ClientTick.registerModule(moduleDef)
 end
 
 -- Notify all registered modules of a zone entry
+---@param player IsoPlayer
+---@param zoneId string
+---@param zoneData ClientZoneData
 local function notifyZoneEntered(player, zoneId, zoneData)
     for _, mod in ipairs(RegisteredModules) do
         if mod.onZoneEntered then
@@ -52,6 +60,9 @@ local function notifyZoneEntered(player, zoneId, zoneData)
 end
 
 -- Notify all registered modules of a zone exit
+---@param player IsoPlayer
+---@param zoneId string
+---@param zoneData ClientZoneData
 local function notifyZoneExited(player, zoneId, zoneData)
     for _, mod in ipairs(RegisteredModules) do
         if mod.onZoneExited then
@@ -64,6 +75,8 @@ local function notifyZoneExited(player, zoneId, zoneData)
 end
 
 -- Notify all registered modules on each tick interval
+---@param player IsoPlayer
+---@param currentZones table<string, ClientZoneData>
 local function notifyTick(player, currentZones)
     for _, mod in ipairs(RegisteredModules) do
         if mod.onTick then
@@ -79,6 +92,7 @@ end
 -- Core zone detection (moved from HYPOTHETIC_TSY_Main)
 -- Each client checks its own player and sends state to the server for broadcast.
 -- ============================================================================
+---@param player IsoPlayer
 local function checkPlayerZone(player)
     if not player then return end
 
@@ -123,7 +137,7 @@ local function checkPlayerZone(player)
 
             -- Show notification if announceEntry is enabled
             if zoneData.announceEntry ~= false then
-                local message = "Entering: " .. zoneData.name
+                local message = zoneData.message
                 local color = zoneData.color or {r=255, g=255, b=255}
                 player:Say(message, color.r / 255, color.g / 255, color.b / 255, UIFont.Medium, 3, "radio")
             end
@@ -147,21 +161,22 @@ local function checkPlayerZone(player)
         if not currentZones[zoneId] then
             log("Player EXITED zone: " .. zoneData.name)
 
-            -- Restore Safety toggle
-            player:getSafety():setCooldown(0)
+            -- Restore Safety toggle (disabled because there will always be pvp or no pvp zones, player will not control safety state ever)
+            -- player:getSafety():setCooldown(0) 
 
             -- Show notification if announceExit is enabled
-            if zoneData.announceExit ~= false then
-                local message = "Left: " .. zoneData.name
+            if zoneData.announceExit then
+                local message = "Saiu: " .. zoneData.name
+                local color = zoneData.color or {r=255, g=255, b=255}
                 player:Say(message, 0.5, 0.5, 0.5, UIFont.Medium, 3, "radio")
             end
 
             -- Notify server for broadcast to other clients
-            sendClientCommand("RegionManager", "ClientZoneExited", {
-                zoneId = zoneId,
-                zoneName = zoneData.name,
-                safetyEnabled = player:getSafety():isEnabled()
-            })
+            -- sendClientCommand("RegionManager", "ClientZoneExited", {
+            --     zoneId = zoneId,
+            --     zoneName = zoneData.name,
+            --     safetyEnabled = player:getSafety():isEnabled()
+            -- })
 
             -- Notify registered modules
             notifyZoneExited(player, zoneId, zoneData)
@@ -206,11 +221,13 @@ end
 -- ============================================================================
 
 -- Get the table of zones the player is currently inside
+---@return table<string, ClientZoneData>
 function RegionManager.ClientTick.getCurrentZones()
     return PreviousZones
 end
 
 -- Allow external adjustment of tick interval
+---@param ticks number Number of game ticks between checks
 function RegionManager.ClientTick.setTickInterval(ticks)
     TickInterval = ticks
 end
