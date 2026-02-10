@@ -81,99 +81,111 @@ local function SIMBA_TSY_GetRandomSprinterWalkType(zombieID)
     return SIMBA_TSY_SprinterWalkTypes[index + 1]
 end
 
--- SERVER processes zombie marking and responds to client requests
+-- Global authoritative zombie state storage
+local SIMBA_TSY_ZombieStates = {} -- zombieID -> {isSprinter, walkType}
+
+-- Build region data to send to clients
+local function SIMBA_TSY_BuildRegionData()
+    local regions = {}
+    
+    if RegionManager and RegionManager.Server and RegionManager.Server.registeredZones then
+        print("SIMBA_TSY: Building region data from RegionManager.Server.registeredZones")
+        local count = 0
+        for id, data in pairs(RegionManager.Server.registeredZones) do
+            count = count + 1
+            local props = data.properties
+            print("SIMBA_TSY: Region " .. id .. " has sprinterChance: " .. tostring(props.sprinterChance))
+            if props.sprinterChance then
+                table.insert(regions, {
+                    id = id,
+                    bounds = data.bounds,
+                    sprinterChance = props.sprinterChance
+                })
+            end
+        end
+        print("SIMBA_TSY: Found " .. count .. " total zones, " .. #regions .. " have sprinterChance")
+    else
+        print("SIMBA_TSY: WARNING - RegionManager.Server.registeredZones not available!")
+    end
+    
+    return regions
+end
+
+-- SERVER validates client proposals and stores authoritative state
 local function SIMBA_TSY_OnClientCommand(module, command, player, args)
     if module ~= "SIMBA_TSY" then
         return
     end
-
-    if command == "RequestZombieSync" and player and args.zombieIDs then
-        local cell = player:getCell()
-        if not cell then
-            return
-        end
-
-        local synced = 0
-        local marked = 0
-        local checked = 0
-        local sprintersToSync = {} -- Collect sprinters to send to client
-        local notFoundIDs = {} -- Track zombies not found on server
-        local processedIDs = {} -- Track zombies we've confirmed as non-sprinters
-
-        for _, zombieID in ipairs(args.zombieIDs) do
-            local found = false
-            -- Find zombie by ID
-            local zombies = cell:getZombieList()
-            if zombies then
-                for i = 0, zombies:size() - 1 do
-                    local zombie = zombies:get(i)
-
-                    if zombie and not zombie:isDead() and zombie:getOnlineID() == zombieID then
-                        found = true
-                        local modData = zombie:getModData()
-
-                        -- Check if zombie needs processing
-                        if not modData.SIMBA_TSY_Checked then
-                            checked = checked + 1
-                            modData.SIMBA_TSY_Checked = true
-
-                            -- Get region-specific sprinter chance based on zombie position
-                            local zombieX = zombie:getX()
-                            local zombieY = zombie:getY()
-                            local sprinterChance = SIMBA_TSY_GetSprinterChance(zombieX, zombieY)
-
-                            -- Deterministic conversion decision
-                            local roll = SIMBA_TSY_GetDeterministicRandom(zombieID, 100)
-                            if roll < sprinterChance then
-                                -- Store walk type in modData (server-side tracking only)
-                                local walkType = SIMBA_TSY_GetRandomSprinterWalkType(zombieID)
-                                modData.SIMBA_TSY_WalkType = walkType
-                                modData.SIMBA_TSY_IsSprinter = true
-
-                                -- Apply walk type on server (for AI/pathfinding)
-                                zombie:setWalkType(walkType)
-                                zombie:DoZombieSpeeds(0.85)
-                                
-                                marked = marked + 1
-
-                                -- Add to sync list
-                                table.insert(sprintersToSync, {
-                                    id = zombieID,
-                                    walkType = walkType
-                                })
-                            else
-                                -- Not a sprinter, add to processed list so client knows
-                                table.insert(processedIDs, zombieID)
-                            end
-                        elseif modData.SIMBA_TSY_IsSprinter then
-                            -- Already marked checked for sprinter, just add to sync list
-                            table.insert(sprintersToSync, {
-                                id = zombieID,
-                                walkType = modData.SIMBA_TSY_WalkType
-                            })
-                        else
-                            -- Already checked, not a sprinter
-                            table.insert(processedIDs, zombieID)
-                        end
-                        break
-                    end
-                end
-            end
-            
-            if not found then
-                table.insert(notFoundIDs, zombieID)
-            end
-        end
-
-        -- Always send response so client knows we processed the request
-        sendServerCommand(player, "SIMBA_TSY", "ApplySprinters", {
-            sprinters = sprintersToSync,
-            notFound = notFoundIDs,
-            processed = processedIDs
+    
+    if command == "RequestRegionData" then
+        -- Send region data to client
+        local regions = SIMBA_TSY_BuildRegionData()
+        sendServerCommand(player, "SIMBA_TSY", "RegionData", {
+            regions = regions
         })
+        print("SIMBA_TSY Server: Sent " .. #regions .. " region configurations to " .. player:getUsername())
         
-        if #sprintersToSync > 0 or #notFoundIDs > 0 then
-            print("SIMBA_TSY Server: Synced " .. #sprintersToSync .. " sprinters, " .. #notFoundIDs .. " not found, " .. #processedIDs .. " processed")
+    elseif command == "ProposeZombies" and player and args.zombies then
+        -- Process client proposals
+        local accepted = 0
+        local rejected = 0
+        
+        for _, proposal in ipairs(args.zombies) do
+            local zombieID = proposal.zombieID
+            local isSprinter = proposal.isSprinter
+            local walkType = proposal.walkType
+            
+            -- Check if we already have authoritative state for this zombie
+            if SIMBA_TSY_ZombieStates[zombieID] then
+                -- Already processed - return stored state
+                rejected = rejected + 1
+                local stored = SIMBA_TSY_ZombieStates[zombieID]
+                sendServerCommand(player, "SIMBA_TSY", "ConfirmZombie", {
+                    zombieID = zombieID,
+                    isSprinter = stored.isSprinter,
+                    walkType = stored.walkType
+                })
+            else
+                -- New zombie - accept client's proposal
+                accepted = accepted + 1
+                SIMBA_TSY_ZombieStates[zombieID] = {
+                    isSprinter = isSprinter,
+                    walkType = walkType
+                }
+                
+                -- Apply to server-side zombie if we can find it
+                -- local allCells = getWorld():getCellLoader():getLoadedCells()
+                -- for i = 0, allCells:size() - 1 do
+                --     local cell = allCells:get(i)
+                --     if cell then
+                --         local zombies = cell:getZombieList()
+                --         if zombies then
+                --             for j = 0, zombies:size() - 1 do
+                --                 local zombie = zombies:get(j)
+                --                 if zombie and not zombie:isDead() and zombie:getOnlineID() == zombieID then
+                --                     if isSprinter then
+                --                         zombie:setWalkType(walkType)
+                --                         zombie:DoZombieSpeeds(0.85)
+                --                     end
+                --                     goto zombie_found
+                --                 end
+                --             end
+                --         end
+                --     end
+                -- end
+                -- ::zombie_found::
+                
+                -- Confirm to client
+                sendServerCommand(player, "SIMBA_TSY", "ConfirmZombie", {
+                    zombieID = zombieID,
+                    isSprinter = isSprinter,
+                    walkType = walkType
+                })
+            end
+        end
+        
+        if accepted > 0 or rejected > 0 then
+            print("SIMBA_TSY Server: Accepted " .. accepted .. " new zombies, returned " .. rejected .. " existing states to " .. player:getUsername())
         end
     end
 end
@@ -195,14 +207,12 @@ Events.OnInitWorld.Add(function()
     -- ModData is stored on zombie instances and is automatically cleaned up when zombies are removed
 end)
 
--- Clean up modData on zombie death to prevent memory leaks
+-- Clean up state storage on zombie death to prevent memory leaks
 local function SIMBA_TSY_OnZombieDead(zombie)
     if zombie then
-        local modData = zombie:getModData()
-        if modData.SIMBA_TSY_Checked then
-            modData.SIMBA_TSY_Checked = nil
-            modData.SIMBA_TSY_WalkType = nil
-            modData.SIMBA_TSY_IsSprinter = nil
+        local zombieID = zombie:getOnlineID()
+        if zombieID and SIMBA_TSY_ZombieStates[zombieID] then
+            SIMBA_TSY_ZombieStates[zombieID] = nil
         end
     end
 end

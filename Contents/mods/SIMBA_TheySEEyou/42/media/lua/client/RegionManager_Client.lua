@@ -8,7 +8,7 @@ if not isClient() then return end
 require "RegionManager_Config"
 
 RegionManager.Client = RegionManager.Client or {}
-RegionManager.Client.zoneData = {} -- Store zone boundary data
+RegionManager.Client.zoneData = nil -- Store zone boundary data
 
 local function log(msg)
     RegionManager.Log("Client", msg)
@@ -40,7 +40,7 @@ local function drawZoneOutlines()
         getCore():DrawText(zoneName, centerX, centerY, r, g, b, 1)
         
         -- Draw corner markers (smaller text markers)
-        local cornerMarker = "||"
+        local cornerMarker = "T"
         getCore():DrawText(cornerMarker, bounds.minX, bounds.minY, r, g, b, 0.8)
         getCore():DrawText(cornerMarker, bounds.maxX, bounds.minY, r, g, b, 0.8)
         getCore():DrawText(cornerMarker, bounds.minX, bounds.maxY, r, g, b, 0.8)
@@ -129,7 +129,7 @@ local function OnServerCommand(module, command, args)
         RegionManager.Client.zoneData = args.zones or {}
         log("Received " .. tostring(#RegionManager.Client.zoneData) .. " zone boundaries from server")
         log("Zone outlines will be drawn continuously via OnPostRender")
-        drawZoneOutlines()
+        
         
     elseif command == "PlayerPvpStateChanged" then
         -- Another player's PVP state changed - update their skull icon
@@ -168,15 +168,9 @@ local function showCurrentZones()
     requestZoneInfo()
 end
 
--- Request zone boundaries when player spawns/enters world
-local function OnPlayerSpawn(playerIndex, player)
-    log("Player spawned, requesting zone boundaries from server...")
-    sendClientCommand("RegionManager", "RequestAllBoundaries", {})
-end
 
 -- Event registration
 Events.OnServerCommand.Add(OnServerCommand)
-Events.OnCreatePlayer.Add(OnPlayerSpawn)
 
 -- Register debug command (optional)
 -- You can call this from console: /showzones

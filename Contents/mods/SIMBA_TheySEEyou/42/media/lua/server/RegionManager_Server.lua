@@ -9,6 +9,8 @@ end
 require "RegionManager_Config"
 require "RegionManager_AutoSafeZones"
 
+local JSON = require "RegionManager_JSON"
+
 RegionManager.Server = RegionManager.Server or {}
 
 local function log(msg)
@@ -16,22 +18,12 @@ local function log(msg)
 end
 
 -- Store registered zones in ModData
-local function saveRegisteredZones()
+local function saveRegisteredZones(allRegions)
     local modData = ModData.getOrCreate(RegionManager.Config.MODDATA_KEY)
-    modData.zones = modData.zones or {}
+    modData.zones = allRegions or {}
     modData.lastUpdate = getGameTime():getWorldAgeHours()
     ModData.add(RegionManager.Config.MODDATA_KEY, modData)
     log("Saved " .. #modData.zones .. " zones to ModData")
-end
-
--- Load registered zones from ModData
-local function loadRegisteredZones()
-    local modData = ModData.get(RegionManager.Config.MODDATA_KEY)
-    if modData and modData.zones then
-        log("Loaded " .. #modData.zones .. " zones from ModData")
-        return modData.zones
-    end
-    return {}
 end
 
 -- Merge category properties with region customProperties
@@ -50,7 +42,7 @@ local function getMergedProperties(region)
         end
     end
 
-    -- Override with custom properties
+    -- Override with custom properties (customProperties take priority)
     if region.customProperties then
         for k, v in pairs(region.customProperties) do
             props[k] = v
@@ -132,13 +124,96 @@ local function registerRegion(region)
     end
 end
 
+-- ============================================================================
+-- External regions file I/O
+-- ============================================================================
+
+-- Write current regions to the external JSON file
+local function writeRegionsFile(regions)
+    local filename = RegionManager.Config.RegionsFilePath
+    log("Writing regions file: " .. filename)
+    
+    local data = {
+        version = "1.0",
+        lastUpdated = os.date("%Y-%m-%d %H:%M:%S"),
+        regions = regions
+    }
+    
+    local jsonStr = JSON.encode(data)
+    
+    local writer = getFileWriter(filename, true, false)
+    if not writer then
+        log("ERROR: Could not open file for writing: " .. filename)
+        return false
+    end
+    
+    writer:write(jsonStr)
+    writer:close()
+    
+    log("Successfully wrote " .. #regions .. " regions to " .. filename)
+    return true
+end
+
+-- Read regions from the external JSON file, or create the file with defaults if missing
+local function loadRegionsFromFile()
+    local filename = RegionManager.Config.RegionsFilePath
+    log("Loading regions from file: " .. filename)
+    
+    -- Try to read the file
+    local reader = getFileReader(filename, true)
+    if not reader then
+        -- File does not exist: create it with the default configured regions
+        log("Regions file not found, creating with default configured regions...")
+        writeRegionsFile(RegionManager.Config.Regions)
+        return RegionManager.Config.Regions
+    end
+    
+    -- Read entire file content
+    local lines = {}
+    local line = reader:readLine()
+    while line ~= nil do
+        table.insert(lines, line)
+        line = reader:readLine()
+    end
+    reader:close()
+    
+    local content = table.concat(lines, "\n")
+    if content == "" or content:match("^%s*$") then
+        log("WARNING: Regions file is empty, using default configured regions")
+        writeRegionsFile(RegionManager.Config.Regions)
+        return RegionManager.Config.Regions
+    end
+    
+    -- Parse JSON
+    local success, data = pcall(JSON.parse, content)
+    if not success or not data then
+        log("ERROR: Failed to parse regions file: " .. tostring(data))
+        log("Falling back to default configured regions")
+        return RegionManager.Config.Regions
+    end
+    
+    local regions = data.regions
+    if not regions or type(regions) ~= "table" then
+        log("ERROR: Regions file has no 'regions' array")
+        log("Falling back to default configured regions")
+        return RegionManager.Config.Regions
+    end
+    
+    log("Successfully loaded " .. #regions .. " regions from file")
+    return regions
+end
+
 -- Register all configured regions
 local function registerAllRegions()
     log("=== Starting Region Registration ===")
 
-    -- Generate auto-safe zones by subtracting PVP zones from entire map
-    local allRegions = RegionManager.AutoSafeZones.mergeWithConfigured(RegionManager.Config.Regions)
-    log("Processing " .. #allRegions .. " total regions (auto-generated + configured)")
+    -- Load regions from external JSON file (creates file with defaults if missing)
+    local fileRegions = loadRegionsFromFile()
+    log("Loaded " .. #fileRegions .. " regions from external file")
+
+    -- Generate auto-safe zones by subtracting PVP zones from file-loaded regions
+    local allRegions = RegionManager.AutoSafeZones.mergeWithConfigured(fileRegions)
+    log("Processing " .. #allRegions .. " total regions (auto-generated + file-loaded)")
 
     local registered = 0
     local failed = 0
@@ -155,134 +230,10 @@ local function registerAllRegions()
     log("Registered: " .. registered .. " | Failed: " .. failed)
 
     -- Save to ModData
-    saveRegisteredZones()
+    saveRegisteredZones(allRegions)
 
     -- Verify zones are loaded
     getWorld():checkVehiclesZones()
-end
-
--- Export configuration to JSON file
-local function exportConfig()
-    log("Exporting region configuration...")
-
-    local success, err = pcall(function()
-        local filename = RegionManager.Config.ExportPath
-        local writer = getFileWriter(filename, true, false)
-
-        if not writer then
-            log("ERROR: Could not open file for writing: " .. filename)
-            return
-        end
-
-        -- Build JSON manually (simple format)
-        writer:write("{\n")
-        writer:write('  "version": "1.0",\n')
-        writer:write('  "exportDate": "' .. os.date("%Y-%m-%d %H:%M:%S") .. '",\n')
-        writer:write('  "regions": [\n')
-
-        for i, region in ipairs(RegionManager.Config.Regions) do
-            writer:write("    {\n")
-            writer:write('      "id": "' .. region.id .. '",\n')
-            writer:write('      "name": "' .. region.name .. '",\n')
-            writer:write('      "x": ' .. region.x .. ',\n')
-            writer:write('      "y": ' .. region.y .. ',\n')
-            writer:write('      "z": ' .. region.z .. ',\n')
-            writer:write('      "width": ' .. region.width .. ',\n')
-            writer:write('      "height": ' .. region.height .. ',\n')
-            writer:write('      "enabled": ' .. tostring(region.enabled) .. ',\n')
-            writer:write('      "categories": [')
-            for j, cat in ipairs(region.categories) do
-                writer:write('"' .. cat .. '"')
-                if j < #region.categories then
-                    writer:write(", ")
-                end
-            end
-            writer:write("]\n")
-            writer:write("    }")
-            if i < #RegionManager.Config.Regions then
-                writer:write(",")
-            end
-            writer:write("\n")
-        end
-
-        writer:write("  ]\n")
-        writer:write("}\n")
-        writer:close()
-
-        log("Configuration exported successfully to: " .. filename)
-    end)
-
-    if not success then
-        log("ERROR exporting config: " .. tostring(err))
-    end
-end
-
--- Handle server commands
-local function OnClientCommand(module, command, player, args)
-    if module ~= "RegionManager" then
-        return
-    end
-
-    if command == "RequestAllBoundaries" then
-        -- Send all zone boundaries to client for visualization
-        local zoneList = {}
-        
-        for id, data in pairs(RegionManager.Server.registeredZones or {}) do
-            table.insert(zoneList, {
-                id = data.region.id,
-                name = data.region.name,
-                bounds = data.bounds,
-                color = data.properties.color or {r=0, g=255, b=0}
-            })
-        end
-        
-        sendServerCommand(player, "RegionManager", "AllZoneBoundaries", {
-            zones = zoneList
-        })
-        
-        log("Sent " .. #zoneList .. " zone boundaries to " .. player:getUsername())
-        
-    elseif command == "RequestZoneInfo" then
-        -- Send zone info to client
-        local x = args.x
-        local y = args.y
-
-        -- Find which zones contain this point using pre-calculated bounds
-        local zonesAtLocation = {}
-
-        for id, data in pairs(RegionManager.Server.registeredZones or {}) do
-            local bounds = data.bounds
-            -- Fast AABB collision check using pre-calculated bounds
-            if x >= bounds.minX and x <= bounds.maxX and y >= bounds.minY and y <= bounds.maxY then
-                table.insert(zonesAtLocation, {
-                    id = data.region.id,
-                    name = data.region.name,
-                    categories = data.region.categories
-                })
-            end
-        end
-
-        sendServerCommand(player, "RegionManager", "ZoneInfo", {
-            zones = zonesAtLocation
-        })
-    elseif command == "ExportConfig" then
-        -- Admin command to export config
-        if player:getAccessLevel() ~= "None" then
-            exportConfig()
-            sendServerCommand(player, "RegionManager", "ExportComplete", {})
-        end
-    end
-end
-
--- Initialize on server start
-local function OnServerStarted()
-    log("Server started, waiting for map zones to load...")
-end
-
--- Initialize zones after map loads
-local function OnLoadMapZones()
-    log("Map zones loading, registering custom regions...")
-    registerAllRegions()
 end
 
 -- Player enters/exits zone detection
@@ -400,6 +351,134 @@ local function checkPlayerZone(player)
         log("DEBUG: Player " .. player:getUsername() .. " - Previous zones: " .. prevCount .. ", Current zones: " .. currCount)
     end
 end
+-- Export configuration to JSON file
+local function exportConfig()
+    log("Exporting region configuration...")
+
+    local success, err = pcall(function()
+        local filename = RegionManager.Config.ExportPath
+        local writer = getFileWriter(filename, true, false)
+
+        if not writer then
+            log("ERROR: Could not open file for writing: " .. filename)
+            return
+        end
+
+        -- Build JSON manually (simple format)
+        writer:write("{\n")
+        writer:write('  "version": "1.0",\n')
+        writer:write('  "exportDate": "' .. os.date("%Y-%m-%d %H:%M:%S") .. '",\n')
+        writer:write('  "regions": [\n')
+
+        for i, region in ipairs(RegionManager.Config.Regions) do
+            writer:write("    {\n")
+            writer:write('      "id": "' .. region.id .. '",\n')
+            writer:write('      "name": "' .. region.name .. '",\n')
+            writer:write('      "x": ' .. region.x .. ',\n')
+            writer:write('      "y": ' .. region.y .. ',\n')
+            writer:write('      "z": ' .. region.z .. ',\n')
+            writer:write('      "width": ' .. region.width .. ',\n')
+            writer:write('      "height": ' .. region.height .. ',\n')
+            writer:write('      "enabled": ' .. tostring(region.enabled) .. ',\n')
+            writer:write('      "categories": [')
+            for j, cat in ipairs(region.categories) do
+                writer:write('"' .. cat .. '"')
+                if j < #region.categories then
+                    writer:write(", ")
+                end
+            end
+            writer:write("]\n")
+            writer:write("    }")
+            if i < #RegionManager.Config.Regions then
+                writer:write(",")
+            end
+            writer:write("\n")
+        end
+
+        writer:write("  ]\n")
+        writer:write("}\n")
+        writer:close()
+
+        log("Configuration exported successfully to: " .. filename)
+    end)
+
+    if not success then
+        log("ERROR exporting config: " .. tostring(err))
+    end
+end
+
+-- Handle server commands
+local function OnClientCommand(module, command, player, args)
+    if module ~= "RegionManager" then
+        return
+    end
+
+    if command == "RequestAllBoundaries" then
+        local zoneList = {}
+        
+        for id, data in pairs(RegionManager.Server.registeredZones or {}) do
+            table.insert(zoneList, {
+                id = data.region.id,
+                name = data.region.name,
+                bounds = data.bounds,
+                color = data.properties.color or {r=0, g=255, b=0}
+            })
+        end
+        
+        sendServerCommand(player, "RegionManager", "AllZoneBoundaries", {
+            zones = zoneList
+        })
+        
+        print("Sent " .. #zoneList .. " zone boundaries to " .. player:getUsername())
+        
+    elseif command == "ApplyZoneEffectsOnLogin" then
+        -- Apply zone effects immediately on player login
+        checkPlayerZone(player)
+        log("Applied zone effects on login for " .. player:getUsername())
+        
+    elseif command == "RequestZoneInfo" then
+        -- Send zone info to client
+        local x = args.x
+        local y = args.y
+
+        -- Find which zones contain this point using pre-calculated bounds
+        local zonesAtLocation = {}
+
+        for id, data in pairs(RegionManager.Server.registeredZones or {}) do
+            local bounds = data.bounds
+            -- Fast AABB collision check using pre-calculated bounds
+            if x >= bounds.minX and x <= bounds.maxX and y >= bounds.minY and y <= bounds.maxY then
+                table.insert(zonesAtLocation, {
+                    id = data.region.id,
+                    name = data.region.name,
+                    categories = data.region.categories
+                })
+            end
+        end
+
+        sendServerCommand(player, "RegionManager", "ZoneInfo", {
+            zones = zonesAtLocation
+        })
+    elseif command == "ExportConfig" then
+        -- Admin command to export config
+        if player:getAccessLevel() ~= "None" then
+            exportConfig()
+            sendServerCommand(player, "RegionManager", "ExportComplete", {})
+        end
+    end
+end
+
+-- Initialize on server start
+local function OnServerStarted()
+    log("Server started, waiting for map zones to load...")
+end
+
+-- Initialize zones after map loads
+local function OnLoadMapZones()
+    log("Map zones loading, registering custom regions...")
+    registerAllRegions()
+end
+
 
 -- Apply zone effects to player
 function applyZoneEffects(player, zoneData)
