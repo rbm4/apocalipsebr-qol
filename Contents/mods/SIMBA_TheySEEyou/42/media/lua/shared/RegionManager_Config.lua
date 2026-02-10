@@ -3,6 +3,85 @@
 -- Shared configuration for custom region management
 -- ============================================================================
 
+-- ============================================================================
+-- EmmyLua type definitions (no runtime effect, used by Lua Language Server)
+-- ============================================================================
+
+---@class ColorRGB
+---@field r number Red component (0-255 for config, 0-1 for rendering)
+---@field g number Green component
+---@field b number Blue component
+
+---@class Bounds
+---@field minX number
+---@field maxX number
+---@field minY number
+---@field maxY number
+
+--- Raw region as defined in config or loaded from JSON.
+--- `customProperties` overrides category defaults at registration time.
+---@class RegionDefinition
+---@field id string Unique region identifier
+---@field name string Human-readable region name
+---@field x1 number First corner X coordinate
+---@field y1 number First corner Y coordinate
+---@field x2 number Opposite corner X coordinate
+---@field y2 number Opposite corner Y coordinate
+---@field z number Z level (usually 0)
+---@field enabled boolean Whether the region is active
+---@field categories string[] Category keys (e.g. {"PVP","SPRINTERS"})
+---@field customProperties? ZoneProperties Optional property overrides
+
+--- Flat property bag produced by merging category defaults with customProperties.
+--- This is what `getMergedProperties()` returns and what gets stored as
+--- `RegisteredZoneData.properties` on the server.
+---@class ZoneProperties
+---@field name? string
+---@field color? ColorRGB
+---@field pvpEnabled? boolean
+---@field safehouse? boolean
+---@field noZombies? boolean
+---@field announceEntry? boolean
+---@field announceExit? boolean
+---@field zombieSpeed? number 1=Shambler, 2=FastShambler, 3=Sprinter
+---@field zombieStrength? number
+---@field zombieDensity? number
+---@field zombieRespawn? boolean
+---@field lootModifier? number
+---@field sprinterChance? number 1-100 percentage of zombies that become sprinters
+---@field message? string Notification message shown on zone entry
+
+--- Server-side registered zone data, stored in RegionManager.Server.registeredZones[id].
+--- Contains the original RegionDefinition, the merged ZoneProperties, computed Bounds,
+--- and the engine zone handle.
+---@class RegisteredZoneData
+---@field region RegionDefinition Original region definition
+---@field properties ZoneProperties Merged flat properties (categories + customProperties)
+---@field bounds Bounds Pre-calculated min/max rectangle
+---@field zone any Game engine zone handle
+
+--- Zone data as sent to clients via the "AllZoneBoundaries" server command.
+--- A subset of RegisteredZoneData flattened for client consumption.
+---@class ClientZoneData
+---@field id string
+---@field name string
+---@field bounds Bounds
+---@field color ColorRGB
+---@field pvpEnabled? boolean
+---@field sprinterChance? number
+---@field announceEntry? boolean
+---@field announceExit? boolean
+---@field message? string
+
+--- Module definition for registering with RegionManager.ClientTick.
+---@class TickModuleDef
+---@field name string Module identifier
+---@field onZoneEntered? fun(player: IsoPlayer, zoneId: string, zoneData: ClientZoneData)
+---@field onZoneExited? fun(player: IsoPlayer, zoneId: string, zoneData: ClientZoneData)
+---@field onTick? fun(player: IsoPlayer, currentZones: table<string, ClientZoneData>)
+
+-- ============================================================================
+
 RegionManager = RegionManager or {}
 RegionManager.Config = RegionManager.Config or {}
 
@@ -20,6 +99,7 @@ RegionManager.Log = function(module, msg)
 end
 
 -- Zone categories and their default properties
+---@type table<string, ZoneProperties>
 RegionManager.Config.Categories = {
     PVP = {
         name = "PVP Zone",
@@ -80,6 +160,7 @@ RegionManager.Config.Categories = {
 -- Region definitions
 -- Each region uses two opposite corner coordinates to define a rectangle
 -- Format: x1, y1 (first corner) and x2, y2 (opposite corner)
+---@type RegionDefinition[]
 RegionManager.Config.Regions = {
     -- Example: Muldraugh Downtown PVP
     {

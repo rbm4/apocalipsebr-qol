@@ -13,7 +13,15 @@ local function log(msg)
     RegionManager.Log("AutoSafeZones", msg)
 end
 
+---@class Rect
+---@field x1 number
+---@field y1 number
+---@field x2 number
+---@field y2 number
+---@field id? string Only present on PVP zone rects
+
 -- Base map coordinates (entire playable area)
+---@type Rect
 local BASE_MAP = {
     x1 = -1780,
     y1 = -2272,
@@ -23,6 +31,9 @@ local BASE_MAP = {
 
 -- Rectangle subtraction algorithm
 -- Subtracts rectB from rectA, returns array of remaining rectangles
+---@param rectA Rect
+---@param rectB Rect
+---@return Rect[]
 local function subtractRectangle(rectA, rectB)
     local result = {}
     
@@ -89,16 +100,22 @@ local function subtractRectangle(rectA, rectB)
 end
 
 -- Validate that a rectangle has valid dimensions
+---@param rect Rect
+---@return boolean
 local function isValidRectangle(rect)
     return rect.x2 > rect.x1 and rect.y2 > rect.y1
 end
 
 -- Calculate area of a rectangle
+---@param rect Rect
+---@return number
 local function calculateArea(rect)
     return (rect.x2 - rect.x1) * (rect.y2 - rect.y1)
 end
 
 -- Merge adjacent rectangles to reduce total count (optimization)
+---@param rectangles Rect[]
+---@return Rect[]
 local function mergeAdjacentRectangles(rectangles)
     -- Simple horizontal merge: if two rectangles share same Y coords and X edges touch
     local merged = true
@@ -155,6 +172,8 @@ local function mergeAdjacentRectangles(rectangles)
 end
 
 -- Main function: Generate safe zones by subtracting PVP zones from base map
+---@param configuredRegions RegionDefinition[]
+---@return RegionDefinition[] autoRegions Auto-generated safe zone regions
 function RegionManager.AutoSafeZones.generateSafeZones(configuredRegions)
     log("=== Starting Automatic Safe Zone Generation ===")
     log("Base map: (" .. BASE_MAP.x1 .. "," .. BASE_MAP.y1 .. ") to (" .. BASE_MAP.x2 .. "," .. BASE_MAP.y2 .. ")")
@@ -273,6 +292,8 @@ function RegionManager.AutoSafeZones.generateSafeZones(configuredRegions)
 end
 
 -- Merge auto-generated safe zones with configured regions
+---@param configuredRegions RegionDefinition[]
+---@return RegionDefinition[] mergedRegions All regions (auto-safe + configured)
 function RegionManager.AutoSafeZones.mergeWithConfigured(configuredRegions)
     local autoSafeZones = RegionManager.AutoSafeZones.generateSafeZones(configuredRegions)
     
