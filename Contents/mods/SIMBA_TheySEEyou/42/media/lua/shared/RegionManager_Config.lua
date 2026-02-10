@@ -83,55 +83,58 @@ RegionManager.Config.Categories = {
 RegionManager.Config.Regions = {
     -- Example: Muldraugh Downtown PVP
     {
-        id = "muldraugh_downtown_pvp",
-        name = "Downtown Muldraugh Arena",
-        x1 = 10500,  -- Top-left or bottom-left corner
-        y1 = 9700,
-        x2 = 10600,  -- Opposite corner (100 units away)
-        y2 = 9800,
+        id = "lousville_test_area",
+        name = "Lousville test area",
+        x1 = 12590,  -- Top-left or bottom-left corner
+        y1 = 810,
+        x2 = 12609,  -- Opposite corner
+        y2 = 904,
         z = 0,
-        categories = {"PVP"},
-        enabled = true,
-        customProperties = {
-            pvpEnabled = true,
-            sprinterChance = 25,  -- 25% sprinter chance (1-100, default baseline: 50)
-            message = "You've entered a PVP zone! Watch your back!"
-        }
-    },
-    {
-        id = "muldraugh_downtown_road",
-        name = "Downtown Muldraugh Road",
-        x1 = 10584,  -- Top-left or bottom-left corner
-        y1 = 8852,
-        x2 = 10598,  -- Opposite corner b42map.com/?x
-        y2 = 14250,
-        z = 0,
-        categories = {"PVP"},
-        enabled = true,
-        customProperties = {
-            pvpEnabled = true,
-            message = "You've entered a PVP zone! Watch your back!"
-        }
-    },
-    
-    -- Example: Louisville Sprinter Zone
-    {
-        id = "louisville_sprinters",
-        name = "Louisville Outbreak Zone",
-        x1 = 12000,
-        y1 = 2000,
-        x2 = 12300,  -- 300 units away
-        y2 = 2300,
-        z = 0,
-        categories = {"SPRINTERS", "DEADZONE"},
+        categories = {"PVP","SPRINTERS"},
         enabled = true,
         customProperties = {
             zombieSpeed = 3,
             zombieDensity = 5.0,
-            sprinterChance = 80,  -- 80% chance zombies become sprinters (1-100, default: 50)
-            message = "WARNING: Infected runners detected in this area!"
+            pvpEnabled = true,
+            sprinterChance = 100,  -- 25% sprinter chance (1-100, default baseline: 50)
+            message = "Voce acabou de entrar em territorio hostil e de infeccao alta! Cuidado extremo!"
         }
     },
+    -- {
+    --     id = "muldraugh_downtown_road",
+    --     name = "Downtown Muldraugh Road",
+    --     x1 = 10584,  -- Top-left or bottom-left corner
+    --     y1 = 8852,
+    --     x2 = 10598,  -- Opposite corner b42map.com/?x
+    --     y2 = 14250,
+    --     z = 0,
+    --     categories = {"PVP"},
+    --     enabled = true,
+    --     customProperties = {
+    --         pvpEnabled = true,
+    --         sprinterChance = 100,
+    --         message = "You've entered a PVP zone! Watch your back!"
+    --     }
+    -- },
+    
+    -- Example: Louisville Sprinter Zone
+    -- {
+    --     id = "louisville_sprinters",
+    --     name = "Louisville Outbreak Zone",
+    --     x1 = 12000,
+    --     y1 = 2000,
+    --     x2 = 12300,  -- 300 units away
+    --     y2 = 2300,
+    --     z = 0,
+    --     categories = {"SPRINTERS", "DEADZONE"},
+    --     enabled = true,
+    --     customProperties = {
+    --         zombieSpeed = 3,
+    --         zombieDensity = 5.0,
+    --         sprinterChance = 80,  -- 80% chance zombies become sprinters (1-100, default: 50)
+    --         message = "WARNING: Infected runners detected in this area!"
+    --     }
+    -- },
     
     -- Example: West Point Safe Zone
     -- {
@@ -152,25 +155,28 @@ RegionManager.Config.Regions = {
     -- },
     
     -- Example: Rosewood High Loot
-    {
-        id = "rosewood_loot",
-        name = "Rosewood Supply Cache",
-        x1 = 8100,
-        y1 = 11600,
-        x2 = 8180,  -- 80 units away
-        y2 = 11680,
-        z = 0,
-        categories = {"LOOTBONUS"},
-        enabled = true,
-        customProperties = {
-            lootModifier = 2.0,
-            message = "This area seems well-stocked..."
-        }
-    }
+    -- {
+    --     id = "rosewood_loot",
+    --     name = "Rosewood Supply Cache",
+    --     x1 = 8100,
+    --     y1 = 11600,
+    --     x2 = 8180,  -- 80 units away
+    --     y2 = 11680,
+    --     z = 0,
+    --     categories = {"LOOTBONUS"},
+    --     enabled = true,
+    --     customProperties = {
+    --         lootModifier = 2.0,
+    --         message = "This area seems well-stocked..."
+    --     }
+    -- }
     
     -- Add more regions as needed
     -- Use GetMyCoords() in console to get your current position
 }
+
+-- External regions file (read/written by server on startup, managed by external API)
+RegionManager.Config.RegionsFilePath = "RegionManager_Regions.json"
 
 -- Export/Import paths (relative to Zomboid directory)
 RegionManager.Config.ExportPath = "RegionManager_Export.json"

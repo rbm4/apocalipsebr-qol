@@ -102,34 +102,48 @@ end
 function ISRegionManagerAdminPanel:populateList()
     self.regionList:clear()
     
-    if not RegionManager or not RegionManager.Server or not RegionManager.Server.registeredZones then
-        -- Fallback to config if server data not available
-        if RegionManager and RegionManager.Config and RegionManager.Config.Regions then
-            for i, region in ipairs(RegionManager.Config.Regions) do
-                local displayName = region.name or region.id
-                local categories = table.concat(region.categories or {}, ", ")
-                if categories ~= "" then
-                    displayName = displayName .. " [" .. categories .. "]"
-                end
+    -- Use zones received from server (stored in Client.zoneData)
+    if RegionManager and RegionManager.Client and RegionManager.Client.zoneData then
+        local zoneData = RegionManager.Client.zoneData
+        
+        if #zoneData > 0 then
+            for i, zone in ipairs(zoneData) do
+                local displayName = zone.name or zone.id
                 
-                -- Wrap config region in data structure
-                self.regionList:addItem(displayName, {region = region, properties = {}, zone = nil})
+                -- Create a region structure from zone data
+                local region = {
+                    id = zone.id,
+                    name = zone.name,
+                    x1 = zone.bounds.minX,
+                    y1 = zone.bounds.minY,
+                    x2 = zone.bounds.maxX,
+                    y2 = zone.bounds.maxY,
+                    z = 0,
+                    enabled = true,
+                    categories = {}  -- Categories not sent by server currently
+                }
+                
+                self.regionList:addItem(displayName, {region = region, bounds = zone.bounds})
             end
+            
+            print("[RegionManager Admin] Populated list with " .. #zoneData .. " zones from server")
+            return
         end
-        return
     end
     
-    -- Use registered zones from server
-    local registeredZones = RegionManager.Server.registeredZones
-    for id, data in pairs(registeredZones) do
-        local region = data.region
-        local displayName = region.name or region.id
-        local categories = table.concat(region.categories or {}, ", ")
-        if categories ~= "" then
-            displayName = displayName .. " [" .. categories .. "]"
+    -- Fallback to config if no zones received from server yet
+    print("[RegionManager Admin] WARNING: No zones received from server, using config fallback")
+    if RegionManager and RegionManager.Config and RegionManager.Config.Regions then
+        for i, region in ipairs(RegionManager.Config.Regions) do
+            local displayName = region.name or region.id
+            local categories = table.concat(region.categories or {}, ", ")
+            if categories ~= "" then
+                displayName = displayName .. " [" .. categories .. "]"
+            end
+            
+            -- Wrap config region in data structure
+            self.regionList:addItem(displayName, {region = region, properties = {}, zone = nil})
         end
-        
-        self.regionList:addItem(displayName, data)
     end
 end
 
