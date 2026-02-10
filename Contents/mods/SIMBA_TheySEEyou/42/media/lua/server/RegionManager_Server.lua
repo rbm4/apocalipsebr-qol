@@ -421,7 +421,11 @@ local function OnClientCommand(module, command, player, args)
                 id = data.region.id,
                 name = data.region.name,
                 bounds = data.bounds,
-                color = data.properties.color or {r=0, g=255, b=0}
+                color = data.properties.color or {r=0, g=255, b=0},
+                pvpEnabled = data.properties.pvpEnabled,
+                sprinterChance = data.properties.sprinterChance or 0,
+                announceEntry = data.properties.announceEntry,
+                announceExit = data.properties.announceExit
             })
         end
         
@@ -459,6 +463,69 @@ local function OnClientCommand(module, command, player, args)
         sendServerCommand(player, "RegionManager", "ZoneInfo", {
             zones = zonesAtLocation
         })
+    elseif command == "ClientZoneEntered" then
+        -- Client detected zone entry, sync with other players
+        local zoneId = args.zoneId
+        local zoneName = args.zoneName
+        local isPvpZone = args.isPvpZone
+        local isSafeZone = args.isSafeZone
+        local safetyEnabled = args.safetyEnabled
+        
+        print("[DEBUG SERVER] Player " .. player:getUsername() .. " entered zone: " .. zoneName .. 
+              " (PVP=" .. tostring(isPvpZone) .. ", Safe=" .. tostring(isSafeZone) .. ")")
+        
+        -- Send zone entered notification to the player
+        -- sendServerCommand(player, "RegionManager", "ZoneEntered", {
+        --     id = zoneId,
+        --     name = zoneName,
+        --     message = "Entering: " .. zoneName,
+        --     pvpEnabled = isPvpZone,
+        --     safetyEnabled = safetyEnabled
+        -- })
+        
+        -- Broadcast PVP state change to all other players for skull icon sync
+        local allPlayers = getOnlinePlayers()
+        for i = 0, allPlayers:size() - 1 do
+            local otherPlayer = allPlayers:get(i)
+            if otherPlayer ~= player then
+                sendServerCommand(otherPlayer, "RegionManager", "PlayerPvpStateChanged", {
+                    playerIndex = player:getPlayerNum(),
+                    pvpEnabled = isPvpZone,
+                    safetyEnabled = safetyEnabled
+                })
+            end
+        end
+        print("[DEBUG SERVER] Broadcasted zone entry to " .. (allPlayers:size() - 1) .. " other players")
+        
+    elseif command == "ClientZoneExited" then
+        -- Client detected zone exit, sync with other players
+        local zoneId = args.zoneId
+        local zoneName = args.zoneName
+        local safetyEnabled = args.safetyEnabled
+        
+        print("[DEBUG SERVER] Player " .. player:getUsername() .. " exited zone: " .. zoneName)
+        
+        -- Send zone exited notification to the player
+        sendServerCommand(player, "RegionManager", "ZoneExited", {
+            id = zoneId,
+            name = zoneName,
+            safetyEnabled = safetyEnabled
+        })
+        
+        -- Broadcast PVP state reset to all other players
+        local allPlayers = getOnlinePlayers()
+        for i = 0, allPlayers:size() - 1 do
+            local otherPlayer = allPlayers:get(i)
+            if otherPlayer ~= player then
+                sendServerCommand(otherPlayer, "RegionManager", "PlayerPvpStateChanged", {
+                    playerIndex = player:getPlayerNum(),
+                    pvpEnabled = false,
+                    safetyEnabled = safetyEnabled
+                })
+            end
+        end
+        print("[DEBUG SERVER] Broadcasted zone exit to " .. (allPlayers:size() - 1) .. " other players")
+        
     elseif command == "ExportConfig" then
         -- Admin command to export config
         if player:getAccessLevel() ~= "None" then
