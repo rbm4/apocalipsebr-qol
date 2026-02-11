@@ -33,10 +33,25 @@ local function onTick(player, currentZones)
     -- Only enforce if we have a required state
     if requiredState ~= nil then
         
+        local currentState = player:getSafety():isEnabled()
+        
         -- If player somehow changed it, revert immediately
-        player:getSafety():setEnabled(requiredState)
-        player:getSafety():setCooldown(0)
-        player:getSafety():setToggle(0)
+        if currentState ~= requiredState then
+            player:getSafety():setEnabled(requiredState)
+            player:getSafety():setCooldown(0)
+            player:getSafety():setToggle(0)
+            
+            -- Sync the corrected state with the server
+            sendClientCommand("RegionManager", "UpdatePvpState", {
+                zoneId = nil,
+                zoneName = "State Correction",
+                isPvpZone = (requiredState == false),
+                isSafeZone = (requiredState == true),
+                safetyEnabled = requiredState
+            })
+            
+            log("State corrected and synced with server (Safety=" .. tostring(requiredState) .. ")")
+        end
     end
 end
 
