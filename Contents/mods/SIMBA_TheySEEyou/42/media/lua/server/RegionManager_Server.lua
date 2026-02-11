@@ -373,27 +373,18 @@ local function OnClientCommand(module, command, player, args)
         print("[DEBUG SERVER] Player " .. player:getUsername() .. " entered zone: " .. zoneName .. 
               " (PVP=" .. tostring(isPvpZone) .. ", Safe=" .. tostring(isSafeZone) .. ")")
         
-        -- Send zone entered notification to the player
-        -- sendServerCommand(player, "RegionManager", "ZoneEntered", {
-        --     id = zoneId,
-        --     name = zoneName,
-        --     message = "Entering: " .. zoneName,
-        --     pvpEnabled = isPvpZone,
-        --     safetyEnabled = safetyEnabled
-        -- })
-        
         -- Broadcast PVP state change to all other players for skull icon sync
-        local allPlayers = getOnlinePlayers()
-        for i = 0, allPlayers:size() - 1 do
-            local otherPlayer = allPlayers:get(i)
-            if otherPlayer ~= player then
-                sendServerCommand(otherPlayer, "RegionManager", "PlayerPvpStateChanged", {
-                    playerIndex = player:getPlayerNum(),
-                    pvpEnabled = isPvpZone,
-                    safetyEnabled = safetyEnabled
-                })
-            end
-        end
+        -- local allPlayers = getOnlinePlayers()
+        -- for i = 0, allPlayers:size() - 1 do
+        --     local otherPlayer = allPlayers:get(i)
+        --     if otherPlayer ~= player then
+        --         sendServerCommand(otherPlayer, "RegionManager", "PlayerPvpStateChanged", {
+        --             playerIndex = player:getPlayerNum(),
+        --             pvpEnabled = isPvpZone,
+        --             safetyEnabled = safetyEnabled
+        --         })
+        --     end
+        -- end
         print("[DEBUG SERVER] Broadcasted zone entry to " .. (allPlayers:size() - 1) .. " other players")
         
     elseif command == "ClientZoneExited" then
