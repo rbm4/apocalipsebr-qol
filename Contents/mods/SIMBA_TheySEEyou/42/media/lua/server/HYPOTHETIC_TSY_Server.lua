@@ -9,7 +9,6 @@
 --   customProperties = {
 --       sprinterChance = 80  -- 80% of zombies become sprinters in this zone
 --   }
-
 if not isServer() then
     return
 end
@@ -36,6 +35,8 @@ local SIMBA_TSY_ZombieScanInterval = 100 -- Ticks between zombie scans (about ev
 local SIMBA_TSY_BaselineSprinterChance = 0 -- 1-100 baseline chance when region has no sprinter config
 local SIMBA_TSY_ScanRadius = 70 -- Radius around players to scan for zombies
 local SIMBA_TSY_LastZombieScan = 0
+local SIMBA_TSY_EnforcementInterval = 60 -- Ticks between enforcement checks
+local SIMBA_TSY_EnforcementCounter = 0
 
 -- Sprinter walk types available in the game
 local SIMBA_TSY_SprinterWalkTypes = {"Sprint1", "Sprint2", "Sprint3", "Sprint4", "Sprint5"}
@@ -54,14 +55,18 @@ local function SIMBA_TSY_GetSprinterChance(x, y)
                 if props.sprinterChance and type(props.sprinterChance) == "number" then
                     -- Clamp to 1-100 range
                     local chance = props.sprinterChance
-                    if chance < 1 then chance = 1 end
-                    if chance > 100 then chance = 100 end
+                    if chance < 1 then
+                        chance = 1
+                    end
+                    if chance > 100 then
+                        chance = 100
+                    end
                     return chance
                 end
             end
         end
     end
-    
+
     -- No region found or region has no sprinter config, use baseline
     return SIMBA_TSY_BaselineSprinterChance
 end
@@ -87,7 +92,7 @@ local SIMBA_TSY_ZombieStates = {} -- zombieID -> {isSprinter, walkType}
 -- Build region data to send to clients
 local function SIMBA_TSY_BuildRegionData()
     local regions = {}
-    
+
     if RegionManager and RegionManager.Server and RegionManager.Server.registeredZones then
         print("SIMBA_TSY: Building region data from RegionManager.Server.registeredZones")
         local count = 0
@@ -107,16 +112,39 @@ local function SIMBA_TSY_BuildRegionData()
     else
         print("SIMBA_TSY: WARNING - RegionManager.Server.registeredZones not available!")
     end
-    
+
     return regions
 end
 
 -- SERVER validates client proposals and stores authoritative state
 local function SIMBA_TSY_OnClientCommand(module, command, player, args)
+    -- Function to find a zombie by its online ID
+    local function SIMBA_TSY_FindZombieByID(zombieID)
+        local cell = getCell()
+        if cell then
+            local zombies = cell:getZombieList()
+            if zombies then
+                for j = 0, zombies:size() - 1 do
+                    local zombie = zombies:get(j)
+                    if zombie and not zombie:isDead() and zombie:getOnlineID() == zombieID then
+                        return zombie
+                    end
+                end
+            end
+        end
+        return nil -- Zombie not found
+    end
+
     if module ~= "SIMBA_TSY" then
         return
     end
-    
+
+    -- Ensure state table exists (defensive programming for Lua resets)
+    if not SIMBA_TSY_ZombieStates or type(SIMBA_TSY_ZombieStates) ~= "table" then
+        print("SIMBA_TSY: WARNING - ZombieStates was nil, reinitializing")
+        SIMBA_TSY_ZombieStates = {}
+    end
+
     if command == "RequestRegionData" then
         -- Send region data to client
         local regions = SIMBA_TSY_BuildRegionData()
@@ -124,17 +152,17 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
             regions = regions
         })
         print("SIMBA_TSY Server: Sent " .. #regions .. " region configurations to " .. player:getUsername())
-        
+
     elseif command == "ProposeZombies" and player and args.zombies then
         -- Process client proposals
         local accepted = 0
         local rejected = 0
-        
+
         for _, proposal in ipairs(args.zombies) do
             local zombieID = proposal.zombieID
             local isSprinter = proposal.isSprinter
             local walkType = proposal.walkType
-            
+
             -- Check if we already have authoritative state for this zombie
             if SIMBA_TSY_ZombieStates[zombieID] then
                 -- Already processed - return stored state
@@ -148,33 +176,30 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
             else
                 -- New zombie - accept client's proposal
                 accepted = accepted + 1
+
+                -- Apply to server-side zombie if we can find it
+                local zombie = SIMBA_TSY_FindZombieByID(zombieID)
+                if zombie and isSprinter then
+                    -- Verify methods exist before calling
+                    if type(zombie.setWalkType) == "function" then
+                        zombie:setWalkType(walkType)
+                    else
+                        print("SIMBA_TSY: WARNING - zombie:setWalkType is not available for zombie " .. zombieID)
+                    end
+
+                    if type(zombie.DoZombieSpeeds) == "function" then
+                        zombie:DoZombieSpeeds(0.85)
+                    else
+                        print("SIMBA_TSY: WARNING - zombie:DoZombieSpeeds is not available for zombie " .. zombieID)
+                    end
+                end
+
                 SIMBA_TSY_ZombieStates[zombieID] = {
                     isSprinter = isSprinter,
-                    walkType = walkType
+                    walkType = walkType,
+                    zombie = zombie
                 }
-                
-                -- Apply to server-side zombie if we can find it
-                -- local allCells = getWorld():getCellLoader():getLoadedCells()
-                -- for i = 0, allCells:size() - 1 do
-                --     local cell = allCells:get(i)
-                --     if cell then
-                --         local zombies = cell:getZombieList()
-                --         if zombies then
-                --             for j = 0, zombies:size() - 1 do
-                --                 local zombie = zombies:get(j)
-                --                 if zombie and not zombie:isDead() and zombie:getOnlineID() == zombieID then
-                --                     if isSprinter then
-                --                         zombie:setWalkType(walkType)
-                --                         zombie:DoZombieSpeeds(0.85)
-                --                     end
-                --                     goto zombie_found
-                --                 end
-                --             end
-                --         end
-                --     end
-                -- end
-                -- ::zombie_found::
-                
+
                 -- Confirm to client
                 sendServerCommand(player, "SIMBA_TSY", "ConfirmZombie", {
                     zombieID = zombieID,
@@ -183,9 +208,10 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
                 })
             end
         end
-        
+
         if accepted > 0 or rejected > 0 then
-            print("SIMBA_TSY Server: Accepted " .. accepted .. " new zombies, returned " .. rejected .. " existing states to " .. player:getUsername())
+            print("SIMBA_TSY Server: Accepted " .. accepted .. " new zombies, returned " .. rejected ..
+                      " existing states to " .. player:getUsername())
         end
     end
 end
@@ -209,6 +235,10 @@ end)
 
 -- Clean up state storage on zombie death to prevent memory leaks
 local function SIMBA_TSY_OnZombieDead(zombie)
+    if not SIMBA_TSY_ZombieStates or type(SIMBA_TSY_ZombieStates) ~= "table" then
+        return
+    end
+
     if zombie then
         local zombieID = zombie:getOnlineID()
         if zombieID and SIMBA_TSY_ZombieStates[zombieID] then
@@ -218,3 +248,83 @@ local function SIMBA_TSY_OnZombieDead(zombie)
 end
 
 Events.OnZombieDead.Add(SIMBA_TSY_OnZombieDead)
+
+-- Server-side enforcement to maintain sprinter states against network sync
+local function SIMBA_TSY_EnforceSprinterStates()
+    -- Ensure state table exists
+    if not SIMBA_TSY_ZombieStates or type(SIMBA_TSY_ZombieStates) ~= "table" then
+        SIMBA_TSY_ZombieStates = {}
+        return -- Skip this tick if state was reset
+    end
+
+    -- Ensure counter is a valid number
+    if type(SIMBA_TSY_EnforcementCounter) ~= "number" then
+        SIMBA_TSY_EnforcementCounter = 0
+        print("SIMBA_TSY: WARNING - EnforcementCounter was not a number, resetting to 0")
+    end
+    if type(SIMBA_TSY_EnforcementInterval) ~= "number" then
+        SIMBA_TSY_EnforcementInterval = 60
+        print("SIMBA_TSY: WARNING - EnforcementInterval was not a number, resetting to 60")
+    end
+
+    SIMBA_TSY_EnforcementCounter = SIMBA_TSY_EnforcementCounter + 1
+    if SIMBA_TSY_EnforcementCounter < SIMBA_TSY_EnforcementInterval then
+        return
+    end
+    SIMBA_TSY_EnforcementCounter = 0
+
+    local enforced = 0
+    for zombieID, state in pairs(SIMBA_TSY_ZombieStates) do
+        if state.isSprinter then
+            local zombie = SIMBA_TSY_FindZombieByID(zombieID)
+            if zombie then
+                -- Check if zombie's state has been reset by multiplayer sync
+                local currentWalkType = zombie:getVariableString("zombieWalkType")
+                if currentWalkType ~= state.walkType then
+                    -- Verify methods exist before calling
+                    if type(zombie.setWalkType) == "function" and type(zombie.DoZombieSpeeds) == "function" then
+                        zombie:setWalkType(state.walkType)
+                        zombie:DoZombieSpeeds(0.85)
+                        enforced = enforced + 1
+                    end
+                end
+                -- Update our reference
+                state.zombie = zombie
+            else
+                -- Zombie no longer exists, clean up
+                SIMBA_TSY_ZombieStates[zombieID] = nil
+            end
+        end
+    end
+
+    if enforced > 0 then
+        print("SIMBA_TSY: Enforced sprinter state on " .. enforced .. " zombies")
+    end
+end
+
+-- Initialize enforcement system after server starts
+local function SIMBA_TSY_InitEnforcement()
+    print("SIMBA_TSY: Initializing sprinter enforcement system")
+    Events.OnTick.Add(SIMBA_TSY_EnforceSprinterStates)
+end
+
+Events.OnServerStarted.Add(SIMBA_TSY_InitEnforcement)
+
+-- Add this function to intercept network packets
+local function SIMBA_TSY_OnSendCommand(module, command, player, args)
+    if not SIMBA_TSY_ZombieStates or type(SIMBA_TSY_ZombieStates) ~= "table" then
+        return
+    end
+
+    if module == "zombie" and command == "ZombiePacket" and args and args.id then
+        local zombieID = args.id
+        local state = SIMBA_TSY_ZombieStates[zombieID]
+        if state and state.isSprinter then
+            -- Override packet data to maintain sprinter state
+            args.walkType = state.walkType
+            args.speedMod = 850 -- 0.85 * 1000 (network format)
+        end
+    end
+end
+
+Events.OnSendCommand.Add(SIMBA_TSY_OnSendCommand)

@@ -34,6 +34,10 @@ local function OnClientCommand(module, command, player, args)
         log("  PVP Zone: " .. tostring(args.isPvpZone))
         log("  Safe Zone: " .. tostring(args.isSafeZone))
         log("  Safety Enabled: " .. tostring(args.safetyEnabled))
+
+        player:getSafety():setEnabled(args.safetyEnabled)
+        player:getSafety():setCooldown(0)
+        player:getSafety():setToggle(0)
         
         -- Broadcast this player's PVP state to all OTHER clients
         local broadcast = {
