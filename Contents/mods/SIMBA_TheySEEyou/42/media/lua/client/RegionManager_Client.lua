@@ -78,49 +78,7 @@ end
 local function OnServerCommand(module, command, args)
     if module ~= "RegionManager" then return end
     
-    if command == "ZoneEntered" then
-        showZoneNotification(
-            args.name,
-            args.message,
-            args.color,
-            true
-        )
-        
-        -- Handle PVP skull activation on client (Safety system only)
-        local player = getPlayer()
-        if player and args.pvpEnabled ~= nil then
-            if args.pvpEnabled == true then
-                -- PVP Zone: Enable skull icon (Safety system only)
-                player:getSafety():setEnabled(false)
-                log("Client: Activated PVP skull (Safety=false)")
-            elseif args.pvpEnabled == false then
-                -- Safe Zone: Disable skull icon
-                player:getSafety():setEnabled(true)
-                log("Client: Deactivated PVP skull (safe zone, Safety=true)")
-            end
-        end
-        
-    elseif command == "ZoneExited" then
-        local message = "Left: " .. args.name
-        showZoneNotification(
-            args.name,
-            message,
-            {r=0.5, g=0.5, b=0.5},
-            false
-        )
-        
-        -- Handle PVP skull deactivation on client
-        local player = getPlayer()
-        if player and args.pvpEnabled ~= nil then
-            -- Sync Safety state from server (restores toggle button)
-            if args.safetyEnabled ~= nil then
-                player:getSafety():setEnabled(args.safetyEnabled)
-                log("Client: Synced Safety state to: " .. tostring(args.safetyEnabled))
-            end
-            log("Client: Deactivated PVP skull (left zone)")
-        end
-        
-    elseif command == "ZoneInfo" then
+    if command == "ZoneInfo" then
         -- Display zone info UI
         log("Current zones: " .. #args.zones)
         for _, zone in ipairs(args.zones) do
@@ -138,26 +96,6 @@ local function OnServerCommand(module, command, args)
         RegionManager.Client.zoneData = args.zones or {}
         log("Received " .. tostring(#RegionManager.Client.zoneData) .. " zone boundaries from server")
         log("Zone outlines will be drawn continuously via OnPostRender")
-        
-        
-    elseif command == "PlayerPvpStateChanged" then
-        -- Another player's PVP state changed - update their skull icon
-        local targetPlayer = getSpecificPlayer(args.playerIndex)
-        if targetPlayer then
-            if args.pvpEnabled == true then
-                -- Other player entered PVP zone
-                targetPlayer:getSafety():setEnabled(false)
-                log("Client: Updated player " .. args.playerIndex .. " PVP state (Safety=false)")
-            elseif args.pvpEnabled == false then
-                -- Other player left PVP zone or entered safe zone
-                if args.safetyEnabled ~= nil then
-                    targetPlayer:getSafety():setEnabled(args.safetyEnabled)
-                    log("Client: Updated player " .. args.playerIndex .. " PVP state (Safety=" .. tostring(args.safetyEnabled) .. ")")
-                end
-            end
-        else
-            log("WARNING: Could not find player with index " .. args.playerIndex)
-        end
     end
 end
 

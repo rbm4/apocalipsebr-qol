@@ -30,26 +30,26 @@
 ---@field z number Z level (usually 0)
 ---@field enabled boolean Whether the region is active
 ---@field categories string[] Category keys (e.g. {"PVP","SPRINTERS"})
----@field customProperties? ZoneProperties Optional property overrides
+---@field customProperties ZoneProperties Optional property overrides
 
 --- Flat property bag produced by merging category defaults with customProperties.
 --- This is what `getMergedProperties()` returns and what gets stored as
 --- `RegisteredZoneData.properties` on the server.
 ---@class ZoneProperties
----@field name? string
----@field color? ColorRGB
----@field pvpEnabled? boolean
----@field safehouse? boolean
----@field noZombies? boolean
----@field announceEntry? boolean
----@field announceExit? boolean
----@field zombieSpeed? number 1=Shambler, 2=FastShambler, 3=Sprinter
----@field zombieStrength? number
----@field zombieDensity? number
----@field zombieRespawn? boolean
----@field lootModifier? number
----@field sprinterChance? number 1-100 percentage of zombies that become sprinters
----@field message? string Notification message shown on zone entry
+---@field name string
+---@field color ColorRGB
+---@field pvpEnabled boolean
+---@field safehouse boolean
+---@field noZombies boolean
+---@field announceEntry boolean
+---@field announceExit boolean
+---@field zombieSpeed number 1=Shambler, 2=FastShambler, 3=Sprinter
+---@field zombieStrength number
+---@field zombieDensity number
+---@field zombieRespawn boolean
+---@field lootModifier number
+---@field sprinterChance number 1-100 percentage of zombies that become sprinters
+---@field message string Notification message shown on zone entry
 
 --- Server-side registered zone data, stored in RegionManager.Server.registeredZones[id].
 --- Contains the original RegionDefinition, the merged ZoneProperties, computed Bounds,
@@ -67,11 +67,11 @@
 ---@field name string
 ---@field bounds Bounds
 ---@field color ColorRGB
----@field pvpEnabled? boolean
----@field sprinterChance? number
----@field announceEntry? boolean
----@field announceExit? boolean
----@field message? string
+---@field pvpEnabled boolean
+---@field sprinterChance number
+---@field announceEntry boolean
+---@field announceExit boolean
+---@field message string
 
 --- Module definition for registering with RegionManager.ClientTick.
 ---@class TickModuleDef

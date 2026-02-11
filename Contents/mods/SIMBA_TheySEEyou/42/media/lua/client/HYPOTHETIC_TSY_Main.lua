@@ -178,7 +178,7 @@ local function SIMBA_TSY_ProcessZombies()
 
                     -- Determine sprinter chance based on region
                     local sprinterChance = SIMBA_TSY_GetSprinterChance(zombieX, zombieY)
-
+                    
                     -- Roll for sprinter
                     local roll = SIMBA_TSY_GetDeterministicRandom(zombieID, 100)
                     local isSprinter = roll < sprinterChance

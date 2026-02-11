@@ -11,7 +11,7 @@ require "RegionManager_Config"
 RegionManager.ClientTick = RegionManager.ClientTick or {}
 
 local TickCounter = 0
-local TickInterval = 120 -- 2 seconds at 60 FPS
+local TickInterval = 60 -- 2 seconds at 60 FPS
 
 ---@type table<string, ClientZoneData>
 local PreviousZones = {} -- Track zones the player was in last check
@@ -121,37 +121,14 @@ local function checkPlayerZone(player)
         if not PreviousZones[zoneId] then
             log("Player ENTERED zone: " .. zoneData.name)
 
-            local isSafeZone = (zoneData.pvpEnabled == false)
-            local isPvpZone  = (zoneData.pvpEnabled == true)
-
-            -- Apply Safety state locally
-            if isPvpZone then
-                player:getSafety():setEnabled(false)
-                player:getSafety():setCooldown(999999)
-                log("Applied PVP state locally (Safety=false)")
-            elseif isSafeZone then
-                player:getSafety():setEnabled(true)
-                player:getSafety():setCooldown(999999)
-                log("Applied Safe Zone state locally (Safety=true)")
-            end
-
             -- Show notification if announceEntry is enabled
             if zoneData.announceEntry ~= false then
                 local message = zoneData.message
                 local color = zoneData.color or {r=255, g=255, b=255}
-                player:Say(message, color.r / 255, color.g / 255, color.b / 255, UIFont.Medium, 3, "radio")
+                player:Say(message, color.r, color.g, color.b, UIFont.Medium, 3, "radio")
             end
 
-            -- Notify server for broadcast to other clients
-            sendClientCommand("RegionManager", "ClientZoneEntered", {
-                zoneId = zoneId,
-                zoneName = zoneData.name,
-                isPvpZone = isPvpZone,
-                isSafeZone = isSafeZone,
-                safetyEnabled = player:getSafety():isEnabled()
-            })
-
-            -- Notify registered modules
+            -- Notify registered modules (e.g., PVP module)
             notifyZoneEntered(player, zoneId, zoneData)
         end
     end
@@ -161,9 +138,6 @@ local function checkPlayerZone(player)
         if not currentZones[zoneId] then
             log("Player EXITED zone: " .. zoneData.name)
 
-            -- Restore Safety toggle (disabled because there will always be pvp or no pvp zones, player will not control safety state ever)
-            -- player:getSafety():setCooldown(0) 
-
             -- Show notification if announceExit is enabled
             if zoneData.announceExit then
                 local message = "Saiu: " .. zoneData.name
@@ -171,14 +145,7 @@ local function checkPlayerZone(player)
                 player:Say(message, 0.5, 0.5, 0.5, UIFont.Medium, 3, "radio")
             end
 
-            -- Notify server for broadcast to other clients
-            -- sendClientCommand("RegionManager", "ClientZoneExited", {
-            --     zoneId = zoneId,
-            --     zoneName = zoneData.name,
-            --     safetyEnabled = player:getSafety():isEnabled()
-            -- })
-
-            -- Notify registered modules
+            -- Notify registered modules (e.g., PVP module)
             notifyZoneExited(player, zoneId, zoneData)
         end
     end
@@ -211,7 +178,6 @@ local function OnPlayerSpawn()
     local player = getPlayer()
     if player then
         PreviousZones = {}
-        sendClientCommand("RegionManager", "RequestAllBoundaries", {})
         log("Player spawned – cleared zone state and requested boundaries")
     end
 end

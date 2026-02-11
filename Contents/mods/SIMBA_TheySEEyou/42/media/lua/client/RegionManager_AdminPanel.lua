@@ -41,7 +41,7 @@ function ISRegionManagerAdminPanel:createChildren()
     self.regionList = ISScrollingListBox:new(10, listY, self.width - 20, listHeight)
     self.regionList:initialise()
     self.regionList:instantiate()
-    self.regionList.itemheight = FONT_HGT_SMALL + 4 * 2
+    self.regionList.itemheight = FONT_HGT_SMALL + 4 * 6
     self.regionList.selected = 0
     self.regionList.joypadParent = self
     self.regionList.font = UIFont.Small
