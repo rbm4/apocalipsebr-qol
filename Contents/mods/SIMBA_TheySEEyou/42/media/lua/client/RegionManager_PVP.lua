@@ -124,7 +124,15 @@ local function onZoneExited(player, zoneId, zoneData)
     --     safetyEnabled = player:getSafety():isEnabled()
     -- })
 end
-
+local function getSpecificPlayer(username) 
+    local allPlayers = getOnlinePlayers()
+    for i = 0, allPlayers:size() - 1 do
+        local otherPlayer = allPlayers:get(i)
+        if otherPlayer.username == username then
+            return otherPlayer
+        end
+    end
+end
 -- ============================================================================
 -- Server Command Handler
 -- Receives PVP state updates from server about other players
@@ -137,19 +145,19 @@ local function OnServerCommand(module, command, args)
     
     if command == "PvpStateChanged" then
         -- Another player's PVP state changed - update their skull icon
-        local targetPlayer = getSpecificPlayer(args.playerIndex)
+        local targetPlayer = getSpecificPlayer(args.username)
         if targetPlayer then
             if args.isPvpZone == true then
                 -- Other player entered PVP zone
                 targetPlayer:getSafety():setEnabled(false)
-                log("Updated player " .. args.playerIndex .. " PVP state: ENABLED (Safety=false)")
+                log("Updated player " .. args.username .. " PVP state: ENABLED (Safety=false)")
             elseif args.isSafeZone == true then
                 -- Other player entered safe zone
                 targetPlayer:getSafety():setEnabled(true)
-                log("Updated player " .. args.playerIndex .. " PVP state: DISABLED (Safety=true)")
+                log("Updated player " .. args.username .. " PVP state: DISABLED (Safety=true)")
             end
         else
-            log("WARNING: Could not find player with index " .. args.playerIndex)
+            --log("WARNING: Could not find player with index " .. args.username)
         end
     end
 end

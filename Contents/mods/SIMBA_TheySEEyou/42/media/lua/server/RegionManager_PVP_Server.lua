@@ -3,8 +3,9 @@
 -- Server-side PVP state management
 -- Receives client PVP state updates and broadcasts to other clients
 -- ============================================================================
-
-if not isServer() then return end
+if not isServer() then
+    return
+end
 
 require "RegionManager_Config"
 
@@ -23,13 +24,14 @@ end
 ---@param player IsoPlayer
 ---@param args table
 local function OnClientCommand(module, command, player, args)
-    if module ~= "RegionManager" then return end
-    
+    if module ~= "RegionManager" then
+        return
+    end
+
     if command == "UpdatePvpState" then
-        local playerIndex = player:getPlayerNum()
         local username = player:getUsername()
-        
-        log("Received PVP state update from " .. username .. " (ID:" .. playerIndex .. ")")
+
+        log("Received PVP state update from " .. username)
         log("  Zone: " .. (args.zoneName or "Unknown"))
         log("  PVP Zone: " .. tostring(args.isPvpZone))
         log("  Safe Zone: " .. tostring(args.isSafeZone))
@@ -38,10 +40,9 @@ local function OnClientCommand(module, command, player, args)
         player:getSafety():setEnabled(args.safetyEnabled)
         player:getSafety():setCooldown(0)
         player:getSafety():setToggle(0)
-        
+
         -- Broadcast this player's PVP state to all OTHER clients
         local broadcast = {
-            playerIndex = playerIndex,
             username = username,
             zoneId = args.zoneId,
             zoneName = args.zoneName,
@@ -49,16 +50,19 @@ local function OnClientCommand(module, command, player, args)
             isSafeZone = args.isSafeZone,
             safetyEnabled = args.safetyEnabled
         }
-        
+
         -- Send to all players except the sender
-        for i = 0, getNumActivePlayers() - 1 do
-            local otherPlayer = getSpecificPlayer(i)
+        local players = getOnlinePlayers()
+        local syncAmount = 0
+        for i = 0, players:size() - 1 do
+            local otherPlayer = players:get(i)
             if otherPlayer and otherPlayer ~= player then
                 sendServerCommand(otherPlayer, "RegionManager", "PvpStateChanged", broadcast)
+                syncAmount = syncAmount + 1
             end
         end
-        
-        log("Broadcasted PVP state to " .. (getNumActivePlayers() - 1) .. " other players")
+
+        log("Broadcasted PVP state to " .. syncAmount .. " other players")
     end
 end
 

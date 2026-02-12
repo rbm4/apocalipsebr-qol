@@ -83,7 +83,7 @@ local function onTick()
     CustomSync.syncZombies()
 
     -- Sync vehicles
-    CustomSync.syncVehicles()
+    -- CustomSync.syncVehicles()
 
     -- Inventories and appearance synced on update via OnContainerUpdate
 end
