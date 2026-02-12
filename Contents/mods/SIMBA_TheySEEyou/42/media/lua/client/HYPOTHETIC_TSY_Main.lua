@@ -5,9 +5,6 @@ end
 require "RegionManager_Config"
 require "RegionManager_ClientTick"
 
----@type table<number, boolean>
-local SIMBA_TSY_ProcessedZombies = {} -- Track which zombies we've already processed
-
 ---@type table[]
 local SIMBA_TSY_RegionBounds = {} -- Store region boundaries from server
 
@@ -15,7 +12,19 @@ local SIMBA_TSY_RegionBounds = {} -- Store region boundaries from server
 local SIMBA_TSY_BaselineSprinterChance = 0 -- Default when not in any region
 
 ---@type string[]
-local SIMBA_TSY_SprinterWalkTypes = {"Sprint1", "Sprint2", "Sprint3", "Sprint4", "Sprint5"}
+local SIMBA_TSY_SprinterWalkTypes = {"sprint1", "sprint2", "sprint3", "sprint4", "sprint5"}
+
+local SIMBA_TSY_SamblerWalkTypes = {"slow1", "slow2", "slow3"}
+
+-- Create a persistent identifier for zombies (matches server logic)
+local function SIMBA_TSY_GetZombiePersistentID(zombie)
+    -- Combine attributes that are stable across respawns
+    local outfit = zombie:getPersistentOutfitID()
+    local female = zombie:isFemale() and 1 or 0
+    
+    return string.format("%d_%d", outfit, female)
+end
+
 
 -- Deterministic pseudo-random (matches server logic)
 ---@param zombieID number
@@ -47,7 +56,34 @@ local function SIMBA_TSY_GetSprinterChance(x, y)
             if region.sprinterChance and type(region.sprinterChance) == "number" then
                 local chance = region.sprinterChance
                 if chance < 1 then
-                    chance = 1
+                    chance = 0
+                end
+                if chance > 100 then
+                    chance = 100
+                end
+                return chance
+            end
+        end
+    end
+
+    -- No region found or region has no sprinter config
+    return SIMBA_TSY_BaselineSprinterChance
+end
+
+-- Get shambler chance for current position based on known regions
+---@param x number World X coordinate
+---@param y number World Y coordinate
+---@return number chance 0-100 sprinter percentage
+local function SIMBA_TSY_GetShamblerChance(x, y)
+    -- Check which region contains this position
+    for _, region in ipairs(RegionManager.Client.zoneData) do
+        local bounds = region.bounds
+        if x >= bounds.minX and x <= bounds.maxX and y >= bounds.minY and y <= bounds.maxY then
+            -- Check if region has sprinter configuration
+            if region.shamblerChance and type(region.shamblerChance) == "number" then
+                local chance = region.shamblerChance
+                if chance < 1 then
+                    chance = 0
                 end
                 if chance > 100 then
                     chance = 100
@@ -96,7 +132,7 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
             if zombie and not zombie:isDead() and zombie:getOnlineID() == zombieID then
                 local modData = zombie:getModData()
 
-                if isSprinter then
+                if walkType and isSprinter then
                     modData.SIMBA_TSY_IsSprinter = true
                     modData.SIMBA_TSY_WalkType = walkType
                     zombie:setWalkType(walkType)
@@ -107,8 +143,6 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
                     print("SIMBA_TSY Client: Zombie " .. zombieID .. " confirmed as non-sprinter")
                 end
 
-                -- Mark as processed so we don't recompute
-                SIMBA_TSY_ProcessedZombies[zombieID] = true
                 break
             end
         end
@@ -135,7 +169,7 @@ local function SIMBA_TSY_ValidateSprinters(zombie)
     end
 
     -- Check if walkType needs correction
-    local currentWalkType = zombie:getVariableString("zombiewalktype")
+    -- local currentWalkType = zombie:getVariableString("zombiewalktype")
     zombie:setWalkType(modData.SIMBA_TSY_WalkType)
 end
 
@@ -167,10 +201,11 @@ local function SIMBA_TSY_ProcessZombies()
 
             if zombie and not zombie:isDead() then
                 local zombieID = zombie:getOnlineID()
+                local data = zombie:getModData()
 
                 -- Only process if not already processed
-                if not SIMBA_TSY_ProcessedZombies[zombieID] then
-                    SIMBA_TSY_ProcessedZombies[zombieID] = true
+                if not data.SIMBA_TSY_Processed then
+                    data.SIMBA_TSY_Processed = true
 
                     -- Get zombie position
                     local zombieX = zombie:getX()
@@ -178,22 +213,31 @@ local function SIMBA_TSY_ProcessZombies()
 
                     -- Determine sprinter chance based on region
                     local sprinterChance = SIMBA_TSY_GetSprinterChance(zombieX, zombieY)
-                    
-                    -- Roll for sprinter
-                    local roll = SIMBA_TSY_GetDeterministicRandom(zombieID, 100)
-                    local isSprinter = roll < sprinterChance
+
                     local walkType = nil
+                    local isSprinter = false
+                    if (sprinterChance > 0) then
+                        -- Roll for sprinter
+                        local roll = SIMBA_TSY_GetDeterministicRandom(zombieID, 100)
+                        isSprinter = roll < sprinterChance
 
-                    if isSprinter then
-                        walkType = SIMBA_TSY_GetRandomSprinterWalkType(zombieID)
+                        if isSprinter then
+                            walkType = SIMBA_TSY_GetRandomSprinterWalkType(zombieID)
+                        end
+                        
+                        -- Generate persistent ID for global tracking
+                        local persistentID = SIMBA_TSY_GetZombiePersistentID(zombie)
+                        
+                        -- Propose to server
+                        table.insert(proposals, {
+                            zombieID = zombieID,
+                            persistentID = persistentID,
+                            isSprinter = isSprinter,
+                            walkType = walkType,
+                            x = math.floor(zombieX),
+                            y = math.floor(zombieY)
+                        })
                     end
-
-                    -- Propose to server
-                    table.insert(proposals, {
-                        zombieID = zombieID,
-                        isSprinter = isSprinter,
-                        walkType = walkType
-                    })
                 end
             end
         end
@@ -222,7 +266,7 @@ local sprinterModule = {
     -- Called every tick interval by the dispatcher
     onTick = function(player, currentZones)
         SIMBA_TSY_ProcessZombies()
-    end,
+    end
 }
 RegionManager.ClientTick.registerModule(sprinterModule)
 
@@ -238,14 +282,38 @@ end
 
 Events.OnCreatePlayer.Add(SIMBA_TSY_OnPlayerSpawn)
 
--- Clean up tracking on zombie death
-local function SIMBA_TSY_OnZombieDead(zombie)
-    if zombie then
-        local zombieID = zombie:getOnlineID()
-        if zombieID and SIMBA_TSY_ProcessedZombies[zombieID] then
-            SIMBA_TSY_ProcessedZombies[zombieID] = nil
+-- This runs on server when zombie spawns
+local function SIMBA_TSY_OnZombieCreate(zombie)
+    if not isServer() then return end
+    
+    -- Determine if sprinter based on region
+    local persistentID = SIMBA_TSY_GetZombiePersistentID(zombie)
+    
+    -- Check if already decided
+    if globalData.zombies[persistentID] then
+        local stored = globalData.zombies[persistentID]
+        zombie:setWalkType(stored.walkType)
+        zombie:DoZombieSpeeds(stored.isSprinter and 0.85 or 0.3)
+    else
+        -- Make new decision
+        local x, y = zombie:getX(), zombie:getY()
+        local chance = SIMBA_TSY_GetSprinterChance(x, y)
+        local shamblerChance = SIMBA_TSY_GetShamblerChance(x, y)
+        local isSprinter = ZombRand(100) < chance
+        local isShambler = ZombRand(100) < shamblerChance
+        
+        local walkType
+        if isSprinter then
+            walkType = SIMBA_TSY_SprinterWalkTypes[ZombRand(#SIMBA_TSY_SprinterWalkTypes) + 1]
+            zombie:DoZombieSpeeds(0.85)
         end
+        if isShambler then
+            walkType = SIMBA_TSY_SamblerWalkTypes[ZombRand(#SIMBA_TSY_SamblerWalkTypes) + 1]
+            zombie:DoZombieSpeeds(0.3)
+        end
+        
+        zombie:setWalkType(walkType)
     end
 end
 
-Events.OnZombieDead.Add(SIMBA_TSY_OnZombieDead)
+Events.OnZombieCreate.Add(SIMBA_TSY_OnZombieCreate)
