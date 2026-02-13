@@ -2,7 +2,7 @@
 -- Region-Based Sprinter System:
 -- - Zombies are converted to sprinters based on region configuration
 -- - Each region can specify "sprinterChance" (1-100) in customProperties
--- - If no region or no sprinterChance property, uses baseline (default: 50)
+-- - If no region or no sprinterChance property, uses baseline (default: 0)
 -- - Conversion is deterministic based on zombie ID for client-server sync
 -- 
 -- Usage in RegionManager_Config.lua:
@@ -29,7 +29,7 @@ local function SIMBA_TSY_GetZombiePersistentID(zombie)
     -- Combine attributes that are stable across respawns
     local outfit = zombie:getPersistentOutfitID()
     local female = zombie:isFemale() and 1 or 0
-    
+
     return string.format("%d_%d", outfit, female)
 end
 
@@ -114,6 +114,7 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
             local zombieID = proposal.zombieID
             local persistentID = proposal.persistentID
             local isSprinter = proposal.isSprinter
+            local isShambler = proposal.isShambler
             local walkType = proposal.walkType
 
             -- Check if we already have a decision for this persistent ID in global storage
@@ -121,53 +122,28 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
                 -- Already decided - use stored state from global ModData
                 rejected = rejected + 1
                 local stored = globalData.zombies[persistentID]
-                
-                -- Find and apply to current zombie instance
-                local zombie = SIMBA_TSY_FindZombieByID(zombieID)
-                if zombie then
-                    local modData = zombie:getModData()
-                    modData.SIMBA_TSY_IsSprinter = stored.isSprinter
-                    modData.SIMBA_TSY_WalkType = stored.walkType
-                    
-                    if stored.isSprinter then
-                        zombie:setWalkType(stored.walkType)
-                        zombie:setVariable("zombiewalktype", stored.walkType)
-                        zombie:DoZombieSpeeds(0.85)
-                    end
-                end
-                
+
                 sendServerCommand(player, "SIMBA_TSY", "ConfirmZombie", {
                     zombieID = zombieID,
                     isSprinter = stored.isSprinter,
+                    isShambler = stored.isShambler,
                     walkType = stored.walkType
                 })
             else
                 -- New decision - store in global ModData (persists across unload/reload)
                 accepted = accepted + 1
-                
+
                 globalData.zombies[persistentID] = {
                     isSprinter = isSprinter,
                     walkType = walkType,
                     x = proposal.x,
                     y = proposal.y
                 }
-                
-                -- Apply to server-side zombie instance
-                local zombie = SIMBA_TSY_FindZombieByID(zombieID)
-                if zombie then
-                    local modData = zombie:getModData()
-                    modData.SIMBA_TSY_IsSprinter = isSprinter
-                    modData.SIMBA_TSY_WalkType = walkType
-                    
-                    if isSprinter then
-                        zombie:setWalkType(walkType)
-                        zombie:DoZombieSpeeds(0.85)
-                    end
-                end
 
                 sendServerCommand(player, "SIMBA_TSY", "ConfirmZombie", {
                     zombieID = zombieID,
                     isSprinter = isSprinter,
+                    isShambler = isShambler,
                     walkType = walkType
                 })
             end
@@ -210,59 +186,3 @@ local function SIMBA_TSY_OnZombieDead(zombie)
 end
 
 Events.OnZombieDead.Add(SIMBA_TSY_OnZombieDead)
-
--- Server-side enforcement to maintain sprinter states against network sync
-local function SIMBA_TSY_EnforceSprinterStates()
-    -- Ensure counter is a valid number
-    if type(SIMBA_TSY_EnforcementCounter) ~= "number" then
-        SIMBA_TSY_EnforcementCounter = 0
-    end
-    if type(SIMBA_TSY_EnforcementInterval) ~= "number" then
-        SIMBA_TSY_EnforcementInterval = 60
-    end
-
-    SIMBA_TSY_EnforcementCounter = SIMBA_TSY_EnforcementCounter + 1
-    if SIMBA_TSY_EnforcementCounter < SIMBA_TSY_EnforcementInterval then
-        return
-    end
-    SIMBA_TSY_EnforcementCounter = 0
-
-    -- Iterate through all loaded zombies and enforce their ModData state
-    local cell = getCell()
-    if not cell then
-        return
-    end
-    
-    local zombies = cell:getZombieList()
-    if not zombies then
-        return
-    end
-    
-    local enforced = 0
-    for i = 0, zombies:size() - 1 do
-        local zombie = zombies:get(i)
-        if zombie and not zombie:isDead() then
-            local modData = zombie:getModData()
-            if modData.SIMBA_TSY_IsSprinter and modData.SIMBA_TSY_WalkType then
-                -- Check if zombie's state has been reset by multiplayer sync
-                local currentWalkType = zombie:getVariableString("zombieWalkType")
-                if string.lower(currentWalkType) ~= string.lower(modData.SIMBA_TSY_WalkType) then
-                    zombie:setWalkType(modData.SIMBA_TSY_WalkType)
-                    enforced = enforced + 1
-                end
-            end
-        end
-    end
-
-    if enforced > 0 then
-        print("SIMBA_TSY: Enforced sprinter state on " .. enforced .. " zombies")
-    end
-end
-
--- Initialize enforcement system after server starts
-local function SIMBA_TSY_InitEnforcement()
-    print("SIMBA_TSY: Initializing sprinter enforcement system")
-    Events.OnTick.Add(SIMBA_TSY_EnforceSprinterStates)
-end
-
-Events.OnServerStarted.Add(SIMBA_TSY_InitEnforcement)

@@ -16,40 +16,6 @@ local function log(msg)
     RegionManager.Log("Client", msg)
 end
 
--- Draw zone boundaries and labels in the game world
-local function drawZoneOutlines()
-    local player = getPlayer()
-    if not player then return end
-    
-    -- Only draw if we have zone data
-    if not RegionManager.Client.zoneData then return end
-    
-    for id, zone in pairs(RegionManager.Client.zoneData) do
-        local bounds = zone.bounds
-        local color = zone.color or {r=0, g=1, b=0}
-        
-        -- Normalize color values (0-1 range for drawing)
-        local r = (color.r or 0) / 255
-        local g = (color.g or 255) / 255
-        local b = (color.b or 0) / 255
-        
-        -- Calculate zone center for label
-        local centerX = (bounds.minX + bounds.maxX) / 2
-        local centerY = (bounds.minY + bounds.maxY) / 2
-        
-        -- Draw zone name label in the world at center
-        local zoneName = zone.name or zone.id
-        getCore():DrawText(zoneName, centerX, centerY, r, g, b, 1)
-        
-        -- Draw corner markers (smaller text markers)
-        local cornerMarker = "T"
-        getCore():DrawText(cornerMarker, bounds.minX, bounds.minY, r, g, b, 0.8)
-        getCore():DrawText(cornerMarker, bounds.maxX, bounds.minY, r, g, b, 0.8)
-        getCore():DrawText(cornerMarker, bounds.minX, bounds.maxY, r, g, b, 0.8)
-        getCore():DrawText(cornerMarker, bounds.maxX, bounds.maxY, r, g, b, 0.8)
-    end
-end
-
 -- Show zone notification
 ---@param zoneName string
 ---@param message string
@@ -123,7 +89,6 @@ Events.OnServerCommand.Add(OnServerCommand)
 -- You can call this from console: /showzones
 if isDebugEnabled() then
     RegionManager.Client.ShowZones = showCurrentZones
-    RegionManager.Client.DrawOutlines = drawZoneOutlines
 end
 
 log("RegionManager Client module loaded")
