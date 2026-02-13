@@ -11,7 +11,7 @@ require "RegionManager_Config"
 RegionManager.ClientTick = RegionManager.ClientTick or {}
 
 local TickCounter = 0
-local TickInterval = 60 -- 2 seconds at 60 FPS
+local TickInterval = 6 -- 2 seconds at 60 FPS
 
 ---@type table<string, ClientZoneData>
 local PreviousZones = {} -- Track zones the player was in last check

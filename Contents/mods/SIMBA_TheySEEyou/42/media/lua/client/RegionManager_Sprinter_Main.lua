@@ -15,6 +15,7 @@ local SIMBA_TSY_BaselineSprinterChance = 0 -- Default when not in any region
 local SIMBA_TSY_SprinterWalkTypes = {"sprint1", "sprint2", "sprint3", "sprint4", "sprint5"}
 
 local SIMBA_TSY_SamblerWalkTypes = {"slow1", "slow2", "slow3"}
+local sandboxOptions = getSandboxOptions()
 
 -- Create a persistent identifier for zombies (matches server logic)
 local function SIMBA_TSY_GetZombiePersistentID(zombie)
@@ -155,22 +156,41 @@ end
 
 Events.OnServerCommand.Add(SIMBA_TSY_OnServerCommand)
 
--- Continuously validate and reapply sprinter walkType
----@param zombie IsoZombie
-local function SIMBA_TSY_ValidateSprinters(zombie)
-    if not zombie or zombie:isDead() then
-        return
+
+-------------------------- SPRINT MANIPULATION -------------------
+
+local defaultSpeed = nil
+
+local function getDefaultSpeed()
+    if defaultSpeed == nil then
+        defaultSpeed = sandboxOptions:getOptionByName("ZombieLore.Speed") and
+                           sandboxOptions:getOptionByName("ZombieLore.Speed"):getValue() or 2
+    end
+    return defaultSpeed
+end
+
+local function makeSprint(zombie) 
+    if defaultSpeed == nil then
+        defaultSpeed = getDefaultSpeed()
     end
 
-    local modData = zombie:getModData()
+    zombie:makeInactive(true)
+    sandboxOptions:set("ZombieLore.Speed", 1)
+    zombie:makeInactive(false)
+    sandboxOptions:set("ZombieLore.Speed", defaultSpeed)
 
-    if not modData.SIMBA_TSY_WalkType then
-        return
+end
+
+local function makeShamble(zombie) 
+    if defaultSpeed == nil then
+        defaultSpeed = getDefaultSpeed()
     end
 
-    -- Check if walkType needs correction
-    -- local currentWalkType = zombie:getVariableString("zombiewalktype")
-    zombie:setWalkType(modData.SIMBA_TSY_WalkType)
+    zombie:makeInactive(true)
+    sandboxOptions:set("ZombieLore.Speed", 3)
+    zombie:makeInactive(false)
+    sandboxOptions:set("ZombieLore.Speed", defaultSpeed)
+
 end
 
 -- Process unmarked zombies: compute roll and propose to server
@@ -197,7 +217,7 @@ local function SIMBA_TSY_ProcessZombies()
             local zombie = zombies:get(i)
 
             -- Validate existing sprinters
-            SIMBA_TSY_ValidateSprinters(zombie)
+            -- SIMBA_TSY_ValidateSprinters(zombie)
 
             if zombie and not zombie:isDead() then
                 local zombieID = zombie:getOnlineID()
@@ -211,18 +231,23 @@ local function SIMBA_TSY_ProcessZombies()
                     local zombieX = zombie:getX()
                     local zombieY = zombie:getY()
 
-                    -- Determine sprinter chance based on region
+                    -- Determine chance to apply the properties based on region
                     local sprinterChance = SIMBA_TSY_GetSprinterChance(zombieX, zombieY)
+                    local shamblerChance = SIMBA_TSY_GetShamblerChance(zombieX,zombieY)
 
                     local walkType = nil
                     local isSprinter = false
+                    local isShambler = false
                     if (sprinterChance > 0) then
                         -- Roll for sprinter
                         local roll = SIMBA_TSY_GetDeterministicRandom(zombieID, 100)
                         isSprinter = roll < sprinterChance
 
                         if isSprinter then
-                            walkType = SIMBA_TSY_GetRandomSprinterWalkType(zombieID)
+                            makeSprint(zombie)
+                        end
+                        if isShambler then
+                            makeShamble(zombie)
                         end
                         
                         -- Generate persistent ID for global tracking
@@ -233,6 +258,7 @@ local function SIMBA_TSY_ProcessZombies()
                             zombieID = zombieID,
                             persistentID = persistentID,
                             isSprinter = isSprinter,
+                            isShambler = isShambler,
                             walkType = walkType,
                             x = math.floor(zombieX),
                             y = math.floor(zombieY)
@@ -270,50 +296,3 @@ local sprinterModule = {
 }
 RegionManager.ClientTick.registerModule(sprinterModule)
 
--- Request region data for sprinter system when player spawns
-local function SIMBA_TSY_OnPlayerSpawn()
-    local player = getPlayer()
-    if player then
-        -- Request region data for sprinter system
-        sendClientCommand(player, "SIMBA_TSY", "RequestRegionData", {})
-        print("SIMBA_TSY Client: Requesting region data from server")
-    end
-end
-
-Events.OnCreatePlayer.Add(SIMBA_TSY_OnPlayerSpawn)
-
--- This runs on server when zombie spawns
-local function SIMBA_TSY_OnZombieCreate(zombie)
-    if not isServer() then return end
-    
-    -- Determine if sprinter based on region
-    local persistentID = SIMBA_TSY_GetZombiePersistentID(zombie)
-    
-    -- Check if already decided
-    if globalData.zombies[persistentID] then
-        local stored = globalData.zombies[persistentID]
-        zombie:setWalkType(stored.walkType)
-        zombie:DoZombieSpeeds(stored.isSprinter and 0.85 or 0.3)
-    else
-        -- Make new decision
-        local x, y = zombie:getX(), zombie:getY()
-        local chance = SIMBA_TSY_GetSprinterChance(x, y)
-        local shamblerChance = SIMBA_TSY_GetShamblerChance(x, y)
-        local isSprinter = ZombRand(100) < chance
-        local isShambler = ZombRand(100) < shamblerChance
-        
-        local walkType
-        if isSprinter then
-            walkType = SIMBA_TSY_SprinterWalkTypes[ZombRand(#SIMBA_TSY_SprinterWalkTypes) + 1]
-            zombie:DoZombieSpeeds(0.85)
-        end
-        if isShambler then
-            walkType = SIMBA_TSY_SamblerWalkTypes[ZombRand(#SIMBA_TSY_SamblerWalkTypes) + 1]
-            zombie:DoZombieSpeeds(0.3)
-        end
-        
-        zombie:setWalkType(walkType)
-    end
-end
-
-Events.OnZombieCreate.Add(SIMBA_TSY_OnZombieCreate)
