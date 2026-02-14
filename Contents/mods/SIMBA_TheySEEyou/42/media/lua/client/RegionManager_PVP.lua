@@ -283,20 +283,20 @@ local function OnServerCommand(module, command, args)
 
     if command == "PvpStateChanged" then
         -- Another player's PVP state changed - update their skull icon
-        local targetPlayer = getSpecificPlayer(args.username)
-        if targetPlayer then
-            if args.isPvpZone == true then
-                -- Other player entered PVP zone
-                targetPlayer:getSafety():setEnabled(false)
-                log("Updated player " .. args.username .. " PVP state: ENABLED (Safety=false)")
-            elseif args.isSafeZone == true then
-                -- Other player entered safe zone
-                targetPlayer:getSafety():setEnabled(true)
-                log("Updated player " .. args.username .. " PVP state: DISABLED (Safety=true)")
-            end
-        else
-            -- log("WARNING: Could not find player with index " .. args.username)
-        end
+        -- local targetPlayer = getSpecificPlayer(args.username)
+        -- if targetPlayer then
+        --     if args.isPvpZone == true then
+        --         -- Other player entered PVP zone
+        --         targetPlayer:getSafety():setEnabled(false)
+        --         log("Updated player " .. args.username .. " PVP state: ENABLED (Safety=false)")
+        --     elseif args.isSafeZone == true then
+        --         -- Other player entered safe zone
+        --         targetPlayer:getSafety():setEnabled(true)
+        --         log("Updated player " .. args.username .. " PVP state: DISABLED (Safety=true)")
+        --     end
+        -- else
+        --     -- log("WARNING: Could not find player with index " .. args.username)
+        -- end
     end
 end
 

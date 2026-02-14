@@ -22,10 +22,9 @@ local function SIMBA_TSY_GetZombiePersistentID(zombie)
     -- Combine attributes that are stable across respawns
     local outfit = zombie:getPersistentOutfitID()
     local female = zombie:isFemale() and 1 or 0
-    
+
     return string.format("%d_%d", outfit, female)
 end
-
 
 -- Deterministic pseudo-random (matches server logic)
 ---@param zombieID number
@@ -48,14 +47,35 @@ end
 ---@param x number World X coordinate
 ---@param y number World Y coordinate
 ---@return number chance 0-100 sprinter percentage
-local function SIMBA_TSY_GetSprinterChance(x, y)
+local function SIMBA_TSY_GetSprinterChance(region)
+    -- Check which region contains this position
+    if region.sprinterChance and type(region.sprinterChance) == "number" then
+        local chance = region.sprinterChance
+        if chance < 1 then
+            chance = 0
+        end
+        if chance > 100 then
+            chance = 100
+        end
+        return chance
+    end
+
+    -- No region found or region has no sprinter config
+    return SIMBA_TSY_BaselineSprinterChance
+end
+
+-- Get shambler chance for current position based on known regions
+---@param x number World X coordinate
+---@param y number World Y coordinate
+---@return number chance 0-100 sprinter percentage
+local function SIMBA_TSY_GetHawkVisionChance(x, y)
     -- Check which region contains this position
     for _, region in ipairs(RegionManager.Client.zoneData) do
         local bounds = region.bounds
         if x >= bounds.minX and x <= bounds.maxX and y >= bounds.minY and y <= bounds.maxY then
             -- Check if region has sprinter configuration
-            if region.sprinterChance and type(region.sprinterChance) == "number" then
-                local chance = region.sprinterChance
+            if region.visionChance and type(region.shamblerChance) == "number" then
+                local chance = region.shamblerChance
                 if chance < 1 then
                     chance = 0
                 end
@@ -75,28 +95,127 @@ end
 ---@param x number World X coordinate
 ---@param y number World Y coordinate
 ---@return number chance 0-100 sprinter percentage
-local function SIMBA_TSY_GetShamblerChance(x, y)
-    -- Check which region contains this position
-    for _, region in ipairs(RegionManager.Client.zoneData) do
-        local bounds = region.bounds
-        if x >= bounds.minX and x <= bounds.maxX and y >= bounds.minY and y <= bounds.maxY then
-            -- Check if region has sprinter configuration
-            if region.shamblerChance and type(region.shamblerChance) == "number" then
-                local chance = region.shamblerChance
-                if chance < 1 then
-                    chance = 0
-                end
-                if chance > 100 then
-                    chance = 100
-                end
-                return chance
-            end
+local function SIMBA_TSY_GetShamblerChance(region)
+    -- Check if region has shambler configuration
+    if region.shamblerChance and type(region.shamblerChance) == "number" then
+        local chance = region.shamblerChance
+        if chance < 1 then
+            chance = 0
         end
+        if chance > 100 then
+            chance = 100
+        end
+        return chance
     end
 
     -- No region found or region has no sprinter config
     return SIMBA_TSY_BaselineSprinterChance
 end
+
+-- Get hawk vision chance for current position based on known regions
+---@param region table Region data
+---@return number chance 0-100 hawk vision percentage
+local function SIMBA_TSY_GetHawkVisionChanceFromRegion(region)
+    if region.hawkVisionChance and type(region.hawkVisionChance) == "number" then
+        local chance = region.hawkVisionChance
+        if chance < 1 then
+            chance = 0
+        end
+        if chance > 100 then
+            chance = 100
+        end
+        return chance
+    end
+    return 0
+end
+
+-- Get bad vision chance for current position based on known regions
+---@param region table Region data
+---@return number chance 0-100 bad vision percentage
+local function SIMBA_TSY_GetBadVisionChance(region)
+    if region.badVisionChance and type(region.badVisionChance) == "number" then
+        local chance = region.badVisionChance
+        if chance < 1 then
+            chance = 0
+        end
+        if chance > 100 then
+            chance = 100
+        end
+        return chance
+    end
+    return 0
+end
+
+-- Get good hearing chance for current position based on known regions
+---@param region table Region data
+---@return number chance 0-100 good hearing percentage
+local function SIMBA_TSY_GetGoodHearingChance(region)
+    if region.goodHearingChance and type(region.goodHearingChance) == "number" then
+        local chance = region.goodHearingChance
+        if chance < 1 then
+            chance = 0
+        end
+        if chance > 100 then
+            chance = 100
+        end
+        return chance
+    end
+    return 0
+end
+
+-- Get bad hearing chance for current position based on known regions
+---@param region table Region data
+---@return number chance 0-100 bad hearing percentage
+local function SIMBA_TSY_GetBadHearingChance(region)
+    if region.badHearingChance and type(region.badHearingChance) == "number" then
+        local chance = region.badHearingChance
+        if chance < 1 then
+            chance = 0
+        end
+        if chance > 100 then
+            chance = 100
+        end
+        return chance
+    end
+    return 0
+end
+
+-- Get zombie armor factor for current position based on known regions
+---@param region table Region data
+---@return number factor 0-100 armor factor percentage
+local function SIMBA_TSY_GetZombieArmorFactor(region)
+    if region.zombieArmorFactor and type(region.zombieArmorFactor) == "number" then
+        local factor = region.zombieArmorFactor
+        if factor < 0 then
+            factor = 0
+        end
+        if factor > 100 then
+            factor = 100
+        end
+        return factor
+    end
+    return 0
+end
+
+-- Get resistant chance for current position based on known regions
+---@param region table Region data
+---@return number chance 0-100 resistant percentage
+local function SIMBA_TSY_GetResistantChance(region)
+    if region.resistantChance and type(region.resistantChance) == "number" then
+        local chance = region.resistantChance
+        if chance < 1 then
+            chance = 0
+        end
+        if chance > 100 then
+            chance = 100
+        end
+        return chance
+    end
+    return 0
+end
+
+
+
 
 -- Handle server commands
 ---@param module string
@@ -156,7 +275,6 @@ end
 
 Events.OnServerCommand.Add(SIMBA_TSY_OnServerCommand)
 
-
 -------------------------- SPRINT MANIPULATION -------------------
 
 local defaultSpeed = nil
@@ -169,7 +287,7 @@ local function getDefaultSpeed()
     return defaultSpeed
 end
 
-local function makeSprint(zombie) 
+local function makeSprint(zombie)
     if defaultSpeed == nil then
         defaultSpeed = getDefaultSpeed()
     end
@@ -181,7 +299,7 @@ local function makeSprint(zombie)
 
 end
 
-local function makeShamble(zombie) 
+local function makeShamble(zombie)
     if defaultSpeed == nil then
         defaultSpeed = getDefaultSpeed()
     end
@@ -232,15 +350,47 @@ local function SIMBA_TSY_ProcessZombies()
                     local zombieY = zombie:getY()
 
                     -- Determine chance to apply the properties based on region
-                    local sprinterChance = SIMBA_TSY_GetSprinterChance(zombieX, zombieY)
-                    local shamblerChance = SIMBA_TSY_GetShamblerChance(zombieX,zombieY)
+                    local sprinterChance = 0
+                    local shamblerChance = 0
+                    local hawkVisionChance = 0
+                    local badVisionChance = 0
+                    local goodHearingChance = 0
+                    local badHearingChance = 0
+                    local zombieArmorFactor = 0
+                    local resistantChance = 0
+
+
+                    for _, region in ipairs(RegionManager.Client.zoneData) do
+                        local bounds = region.bounds
+                        if zombieX >= bounds.minX and zombieX <= bounds.maxX and zombieY >= bounds.minY and zombieY <=
+                            bounds.maxY then
+                            sprinterChance = SIMBA_TSY_GetSprinterChance(region)
+                            shamblerChance = SIMBA_TSY_GetShamblerChance(region)
+                            hawkVisionChance = SIMBA_TSY_GetHawkVisionChanceFromRegion(region)
+                            badVisionChance = SIMBA_TSY_GetBadVisionChance(region)
+                            goodHearingChance = SIMBA_TSY_GetGoodHearingChance(region)
+                            badHearingChance = SIMBA_TSY_GetBadHearingChance(region)
+                            zombieArmorFactor = SIMBA_TSY_GetZombieArmorFactor(region)
+                            resistantChance = SIMBA_TSY_GetResistantChance(region)
+
+                        end
+                    end
 
                     local walkType = nil
                     local isSprinter = false
                     local isShambler = false
-                    if (sprinterChance > 0) then
+                    local roll = SIMBA_TSY_GetDeterministicRandom(zombieID, 100)
+
+                    isShambler = roll < shamblerChance
+                    local hawkVision = roll < hawkVisionChance
+                    local badVision = roll < badVisionChance
+                    local goodHearing = roll < goodHearingChance
+                    local badHearing = roll < badHearingChance
+                    local hasArmor = roll < zombieArmorFactor
+                    local isResistant = roll < resistantChance
+                    
+                    if (sprinterChance > 0) or (shamblerChance > 0) or (hawkVisionChance > 0) or (badVisionChance > 0) or (goodHearingChance > 0) or (badHearingChance > 0) or (zombieArmorFactor > 0) or (resistantChance > 0) then
                         -- Roll for sprinter
-                        local roll = SIMBA_TSY_GetDeterministicRandom(zombieID, 100)
                         isSprinter = roll < sprinterChance
 
                         if isSprinter then
@@ -249,17 +399,40 @@ local function SIMBA_TSY_ProcessZombies()
                         if isShambler then
                             makeShamble(zombie)
                         end
-                        
+                        -- if hawkVision then
+                        --     makeHawkEye(zombie)
+                        -- end
+                        -- if badVision then
+                        --     makeBadVision(zombie)
+                        -- end
+                        -- if goodHearing then
+                        --     makeGoodHearing(zombie)
+                        -- end
+                        -- if badHearing then
+                        --     makeBadHearing(zombie)
+                        -- end
+                        -- if hasArmor then
+                        --     makeArmored(zombie)
+                        -- end
+                        -- if isResistant then
+                        --     makeResistant(zombie)
+                        -- end
+
                         -- Generate persistent ID for global tracking
                         local persistentID = SIMBA_TSY_GetZombiePersistentID(zombie)
-                        
+
                         -- Propose to server
                         table.insert(proposals, {
                             zombieID = zombieID,
                             persistentID = persistentID,
                             isSprinter = isSprinter,
                             isShambler = isShambler,
-                            walkType = walkType,
+                            hawkVision = hawkVision,
+                            badVision = badVision,
+                            goodHearing = goodHearing,
+                            badHearing = badHearing,
+                            hasArmor = hasArmor,
+                            isResistant = isResistant,
                             x = math.floor(zombieX),
                             y = math.floor(zombieY)
                         })
