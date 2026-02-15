@@ -212,9 +212,6 @@ end
 local function isAdminOrDebug(player)
     if not player then return false end
     
-    -- Check debug mode
-    if isDebugEnabled() then return true end
-    
     -- Check access level
     local accessLevel = player:getAccessLevel()
     return accessLevel == "admin" or accessLevel == "moderator"
@@ -250,10 +247,10 @@ local function OnFillWorldObjectContextMenu(player, context, worldobjects, test)
     if not player then return end
     
     -- Only show for admins or debug mode
-    if not isAdminOrDebug(player) then return end
+    --if not isAdminOrDebug(player) then return end
     
     -- Add admin menu option (simple version without tooltip)
-    context:addOption("Region Manager (Admin)", nil, RegionManager.AdminPanel.Open)
+    --context:addOption("Region Manager (Admin)", nil, RegionManager.AdminPanel.Open)
 end
 
 Events.OnFillWorldObjectContextMenu.Add(OnFillWorldObjectContextMenu)

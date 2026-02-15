@@ -1,0 +1,1 @@
+RegionManager.Shared = RegionManager.Shared or {}

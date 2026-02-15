@@ -17,6 +17,18 @@ local SIMBA_TSY_SprinterWalkTypes = {"sprint1", "sprint2", "sprint3", "sprint4",
 local SIMBA_TSY_SamblerWalkTypes = {"slow1", "slow2", "slow3"}
 local sandboxOptions = getSandboxOptions()
 
+local defaultSpeed = nil
+local defaultVision = nil
+
+local function getDefaultSpeed()
+    if defaultSpeed == nil then
+        defaultSpeed = sandboxOptions:getOptionByName("ZombieLore.Speed") and
+                           sandboxOptions:getOptionByName("ZombieLore.Speed"):getValue() or 2
+    end
+    return defaultSpeed
+end
+
+
 -- Create a persistent identifier for zombies (matches server logic)
 local function SIMBA_TSY_GetZombiePersistentID(zombie)
     -- Combine attributes that are stable across respawns
@@ -24,6 +36,30 @@ local function SIMBA_TSY_GetZombiePersistentID(zombie)
     local female = zombie:isFemale() and 1 or 0
 
     return string.format("%d_%d", outfit, female)
+end
+
+local function makeSprint(zombie)
+    if defaultSpeed == nil then
+        defaultSpeed = getDefaultSpeed()
+    end
+
+    zombie:makeInactive(true)
+    sandboxOptions:set("ZombieLore.Speed", 1)
+    zombie:makeInactive(false)
+    sandboxOptions:set("ZombieLore.Speed", defaultSpeed)
+
+end
+
+local function makeShamble(zombie)
+    if defaultSpeed == nil then
+        defaultSpeed = getDefaultSpeed()
+    end
+
+    zombie:makeInactive(true)
+    sandboxOptions:set("ZombieLore.Speed", 3)
+    zombie:makeInactive(false)
+    sandboxOptions:set("ZombieLore.Speed", defaultSpeed)
+
 end
 
 -- Deterministic pseudo-random (matches server logic)
@@ -214,9 +250,6 @@ local function SIMBA_TSY_GetResistantChance(region)
     return 0
 end
 
-
-
-
 -- Handle server commands
 ---@param module string
 ---@param command string
@@ -244,24 +277,28 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
 
         local zombieID = args.zombieID
         local isSprinter = args.isSprinter
-        local walkType = args.walkType
+        local isShambler = args.isShambler
+        local hawkVision = args.hawkVision
+        local badVision = args.badVision
+        local goodHearing = args.goodHearing
+        local badHearing = args.badHearing
+        local hasArmor = args.hasArmor
+        local isResistant = args.isResistant
+        
 
         -- Find and apply
         for i = 0, zombieList:size() - 1 do
             local zombie = zombieList:get(i)
             if zombie and not zombie:isDead() and zombie:getOnlineID() == zombieID then
                 local modData = zombie:getModData()
-
-                if walkType and isSprinter then
-                    modData.SIMBA_TSY_IsSprinter = true
-                    modData.SIMBA_TSY_WalkType = walkType
-                    zombie:setWalkType(walkType)
-                    print("SIMBA_TSY Client: Applied sprinter " .. walkType .. " to zombie " .. zombieID ..
-                              " (server confirmed)")
-                else
-                    modData.SIMBA_TSY_IsSprinter = false
-                    print("SIMBA_TSY Client: Zombie " .. zombieID .. " confirmed as non-sprinter")
+                
+                if isSprinter then
+                    makeSprint(zombie)
                 end
+                if isShambler then
+                    makeShamble(zombie)
+                end
+                
 
                 break
             end
@@ -277,42 +314,10 @@ Events.OnServerCommand.Add(SIMBA_TSY_OnServerCommand)
 
 -------------------------- SPRINT MANIPULATION -------------------
 
-local defaultSpeed = nil
 
-local function getDefaultSpeed()
-    if defaultSpeed == nil then
-        defaultSpeed = sandboxOptions:getOptionByName("ZombieLore.Speed") and
-                           sandboxOptions:getOptionByName("ZombieLore.Speed"):getValue() or 2
-    end
-    return defaultSpeed
-end
-
-local function makeSprint(zombie)
-    if defaultSpeed == nil then
-        defaultSpeed = getDefaultSpeed()
-    end
-
-    zombie:makeInactive(true)
-    sandboxOptions:set("ZombieLore.Speed", 1)
-    zombie:makeInactive(false)
-    sandboxOptions:set("ZombieLore.Speed", defaultSpeed)
-
-end
-
-local function makeShamble(zombie)
-    if defaultSpeed == nil then
-        defaultSpeed = getDefaultSpeed()
-    end
-
-    zombie:makeInactive(true)
-    sandboxOptions:set("ZombieLore.Speed", 3)
-    zombie:makeInactive(false)
-    sandboxOptions:set("ZombieLore.Speed", defaultSpeed)
-
-end
 
 -- Process unmarked zombies: compute roll and propose to server
-local function SIMBA_TSY_ProcessZombies()
+local function SIMBA_TSY_ProcessZombies(currentZones)
     local player = getPlayer()
     if not player then
         return
@@ -331,6 +336,27 @@ local function SIMBA_TSY_ProcessZombies()
     if RegionManager and RegionManager.Client and RegionManager.Client.zoneData then
         local proposals = {}
 
+        -- Calculate maximum chances from all zones the player is currently in
+        local sprinterChance = 0
+        local shamblerChance = 0
+        local hawkVisionChance = 0
+        local badVisionChance = 0
+        local goodHearingChance = 0
+        local badHearingChance = 0
+        local zombieArmorFactor = 0
+        local resistantChance = 0
+
+        for zoneId, region in pairs(currentZones) do
+            sprinterChance = math.max(sprinterChance, SIMBA_TSY_GetSprinterChance(region))
+            shamblerChance = math.max(shamblerChance, SIMBA_TSY_GetShamblerChance(region))
+            hawkVisionChance = math.max(hawkVisionChance, SIMBA_TSY_GetHawkVisionChanceFromRegion(region))
+            badVisionChance = math.max(badVisionChance, SIMBA_TSY_GetBadVisionChance(region))
+            goodHearingChance = math.max(goodHearingChance, SIMBA_TSY_GetGoodHearingChance(region))
+            badHearingChance = math.max(badHearingChance, SIMBA_TSY_GetBadHearingChance(region))
+            zombieArmorFactor = math.max(zombieArmorFactor, SIMBA_TSY_GetZombieArmorFactor(region))
+            resistantChance = math.max(resistantChance, SIMBA_TSY_GetResistantChance(region))
+        end
+
         for i = 0, zombies:size() - 1 do
             local zombie = zombies:get(i)
 
@@ -344,37 +370,8 @@ local function SIMBA_TSY_ProcessZombies()
                 -- Only process if not already processed
                 if not data.SIMBA_TSY_Processed then
                     data.SIMBA_TSY_Processed = true
-
-                    -- Get zombie position
                     local zombieX = zombie:getX()
                     local zombieY = zombie:getY()
-
-                    -- Determine chance to apply the properties based on region
-                    local sprinterChance = 0
-                    local shamblerChance = 0
-                    local hawkVisionChance = 0
-                    local badVisionChance = 0
-                    local goodHearingChance = 0
-                    local badHearingChance = 0
-                    local zombieArmorFactor = 0
-                    local resistantChance = 0
-
-
-                    for _, region in ipairs(RegionManager.Client.zoneData) do
-                        local bounds = region.bounds
-                        if zombieX >= bounds.minX and zombieX <= bounds.maxX and zombieY >= bounds.minY and zombieY <=
-                            bounds.maxY then
-                            sprinterChance = SIMBA_TSY_GetSprinterChance(region)
-                            shamblerChance = SIMBA_TSY_GetShamblerChance(region)
-                            hawkVisionChance = SIMBA_TSY_GetHawkVisionChanceFromRegion(region)
-                            badVisionChance = SIMBA_TSY_GetBadVisionChance(region)
-                            goodHearingChance = SIMBA_TSY_GetGoodHearingChance(region)
-                            badHearingChance = SIMBA_TSY_GetBadHearingChance(region)
-                            zombieArmorFactor = SIMBA_TSY_GetZombieArmorFactor(region)
-                            resistantChance = SIMBA_TSY_GetResistantChance(region)
-
-                        end
-                    end
 
                     local walkType = nil
                     local isSprinter = false
@@ -382,46 +379,21 @@ local function SIMBA_TSY_ProcessZombies()
                     local roll = SIMBA_TSY_GetDeterministicRandom(zombieID, 100)
 
                     isShambler = roll < shamblerChance
+                    isSprinter = roll < sprinterChance
                     local hawkVision = roll < hawkVisionChance
                     local badVision = roll < badVisionChance
                     local goodHearing = roll < goodHearingChance
                     local badHearing = roll < badHearingChance
                     local hasArmor = roll < zombieArmorFactor
                     local isResistant = roll < resistantChance
-                    
-                    if (sprinterChance > 0) or (shamblerChance > 0) or (hawkVisionChance > 0) or (badVisionChance > 0) or (goodHearingChance > 0) or (badHearingChance > 0) or (zombieArmorFactor > 0) or (resistantChance > 0) then
-                        -- Roll for sprinter
-                        isSprinter = roll < sprinterChance
 
-                        if isSprinter then
-                            makeSprint(zombie)
-                        end
-                        if isShambler then
-                            makeShamble(zombie)
-                        end
-                        -- if hawkVision then
-                        --     makeHawkEye(zombie)
-                        -- end
-                        -- if badVision then
-                        --     makeBadVision(zombie)
-                        -- end
-                        -- if goodHearing then
-                        --     makeGoodHearing(zombie)
-                        -- end
-                        -- if badHearing then
-                        --     makeBadHearing(zombie)
-                        -- end
-                        -- if hasArmor then
-                        --     makeArmored(zombie)
-                        -- end
-                        -- if isResistant then
-                        --     makeResistant(zombie)
-                        -- end
-
+                    if (sprinterChance > 0) or (shamblerChance > 0) or (hawkVisionChance > 0) or (badVisionChance > 0) or
+                        (goodHearingChance > 0) or (badHearingChance > 0) or (zombieArmorFactor > 0) or
+                        (resistantChance > 0) then
                         -- Generate persistent ID for global tracking
                         local persistentID = SIMBA_TSY_GetZombiePersistentID(zombie)
 
-                        -- Propose to server
+                        -- Propose to server (no longer including x, y since we're using player zone)
                         table.insert(proposals, {
                             zombieID = zombieID,
                             persistentID = persistentID,
@@ -464,7 +436,7 @@ local sprinterModule = {
 
     -- Called every tick interval by the dispatcher
     onTick = function(player, currentZones)
-        SIMBA_TSY_ProcessZombies()
+        SIMBA_TSY_ProcessZombies(currentZones)
     end
 }
 RegionManager.ClientTick.registerModule(sprinterModule)
