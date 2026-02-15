@@ -327,6 +327,13 @@ local function OnClientCommand(module, command, player, args)
                 color = data.properties.color or {r=0, g=255, b=0},
                 pvpEnabled = data.properties.pvpEnabled,
                 sprinterChance = data.properties.sprinterChance or 0,
+                shamblerChance = data.properties.shamblerChance or 0,
+                hawkVisionChance = data.properties.hawkVisionChance or 0,
+                badVisionChance = data.properties.badVisionChance or 0,
+                goodHearingChance = data.properties.goodHearingChance or 0,
+                badHearingChance = data.properties.badHearingChance or 0,
+                zombieArmorFactor = data.properties.zombieArmorFactor or 0,
+                resistantChance = data.properties.resistantChance or 0,
                 announceEntry = data.properties.announceEntry,
                 announceExit = data.properties.announceExit,
                 message = data.properties.message

@@ -115,38 +115,69 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
             local persistentID = proposal.persistentID
             local isSprinter = proposal.isSprinter
             local isShambler = proposal.isShambler
+            local hawkVision = proposal.hawkVision
+            local badVision = proposal.badVision
+            local goodHearing = proposal.goodHearing
+            local badHearing = proposal.badHearing
+            local hasArmor = proposal.hasArmor
+            local isResistant = proposal.isResistant
             local walkType = proposal.walkType
 
             -- Check if we already have a decision for this persistent ID in global storage
-            if globalData.zombies[persistentID] then
+            local stored = globalData.zombies[persistentID]
+            if stored then
                 -- Already decided - use stored state from global ModData
                 rejected = rejected + 1
-                local stored = globalData.zombies[persistentID]
-
-                sendServerCommand(player, "SIMBA_TSY", "ConfirmZombie", {
-                    zombieID = zombieID,
-                    isSprinter = stored.isSprinter,
-                    isShambler = stored.isShambler,
-                    walkType = stored.walkType
-                })
+                if hawkVision then
+                    makeHawkEye(zombie)
+                end
+                if badVision then
+                    makeBadVision(zombie)
+                end
+                if goodHearing then
+                    makeGoodHearing(zombie)
+                end
+                if badHearing then
+                    makeBadHearing(zombie)
+                end
+                if hasArmor then
+                    makeArmored(zombie)
+                end
+                if isResistant then
+                    makeResistant(zombie)
+                end
             else
                 -- New decision - store in global ModData (persists across unload/reload)
                 accepted = accepted + 1
 
                 globalData.zombies[persistentID] = {
                     isSprinter = isSprinter,
+                    isShambler = isShambler,
+                    hawkVision = hawkVision,
+                    badVision = badVision,
+                    goodHearing = goodHearing,
+                    badHearing = badHearing,
+                    hasArmor = hasArmor,
+                    isResistant = isResistant,
                     walkType = walkType,
                     x = proposal.x,
                     y = proposal.y
                 }
 
-                sendServerCommand(player, "SIMBA_TSY", "ConfirmZombie", {
-                    zombieID = zombieID,
-                    isSprinter = isSprinter,
-                    isShambler = isShambler,
-                    walkType = walkType
-                })
+                stored = globalData.zombies[persistentID]
             end
+            sendServerCommand(player, "SIMBA_TSY", "ConfirmZombie", {
+                zombieID = zombieID,
+                isSprinter = stored.isSprinter,
+                isShambler = stored.isShambler,
+                hawkVision = stored.hawkVision,
+                badVision = stored.badVision,
+                goodHearing = stored.goodHearing,
+                badHearing = stored.badHearing,
+                hasArmor = stored.hasArmor,
+                isResistant = stored.isResistant,
+                walkType = stored.walkType
+            })
         end
 
         if accepted > 0 or rejected > 0 then
@@ -186,3 +217,34 @@ local function SIMBA_TSY_OnZombieDead(zombie)
 end
 
 Events.OnZombieDead.Add(SIMBA_TSY_OnZombieDead)
+
+-- Events.OnZombieCreate.Add(function(zombie)
+--     local square = zombie:getSquare()
+--     -- Assume your zone-checking logic here (e.g., based on square coords/chunk)
+--     local isSprinter = isSprinter()
+--     local hawkVision = isHawkVisionZone(square)  -- Replace with your zone func
+--     local badVision = isBadVisionZone(square)
+--     local goodHearing = isGoodHearingZone(square)
+--     local badHearing = isBadHearingZone(square)
+--     local hasArmor = isArmoredZone(square)
+--     local isResistant = isResistantZone(square)
+
+--     if hawkVision then
+--         makeHawkEye(zombie)
+--     end
+--     if badVision then
+--         makeBadVision(zombie)
+--     end
+--     if goodHearing then
+--         makeGoodHearing(zombie)
+--     end
+--     if badHearing then
+--         makeBadHearing(zombie)
+--     end
+--     if hasArmor then
+--         makeArmored(zombie)
+--     end
+--     if isResistant then
+--         makeResistant(zombie)
+--     end
+-- end)
