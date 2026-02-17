@@ -25,7 +25,7 @@ local function onZombieDead(zombie)
     -- Method 1: Check attacker reference
     local attacker = zombie:getAttackedBy()
     if attacker and attacker == player then
-        ZKC_Main.recordKill(player)
+        ZKC_Main.recordKill(player,1)
         return
     end
 end

@@ -47,13 +47,14 @@ end
 
 -- Record a zombie kill
 -- @param player IsoPlayer who made the kill
-function ZKC_Main.recordKill(player)
+-- @param value number that credit this kill
+function ZKC_Main.recordKill(player,value)
     if not ZKC_Config.enabled or not player then
         return
     end
 
-    ZKC_Main.killCount = ZKC_Main.killCount + 1
-    ZKC_Main.totalKills = ZKC_Main.totalKills + 1
+    ZKC_Main.killCount = ZKC_Main.killCount + value
+    ZKC_Main.totalKills = ZKC_Main.totalKills + value
 
     if ZKC_Config.Storage.debug then
         print("[ZKC] Kill #" .. ZKC_Main.totalKills .. " recorded (pending: " .. ZKC_Main.killCount .. "/" ..
