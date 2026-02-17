@@ -320,12 +320,13 @@ local function OnClientCommand(module, command, player, args)
         local zoneList = {}
         
         for id, data in pairs(RegionManager.Server.registeredZones or {}) do
+            print(data.properties.shamblerChance)
             table.insert(zoneList, {
                 id = data.region.id,
                 name = data.region.name,
                 bounds = data.bounds,
                 color = data.properties.color or {r=0, g=255, b=0},
-                pvpEnabled = data.properties.pvpEnabled,
+                pvpEnabled = data.properties.pvpEnabled or false,
                 sprinterChance = data.properties.sprinterChance or 0,
                 shamblerChance = data.properties.shamblerChance or 0,
                 hawkVisionChance = data.properties.hawkVisionChance or 0,
@@ -334,9 +335,9 @@ local function OnClientCommand(module, command, player, args)
                 badHearingChance = data.properties.badHearingChance or 0,
                 zombieArmorFactor = data.properties.zombieArmorFactor or 0,
                 resistantChance = data.properties.resistantChance or 0,
-                announceEntry = data.properties.announceEntry,
-                announceExit = data.properties.announceExit,
-                message = data.properties.message
+                announceEntry = data.properties.announceEntry or false,
+                announceExit = data.properties.announceExit or false,
+                message = data.properties.message or ""
             })
         end
         
