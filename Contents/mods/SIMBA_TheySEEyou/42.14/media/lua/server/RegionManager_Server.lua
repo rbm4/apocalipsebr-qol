@@ -94,6 +94,11 @@ local function registerRegion(region)
     local zone = world:registerZone(region.id, -- unique zone name
     "Custom", -- zone type
     centerX, centerY, region.z, width, height)
+    local designatedZone = DesignationZone.addZone("RegionManager_" .. (props.pvpEnabled and "PVP" or "Safe"), -- type
+    region.id, -- name
+    minX, minY, region.z, -- x, y, z
+    maxX, maxY -- x2, y2
+    )
 
     if zone then
         log(
@@ -117,7 +122,7 @@ local function registerRegion(region)
                 maxY = maxY
             }
         }
-        
+
         -- Create NonPvpZone for safe zones (pvpEnabled = false)
         -- SafetySystemManager automatically detects NonPvpZone and manages Safety state
         if props.pvpEnabled == false then
@@ -143,24 +148,24 @@ end
 local function writeRegionsFile(regions)
     local filename = RegionManager.Config.RegionsFilePath
     log("Writing regions file: " .. filename)
-    
+
     local data = {
         version = "1.0",
         lastUpdated = os.date("%Y-%m-%d %H:%M:%S"),
         regions = regions
     }
-    
+
     local jsonStr = JSON.encode(data)
-    
+
     local writer = getFileWriter(filename, true, false)
     if not writer then
         log("ERROR: Could not open file for writing: " .. filename)
         return false
     end
-    
+
     writer:write(jsonStr)
     writer:close()
-    
+
     log("Successfully wrote " .. #regions .. " regions to " .. filename)
     return true
 end
@@ -170,7 +175,7 @@ end
 local function loadRegionsFromFile()
     local filename = RegionManager.Config.RegionsFilePath
     log("Loading regions from file: " .. filename)
-    
+
     -- Try to read the file
     local reader = getFileReader(filename, true)
     if not reader then
@@ -179,7 +184,7 @@ local function loadRegionsFromFile()
         writeRegionsFile(RegionManager.Config.Regions)
         return RegionManager.Config.Regions
     end
-    
+
     -- Read entire file content
     local lines = {}
     local line = reader:readLine()
@@ -188,14 +193,14 @@ local function loadRegionsFromFile()
         line = reader:readLine()
     end
     reader:close()
-    
+
     local content = table.concat(lines, "\n")
     if content == "" or content:match("^%s*$") then
         log("WARNING: Regions file is empty, using default configured regions")
         writeRegionsFile(RegionManager.Config.Regions)
         return RegionManager.Config.Regions
     end
-    
+
     -- Parse JSON
     local success, data = pcall(JSON.parse, content)
     if not success or not data then
@@ -203,14 +208,14 @@ local function loadRegionsFromFile()
         log("Falling back to default configured regions")
         return RegionManager.Config.Regions
     end
-    
+
     local regions = data.regions
     if not regions or type(regions) ~= "table" then
         log("ERROR: Regions file has no 'regions' array")
         log("Falling back to default configured regions")
         return RegionManager.Config.Regions
     end
-    
+
     log("Successfully loaded " .. #regions .. " regions from file")
     return regions
 end
@@ -318,14 +323,18 @@ local function OnClientCommand(module, command, player, args)
 
     if command == "RequestAllBoundaries" then
         local zoneList = {}
-        
+
         for id, data in pairs(RegionManager.Server.registeredZones or {}) do
             print(data.properties.shamblerChance)
             table.insert(zoneList, {
                 id = data.region.id,
                 name = data.region.name,
                 bounds = data.bounds,
-                color = data.properties.color or {r=0, g=255, b=0},
+                color = data.properties.color or {
+                    r = 0,
+                    g = 255,
+                    b = 0
+                },
                 pvpEnabled = data.properties.pvpEnabled or false,
                 sprinterChance = data.properties.sprinterChance or 0,
                 shamblerChance = data.properties.shamblerChance or 0,
@@ -340,13 +349,13 @@ local function OnClientCommand(module, command, player, args)
                 message = data.properties.message or ""
             })
         end
-        
+
         sendServerCommand(player, "RegionManager", "AllZoneBoundaries", {
             zones = zoneList
         })
-        
+
         print("Sent " .. #zoneList .. " zone boundaries to " .. player:getUsername())
-        
+
     elseif command == "RequestZoneInfo" then
         -- Send zone info to client
         local x = args.x
@@ -377,10 +386,10 @@ local function OnClientCommand(module, command, player, args)
         local isPvpZone = args.isPvpZone
         local isSafeZone = args.isSafeZone
         local safetyEnabled = args.safetyEnabled
-        
-        print("[DEBUG SERVER] Player " .. player:getUsername() .. " entered zone: " .. zoneName .. 
-              " (PVP=" .. tostring(isPvpZone) .. ", Safe=" .. tostring(isSafeZone) .. ")")
-        
+
+        print("[DEBUG SERVER] Player " .. player:getUsername() .. " entered zone: " .. zoneName .. " (PVP=" ..
+                  tostring(isPvpZone) .. ", Safe=" .. tostring(isSafeZone) .. ")")
+
         -- Broadcast PVP state change to all other players for skull icon sync
         -- local allPlayers = getOnlinePlayers()
         -- for i = 0, allPlayers:size() - 1 do
@@ -394,22 +403,22 @@ local function OnClientCommand(module, command, player, args)
         --     end
         -- end
         print("[DEBUG SERVER] Broadcasted zone entry to " .. (allPlayers:size() - 1) .. " other players")
-        
+
     elseif command == "ClientZoneExited" then
         -- Client detected zone exit, sync with other players
         -- local zoneId = args.zoneId
         -- local zoneName = args.zoneName
         -- local safetyEnabled = args.safetyEnabled
-        
+
         print("[DEBUG SERVER] Player " .. player:getUsername() .. " exited zone: " .. zoneName)
-        
+
         -- Send zone exited notification to the player
         -- sendServerCommand(player, "RegionManager", "ZoneExited", {
         --     id = zoneId,
         --     name = zoneName,
         --     safetyEnabled = safetyEnabled
         -- })
-        
+
         -- Broadcast PVP state reset to all other players
         -- local allPlayers = getOnlinePlayers()
         -- for i = 0, allPlayers:size() - 1 do
@@ -423,7 +432,7 @@ local function OnClientCommand(module, command, player, args)
         --     end
         -- end
         -- print("[DEBUG SERVER] Broadcasted zone exit to " .. (allPlayers:size() - 1) .. " other players")
-        
+
     elseif command == "ExportConfig" then
         -- Admin command to export config
         if player:getAccessLevel() ~= "None" then
@@ -443,7 +452,6 @@ local function OnLoadMapZones()
     log("Map zones loading, registering custom regions...")
     registerAllRegions()
 end
-
 
 -- NOTE: Zone effects (PVP/Safety state) are now applied client-side.
 -- The server receives ClientZoneEntered/ClientZoneExited and broadcasts to other clients.

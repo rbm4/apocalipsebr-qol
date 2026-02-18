@@ -164,7 +164,9 @@ end
 -- Set the internal seed (call this with a zombie-specific value before calling GetDeterministicRandom)
 ---@param seed number
 function RegionManager.Shared.SetDeterministicSeed(seed)
-    if seed < 0 then seed = seed * -1 end
+    if seed < 0 then
+        seed = seed * -1
+    end
     RegionManager.Shared._rngSeed = seed
 end
 
@@ -659,62 +661,44 @@ function RegionManager.Shared.ServerSideProperties(zombie, data, sandboxOptions)
         speedConfigOption:setValue(SPEED_SPRINTER)
         zombie:makeInactive(true)
         zombie:makeInactive(false)
-        speedConfigOption:setValue(originalSpeed)
     elseif data.isShambler then
         speedConfigOption:setValue(SPEED_SHAMBLER)
         zombie:makeInactive(true)
         zombie:makeInactive(false)
-        speedConfigOption:setValue(originalSpeed)
     end
+
+    speedConfigOption:setValue(originalSpeed)
 
     -- ========================================================================
     -- 2. APPLY COGNITION - Requires DoZombieStats() call
     -- ========================================================================
     if data.hasNavigation then
         cognitionConfigOption:setValue(COGNITION_NAVIGATE_DOORS)
-        zombie:DoZombieStats()
-        cognitionConfigOption:setValue(originalCognition)
     end
 
     -- ========================================================================
     -- 3. APPLY SIGHT - Uses DoZombieStats()
     -- ========================================================================
-    local needsSightUpdate = false
     if data.hawkVision then
         sightConfigOption:setValue(SIGHT_EAGLE)
-        needsSightUpdate = true
     elseif data.normalVision then
         sightConfigOption:setValue(SIGHT_NORMAL)
-        needsSightUpdate = true
     elseif data.poorVision or data.badVision then
         sightConfigOption:setValue(SIGHT_POOR)
-        needsSightUpdate = true
     end
 
-    if needsSightUpdate then
-        zombie:DoZombieStats()
-        sightConfigOption:setValue(originalSight)
-    end
 
     -- ========================================================================
     -- 4. APPLY HEARING - Uses DoZombieStats()
     -- ========================================================================
-    local needsHearingUpdate = false
     if data.pinpointHearing or data.goodHearing then
         hearingConfigOption:setValue(HEARING_PINPOINT)
-        needsHearingUpdate = true
     elseif data.normalHearing then
         hearingConfigOption:setValue(HEARING_NORMAL)
-        needsHearingUpdate = true
     elseif data.poorHearing or data.badHearing then
         hearingConfigOption:setValue(HEARING_POOR)
-        needsHearingUpdate = true
     end
 
-    if needsHearingUpdate then
-        zombie:DoZombieStats()
-        hearingConfigOption:setValue(originalHearing)
-    end
 
     -- ========================================================================
     -- 5. APPLY TOUGHNESS - Hybrid approach
@@ -725,7 +709,6 @@ function RegionManager.Shared.ServerSideProperties(zombie, data, sandboxOptions)
 
     if not zombie:getAttackedBy() and not zombie:isOnFire() then
         local health = 0.1 * ZombRand(4) -- Random 0.0 to 0.3 base
-
         if data.isTough then
             health = health + 3.5 -- Tough: 3.5 to 3.8 initial health
             modData.SIMBA_TSY_ToughnessType = "tough"
@@ -746,49 +729,38 @@ function RegionManager.Shared.ServerSideProperties(zombie, data, sandboxOptions)
     -- ========================================================================
     -- 6. APPLY STRENGTH - Uses DoZombieStats()
     -- ========================================================================
-    local needsStrengthUpdate = false
     if data.isSuperhuman then
         strengthConfigOption:setValue(STRENGTH_SUPERHUMAN)
-        needsStrengthUpdate = true
     elseif data.isNormalToughness2 or data.isNormalToughness then
         strengthConfigOption:setValue(STRENGTH_NORMAL)
-        needsStrengthUpdate = true
     elseif data.isWeak then
         strengthConfigOption:setValue(STRENGTH_WEAK)
-        needsStrengthUpdate = true
     end
 
-    if needsStrengthUpdate then
-        zombie:DoZombieStats()
-        strengthConfigOption:setValue(originalStrength)
-    end
 
     -- ========================================================================
     -- 7. APPLY MEMORY - Uses DoZombieStats()
     -- ========================================================================
-    local needsMemoryUpdate = false
     if data.hasMemoryLong then
         memoryConfigOption:setValue(MEMORY_LONG)
-        needsMemoryUpdate = true
     elseif data.hasMemoryNormal then
         memoryConfigOption:setValue(MEMORY_NORMAL)
-        needsMemoryUpdate = true
     elseif data.hasMemoryShort then
         memoryConfigOption:setValue(MEMORY_SHORT)
-        needsMemoryUpdate = true
     elseif data.hasMemoryNone then
         memoryConfigOption:setValue(MEMORY_NONE)
-        needsMemoryUpdate = true
     elseif data.hasMemoryRandom then
         memoryConfigOption:setValue(MEMORY_RANDOM)
-        needsMemoryUpdate = true
     end
 
-    if needsMemoryUpdate then
-        zombie:DoZombieStats()
-        memoryConfigOption:setValue(originalMemory)
-    end
-
+    
+    zombie:DoZombieStats()
+    memoryConfigOption:setValue(originalMemory)
+    strengthConfigOption:setValue(originalStrength)
+    hearingConfigOption:setValue(originalHearing)
+    sightConfigOption:setValue(originalSight)
+    cognitionConfigOption:setValue(originalCognition)
+    
     -- Note: Armor settings are not applied here as BLTRandomZombies doesn't handle them
     -- and they may not be directly modifiable per-zombie
 end
@@ -808,13 +780,19 @@ end
 ---@param isExhausted boolean True if zombie has used all its extra lives
 function RegionManager.Shared.ApplyToughZombieHit(zombieID, hitCounter, maxHits, isExhausted)
     local player = getPlayer()
-    if not player then return end
+    if not player then
+        return
+    end
 
     local cell = player:getCell()
-    if not cell then return end
+    if not cell then
+        return
+    end
 
     local zombieList = cell:getZombieList()
-    if not zombieList then return end
+    if not zombieList then
+        return
+    end
 
     for i = 0, zombieList:size() - 1 do
         local zombie = zombieList:get(i)
@@ -830,8 +808,7 @@ function RegionManager.Shared.ApplyToughZombieHit(zombieID, hitCounter, maxHits,
                 zombie:setAvoidDamage(true)
                 zombie:setKnockedDown(false)
                 zombie:setStaggerBack(true)
-                print("SIMBA_TSY: Tough zombie " .. zombieID .. " resisted hit (" ..
-                      hitCounter .. "/" .. maxHits .. ")")
+                print("SIMBA_TSY: Tough zombie " .. zombieID .. " resisted hit (" .. hitCounter .. "/" .. maxHits .. ")")
             else
                 -- All lives used up: zombie can now be killed normally
                 zombie:setAvoidDamage(false)
