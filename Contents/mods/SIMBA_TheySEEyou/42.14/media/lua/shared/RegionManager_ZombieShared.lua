@@ -863,3 +863,136 @@ if not isServer() then
     Events.OnWeaponHitCharacter.Add(OnWeaponHitCharacter)
     print("SIMBA_TSY: Networked toughness system initialized (OnWeaponHitCharacter)")
 end
+
+-- ============================================================================
+-- Stuck Zombie Detection & Recovery
+--
+-- ROOT CAUSE: When zombie speed is changed dynamically to sprinter, the engine
+-- sets walkType to "sprint1-5". The walktoward AnimSet sprint tracks require
+-- both "shouldSprint=true" AND "bHasTarget=true" as conditions. When the
+-- zombie loses its target (e.g. player goes invisible), both conditions become
+-- false, but walkType is still "sprint*". The animation system can't match
+-- any track — sprint tracks fail the conditions, slow tracks fail the
+-- zombieWalkType match. Result: empty AnimTrack → frozen zombie with
+-- stateEventDelayTimer decreasing indefinitely into negatives.
+--
+-- FIX: Force walkType to a shambler-compatible value ("slow1/2/3") so the
+-- walktoward slow animations can resolve, then force the zombie into
+-- ZombieIdleState for a clean restart. The zombie will wander using shambler
+-- animations but retains sprinter speedType — when it next acquires a target,
+-- shouldSprint becomes true and proper sprint animations will play.
+-- ============================================================================
+
+--- Threshold below which we consider a zombie state-stuck.
+--- The timer normally hovers around 0 and briefly goes negative between
+--- state transitions. Values around -500 already indicate a stuck zombie.
+local STUCK_TIMER_THRESHOLD = -500
+
+--- States that are safe to interrupt for unsticking.
+--- We must NOT interrupt climbing, falling, hit reactions, etc.
+local SAFE_STATES_TO_UNSTICK = {
+    ["WalkTowardState"]         = true,
+    ["WalkTowardNetworkState"]  = true,
+    ["PathFindState"]           = true,
+    ["ZombieIdleState"]         = true,
+    ["IdleState"]               = true,
+}
+
+--- Attempt to unstick a single zombie if it meets the stuck criteria.
+--- Returns true if the zombie was unstuck, false otherwise.
+---@param zombie IsoZombie
+---@return boolean unstuck
+function RegionManager.Shared.UnstickZombie(zombie)
+    if not zombie or zombie:isDead() then
+        return false
+    end
+
+    -- Only the simulating client should fix state; skip remote zombies
+    if zombie:isRemoteZombie() then
+        return false
+    end
+
+    -- Check if the timer is stuck (deep negative)
+    local timer = zombie:getStateEventDelayTimer()
+    if timer >= STUCK_TIMER_THRESHOLD then
+        return false
+    end
+
+    -- If the zombie has a target, the state machine should resolve naturally
+    -- (e.g. it's chasing/attacking someone). Don't interfere.
+    local target = zombie:getTarget()
+    if target then
+        return false
+    end
+
+    -- Only unstick from safe states — don't interrupt climbing, falling, etc.
+    local stateName = zombie:getCurrentStateName()
+    if stateName and not SAFE_STATES_TO_UNSTICK[stateName] then
+        return false
+    end
+
+    -- ----------------------------------------------------------------
+    -- The actual fix: address the animation track mismatch
+    -- ----------------------------------------------------------------
+    initializeReflectionCache()
+
+    local zombieSpeed = speedField and getClassFieldVal(zombie, speedField) or nil
+    local isSprinter = (zombieSpeed == SPEED_SPRINTER)
+
+    -- For sprinters without a target, the walktoward sprint AnimSet tracks
+    -- won't resolve (they require shouldSprint/bHasTarget = true).
+    -- Set walkType to a shambler-compatible value so the slow walktoward
+    -- animations can play instead. The sprinter identity (speedType=1) is
+    -- preserved — next time the zombie acquires a target, shouldSprint will
+    -- be true and sprint animations will work normally.
+    if isSprinter then
+        local slowWalk = "slow" .. tostring(ZombRand(3) + 1)
+        zombie:setWalkType(slowWalk)
+    end
+
+    -- Force transition to ZombieIdleState for a clean animation restart.
+    -- ZombieIdleState.enter() resets movement variables and sets a fresh
+    -- positive stateEventDelayTimer (wander interval), so the zombie will
+    -- naturally resume wandering after a short delay.
+    zombie:setMoving(false)
+    zombie:changeState(ZombieIdleState.instance())
+
+    -- Clear any stale repath delay so the zombie can navigate freely
+    -- zombie.allowRepathDelay = 0
+
+    print("SIMBA_TSY: Unstuck zombie " .. tostring(zombie:getOnlineID())
+          .. " (timer was " .. string.format("%.0f", timer)
+          .. ", state=" .. tostring(stateName)
+          .. ", sprinter=" .. tostring(isSprinter) .. ")")
+    return true
+end
+
+--- Scan all zombies in the player's cell and unstick any that are frozen.
+--- Intended to be called periodically from a client tick module.
+---@return number count Number of zombies that were unstuck
+function RegionManager.Shared.ScanAndUnstickZombies()
+    local player = getPlayer()
+    if not player then return 0 end
+
+    local cell = player:getCell()
+    if not cell then return 0 end
+
+    local zombies = cell:getZombieList()
+    if not zombies then return 0 end
+
+    local unstuckCount = 0
+    for i = 0, zombies:size() - 1 do
+        local zombie = zombies:get(i)
+        if zombie then
+            if RegionManager.Shared.UnstickZombie(zombie) then
+                unstuckCount = unstuckCount + 1
+            end
+        end
+    end
+
+    if unstuckCount > 0 then
+        print("SIMBA_TSY: Unstuck " .. unstuckCount .. " frozen zombies this scan")
+    end
+
+    return unstuckCount
+end
