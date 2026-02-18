@@ -179,6 +179,26 @@ local sprinterModule = {
 }
 RegionManager.ClientTick.registerModule(sprinterModule)
 
+-- ============================================================================
+-- Stuck Zombie Recovery Module
+-- Periodically scans nearby zombies for stuck state (stateEventDelayTimer
+-- deep in negatives with no target) and forces a state reset.
+-- Runs on a slower cadence than the main sprinter tick to save performance.
+-- ============================================================================
+
+---@type TickModuleDef
+local unstickModule = {
+    name = "SIMBA_TSY_UnstickZombies",
+
+    onTick = function(player, currentZones)
+        RegionManager.Shared.ScanAndUnstickZombies()
+    end
+}
+RegionManager.ClientTick.registerModule(unstickModule)
+
+-- ============================================================================
+-- Zombie death handler
+-- ============================================================================
 local function onZombieDead(zombie)
     if not zombie then
         return
