@@ -1,0 +1,21 @@
+require "Items/ProceduralDistributions"
+
+-- Base.KI5trailersMagazine
+table.insert(ProceduralDistributions.list["BookstoreMisc"].items, "Base.KI5trailersMagazine");
+table.insert(ProceduralDistributions.list["BookstoreMisc"].items, 2);
+table.insert(ProceduralDistributions.list["CrateMagazines"].items, "Base.KI5trailersMagazine");
+table.insert(ProceduralDistributions.list["CrateMagazines"].items, 1);
+table.insert(ProceduralDistributions.list["MagazineRackMixed"].items, "Base.KI5trailersMagazine");
+table.insert(ProceduralDistributions.list["MagazineRackMixed"].items, 1);
+table.insert(ProceduralDistributions.list["MechanicShelfBooks"].items, "Base.KI5trailersMagazine");
+table.insert(ProceduralDistributions.list["MechanicShelfBooks"].items, 2);
+table.insert(ProceduralDistributions.list["MechanicSpecial"].items, "Base.KI5trailersMagazine");
+table.insert(ProceduralDistributions.list["MechanicSpecial"].items, 1);
+table.insert(ProceduralDistributions.list["PostOfficeMagazines"].items, "Base.KI5trailersMagazine");
+table.insert(ProceduralDistributions.list["PostOfficeMagazines"].items, 1);
+table.insert(ProceduralDistributions.list["ShelfGeneric"].items, "Base.KI5trailersMagazine");
+table.insert(ProceduralDistributions.list["ShelfGeneric"].items, 0.1);
+table.insert(ProceduralDistributions.list["StoreShelfMechanics"].items, "Base.KI5trailersMagazine");
+table.insert(ProceduralDistributions.list["StoreShelfMechanics"].items, 1);
+table.insert(ProceduralDistributions.list["ToolStoreBooks"].items, "Base.KI5trailersMagazine");
+table.insert(ProceduralDistributions.list["ToolStoreBooks"].items, 2);
