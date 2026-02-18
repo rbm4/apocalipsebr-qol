@@ -25,7 +25,21 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
         local hitCounter = args.hitCounter
         local maxHits = args.maxHits
         local isExhausted = args.isExhausted
+        local zombieX = args.x
+        local zombieY = args.y
 
+        local player = getPlayer()
+        if not player then
+            return
+        end
+        local playerX = player:getX()
+        local playerY = player:getY()
+        
+        -- Check distance between player and zombie
+        local distance = math.sqrt((playerX - zombieX) ^ 2 + (playerY - zombieY) ^ 2)
+        if distance > 200 then
+            return
+        end
         RegionManager.Shared.ApplyToughZombieHit(zombieID, hitCounter, maxHits, isExhausted)
         return
     end
@@ -36,6 +50,12 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
             return
         end
 
+        
+        -- Debug: Show received data from server
+        print("SIMBA_TSY Client: Received zombie confirmation for ID: " .. tostring(args.zombieID))
+        
+        local zombieID = args.zombieID
+        
         local cell = player:getCell()
         if not cell then
             return
@@ -45,12 +65,6 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
         if not zombieList then
             return
         end
-        
-        -- Debug: Show received data from server
-        print("SIMBA_TSY Client: Received zombie confirmation for ID: " .. tostring(args.zombieID))
-        
-        local zombieID = args.zombieID
-
         -- Find zombie and apply all properties using shared function
         for i = 0, zombieList:size() - 1 do
             local zombie = zombieList:get(i)

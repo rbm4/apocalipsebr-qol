@@ -148,14 +148,24 @@ end
 ---@param zombieID number
 ---@param max number
 ---@return number
-function RegionManager.Shared.GetDeterministicRandom(zombieID, max)
-    local trueId = zombieID
-    if trueId < 0 then
-        trueId = trueId * -1
+-- Deterministic pseudo-random (matches server logic)
+---@param max number
+---@return number
+function RegionManager.Shared.GetDeterministicRandom(max)
+    if not RegionManager.Shared._rngSeed then
+        RegionManager.Shared._rngSeed = os.time()
     end
-    local hash = trueId
-    hash = ((hash * 1103515245) + 12345) % 2147483648
-    return (hash % max)
+    local seed = RegionManager.Shared._rngSeed
+    seed = ((seed * 1103515245) + 12345) % 2147483648
+    RegionManager.Shared._rngSeed = seed
+    return seed % max
+end
+
+-- Set the internal seed (call this with a zombie-specific value before calling GetDeterministicRandom)
+---@param seed number
+function RegionManager.Shared.SetDeterministicSeed(seed)
+    if seed < 0 then seed = seed * -1 end
+    RegionManager.Shared._rngSeed = seed
 end
 
 -- Get sprinter chance for current position based on known regions
@@ -864,6 +874,8 @@ local function OnWeaponHitCharacter(attacker, target, weapon, damage)
         -- Send to server for authoritative processing
         sendClientCommand(player, "SIMBA_TSY", "ZombieHitTough", {
             zombieID = zombieID,
+            x = target:getX(),
+            y = target:getY(),
             persistentID = RegionManager.Shared.GetZombiePersistentID(target)
         })
     end
