@@ -5,7 +5,7 @@ module StartingInjuriesMod
         IsProfessionTrait = false,
         DisabledInMultiplayer = false,
         CharacterTrait = StartingInjuriesMod:AllScratchedUp,
-        Cost = -2,
+        Cost = -3,
         UIName = UI_trait_AllScratchedUp,
         UIDescription = UI_trait_AllScratchedUpDesc,
     }
@@ -15,7 +15,7 @@ module StartingInjuriesMod
 		IsProfessionTrait = false,
 		DisabledInMultiplayer = false,
 		CharacterTrait = StartingInjuriesMod:BleedingOut,
-		Cost = -2,
+		Cost = -3,
 		UIName = UI_trait_BleedingOut,
 		UIDescription = UI_trait_BleedingOutDesc,
 	}
@@ -65,7 +65,7 @@ module StartingInjuriesMod
 		IsProfessionTrait = false,
 		DisabledInMultiplayer = false,
 		CharacterTrait = StartingInjuriesMod:BrokenLeg,
-		Cost = -4,
+		Cost = -5,
 		UIName = UI_trait_BrokenLeg,
 		UIDescription = UI_trait_BrokenLegDesc,
 	}
@@ -125,7 +125,7 @@ module StartingInjuriesMod
 		IsProfessionTrait = false,
 		DisabledInMultiplayer = false,
 		CharacterTrait = StartingInjuriesMod:LeftForDead,
-		Cost = -8,
+		Cost = -9,
 		UIName = UI_trait_LeftForDead,
 		UIDescription = UI_trait_LeftForDeadDesc,
 	}
