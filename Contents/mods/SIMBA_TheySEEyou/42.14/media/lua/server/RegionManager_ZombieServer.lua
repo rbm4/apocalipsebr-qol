@@ -254,8 +254,14 @@ Events.OnInitWorld.Add(function()
         print("SIMBA_TSY Server: Zombie settings initialized - Manual sprinter conversion enabled")
     end
 
-    local count = SIMBA_TSY_ClearAllZombieStates()
-    print("SIMBA_TSY Server: Server startup - ModData cleared")
+    -- Completely remove persisted ModData so nothing survives a restart
+    if ModData.exists("SIMBA_TSY_ZombieStates") then
+        ModData.remove("SIMBA_TSY_ZombieStates")
+    end
+    -- Recreate a fresh, empty table
+    local freshData = ModData.getOrCreate("SIMBA_TSY_ZombieStates")
+    freshData.zombies = {}
+    print("SIMBA_TSY Server: Server startup - ModData fully wiped and recreated")
 
     -- Events.EveryTenMinutes.Add(SIMBA_TSY_PeriodicCleanup)
     print("SIMBA_TSY Server: Periodic cleanup scheduled (every 10 minutes)")
