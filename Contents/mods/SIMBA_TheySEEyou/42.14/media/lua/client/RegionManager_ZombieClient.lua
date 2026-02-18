@@ -186,15 +186,15 @@ RegionManager.ClientTick.registerModule(sprinterModule)
 -- Runs on a slower cadence than the main sprinter tick to save performance.
 -- ============================================================================
 
----@type TickModuleDef
-local unstickModule = {
-    name = "SIMBA_TSY_UnstickZombies",
+-- ---@type TickModuleDef
+-- local unstickModule = {
+--     name = "SIMBA_TSY_UnstickZombies",
 
-    onTick = function(player, currentZones)
-        RegionManager.Shared.ScanAndUnstickZombies()
-    end
-}
-RegionManager.ClientTick.registerModule(unstickModule)
+--     onTick = function(player, currentZones)
+--         RegionManager.Shared.ScanAndUnstickZombies()
+--     end
+-- }
+-- RegionManager.ClientTick.registerModule(unstickModule)
 
 -- ============================================================================
 -- Zombie death handler

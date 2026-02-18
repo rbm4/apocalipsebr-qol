@@ -94,11 +94,12 @@ local function registerRegion(region)
     local zone = world:registerZone(region.id, -- unique zone name
     "Custom", -- zone type
     centerX, centerY, region.z, width, height)
-    local designatedZone = DesignationZone.addZone("RegionManager_" .. (props.pvpEnabled and "PVP" or "Safe"), -- type
-    region.id, -- name
-    minX, minY, region.z, -- x, y, z
-    maxX, maxY -- x2, y2
-    )
+    -- TODO: add designated zone boundaries for immersive zone behaviour
+    -- local designatedZone = DesignationZone.addZone("RegionManager_" .. (props.pvpEnabled and "PVP" or "Safe"), -- type
+    -- region.id, -- name
+    -- minX, minY, region.z, -- x, y, z
+    -- maxX, maxY -- x2, y2
+    -- )
 
     if zone then
         log(
