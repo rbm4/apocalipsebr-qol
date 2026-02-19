@@ -1,0 +1,6 @@
+name=Grapeseed [Redesigned for Build 42]
+id=42Grapeseed
+description=Grapeseed, nestled northwest of Rosewood, has evolved from humble beginnings into a vibrant, gentrified town centered around Highway 60, opening it up to all of Knox Country. It offers a blend of modern luxury and historical charm.
+poster=poster.png
+pack=grapeseed
+tiledef=grapeseedtiles 2860

@@ -1,0 +1,44 @@
+module Base
+{
+
+ item MilitaryStorageBackpack
+	{
+		DisplayCategory = Bag,
+		ItemType = base:Container,
+		Weight = 2,
+		Icon = MilitaryStorageBackpack,
+		AttachmentReplacement = Bag,
+		BloodLocation = Bag,
+		CanBeEquipped = Back,
+		CanHaveHoles = FALSE,
+		Capacity = 46,
+		CloseSound = CloseBag,
+		ClothingItem = MilitaryStorageBackpack,
+		EquipSound = EquipBackpackLarge,
+		OpenSound = OpenBag,
+		PutInSound = PutItemInBag,
+		ReplaceInPrimaryHand = MilitaryStorageBackpack_RHand holdingbagright,
+		ReplaceInSecondHand = MilitaryStorageBackpack_LHand holdingbagleft,
+		RunSpeedModifier = 0.99,
+		WeightReduction = 99,
+		WorldStaticModel = MilitaryStorageBackpack,
+                AttachmentsProvided = SmallBeltLeft;SmallBeltRight;HolsterLeft;HolsterRight;WebbingRight;WebbingLeft;BedrollBottomALICE,
+		component FluidContainer
+		{
+			ContainerName   = MilitaryStorageBackpack,
+			capacity        = 10.0,
+			InitialPercentMin = 0.0,
+			InitialPercentMax = 1.0,
+			Fluids
+			{
+				fluid           = Water:1.0,
+			}
+		}
+	}
+    model MilitaryStorageBackpack
+	{
+		mesh = ground/MilitaryStorageBackpack,
+	}
+
+
+}

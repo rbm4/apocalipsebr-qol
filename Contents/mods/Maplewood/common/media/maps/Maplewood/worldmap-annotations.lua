@@ -1,0 +1,15 @@
+return function(mapUI)
+	local mapAPI = mapUI.javaObject:getAPIv3()
+	local symbolsAPI = mapAPI:getSymbolsAPIv2()
+	local symbol
+	symbol = symbolsAPI:addUntranslatedText("MAPLEWOOD", "text-town", 8273, 8560)
+	symbol:setRGBA(0.000, 0.000, 0.000, 0.000)
+	symbol:setScale(4.500)
+	symbol:setAnchor(0.50, 0.50)
+	symbol:setRotation(0.0)
+	symbol:setMatchPerspective(true)
+	symbol:setApplyZoom(true)
+	symbol:setMinZoom(0.00)
+	symbol:setMaxZoom(13.00)
+	symbol:setUserDefined(false)
+end

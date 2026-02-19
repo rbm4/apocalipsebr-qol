@@ -1,0 +1,76 @@
+<streets version="1">
+    <street name="Maplewood Avenue" width="6">
+        <points>
+            <point x="8296.0" y="8487.0"/>
+            <point x="8296.0" y="8450.0"/>
+            <point x="8296.0" y="8442.0"/>
+        </points>
+    </street>
+    <street name="Maplewood Street" width="8">
+        <points>
+            <point x="8100.0" y="8562.0"/>
+            <point x="8172.5" y="8562.0"/>
+            <point x="8400.0" y="8562.0"/>
+        </points>
+    </street>
+    <street name="Maplewood Street" width="8">
+        <points>
+            <point x="8176.0" y="8495.0"/>
+            <point x="8176.0" y="8558.0"/>
+        </points>
+    </street>
+    <street name="Maplewood Street" width="8">
+        <points>
+            <point x="8275.0" y="8495.0"/>
+            <point x="8275.0" y="8558.0"/>
+        </points>
+    </street>
+    <street name="Maplewood Gardens" width="8">
+        <points>
+            <point x="8355.0" y="8487.0"/>
+            <point x="8355.0" y="8426.0"/>
+        </points>
+    </street>
+    <street name="Maplewood Gardens" width="8">
+        <points>
+            <point x="8237.0" y="8430.0"/>
+            <point x="8351.0" y="8430.0"/>
+        </points>
+    </street>
+    <street name="Maplewood Gardens" width="8">
+        <points>
+            <point x="8241.0" y="8434.0"/>
+            <point x="8241.0" y="8487.0"/>
+        </points>
+    </street>
+    <street name="Maplewood Cresent" width="8">
+        <points>
+            <point x="8176.0" y="8566.0"/>
+            <point x="8176.0" y="8644.0"/>
+        </points>
+    </street>
+    <street name="Maplewood Cresent" width="8">
+        <points>
+            <point x="8279.0" y="8640.0"/>
+            <point x="8180.0" y="8640.0"/>
+        </points>
+    </street>
+    <street name="Maplewood Cresent" width="8">
+        <points>
+            <point x="8275.0" y="8636.0"/>
+            <point x="8275.0" y="8566.0"/>
+        </points>
+    </street>
+    <street name="Maplewood Gardens" width="8">
+        <points>
+            <point x="8122.0" y="8491.0"/>
+            <point x="8359.0" y="8491.0"/>
+        </points>
+    </street>
+    <street name="Maplewood Drive" width="6">
+        <points>
+            <point x="8347.0" y="8566.0"/>
+            <point x="8347.0" y="8637.0"/>
+        </points>
+    </street>
+</streets>

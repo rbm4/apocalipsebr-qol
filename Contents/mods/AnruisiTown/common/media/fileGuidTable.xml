@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fileGuidTable>
+	<files>
+		<path>media/clothing/clothingItems/MilitaryStorageBackpack.xml</path>
+		<guid>4D45A11B-7234-F8ED-02DA-B900252C9AE1</guid>
+	</files>
+	<files>
+		<path>media/clothing/clothingItems/MilitaryStorageBackpack_RHand.xml</path>
+		<guid>064E9DCB-E8DF-A63E-7F4A-59652E40BA95</guid>
+	</files>
+	<files>
+		<path>media/clothing/clothingItems/MilitaryStorageBackpack_LHand.xml</path>
+		<guid>08976767-86BB-C8FD-CCD4-F7A59BDC0469</guid>
+	</files>
+</fileGuidTable>
