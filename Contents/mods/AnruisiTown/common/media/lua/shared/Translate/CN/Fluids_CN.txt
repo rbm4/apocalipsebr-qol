@@ -1,0 +1,4 @@
+Fluids_CN = {
+	Fluid_Container_MilitaryStorageBackpack = "军储背包",
+
+}

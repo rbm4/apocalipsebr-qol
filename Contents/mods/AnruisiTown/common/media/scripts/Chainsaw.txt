@@ -1,0 +1,64 @@
+module Base
+{
+    item Chainsaw
+	{
+		DisplayCategory = Weapon,
+                ItemType = base:weapon,
+		Weight = 6.0,
+		Icon = Chainsaw,
+		BaseSpeed = 3,
+		BreakSound = MacheteBreak,
+                Categories = base:longblade,
+		CanHaveHoles = TRUE,
+		ConditionLowerChanceOneIn = 50,
+		ConditionMax = 50,
+		CritDmgMultiplier = 15,
+		CriticalChance = 90,
+		DamageCategory = Slash,
+		DamageMakeHole = TRUE,
+		DoorDamage = 150,
+		DoorHitSound = Chainsaw,
+		DropSound = Chainsaw,
+		HitAngleMod = -30,
+		HitFloorSound = Chainsaw,
+		HitSound = Chainsaw,
+		IdleAnim = Idle_Weapon2,
+		KnockBackOnNoDeath = TRUE,
+		KnockdownMod = 2,
+		MaxDamage = 0.05,
+		MaxHitCount = 5,
+		MaxRange = 1.3,
+		MetalValue = 120,
+		MinAngle = 0.5,
+		MinDamage = 0.05,
+		MinRange = 0.3,
+		MinimumSwingTime = 1.0,
+		PushBackMod = 0.3,
+		RunAnim = Run_Weapon2,
+		SplatBloodOnNoDeath = TRUE,
+		SplatNumber = 3,
+		SplatSize = 5,
+		SubCategory = Swinging,
+		SwingAmountBeforeImpact = 0.002,
+                SwingAnim = Spear,,
+		SwingSound = Chainsaw,
+		SwingTime = 1.0,
+		TreeDamage = 99999,
+                RequiresEquippedBothHands = TRUE,
+		WeaponLength = 0.4,
+		WeaponSprite = Chainsaw,
+		TwoHandWeapon = TRUE,
+		Tags = ChopTree;CutPlant;RemoveBarricade;Sharpenable;KillAnimal;RepairWithTape;RepairWithGlue,
+
+        Sharpness = 8.0,
+	}
+
+	model Chainsaw
+	{
+		mesh = Chainsaw,
+		texture = Chainsaw,
+	}
+
+
+}
+

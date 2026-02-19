@@ -1,0 +1,347 @@
+<streets version="1">
+    <street name="Anruisi St" width="11">
+        <points>
+            <point x="12030.0" y="11477.5"/>
+            <point x="12048.5" y="11496.5"/>
+            <point x="12054.0" y="11502.0"/>
+        </points>
+    </street>
+    <street name="Anruisi St" width="12">
+        <points>
+            <point x="12050.0" y="11500.0"/>
+            <point x="12489.5" y="11500.0"/>
+        </points>
+    </street>
+    <street name="ArmyStreet" width="8">
+        <points>
+            <point x="12485.5" y="11496.5"/>
+            <point x="12488.5" y="11499.5"/>
+            <point x="12500.0" y="11510.5"/>
+            <point x="12500.0" y="11511.5"/>
+            <point x="12500.0" y="11697.0"/>
+        </points>
+    </street>
+    <street name="OathKeepersRoad" width="6">
+        <points>
+            <point x="12503.5" y="11694.0"/>
+            <point x="12557.0" y="11694.0"/>
+            <point x="12594.0" y="11694.0"/>
+            <point x="12594.0" y="11590.0"/>
+            <point x="12546.5" y="11590.0"/>
+        </points>
+    </street>
+    <street name="MilitaryStreet" width="5">
+        <points>
+            <point x="12544.0" y="11545.0"/>
+            <point x="12544.0" y="11582.5"/>
+            <point x="12544.0" y="11602.0"/>
+            <point x="12544.0" y="11633.0"/>
+            <point x="12544.0" y="11636.5"/>
+            <point x="12544.0" y="11639.0"/>
+            <point x="12544.0" y="11691.0"/>
+        </points>
+    </street>
+    <street name="MilitaryStreet" width="5">
+        <points>
+            <point x="12546.5" y="11636.0"/>
+            <point x="12591.0" y="11636.0"/>
+        </points>
+    </street>
+    <street name="MilitaryStreet" width="5">
+        <points>
+            <point x="12541.5" y="11636.0"/>
+            <point x="12504.0" y="11636.0"/>
+        </points>
+    </street>
+    <street name="MilitaryStreet" width="5">
+        <points>
+            <point x="12504.0" y="11590.0"/>
+            <point x="12541.5" y="11590.0"/>
+        </points>
+    </street>
+    <street name="MilitaryStreet" width="5">
+        <points>
+            <point x="12504.0" y="11555.0"/>
+            <point x="12541.5" y="11555.0"/>
+        </points>
+    </street>
+    <street name="MilitaryStreet" width="5">
+        <points>
+            <point x="12546.5" y="11548.0"/>
+            <point x="12597.0" y="11548.0"/>
+        </points>
+    </street>
+    <street name="Gongan Road" width="6">
+        <points>
+            <point x="12026.0" y="11503.5"/>
+            <point x="12026.0" y="11550.5"/>
+            <point x="12044.0" y="11568.0"/>
+            <point x="12167.0" y="11568.0"/>
+        </points>
+    </street>
+    <street name="Engineering Road" width="8">
+        <points>
+            <point x="12051.0" y="11571.0"/>
+            <point x="12051.0" y="11597.0"/>
+            <point x="12051.0" y="11606.0"/>
+            <point x="12051.0" y="11696.0"/>
+            <point x="12382.0" y="11696.0"/>
+        </points>
+    </street>
+    <street name="Business Road" width="8">
+        <points>
+            <point x="12171.0" y="11506.0"/>
+            <point x="12171.0" y="11692.0"/>
+        </points>
+    </street>
+    <street name="Gas Road" width="6">
+        <points>
+            <point x="12117.0" y="11571.0"/>
+            <point x="12117.0" y="11615.5"/>
+            <point x="12124.5" y="11622.5"/>
+            <point x="12138.5" y="11622.5"/>
+            <point x="12167.0" y="11622.5"/>
+        </points>
+    </street>
+    <street name="Fire Protection Boulevard" width="8">
+        <points>
+            <point x="12175.0" y="11556.0"/>
+            <point x="12205.5" y="11556.0"/>
+            <point x="12310.0" y="11556.0"/>
+        </points>
+    </street>
+    <street name="Fire Protection Boulevard" width="8">
+        <points>
+            <point x="12240.0" y="11506.0"/>
+            <point x="12240.0" y="11552.0"/>
+        </points>
+    </street>
+    <street name="Warehouse Road" width="8">
+        <points>
+            <point x="12274.0" y="11560.0"/>
+            <point x="12274.0" y="11692.0"/>
+        </points>
+    </street>
+    <street name="Forest  St" width="8">
+        <points>
+            <point x="12314.0" y="11506.0"/>
+            <point x="12314.0" y="11691.5"/>
+        </points>
+    </street>
+    <street name="Warehouse Road" width="8">
+        <points>
+            <point x="12227.5" y="11627.0"/>
+            <point x="12270.0" y="11627.0"/>
+        </points>
+    </street>
+    <street name="Forest Trail" width="8">
+        <points>
+            <point x="12278.0" y="11627.0"/>
+            <point x="12310.0" y="11627.0"/>
+        </points>
+    </street>
+    <street name="Office Street" width="10">
+        <points>
+            <point x="12374.0" y="11494.0"/>
+            <point x="12374.0" y="11420.0"/>
+            <point x="12312.0" y="11420.0"/>
+            <point x="12312.0" y="11494.0"/>
+        </points>
+    </street>
+    <street name="Pretty Path" width="7">
+        <points>
+            <point x="12307.0" y="11446.5"/>
+            <point x="12304.5" y="11446.5"/>
+            <point x="12260.5" y="11489.5"/>
+            <point x="12260.5" y="11494.0"/>
+        </points>
+    </street>
+    <street name="Office Street" width="10">
+        <points>
+            <point x="12379.0" y="11452.0"/>
+            <point x="12424.0" y="11451.5"/>
+            <point x="12462.5" y="11491.0"/>
+            <point x="12462.5" y="11494.5"/>
+        </points>
+    </street>
+    <street name="Fountain Road" width="6">
+        <points>
+            <point x="12362.0" y="11506.0"/>
+            <point x="12362.0" y="11583.0"/>
+        </points>
+    </street>
+    <street name="Doom St" width="6">
+        <points>
+            <point x="12428.0" y="11506.0"/>
+            <point x="12428.0" y="11583.0"/>
+        </points>
+    </street>
+    <street name="Woodland St" width="8">
+        <points>
+            <point x="12478.0" y="11506.0"/>
+            <point x="12478.0" y="11850.5"/>
+        </points>
+    </street>
+    <street name="Woodland Path" width="8">
+        <points>
+            <point x="12318.0" y="11627.0"/>
+            <point x="12382.0" y="11627.0"/>
+        </points>
+    </street>
+    <street name="Safety Road" width="6">
+        <points>
+            <point x="12318.0" y="11586.0"/>
+            <point x="12474.0" y="11586.0"/>
+        </points>
+    </street>
+    <street name="Spike Boulevard" width="6">
+        <points>
+            <point x="12385.0" y="11589.0"/>
+            <point x="12385.0" y="11625.5"/>
+            <point x="12385.0" y="11763.0"/>
+            <point x="12384.5" y="11764.5"/>
+            <point x="12383.0" y="11766.0"/>
+        </points>
+    </street>
+    <street name="Rose Trail" width="6">
+        <points>
+            <point x="12388.0" y="11603.0"/>
+            <point x="12434.0" y="11603.0"/>
+        </points>
+    </street>
+    <street name="M16 Trail" width="5">
+        <points>
+            <point x="12439.0" y="11625.5"/>
+            <point x="12473.5" y="11625.5"/>
+        </points>
+    </street>
+    <street name="Purple Sky Path" width="6">
+        <points>
+            <point x="12434.0" y="11657.0"/>
+            <point x="12388.0" y="11657.0"/>
+        </points>
+    </street>
+    <street name="Wheat Field Road" width="4">
+        <points>
+            <point x="12436.0" y="11589.5"/>
+            <point x="12436.0" y="11770.0"/>
+        </points>
+    </street>
+    <street name="Wheat Field Road" width="3">
+        <points>
+            <point x="12388.0" y="11704.5"/>
+            <point x="12434.0" y="11704.5"/>
+        </points>
+    </street>
+    <street name="Wheat Field Road" width="6">
+        <points>
+            <point x="12438.0" y="11700.0"/>
+            <point x="12474.0" y="11700.0"/>
+        </points>
+    </street>
+    <street name="Residential St" width="8">
+        <points>
+            <point x="12141.5" y="11700.0"/>
+            <point x="12142.0" y="11867.0"/>
+            <point x="12295.0" y="11867.0"/>
+            <point x="12295.5" y="11803.0"/>
+        </points>
+    </street>
+    <street name="Lake Road (Under Construction)" width="8">
+        <points>
+            <point x="12094.0" y="11799.0"/>
+            <point x="12114.0" y="11799.0"/>
+            <point x="12138.0" y="11799.0"/>
+        </points>
+    </street>
+    <street name="Residential St" width="8">
+        <points>
+            <point x="12146.0" y="11799.0"/>
+            <point x="12337.0" y="11799.0"/>
+        </points>
+    </street>
+    <street name="Residential St" width="8">
+        <points>
+            <point x="12274.0" y="11700.0"/>
+            <point x="12274.0" y="11795.0"/>
+        </points>
+    </street>
+    <street name="Woodland St" width="5">
+        <points>
+            <point x="12316.0" y="11700.0"/>
+            <point x="12316.0" y="11702.0"/>
+            <point x="12387.0" y="11772.0"/>
+            <point x="12388.5" y="11772.5"/>
+        </points>
+    </street>
+    <street name="Woodland St" width="6">
+        <points>
+            <point x="12388.0" y="11773.0"/>
+            <point x="12474.5" y="11773.0"/>
+        </points>
+    </street>
+    <street name="Arms St" width="6">
+        <points>
+            <point x="12340.0" y="11725.0"/>
+            <point x="12340.0" y="11855.5"/>
+            <point x="12340.0" y="11909.0"/>
+            <point x="12387.5" y="11956.0"/>
+            <point x="12518.5" y="11956.0"/>
+            <point x="12541.5" y="11977.5"/>
+        </points>
+    </street>
+    <street name="Agriculture Boulevard" width="4">
+        <points>
+            <point x="12385.0" y="11774.0"/>
+            <point x="12385.0" y="11806.5"/>
+            <point x="12385.0" y="11848.5"/>
+            <point x="12389.0" y="11853.0"/>
+            <point x="12561.5" y="11852.0"/>
+            <point x="12561.5" y="11812.0"/>
+            <point x="12565.5" y="11809.0"/>
+            <point x="12565.5" y="11796.0"/>
+            <point x="12548.5" y="11778.0"/>
+            <point x="12482.0" y="11778.0"/>
+        </points>
+    </street>
+    <street name="Arms St" width="5">
+        <points>
+            <point x="12466.5" y="11855.0"/>
+            <point x="12466.5" y="11953.0"/>
+        </points>
+    </street>
+    <street name="Agriculture Boulevard" width="5">
+        <points>
+            <point x="12486.0" y="11854.0"/>
+            <point x="12486.0" y="11856.5"/>
+            <point x="12488.5" y="11859.0"/>
+            <point x="12551.0" y="11922.0"/>
+            <point x="12572.0" y="11921.5"/>
+            <point x="12586.0" y="11906.5"/>
+        </points>
+    </street>
+    <street name="Agriculture Boulevard" width="5">
+        <points>
+            <point x="12552.5" y="11782.0"/>
+            <point x="12596.5" y="11782.5"/>
+        </points>
+    </street>
+    <street name="Hope Boulevard" width="8">
+        <points>
+            <point x="12223.0" y="11560.0"/>
+            <point x="12223.0" y="11692.0"/>
+        </points>
+    </street>
+    <street name="Hope Boulevard" width="6">
+        <points>
+            <point x="12175.0" y="11651.0"/>
+            <point x="12219.0" y="11651.0"/>
+        </points>
+    </street>
+    <street name="Hope Boulevard" width="6">
+        <points>
+            <point x="12175.0" y="11601.0"/>
+            <point x="12219.0" y="11601.0"/>
+        </points>
+    </street>
+</streets>

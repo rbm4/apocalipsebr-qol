@@ -1,0 +1,16 @@
+module Base
+{
+	
+    item MaplewoodMap
+    {
+	DisplayCategory = Cartography,
+        ItemType = base:map,
+        DisplayName = Map of Maplewood,
+        Icon = Map,
+        Weight = 0.2,
+        Map = MaplewoodMap,
+	SurvivalGear = true,
+	StaticModel = MapInHand,
+	WorldStaticModel = Map,	
+    }
+}

@@ -1,0 +1,64 @@
+module Base
+{
+    item MilitaryMachete
+	{
+		DisplayCategory = Weapon,
+                ItemType = base:weapon,
+		Weight = 2.5,
+		Icon = MilitaryMachete,
+		AttachmentType = Sword,
+		BaseSpeed = 1.2,
+		BreakSound = MacheteBreak,
+                Categories = base:longblade,
+		CanHaveHoles = TRUE,
+		ConditionLowerChanceOneIn = 45,
+		ConditionMax = 20,
+		CritDmgMultiplier = 20,
+		CriticalChance = 40,
+		DamageCategory = Slash,
+		DamageMakeHole = TRUE,
+		DoorDamage = 50,
+		DoorHitSound = MacheteHit,
+		DropSound = MacheteDrop,
+		HitAngleMod = -30,
+		HitFloorSound = MacheteHit,
+		HitSound = MacheteHit,
+		IdleAnim = Idle_Weapon2,
+		KnockBackOnNoDeath = TRUE,
+		KnockdownMod = 2,
+		MaxDamage = 3,
+		MaxHitCount = 3,
+		MaxRange = 1.3,
+		MetalValue = 120,
+		MinAngle = 0.5,
+		MinDamage = 2,
+		MinRange = 0.3,
+		MinimumSwingTime = 1.0,
+		PushBackMod = 0.3,
+		RunAnim = Run_Weapon2,
+		SplatBloodOnNoDeath = TRUE,
+		SplatNumber = 3,
+		SplatSize = 5,
+		SubCategory = Swinging,
+		SwingAmountBeforeImpact = 0.002,
+		SwingAnim = Bat,
+		SwingSound = MacheteSwing,
+		SwingTime = 1.0,
+		TreeDamage = 80,
+		TwoHandWeapon = FALSE,
+		WeaponLength = 0.4,
+		WeaponSprite = MilitaryMachete,
+		Tags = ChopTree;CutPlant;RemoveBarricade;Sharpenable;KillAnimal;RepairWithTape;RepairWithGlue,
+
+        Sharpness = 8.0,
+	}
+
+	model MilitaryMachete
+	{
+		mesh = MilitaryMachete,
+		texture = MilitaryMachete,
+	}
+
+
+}
+

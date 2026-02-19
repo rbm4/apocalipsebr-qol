@@ -1,0 +1,72 @@
+tileGeometry
+{
+    VERSION = 2,
+
+    tileset
+    {
+        name = JJZ,
+
+        /* JJZ_0 */
+        tile
+        {
+            xy = 0x0,
+
+            box
+            {
+                translate = 782x697x428,
+                rotate = 0x0x0,
+                min = -4332x0x-4600,
+                max = 4332x8409x4600,
+            }
+
+            box
+            {
+                translate = 5019x-588x144,
+                rotate = 0x0x0,
+                min = -248x0x-4568,
+                max = 248x7321x4568,
+            }
+        }
+
+        /* JJZ_1 */
+        tile
+        {
+            xy = 1x0,
+
+            box
+            {
+                translate = 703x8566x558,
+                rotate = 0x0x0,
+                min = -4464x0x-4442,
+                max = 4464x8752x4442,
+            }
+
+            box
+            {
+                translate = 5647x8482x566,
+                rotate = 0x0x0,
+                min = -547x0x-4434,
+                max = 547x8707x4434,
+            }
+        }
+    }
+
+    tileset
+    {
+        name = 665DC-C-D-FC-CEDSXXZX,
+
+        /* 665DC-C-D-FC-CEDSXXZX_0 */
+        tile
+        {
+            xy = 0x0,
+
+            box
+            {
+                translate = -93x0x-237,
+                rotate = 0x0x0,
+                min = -4640x0x-4619,
+                max = 4640x8119x4619,
+            }
+        }
+    }
+}

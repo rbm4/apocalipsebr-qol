@@ -1,0 +1,3950 @@
+version = 1
+tileset
+{
+    file = grapeseed_deco_01
+    size = 8,8
+    id = 1
+    // grapeseed_deco_01_0
+    tile
+    {
+        xy = 0,0
+        attachedN = 
+    }
+    // grapeseed_deco_01_1
+    tile
+    {
+        xy = 1,0
+        attachedN = 
+    }
+    // grapeseed_deco_01_2
+    tile
+    {
+        xy = 2,0
+        attachedN = 
+    }
+    // grapeseed_deco_01_3
+    tile
+    {
+        xy = 3,0
+        attachedN = 
+    }
+    // grapeseed_deco_01_4
+    tile
+    {
+        xy = 4,0
+        attachedN = 
+    }
+    // grapeseed_deco_01_5
+    tile
+    {
+        xy = 5,0
+        attachedN = 
+    }
+    // grapeseed_deco_01_6
+    tile
+    {
+        xy = 6,0
+        attachedN = 
+    }
+    // grapeseed_deco_01_7
+    tile
+    {
+        xy = 7,0
+        attachedN = 
+    }
+    // grapeseed_deco_01_8
+    tile
+    {
+        xy = 0,1
+        attachedW = 
+    }
+    // grapeseed_deco_01_9
+    tile
+    {
+        xy = 1,1
+        attachedW = 
+    }
+    // grapeseed_deco_01_10
+    tile
+    {
+        xy = 2,1
+        attachedW = 
+    }
+    // grapeseed_deco_01_11
+    tile
+    {
+        xy = 3,1
+        attachedW = 
+    }
+    // grapeseed_deco_01_12
+    tile
+    {
+        xy = 4,1
+        attachedW = 
+    }
+    // grapeseed_deco_01_13
+    tile
+    {
+        xy = 5,1
+        attachedW = 
+    }
+    // grapeseed_deco_01_14
+    tile
+    {
+        xy = 6,1
+        CustomName = Cafe Sign
+        Facing = S
+        GroupName = Kellas
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedN = 
+    }
+    // grapeseed_deco_01_15
+    tile
+    {
+        xy = 7,1
+        CustomName = Cafe Sign
+        Facing = E
+        GroupName = Kellas
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedW = 
+    }
+    // grapeseed_deco_01_16
+    tile
+    {
+        xy = 0,2
+        CanScrap = 
+        CustomName = Road Sign
+        ForceSingleItem = 
+        GroupName = Tristan's Tools
+        IsMoveAble = 
+        Material = MetalPlates
+        SpriteGridPos = 0,1
+        attachedN = 
+    }
+    // grapeseed_deco_01_17
+    tile
+    {
+        xy = 1,2
+        CanScrap = 
+        CustomName = Road Sign
+        ForceSingleItem = 
+        GroupName = Tristan's Tools
+        IsMoveAble = 
+        Material = MetalPlates
+        attachedN = 
+    }
+    // grapeseed_deco_01_18
+    tile
+    {
+        xy = 2,2
+        CanScrap = 
+        CustomName = Road Sign
+        ForceSingleItem = 
+        GroupName = Cabbage Patch
+        IsMoveAble = 
+        Material = MetalPipe
+        SpriteGridPos = 0,1
+        attachedN = 
+    }
+    // grapeseed_deco_01_19
+    tile
+    {
+        xy = 3,2
+        CanScrap = 
+        CustomName = Road Sign
+        ForceSingleItem = 
+        GroupName = Cabbage Patch
+        IsMoveAble = 
+        Material = MetalPipe
+        attachedN = 
+    }
+    // grapeseed_deco_01_20
+    tile
+    {
+        xy = 4,2
+        CustomName = Potatoes Sign
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Plamf
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedN = 
+    }
+    // grapeseed_deco_01_21
+    tile
+    {
+        xy = 5,2
+        CustomName = Potatoes Sign
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Plamf
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 1,0
+        attachedN = 
+    }
+    // grapeseed_deco_01_22
+    tile
+    {
+        xy = 6,2
+        CustomName = Potatoes Sign
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Plamf
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,1
+        attachedW = 
+    }
+    // grapeseed_deco_01_23
+    tile
+    {
+        xy = 7,2
+        CustomName = Potatoes Sign
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Plamf
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedW = 
+    }
+    // grapeseed_deco_01_24
+    tile
+    {
+        xy = 0,3
+        BlocksPlacement = 
+        CanScrap = 
+        CustomName = Road Sign
+        Facing = N
+        ForceSingleItem = 
+        GroupName = Grapeseed
+        HitByCar = 
+        IsMoveAble = 
+        Material = MetalBars
+        Material2 = MetalPlates
+        Material3 = MetalScrap
+        MoveType = WallObject
+        PhysicsShape = WallW
+        PickUpTool = Shovel
+        PickUpWeight = 200
+        PlaceTool = Shovel
+        SpriteGridPos = 0,1
+        StopCar = 
+    }
+    // grapeseed_deco_01_25
+    tile
+    {
+        xy = 1,3
+        BlocksPlacement = 
+        CanScrap = 
+        CustomName = Road Sign
+        Facing = N
+        ForceSingleItem = 
+        GroupName = Grapeseed
+        HitByCar = 
+        IsMoveAble = 
+        Material = MetalBars
+        Material2 = MetalPlates
+        Material3 = MetalScrap
+        MoveType = WallObject
+        PhysicsShape = WallW
+        PickUpTool = Shovel
+        PickUpWeight = 200
+        PlaceTool = Shovel
+        SpriteGridPos = 0,0
+        StopCar = 
+    }
+    // grapeseed_deco_01_26
+    tile
+    {
+        xy = 2,3
+        IsHigh = 
+        attachedN = 
+    }
+    // grapeseed_deco_01_27
+    tile
+    {
+        xy = 3,3
+        IsHigh = 
+        attachedN = 
+    }
+    // grapeseed_deco_01_28
+    tile
+    {
+        xy = 4,3
+        IsHigh = 
+        attachedN = 
+    }
+    // grapeseed_deco_01_29
+    tile
+    {
+        xy = 5,3
+        IsHigh = 
+        attachedN = 
+    }
+    // grapeseed_deco_01_30
+    tile
+    {
+        xy = 6,3
+        IsHigh = 
+        attachedN = 
+    }
+    // grapeseed_deco_01_31
+    tile
+    {
+        xy = 7,3
+        BedType = badBed
+        BlocksPlacement = 
+        IsLow = 
+        bed = 
+    }
+    // grapeseed_deco_01_32
+    tile
+    {
+        xy = 0,4
+        attachedN = 
+    }
+    // grapeseed_deco_01_33
+    tile
+    {
+        xy = 1,4
+        attachedN = 
+    }
+    // grapeseed_deco_01_34
+    tile
+    {
+        xy = 2,4
+        attachedN = 
+    }
+    // grapeseed_deco_01_35
+    tile
+    {
+        xy = 3,4
+        attachedN = 
+    }
+    // grapeseed_deco_01_36
+    tile
+    {
+        xy = 4,4
+        attachedN = 
+    }
+    // grapeseed_deco_01_37
+    tile
+    {
+        xy = 5,4
+        attachedN = 
+    }
+    // grapeseed_deco_01_38
+    tile
+    {
+        xy = 6,4
+        attachedN = 
+    }
+    // grapeseed_deco_01_40
+    tile
+    {
+        xy = 0,5
+        attachedW = 
+    }
+    // grapeseed_deco_01_41
+    tile
+    {
+        xy = 1,5
+        attachedW = 
+    }
+    // grapeseed_deco_01_42
+    tile
+    {
+        xy = 2,5
+        attachedW = 
+    }
+    // grapeseed_deco_01_43
+    tile
+    {
+        xy = 3,5
+        attachedW = 
+    }
+    // grapeseed_deco_01_44
+    tile
+    {
+        xy = 4,5
+        attachedW = 
+    }
+    // grapeseed_deco_01_45
+    tile
+    {
+        xy = 5,5
+        attachedW = 
+    }
+    // grapeseed_deco_01_46
+    tile
+    {
+        xy = 6,5
+        attachedW = 
+    }
+    // grapeseed_deco_01_47
+    tile
+    {
+        xy = 7,5
+        attachedW = 
+    }
+}
+tileset
+{
+    file = grapeseed_fences_01
+    size = 8,8
+    id = 8
+    // grapeseed_fences_01_0
+    tile
+    {
+        xy = 0,0
+        CanScrap = 
+        HitByCar = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_1
+    tile
+    {
+        xy = 1,0
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        Material = Wood
+        Material2 = Screws
+        WallNTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_2
+    tile
+    {
+        xy = 2,0
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallNWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_4
+    tile
+    {
+        xy = 4,0
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallNWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_5
+    tile
+    {
+        xy = 5,0
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallNWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_6
+    tile
+    {
+        xy = 6,0
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallNWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_8
+    tile
+    {
+        xy = 0,1
+        CanScrap = 
+        HitByCar = 
+        Material = Wood
+        Material2 = Screws
+        TallHoppableW = 
+        WallW = 
+        wall = 
+    }
+    // grapeseed_fences_01_9
+    tile
+    {
+        xy = 1,1
+        CanScrap = 
+        HitByCar = 
+        Material = Wood
+        Material2 = Screws
+        TallHoppableN = 
+        WallN = 
+        wall = 
+    }
+    // grapeseed_fences_01_11
+    tile
+    {
+        xy = 3,1
+        CanScrap = 
+        HitByCar = 
+        Material = Wood
+        Material2 = Screws
+        TallHoppableN = 
+        TallHoppableW = 
+        WallNW = 
+        wall = 
+    }
+    // grapeseed_fences_01_12
+    tile
+    {
+        xy = 4,1
+        CanScrap = 
+        HitByCar = 
+        Material = Wood
+        Material2 = Screws
+        TallHoppableW = 
+        WallW = 
+        wall = 
+    }
+    // grapeseed_fences_01_13
+    tile
+    {
+        xy = 5,1
+        CanScrap = 
+        HitByCar = 
+        Material = Wood
+        Material2 = Screws
+        TallHoppableN = 
+        WallN = 
+        wall = 
+    }
+    // grapeseed_fences_01_14
+    tile
+    {
+        xy = 6,1
+        CanScrap = 
+        Material = Wood
+        Material2 = Screws
+    }
+    // grapeseed_fences_01_15
+    tile
+    {
+        xy = 7,1
+        CanScrap = 
+        HitByCar = 
+        Material = Wood
+        Material2 = Screws
+        TallHoppableN = 
+        TallHoppableW = 
+        WallNW = 
+        wall = 
+    }
+    // grapeseed_fences_01_16
+    tile
+    {
+        xy = 0,2
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        Material = Wood
+        Material2 = Screws
+        WallNTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_17
+    tile
+    {
+        xy = 1,2
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        Material = Wood
+        Material2 = Screws
+        WallNTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_18
+    tile
+    {
+        xy = 2,2
+        CanScrap = 
+        HitByCar = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_19
+    tile
+    {
+        xy = 3,2
+        CanScrap = 
+        HitByCar = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_20
+    tile
+    {
+        xy = 4,2
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallNWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_24
+    tile
+    {
+        xy = 0,3
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        Material = Wood
+        Material2 = Screws
+        WallNTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_25
+    tile
+    {
+        xy = 1,3
+        CanScrap = 
+        HitByCar = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_26
+    tile
+    {
+        xy = 2,3
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallNWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_28
+    tile
+    {
+        xy = 4,3
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        Material = Wood
+        Material2 = Screws
+        WallNTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_29
+    tile
+    {
+        xy = 5,3
+        CanScrap = 
+        HitByCar = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_30
+    tile
+    {
+        xy = 6,3
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallNWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_32
+    tile
+    {
+        xy = 0,4
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        Material = Wood
+        Material2 = Screws
+        WallNTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_33
+    tile
+    {
+        xy = 1,4
+        CanScrap = 
+        HitByCar = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_34
+    tile
+    {
+        xy = 2,4
+        CanScrap = 
+        HitByCar = 
+        HoppableN = 
+        HoppableW = 
+        Material = Wood
+        Material2 = Screws
+        WallNWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_40
+    tile
+    {
+        xy = 0,5
+        CanScrap = 
+        HitByCar = 
+        Material = Wood
+        Material2 = Screws
+        TallHoppableN = 
+        WallNTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_41
+    tile
+    {
+        xy = 1,5
+        CanScrap = 
+        HitByCar = 
+        Material = Wood
+        Material2 = Screws
+        TallHoppableN = 
+        WallNTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_42
+    tile
+    {
+        xy = 2,5
+        CanScrap = 
+        HitByCar = 
+        Material = Wood
+        Material2 = Screws
+        TallHoppableW = 
+        WallWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_43
+    tile
+    {
+        xy = 3,5
+        CanScrap = 
+        HitByCar = 
+        Material = Wood
+        Material2 = Screws
+        TallHoppableW = 
+        WallWTrans = 
+        wall = 
+    }
+    // grapeseed_fences_01_44
+    tile
+    {
+        xy = 4,5
+        CanScrap = 
+        HitByCar = 
+        Material = Wood
+        Material2 = Screws
+        TallHoppableN = 
+        TallHoppableW = 
+        WallNWTrans = 
+        wall = 
+    }
+}
+tileset
+{
+    file = grapeseed_misc_details
+    size = 8,8
+    id = 9
+}
+tileset
+{
+    file = grapeseed_wall_art_01
+    size = 8,8
+    id = 3
+    // grapeseed_wall_art_01_0
+    tile
+    {
+        xy = 0,0
+        CustomName = Art Piece
+        Facing = E
+        ForceSingleItem = 
+        GroupName = ParaNautic's Collectible
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,1
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_1
+    tile
+    {
+        xy = 1,0
+        CustomName = Art Piece
+        Facing = E
+        ForceSingleItem = 
+        GroupName = ParaNautic's Collectible
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_2
+    tile
+    {
+        xy = 2,0
+        CustomName = Art Piece
+        Facing = S
+        ForceSingleItem = 
+        GroupName = ParaNautic's Collectible
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_3
+    tile
+    {
+        xy = 3,0
+        CustomName = Art Piece
+        Facing = S
+        ForceSingleItem = 
+        GroupName = ParaNautic's Collectible
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 1,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_4
+    tile
+    {
+        xy = 4,0
+        CustomName = Art Piece
+        Facing = E
+        ForceSingleItem = 
+        GroupName = The Cabbage Patch
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,1
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_5
+    tile
+    {
+        xy = 5,0
+        CustomName = Art Piece
+        Facing = E
+        ForceSingleItem = 
+        GroupName = The Cabbage Patch
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_6
+    tile
+    {
+        xy = 6,0
+        CustomName = Art Piece
+        Facing = S
+        ForceSingleItem = 
+        GroupName = The Cabbage Patch
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_7
+    tile
+    {
+        xy = 7,0
+        CustomName = Art Piece
+        Facing = S
+        ForceSingleItem = 
+        GroupName = The Cabbage Patch
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 1,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_8
+    tile
+    {
+        xy = 0,1
+        CustomName = Flag
+        Facing = S
+        GroupName = Grapeseed Town
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_9
+    tile
+    {
+        xy = 1,1
+        CustomName = Flag
+        Facing = E
+        GroupName = Grapeseed Town
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_10
+    tile
+    {
+        xy = 2,1
+        CustomName = Collectible Flag
+        Facing = S
+        ForceSingleItem = 
+        GroupName = 01 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_11
+    tile
+    {
+        xy = 3,1
+        CustomName = Collectible Flag
+        Facing = S
+        ForceSingleItem = 
+        GroupName = 01 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 1,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_12
+    tile
+    {
+        xy = 4,1
+        CustomName = Collectible Flag
+        Facing = E
+        ForceSingleItem = 
+        GroupName = 01 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,1
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_13
+    tile
+    {
+        xy = 5,1
+        CustomName = Collectible Flag
+        Facing = E
+        ForceSingleItem = 
+        GroupName = 01 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_14
+    tile
+    {
+        xy = 6,1
+        BlocksPlacement = 
+        CustomName = Planet Obsidian - T.P Lyons
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // grapeseed_wall_art_01_15
+    tile
+    {
+        xy = 7,1
+        BlocksPlacement = 
+        CustomName = History of Rome - T.P Lyons
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // grapeseed_wall_art_01_16
+    tile
+    {
+        xy = 0,2
+        CustomName = Collectible Flag
+        Facing = S
+        ForceSingleItem = 
+        GroupName = 02 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_17
+    tile
+    {
+        xy = 1,2
+        CustomName = Collectible Flag
+        Facing = S
+        ForceSingleItem = 
+        GroupName = 02 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 1,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_18
+    tile
+    {
+        xy = 2,2
+        CustomName = Collectible Flag
+        Facing = E
+        ForceSingleItem = 
+        GroupName = 02 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,1
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_19
+    tile
+    {
+        xy = 3,2
+        CustomName = Collectible Flag
+        Facing = E
+        ForceSingleItem = 
+        GroupName = 02 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_20
+    tile
+    {
+        xy = 4,2
+        CustomName = Collectible Flag
+        Facing = S
+        ForceSingleItem = 
+        GroupName = 03 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_21
+    tile
+    {
+        xy = 5,2
+        CustomName = Collectible Flag
+        Facing = S
+        ForceSingleItem = 
+        GroupName = 03 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 1,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_22
+    tile
+    {
+        xy = 6,2
+        CustomName = Collectible Flag
+        Facing = E
+        ForceSingleItem = 
+        GroupName = 03 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,1
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_23
+    tile
+    {
+        xy = 7,2
+        CustomName = Collectible Flag
+        Facing = E
+        ForceSingleItem = 
+        GroupName = 03 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_24
+    tile
+    {
+        xy = 0,3
+        CustomName = Collectible Flag
+        Facing = S
+        ForceSingleItem = 
+        GroupName = 04 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_25
+    tile
+    {
+        xy = 1,3
+        CustomName = Collectible Flag
+        Facing = S
+        ForceSingleItem = 
+        GroupName = 04 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 1,0
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_26
+    tile
+    {
+        xy = 2,3
+        CustomName = Collectible Flag
+        Facing = E
+        ForceSingleItem = 
+        GroupName = 04 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,1
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_27
+    tile
+    {
+        xy = 3,3
+        CustomName = Collectible Flag
+        Facing = E
+        ForceSingleItem = 
+        GroupName = 04 PlentyT
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_30
+    tile
+    {
+        xy = 6,3
+        CustomName = Poster
+        Facing = S
+        GroupName = SheriffEli
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_31
+    tile
+    {
+        xy = 7,3
+        CustomName = Poster
+        Facing = E
+        GroupName = SheriffEli
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_32
+    tile
+    {
+        xy = 0,4
+        BlocksPlacement = 
+        CustomName = Sheriff Eli's Name Plate
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // grapeseed_wall_art_01_33
+    tile
+    {
+        xy = 1,4
+        CustomName = Sign
+        Facing = S
+        GroupName = Evidence
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_34
+    tile
+    {
+        xy = 2,4
+        CustomName = Sign
+        Facing = E
+        GroupName = Evidence
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedW = 
+    }
+    // grapeseed_wall_art_01_35
+    tile
+    {
+        xy = 3,4
+        CustomName = Sign
+        Facing = S
+        GroupName = Armory
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedN = 
+    }
+    // grapeseed_wall_art_01_36
+    tile
+    {
+        xy = 4,4
+        CustomName = Sign
+        Facing = E
+        GroupName = Armory
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedW = 
+    }
+}
+tileset
+{
+    file = location_garden_goods_01
+    size = 8,8
+    id = 4
+    // location_garden_goods_01_5
+    tile
+    {
+        xy = 5,0
+        BlocksPlacement = 
+        CustomName = Gnome
+        Facing = S
+        GroupName = Mounted
+        IsLow = 
+        IsMoveAble = 
+    }
+    // location_garden_goods_01_6
+    tile
+    {
+        xy = 6,0
+        BlocksPlacement = 
+        CustomName = Gnome
+        Facing = E
+        GroupName = Mounted
+        IsLow = 
+        IsMoveAble = 
+    }
+    // location_garden_goods_01_8
+    tile
+    {
+        xy = 0,1
+        CustomName = the Gnome
+        Facing = S
+        GroupName = Mr Bert,
+        IsLow = 
+        IsMoveAble = 
+        MoveType = FloorRug
+    }
+    // location_garden_goods_01_9
+    tile
+    {
+        xy = 1,1
+        CustomName = the Gnome
+        Facing = E
+        GroupName = Mr Bert,
+        IsLow = 
+        IsMoveAble = 
+        MoveType = FloorRug
+    }
+    // location_garden_goods_01_10
+    tile
+    {
+        xy = 2,1
+        BlocksPlacement = 
+        CustomName = Pots of Flowers
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_garden_goods_01_11
+    tile
+    {
+        xy = 3,1
+        BlocksPlacement = 
+        CustomName = Pots of Flowers
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_garden_goods_01_12
+    tile
+    {
+        xy = 4,1
+        BlocksPlacement = 
+        CustomName = Pots of Flowers
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_garden_goods_01_13
+    tile
+    {
+        xy = 5,1
+        CustomName = Decorative Plant
+        IsMoveAble = 
+        solid = 
+    }
+    // location_garden_goods_01_14
+    tile
+    {
+        xy = 6,1
+        CustomName = Decorative Plant
+        IsMoveAble = 
+        solid = 
+    }
+    // location_garden_goods_01_15
+    tile
+    {
+        xy = 7,1
+        CustomName = Decorative Plant
+        IsMoveAble = 
+        solid = 
+    }
+    // location_garden_goods_01_16
+    tile
+    {
+        xy = 0,2
+        BlocksPlacement = 
+        CustomName = Bert Gnomes
+        Facing = E
+        GroupName = Palette of
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 40
+        solid = 
+    }
+    // location_garden_goods_01_17
+    tile
+    {
+        xy = 1,2
+        BlocksPlacement = 
+        CustomName = Bert Gnomes
+        Facing = S
+        GroupName = Palette of
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 40
+        solid = 
+    }
+    // location_garden_goods_01_18
+    tile
+    {
+        xy = 2,2
+        BlocksPlacement = 
+        CustomName = Gnomes
+        Facing = S
+        GroupName = Palette of
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 40
+        solid = 
+    }
+    // location_garden_goods_01_19
+    tile
+    {
+        xy = 3,2
+        BlocksPlacement = 
+        CustomName = Gnomes
+        Facing = E
+        GroupName = Palette of
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 40
+        solid = 
+    }
+    // location_garden_goods_01_20
+    tile
+    {
+        xy = 4,2
+        BlocksPlacement = 
+        CustomName = Palette of Garden Goods
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 50
+        solid = 
+    }
+    // location_garden_goods_01_21
+    tile
+    {
+        xy = 5,2
+        BlocksPlacement = 
+        CustomName = Palette of Garden Goods
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 40
+        solid = 
+    }
+    // location_garden_goods_01_22
+    tile
+    {
+        xy = 6,2
+        BlocksPlacement = 
+        CustomName = Palette of Garden Goods
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 40
+        solid = 
+    }
+    // location_garden_goods_01_23
+    tile
+    {
+        xy = 7,2
+        BlocksPlacement = 
+        CustomName = Palette of Garden Goods
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 40
+        solid = 
+    }
+    // location_garden_goods_01_24
+    tile
+    {
+        xy = 0,3
+        CustomName = Decorative Plant
+        IsMoveAble = 
+        ItemHeight = 20
+        solid = 
+    }
+    // location_garden_goods_01_25
+    tile
+    {
+        xy = 1,3
+        CustomName = Decorative Plant
+        IsMoveAble = 
+        ItemHeight = 20
+        solid = 
+    }
+    // location_garden_goods_01_26
+    tile
+    {
+        xy = 2,3
+        CustomName = Decorative Plant
+        IsMoveAble = 
+        ItemHeight = 20
+        solid = 
+    }
+    // location_garden_goods_01_27
+    tile
+    {
+        xy = 3,3
+        CustomName = Decorative Plant
+        IsMoveAble = 
+        ItemHeight = 20
+        solid = 
+    }
+    // location_garden_goods_01_28
+    tile
+    {
+        xy = 4,3
+        CustomName = Decorative Plant
+        IsMoveAble = 
+        ItemHeight = 20
+        solid = 
+    }
+    // location_garden_goods_01_29
+    tile
+    {
+        xy = 5,3
+        CustomName = Decorative Plant
+        IsMoveAble = 
+        ItemHeight = 20
+        solid = 
+    }
+    // location_garden_goods_01_30
+    tile
+    {
+        xy = 6,3
+        BlocksPlacement = 
+        CustomName = Barrel of Dirt
+        IsLow = 
+        IsMoveAble = 
+        Surface = 30
+        solid = 
+    }
+    // location_garden_goods_01_31
+    tile
+    {
+        xy = 7,3
+        BlocksPlacement = 
+        CustomName = Palette of Garden Goods
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 40
+        solid = 
+    }
+    // location_garden_goods_01_32
+    tile
+    {
+        xy = 0,4
+        BlocksPlacement = 
+        CustomName = Garden Store Desk Shelf
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_garden_goods_01_33
+    tile
+    {
+        xy = 1,4
+        BlocksPlacement = 
+        CustomName = Pots of Flowers
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_garden_goods_01_34
+    tile
+    {
+        xy = 2,4
+        BlocksPlacement = 
+        CustomName = Pots of Flowers
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_garden_goods_01_35
+    tile
+    {
+        xy = 3,4
+        BlocksPlacement = 
+        CustomName = Pots of Flowers
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_garden_goods_01_36
+    tile
+    {
+        xy = 4,4
+        BlocksPlacement = 
+        CustomName = Pots of Flowers
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_garden_goods_01_37
+    tile
+    {
+        xy = 5,4
+        BlocksPlacement = 
+        CustomName = Pots of Flowers
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_garden_goods_01_38
+    tile
+    {
+        xy = 6,4
+        BlocksPlacement = 
+        CustomName = Palette of Garden Goods
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 44
+        solid = 
+    }
+    // location_garden_goods_01_39
+    tile
+    {
+        xy = 7,4
+        BlocksPlacement = 
+        CustomName = Palette of Garden Goods
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 44
+        solid = 
+    }
+    // location_garden_goods_01_40
+    tile
+    {
+        xy = 0,5
+        BlocksPlacement = 
+        CustomName = Shelf of Garden Goods
+        IsMoveAble = 
+        ItemHeight = 66
+        solid = 
+    }
+    // location_garden_goods_01_41
+    tile
+    {
+        xy = 1,5
+        BlocksPlacement = 
+        CustomName = Shelf of Garden Goods
+        IsMoveAble = 
+        ItemHeight = 66
+        solid = 
+    }
+    // location_garden_goods_01_42
+    tile
+    {
+        xy = 2,5
+        BlocksPlacement = 
+        CustomName = Palette of Top Soil
+        IsMoveAble = 
+        ItemHeight = 30
+        solid = 
+    }
+    // location_garden_goods_01_43
+    tile
+    {
+        xy = 3,5
+        BlocksPlacement = 
+        CustomName = Palette of Top Soil
+        IsMoveAble = 
+        ItemHeight = 38
+        solid = 
+    }
+    // location_garden_goods_01_44
+    tile
+    {
+        xy = 4,5
+        BlocksPlacement = 
+        CustomName = Palette of Top Soil
+        IsMoveAble = 
+        ItemHeight = 14
+        solid = 
+    }
+    // location_garden_goods_01_45
+    tile
+    {
+        xy = 5,5
+        BlocksPlacement = 
+        CustomName = Palette of Top Soil
+        IsMoveAble = 
+        ItemHeight = 44
+        solid = 
+    }
+    // location_garden_goods_01_46
+    tile
+    {
+        xy = 6,5
+        Bush = 
+        CustomName = Trimmed Hedge
+        IsMoveAble = 
+        Movement = HedgeLow
+        PickUpTool = Shovel
+        canBeRemoved = 
+    }
+    // location_garden_goods_01_48
+    tile
+    {
+        xy = 0,6
+        BlocksPlacement = 
+        CustomName = wooden panels
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Stack of light
+        IsMoveAble = 
+        ItemHeight = 28
+        SpriteGridPos = 0,1
+        solid = 
+    }
+    // location_garden_goods_01_49
+    tile
+    {
+        xy = 1,6
+        BlocksPlacement = 
+        CustomName = wooden panels
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Stack of light
+        IsMoveAble = 
+        ItemHeight = 28
+        SpriteGridPos = 0,0
+        solid = 
+    }
+    // location_garden_goods_01_50
+    tile
+    {
+        xy = 2,6
+        BlocksPlacement = 
+        CustomName = wooden panels
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Stack of light
+        IsMoveAble = 
+        ItemHeight = 28
+        SpriteGridPos = 0,0
+        solid = 
+    }
+    // location_garden_goods_01_51
+    tile
+    {
+        xy = 3,6
+        BlocksPlacement = 
+        CustomName = wooden panels
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Stack of light
+        IsMoveAble = 
+        ItemHeight = 28
+        SpriteGridPos = 1,0
+        solid = 
+    }
+    // location_garden_goods_01_52
+    tile
+    {
+        xy = 4,6
+        BlocksPlacement = 
+        CustomName = wooden panels
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Stack of beech
+        IsMoveAble = 
+        ItemHeight = 28
+        SpriteGridPos = 0,1
+        solid = 
+    }
+    // location_garden_goods_01_53
+    tile
+    {
+        xy = 5,6
+        BlocksPlacement = 
+        CustomName = wooden panels
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Stack of beech
+        IsMoveAble = 
+        ItemHeight = 28
+        SpriteGridPos = 0,0
+        solid = 
+    }
+    // location_garden_goods_01_54
+    tile
+    {
+        xy = 6,6
+        BlocksPlacement = 
+        CustomName = wooden panels
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Stack of beech
+        IsMoveAble = 
+        ItemHeight = 28
+        SpriteGridPos = 0,0
+        solid = 
+    }
+    // location_garden_goods_01_55
+    tile
+    {
+        xy = 7,6
+        BlocksPlacement = 
+        CustomName = wooden panels
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Stack of beech
+        IsMoveAble = 
+        ItemHeight = 28
+        SpriteGridPos = 1,0
+        solid = 
+    }
+    // location_garden_goods_01_56
+    tile
+    {
+        xy = 0,7
+        CustomName = Color Dashed Rock
+        IsLow = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_01_57
+    tile
+    {
+        xy = 1,7
+        CustomName = Color Dashed Rock
+        IsLow = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_01_58
+    tile
+    {
+        xy = 2,7
+        CustomName = Color Dashed Rock
+        IsLow = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_01_59
+    tile
+    {
+        xy = 3,7
+        CustomName = Color Dashed Rock
+        IsLow = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_01_60
+    tile
+    {
+        xy = 4,7
+        CustomName = Color Dashed Rock
+        IsLow = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_01_61
+    tile
+    {
+        xy = 5,7
+        CustomName = Color Dashed Rock
+        IsLow = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_01_62
+    tile
+    {
+        xy = 6,7
+        CustomName = Color Dashed Rock
+        IsLow = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_01_63
+    tile
+    {
+        xy = 7,7
+        CustomName = Color Dashed Rock
+        IsLow = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+}
+tileset
+{
+    file = location_garden_goods_02
+    size = 8,8
+    id = 7
+    // location_garden_goods_02_0
+    tile
+    {
+        xy = 0,0
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_1
+    tile
+    {
+        xy = 1,0
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_2
+    tile
+    {
+        xy = 2,0
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_3
+    tile
+    {
+        xy = 3,0
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_4
+    tile
+    {
+        xy = 4,0
+        BlocksPlacement = 
+        Bush = 
+        CustomName = flowers
+        Facing = E
+        GroupName = Tray of blue
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_5
+    tile
+    {
+        xy = 5,0
+        BlocksPlacement = 
+        Bush = 
+        Facing = W
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_6
+    tile
+    {
+        xy = 6,0
+        BlocksPlacement = 
+        Bush = 
+        CustomName = flowers
+        GroupName = Tray of pink
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_7
+    tile
+    {
+        xy = 7,0
+        BlocksPlacement = 
+        Bush = 
+        CustomName = flowers
+        GroupName = Tray of pink
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_8
+    tile
+    {
+        xy = 0,1
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_9
+    tile
+    {
+        xy = 1,1
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_10
+    tile
+    {
+        xy = 2,1
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_11
+    tile
+    {
+        xy = 3,1
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_12
+    tile
+    {
+        xy = 4,1
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_13
+    tile
+    {
+        xy = 5,1
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_14
+    tile
+    {
+        xy = 6,1
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_15
+    tile
+    {
+        xy = 7,1
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_16
+    tile
+    {
+        xy = 0,2
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_17
+    tile
+    {
+        xy = 1,2
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_18
+    tile
+    {
+        xy = 2,2
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_19
+    tile
+    {
+        xy = 3,2
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_20
+    tile
+    {
+        xy = 4,2
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_21
+    tile
+    {
+        xy = 5,2
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_22
+    tile
+    {
+        xy = 6,2
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_23
+    tile
+    {
+        xy = 7,2
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_24
+    tile
+    {
+        xy = 0,3
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_25
+    tile
+    {
+        xy = 1,3
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_26
+    tile
+    {
+        xy = 2,3
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_27
+    tile
+    {
+        xy = 3,3
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_28
+    tile
+    {
+        xy = 4,3
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_29
+    tile
+    {
+        xy = 5,3
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_30
+    tile
+    {
+        xy = 6,3
+        BlocksPlacement = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+    }
+    // location_garden_goods_02_32
+    tile
+    {
+        xy = 0,4
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_33
+    tile
+    {
+        xy = 1,4
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_34
+    tile
+    {
+        xy = 2,4
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_35
+    tile
+    {
+        xy = 3,4
+        BlocksPlacement = 
+        Bush = 
+        GroupName = Garden Object
+        IsLow = 
+        IsMoveAble = 
+        Movement = HedgeLow
+    }
+    // location_garden_goods_02_36
+    tile
+    {
+        xy = 4,4
+        CustomName = Soccer Ball
+        FloorOverlay = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_02_37
+    tile
+    {
+        xy = 5,4
+        CustomName = Basketball
+        FloorOverlay = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_02_38
+    tile
+    {
+        xy = 6,4
+        BlocksPlacement = 
+        CustomName = Utility Pedestal
+        HitByCar = 
+        IsLow = 
+        StopCar = 
+        solidtrans = 
+    }
+    // location_garden_goods_02_39
+    tile
+    {
+        xy = 7,4
+        BlocksPlacement = 
+        CustomName = Utility Pedestal
+        HitByCar = 
+        IsLow = 
+        StopCar = 
+        solidtrans = 
+    }
+    // location_garden_goods_02_40
+    tile
+    {
+        xy = 0,5
+        CustomName = Green Hose
+        FloorOverlay = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_02_41
+    tile
+    {
+        xy = 1,5
+        CustomName = Green Hose
+        FloorOverlay = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_02_42
+    tile
+    {
+        xy = 2,5
+        CustomName = Black Hose
+        FloorOverlay = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_02_43
+    tile
+    {
+        xy = 3,5
+        CustomName = Black Hose
+        FloorOverlay = 
+        IsMoveAble = 
+        MoveType = FloorTile
+    }
+    // location_garden_goods_02_44
+    tile
+    {
+        xy = 4,5
+        CustomName = Scrap Metal
+        Facing = E
+        GroupName = Grey
+        IsLow = 
+        IsMoveAble = 
+    }
+    // location_garden_goods_02_45
+    tile
+    {
+        xy = 5,5
+        CustomName = Scrap Metal
+        Facing = S
+        GroupName = Grey
+        IsLow = 
+        IsMoveAble = 
+    }
+    // location_garden_goods_02_46
+    tile
+    {
+        xy = 6,5
+        CustomName = Scrap Metal
+        Facing = E
+        GroupName = Maroon
+        IsLow = 
+        IsMoveAble = 
+    }
+    // location_garden_goods_02_47
+    tile
+    {
+        xy = 7,5
+        CustomName = Scrap Metal
+        Facing = S
+        GroupName = Maroon
+        IsLow = 
+        IsMoveAble = 
+    }
+    // location_garden_goods_02_48
+    tile
+    {
+        xy = 0,6
+        CustomName = Scrap
+        IsLow = 
+        IsMoveAble = 
+        MoveType = Vegitation
+    }
+    // location_garden_goods_02_49
+    tile
+    {
+        xy = 1,6
+        CustomName = Scrap
+        IsLow = 
+        IsMoveAble = 
+        MoveType = Vegitation
+    }
+    // location_garden_goods_02_50
+    tile
+    {
+        xy = 2,6
+        CustomName = Scrap
+        IsLow = 
+        IsMoveAble = 
+        MoveType = Vegitation
+    }
+    // location_garden_goods_02_51
+    tile
+    {
+        xy = 3,6
+        CustomName = Scrap
+        IsLow = 
+        IsMoveAble = 
+        MoveType = Vegitation
+    }
+    // location_garden_goods_02_52
+    tile
+    {
+        xy = 4,6
+        CustomName = Scrap
+        IsLow = 
+        IsMoveAble = 
+        MoveType = Vegitation
+    }
+    // location_garden_goods_02_54
+    tile
+    {
+        xy = 6,6
+        BlocksPlacement = 
+        CustomName = Utility Pedestal
+        HitByCar = 
+        IsLow = 
+        StopCar = 
+        solidtrans = 
+    }
+    // location_garden_goods_02_55
+    tile
+    {
+        xy = 7,6
+        BlocksPlacement = 
+        CustomName = Utility Pedestal
+        HitByCar = 
+        IsLow = 
+        StopCar = 
+        solidtrans = 
+    }
+    // location_garden_goods_02_56
+    tile
+    {
+        xy = 0,7
+        BlocksPlacement = 
+        CustomName = Transformer
+        HitByCar = 
+        IsLow = 
+        StopCar = 
+        solidtrans = 
+    }
+    // location_garden_goods_02_57
+    tile
+    {
+        xy = 1,7
+        BlocksPlacement = 
+        CustomName = Transformer
+        HitByCar = 
+        IsLow = 
+        StopCar = 
+        solidtrans = 
+    }
+    // location_garden_goods_02_58
+    tile
+    {
+        xy = 2,7
+        BlocksPlacement = 
+        CustomName = Transformer
+        HitByCar = 
+        IsLow = 
+        StopCar = 
+        solidtrans = 
+    }
+    // location_garden_goods_02_59
+    tile
+    {
+        xy = 3,7
+        BlocksPlacement = 
+        CustomName = Transformer
+        HitByCar = 
+        IsLow = 
+        StopCar = 
+        solidtrans = 
+    }
+    // location_garden_goods_02_60
+    tile
+    {
+        xy = 4,7
+        CustomName = Sign
+        Facing = E
+        GroupName = Security Alert
+        IsLow = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedW = 
+    }
+    // location_garden_goods_02_61
+    tile
+    {
+        xy = 5,7
+        CustomName = Sign
+        Facing = S
+        GroupName = Security Alert
+        IsLow = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedN = 
+    }
+    // location_garden_goods_02_62
+    tile
+    {
+        xy = 6,7
+        CustomName = Sign
+        Facing = E
+        GroupName = Beware of Dog
+        IsLow = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedW = 
+    }
+    // location_garden_goods_02_63
+    tile
+    {
+        xy = 7,7
+        CustomName = Sign
+        Facing = S
+        GroupName = Beware of Dog
+        IsLow = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedN = 
+    }
+}
+tileset
+{
+    file = location_gas_paperco_01
+    size = 8,8
+    id = 5
+    // location_gas_paperco_01_5
+    tile
+    {
+        xy = 5,0
+        BlocksPlacement = 
+        CustomName = Stack of palettes
+        IsMoveAble = 
+        ItemHeight = 44
+        solid = 
+    }
+    // location_gas_paperco_01_6
+    tile
+    {
+        xy = 6,0
+        BlocksPlacement = 
+        CustomName = Stack of palettes
+        IsMoveAble = 
+        ItemHeight = 26
+        solid = 
+    }
+    // location_gas_paperco_01_7
+    tile
+    {
+        xy = 7,0
+        BlocksPlacement = 
+        CustomName = Stack of palettes
+        IsMoveAble = 
+        ItemHeight = 70
+        solid = 
+    }
+    // location_gas_paperco_01_8
+    tile
+    {
+        xy = 0,1
+        BlocksPlacement = 
+        CustomName = Gas Dispenser
+        ForceSingleItem = 
+        GroupName = Paper Co.
+        HitByCar = 
+        IsLow = 
+        ItemHeight = 65
+        StopCar = 
+        fuelAmount = 120
+        solid = 
+    }
+    // location_gas_paperco_01_9
+    tile
+    {
+        xy = 1,1
+        BlocksPlacement = 
+        CustomName = Gas Dispenser
+        ForceSingleItem = 
+        GroupName = Paper Co.
+        HitByCar = 
+        IsLow = 
+        ItemHeight = 65
+        StopCar = 
+        fuelAmount = 120
+        solid = 
+    }
+    // location_gas_paperco_01_10
+    tile
+    {
+        xy = 2,1
+        BlocksPlacement = 
+        CustomName = Covered Table
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 34
+        solidtrans = 
+    }
+    // location_gas_paperco_01_11
+    tile
+    {
+        xy = 3,1
+        BlocksPlacement = 
+        CustomName = Tristan's Tools Blue Barrel
+        IsMoveAble = 
+        ItemHeight = 31
+        solidtrans = 
+    }
+    // location_gas_paperco_01_12
+    tile
+    {
+        xy = 4,1
+        BlocksPlacement = 
+        CustomName = Tristan's Tools Blue Barrel
+        IsMoveAble = 
+        ItemHeight = 31
+        solidtrans = 
+    }
+    // location_gas_paperco_01_13
+    tile
+    {
+        xy = 5,1
+        BlocksPlacement = 
+        CustomName = Stack of palettes
+        IsMoveAble = 
+        ItemHeight = 18
+        solid = 
+    }
+    // location_gas_paperco_01_14
+    tile
+    {
+        xy = 6,1
+        BlocksPlacement = 
+        CustomName = Stack of palettes
+        IsMoveAble = 
+        ItemHeight = 31
+        solid = 
+    }
+    // location_gas_paperco_01_15
+    tile
+    {
+        xy = 7,1
+        BlocksPlacement = 
+        CustomName = Stack of palettes
+        IsMoveAble = 
+        ItemHeight = 90
+        solidtrans = 
+    }
+    // location_gas_paperco_01_24
+    tile
+    {
+        xy = 0,3
+        BlocksPlacement = 
+        ContainerCapacity = 25
+        ContainerPosition = Low
+        CustomName = Box
+        Facing = S
+        GroupName = Tristan's Tool
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 30
+        container = toolcabinet
+        solid = 
+    }
+    // location_gas_paperco_01_25
+    tile
+    {
+        xy = 1,3
+        BlocksPlacement = 
+        ContainerCapacity = 25
+        ContainerPosition = Low
+        CustomName = Box
+        Facing = E
+        GroupName = Tristan's Tool
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 30
+        container = toolcabinet
+        solid = 
+    }
+    // location_gas_paperco_01_26
+    tile
+    {
+        xy = 2,3
+        BlocksPlacement = 
+        ContainerCapacity = 25
+        ContainerPosition = Low
+        CustomName = Box
+        Facing = N
+        GroupName = Tristan's Tool
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 30
+        container = toolcabinet
+        solid = 
+    }
+    // location_gas_paperco_01_27
+    tile
+    {
+        xy = 3,3
+        BlocksPlacement = 
+        ContainerCapacity = 25
+        ContainerPosition = Low
+        CustomName = Box
+        Facing = W
+        GroupName = Tristan's Tool
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 30
+        container = toolcabinet
+        solid = 
+    }
+    // location_gas_paperco_01_28
+    tile
+    {
+        xy = 4,3
+        BlocksPlacement = 
+        ContainerCapacity = 50
+        CustomName = Metal Cabinet
+        Facing = S
+        GroupName = Tristan's Tools
+        IsMoveAble = 
+        ItemHeight = 70
+        container = metal_shelves
+        solid = 
+    }
+    // location_gas_paperco_01_29
+    tile
+    {
+        xy = 5,3
+        BlocksPlacement = 
+        ContainerCapacity = 50
+        CustomName = Metal Cabinet
+        Facing = E
+        GroupName = Tristan's Tools
+        IsMoveAble = 
+        ItemHeight = 70
+        container = metal_shelves
+        solid = 
+    }
+    // location_gas_paperco_01_30
+    tile
+    {
+        xy = 6,3
+        BlocksPlacement = 
+        ContainerCapacity = 50
+        CustomName = Metal Cabinet
+        Facing = N
+        GroupName = Tristan's Tools
+        IsMoveAble = 
+        ItemHeight = 70
+        container = metal_shelves
+        solid = 
+    }
+    // location_gas_paperco_01_31
+    tile
+    {
+        xy = 7,3
+        BlocksPlacement = 
+        ContainerCapacity = 50
+        CustomName = Metal Cabinet
+        Facing = W
+        GroupName = Tristan's Tools
+        IsMoveAble = 
+        ItemHeight = 70
+        container = metal_shelves
+        solid = 
+    }
+    // location_gas_paperco_01_32
+    tile
+    {
+        xy = 0,4
+        BlocksPlacement = 
+        GroupName = Tires
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 36
+        solidtrans = 
+    }
+    // location_gas_paperco_01_33
+    tile
+    {
+        xy = 1,4
+        BlocksPlacement = 
+        GroupName = Tires
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 36
+        solidtrans = 
+    }
+    // location_gas_paperco_01_34
+    tile
+    {
+        xy = 2,4
+        BlocksPlacement = 
+        GroupName = Tires
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 36
+        solidtrans = 
+    }
+    // location_gas_paperco_01_35
+    tile
+    {
+        xy = 3,4
+        BlocksPlacement = 
+        GroupName = Tires
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 25
+        solidtrans = 
+    }
+    // location_gas_paperco_01_36
+    tile
+    {
+        xy = 4,4
+        BlocksPlacement = 
+        GroupName = Tires
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 25
+        solidtrans = 
+    }
+    // location_gas_paperco_01_37
+    tile
+    {
+        xy = 5,4
+        BlocksPlacement = 
+        GroupName = Tires
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 25
+        solidtrans = 
+    }
+    // location_gas_paperco_01_38
+    tile
+    {
+        xy = 6,4
+        CustomName = Toppled Furniture
+        IsMoveAble = 
+    }
+    // location_gas_paperco_01_39
+    tile
+    {
+        xy = 7,4
+        CustomName = Destroyed Furniture
+        IsMoveAble = 
+    }
+    // location_gas_paperco_01_40
+    tile
+    {
+        xy = 0,5
+        BlocksPlacement = 
+        CustomName = ATM
+        Facing = E
+        GroupName = Dodgey Custom
+        IsMoveAble = 
+        ItemHeight = 64
+        solidtrans = 
+    }
+    // location_gas_paperco_01_41
+    tile
+    {
+        xy = 1,5
+        BlocksPlacement = 
+        CustomName = ATM
+        Facing = S
+        GroupName = Dodgey Custom
+        IsMoveAble = 
+        ItemHeight = 64
+        solidtrans = 
+    }
+    // location_gas_paperco_01_42
+    tile
+    {
+        xy = 2,5
+        BlocksPlacement = 
+        ContainerCapacity = 25
+        CustomName = Safe
+        Facing = E
+        GroupName = Tristan's Secure
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 43
+        container = toolcabinet
+        solid = 
+    }
+    // location_gas_paperco_01_43
+    tile
+    {
+        xy = 3,5
+        BlocksPlacement = 
+        ContainerCapacity = 25
+        CustomName = Safe
+        Facing = S
+        GroupName = Tristan's Secure
+        IsLow = 
+        IsMoveAble = 
+        ItemHeight = 43
+        container = toolcabinet
+        solid = 
+    }
+    // location_gas_paperco_01_44
+    tile
+    {
+        xy = 4,5
+        BlocksPlacement = 
+        CanScrap = 
+        CustomName = Road Sign
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Grapeseed Elementary
+        HitByCar = 
+        IsMoveAble = 
+        Material = MetalBars
+        Material2 = MetalPlates
+        Material3 = MetalScrap
+        MoveType = WallObject
+        PhysicsShape = WallN
+        PickUpTool = Shovel
+        PickUpWeight = 200
+        PlaceTool = Shovel
+        SpriteGridPos = 0,0
+        StopCar = 
+    }
+    // location_gas_paperco_01_45
+    tile
+    {
+        xy = 5,5
+        BlocksPlacement = 
+        CanScrap = 
+        CustomName = Road Sign
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Grapeseed Elementary
+        HitByCar = 
+        IsMoveAble = 
+        Material = MetalBars
+        Material2 = MetalPlates
+        Material3 = MetalScrap
+        MoveType = WallObject
+        PhysicsShape = WallN
+        PickUpTool = Shovel
+        PickUpWeight = 200
+        PlaceTool = Shovel
+        SpriteGridPos = 1,0
+        StopCar = 
+    }
+    // location_gas_paperco_01_46
+    tile
+    {
+        xy = 6,5
+        BlocksPlacement = 
+        CustomName = Games Console
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_gas_paperco_01_47
+    tile
+    {
+        xy = 7,5
+        CustomName = Toppled Furniture
+        IsMoveAble = 
+    }
+    // location_gas_paperco_01_48
+    tile
+    {
+        xy = 0,6
+        CustomName = Nasko Arcade Sign
+        Facing = S
+        ForceSingleItem = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedW = 
+    }
+    // location_gas_paperco_01_49
+    tile
+    {
+        xy = 1,6
+        CustomName = Nasko Arcade Sign
+        Facing = S
+        ForceSingleItem = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 1,0
+        attachedW = 
+    }
+    // location_gas_paperco_01_50
+    tile
+    {
+        xy = 2,6
+        CustomName = Nasko Arcade Sign
+        Facing = S
+        ForceSingleItem = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 2,0
+        attachedW = 
+    }
+    // location_gas_paperco_01_56
+    tile
+    {
+        xy = 0,7
+        BlocksPlacement = 
+        CustomName = Clutter
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_gas_paperco_01_57
+    tile
+    {
+        xy = 1,7
+        BlocksPlacement = 
+        CustomName = Clutter
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_gas_paperco_01_58
+    tile
+    {
+        xy = 2,7
+        BlocksPlacement = 
+        CustomName = Clutter
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_gas_paperco_01_59
+    tile
+    {
+        xy = 3,7
+        BlocksPlacement = 
+        CustomName = Clutter
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_gas_paperco_01_60
+    tile
+    {
+        xy = 4,7
+        BlocksPlacement = 
+        CustomName = Clutter
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        ItemHeight = 10
+        Surface = 34
+    }
+    // location_gas_paperco_01_61
+    tile
+    {
+        xy = 5,7
+        BlocksPlacement = 
+        CanScrap = 
+        CustomName = Road Sign
+        Facing = N
+        ForceSingleItem = 
+        GroupName = B.Myers
+        HitByCar = 
+        IsMoveAble = 
+        Material = MetalBars
+        Material2 = MetalPlates
+        Material3 = MetalScrap
+        MoveType = WallObject
+        PhysicsShape = WallW
+        PickUpTool = Shovel
+        PickUpWeight = 200
+        PlaceTool = Shovel
+        SpriteGridPos = 0,1
+        StopCar = 
+    }
+    // location_gas_paperco_01_62
+    tile
+    {
+        xy = 6,7
+        BlocksPlacement = 
+        CanScrap = 
+        CustomName = Road Sign
+        Facing = N
+        ForceSingleItem = 
+        GroupName = B.Myers
+        HitByCar = 
+        IsMoveAble = 
+        Material = MetalBars
+        Material2 = MetalPlates
+        Material3 = MetalScrap
+        MoveType = WallObject
+        PhysicsShape = WallW
+        PickUpTool = Shovel
+        PickUpWeight = 200
+        PlaceTool = Shovel
+        SpriteGridPos = 0,0
+        StopCar = 
+    }
+}
+tileset
+{
+    file = location_restaurant_cheese_01
+    size = 8,8
+    id = 2
+    // location_restaurant_cheese_01_16
+    tile
+    {
+        xy = 0,2
+        CustomName = Burger Restaurant Carpet Piece
+        IsMoveAble = 
+        MoveType = FloorTile
+        solidfloor = 
+    }
+    // location_restaurant_cheese_01_17
+    tile
+    {
+        xy = 1,2
+        CustomName = Burger Restaurant Carpet Piece
+        IsMoveAble = 
+        MoveType = FloorTile
+        solidfloor = 
+    }
+    // location_restaurant_cheese_01_18
+    tile
+    {
+        xy = 2,2
+        CustomName = Burger Restaurant Carpet Piece
+        IsMoveAble = 
+        MoveType = FloorTile
+        solidfloor = 
+    }
+    // location_restaurant_cheese_01_19
+    tile
+    {
+        xy = 3,2
+        CustomName = Burger Restaurant Carpet Piece
+        IsMoveAble = 
+        MoveType = FloorTile
+        solidfloor = 
+    }
+    // location_restaurant_cheese_01_20
+    tile
+    {
+        xy = 4,2
+        CustomName = Burger Restaurant Carpet Piece
+        IsMoveAble = 
+        MoveType = FloorTile
+        solidfloor = 
+    }
+    // location_restaurant_cheese_01_21
+    tile
+    {
+        xy = 5,2
+        CustomName = Burger Restaurant Carpet Piece
+        IsMoveAble = 
+        MoveType = FloorTile
+        solidfloor = 
+    }
+    // location_restaurant_cheese_01_22
+    tile
+    {
+        xy = 6,2
+        CustomName = Burger Restaurant Carpet Piece
+        IsMoveAble = 
+        MoveType = FloorTile
+        solidfloor = 
+    }
+    // location_restaurant_cheese_01_23
+    tile
+    {
+        xy = 7,2
+        CustomName = Burger Restaurant Carpet Piece
+        IsMoveAble = 
+        MoveType = FloorTile
+        solidfloor = 
+    }
+    // location_restaurant_cheese_01_24
+    tile
+    {
+        xy = 0,3
+        CustomName = - Happy Meals!
+        Facing = E
+        GroupName = Cheese Advert #2
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        WallOverlay = 
+        attachedW = 
+    }
+    // location_restaurant_cheese_01_25
+    tile
+    {
+        xy = 1,3
+        CustomName = - Happy Meals!
+        Facing = W
+        GroupName = Cheese Advert #2
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        WallOverlay = 
+        attachedN = 
+    }
+    // location_restaurant_cheese_01_26
+    tile
+    {
+        xy = 2,3
+        CustomName = - No Refunds!
+        Facing = E
+        GroupName = Cheese Advert
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        WallOverlay = 
+        attachedW = 
+    }
+    // location_restaurant_cheese_01_27
+    tile
+    {
+        xy = 3,3
+        CustomName = - No Refunds!
+        Facing = S
+        GroupName = Cheese Advert
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        WallOverlay = 
+        attachedN = 
+    }
+    // location_restaurant_cheese_01_32
+    tile
+    {
+        xy = 0,4
+        CustomName = Menu
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Royale With Cheese
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,2
+        attachedW = 
+    }
+    // location_restaurant_cheese_01_33
+    tile
+    {
+        xy = 1,4
+        CustomName = Menu
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Royale With Cheese
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,1
+        attachedW = 
+    }
+    // location_restaurant_cheese_01_34
+    tile
+    {
+        xy = 2,4
+        CustomName = Menu
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Royale With Cheese
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        SpriteGridPos = 0,0
+        attachedW = 
+    }
+}
+tileset
+{
+    file = misc_street_details_01
+    size = 8,8
+    id = 6
+    // misc_street_details_01_0
+    tile
+    {
+        xy = 0,0
+        CustomName = Road Sign
+        Facing = S
+        GroupName = One Way - Forward
+        IsMoveAble = 
+    }
+    // misc_street_details_01_1
+    tile
+    {
+        xy = 1,0
+        CustomName = Road Sign
+        Facing = E
+        GroupName = One Way - Forward
+        IsMoveAble = 
+    }
+    // misc_street_details_01_2
+    tile
+    {
+        xy = 2,0
+        FloorOverlay = 
+        MoveType = FloorTile
+    }
+    // misc_street_details_01_3
+    tile
+    {
+        xy = 3,0
+        BlocksPlacement = 
+        HitByCar = 
+        IsLow = 
+        ItemHeight = 27
+        StopCar = 
+    }
+    // misc_street_details_01_4
+    tile
+    {
+        xy = 4,0
+        BlocksPlacement = 
+        HitByCar = 
+        IsLow = 
+        ItemHeight = 27
+        StopCar = 
+    }
+    // misc_street_details_01_5
+    tile
+    {
+        xy = 5,0
+        BlocksPlacement = 
+        HitByCar = 
+        IsLow = 
+        ItemHeight = 27
+        StopCar = 
+    }
+    // misc_street_details_01_6
+    tile
+    {
+        xy = 6,0
+        BlocksPlacement = 
+        HitByCar = 
+        IsLow = 
+        ItemHeight = 27
+        StopCar = 
+    }
+    // misc_street_details_01_7
+    tile
+    {
+        xy = 7,0
+        BlocksPlacement = 
+        HitByCar = 
+        IsLow = 
+        ItemHeight = 27
+        StopCar = 
+    }
+    // misc_street_details_01_8
+    tile
+    {
+        xy = 0,1
+        CustomName = Road Sign
+        Facing = S
+        GroupName = One Way
+        IsMoveAble = 
+    }
+    // misc_street_details_01_9
+    tile
+    {
+        xy = 1,1
+        CustomName = Road Sign
+        Facing = E
+        GroupName = One Way
+        IsMoveAble = 
+    }
+    // misc_street_details_01_10
+    tile
+    {
+        xy = 2,1
+        CustomName = Road Sign
+        Facing = E
+        GroupName = Deliveries
+        IsMoveAble = 
+    }
+    // misc_street_details_01_11
+    tile
+    {
+        xy = 3,1
+        CustomName = Road Sign
+        Facing = E
+        GroupName = Deliveries
+        IsMoveAble = 
+    }
+    // misc_street_details_01_12
+    tile
+    {
+        xy = 4,1
+        CustomName = Road Sign
+        Facing = E
+        GroupName = Notice
+        IsMoveAble = 
+    }
+    // misc_street_details_01_13
+    tile
+    {
+        xy = 5,1
+        CustomName = Road Sign
+        Facing = S
+        GroupName = Notice
+        IsMoveAble = 
+    }
+    // misc_street_details_01_14
+    tile
+    {
+        xy = 6,1
+        CustomName = Yellow Sign
+        Facing = E
+        GroupName = No Trespassing
+        IsLow = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedW = 
+    }
+    // misc_street_details_01_15
+    tile
+    {
+        xy = 7,1
+        CustomName = Yellow Sign
+        Facing = S
+        GroupName = No Trespassing
+        IsLow = 
+        IsMoveAble = 
+        MoveType = WallObject
+        attachedN = 
+    }
+    // misc_street_details_01_16
+    tile
+    {
+        xy = 0,2
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_17
+    tile
+    {
+        xy = 1,2
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_18
+    tile
+    {
+        xy = 2,2
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_19
+    tile
+    {
+        xy = 3,2
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_20
+    tile
+    {
+        xy = 4,2
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_21
+    tile
+    {
+        xy = 5,2
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_22
+    tile
+    {
+        xy = 6,2
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_23
+    tile
+    {
+        xy = 7,2
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_24
+    tile
+    {
+        xy = 0,3
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_25
+    tile
+    {
+        xy = 1,3
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_26
+    tile
+    {
+        xy = 2,3
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_27
+    tile
+    {
+        xy = 3,3
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_28
+    tile
+    {
+        xy = 4,3
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_29
+    tile
+    {
+        xy = 5,3
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_30
+    tile
+    {
+        xy = 6,3
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_31
+    tile
+    {
+        xy = 7,3
+        ContainerCapacity = 5
+        HitByCar = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+        MoveType = Vegitation
+        container = postbox
+    }
+    // misc_street_details_01_32
+    tile
+    {
+        xy = 0,4
+        CustomName = Road Sign
+        Facing = S
+        GroupName = No Outlet
+        IsMoveAble = 
+    }
+    // misc_street_details_01_33
+    tile
+    {
+        xy = 1,4
+        CustomName = Stone Pillar
+        HitByCar = 
+        IsMoveAble = 
+        StopCar = 
+        solid = 
+    }
+    // misc_street_details_01_34
+    tile
+    {
+        xy = 2,4
+        CustomName = Road Sign
+        Facing = S
+        GroupName = School Ahead
+        IsMoveAble = 
+    }
+    // misc_street_details_01_35
+    tile
+    {
+        xy = 3,4
+        CustomName = Road Sign
+        GroupName = School Ahead
+        IsMoveAble = 
+    }
+    // misc_street_details_01_36
+    tile
+    {
+        xy = 4,4
+        CustomName = Road Sign
+        Facing = S
+        GroupName = Staff Parking
+        IsMoveAble = 
+    }
+    // misc_street_details_01_37
+    tile
+    {
+        xy = 5,4
+        CustomName = Road Sign
+        GroupName = Staff Parking
+        IsMoveAble = 
+    }
+    // misc_street_details_01_38
+    tile
+    {
+        xy = 6,4
+        CustomName = Advert Board
+        GroupName = Road Side
+        IsMoveAble = 
+    }
+    // misc_street_details_01_39
+    tile
+    {
+        xy = 7,4
+        CustomName = Road Sign
+        GroupName = No Outlet
+        IsMoveAble = 
+    }
+    // misc_street_details_01_40
+    tile
+    {
+        xy = 0,5
+        ContainerCapacity = 20
+        Facing = E
+        IsMoveAble = 
+        IsTrashCan = 
+        container = dumpster
+        solid = 
+    }
+    // misc_street_details_01_41
+    tile
+    {
+        xy = 1,5
+        ContainerCapacity = 20
+        Facing = S
+        IsMoveAble = 
+        IsTrashCan = 
+        container = dumpster
+        solid = 
+    }
+    // misc_street_details_01_42
+    tile
+    {
+        xy = 2,5
+        ContainerCapacity = 20
+        CustomName = Container
+        Facing = E
+        GroupName = Green Trash
+        IsMoveAble = 
+        IsTrashCan = 
+        container = dumpster
+        solid = 
+    }
+    // misc_street_details_01_43
+    tile
+    {
+        xy = 3,5
+        ContainerCapacity = 20
+        CustomName = Container
+        Facing = S
+        GroupName = Green Trash
+        IsMoveAble = 
+        IsTrashCan = 
+        container = dumpster
+        solid = 
+    }
+    // misc_street_details_01_44
+    tile
+    {
+        xy = 4,5
+        ContainerCapacity = 20
+        CustomName = Container
+        Facing = E
+        GroupName = Yellow Trash
+        IsMoveAble = 
+        IsTrashCan = 
+        SpriteGridPos = 0,1
+        container = dumpster
+        solid = 
+    }
+    // misc_street_details_01_45
+    tile
+    {
+        xy = 5,5
+        ContainerCapacity = 20
+        CustomName = Container
+        Facing = E
+        GroupName = Yellow Trash
+        IsMoveAble = 
+        IsTrashCan = 
+        container = dumpster
+        solid = 
+    }
+    // misc_street_details_01_46
+    tile
+    {
+        xy = 6,5
+        ContainerCapacity = 20
+        CustomName = Container
+        Facing = S
+        GroupName = Yellow Trash
+        IsMoveAble = 
+        IsTrashCan = 
+        container = dumpster
+        solid = 
+    }
+    // misc_street_details_01_47
+    tile
+    {
+        xy = 7,5
+        ContainerCapacity = 20
+        CustomName = Container
+        Facing = S
+        GroupName = Yellow Trash
+        IsMoveAble = 
+        IsTrashCan = 
+        SpriteGridPos = 1,0
+        container = dumpster
+        solid = 
+    }
+    // misc_street_details_01_48
+    tile
+    {
+        xy = 0,6
+        BlocksPlacement = 
+        CustomName = Street Advert
+        HitByCar = 
+        IsLow = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+    }
+    // misc_street_details_01_49
+    tile
+    {
+        xy = 1,6
+        BlocksPlacement = 
+        CustomName = Street Advert
+        HitByCar = 
+        IsLow = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+    }
+    // misc_street_details_01_50
+    tile
+    {
+        xy = 2,6
+        BlocksPlacement = 
+        CustomName = Street Advert
+        HitByCar = 
+        IsLow = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+    }
+    // misc_street_details_01_51
+    tile
+    {
+        xy = 3,6
+        BlocksPlacement = 
+        CustomName = Street Advert
+        HitByCar = 
+        IsLow = 
+        IsMoveAble = 
+        MinimumCarSpeedDmg = 15
+    }
+    // misc_street_details_01_52
+    tile
+    {
+        xy = 4,6
+        ContainerCapacity = 10
+        CustomName = Full Trash Container
+        IsMoveAble = 
+        IsTrashCan = 
+        container = bin
+        solid = 
+    }
+    // misc_street_details_01_53
+    tile
+    {
+        xy = 5,6
+        ContainerCapacity = 10
+        CustomName = Full Trash Container
+        IsMoveAble = 
+        IsTrashCan = 
+        container = bin
+        solid = 
+    }
+    // misc_street_details_01_54
+    tile
+    {
+        xy = 6,6
+        FloorOverlay = 
+        MoveType = FloorTile
+    }
+    // misc_street_details_01_56
+    tile
+    {
+        xy = 0,7
+        BlocksPlacement = 
+        CustomName = Used Tire
+        IsLow = 
+        IsMoveAble = 
+    }
+    // misc_street_details_01_57
+    tile
+    {
+        xy = 1,7
+        FloorOverlay = 
+    }
+    // misc_street_details_01_58
+    tile
+    {
+        xy = 2,7
+        FloorOverlay = 
+    }
+    // misc_street_details_01_59
+    tile
+    {
+        xy = 3,7
+        FloorOverlay = 
+    }
+    // misc_street_details_01_60
+    tile
+    {
+        xy = 4,7
+        FloorOverlay = 
+    }
+}
