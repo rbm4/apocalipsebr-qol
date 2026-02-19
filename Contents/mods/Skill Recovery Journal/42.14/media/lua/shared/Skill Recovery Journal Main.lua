@@ -5,6 +5,21 @@ SRJ.xpPatched = false
 SRJ.xpHandler = require "Skill Recovery Journal XP"
 SRJ.modDataHandler = require "Skill Recovery Journal ModData"
 
+--- Check if an item is the full (100%) recovery journal
+---@param item InventoryItem
+---@return boolean
+function SRJ.isFullRecoveryJournal(item)
+	return item and item:getType() == "SkillRecoveryBoundJournalFull"
+end
+
+--- Check if an item is any type of Skill Recovery Journal
+---@param item InventoryItem
+---@return boolean
+function SRJ.isSkillRecoveryJournal(item)
+	local t = item and item:getType()
+	return t == "SkillRecoveryBoundJournal" or t == "SkillRecoveryBoundJournalFull"
+end
+
 
 SRJ.maxXPDifferential = {}
 function SRJ.getMaxXPDifferential(perk)
@@ -104,7 +119,12 @@ function SRJ.correctSandBoxOptions(ID)
 end
 
 
-function SRJ.bSkillValid(perk)
+function SRJ.bSkillValid(perk, isFullJournal)
+	-- Full recovery journal: always valid, always 100%
+	if isFullJournal then
+		return true, 1.0
+	end
+
 	local ID = perk and perk:isPassiv() and "Passive" or perk:getParent():getId()
 
 	local correction = SRJ.correctSandBoxOptions("Recover"..ID.."Skills")
@@ -123,7 +143,7 @@ end
 
 
 -- returns all gained skills as per config or false if no valid skill xp gained
-function SRJ.calculateGainedSkill(player, perk, passiveSkillsInit, startingLevels, deductibleXP)
+function SRJ.calculateGainedSkill(player, perk, passiveSkillsInit, startingLevels, deductibleXP, isFullJournal)
 
 	if not passiveSkillsInit then
 		passiveSkillsInit = SRJ.modDataHandler.getPassiveLevels(player)
@@ -155,7 +175,7 @@ function SRJ.calculateGainedSkill(player, perk, passiveSkillsInit, startingLevel
 			local deductedXP = (SandboxVars.SkillRecoveryJournal.TranscribeTVXP==false) and deductibleXP[perkID] or 0
 			--if getDebug() then print(" -deductedXP:",deductedXP) end
 
-			local sandboxOptionRecover, recoveryPercentage = SRJ.bSkillValid(perk)
+			local sandboxOptionRecover, recoveryPercentage = SRJ.bSkillValid(perk, isFullJournal)
 
 			local recoverableXP = sandboxOptionRecover and perkXP-(passiveFixXP or startingPerkXP)-deductedXP or 0
 			--if getDebug() then print(" -recoverableXP-deductions: ",recoverableXP) end
@@ -179,7 +199,7 @@ end
 
 
 -- returns all gained skills as per config or nil if no valid skill xp gained
-function SRJ.calculateAllGainedSkills(player)
+function SRJ.calculateAllGainedSkills(player, isFullJournal)
 	local gainedXP
 
 	local passiveSkillsInit = SRJ.modDataHandler.getPassiveLevels(player)
@@ -189,7 +209,7 @@ function SRJ.calculateAllGainedSkills(player)
 	for i=1, Perks.getMaxIndex()-1 do
 		---@type PerkFactory.Perk
 		local perk = Perks.fromIndex(i)
-		local gained = SRJ.calculateGainedSkill(player, perk, passiveSkillsInit, startingLevels, deductibleXP)
+		local gained = SRJ.calculateGainedSkill(player, perk, passiveSkillsInit, startingLevels, deductibleXP, isFullJournal)
 		if gained then
 			--if getDebug() then print("calculateAllGainedSkills gained " .. gained) end
 			gainedXP = gainedXP or {}

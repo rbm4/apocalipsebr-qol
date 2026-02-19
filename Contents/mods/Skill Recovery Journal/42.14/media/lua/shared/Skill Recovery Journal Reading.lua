@@ -183,7 +183,7 @@ function ReadSkillRecoveryJournal:update()
 				for skill,xp in pairs(XpStoredInJournal) do
 					local perk = Perks[skill]
 					if perk then
-						local valid, percent = SRJ.bSkillValid(perk)
+					local valid, percent = SRJ.bSkillValid(perk, self.isFullJournal)
 						if valid then
 							validSkills[skill] = true
 							if skill=="NONE" or skill=="MAX" then
@@ -244,9 +244,12 @@ function ReadSkillRecoveryJournal:update()
 								-- and in journal for decay
 								jmdUsedXP[skill] = (jmdUsedXP[skill] or 0)+perPerkXpRate
 
-								-- send add xp to server
-								local addedXP = SRJ.xpHandler.reBoostXP(player,Perks[skill],perPerkXpRate)
-								sendAddXp(player, Perks[skill], addedXP, true)
+                                -- request server to grant XP (42.14+ server-authoritative)
+                                local addedXP = SRJ.xpHandler.reBoostXP(player,Perks[skill],perPerkXpRate)
+                                sendClientCommand(player, "SkillRecoveryJournal", "addXp", {
+                                    perkID = skill,
+                                    amount = addedXP
+                                })
 
 								changesMade = true
 
@@ -355,8 +358,9 @@ function ReadSkillRecoveryJournal:new(character, item)
 	self.__index = self
 
 	o.character = character
+	o.isFullJournal = SRJ.isFullRecoveryJournal(item)
 	o.oldCharacterXP = 0
-	local charSkills = SRJ.calculateAllGainedSkills(character) or {}
+	local charSkills = SRJ.calculateAllGainedSkills(character, o.isFullJournal) or {}
 	for perkID, xp in pairs(charSkills) do
 		o.oldCharacterXP = o.oldCharacterXP + xp
 	end

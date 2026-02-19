@@ -1,24 +1,27 @@
-local SRJ = require "Skill Recovery Journal Main"
-local modDataCapture = require "Skill Recovery Journal ModData"
-
 require "TimedActions/ISBaseTimedAction"
+
+local SRJ = require "Skill Recovery Journal Main"
 
 ---@class WriteSkillRecoveryJournal : ISBaseTimedAction
 WriteSkillRecoveryJournal = ISBaseTimedAction:derive("WriteSkillRecoveryJournal")
 
 
 function WriteSkillRecoveryJournal:isValid()
+	if self.character:tooDarkToRead() then
+		HaloTextHelper.addBadText(self.character, getText("ContextMenu_TooDark"));
+		return false
+	end
 	local vehicle = self.character:getVehicle()
 	if vehicle and vehicle:isDriver(self.character) then return not vehicle:isEngineRunning() or vehicle:getSpeed2D() == 0 end
 	return self.character:getInventory():contains(self.item) and self.character:getInventory():contains(self.writingTool)
 end
 
-
 function WriteSkillRecoveryJournal:start()
 	self.action:setTime(-1)
 	self.item:setJobType(getText("ContextMenu_Write") ..' '.. self.item:getName())
-	self:setAnimVariable("PerformingAction", "TranscribeJournal")
-	--self:setActionAnim(CharacterActionAnims.Read)
+	--self:setAnimVariable("PerformingAction", "TranscribeJournal") -- is not animating
+	self:setAnimVariable("ReadType", "book")
+	self:setActionAnim(CharacterActionAnims.Read)
 	self:setOverrideHandModels(self.writingTool, self.item)
 	--self.character:setReading(true)
 	--self.character:reportEvent("EventRead")
@@ -31,7 +34,6 @@ function WriteSkillRecoveryJournal:forceStop()
 	--self.character:setReading(false)
 	self.item:setJobDelta(0.0)
 	if self.action then self.action:setLoopedAction(false) end
-	self.character:playSound("CloseBook")
 	local logText = ISLogSystem.getGenericLogText(self.character)
 	sendClientCommand(self.character, 'ISLogSystem', 'writeLog', {loggerName = "PerkLog", logText = logText.."[SRJ STOP WRITING] (forceStop)"})
 	ISBaseTimedAction.forceStop(self)
@@ -39,13 +41,30 @@ end
 
 
 function WriteSkillRecoveryJournal:stop()
+	--if getDebug() then print("WriteSkillRecoveryJournal stop with changes " .. tostring(self.changesWereMade)) end
+	self.character:playSound("CloseBook")
 	local logText = ISLogSystem.getGenericLogText(self.character)
 	sendClientCommand(self.character, 'ISLogSystem', 'writeLog', {loggerName = "PerkLog", logText = logText.."[SRJ STOP WRITING] (stop)"})
+
+	if self.changesWereMade then
+		-- send changed journal moddata to server
+		SRJ.modDataHandler.sendModDataToServer(self.character, self.item)
+	end
+
 	ISBaseTimedAction.stop(self)
 end
 
 
+function WriteSkillRecoveryJournal:serverStop()
+    --self.character:setReading(false);
+
+	--if getDebug() then print("WriteSkillRecoveryJournal serverStop") end
+	SRJ.modDataHandler.syncModDataFromClient(self.character, self.item)
+end
+
+-- run on client
 function WriteSkillRecoveryJournal:perform()
+	if getDebug() then print("WriteSkillRecoveryJournal perform") end
 	--self.character:setReading(false)
 	self.item:getContainer():setDrawDirty(true)
 	self.character:playSound("CloseBook")
@@ -54,24 +73,34 @@ function WriteSkillRecoveryJournal:perform()
 	ISBaseTimedAction.perform(self)
 end
 
+-- run on server - never called, but needed for serverStop
+function WriteSkillRecoveryJournal:complete()
+	if getDebug() then print("WriteSkillRecoveryJournal complete") end
+	return true
+end
+
+-- infinite Timed Action
+function WriteSkillRecoveryJournal:getDuration() 
+	return -1
+end
 
 function WriteSkillRecoveryJournal:update()
 
 	if not self.loopedAction then return end
 
-	self.writeTimer = (self.writeTimer or 0) - (getGameTime():getMultiplier() or 0)
+	self.writeTimer = (self.writeTimer or 0) + (getGameTime():getMultiplier() or 0)
 	self.haloTextDelay = self.haloTextDelay - (getGameTime():getMultiplier() or 0)
 
-	if self.writeTimer <= 0 then
+	--self.item:setJobDelta(0.0)
+	local updateInterval = 10
+	if self.writeTimer >= updateInterval then
 
-		self.writeTimer = 10
+		self.writeTimer = 0
 		self.changesMade = false
 
 		local changesBeingMade, changesBeingMadeIndex = {}, {}
 
-		local journalModData = self.item:getModData()
-		journalModData["SRJ"] = journalModData["SRJ"] or {}
-		local JMD = journalModData["SRJ"]
+		local JMD = SRJ.modDataHandler.getItemModData(self.item)
 		local journalID = JMD["ID"]
 		local pSteamID = self.character:getSteamID()
 		local pUsername = self.character:getUsername()
@@ -82,6 +111,7 @@ function WriteSkillRecoveryJournal:update()
 
 		local transcribeTimeMulti = SandboxVars.SkillRecoveryJournal.TranscribeSpeed or 1
 
+		-- write gained recipes
 		if bOwner and (#self.gainedRecipes > 0) then
 			self.recipeIntervals = self.recipeIntervals+1
 			self.changesMade = true
@@ -104,14 +134,11 @@ function WriteSkillRecoveryJournal:update()
 			end
 		end
 
+		-- write gained xp
 		local storedJournalXP = JMD["gainedXP"]
-		local readXp = SRJ.getReadXP(self.character)
+		local readXp = SRJ.modDataHandler.getReadXP(self.character)
 		local totalRecoverableXP = 1
 		local totalStoredXP = 1
-
-		---background fix for old XP------------( 1/3 )---------
-		local oldXp = journalModData.oldXP
-		--------------------------------------------------------
 
 		if bOwner and storedJournalXP and self.gainedSkills then
 			for perkID,xp in pairs(self.gainedSkills) do
@@ -141,17 +168,11 @@ function WriteSkillRecoveryJournal:update()
 								table.insert(changesBeingMade, skill_name)
 							end
 
-							---background fix for old XP---------------------( 2/3 )--------------------------------
-							if oldXp and oldXp[perkID] then
-								oldXp[perkID] = oldXp[perkID]-xpRate
-								if oldXp[perkID] <= 0 then oldXp[perkID] = nil end
-								---The work is done...
-							end
-							----------------------------------------------------------------------------------------
-
 							local resultingXp = math.min(xp, storedJournalXP[perkID]+xpRate)
 							--print("TESTING: "..perkID.." recoverable:"..xp.." gained:"..storedJournalXP[perkID].." +"..xpRate)
 							storedJournalXP[perkID] = resultingXp
+
+							-- store amount as already red in player data, so it cant be gained again
 							readXp[perkID] = math.max(resultingXp,(readXp[perkID] or 0))
 						end
 					end
@@ -160,14 +181,7 @@ function WriteSkillRecoveryJournal:update()
 			end
 		end
 
-		---background fix for old XP---------------( 3/3 )--------------
-		if oldXp then
-			local perksFound = false
-			for k,v in pairs(oldXp) do if k then perksFound = true end end
-			if not perksFound then journalModData.oldXP = nil end
-		end
-		----------------------------------------------------------------
-
+		-- store player kills
 		SRJ.correctSandBoxOptions("KillsTrack")
 		local killsRecoveryPercentage = SandboxVars.SkillRecoveryJournal.KillsTrack or 0
 		if JMD and killsRecoveryPercentage > 0 then
@@ -199,9 +213,10 @@ function WriteSkillRecoveryJournal:update()
 			end
 		end
 
+		-- copy custom mod data to journal
 		if not self.modDataStoredComplete then
 			self.modDataStoredComplete = true
-			local modDataStored = modDataCapture.copyDataToJournal(self.character, self.item)
+			local modDataStored = SRJ.modDataHandler.copyDataToJournal(self.character, self.item)
 			if modDataStored then
 				for _,dataID in pairs(modDataStored) do
 					table.insert(changesBeingMade, dataID)
@@ -259,9 +274,7 @@ function WriteSkillRecoveryJournal:new(character, item, writingTool) --time, rec
 	o.item = item
 	o.writingTool = writingTool
 
-	local journalModData = o.item:getModData()
-	journalModData["SRJ"] = journalModData["SRJ"] or {}
-	local JMD = journalModData["SRJ"]
+	local JMD = SRJ.modDataHandler.getItemModData(o.item)
 
 	o.writingToolSound = "PenWriteSounds"
 	if character:getInventory():contains("Pencil") then
@@ -276,13 +289,15 @@ function WriteSkillRecoveryJournal:new(character, item, writingTool) --time, rec
 	if SandboxVars.SkillRecoveryJournal.RecoverRecipes == true then
 		for _,recipeID in pairs(gainedRecipes) do
 			if learnedRecipes[recipeID] ~= true then
+				--if getDebug() then print("Writing gained recipe " .. tostring(recipeID)) end
 				table.insert(o.gainedRecipes,recipeID)
 			end
 		end
 	end
 
 
-	o.gainedSkills = SRJ.calculateGainedSkills(character) or false
+	o.isFullJournal = SRJ.isFullRecoveryJournal(item)
+	o.gainedSkills = SRJ.calculateAllGainedSkills(character, o.isFullJournal) or false
 	o.oldJournalTotalXP = 0
 	for perkID, xp in pairs(JMD["gainedXP"]) do
 		o.oldJournalTotalXP = o.oldJournalTotalXP + xp
@@ -290,7 +305,7 @@ function WriteSkillRecoveryJournal:new(character, item, writingTool) --time, rec
 	o.willWrite = true
 	local sayText
 
-	--print("gainedSkills: "..tostring(gainedSkills))
+	--if getDebug() then print("gainedSkills: "..tostring(#o.gainedSkills)) end
 
 	if not o.gainedSkills and (#o.gainedRecipes <= 0) then
 		sayText=getText("IGUI_PlayerText_DontHaveAnyXP"), 0.55, 0.55, 0.55, UIFont.Dialogue, 0, "default"
@@ -328,7 +343,7 @@ function WriteSkillRecoveryJournal:new(character, item, writingTool) --time, rec
 		end
 	end
 
-	if character:HasTrait("Illiterate") then
+	if character:hasTrait(CharacterTrait.ILLITERATE) then
 		local sayTextChoices = {"IGUI_PlayerText_DontUnderstand", "IGUI_PlayerText_TooComplicated", "IGUI_PlayerText_DontGet"}
 		sayText=getText(sayTextChoices[ZombRand(#sayTextChoices)+1]).." ("..getText("UI_trait_Illiterate")..")"
 		o.willWrite = false

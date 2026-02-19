@@ -1,5 +1,7 @@
 require "ISUI/ISInventoryPaneContextMenu"
 
+local SRJ = require "Skill Recovery Journal Main"
+
 local contextSRJ = {}
 
 
@@ -63,7 +65,7 @@ function contextSRJ.doContextMenu(playerID, context, items)
 
 	for i,item in ipairs(actualItems) do
 
-		if item:getType() == "SkillRecoveryBoundJournal" then
+		if SRJ.isSkillRecoveryJournal(item) then
 
 			local emptyBook, mismatchID = false, false
 			if player and player.getSteamID then

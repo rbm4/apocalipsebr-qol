@@ -11,4 +11,16 @@ module Base
         StaticModel = SkillRecoveryJournal,
         WorldStaticModel = SkillRecoveryJournal_ground,
     }
+
+    item SkillRecoveryBoundJournalFull
+    {
+        Weight	=	0.8,
+        ItemType = base:normal,
+        DisplayName	=	Enchanted Bound Journal,
+        DisplayCategory = SkillJournal,
+        DisappearOnUse = FALSE,
+        Icon	=	SkillRecoveryJournal,
+        StaticModel = SkillRecoveryJournal,
+        WorldStaticModel = SkillRecoveryJournal_ground,
+    }
 }
