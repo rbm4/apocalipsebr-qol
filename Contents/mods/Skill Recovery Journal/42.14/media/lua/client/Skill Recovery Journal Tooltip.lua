@@ -2,7 +2,7 @@ require "ISUI/ISToolTipInv"
 
 local SRJ = require "Skill Recovery Journal Main"
 
-local function SRJ_generateTooltip(JMD, player)
+local function SRJ_generateTooltip(JMD, player, isFullJournal)
 	local blankJournalTooltip = getText("IGUI_Tooltip_Empty").."\n"
 
 	if not JMD or not JMD["author"] then return blankJournalTooltip end
@@ -39,7 +39,7 @@ local function SRJ_generateTooltip(JMD, player)
 		local perk = Perks[perkID]
 		if perk then
 
-			local show, percent = SRJ.bSkillValid(perk)
+			local show, percent = SRJ.bSkillValid(perk, isFullJournal)
 			if show then
 				local journalXP = xp
 				local jmdUsedXP = JMD.recoveryJournalXpLog
@@ -232,11 +232,12 @@ function ISToolTipInv:render()
 			tooltipRenderOverTime.ticks = 1
 		end
 
-		if itemObj and player and instanceof(itemObj, "InventoryItem") and itemObj:getType() == "SkillRecoveryBoundJournal" then
+		if itemObj and player and instanceof(itemObj, "InventoryItem") and SRJ.isSkillRecoveryJournal(itemObj) then
 
+			local isFullJournal = SRJ.isFullRecoveryJournal(itemObj)
 			local journalModData = SRJ.modDataHandler.getItemModData(itemObj)
 
-			local tooltipStart, skillsRecord, warning = SRJ_generateTooltip(journalModData, player)
+			local tooltipStart, skillsRecord, warning = SRJ_generateTooltip(journalModData, player, isFullJournal)
 
 			local font = getCore():getOptionTooltipFont()
 			local fontType = fontDict[font] or UIFont.Medium
