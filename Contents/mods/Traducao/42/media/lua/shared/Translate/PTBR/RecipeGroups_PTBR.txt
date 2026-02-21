@@ -1,0 +1,3 @@
+RecipeGroupsPTBR {
+    RecipeGroup_OpenBox = "Abrir Caixa",
+}

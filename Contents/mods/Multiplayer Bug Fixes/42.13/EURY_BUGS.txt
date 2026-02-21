@@ -1,0 +1,15 @@
+List of bug fixes:
+Animals 'Wild' tag not syncing
+Adding multiple fuel to Campfires
+Campfires not updating their heat/light
+Add Item to Recipe from other containers
+Corpse Sickness Rate updates Noxious Smell moodle
+Thermoregulator fix for Wind Resistance visibility
+Consolidate All - Threads etc.
+
+IS Resolved in 42.13.2:
+Update Spices after adding to recipe
+Butchering desync fixes
+Thermoregulator fix for Insulation
+Unable to remove crop plots
+Crafting Fire Hardended Spears

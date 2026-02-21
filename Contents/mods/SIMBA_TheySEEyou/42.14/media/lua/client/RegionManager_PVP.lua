@@ -108,7 +108,7 @@ local function onTick(player, currentZones)
     local isFlagged = isPlayerFlagged(playerNum)
 
     -- Only enforce if we have a required state
-    if requiredState ~= nil and requiredState == false then
+    if requiredState ~= nil then
 
         local currentState = player:getSafety():isEnabled()
 

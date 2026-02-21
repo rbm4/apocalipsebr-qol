@@ -1,0 +1,7 @@
+name=TwisTonFire - STATS
+id=twistonfirestats
+poster=poster.png
+description=<RGB:1,0.6,0.9>TWITCHSTATS TwisTonFire <LINE> Authors: M3ss, whatahell, TwisTonFire, DaNeo, MK4Fun
+author= M3ss, whatahell, TwisTonFire, DaNeo, MK4Fun
+icon=statsIcon.png
+incompatible=\twistonfirestatsmp

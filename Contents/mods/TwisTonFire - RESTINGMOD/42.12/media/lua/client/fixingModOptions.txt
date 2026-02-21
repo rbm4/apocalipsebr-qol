@@ -1,0 +1,351 @@
+1) Tooltips actually show (everywhere)
+
+Switched from setting element.tooltip = ... to calling :setTooltip(...) on each UI control (Yes/No, Multi-TickBox, TextEntry, Combo, Slider, ColorButton, Button, Keybind).
+
+Added tooltips where they were missing entirely.
+
+Optional getTextOrNull fallback so both translation keys and raw strings work.
+
+2) No more empty-string crashes
+
+Introduced safe text helpers (TextOr/LabelText/TooltipText) so labels never receive nil/"" and tooltips can safely be nil.
+
+Descriptions default to a harmless space when empty.
+
+This avoids UI asserts/crashes without touching /ISUI/*.lua.
+
+3) Safer enable/disable behavior
+
+For single tickboxes, we disable the whole control with :setEnable(false) instead of calling disableOption("", true).
+
+For multi-tickboxes, we now call disableOption(i, …) with the index, not the label string.
+
+4) Input sanitization & guardrails
+
+Combobox: ensure values isn’t empty (inject placeholder if needed), clamp selected to valid range, normalize labels.
+
+Slider: normalize min/max/step/value, swap min/max if reversed, clamp current value, keep the label synced.
+
+Color: default RGBA when missing; change detection compares RGBA before firing onChangeApply.
+
+Keybind: robust when key is missing/invalid (shows localized “Unassigned” instead of breaking).
+
+Button: setOnClick is nil-safe for option.args.
+
+5) Cleaner apply/onChange semantics
+
+apply() only fires onChangeApply when a value actually changed, then writes back to option.*.
+
+onChange remains a live callback for immediate UI reactions.
+
+Slider label updates in toUI() and onChange() to match the current value.
+
+6) UI wiring correctness (small but important)
+
+For multi-tickbox, we add the element before addOption() (avoids getKeepOnScreen positioning quirks).
+
+Preserved your self.addY increments and final setScrollHeight(...) so the scroll panel fits all rows reliably.
+
+7) Compatibility & localization resilience
+
+Every user-facing string goes through the helper that prefers getTextOrNull(key) but gracefully falls back to the raw string—so it works with or without translations and never passes empty strings to ISUI.
+
+Net effect: tooltips work reliably; empty/missing strings won’t crash the menu; controls disable correctly; option data is validated and clamped; and change callbacks only fire when they should. All of this is done at the mod layer—no patching of base /ISUI/*.lua required.
+
+
+
+function MainOptions:addModOptionsPanel()
+	PZAPI.ModOptions:load()
+	self:addPage(getText("UI_mainscreen_mods"))
+
+	local comboWidth = 45 * (getCore():getOptionFontSizeReal() + 1) + 60
+	local splitpoint = self:getWidth() / 3
+	local y = INITIAL_Y
+	self.addY = 0
+
+	-- Safe text helpers: never return empty strings to UI controls
+	local function TextOr(key, fallback)
+		if key == nil then return fallback end
+		if type(key) ~= "string" then return tostring(key) end
+		if key == "" then return fallback end
+		if getTextOrNull then
+			local v = getTextOrNull(key)
+			if v and v ~= "" then return v end
+		end
+		return key
+	end
+	local function LabelText(key) return TextOr(key, "—") end          -- show em-dash when missing
+	local function TooltipText(key) return TextOr(key, nil) end        -- nil tooltips are fine
+
+	local function clamp(v, lo, hi)
+		if v == nil then return lo end
+		if v < lo then return lo end
+		if v > hi then return hi end
+		return v
+	end
+
+	for _, options in ipairs(PZAPI.ModOptions.Data) do
+		self:addHorizontalLine(y, LabelText(options.name))
+
+		for _, option in ipairs(options.data) do
+			-- normalize shared fields
+			local oname = LabelText(option.name)
+			local otooltip = TooltipText(option.tooltip)
+
+			if option.type == "title" then
+				self:addTitle(splitpoint, y, oname)
+
+			elseif option.type == "separator" then
+				self:addHorizontalLineSmall(y)
+
+			elseif option.type == "description" then
+				-- description may provide `text`; guard empties
+				self:addDescription(splitpoint, y, TextOr(option.text, " "))
+
+			elseif option.type == "tickbox" then
+				local tickbox = self:addYesNo(splitpoint, y, BUTTON_HGT, BUTTON_HGT, oname)
+				if otooltip then tickbox:setTooltip(otooltip) end
+				option.element = tickbox
+				if option.isEnabled == false then
+					tickbox:setEnable(false) -- disable whole control (safe)
+				end
+
+				local gameOption = GameOption:new(options.modOptionsID .. "." .. option.id, tickbox)
+				function gameOption.toUI(self)
+					self.control:setSelected(1, option.value and true or false)
+				end
+				function gameOption.apply(self)
+					local sel = self.control:isSelected(1)
+					if option.onChangeApply and option.value ~= sel then
+						option:onChangeApply(sel)
+					end
+					option.value = sel
+				end
+				function gameOption.onChange(self, index, selected)
+					if option.onChange then option:onChange(selected) end
+				end
+				self.gameOptions:add(gameOption)
+
+			elseif option.type == "multipletickbox" then
+				local label = ISLabel:new(splitpoint, y + self.addY, FONT_HGT_SMALL, oname, 1, 1, 1, 1, UIFont.Small, false)
+				label:initialise()
+				self.mainPanel:addChild(label)
+
+				local multipleTickBox = ISTickBox:new(splitpoint + 20, y + self.addY, BUTTON_HGT, BUTTON_HGT, "")
+				if otooltip then multipleTickBox:setTooltip(otooltip) end
+				option.element = multipleTickBox
+				multipleTickBox:initialise()
+				self.mainPanel:addChild(multipleTickBox)
+				self.mainPanel:insertNewLineOfButtons(multipleTickBox)
+
+				-- sanitize values
+				option.values = option.values or {}
+				for i, value in ipairs(option.values) do
+					local vlabel = LabelText(value.name)
+					multipleTickBox:addOption(vlabel, value.name)
+				end
+				self.addY = self.addY + multipleTickBox:getHeight() + 4
+				for i, v in ipairs(option.values) do
+					multipleTickBox:disableOption(i, v.isEnabled == false) -- pass index, not label
+				end
+
+				local gameOption = GameOption:new(options.modOptionsID .. "." .. option.id, multipleTickBox)
+				function gameOption.toUI(self)
+					local box = self.control
+					for i = 1, #box.options do
+						box:setSelected(i, option.values[i] and option.values[i].value or false)
+					end
+				end
+				function gameOption.apply(self)
+					local box = self.control
+					for i = 1, #box.options do
+						local newVal = box:isSelected(i)
+						if option.onChangeApply and option.values[i] and option.values[i].value ~= newVal then
+							option:onChangeApply(i, newVal)
+						end
+						if option.values[i] then option.values[i].value = newVal end
+					end
+				end
+				function gameOption.onChange(self, index, selected)
+					if option.onChange then option:onChange(index, selected) end
+				end
+				self.gameOptions:add(gameOption)
+
+			elseif option.type == "textentry" then
+				local textValue = option.value or ""
+				local textEntry = self:addTextEntry(splitpoint, y, oname, textValue)
+				if otooltip then textEntry:setTooltip(otooltip) end
+				option.element = textEntry
+				if option.isEnabled == false then
+					textEntry:setEditable(false)
+				end
+
+				local gameOption = GameOption:new(options.modOptionsID .. "." .. option.id, textEntry)
+				function gameOption.toUI(self)
+					self.control:setText(option.value or "")
+				end
+				function gameOption.apply(self)
+					local text = self.control:getInternalText() or ""
+					if option.onChangeApply and (option.value or "") ~= text then
+						option:onChangeApply(text)
+					end
+					option.value = text
+				end
+				function gameOption.onChange(self, text)
+					if option.onChange then option:onChange(text or "") end
+				end
+				self.gameOptions:add(gameOption)
+
+			elseif option.type == "combobox" then
+				-- sanitize values and selected
+				option.values = option.values or {}
+				if #option.values == 0 then
+					-- inject a safe placeholder to avoid index errors
+					option.values = { { name = "—" } }
+				end
+				for i, v in ipairs(option.values) do
+					v.name = LabelText(v.name)
+				end
+				option.selected = clamp(tonumber(option.selected) or 1, 1, #option.values)
+
+				local combo = self:addCombo(splitpoint, y, comboWidth, 20, oname, option.values, option.selected)
+				option.element = combo
+				if otooltip then combo:setTooltip(otooltip) end
+				if option.isEnabled == false then combo.disabled = true end
+
+				local gameOption = GameOption:new(options.modOptionsID .. "." .. option.id, combo)
+				function gameOption.toUI(self)
+					self.control.selected = clamp(option.selected or 1, 1, #option.values)
+				end
+				function gameOption.apply(self)
+					local box = self.control
+					if option.onChangeApply and option.selected ~= box.selected then
+						option:onChangeApply(box.selected)
+					end
+					option.selected = clamp(box.selected or 1, 1, #option.values)
+				end
+				function gameOption.onChange(self, box)
+					if option.onChange then option:onChange(clamp(box.selected or 1, 1, #option.values)) end
+				end
+				self.gameOptions:add(gameOption)
+
+			elseif option.type == "colorpicker" then
+				-- sanitize color
+				local c = option.color or { r = 1, g = 1, b = 1, a = 1 }
+				c.r, c.g, c.b, c.a = c.r or 1, c.g or 1, c.b or 1, c.a or 1
+
+				local button = self:addColorButton(splitpoint, y, oname, c, MainOptions.onModColorPick)
+				option.element = button
+				if option.isEnabled == false then button:setEnable(false) end
+				if otooltip then button:setTooltip(otooltip) end
+
+				button.colorPicker = ISColorPicker:new(0, 0)
+				button.colorPicker:initialise()
+				button.colorPicker.pickedTarget = self
+				button.colorPicker.resetFocusTo = self
+				button.colorPicker:setInitialColor(ColorInfo.new(c.r, c.g, c.b, c.a))
+
+				button.optionID = options.modOptionsID .. "." .. option.id
+				local gameOption = GameOption:new(options.modOptionsID .. "." .. option.id, button)
+				function gameOption.toUI(self)
+					self.control.backgroundColor = option.color or c
+				end
+				function gameOption.apply(self)
+					local optCol = option.color or c
+					local conCol = self.control.backgroundColor
+					if option.onChangeApply and (optCol.r ~= conCol.r or optCol.g ~= conCol.g or optCol.b ~= conCol.b or optCol.a ~= conCol.a) then
+						option:onChangeApply(conCol)
+					end
+					option.color = conCol
+				end
+				function gameOption.onChange(self, color)
+					if option.onChange then option:onChange(color) end
+				end
+				self.gameOptions:add(gameOption)
+
+			elseif option.type == "button" then
+				local button = self:addButton(splitpoint, y, oname)
+				option.element = button
+				button.id = options.modOptionsID .. "." .. option.id
+				button.target = option.target
+				if option.args then
+					button:setOnClick(option.onclick, option.args[1], option.args[2], option.args[3], option.args[4])
+				else
+					button:setOnClick(option.onclick)
+				end
+				if otooltip then button:setTooltip(otooltip) end
+				if option.isEnabled == false then button:setEnable(false) end
+
+			elseif option.type == "keybind" then
+				local keyTextElement = {}
+
+				local label = ISLabel:new(splitpoint, y + self.addY, FONT_HGT_SMALL + 2, oname, 1, 1, 1, 1, UIFont.Small)
+				label:initialise()
+				label:setAnchorLeft(false)
+				label:setAnchorRight(true)
+				self.mainPanel:addChild(label)
+
+				local keyCode = tonumber(option.key) or 0
+				local keyName = (keyCode ~= 0 and getKeyName and getKeyName(keyCode)) or TextOr("UI_optionscreen_bindingUnassigned", "Unassigned")
+
+				local btn = ISButton:new(splitpoint + 20, y + self.addY, self.keyButtonWidth, FONT_HGT_SMALL + 2, keyName, self, MainOptions.onKeyBindingBtnPress)
+				btn.internal = option.name
+				btn.isModBind = true
+				btn:initialise()
+				btn:instantiate()
+				if otooltip then btn:setTooltip(otooltip) end
+				self.mainPanel:addChild(btn)
+
+				option.element = btn
+				if option.isEnabled == false then btn:setEnable(false) end
+
+				keyTextElement.txt = label
+				keyTextElement.keyCode = keyCode
+				keyTextElement.defaultKeyCode = tonumber(option.defaultkey) or 0
+				keyTextElement.altCode = 0
+				keyTextElement.btn = btn
+				keyTextElement.shift = option.shift
+				keyTextElement.ctrl = option.ctrl
+				keyTextElement.left = true
+				keyTextElement.isModBind = true
+				table.insert(MainOptions.keyText, keyTextElement)
+				option.element = keyTextElement
+
+				self.addY = self.addY + FONT_HGT_SMALL + 2 + 6
+
+			elseif option.type == "slider" then
+				-- sanitize bounds
+				local omin = tonumber(option.min) or 0
+				local omax = tonumber(option.max) or 100
+				if omax < omin then omax, omin = omin, omax end
+				local ostep = tonumber(option.step) or 1
+				local ovalue = tonumber(option.value) or omin
+
+				local slider = self:addSlider(splitpoint, y, comboWidth, oname, omin, omax, ostep, clamp(ovalue, omin, omax))
+				option.element = slider
+				if otooltip then slider:setTooltip(otooltip) end
+				if option.isEnabled == false then slider.disabled = true end
+
+				local gameOption = GameOption:new(options.modOptionsID .. "." .. option.id, slider)
+				function gameOption.toUI(self)
+					self.control.label:setName(tostring(clamp(option.value or omin, omin, omax)))
+					self.control:setCurrentValue(clamp(option.value or omin, omin, omax), true)
+				end
+				function gameOption.apply(self)
+					local cur = self.control:getCurrentValue()
+					if option.onChangeApply and option.value ~= cur then
+						option:onChangeApply(cur)
+					end
+					option.value = cur
+				end
+				function gameOption.onChange(self, value)
+					self.control.label:setName(tostring(value))
+					if option.onChange then option:onChange(value) end
+				end
+				self.gameOptions:add(gameOption)
+			end
+		end
+	end
+
+	self.mainPanel:setScrollHeight(y + self.addY + 20)
+end

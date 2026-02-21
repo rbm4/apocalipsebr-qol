@@ -1,0 +1,617 @@
+Print_Text_PTBR = {
+
+Print_Text_KnoxKnews_July1_title = "Notícias de Knox - 1 de Julho de 1993",
+
+Print_Text_KnoxKnews_July1_info = "Rangers triunfam em West Point - veja na página 3\n"..
+"Professor local ganha prêmio nacional - veja na página 4\n\n"..
+"FUNDOS PARA DESASTRE DE BRANDENBURG ESTÃO A CAMINHO, DIZ GOVERNADOR\n\n"..
+"[image] - Governador Cal Fairweather falando em Frankfort ontem.\n\n"..
+"FRANKFORT - O Governador Cal Fairweather garantiu ao prefeito de Brandenburg que os fundos federais há muito prometidos para a reconstrução de Brandenburg estão "a caminho".\n Apesar de uma resposta inicial esmagadora após o tornado em 18 de Abril, que viu ampla ajuda fornecida aos moradores no rescaldo, os fundos federais prometidos para a reconstrução ainda não chegaram, com edifícios remendados com madeira e grandes danos ainda evidentes.\n Os alertas iniciais significavam que muitos moradores estavam se abrigando quando o tornado atingiu a parte nordeste da cidade, mas os ventos fortes mataram três moradores e feriram dezenas. O tornado F2 destruiu carros e arrasou casas. Centenas de pessoas continuam desabrigadas, vivendo em hotéis ou parques de trailers pagos pelo estado, com outras vivendo com parentes ou amigos. Até 40% das residências e 30% das empresas na área não têm seguro, o que significa que o custo para o contribuinte pode exceder 50 milhões de dólares.\n Kentucky é frequentemente atingido por tornados, mas o furacão de Abril atingiu as autoridades por... (continua na p.2)\n\n"..
+"CAÇADOR FERIDO EM ATAQUE DE VEADO\n\n"..
+"RIVERSIDE - John Nathan, um caçador de Nova York, disse que teve sorte de não ter se ferido gravemente após um encontro com um veado na floresta a oeste de Riverside. "Eu caço na área de Knox há anos", disse Nathan, "mas nunca vi algo assim, especialmente fora da temporada de acasalamento. Eu estava alinhando um tiro em um coelho quando um veado de cauda branca de repente surgiu de... (continua p.4)\n\n"..
+"O MORADOR MAIS VELHO DE EKRON REVELA SEGREDO DE VIDA LONGA\n\n"..
+"EKRON - Cheia de conversas animadas e músicas antigas, é difícil acreditar que Nancy Hume, a moradora mais velha de Ekron, tem 103 anos. "Eu sobrevivi a todos os meus amigos", ela diz, e acrescenta com um sorriso, "mas sobrevivi a todos os meus inimigos também!" Então, quais são os segredos de Nancy? "Bourbon com seu jantar, cama antes das 10 e nunca se envolva com homens. Nunca!"",
+
+Print_Text_KnoxKnews_July2_title = "Notícias de Knox - 2 de Julho de 1993",
+
+Print_Text_KnoxKnews_July2_info = "Delilah em Brandemburgo "indefinidamente" - veja na página 2\n"..
+"Chapelmount Downs planeja pista na Virgínia - veja na página 4\n\n"..
+"INTERRUPÇÕES TELEFÔNICAS GENERALIZADAS NA ÁREA DE KNOX\n\n"..
+"[image] - A KT diz que seus engenheiros estão trabalhando "24 horas por dia"."\n\n"..
+"ÁREA DE KNOX - A Knox Telecommunications pediu desculpas por uma interrupção de horas em suas redes que continua no momento da impressão, deixando milhares de moradores de Knox sem qualquer acesso a serviços de telefone e Internet.\n A interrupção não planejada causou caos, com várias empresas que dependem do teletrabalho tendo que permanecer fechadas durante o dia, e outras ficaram impossibilitadas de se comunicar com clientes ou fornecedores. A causa de uma interrupção tão séria, mas localizada, não foi anunciada, mas a KT diz que está "trabalhando nisso" com dezenas de engenheiros trabalhando em postes telefônicos em toda a área.\n Um especialista, Kevin Hogan, disse à Knox Knews, "esse tipo de falha é incrivelmente incomum. Não parece relacionado a nenhuma central telefônica ou sistema central. Ouvi relatos de que há fios caídos ou desconectados. Ou todos eles foram sobrecarregados por um raio, ou isso é obra de vândalos ou sabotadores." (continua p.2)\n\n"..
+"LOCAIS COMPETEM PELO PRÊMIO MINT JULEP\n\n"..
+"KNOX AREA - Muitas amizades no Kentucky foram irreparavelmente destruídas por discussões sobre o perfeito mint julep. E ainda assim a competição do Prêmio Mint Julep, realizada no último Sábado em Brandenburg, foi cheia de bate-papo descontraído e debates livres e saudáveis ​​sobre o coquetel favorito do estado. O prêmio de Melhor Julep Tradicional foi para Casey Stockhome. Os Juízes a consideraram... (continua na p.4)\n\n"..
+"MORADOR DE IRVINGTON "SORTE DE ESTAR VIVO"\n\n"..
+"IRVINGTON - A moradora local Sally Graham disse que tem sorte de estar viva após um acidente de carro violento ao sul da cidade na Quinta-feira. Sally bateu em um muro, incendiando o carro. A rápida intervenção de um transeunte salvou a vida de Graham. "Ele me tirou do carro e estancou o sangramento até a ambulância chegar. Demorou muito tempo, com as linhas telefônicas sendo... (continua na p.3)\n"..,
+
+Print_Text_KnoxKnews_July3_title = "Notícias de Knox - 3 de Julho de 1993",
+
+Print_Text_KnoxKnews_July3_info = "Duas prisões em investigação de golpe de reparo de casa - veja na página 3\n"..
+"Rio Ohio mais poluído do que nunca - veja na página 5\n\n"..
+""OPERAÇÃO CENTAURO ESTÁ ENCERRANDO" - FBI\n\n"..
+"[image] - O Diretor do FBI, Ian Clark, falando em Louisville.\n\n"..
+"LOUISVILLE - A investigação do FBI sobre corrupção na Assembleia Geral do Kentucky, codinome Operação Centauro, agora atingiu seus principais objetivos e está chegando ao fim, disse o Diretor do FBI Ian Clark em uma entrevista coletiva em Louisville ontem.\n A operação viu mais de uma dúzia de legisladores do Kentucky indiciados e condenados por aceitar subornos relacionados a despejo de lixo tóxico, extorsão, extorsão e conspiração para fraudar o estado do Kentucky. O Presidente da Câmara, Dan Dullford, já renunciou após ser acusado de extorsão, extorsão e mentira para o FBI.\n O Governador Cal Fairweather também foi pego na controvérsia e teve que se distanciar de dois de seus assessores em fevereiro após a prisão deles por aceitar subornos, "sem o consentimento ou conhecimento do Governador".\n A controvérsia cruza as linhas partidárias, com democratas e republicanos indiciados. Outros legisladores enfrentando julgamento incluem... (continua na p.2)\n\n"..
+"LINHAS TELEFÔNICAS AINDA INATIVAS EM TODA A ÁREA\n\n"..
+"ÁREA DE KNOX - A Knox Telecommunications pediu desculpas pelo segundo dia de interrupções telefônicas na região de Knox. A recepção de celulares e telefones de carro também foi afetada, com empresas e residências em tumulto. A KT alegou que as interrupções são devido a "problemas graves com uma central telefônica local" e avisa que... (continua na p.4)\n\n"..
+"MORADOR DE WEAST POINT MORRE APÓS COMER 60 CACHORROS-QUENTES\n\n"..
+"WEST POINT - A 16ª Competição Anual de Comer Cachorro-quente de West Point teve um fim trágico, pois o vencedor, Bolton Jupiter, faleceu logo após vencer. "Ele levantou o troféu", disse um observador, "uma pequena salsicha com óculos escuros. Então ele caiu em cima de um balde de maionese." (continua na p.3)\n"..
+"",
+
+Print_Text_KnoxKnews_July4_title = "Notícias de Knox - 4 de Julho de 1993",
+
+Print_Text_KnoxKnews_July4_info = "O tempo quente continuará na próxima semana - veja na página 2\n"..
+"Tim Johnson "provavelmente fora da temporada" - veja a página 4\n\n"..
+""NÃO HÁ PERIGO PARA O PÚBLICO" APÓS ACIDENTE, DIZ O EXÉRCITO\n\n"..
+"[image] - O local foi isolado e protegido por militares.\n\n"..
+"MARCH RIDGE - Um caminhão militar transportando resíduos perigosos capotou ao norte de March Ridge aproximadamente às 15h15 no Sábado. O conteúdo do caminhão não está sendo revelado ao público, mas o Coronel Niall O'Malley disse que "os materiais, embora secretos por razões operacionais, representariam pouco perigo mesmo se entrassem em contato com o público, o que não aconteceu". Testemunhas dizem que o caminhão perdeu o controle na Rota 60, ao sul do Farmer's Market, derrapando na grama após quase atingir um carro que passava, e capotou no barranco. As autoridades não negaram que o caminhão estava sobrecarregado.\n O incidente é um dos vários envolvendo materiais perigosos na área de Knox. Ativistas ambientais criticaram padrões muito "frouxos", com produtos químicos tóxicos e compostos de munição mal armazenada citados como a razão para taxas mais altas do que a média de doenças respiratórias na área de Knox. Legisladores estaduais revogaram recentemente várias leis ambientais, uma medida que... (continua na p.2)\n\n"..
+"SPEEDWAY PODE SEDIAR A FÓRMULA X\n\n"..
+"IRVINGTON - Os organizadores da Fórmula X deram um aceno preliminar para Irvington Speedway como a pista anfitriã do Grande Prêmio dos EUA de 1996. Embora a pista anfitriã ainda permaneça em negociação, os oficiais estão favorecendo privadamente o Speedway devido à sua localização perto de Louisville, ao design inovador da pista e à abertura das autoridades para... (continua na p.4)\n\n"..
+"FELIZ DIA DA INDEPENDÊNCIA DA KNOX KNEWS!\n\n"..
+"KNOX - Foi uma honra servir no Knox Knews por dois 4 de Julho consecutivos. Esperamos que nossos leitores tenham um dia maravilhoso enquanto lembramos por que a América foi fundada - e sonhamos com o que ela poderia ser um dia.\nTudo de bom,\nIan J. McCarrock\nEditor-chefe\n"..,
+
+Print_Text_KnoxKnews_July5_title = "Notícias de Knox - 5 de Julho de 1993",
+
+Print_Text_KnoxKnews_July5_info = ""Não há fim à vista" para as interrupções telefônicas em Knox - veja na página 4\n"..
+""Doença incomum" afeta moradores de Muldraugh - veja na página 6\n\n"..
+"EXCLUSIVO: KNOX TEM O MELHOR DIA DA INDEPENDÊNCIA DE TODOS OS TEMPOS!\n\n"..
+"[image] - O desfile de Knox teve o melhor público de todos os tempos.\n\n"..
+"ÁREA DE KNOX - Apesar das interrupções nos planos causadas pela queda contínua de telefone em Knox, ontem milhares de moradores realizaram churrascos em família, festas e fogos de artifício enquanto comemoravam juntos o 217º aniversário da América.\n Um desfile elaborado de vinte carros alegóricos decorados passou por Knox a caminho de Louisville, com a estudante local do ensino fundamental Una Turner representando a Estátua da Liberdade no carro da frente, acompanhada por bandas de metais de West Point, Riverside e Brandenburg tocando músicas patrióticas.\n Um evento especial foi realizado no circuito de corrida de arrancada perto de West Point, com o mundialmente famoso piloto de corrida Cruz Dylan entre os espectadores - embora o campeão de corrida não tenha sido persuadido a dar uma volta, pois ele "não queria fazer os outros corredores parecerem mal".\n À noite, fogos de artifício vermelhos, brancos e azuis iluminaram o céu noturno e copos de limonada e cerveja foram erguidos para a América e para as memórias de muitos... (continua na p.2)\n\n"..
+"O MAU CHEIRO PODE SER "PROCESSO NATURAL"\n\n"..
+"RIO OHIO - Joan Delahunt, uma professora de geografia local, teorizou que o mau cheiro na região de Knox está emanando do Rio Ohio e pode ser causado por uma alga invasora criando raízes em partes do rio.\n Delahunt notou pedaços de algas marrons que foram levados para a margem do rio há vários dias. "Isso me lembrou... (continua na p.2)\n\n"..
+"ONDA DE ATAQUES DE CÃES É "PREOCUPANTE"\n\n"..
+"ÁREA DE KNOX - O Xerife John Carroll lembrou aos moradores sobre sua responsabilidade de manter seus cães sob controle, após uma onda de ataques a animais de fazenda e moradores. "Os cães nunca devem andar livres", disse o xerife. "Se estiverem em casa, devem ser cercados ou mantidos dentro de casa para que não possam escapar. Se um cão morde alguém, o cão... (continua p.3)\n"..,
+
+Print_Text_KnoxKnews_July6_title = "Notícias de Knox - 6 de Julho de 1993",
+
+Print_Text_KnoxKnews_July6_info = "Morador local assassinado "faz parte de gangue criminosa" - veja na página 2\n"..
+"Debate sobre os limites de velocidade em Irvington - veja na página 4\n\n"..
+"DOENÇA MISTERIOSA ATINGE MORADORES LOCAIS E SOBRECARREGA AUTORIDADES\n\n"..
+"[image] - As pessoas recorreram a rádios de curto alcance para se comunicar com as autoridades. \n\n"..
+"MULDRAUGH - Uma doença não identificada atingiu dezenas de moradores na região de Muldraugh, com sintomas de febres severas e vômitos. March Ridge abriu seu hospital militar ao público para ajudar a conter a doença, embora não se acredite que ela se espalhe de pessoa para pessoa. Autoridades dos Centros de Controle e Prevenção de Doenças estão supostamente a caminho do hospital para ajudar a investigar a causa do surto.\n Acredita-se que vários dos afetados sofreram mordidas, e Janine Cortman, uma médica local, teoriza que um surto de raiva está em andamento. A Dra. Cortman disse: "Tratei quatro pacientes no mesmo dia com os mesmos sintomas. Estou sem imunoglobulina antirrábica, então estou extremamente grata que os militares tenham aberto seu hospital em Fort Knox ao público."\n A raiva foi relatada recentemente na região entre a população de animais selvagens, mas casos em humanos são raros. "Antes de hoje", disse o Dr. Cortman, "eu tinha visto apenas três casos definitivos de raiva em humanos. É preocupante que isso... (continua na p.2)\n\n"..
+"LINHAS TELEFÔNICAS AINDA INATIVAS NA ÁREA\n\n"..
+"ÁREA DE KNOX - A Knox Telecommunications pediu desculpas a clientes irritados por um período de manutenção não programado que fez com que as linhas telefônicas caíssem na área por quase uma semana. A resposta ao surto da doença de Muldraugh foi prejudicada pela interrupção, com muitos buscando ajuda usando chamadas de rádio de curto alcance para a polícia e autoridades médicas... (continua na p.2)\n\n"..
+""DESCULPA" DE SPIFFO APÓS A BRINCADEIRA DO MOLHO SECRETO\n\n"..
+"RALEIGH, NC - A rede de fast food Spiffo's pediu desculpas depois que seu Molho Secreto deixou os consumidores locais de hambúrguer com um gosto ruim na boca. A Chefe de Logística Paula Impton disse que a confusão ocorreu quando um lote de molho picante novo e experimental foi acidentalmente redirecionado para Kentucky no lugar do... (continua na p.3)\n"..,
+
+Print_Text_KentuckyHerald_July6_title = "O Arauto de Kentucky - 6 de Julho de 1993",
+
+Print_Text_KentuckyHerald_July6_info = "SURTO DE DOENÇA EM MULDRAUGH\n"..
+"Dezenas de casos relatados na área\n"..
+"Resposta dificultada por interrupções telefônicas\n\n"..
+"[image] - Uma ambulância em uma casa na área de Muldraugh, que se acredita estar relacionada ao surto.\n\n"..
+"Muldraugh, Ky. - Dezenas de casos de uma doença semelhante à gripe foram relatados na área de Muldraugh, uma pequena cidade ao norte de Fort Knox, com sintomas que incluem náuseas e febre intensas.\n Com várias instalações militares e depósitos de resíduos tóxicos na área, os médicos estão analisando se um vazamento químico no abastecimento de água ou na cadeia alimentar pode ser o responsável, embora os pedidos de assistência a autoridades externas estejam sendo recebidos com confusão e negações.\n O Exército dos Estados Unidos teria aberto suas instalações de quarentena em seu hospital em Fort Knox para uso por... \n\n"..
+"EXPOSIÇÃO ATRAI MULTIDÃO À GALERIA\n"..
+"O trabalho do artista é muito popular em Louisville\n\n"..
+"Louisville, Ky. - A nova exposição de pinturas da Galeria de Arte de Louisville do artista Irlandês Ashling Dwyer atraiu grandes multidões na noite de Segunda-feira.\n Dwyer, vencedora do Prêmio Siu-Chong de 1992, revelou um par de novas pinturas, "Cortina Rosa" e "Amarelo, Amarelo, Amarelo". Ambas receberam aplausos e elogios imediatos pelo uso de cores fortes, padrões abstratos profundamente emotivos e uso especializado de técnicas de arte moderna.\n Dwyer faz parte de uma nova onda de artistas irlandeses que estão fazendo sucesso internacionalmente. Seus outros trabalhos incluem Acidente Cromático e a peça de ação ao vivo, 48 Panelas... \n\n"..
+"CORPO IDENTIFICADO COMO PROCURADOR LOCAL\n\n"..
+"PRESIDENTE CANCELA VIAGEM DO G7 A TÓQUIO\n"..,
+
+Print_Text_KentuckyHerald_July13_title = "O Arauto de Kentucky - 13 de Julho de 1993",
+
+Print_Text_KentuckyHerald_July13_info = ""EVENTO KNOX CONTIDO" - OFICIAIS\n"..
+"Foto vazada levanta questões\n"..
+"Autoridades agem para conter o pânico crescente\n\n"..
+"[image] - A fotografia, mostrada aqui censurada em nome da dignidade das vítimas, mostra um homem com ferimentos graves em um braço, parado em uma rua cheia de corpos ensanguentados. \n\n"..
+"Zona de Eventos de Knox, Ky. - O Presidente, juntamente com o CDC e autoridades militares, agiram rapidamente para tranquilizar o público de que o "Vírus Knox" permanece isolado dentro da Zona de Exclusão após o vazamento de uma foto horrível de dentro da Zona de Eventos de Knox ontem.\n A fotografia supostamente mostra uma pessoa infectada com o vírus em uma rua cheia de corpos, causando pânico entre o público e confusão sobre a gravidade do vírus.\n Um fluxo constante de informações de membros das forças armadas, juntamente com mensagens de rádio de curto alcance daqueles presos dentro da Zona de Eventos, enfraquecem as alegações dos militares... \n\n"..
+""TOQUE DE RECOLHER NÃO É NECESSÁRIO" - PREFEITO DE LOUISVILLE\n"..
+"Prefeito minimiza rumores após pânico com vazamento de fotos\n\n"..
+"Louisville - O Prefeito Terence Stahl descartou rumores de que Louisville implementará um toque de recolher voluntário, em resposta a várias outras cidades que o fizeram.\n "Deixem essas elites costeiras entrarem em pânico", disse o Prefeito Stahl em uma coletiva de imprensa na Segunda-feira. "Os moradores de Louisville são feitos de material mais forte. Não sabemos nada sobre essa doença, ou vírus, ou o que quer que seja. As autoridades estão totalmente no controle. O medo nos prejudicará muito mais do que qualquer surto. É, francamente, muito nojento sugerir que os toques de recolher fazem qualquer coisa além de piorar muito uma situação tensa. Sem mencionar o impacto financeiro na economia, se bares, empresas e restau-...\n\n"..
+"ZONA KNOX NÃO ESTÁ SENDO ABASTECIDA\n\n"..
+"TERREMOTO ATINGE HOKKAIDO, JAPÃO\n"..,
+
+Print_Text_KentuckyHerald_July14_title = "O Arauto de Kentucky - 14 de Julho de 1993",
+
+Print_Text_KentuckyHerald_July14_info = ""NÃO HÁ NECESSIDADE DE PÂNICO" - GEN. MCGREW\n"..
+"Vírus letal, mas "contido"\nPresidente deixa capital - "sem relação com surto""\n\n"..
+"[image] - O General John McGrew afirmou que "não há necessidade de mais pânico" em meio à crescente preocupação com a letalidade e a taxa de infecção do "Vírus Knox".\n\n"..
+"Zona de Eventos de Knox - O General John McGrew divulgou uma declaração na Terça-feira admitindo que o "Vírus Knox" é degenerativo, mas alegando que sua disseminação está contida dentro do Limite do Evento, que agora abrange centenas de quilômetros quadrados do estado de Kentucky. O CDC divulgou uma declaração dizendo que, embora o vírus pareça causar grande violência entre os afetados, seu método de transmissão por contato com fluidos é uma forma ineficiente de disseminação. As Autoridades também negaram que o Presidente tenha deixado Washington, D.C., devido ao vírus, dizendo que sua ausência diz respeito a uma questão familiar particular...\n\n"..
+"CIDADE DO VATICANO, MECA, PERTO DOS PEREGRINOS\n"..
+"Dois grandes locais religiosos fechados devido ao medo do vírus\n\n"..
+"A Cidade do Vaticano, sede do Papa Católico Romano, e Meca, a cidade mais sagrada do Islamismo, estão fechando suas portas para o mundo exterior devido à ameaça do "Vírus Knox".\n O Pontífice pediu "perdão e orações" enquanto a cidade fortificada, localizada no centro de Roma, fechou suas portas para o público. A Guarda Suíça disse que está "preparada para o pior", pois milhares de peregrinos, já retidos devido à paralisação internacional de voos, serão forçados a limitar seus movimentos sob novas restrições na capital Italiana.\n A Arábia Saudita, que fechou suas fronteiras indefinidamente ontem, também anunciou que a cidade de...\n\n"..
+"DEMOCRATAS SE UNEM AOS CRÍTICOS DO PRESIDENTE REPUBLICANO\n\n"..
+"PREFEITO DE LOUISVILLE: "PERMANECEMOS ABERTOS"",
+
+Print_Text_KentuckyHerald_July15_title = "O Arauto de Kentucky - 15 de Julho de 1993",
+
+Print_Text_KentuckyHerald_July15_info = "LIMITES DE KNOX ROMPIDOS\n"..
+"Tiroteios e vítimas relatados na fronteira de Knox\n"..
+"Dezenas de mortos, Exército recua\n\n"..
+"[image] - Centenas de pessoas com o "Vírus Knox" atacaram irrefletidamente o pessoal e as barricadas com as mãos, sobrecarregando militares e civis.\n\n"..
+"Zona de Eventos de Knox - Dezenas de pessoas foram mortas quando a fronteira militar ao sul de Louisville foi violada por uma multidão de centenas de pessoas infectadas com o "Vírus Knox".\n Apesar de uma política de atirar para matar colocada em prática pelas autoridades, os militares foram rapidamente sobrecarregados, e pessoas infectadas atacaram sobreviventes que viviam em tendas no Acampamento de Fronteira.\n A Fronteira de Knox Line está se movendo para o norte em direção a Louisville enquanto os militares recuam. As comunicações são escassas enquanto as redes lutam com a demanda esmagadora de civis tentando...\n\n"..
+"ESTADOS DEBATEM SOBRE SOLUÇÕES EM KNOX\n"..
+"Autoridades considerando "soluções radicais"\n\nA legislatura do Tennessee votou para fornecer armas de fogo gratuitas para todos os moradores "de mente firme". A Suprema Corte da Califórnia está se mudando para a Ilha de Santa Catalina. Ambas as Casas do Congresso limitaram sua presença a 25%. Estas são apenas algumas das cenas estranhas enquanto as autoridades debatem o que fazer sobre o Vírus Knox.\n Os debates se concentraram em dois tópicos: como lidar com os infectados e onde zonas seguras poderiam ser criadas para proteger cidadãos não infectados. As sugestões variaram de quarentena à execução sumária dos infectados.\n Relatórios após a violação da fronteira de Knox sugerem que... \n\n"..
+"CANCELAMENTOS DE EVENTOS "DEPENDENDO DOS ORGANIZADORES"\n\n"..
+"GOVERNADOR ACEITA NECESSIDADE DE AJUDA FEDERAL\n"..,
+
+Print_Text_KentuckyHerald_July16_title = "O Arauto de Kentucky - 16 de Julho de 1993",
+
+Print_Text_KentuckyHerald_July16_info = "O VÍRUS KNOX SE ESPALHA PELO AR\n"..
+"O desespero toma conta da nação e do mundo\n"..
+"Punhado imune à 'tensão aérea'\n\n"..
+"[image] - Um grupo de infectados fotografado por um de nossa equipe a caminho de nossos escritórios na Quinta-feira, perto do centro de Louisville. Eles conseguiram passar com segurança.\n\n"..
+"O CDC confirmou que o Vírus Knox se espalha rapidamente pelo ar, embora uma pequena porcentagem de pessoas seja imune à "variante aérea" do vírus. Para todos os outros, a probabilidade de cura ou tratamento agora é próxima de zero. Ajude seus vizinhos idosos e vulneráveis. Compartilhe comida se você tiver mais do que precisa. Evite multidões a todo custo.\n Como vimos na divisa, tiros os atraem. Tenha um taco de beisebol ou outra arma fácil de usar pronta e não tenha medo de atacá-los. Depois que eles morrem e voltam, eles só querem espalhar o vírus.\n\n"..
+"UMA MENSAGEM ESPECIAL DO ARAUTO\n"..
+"Obrigado a todos os nossos leitores\n\n"..
+"Esta é provavelmente a edição final do Arauto de Kentucky. O vírus está em Louisville. Vários de nós aqui estamos com febre, e há centenas de infectados nas ruas.\n Gostaríamos de agradecer a todos os nossos leitores por estarem conosco nestes tempos sem precedentes. Se você é um dos poucos imunes, você é o administrador de um novo mundo. Agora é seu dever levar a luz da humanidade e da civilização. Até mesmo uma única vela cortará a escuridão mais profunda.\n Que Deus tenha misericórdia do resto de nós e de nossos entes queridos.\n\n"..
+"CONGRESSO EVACUA PARA MONTE WEATHER\n\n"..
+"VÍRUS PROVAVELMENTE "JÁ GLOBAL"",
+
+Print_Text_NationalDispatch_July6_title = "O Despacho Nacional - 6 de Julho de 1993",
+
+Print_Text_NationalDispatch_July6_info = "O IRAQUE PODE PARAR DE NEGOCIAR COM A ONU\n"..
+"Por Molly Aoide\n"..
+"Redatora da Equipe\n\n"..
+"[image] - O Presidente Iraquiano falando à mídia internacional em Bagdá.\n\n"..
+"BAGDÁ, Iraque - Em uma coletiva de imprensa na Segunda-feira, o Presidente Iraquiano disse que o país pode parar de cooperar com a Organização das Nações Unidas na destruição de armas não convencionais se um impasse sobre o monitoramento do local dos mísseis não for resolvido rapidamente.\n "Os Americanos acham que somos fracos", disse o presidente de seu palácio. "Temos armas de poder tão impressionante que eles chorariam como cachorros se soubessem delas. E, no entanto, estamos dispostos a desistir dessas coisas e seguir um caminho de paz, se formos tratados de forma justa." Um porta-voz do Presidente dos Estados Unidos se recusou a comentar sobre a especulação de que o cancelamento do Presidente de sua participação nas reuniões do G7 em Tóquio, programadas para começar na quarta-feira, estavam relacionadas ao anúncio iraquiano.\n Os outros seis países membros do G7 - Japão, Canadá, França, Itália, Alemanha e Reino Unido, juntamente com a União Europeia - devem discutir uma série de questões internacionais, incluindo ajuda para novas privatizações de negócios na Rússia, armas nucleares da antiga União Soviética e Coreia do Norte e a deterioração da situação na área anteriormente conhecida como Iugoslávia. Esta reunião do G7, a 19ª, será a primeira do Presidente...\n"..
+"(Veja “Iraque”, na A10)\n\n"..
+"DUAS PRISÕES POR ROUBO 'OUSADO' DE JOIAS PARISANIENSES\n"..
+"Por Jeff Franks\n"..
+"Redator da Equipe\n\n"..
+"PARIS, França - A Polícia da Capital Francesa fez duas prisões na Segunda-feira após uma investigação de meses sobre um assalto ousado em um dos hotéis mais exclusivos de Paris.\n Marie-Christine Lacour e Claude Beaumarchais foram acusados ​​de fraude, roubo, agressão, porte de drogas e furto qualificado depois que a polícia relacionou a dupla ao roubo no Paris Havisham em outubro passado. A dupla, que são socialites famosas, está sendo acusada de se infiltrar no hotel Havisham disfarçados de funcionários e descer sete andares de rapel até a sacada de um quarto, onde um importante membro da Realeza Europeia estava hospedado. Eles fizeram um furo na janela do quarto...\n"..
+"(Veja "O Roubo", na A12)\n"..,
+
+Print_Text_NationalDispatch_July7_title = "O Despacho Nacional - 7 de Julho de 1993",
+
+Print_Text_NationalDispatch_July7_info = "BLOQUEIO EM KENTUCKY\n"..
+"Por Jeff Franks\n"..
+"Redator da Equipe\n\n"..
+"[image] - Larry Stoddard falando com a mídia local. O pessoal Militar recusou todos os pedidos de entrevista ou comentário.\n\n"..
+"KENTUCKY - O exército dos Estados Unidos bloqueou na Segunda-feira estradas e rodovias que levam de e para a área do Kentucky informalmente conhecida como "País Knox", os condados próximos ao Forte Knox, sem declarar o motivo da ação.\n Centenas de militares, totalmente armados e em equipamentos de combate, chegaram à área na manhã de Terça-feira, cercando milhares de civis dentro do perímetro, além de deslocar centenas de pessoas que vivem fora da fronteira. Há muitos rumores sobre um exercício militar, mas todas as ligações para oficiais do exército não foram atendidas.\n As linhas telefônicas também estão inativas na área há vários dias, tornando a comunicação com a área isolada quase impossível.\n Um morador de West Point, Larry Stoddard, disse que depois de terminar seu turno noturno habitual como enfermeiro em Louisville, ele viu "soldados à distância. Não é incomum em Knox, mas então eu os vi colocando uma cerca ao longo da estrada. Foi como um filme. Então um caminhão enorme parou ao meu lado e me disse que eu não poderia ir mais longe. Eu disse ao motorista que moro em West Point, mas ele disse que eu não poderia ir lá." Vários moradores fora do perímetro relatam ter recebido ordens de se mudar, com um comunicado que os soldados estavam "se desculpando" ao fazer isso, e...\n"..
+"(Veja “Bloqueio”, na A10)\n\n"..
+"ARTIGO DE OPINIÃO: A OFUSCAÇÃO DE KENTUCKY IRÁ ALIMENTAR A PARANOIA\n"..
+"Por Keith Haroldson\n"..
+"Escritora de Opiniões\n\n"..
+"A ação militar de bloquear uma grande área de Kentucky, supostamente devido a algum tipo de vazamento de lixo tóxico, juntamente com a recusa total do exército em responder perguntas sobre o que está acontecendo, traz ecos assustadores de impasses recentes entre autoridades federais e vários grupos armados.\n Embora esses grupos em geral fossem quase certamente hostis e muito perigosos, a nova operação colocará mais lenha na fogueira dos teóricos da conspiração, incluindo movimentos Separatistas Americanos e Antifederalistas, que veem o Governo Federal cada vez mais atropelando os direitos de seus cidadãos.\n De fato, até mesmo aqueles de nós no centro estamos chocados com a ação de...\n"..
+"(Veja “Paranoia”, na A11)\n"..,
+
+Print_Text_NationalDispatch_July12_title = "O Despacho Nacional - 12 de Julho de 1993",
+
+Print_Text_NationalDispatch_July12_info = "OMS: "CANCELOU TODOS OS VOOS"\n"..
+"Por Molly Aoide\n"..
+"Redatora da Equipe\n\n"..
+"[image] - Milhões de viajantes no mundo todo podem ficar retidos.\n\n"..
+"GENEBRA, Suíça - Milhões de viajantes foram jogados no limbo quando a Organização Mundial da Saúde aconselhou no Domingo que todos os voos, exceto os militares e médicos, fossem suspensos em todo o mundo para impedir a propagação do "Vírus Knox".\n Embora a OMS não tenha nenhuma autoridade legal para fazer cumprir o conselho, todos os voos foram cancelados quase imediatamente por companhias aéreas chocadas com a natureza repentina do anúncio.\n Em um briefing na Casa Branca, o Presidente chamou o anúncio da OMS de "indesejável e economicamente insustentável".\n O CEO da Air Erin, Ryan Byrne, disse: "Sabíamos que isso aconteceria, mas pensamos que pelo menos teríamos tempo para nos preparar. Temos que obedecer. Nenhum de nós quer ser responsável por um surto, mas temos negócios para administrar. A cura não pode ser pior do que a doença.\n"..
+" Enquanto isso, a União Europeia aconselhou todos os seus países-membros a fecharem suas fronteiras internas e externas como precaução. Entende-se que todos os estados-membros da UE cumprirão o conselho, embora o Reino Unido tenha pedido um pequeno atraso antes da implementação.\n"..
+" O conselho sem precedentes causou preocupação de que... \n"..
+"(Veja “Voos”, na A9)\n\n"..
+"ARTIGO DE OPINIÃO: SILÊNCIO PREOCUPANTE PREVALECE EM LOUISVILLE\n\n"..
+"Por Keith Haroldson\n"..
+"Escritora de Opiniões\n"..
+"\n LOUISVILLE, Ky. - Apesar dos tumultos e da agitação nas principais cidades, as ruas de Louisville, a uma curta distância da Zona de Exclusão de Knox, estão mais silenciosas do que nunca. E, no entanto, apesar das tentativas de muitos moradores de olhar o lado positivo e minimizar a ameaça, está claro que muitos sentem uma ansiedade corrosiva sobre o Vírus Knox.\n As Autoridades agora estão dizendo que o vírus, embora mortal, se espalha apenas por contato com fluidos, gerando comparações com surtos de ebola, que foram eventualmente contidos. Mas nunca houve um surto de ebola tão perto de uma grande cidade, e alguns moradores já se mudaram para o outro lado do Rio Ohio. Outros estão fazendo planos para se juntar a eles, e...\n"..
+"(See "Silence", A13)\n"..,
+
+Print_Text_NationalDispatch_July13_title = "O Despacho Nacional - 13 de Julho de 1993",
+
+Print_Text_NationalDispatch_July13_info = "IMAGEM SANGRENTA DE KNOX VAZOU\n"..
+"Por Richard Carlson\n"..
+"Redator da Equipe\n\n"..
+"[image] - A imagem foi obscurecida em prol da dignidade da vítima.\n\n"..
+"FRONTEIRA DA ZONA DE EXCLUSÃO DE KNOX, Ky. - Uma nova fotografia que surgiu na Segunda-feira de um homem infectado, desmembrado, mas aparentemente ainda vivo em uma rua cheia de corpos na cidade de West Point dentro da Zona de Exclusão de Knox levantou mais questões sobre a resposta do governo ao Evento de Knox.\n Milhares de moradores estão presos dentro de uma zona isolada de centenas de quilômetros quadradas de Kentucky desde 6 de Julho, com pouca comunicação com o mundo exterior.\n A imagem vazada provocou ainda mais raiva aos tumultos que assolam cidades em todo o país, com toques de recolher tendo pouco efeito. Com o Exército e a Guarda Nacional agora posicionados nas principais cidades, gás lacrimogêneo e canhões de água estão sendo amplamente usados ​​contra manifestantes, com soldados respondendo com fogo real em várias áreas, embora nenhuma vítima tenha sido relatada.\n As autoridades declararam que mesmo protestos pacíficos durante o dia podem ter que ser cancelados, devido à probabilidade de os manifestantes serem agitados à violência. \n Os mercados de ações, já em queda livre após a suspensão de todos os voos pela OMS no Domingo, caíram ainda mais quando a imagem se espalhou para agências de notícias ao redor do mundo. O Dow Jones foi suspenso por... \n"..
+"(Veja "Vazamento", na A10)\n\n"..
+"CENTENAS DE MORTOS EM TERREMOTO NO JAPÃO\n"..
+"Por Doris Hunt\n"..
+"Redator da Equipe\n\n"..
+"HOKKAIDO, Japão - Um forte terremoto atingiu a costa do Japão aproximadamente às 22h15 do Horário Local, (9h15 da Manhã do Horário do Leste) na segunda-feira. O terremoto, estimado em 7,5 na escala Richter, criou um tsunami que inundou partes da ilha de Hokkaido e atingiu a costa do sudeste da Rússia.\n Centenas de pessoas são estimadas mortas, com incêndios e um deslizamento de terra relatados na cidade de Okushiri, na pequena ilha de mesmo nome perto de Hokkaido. A cidade foi atingida anteriormente por um forte terremoto em Janeiro passado, que matou duas pessoas e feriu mais de mil. O terremoto de Segunda-feira foi muito mais devastador, com..."..
+"(Veja “Japão”, na A13)\n"..,
+
+Print_Text_NationalDispatch_July14_title = "O Despacho Nacional - 14 de Julho de 1993",
+
+Print_Text_NationalDispatch_July14_info = "ONU DENUNCIA RESPOSTA DE KNOX\n"..
+"Por Keith Haroldson\n"..
+"Redatora da Equipe\n\n"..
+"[image] - O Delegado Chinês da ONU criticou duramente a forma como os Estados Unidos lidaram com o surto.\n\n"..
+"NOVA YORK, NY - Trinta e oito nações emitiram uma declaração conjunta por meio da Organização das Nações Unidas denunciando o que chamaram de "completa falta de clareza" sobre os detalhes do surto da doença de Knox. A declaração veio horas depois que o Gen. John McGrew, o supervisor militar da Zona de Contenção de Knox, disse que "não havia necessidade de mais pânico" após o vazamento de uma foto horrível da Zona na Segunda-feira, junto com a confirmação de extrema violência entre os infectados.\n O Presidente deixou Washington, D.C., e não pôde ser contatado para comentar.\n A China estava entre os críticos mais veementes dos Estados Unidos, com seus delegados alegando que os Estados Unidos colocam "a riqueza contínua de Wall Street acima do bem comum da humanidade", alegações rapidamente condenadas pelos aliados dos Estados Unidos. Enquanto isso, a Cidade do Vaticano está sendo fechada devido à ameaça da doença de Knox. A Guarda Suíça da cidade ordenou que todos os visitantes da cidade evacuem, supostamente contra a vontade do Papa, que pediu "perdão e orações". A cidadela, localizada no coração de Roma, implementará medidas rigorosas para garantir a saúde e a segurança dos aproximadamente 1000 habitantes da cidade... \n"..
+"(Veja “A Resposta”, na A9)\n\n"..
+"ONU DECLARA AMEAÇAS\n"..
+"Por Doris Hunt\n"..
+"Redatora da Equipe\n\n"..
+"GENEBRA, Suíça - A Organização Mundial da Saúde condenou as centenas de ameaças de bomba e morte contra sua sede e equipe em Genebra, chamando-as de "uma resposta extremamente inútil em um momento de crise sem precedentes". A polícia suíça está monitorando de perto a situação, que ocorre na sequência do conselho da OMS em 11 de Julho para que voos internacionais em todo o mundo sejam cancelados devido ao surto de Knox. O conselho, embora voluntário, foi seguido por quase todas as companhias aéreas do mundo, deixando milhões de viajantes nacionais e internacionais presos e forçando governos ao redor do mundo a lidar com o repentino bloqueio de um grande número de turistas dentro de suas fronteiras no auge...\n"..
+"(Veja “Ameaças”, na A11)",
+
+Print_Text_NationalDispatch_July15_title = "O Despacho Nacional - 15 de Julho de 1993",
+
+Print_Text_NationalDispatch_July15_info = "INFECTADO SOBRECARREGA A FRONTEIRA KNOX\n"..
+"Por Molly Aoide\n"..
+"Redator da Equipe\n\n"..
+"[image] - Centenas de infectados atravessaram cercas, atacando irrefletidamente qualquer um não infectado que estivesse por perto.\n\n"..
+"FRONTEIRA DA ZONA DE EXCLUSÃO DE KNOX, KY - Aproximadamente às 5 da manhã de Quarta-feira, centenas de pessoas infectadas com o "Vírus Knox" romperam barricadas militares de dentro da Zona de Exclusão ao sul de Louisville, Ky. Fogo pesado não conseguiu impedir o avanço do grande grupo.\n Até 100 militares e civis foram mortos, com muitas centenas de feridos. Testemunhas relatam que os sons da batalha atraíram ainda mais infectados de uma área ampla. Tanto militares quanto refugiados perto da fronteira recuaram para Louisville.\n Grandes grupos de infectados atacaram casas nos subúrbios ao longo do dia, movendo-se lentamente para o norte em direção à cidade, encontrando apenas resistência esporádica, principalmente de civis armados. As ruas e pontes de Louisville rapidamente se encheram de cidadãos em pânico fugindo pelo Rio Ohio, e engarrafamentos foram relatados até mesmo em Columbus, Ohio, e Indianápolis, Indiana. Tumultos e saques em outras grandes cidades deram lugar a um desespero organizado, à medida que os cidadãos estocavam alimentos, munição e outros bens, caso as cenas de pânico e saques em Kentucky se repetissem em outros lugares.\n As Autoridades Militares se recusaram a responder perguntas sobre...\n"..
+"(Veja “Fronteira”, na A9)\n\n"..
+"O VÍRUS PODE SE ESPALHAR PELO AR\n"..
+"Por Doris Hunt\n"..
+"Redatora da Equipe\n\n"..
+"REGIÃO DE KNOX, KY - Alguns refugiados e pessoal fora da Zona de Exclusão alegam ter adoecido com o "Vírus Knox", apesar de não terem tido contato com os infectados. As alegações questionaram declarações das autoridades de que a doença só pode se espalhar por meio de mordidas e arranhões.\n Um funcionário do CDC disse que o surgimento da transmissão aérea representava "uma ameaça maior à humanidade do que a Gripe Espanhola ou a Peste Negra". A OMS disse que o vírus provavelmente já está espalhado pelo mundo e que seu conselho para voos terrestres "quase certamente veio tarde demais para fazer a diferença". Programas de triagem para a doença...\n"..
+"(Veja “Vírus”, na A11)\n"..,
+
+Print_Text_MuldraughMessenger_June29_title = "Mensageiro de Muldraugh - 29 de Junho de 1993",
+
+Print_Text_MuldraughMessenger_June29_info = "",
+
+Print_Text_MuldraughMessenger_July6_title = "Mensageiro de Muldraugh - 6 de Julho de 1993",
+
+Print_Text_MuldraughMessenger_July6_info = "",
+
+Print_Text_LouisvilleSunTimes_July6_title = "Jornal Louisville Sun Times - 6 de Julho de 1993",
+
+Print_Text_LouisvilleSunTimes_July6_info = "O QUE ESTÁ ACONTECENDO EM MULDRAUGH?\n\n"..
+"DOENÇA misteriosa se espalha na região\n\n"..
+"CDC SILENCIOSO enquanto militares PATRULHAM\n\n"..
+"Poderia ser um VAZAMENTO de um LABORATÓRIO MILITAR?\n"..,
+
+Print_Text_LouisvilleSunTimes_July13_title = "Jornal Louisville Sun Times - 13 de Julho de 1993",
+
+Print_Text_LouisvilleSunTimes_July13_info = ""VIVO OU MORTO?\n\n"..
+"O " Vírus Knox" cria "CADÁVERES ANDANTES""\n\n"..
+"Zona de Exclusão de Knox AMPLIADA\n\n"..
+"Toque de recolher em todo o país enquanto os tumultos continuam\n\n"..,
+
+Print_Text_LouisvilleSunTimes_July14_title = "Jornal Louisville Sun Times - 14 de Julho de 1993",
+
+Print_Text_LouisvilleSunTimes_July14_info = "PRESIDENTE DEIXA WASHINGTON - "VOCÊ ESTÁ POR SUA CONTA!"\n\n"..
+"O "Vírus Knox" se espalha pelo contato com FLUIDOS\n\n"..
+"Zona Militar LIBERTA civis detidos\n\n"..
+"Sinais INTERROMPIDOS por interferência\n\n"..,
+
+Print_Text_LouisvilleSunTimes_July15_title = "Jornal Louisville Sun Times - 15 de Julho de 1993",
+
+Print_Text_LouisvilleSunTimes_July15_info = "BARREIRA DE ZONA KNOX DE VIOLAÇÃO INFECTADA\n\n"..
+"CENTENAS de barricadas VIOLADAS infectadas\n\n"..
+"PÂNICO enquanto civis fogem de Louisville, estado\n\n"..
+"Prefeito: "AINDA estamos seguros."",
+
+Print_Text_LouisvilleSunTimes_July16_title = "Jornal Louisville Sun Times - 16 de Julho de 1993",
+
+Print_Text_LouisvilleSunTimes_July16_info = "INVASÃO EM LOUISVILLE - ORE POR NÓS\n\n"..
+"Militares DERROTADOS pelo Vírus Knox \n\n"..
+"Vírus se espalhando SEM mordidas\n\n"..
+"Barrique sua casa e carregue suas ARMAS, antes que seja tarde demais\n"..,
+
+Print_Text_LouisvilleBruiser_title = "Fábrica de Batedores de Louisville",
+Print_Text_LouisvilleBruiser_info = "BATEDORES DE LOUISVILLE\n\nA Casa do Taco de Beisebol\n\nVenha conhecer os fabricantes dos tacos oficiais do Campeonato Mundial de Beisebol!\n\nEntão leve um para casa!\n\nOuça as verdadeiras origens do taco mais icônico da história Americana.\n\nLigue para 555-3009 para reservar sua excursão de Domingo\n\nAvenida Slugger, Nº 130, Louisville, KY",
+
+Print_Text_KnoxBankJobAdRosewood_title = "Anúncio de Emprego no Banco Knox (Rosewood)",
+Print_Text_KnoxBankJobAdRosewood_info = "VAGA DE EMPREGO\n\nBANCO KNOX\n\nA maior instituição financeira do Kentucky está contratando!\n\nPrecisamos de dois caixas para nossa loja em Rosewood.\nÉ necessário diploma de faculdade ou dois anos de experiência em função similar. Salário de US$ 25.000. Detalhes de contato abaixo.\n\nBanco Knox, Nº 324, Rua Principal, Rosewood.",
+
+Print_Text_OnyxDriveinTheater_title = "Cinema Drive-in Onyx",
+Print_Text_OnyxDriveinTheater_info = "Assista aos filmes mais recentes no conforto do seu veículo!\n\nEm operação contínua desde 1952, o Cinema Onyx Drive-in tem espaço para mais de cem veículos, com pipoca, cachorro-quente e muito mais disponíveis em nosso prédio de entrada.\n\nOs ingressos custam a partir de apenas US$ 5.\n\nAGORA EXIBINDO: O Elemento Esquecido\n\nLIGUE PARA 943-555-1390 PARA PRÉ-RESERVAR INGRESSOS\n\nNº 7310, US-60, Rosewood, KY",
+
+Print_Text_ElveeArena_title = "Luta de Boxe na Arena Elvee",
+Print_Text_ElveeArena_info = "COMPRE JÁ\nCARA DE BEBÊ vs REDEMOINHO\nJULY 3\n\nArena Elvee, 340 Rua Jackson, Louisville, Kentucky.",
+
+Print_Text_Fossoil1_title = "Fossoil (Muldraugh)",
+Print_Text_Fossoil1_info = "Os preços da gasolina estão no nível mais baixo possível!\n\nAgora com AINDA MENOS chumbo do que antes, nunca houve um momento melhor para reabastecer com Fossoil!\n\nDo preço acessível regular ao premium de primeira linha, seu motor vai agradecer.\n\nAqui está apenas um local que atende sua área!\n\nRodovia Dixie, Nº 119, Muldraugh, Kentucky",
+
+Print_Text_Fossoil2_title = "Fossoil (West Point)",
+Print_Text_Fossoil2_info = "Os preços da gasolina estão no nível mais baixo possível!\n\nAgora com AINDA MENOS chumbo do que antes, nunca houve um momento melhor para reabastecer com Fossoil!\n\nDo preço acessível regular ao premium de primeira linha, seu motor vai agradecer.\n\nAqui está apenas um local que atende sua área!\n\nSegunda Rua, Nº 205, West Point, Kentucky",
+
+Print_Text_Fossoil3_title = "Fossoil (Rosewood)",
+Print_Text_Fossoil3_info = "Os preços da gasolina estão no nível mais baixo possível!\n\nAgora com AINDA MENOS chumbo do que antes, nunca houve um momento melhor para reabastecer com Fossoil!\n\nDo preço acessível regular ao premium de primeira linha, seu motor vai agradecer.\n\nAqui está apenas um local que atende sua área!\n\nEstrada Rosewood, Nº 2838, Rosewood, Kentucky",
+
+Print_Text_Fossoil4_title = "Fossoil (Ekron)",
+Print_Text_Fossoil4_info = "Os preços da gasolina estão no nível mais baixo possível!\n\nAgora com AINDA MENOS chumbo do que antes, nunca houve um momento melhor para reabastecer com Fossoil!\n\nDo preço acessível regular ao premium de primeira linha, seu motor vai agradecer.\n\nAqui está apenas um local que atende sua área!\n\nEstrada Velha de Ekron, Nº 15, Ekron, Kentucky",
+
+Print_Text_Fossoil5_title = "Fossoil (Riverside)",
+Print_Text_Fossoil5_info = "Os preços da gasolina estão no nível mais baixo possível!\n\nAgora com AINDA MENOS chumbo do que antes, nunca houve um momento melhor para reabastecer com Fossoil!\n\nDo preço acessível regular ao premium de primeira linha, seu motor vai agradecer.\n\nAqui está apenas um local que atende sua área!\n\nEstrada da Rocha Ridge, Nº 160, Riverside, Kentucky",
+
+Print_Text_Fossoil6_title = "Fossoil (Brandenburg)",
+Print_Text_Fossoil6_info = "Os preços da gasolina estão no nível mais baixo possível!\n\nAgora com AINDA MENOS chumbo do que antes, nunca houve um momento melhor para reabastecer com Fossoil!\n\nDo preço acessível regular ao premium de primeira linha, seu motor vai agradecer.\n\nAqui está apenas um local que atende sua área!\n\nBypass de Brandemburgo, Nº 582, Brandenburg, Kentucky",
+
+Print_Text_Fossoil7_title = "Fossoil (Sudoeste de Louisville)",
+Print_Text_Fossoil7_info = "Os preços da gasolina estão no nível mais baixo possível!\n\nAgora com AINDA MENOS chumbo do que antes, nunca houve um momento melhor para reabastecer com Fossoil!\n\nDo preço acessível regular ao premium de primeira linha, seu motor vai agradecer.\n\nAqui está apenas um local que atende sua área!\n\nRua Rockford, Nº 4, Louisville, Kentucky",
+
+Print_Text_Fossoil8_title = "Fossoil (Sul de Louisville)",
+Print_Text_Fossoil8_info = "Os preços da gasolina estão no nível mais baixo possível!\n\nAgora com AINDA MENOS chumbo do que antes, nunca houve um momento melhor para reabastecer com Fossoil!\n\nDo preço acessível regular ao premium de primeira linha, seu motor vai agradecer.\n\nAqui está apenas um local que atende sua área!\n\nEstrada Manslick, Nº 3259, Louisville, Kentucky",
+
+Print_Text_EPToolsLV_title = "Ferramentas E.P. Louisville",
+Print_Text_EPToolsLV_info = "Para tudo o que você precisa e algumas coisas que você não precisa\n\n"Não há lugar melhor para comprar um alicate e uma chave de fenda." - Sam Graham, Metalheads\n\n "Eu sempre compro meus pregos na E.P." - Hans Jorgensen, Jorgensen e Filhos da Carpintaria\n\n"Comecei minha fazenda com sementes e uma pá da E.P." - Franklin Jones, CEO da Kentucky Farm Corp.\n\nCom esse tipo de apoio, não precisamos dizer mais nada!\n\nMostre-nos este folheto em nossa loja a sudeste de Louisville para obter 10% de desconto em qualquer ferramenta!*\n*excluindo chaves de fenda\n\nEncontre-nos aqui!\nRua Southside, Nº 802, Louisville, Kentucky.",
+
+Print_Text_ReadyPrep_title = "Ready Prep",
+Print_Text_ReadyPrep_info = "Aumento da criminalidade! Tumultos! Cultos perigosos!\n\nSua LIBERDADE está em perigo!\n\nDizemos: não tenha medo - prepare-se! \n\nFacas de Sobrevivência Resistentes\nO Melhor em Roupas Militares Excedentes\nTendas que Podem Resistir a Furacões\nArmas para Caça - e Autodefesa\n\nVenha para a Ready Prep no noroeste de Louisville, ao sul de Ohio.\n\nPrepare-se para o pior - com o melhor!\n\nRua 4ª, Nº 1104, Louisville",
+
+Print_Text_WellingtonHeightsGolfClub_title = "Clube de Golfe Wellington Heights",
+Print_Text_WellingtonHeightsGolfClub_info = "Veja os pontos turísticos em WELLINGTON HEIGHTS\n\nNosso difícil, mas justo, campo de nove buracos no lado norte do Parque Wellington Heights oferece algo para jogadores de todos os níveis de habilidade.\n\nVenha para nossas aulas semanais com Logan Barton, vencedor do Riverside Classic de 1992. Aluguel de tacos e descontos para grupos disponíveis.\n\nMesmo que você não seja um golfista, encontre comida e bebida de alta qualidade em nosso confortável, amplo e privado clube. Por que não nos visitar hoje?\n\nWELLINGTON HEIGHTS\nEstamos bem acima da média\n\nJunte-se a nós para uma rodada hoje!",
+
+Print_Text_MuldraughBakeSale_title ="Venda Anual de Bolos do Comitê de Senhoras de Muldraugh!",
+Print_Text_MuldraughBakeSale_info = "Quando? 2 de Julho!\n\nOnde? No estacionamento da Igreja da Santa Graça!\n\nProdutos assados ​​E jogos de ferradura e arremesso de argolas, e um passeio de pônei. Diversão para toda a família!\n\nTodos os lucros vão para o Comitê de Senhoras de Muldraugh. Unindo mulheres. Arrecadando fundos para os vulneráveis.",
+
+Print_Text_FarmingAndRuralSupplyDoeValley_title ="Farming & Rural Supply",
+Print_Text_FarmingAndRuralSupplyDoeValley_info = "Ferramentas! Sementes! Armas de Fogo! Roupas resistentes!\n\nVocê encontrará tudo isso na Farming & Rural Supply.\n\nTemos a confiança de fazendeiros, jardineiros e caçadores locais.\n\nDamos consultoria especializada GRATUITA sobre qualquer coisa relacionada à agricultura. É só perguntar!\n\nMostre este folheto em nossa loja em Fallas Lake para receber um PACOTE GRÁTIS DE SEMENTES DE VEGETAIS (um por cliente)",
+
+Print_Text_HavishamSuites_title = "Suítes do Hotel Havisham",
+Print_Text_HavishamSuites_info = "A porta de entrada para seus sonhos.\n\nLUXO e RELAXAMENTO.\n\nUma experiência que durará a vida toda.\n\nNas Suítes Havisham, sabemos que experiências são mais importantes do que coisas. Nossa localização deslumbrante em Louisville, a dois quarteirões ao sul da ponte Ohio, possui duas salas de conferência, um auditório e mais de duzentos quartos de hotel. Seja a negócios ou lazer, uma localização privilegiada, equipe amigável e artistas profissionais de coquetéis em nosso bar significam que as Suítes Havisham tem exatamente o que você precisa.\n\nRua Norte 1, Nº 130, Louisville, Kentucky.",
+
+Print_Text_SunsetPinesFuneralHome_title = "Funerária Sunset Pines",
+Print_Text_SunsetPinesFuneralHome_info = "No Sunset Pines, você entra na vida após a morte com estilo!\n\nNão precisa esperar. Planeje e pague seu funeral hoje.\n\nDeixe sua família se concentrar em suas memórias felizes. Escolha entre uma variedade de caixões para se adequar a todos os orçamentos, ou mantenha-o simples com uma cremação. Nossos consultores pós-vida até mesmo ajudarão você a lidar com a burocracia da morte.\n\nCAIXÃO DE CARVALHO U$500\n\nCAIXÃO DE PINHEIRO U$200\n\nCAIXÃO CEREJA U$400\n\nFaça do seu descanso final um lugar confortável.\n\nRua Principal Leste, Nº 401, Louisville, KY.",
+
+Print_Text_UStoreItRiverside_title = "U-Store It (Riverside)",
+Print_Text_UStoreItRiverside_info = "Guarde-o... na U-Store It!\n\nArmários espaçosos e acessíveis para todas as suas necessidades de armazenamento.\n\nDe móveis e obras de arte para casa, a ferramentas e armazenamento seguro de armas e munição. De alimentos não perecíveis a roupas que você não suporta comprar em brechós...\n\nGuarde-o... na U-Store It!\n\nOs preços começam em apenas US$ 20 por mês!\n\nGanhe 3 grandes estilos pelo preço de 2 até 9 de Julho.\n\nRiverside, KY",
+
+Print_Text_UStoreItLouisville_title = "U-Store It (Louisville)",
+Print_Text_UStoreItLouisville_info = "Guarde-o... na U-Store It!\n\nArmários espaçosos e acessíveis para todas as suas necessidades de armazenamento.\n\nDe móveis e obras de arte para casa, a ferramentas e armazenamento seguro de armas e munição. De alimentos não perecíveis a roupas que você não suporta comprar em brechós...\n\nGuarde-o... na U-Store It!\n\nOs preços começam em apenas US$ 20 por mês!\n\nGanhe 3 grandes estilos pelo preço de 2 até 9 de Julho.\n\nLouisville, KY",
+
+Print_Text_UStoreItMuldraugh_title = "U-Store It (Muldraugh)",
+Print_Text_UStoreItMuldraugh_info = "Guarde-o... na U-Store It!\n\nArmários espaçosos e acessíveis para todas as suas necessidades de armazenamento.\n\nDe móveis e obras de arte para casa, a ferramentas e armazenamento seguro de armas e munição. De alimentos não perecíveis a roupas que você não suporta comprar em brechós...\n\nGuarde-o... na U-Store It!\n\nOs preços começam em apenas US$ 20 por mês!\n\nGanhe 3 grandes estilos pelo preço de 2 até 9 de Julho.\n\nMuldraugh, KY",
+
+Print_Text_WestMapleCountryClub_title = "Clube de Campo West Maple",
+Print_Text_WestMapleCountryClub_info = "Clube de Campo West Maple: um pedaço do paraíso esportivo!\n\nNosso campo de golfe de 18 buracos de classe mundial atrai profissionais do mundo todo...\n\n... mas o golfe é apenas UMA das nossas atrações!\n\nNade na nossa piscina.\nJogue tênis, squash ou sinuca\nRelaxe e recarregue as energias em nosso aconchegante lounge, bar e restaurante.\n\nCom 5% de desconto na assinatura para novos membros e 20% de desconto para suas esposas, NUNCA houve um momento melhor para se associar!\n\nLigue para (555)-WESTMCC ou visite-nos na Estrada do Parque Lakeshore, Riverside.",
+
+Print_Text_WPDIY_title = "West Point DIY",
+Print_Text_WPDIY_info = "DE SERRAS E MARTELOS\n\nPARA SEMENTES E REGADORES...\n\nDE MACACÕES E CIMENTO\n\nPARA PREGOS E PLACAS DE METAL!\n\nNós fornecemos aos melhores trabalhadores (e trabalhadoras!) de West Point tudo o que eles precisam para REALIZAR o trabalho.\n\nApresente este folheto na loja para ganhar uma caixa de pregos grátis*.\n\n*um por cliente\n\nEncontre-nos no Nº 405, Rua Principal, em frente ao Seahorse Coffee.",
+
+Print_Text_WPTownHall_title = "Prefeitura de West Point",
+Print_Text_WPTownHall_info = ""Olá! Sou Richard Rosenwald, Prefeito de West Point, a pequena cidade com um grande coração!"\n\nVocê pode não perceber, mas nossa prefeitura está SEMPRE disponível para ajudar, não importa o problema.\n\nA democracia funciona melhor quando é aberta, e estamos sempre abertos para você!\n\nPrecisa de ajuda com LEIS LOCAIS?\nQuer conselhos sobre PERMISSÕES?\nPrecisa saber SEUS DIREITOS como cidadão Americano?"\n\nLigue para meu escritório no número 555-2100 ou visite-me na Prefeitura na Rua Três"",
+
+Print_Text_RiversideIndependenceDayPartyAllWelcome_title  = "Festa do Dia da Independência em Riverside",
+Print_Text_RiversideIndependenceDayPartyAllWelcome_info  = "FESTA DE BAIRRO no número 8 da KELLY DRIVE em RIVERSIDE em 4 de Julho.\n\nMÚSICA, DIVERSÃO, CERVEJA e ótima comida Garantida!",
+
+Print_Text_HitVidsJobAdMarchRidge_title = "Hit Vids! Procura-se Assistentes de Varejo",
+Print_Text_HitVidsJobAdMarchRidge_info= "A Hit Vids está contratando em March Ridge!\n\nTem um jeito amigável e prestativo E ama os últimos sucessos de bilheteria? Entre em contato!\n\nNão é necessária experiência alguma! Inscreva-se hoje.\n\nAvenida Piers, Nº 5565, March Ridge",
+
+Print_Text_MarchRidgeSchoolJobAd_title = "Precisa-se de Zelador da Escola de March Ridge",
+Print_Text_MarchRidgeSchoolJobAd_info = "Precisamos URGENTEMENTE de um zelador em nossa escola no norte de March Ridge!\n\nExperiência em limpeza de ambientes escolares é preferível.\nDesta vez, é necessário ter antecedentes criminais limpos.\n\nEntre em contato com o Diretor Stanley Leemore pelo telefone 555-6677 para obter mais informações.\n\nRua Folger, Nº 121, March Ridge",
+
+Print_Text_FossoilField_title = "Campo da Fossoil",
+Print_Text_FossoilField_info= "VAMOS BINKIES!\n\nTorça pelos KENTUCKY BINKIES no estádio Fossoil Field!\n\nRELAXE em nossas arquibancadas reformadas.\n\nCONSIGA deliciosas comidas Americanas em nossas barracas.\n\nAPRECIE música animada de órgão.\n\nASSISTA ao maior time de beisebol de todos os tempos agraciar o Kentucky!\n\nDiversão para toda a família E hospitalidade corporativa!\n\nAgradecemos aos nossos amigos da Fossoil!\n\nRua Principal Leste, Nº 3800, Louisville.",
+
+Print_Text_HouseforSale895_title= "Casa à Venda Nº 895",
+Print_Text_HouseforSale895_info= "Quartos: 2, Banheiros: 2, Área: 170 metros quadrados, Preço: U$52.000\n\nEncontre um novo lar nesta encantadora casa de dois andares no centro de West Point!\n\nExcelente escola primária nas proximidades.\n\nExterior charmoso em alvenaria.\n\nInclui um jardim pequeno e uma garagem em via privada nos fundos da propriedade.\n\nLigue para 555-9029.\n\nRua Principal, Nº 1114, West Point, KY.",
+
+Print_Text_HouseforSale903_title= "Casa à Venda Nº 903",
+Print_Text_HouseforSale903_info= "Quartos: 3 (potencial), Banheiros: 2, Área: 125 metros quadrados, Preço: U$70.000\n\nUma espaçosa residência de dois andares localizada em uma área privada no centro de Muldraugh.\n\nPossui um amplo jardim com uma cerca alta para maior privacidade.\n\nLocalizado a uma curta distância de carro da rodovia principal para West Point e Louisville.\n\nAgende uma visita e confira você mesmo!\n\nLigue para 555-9029.\n\nRua Dewey, Nº 625, Muldraugh, KY.",
+
+Print_Text_HouseforSale922_title= "Casa à Venda Nº 922",
+Print_Text_HouseforSale922_info= "Quartos: 1, Banheiros: 1, Área: 62 metros quadrados, Preço: U$30.000\n\nBungalow compacto à venda. Localizado no extremo sul de Rosewood.\n\nCercado por florestas majestosas e profundas, este local certamente se tornará uma área muito procurada nos próximos anos!\n\nQuestões estruturais interessantes que atrairão pessoas que fazem reformas em casa em todos os lugares.\n\nLigue para 555-9029.\n\nEstrada São Martinho, Nº 78, Rosewood, KY.",
+
+Print_Text_HouseforSale934_title= "Casa à Venda Nº 934",
+Print_Text_HouseforSale934_info= "Quartos: 2, Banheiros: 2, Área: 115 metros quadrados, Preço: U$20.000\n\nCasa rústica de dois andares localizada em área histórica.\n\nDistância equidistante entre Riverside e Brandenburg: o sonho de qualquer viajante.\n\nEmbora o bairro esteja passando por reformas, com um pouco de espírito comunitário, ele estará de volta em breve!\n\nLigue para 555-9029.\n\nEstrada Wilson, Nº 575, Riverside, KY.",
+
+Print_Text_PremiseswithApartmentsforLeaselistingno891_title= "Imóveis para Alugar Nº 891",
+Print_Text_PremiseswithApartmentsforLeaselistingno891_info= "Quartos: N/A, Banheiros: 3, Área: 339 metros quadrados, Preço: U$500 por mês\n\nRestaurante espaçoso com dois apartamentos no segundo andar para alugar, juntos ou separados, no centro de Irvington. Ambos precisam de reforma, mas têm enorme potencial.\n\nO restaurante vem com mobília, incluindo dois fogões. Apartamentos perfeitos para carpinteiros especialistas ou faz-tudo. Com um pouco de graxa no cotovelo, esta propriedade pode facilmente gerar um grande lucro!\n\nLigue para 555-9029.\n\nAvenida 1, Nº 217, Irvington, KY.",
+
+Print_Text_HouseforSale907_title= "Casa à Venda Nº 907",
+Print_Text_HouseforSale907_info= "Quartos: 2, Banheiros: 1, Área: 120 metros quadrados, Preço: U$55.000\n\nCasa aconchegante de dois andares com um jardim generoso, no norte de Muldraugh.\n\nA cozinha precisa de uma pequena reforma. Localização tranquila e relaxante.\n\nO lar perfeito para um casal apaixonado criar memórias que durarão a vida toda!\n\nLigue para 555-9029.\n\nEstrada Walker, Nº 106, Muldraugh, KY.",
+
+Print_Text_YourLocalShelterBrandenburg_title= "Seu Abrigo Local (Brandenburg)",
+Print_Text_YourLocalShelterBrandenburg_info= "O que você faria se o pior acontecesse?\n\nVocê tem um lugar para ir?\n\nEm caso de emergência, incluindo, mas não se limitando a, eventos climáticos extremos, invasões inimigas e terremotos... você deve ter um plano.\n\nPor um pagamento mensal razoável, você pode ficar tranquilo!\n\nLigue para 555-4646.\n\nABRIGO MAIS PRÓXIMO: Rua Principal, Nº 712, Brandenburg\n\nCAPACIDADE CONFORTÁVEL: 60\nCAPACIDADE MÁXIMA: 120\nLONGO PRAZO OU TEMPORÁRIO: Temporário",
+
+Print_Text_HouseforSale912_title= "Casa à Venda Nº 912",
+Print_Text_HouseforSale912_info= "Quartos: 1, Banheiros: 1, Área: 36 metros quadrados, Preço: U$32.500\n\nBangalô compacto com cerca alta ao redor para máxima privacidade.\n\nEsta localização oferece o equilíbrio perfeito entre solidão e praticidade, com Muldraugh a uma curta distância.\n\nUma floresta ao redor também torna o local perfeito para os amantes da natureza.\n\nLigue para 555-9029.\n\nNº 213, Caminho Irma, Muldraugh, KY.",
+
+Print_Text_HouseforSale915_title= "Casa à Venda Nº 915",
+Print_Text_HouseforSale915_info= "Quartos: 3, Banheiros: 2, Área: 357 metros quadrados, Preço: U$125.000\n\nCasa de dois andares em localização incrível ao lado do rio Ohio, a oeste de West Point.\n\nTrês quartos, dois banheiros. Lindo exterior de pedra e tijolo.\n\nDo outro lado da rua, há um lago deslumbrante, perfeito para pescar ou apenas uma caminhada relaxante.\n\nLigue para 555-9029.\n\nCaminho Prewitt, Nº 3, West Point, KY.",
+
+Print_Text_HouseforSale943_title= "Casa à Venda Nº 943",
+Print_Text_HouseforSale943_info= "Quartos: 2, Banheiros: 2, Área: 199 metros quadrados, Preço: U$65.000\n\nCasa colorida de dois andares ao norte de Rosewood, com 12.141 metros quadrados de terra e instalações para animais de fazenda.\n\nQuiet, rural location. Perfect for a small scale farmer who likes a slower life.\n\nCall us on 555-9029.\n\nNº 132, Flaherty Rd., Rosewood, KY.",
+
+Print_Text_HouseforSale930_title= "Casa à Venda Nº 930",
+Print_Text_HouseforSale930_info= "Quartos: 3, Banheiros: 2, Área: 185 metros quadrados, Preço: U$70.000\n\nMoradia charmosa e espaçosa de dois andares com jardim comunitário, a apenas um minuto de carro de Riverside.\n\nAjude seus vizinhos com suas plantações e compartilhe sua colheita, ou fique em seu próprio terreno particular ao lado de sua casa - a escolha é sua!\n\nO local perfeito tanto para jardineiros iniciantes quanto para fazendeiros experientes.\n\nLigue para 555-9029.\n\nEstrada Olin, Nº 739, Riverside, KY.",
+
+Print_Text_HouseforSale929_title= "Casa à Venda Nº 929",
+Print_Text_HouseforSale929_info= "Quartos: N/A, Banheiros: N/A, Área: 92 metros quadrados, Preço: U$20,000\n\nCasa sem mobília em local extremamente seguro.\n\nLocalizado a oeste do centro de Rosewood, entre uma floresta e uma variedade de lojas.\n\nLocalização perfeita para quem quer estar cercado pela natureza sem abrir mão da conveniência.\n\nLigue para 555-9029.\n\nRua Frederick, Nº 70, Rosewood, KY.",
+
+Print_Text_HouseforSale919_title= "Casa à Venda Nº 919",
+Print_Text_HouseforSale919_info= "Quartos: 3, Banheiros: 3, Área: 359 metros quadrados, Preço: U$90,000\n\nEncontre seu lar definitivo ao norte de Ekron.\n\nLocalizado no final de uma rua particular e situado em um cenário rural pitoresco.\n\nPropriedade espaçosa de dois andares, incluindo um jardim generoso. Uma localização perfeita para uma família grande.\n\nLigue para 555-9029.\n\nEstrada Velha de Ekron, Nº 8, Ekron, KY.",
+
+Print_Text_HouseforSale845_title= "Casa à Venda Nº 845",
+Print_Text_HouseforSale845_info= "Quartos: 3, Banheiros: 3, Área: 250 metros quadrados, Preço: U$75,000\n\nCasa de dois andares bem conservada com 40.470 metros quadrados de terra agrícola, além de dependências, galinheiro e um poço privado.\n\nEsta moradia irradia charme rústico - um lar perfeito para uma família de agricultores!\n\nLigue para 555-9029.\n\nEstrada Buck, Nº 1, Muldraugh, KY.",
+
+Print_Text_HouseforSale851_title= "Casa à Venda Nº 851",
+Print_Text_HouseforSale851_info= "Quartos: 2, Banheiros: 2, Área: 134 metros quadrados, Preço: U$110,000\n\nUma casa de fazenda autossustentável e resistente com terras agrícolas juntas de 48.564 metros quadrados. Possui instalações para gado, galinhas e muito mais!\n\nLocalização perfeita, equidistante de Muldraugh, Rosewood e Doe Valley.\n\nO sonho de um fazendeiro!\n\nLigue para 555-9029.\n\nRua Bálsamo, Muldraugh, KY.",
+
+Print_Text_HouseforSale855_title= "Casa à Venda Nº 855",
+Print_Text_HouseforSale855_info= "Quartos: 1, Banheiros: 1, Área: 41 metros quadrados, Preço: U$40,000\n\nBangalô compacto e aconchegante localizado a oeste de Riverside e ao sul do poderoso rio Ohio.\n\nInclui garagem e galpão de ferramentas.\n\nO local perfeito para longas caminhadas à beira do rio!\n\nLigue para 555-9029.\n\nEstrada Long Branch, Nº 3, Riverside, KY.",
+
+Print_Text_HouseforSale860_title= "Casa à Venda Nº 860",
+Print_Text_HouseforSale860_info= "Quartos: 2, Banheiros: 2, Área: 139 metros quadrados, Preço: U$75,000\n\nCom localização central em um bairro amigável e tranquilo em Muldraugh, com uma cerca alta para privacidade.\n\nEste interior de dois andares maravilhosamente decorado precisa ser visto para ser apreciado!\n\nLigue para 555-9029.\n\nNº 751, Rua E Maple, Muldraugh, KY.",
+
+Print_Text_PremisesforLease863_title = "Imóveis para Alugar Nº 863",
+Print_Text_PremisesforLease863_info = "Quartos: N/A, Banheiros: 2, Área: 58 metros quadrados, Aluguel: U$1.000 por mês\n\nEscritório espaçoso para alugar em localização central muito procurada em West Point.\n\nTodas as comodidades de West Point a uma curta distância.\n\nCertamente será arrematado - entre em contato hoje mesmo!\n\nLigue para 555-9029.\n\nNº 302, Rua 3, West Point, KY.",
+
+Print_Text_HouseforSale867_title= "Casa à Venda Nº 867",
+Print_Text_HouseforSale867_info= "Quartos: 2, Banheiros: 2, Área: 199 metros quadrados, Preço: U$65,000\n\nCom localização ideal para fazendeiros ou amantes da natureza, esta propriedade de dois andares oferece muito espaço para crianças e animais.\n\nObserve o mundo passar da varanda, com um julepe de menta na mão!\n\nLigue para 555-9029.\n\nEstrada Mercer, Nº 899, West Point, KY.",
+
+Print_Text_HouseforSale799_title= "Casa à Venda Nº 799",
+Print_Text_HouseforSale799_info= "Quartos: N/A, Banheiros: N/A, Área: 92 metros quadrados, Preço: U$25,000\n\nCom localização central em Brandemburgo, ao norte da Escola Secundária Maj. Saunders, esta casa sem mobília é uma verdadeira pechincha.\n\nUm interior inacabado significa que você pode colocar sua própria marca nesta casa! Vem com uma garagem espaçosa.\n\nLigue para 555-9029.\n\nRua Howard, Nº 48, Brandenburg, KY.",
+
+Print_Text_HouseforSale818_title= "Casa à Venda Nº 818",
+Print_Text_HouseforSale818_info= "Quartos: N/A, Banheiros: 1 Área: 59 metros quadrados, Preço: U$18,000\n\nEncontre paz neste charmoso bangalô em Echo Creek.\n\nEmbora um pouco negligenciada, um pouco de esforço pode transformar esta joia bruta em um diamante polido!\n\nLigue para 555-9029.\n\nAvenida Forrest, Nº 8, Echo Creek, KY.",
+
+Print_Text_HouseforSale787_title= "Casa à Venda Nº 787",
+Print_Text_HouseforSale787_info= "Bedrooms: 2, Bathrooms: 1, Area: 74 metros quadrados , Preço: U$30,000\n\nIdeally positioned on the eastern edge of Brandenburg, stores and schools are within easy walking distance of this beautiful bungalow, while nearby forest walks and a lake ensure you get the best of nature as well.\n\nYou'll truly be blown away by this house!\n\nCall us on 555-9029.\n\nNº 64, Broadway Street, Brandenburg, KY.",
+
+Print_Text_GreenesJobAdEkron_title= "Greene's",
+Print_Text_GreenesJobAdEkron_info= "Precisamos de um trabalhador bom e honesto para a Greene's em Ekron.\n\nNada de adolescentes ou atrevimento. Apenas o bom e duro trabalho Americano.\n\nUS$ 5 por hora. Serão esperadas horas extras.\n\nTreinamento sobre como trabalhar no caixa será fornecido se necessário.\n\nEnvie para: Greene's, Estrada Haysville, Nº 15, Ekron, KY.",
+
+Print_Text_CabinforRentDixie_title= "Cabine para Alugar",
+Print_Text_CabinforRentDixie_info= " em Dixie, ao norte do pátio ferroviário de Muldraugh\n\nInstalações ao ar livre\nSem lixo\nSem perda de tempo\n\nLigue para Zip em 555-6932",
+
+Print_Text_FallasLakeChurch_title= "Reunião de Oração na Igreja Fallas Lake",
+Print_Text_FallasLakeChurch_info= "07/07/93 @ 20h\n\nNossa comunidade local se reunirá para uma oração especial para que as autoridades sejam guiadas pela mão Misericordiosa de Jesus e que Ele nos poupe de Sua praga.\n\nApresentado pelo Pastor Robert Clay.\n\nTodos são bem-vindos.\n\nQue Deus tenha misericórdia de nós.\n\n(Por favor, não venha se não estiver se sentindo bem)",
+
+Print_Text_OldCGECorpBuilding_title= "Antigo Edifício da CGE Corp.",
+Print_Text_OldCGECorpBuilding_info= "PRESERVE NOSSA HERANÇA\n\nO Governo de Kentucky está planejando DEMOLIR o edifício da CGE Corp a leste de Brandenburg.\n\nNão podemos deixar isso acontecer!\n\nA arquitetura, incluindo uma passarela incomum, faz desta uma parte ÚNICA da história do Kentucky!\n\nA CGE gerou dezenas de empregos na indústria entre 1961 e 1980, e o prédio deveria ser transformado em um museu para preservar essa parte importante da história do Kentucky!\n\nENTRE EM CONTATO COM SEUS REPRESENTANTES LOCAIS SOBRE ESTE ASSUNTO IMPORTANTE\n\nPASSE ESTE FOLHETO",
+
+Print_Text_RustyRifle_title= "O Rifle Enferrujado",
+Print_Text_RustyRifle_info= "TODA SEXTA-FEIRA ÀS\n\nO RIFLE ENFERRUJADO\n\nBANDA LOCAL "THE BANJO BOYS"\n\nFOTOS EXTRA GRANDES\n\n10% DE DESCONTO NAS TRÊS PRIMEIRAS CERVEJAS\n\nMULHERES. MÚSICA COUNTRY. BONS MOMENTOS.\n\nJUNTE-SE A NÓS NA FRONTEIRA SUL DE MULDRAUGH\n\nNÃO PERCA\n\nDIXIE AVENIDA, Nº 820, MULDRAUGH",
+
+Print_Text_TheSeaShanty_title = "A Cantiga do Mar",
+Print_Text_TheSeaShanty_info = "Prato de frutos do mar US$9,99\nPeixe empanado U$5,99\nCamarão na Manteiga e Alho U$6,99\n\nO que você faz com um prato de frutos do mar?\nO que você faz com o peixe tão maltratado...\n\nNaveguem até The Sea Shanty, meus queridos!\n\nExperimente nosso prato de camarão por US$9,99!\nEspeciais de caranguejo e lagosta todos os Sábados!\nNão se esqueça da promoção de surfe e turf de Terça-feira por US$6,99!\n\nParque da Orla, Nº 48, Louisville\n\nMostre este folheto a um garçom para ganhar 10% de desconto na lagosta",
+
+Print_Text_NailsAndNuts_title = "Nails & Nuts",
+Print_Text_NailsAndNuts_info = "Faça você mesmo com a ajuda da Nails & Nuts!\n\nTemos um estoque completo de martelos, chaves de fenda, serras e todas as outras ferramentas que você possa precisar.\n\nFique estiloso enquanto trabalha com nossa seleção de roupas de trabalho.\n\nGRÁTIS! Apresente este folheto em nossa loja Riverside para ganhar um colete de alta visibilidade grátis!\n\nAvenida Rogers, Nº 15, Riverside",
+
+Print_Text_HighStreetApartments_title = "Apartamentos na Rua Principal",
+Print_Text_HighStreetApartments_info = "Venha morar na Rua Principal\n\nEm nossos espaçosos apartamentos de luxo só falta uma coisa: você!\n\nNossos apartamentos totalmente mobiliados contam com cozinhas completas, salas de estar, escrivaninhas, estantes e televisões.\n\nLocalizado a leste da Catedral de São Miguel, morar aqui será uma bênção - e um milagre!\n\nLigue para 555-3344 para uma visita sem pressão.",
+
+Print_Text_LowryCourt_title = "Lowry Court",
+Print_Text_LowryCourt_info = "Apartamentos aconchegantes e acessíveis à venda no centro de Louisville\n\nLocalizado em uma localização central, você encontrará uma nova vida no Lowry Court.\n\nO design do nosso prédio e a cerca de segurança garantem que você nunca mais terá que se preocupar com sua segurança pessoal!\n\nRua Kilkenny, Nº 1244, Louisville, KY",
+
+Print_Text_MeadshireEstate_title= "Propriedade Meadshire",
+Print_Text_MeadshireEstate_info= "Nosso exclusivo condomínio fechado está procurando novos inquilinos e proprietários!\n\nLocalizado em um ambiente gracioso a leste de Ekron, Meadshire garante privacidade E segurança.\n\nTodas as nossas casas de dois andares totalmente mobiliadas apresentam arquitetura moderna combinada com exteriores de tijolos vermelhos do velho mundo e uma ampla garagem junta.\n\nMude-se para Meadshire. Comece uma vida mais feliz.",
+
+Print_Text_LeafhillHeights_title= "Leafhill Heights",
+Print_Text_LeafhillHeights_info= "Procurando um espaço de escritório de classe mundial?\n\nExperimente Leafhill Heights.\n\nInfraestrutura de classe mundial.\nFluxo constante de graduados altamente qualificados da LSU.\nEspaço para atender a todas as necessidades.\n\nLeafhill Heights é a base que você precisa em um mundo em constante mudança.\n\nDo software às finanças, da academia à indústria: há espaço para crescer.\n\nEscritórios Leafhill Heights\nEstrada do Rio Inferior, Louisville, KY",
+
+Print_Text_PileoCrepeJobAdCrossRoadsMall_title = "Procura-se Gerente de Pilha de Crepe",
+Print_Text_PileoCrepeJobAdCrossRoadsMall_info= "Precisamos de gerente em nossa loja ao lado do Crossroads Mall. Cinco anos de experiência em ambiente movimentado são necessários. Salário muito competitivo, carro da empresa.\n\nCandidate-se com currículo no endereço abaixo ou ligue para 555-3492.\n\nEstrada do Acampamento dos Ursos, Nº 1125, Louisville, Kentucky",
+
+Print_Text_MailCarrierAdEkron_title= "Anúncio de Carteiro (Ekron)",
+Print_Text_MailCarrierAdEkron_info= "O Serviço Postal dos Estados Unidos está procurando CARTEIROS nas áreas de EKRON e IRVINGTON.\n\nConhecimento da localidade altamente preferencial. Treinamento fornecido. Carteira de motorista completa necessária.\n\nOs candidatos aprovados serão amigáveis, pacientes, educados e terão grande atenção aos detalhes.\n\nEnviar currículo para US MAIL, AVENIDA REESE, Nº 276, EKRON, KY40711",
+
+Print_Text_BrandenburgFD_title= "Corpo de Bombeiros de Brandemburgo",
+Print_Text_BrandenburgFD_info= "Não deixe para mais tarde. Previna-se contra incêndios hoje mesmo.\n\nArmazene o material combustível com segurança.\nNunca sobrecarregue as tomadas elétricas.\nNão deixe o forno ligado quando sair de casa.\nTenha uma rota de fuga em caso de incêndio.\nNão use roupas inflamáveis enquanto estiver fumando.\n\nSe um incêndio sair do controle, DISQUE 911 IMEDIATAMENTE!\n\nApresentado a você pelo Corpo de Bombeiros de Brandemburgo, Estrada Boyd, Nº 450, Brandenburg, KY.",
+
+Print_Text_LectromaxManufacturingJobAd_title= "Lectromax Manufacturing",
+Print_Text_LectromaxManufacturingJobAd_info= "EMPREGO DISPONÍVEL\n\nA Lectromax Manufacturing está contratando um operador experiente para trabalhar em nossa fábrica a sudoeste de Riverside.\n\nO trabalho consiste em cortar e moldar lâminas de serra. Experiência na área e prensa hidráulica necessária.\n\nPor favor, envie currículo e referências para o endereço listado abaixo. Salário negociável.\n\nEstrada Olin, Nº 740, Riverside, Kentucky",
+
+Print_Text_PizzaWhirledJobAdRosewood_title = "Anúncio de Emprego no Pizza Whirled",
+Print_Text_PizzaWhirledJobAdRosewood_info = "Onde estamos hoje no Pizza Whirled?\n\nTrazemos os sabores do mundo até você, uma fatia de cada vez, em uma pizza!\n\nFeito para os melhores aniversários, perfeito para festas de pizza, adequado para encontros sociais e até mesmo casamentos.\n\nNão importa a ocasião, você sairá do nosso Whirled impressionado com maravilhas do mundo todo - na pizza!\n\nFaça uma viagem até a Pizza Whirled mais próxima hoje mesmo!\n\nLeve este folheto ao nosso restaurante no norte de Rosewood para ganhar 10% de desconto em qualquer cobertura de pizza e um refrigerante grátis!*\n\n*até 01/07/93\n\nRua Principal, Nº 477, Rosewood",
+
+Print_Text_CircuitalHealing_title = "Reparo de Computadores de Cura Circuital",
+Print_Text_CircuitalHealing_info = "Precisa consertar um rádio? Sua TV está com problemas? Processador de texto precisa de atualização?\n\nVenha para a Cura Circuital em Ekron!\n\nMais de 20 anos de experiência em reparo e manutenção eletrônica.\n\nSe tiver uma faísca, nós podemos consertar!\n\nAvenida da Estrada do Parque, Nº 4B, Ekron, KY",
+
+Print_Text_McCoyLoggingCorp_title = "Madereira McCoy Co.",
+Print_Text_McCoyLoggingCorp_info = "PRECISA-SE DE LENHADORES\n\nPrecisamos de homens de confiança para trabalhos pesados ​​em nossa fábrica.\n\nO trabalho inclui o uso de equipamentos industriais, bem como machados e serras para cortes em menor escala e marcenaria personalizada. Capacidade de dirigir um caminhão é considerada um bônus.\n\nMadereira McCoy Co. Tornando as árvores úteis desde 1914.\n\nEstrada do Moinho Velho, Muldraugh, KY",
+
+Print_Text_DuCaseApartments_title = "Apartamentos Du Case",
+Print_Text_DuCaseApartments_info = "Aluguel a partir de US$450 por mês.\n\nAproveite a vista do rio Ohio de um dos nossos apartamentos acessíveis no norte de Louisville.\n\nTemos uma excelente seleção para atender a todos os estilos de vida e orçamentos.\n\nEstacionamento privado para moradores. Segurança 24 horas.\n\nVocê poderia passar o resto da sua vida aqui!",
+
+Print_Text_RedOakApartments_title = "Apartamentos Red Oak",
+Print_Text_RedOakApartments_info = "Apartamentos totalmente mobiliados disponíveis no coração de Louisville.\n\nAo sul do Grande Shopping Ohio.\n\nDe quartos individuais aconchegantes a apartamentos adequados para famílias grandes, você encontrará seu novo lar aqui!\n\nOs aluguéis começam em US$500 por mês.",
+
+Print_Text_DinerInTheWoods_title = "Jantar na Floresta",
+Print_Text_DinerInTheWoods_info = "Agora aberto de Abril a Setembro, fora da trilha de caminhada ao sul de West Point.\n\nRefeições requintadas vão aumentar sua energia - ou recompensá-lo por ter chegado até aqui!\n\nApresente este folheto no restaurante para ganhar uma garrafa de água grátis.\n\nParque Duffield, West Point, Kentucky\n\nLIGUE PRIMEIRO PARA GARANTIR QUE ESTAMOS ABERTOS",
+
+Print_Text_LSU_title = "Universidade Estadual de Louisville", 
+Print_Text_LSU_info = "Vamos lá, UEL!\n\nO instituto educacional mais prestigiado do Kentucky - fundado em 1798!\n\nEstude conosco, seja qual for seu futuro! Humanidades, Computação, Biologia Viral Transmissível, Psicologia Esportiva e muito mais...\n\nCentenas de professores altamente qualificados garantem uma educação de CLASSE MUNDIAL!\n\nE a Estadual de Louisville não é só sobre estudos...\nTimes esportivos que regularmente lideram ligas estaduais e nacionais\nClubes para participar e vida noturna local saudável\nFestas de barril\nAmizades que durarão a vida toda.\n\nAbrindo a porta para o resto da sua vida...\n\nEstrada do Antigo Seminário, Louisville, Kentucky",
+
+Print_Text_RosewoodFD_title = "Corpo de Bombeiros de Rosewood",
+Print_Text_RosewoodFD_info = "DICAS DE SEGURANÇA CONTRA INCÊNDIO\n\nO QUE FAZER:\nVerifique os detectores de fumaça\nTenha um extintor de incêndio e um cobertor\nLigue para o 911 se ocorrer um incêndio\n\nO QUE NÃO FAZER:\nUsar água em incêndios de óleo ou elétricos\nEsquecer de ter um plano de evacuação\nDeixar o forno ligado\n\nSE UM INCÊNDIO FICAR FORA DE CONTROLE, LIGUE PARA O 911 E EVACUE IMEDIATAMENTE DO LOCAL\n\nApresentado a você pelo Corpo de Bombeiros de Rosewood, Rua Principal, Nº 110, Rosewood, KY",
+
+Print_Text_FarmersMarket_title= "Mercado do Agricultor",
+Print_Text_FarmersMarket_info= "COMA SUAS VERDURAS!\n\nEncontre os MELHORES produtos! Perto da Rota 60, a noroeste de March Ridge!\n\nTemos as cenouras, batatas, repolhos mais frescos e muito mais...\n\n... tudo cultivado localmente por pessoas locais nascidas e criadas aqui\n\nNão há nada melhor do que a delícia caseira do Kentucky!",
+
+Print_Text_MuldraughPD_title= "Departamento de Polícia de Muldraugh",
+Print_Text_MuldraughPD_info= "Nossa comunidade. Nossa proteção.\n\nTodos são bem-vindos para participar da nossa reunião pública sobre crimes na área de Muldraugh.\nNossa agenda inclui:\n- O roubo de um Chevalier Dart\n- Despejo pela Rota 31W\n- O aumento da caça sem licença\n- Onda de roubo de geradores elétricos\n- Aumento recente de furtos em lojas\nMuldraugh é um lugar seguro e feliz - venha aprender como mantê-lo assim.\n\nREUNIÃO SOBRE CRIMES COMUNITÁRIOS\n16 de Junho @ 21h,\nDepartamento de Polícia de Muldraugh, Rua Wilson, Nº 230",
+
+Print_Text_LVPDHQ_title= "Seminário Público sobre Drogas",
+Print_Text_LVPDHQ_info= "SEMINÁRIO INSTRUTIVO SOBRE DROGAS NA SEDE DA POLÍCIA DE LOUISVILLE, ESTRADA INDUSTRIAL, Nº 635\n\n5 de Julho de 1993, 19h\n\nAprenda sobre os perigos do vício em drogas, as drogas de iniciação mais comuns e as formas insidiosas como as gangues exploram os vulneráveis.\n\nO Chefe Graham exibirá uma variedade de drogas apreendidas em nossas ruas e nos contará como as drogas NÃO são um problema apenas para outras pessoas e criminosos.\n\nA Dra. Tara Handel falará sobre suas próprias experiências com dependência de drogas e como SEMPRE há ajuda e esperança disponíveis.\n\nJohn Barrister, do Arauto de Kentucky, nos contará algumas histórias de crimes divertidas de nossa bela cidade. Traga uma mente aberta e um estômago forte!",
+
+Print_Text_RiversidePD_title= "Departamento de Polícia do Condado de Meade",
+Print_Text_RiversidePD_info= "Uma reunião informativa sobre segurança de armas de fogo será realizada em nosso prédio na Estrada da Rocha Ridge, Nº 210 no oeste de Riverside, no dia 3 de Julho, às 18h.\n\nAprenda a importância da disciplina do gatilho\nArmazenamento seguro de armas de fogo para manter sua família segura\nComo identificar seus alvos antes de atirar\nVocê e sua arma: conhecendo seus direitos\n\nFique de olho nesta demonstração!",
+
+Print_Text_TacodelPancho_title = "Taco del Pancho",
+Print_Text_TacodelPancho_info = "Hola, meu nome é Pancho!\n\nTACOS! BURRITOS! ENCHILLADAS!\n\nTemos tudo isso no Taco del Pancho!\n\nLeve este folheto para nossa loja ao lado da praça de alimentação do Shopping Crossroads para ganhar 20% de desconto em qualquer taco! E guacamole GRÁTIS!\n\nArriba!\n\nEstrada do Acampamento dos Ursos, Nº 1115, Louisville, Kentucky.",
+
+Print_Text_A1Hay_title= "",
+Print_Text_A1Hay_info= "",
+
+Print_Text_Airport_title= "",
+Print_Text_Airport_info= "",
+
+Print_Text_AMZSteel_title= "",
+Print_Text_AMZSteel_info= "",
+
+Print_Text_BeefChunk_title= "Beef Chunk Jerky Co.",
+Print_Text_BeefChunk_info= "Carne seca! Presente da natureza!\n\nO Beef Chunk Jerky é rico em proteínas para abastecer sua próxima aventura!\n\nCarne seca é duradoura, fácil de embalar, nutritiva E deliciosa!\n\nConfie em nossos especialistas em carne seca!\n\nSeu novo lanche favorito\n\nUS-60, Nº 15800, Irvington, Kentucky",
+
+Print_Text_BlueandWhiteBar_title= "",
+Print_Text_BlueandWhiteBar_info= "",
+
+Print_Text_BrottAuction_title= "",
+Print_Text_BrottAuction_info= "",
+
+Print_Text_CabanCenter_title= "",
+Print_Text_CabanCenter_info= "",
+
+Print_Text_CatonaHotTinGrill_title= "Bagre na Grelha de Lata Quente",
+Print_Text_CatonaHotTinGrill_info= "Delicioso bagre, fresco do nosso lago!\n\nPesque seu próprio bagre e nós o cozinharemos com 25% de desconto.\n\nVenha ao Cat on a Hot Tin Grill hoje mesmo!\n\nEstrada Velha do Estado, Nº 1940, Brandenburg, Kentucky.",
+
+Print_Text_Coalfield_title= "",
+Print_Text_Coalfield_info= "",
+
+Print_Text_ColdWarBunker_title= "",
+Print_Text_ColdWarBunker_info= "",
+
+Print_Text_DarkwallowGuestHouse_title = "",
+Print_Text_DarkwallowGuestHouse_info = "",
+
+Print_Text_EkronCollege_title= "",
+Print_Text_EkronCollege_info= "",
+
+Print_Text_FashionaBelle_title = "FashionaBelle",
+Print_Text_FashionaBelle_info = ""Je m'appelle Belle St. Clair."\n\n"J'aime la mode!"\n\n"Desde minha juventude como modelo em Paris até minha carreira de sucesso como designer... sempre estive na vanguarda..."\n\n"Minha primeira loja FashionaBelle foi inaugurada na Champs-Élysées em 1959, e agora meus designs são usados ​​no mundo todo!"\n\nFashionaBelle.\n\nRoupas diferenciadas, a preços excelentes.\n\nRua Principal, Nº 458, Rosewood",
+
+Print_Text_FiveAlarmChili_title= "",
+Print_Text_FiveAlarmChili_info= "",
+
+Print_Text_BensCabin_title= "Cabana para Alugar (West Point)",
+Print_Text_BensCabin_info= "Pequena cabana remota à beira do lago disponível para alugar. A Oeste de West Point.\n\nÓtima localização para pesca e caça. Aquecido por fogão a lenha.\n\nÁgua corrente, banheiro interno. Uma cama de solteiro. Bom tempo garantido.\n\nUS$40 por noite. Ligue para 555-3498 para obter informações.",
+
+Print_Text_AlsAutoShop_title= "Oficina de Automóveis do Al",
+Print_Text_AlsAutoShop_info= "Ótimo cuidado com o carro. Ótimos preços baixos.\n\nTroca de óleo. Freios quebrados. Investigar barulhos estranhos.\n\nSeja o que for: Al pode consertar.\n\nMostre este folheto para Al e ganhe 10% de desconto em um serviço anual.\n\nEncontre-nos a sudoeste de Riverside.\n\nEstrada da Agulha Longa, Nº 6650, Riverside, Kentucky.",
+
+Print_Text_SureFitnessBoxingClub_title= "Clube de Fitness & Boxe",
+Print_Text_SureFitnessBoxingClub_info= "Dê uma surra no seu intestino no Sure Fitness & Boxing Club!\n\nEsteiras, aparelhos de musculação e uma quadra de basquete também estão disponíveis para os membros.\n\nTaxas anuais a partir de U$100. Encontre-nos na Rua 3, ao sul de Ohio, no centro de Louisville.",
+
+Print_Text_GoldenSunset_title= "",
+Print_Text_GoldenSunset_info= "",
+
+Print_Text_GunsUnlimitedEchoCreek_title = "Armas Ilimitadas (Echo Creek)",
+Print_Text_GunsUnlimitedEchoCreek_info = "De Magnums a MSRs, de chumbo de cobra a chumbo grosso e tudo o que há entre esses dois, visite...\n\nGuns Unlimited\nSeu Playground da 2ª Emenda\n\nTemos em estoque...\n- armas de fogo de todos os calibres\n- acessórios de arma\n- munição\n- facas e equipamentos de sobrevivência\n... e muito mais!\n\nTeste suas habilidades em nosso campo de tiro. Obtenha orientação de nossos instrutores de elite.\n\nPorque você nunca sabe o que pode acontecer...\n\nEstrada Smith, Nº 901, Echo Creek, Kentucky",
+
+Print_Text_HobbsandPerkinsHardware_title = "",
+Print_Text_HobbsandPerkinsHardware_info = "",
+
+Print_Text_KnoxGunOwnersClubGetTogether_title = "Reunião Geral Anual do Clube de Donos de Armas Knox",
+Print_Text_KnoxGunOwnersClubGetTogether_info = "A Franja de Veludo, Rua do Mercado Leste, Nº 320/n/nConverse sobre suas munições, lunetas e bandoleiras favoritas. Conheça pessoas com ideias semelhantes. Mínimo de três bebidas.\n\nObserve que, neste ano, armas de fogo não são permitidas dentro do clube.",
+
+Print_Text_IrvingtonGunClub_title= "Irvington Gun Club",
+Print_Text_IrvingtonGunClub_info= "Improve your aim and make friends at Irvington Gun Club!\n\nOur range caters for all skill levels.\n\nRent high quality guns, and pay per shot or per session - your choice!\n\nNew members get 15 shots for free!\n\nIrvington, Kentucky",
+
+Print_Text_LVFD_title = "Corpo de Bombeiros de Louisville",
+Print_Text_LVFD_info = "DIA ABERTO DO CBLV\n\nJunte-se ao Corpo de Bombeiros de Louisville em 28 de Junho!\n\nVocê nos ouvirá falar sobre...\n- As ferramentas que usamos em nosso trabalho\n- Como funciona a pressão da água\n- Pressão do ar e risco de explosão\n- O verdadeiro perigo de colocar metais no microondas\n- Como prevenir incêndios mortais!\n\nExperimente um dos nossos cursos de aptidão física. Esteja avisado - não será fácil!\n\nApresentado a você pelo Corpo de Bombeiros de Louisville, Trilha de Caminhada, Nº 2900",
+
+Print_Text_LoveDuet_title= "",
+Print_Text_LoveDuet_info= "",
+
+Print_Text_MadDansDen_title= "Covil do Mad Dan",
+Print_Text_MadDansDen_info= "Temos em estoque a mais ampla variedade de móveis e eletrodomésticos para interior e exterior do País de Knox!\n\n- Geladeiras e máquinas de lavar\n- Assentos e mesas internas e externas\n- Acessórios para banheiro\n- Equipamentos de academia em casa\n- Plantas e árvores em vasos\n\n... e muito muito mais!\n\nNossa variedade é incrível, mas nossos preços não!\n\nRua Holandesa, Nº 84, Ekron, Kentucky.",
+
+
+Print_Text_MusicFest93_title= "Festival de Música de Louisville 1993",
+Print_Text_MusicFest93_info= "Veja as maiores bandas do mundo.\n\nDe 15 a 17 de Julho\n\nTrês dias que você vai lembrar pelo resto da sua vida\n\nÁrea do Festival de Louisville, Parque Memorial Romuald Dron, Louisville",
+
+Print_Text_OvoFarms_title= "Fazendas de Ovos",
+Print_Text_OvoFarms_info= "A Ovo Farms entende de ovos. Somos os favoritos das donas de casa em todo o Kentucky.\n\nDesde 1968, nossas galinhas produziram mais de 750.000 ovos. São muitas omeletes!\n\nComo fazemos isso? Cuidando de nossas aves. Elas não são apenas galinhas para nós - são nossa família.\n\nPor apenas um dólar a dúzia, você pode sentir o gosto do amor em nossos ovos!\n\nEstrada Payne, Nº 1245, Echo Creek, Kentucky.\n\n(Os passeios pela Ovo Farms não estão mais disponíveis. Por favor, não pergunte.)",
+
+Print_Text_Pondview_title= "",
+Print_Text_Pondview_info= "",
+
+Print_Text_QuillManor_title= "",
+Print_Text_QuillManor_info= "",
+
+Print_Text_Sammies_title= "Sammie's",
+Print_Text_Sammies_info= "Mantimentos. Roupas. Brinquedos. Eletrônicos. E muito mais!\n\n20% de desconto em todos os relógios até 7 de Julho!\n\nSua Loja Completa - Para Tudo!\n\nEstrada Velha de Ekron, Nº 3, Brandenburg, KY",
+
+Print_Text_Sanatorium_title= "",
+Print_Text_Sanatorium_info= "",
+
+Print_Text_ScarletOakDistillery_title= "Destilaria Scarlet Oak",
+Print_Text_ScarletOakDistillery_info= "SCARLET OAK\nO MELHOR BOURBON DO MUNDO\n\nEnvelhecido à perfeição. Nós fabricamos cerveja desde 1910.\nO favorito dos trabalhadores e presidentes.\nTome um gole e veja o que faz do bourbon Scarlet Oaks o melhor dos melhores.\n\nOrgulhoso vencedor do prêmio Prêmio de Cervejeiro Norte-Americano de 1992, do prêmio O Melhor dos Importados e do prêmio Memorial de Elijah Craig.\n\nVisite nossa fábrica para um tour completo e algumas amostras ao longo do caminho!\nCaminho do Bourbon, Nº 455, Louisville, Kentucky",
+
+Print_Text_SunstarMotel_title = "Motel Sunstar",
+Print_Text_SunstarMotel_info = "Hospede-se conosco no Sunstar Motel!\n\n10% de desconto para veteranos e idosos.\n\nLocalizado no centro de Muldraugh, com ar condicionado completo e TV colorida\n\nComida disponível separadamente em nosso restaurante!\n\nTarifas:\nQuarto Duplo Padrão/Dois quartos: U$25\nDois quartos e um individual: U$30\nQuarto com/cama de casal e sala de estar: U$40\n\nTarifas especiais para "reuniões" diurnas!\n\nRodovia Dixie, Nº 118, Muldraugh, KY",
+
+Print_Text_SleepEazzzeInn_title= "",
+Print_Text_SleepEazzzeInn_info= "",
+
+Print_Text_StuartandLogScrapyard_title = "Stuart & Log",
+Print_Text_StuartandLogScrapyard_info = ""Sucata e reparo incomparável"\n\nEvento de Valorização do Cliente!\n\nGanhe! Um Dash Bulldriver* 1983!\n\nUm ingresso para cada U$10 de negócios. Entradas ilimitadas!\n\n*O veículo é fornecido como está, sem garantia. O vencedor é responsável por todas as taxas e impostos. Não há proposta em dinheiro.\n\nKY-477, Nº 2831, Irvington, Ky.",
+
+Print_Text_TheWizardsKeep_title= "",
+Print_Text_TheWizardsKeep_info= "",
+
+Print_Text_Twiggys_title= "Twiggy's",
+Print_Text_Twiggys_info= "As melhores cervejas em West Point - garantidas!\n\nEntretenimento ao vivo toda Sexta-feira.\n\nAs mulheres ganham duas bebidas grátis! na*\n*primeira Quarta-feira do mês\n\nConheça a lenda de Knox em pessoa!\nVENHA PARA O TWIGGY'S\n\nRua Mulberry, Nº 105, West Point, KY",
+
+}

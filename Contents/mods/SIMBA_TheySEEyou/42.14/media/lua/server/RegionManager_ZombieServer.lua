@@ -43,7 +43,7 @@ local function SIMBA_TSY_ClearAllZombieStates()
         end
         globalData.zombies = {}
     end
-    print("SIMBA_TSY Server: Cleared " .. count .. " zombie states from ModData")
+    -- print("SIMBA_TSY Server: Cleared " .. count .. " zombie states from ModData")
     return count
 end
 
@@ -84,8 +84,8 @@ local function RegionManagerZombie_OnZombieCreate(persistentID, x, y)
 
     local decisions = ZombieHelper.RollDecisions(chances, x, y)
 
-    print("SIMBA_TSY Server: Creating zombie " .. persistentID ..
-          " at (" .. x .. ", " .. y .. ")")
+    -- print("SIMBA_TSY Server: Creating zombie " .. persistentID ..
+    --       " at (" .. x .. ", " .. y .. ")")
 
     -- Persist
     globalData.zombies[persistentID] = decisions
@@ -211,8 +211,8 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
                 local dx = math.abs((stored.x or 0) - request.x)
                 local dy = math.abs((stored.y or 0) - request.y)
                 if dx > 300 or dy > 300 then
-                    print("SIMBA_TSY Server: Zombie " .. persistentID ..
-                          " position mismatch, discarding stored data")
+                    -- print("SIMBA_TSY Server: Zombie " .. persistentID ..
+                    --       " position mismatch, discarding stored data")
                     globalData.zombies[persistentID] = nil
                     stored = nil
                 end
@@ -233,8 +233,8 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
         end
 
         if found > 0 or notFound > 0 then
-            print("SIMBA_TSY Server: Sent info for " .. found .. " zombies, " ..
-                  notFound .. " not found to " .. player:getUsername())
+            -- print("SIMBA_TSY Server: Sent info for " .. found .. " zombies, " ..
+            --       notFound .. " not found to " .. player:getUsername())
         end
     end
 end
@@ -264,7 +264,7 @@ Events.OnInitWorld.Add(function()
     print("SIMBA_TSY Server: Server startup - ModData fully wiped and recreated")
 
     -- Events.EveryTenMinutes.Add(SIMBA_TSY_PeriodicCleanup)
-    print("SIMBA_TSY Server: Periodic cleanup scheduled (every 10 minutes)")
+    -- print("SIMBA_TSY Server: Periodic cleanup scheduled (every 10 minutes)")
 end)
 
 -- ========================================================================

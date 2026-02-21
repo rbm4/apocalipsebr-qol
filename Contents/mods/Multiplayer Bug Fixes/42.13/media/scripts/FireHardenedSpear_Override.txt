@@ -1,0 +1,7 @@
+module Base
+{
+    craftRecipe FireHardenSpear
+    {
+        OnTest = FHSF.OpenFire,
+    }
+}

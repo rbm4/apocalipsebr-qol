@@ -29,7 +29,7 @@ local BASE_MAP = {
     y2 = 16541
 }
 
--- Rectangle subtraction algorithm
+-- Rectangle subtraction algorithm (INCLUSIVE coordinates: both x1,y1 and x2,y2 are part of the rectangle)
 -- Subtracts rectB from rectA, returns array of remaining rectangles
 ---@param rectA Rect
 ---@param rectB Rect
@@ -37,14 +37,14 @@ local BASE_MAP = {
 local function subtractRectangle(rectA, rectB)
     local result = {}
     
-    -- Calculate intersection
+    -- Calculate intersection (inclusive boundaries)
     local intX1 = math.max(rectA.x1, rectB.x1)
     local intY1 = math.max(rectA.y1, rectB.y1)
     local intX2 = math.min(rectA.x2, rectB.x2)
     local intY2 = math.min(rectA.y2, rectB.y2)
     
-    -- No intersection, return original rectangle
-    if intX1 >= intX2 or intY1 >= intY2 then
+    -- No intersection (inclusive: overlap exists when intX1 <= intX2 AND intY1 <= intY2)
+    if intX1 > intX2 or intY1 > intY2 then
         table.insert(result, {
             x1 = rectA.x1,
             y1 = rectA.y1,
@@ -54,42 +54,44 @@ local function subtractRectangle(rectA, rectB)
         return result
     end
     
-    -- Generate up to 4 rectangles around the intersection
+    -- Generate up to 4 rectangles around the intersection.
+    -- Each strip is adjusted by ±1 so boundary tiles belong ONLY to the intersection,
+    -- preventing 1-tile overlaps between safe zones and PVP zones.
     
-    -- Top strip (above intersection)
+    -- Top strip (above intersection, full width)
     if rectA.y1 < intY1 then
         table.insert(result, {
             x1 = rectA.x1,
             y1 = rectA.y1,
             x2 = rectA.x2,
-            y2 = intY1
+            y2 = intY1 - 1
         })
     end
     
-    -- Bottom strip (below intersection)
+    -- Bottom strip (below intersection, full width)
     if intY2 < rectA.y2 then
         table.insert(result, {
             x1 = rectA.x1,
-            y1 = intY2,
+            y1 = intY2 + 1,
             x2 = rectA.x2,
             y2 = rectA.y2
         })
     end
     
-    -- Left strip (between top and bottom strips)
+    -- Left strip (between top and bottom strips, intersection height)
     if rectA.x1 < intX1 then
         table.insert(result, {
             x1 = rectA.x1,
             y1 = intY1,
-            x2 = intX1,
+            x2 = intX1 - 1,
             y2 = intY2
         })
     end
     
-    -- Right strip (between top and bottom strips)
+    -- Right strip (between top and bottom strips, intersection height)
     if intX2 < rectA.x2 then
         table.insert(result, {
-            x1 = intX2,
+            x1 = intX2 + 1,
             y1 = intY1,
             x2 = rectA.x2,
             y2 = intY2
@@ -99,25 +101,35 @@ local function subtractRectangle(rectA, rectB)
     return result
 end
 
--- Validate that a rectangle has valid dimensions
+-- Validate that a rectangle has valid dimensions (inclusive: single-tile rect is valid)
 ---@param rect Rect
 ---@return boolean
 local function isValidRectangle(rect)
-    return rect.x2 > rect.x1 and rect.y2 > rect.y1
+    return rect.x2 >= rect.x1 and rect.y2 >= rect.y1
 end
 
--- Calculate area of a rectangle
+-- Calculate area of a rectangle (inclusive: a (0,0)-(2,2) rect has 3x3 = 9 tiles)
 ---@param rect Rect
 ---@return number
 local function calculateArea(rect)
-    return (rect.x2 - rect.x1) * (rect.y2 - rect.y1)
+    return (rect.x2 - rect.x1 + 1) * (rect.y2 - rect.y1 + 1)
+end
+
+-- Check whether two rectangles overlap (inclusive coordinates)
+---@param a Rect
+---@param b Rect
+---@return boolean
+local function rectanglesOverlap(a, b)
+    return a.x1 <= b.x2 and a.x2 >= b.x1 and a.y1 <= b.y2 and a.y2 >= b.y1
 end
 
 -- Merge adjacent rectangles to reduce total count (optimization)
+-- Only merges when the resulting rectangle does not overlap any PVP zone.
 ---@param rectangles Rect[]
+---@param pvpZones Rect[]
 ---@return Rect[]
-local function mergeAdjacentRectangles(rectangles)
-    -- Simple horizontal merge: if two rectangles share same Y coords and X edges touch
+local function mergeAdjacentRectangles(rectangles, pvpZones)
+    -- Inclusive adjacency: rect ending at x=N is adjacent to rect starting at x=N+1
     local merged = true
     
     while merged do
@@ -128,34 +140,37 @@ local function mergeAdjacentRectangles(rectangles)
                 local rectB = rectangles[j]
                 
                 if rectA and rectB then
-                    -- Check if they can be merged horizontally
+                    local candidate = nil
+                    
+                    -- Check if they can be merged horizontally (same height, adjacent X)
                     if rectA.y1 == rectB.y1 and rectA.y2 == rectB.y2 then
-                        if rectA.x2 == rectB.x1 then
-                            -- Merge B into A (A is to the left of B)
-                            rectA.x2 = rectB.x2
-                            table.remove(rectangles, j)
-                            merged = true
-                            break
-                        elseif rectB.x2 == rectA.x1 then
-                            -- Merge A into B (B is to the left of A)
-                            rectA.x1 = rectB.x1
-                            table.remove(rectangles, j)
-                            merged = true
-                            break
+                        if rectA.x2 + 1 == rectB.x1 then
+                            candidate = { x1 = rectA.x1, y1 = rectA.y1, x2 = rectB.x2, y2 = rectA.y2 }
+                        elseif rectB.x2 + 1 == rectA.x1 then
+                            candidate = { x1 = rectB.x1, y1 = rectA.y1, x2 = rectA.x2, y2 = rectA.y2 }
                         end
                     end
                     
-                    -- Check if they can be merged vertically
-                    if rectA.x1 == rectB.x1 and rectA.x2 == rectB.x2 then
-                        if rectA.y2 == rectB.y1 then
-                            -- Merge B into A (A is above B)
-                            rectA.y2 = rectB.y2
-                            table.remove(rectangles, j)
-                            merged = true
-                            break
-                        elseif rectB.y2 == rectA.y1 then
-                            -- Merge A into B (B is above A)
-                            rectA.y1 = rectB.y1
+                    -- Check if they can be merged vertically (same width, adjacent Y)
+                    if not candidate and rectA.x1 == rectB.x1 and rectA.x2 == rectB.x2 then
+                        if rectA.y2 + 1 == rectB.y1 then
+                            candidate = { x1 = rectA.x1, y1 = rectA.y1, x2 = rectA.x2, y2 = rectB.y2 }
+                        elseif rectB.y2 + 1 == rectA.y1 then
+                            candidate = { x1 = rectA.x1, y1 = rectB.y1, x2 = rectA.x2, y2 = rectA.y2 }
+                        end
+                    end
+                    
+                    -- Only merge if the result does not overlap any PVP zone
+                    if candidate then
+                        local safe = true
+                        for _, pvp in ipairs(pvpZones or {}) do
+                            if rectanglesOverlap(candidate, pvp) then
+                                safe = false
+                                break
+                            end
+                        end
+                        if safe then
+                            rectangles[i] = candidate
                             table.remove(rectangles, j)
                             merged = true
                             break
@@ -247,10 +262,45 @@ function RegionManager.AutoSafeZones.generateSafeZones(configuredRegions)
         log("After subtracting " .. pvpZone.id .. ": " .. #safeZones .. " safe zone fragments")
     end
     
-    -- Optimize by merging adjacent rectangles
+    -- Optimize by merging adjacent rectangles (PVP-zone-aware)
     log("Merging adjacent rectangles...")
-    safeZones = mergeAdjacentRectangles(safeZones)
+    safeZones = mergeAdjacentRectangles(safeZones, pvpZones)
     log("After merging: " .. #safeZones .. " safe zones")
+    
+    -- Final validation: re-subtract any overlapping PVP zones from safe zones.
+    -- This is a safety net in case subtraction or merge introduced any overlap.
+    -- local overlapFixed = false
+    -- for pass = 1, 3 do -- max 3 passes to resolve cascading issues
+    --     local hadOverlap = false
+    --     for _, pvpZone in ipairs(pvpZones) do
+    --         local newSafeZones = {}
+    --         for _, safeZone in ipairs(safeZones) do
+    --             if rectanglesOverlap(safeZone, pvpZone) then
+    --                 -- This safe zone overlaps a PVP zone — split it
+    --                 hadOverlap = true
+    --                 log("Validation pass " .. pass .. ": fixing overlap between safe zone and PVP " .. (pvpZone.id or "?"))
+    --                 local fragments = subtractRectangle(safeZone, pvpZone)
+    --                 for _, frag in ipairs(fragments) do
+    --                     if isValidRectangle(frag) then
+    --                         table.insert(newSafeZones, frag)
+    --                     end
+    --                 end
+    --             else
+    --                 table.insert(newSafeZones, safeZone)
+    --             end
+    --         end
+    --         safeZones = newSafeZones
+    --     end
+    --     if not hadOverlap then
+    --         log("Validation pass " .. pass .. ": no overlaps found")
+    --         break
+    --     else
+    --         overlapFixed = true
+    --     end
+    -- end
+    -- if overlapFixed then
+    --     log("Overlaps were detected and fixed. Final safe zone count: " .. #safeZones)
+    -- end
     
     -- Calculate total coverage
     local totalSafeArea = 0

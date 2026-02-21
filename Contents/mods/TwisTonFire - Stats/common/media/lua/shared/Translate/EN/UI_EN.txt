@@ -1,0 +1,83 @@
+UI_EN = { 
+	-- isn't used or available to see
+    UI_TWIST_STATS_TITLE = "TwisTonFire - Stats",
+
+	-- stats ui elements
+	UI_TWIST_STATS_DAILY_UI_ELEMENT = "Kills Today: ",
+	UI_TWIST_STATS_AVERAGE_UI_ELEMENT_1 = "Avg. Kills: ",
+	UI_TWIST_STATS_AVERAGE_UI_ELEMENT_2 = "/day",
+	
+	-- right click context menu
+	UI_TWIST_STATS_HIDE = "Hide",
+    UI_TWIST_STATS_SHOW = "Show",
+	UI_TWIST_STATS_TIMEALIVE = "Time Alive",
+    UI_TWIST_STATS_ZOMBIEKILLS = "Zombie Kills",
+	UI_TWIST_STATS_TRAVELED = "Distance Traveled",
+    UI_TWIST_STATS_WEIGHT = "Weight",
+ 	UI_TWIST_STATS_DAILYKILLS = "Daily Kills",
+	UI_TWIST_STATS_AVERAGE = "Daily Average",
+	UI_TWIST_STATS_FONTSIZE = "Font Size",
+	UI_TWIST_STATS_LARGE = "Large (Default)",
+	UI_TWIST_STATS_MEDIUM = "Medium",
+	UI_TWIST_STATS_SMALL = "Small",
+	UI_TWIST_STATS_ALIGNMENT = "Alignment",
+	UI_TWIST_STATS_ALIGN_LEFT = "Left",
+	UI_TWIST_STATS_ALIGN_RIGHT = "Right",
+	
+	-- say outputs
+	UI_TWIST_RANDOM_MESSAGE1 = "No way, that's not happening! I'm not doing that!"
+	UI_TWIST_RANDOM_MESSAGE2 = "Seriously, don't you have something better to do?"
+	UI_TWIST_RANDOM_MESSAGE3 = "Tip: There’s a key in your controls to hide the entire UI!"
+	
+	UI_TWIST_STATS_YEAR = "y",
+	UI_TWIST_STATS_MONTH = "m",
+	UI_TWIST_STATS_DAYS = "d",
+	UI_TWIST_STATS_HOURS = "h",
+	UI_TWIST_STATS_SWITCHCALENDAR = "Toggle Calendar Display",
+	
+	
+	-- new
+	
+	UI_TWIST_STATS_OPEN_CHART = "Open Stats Chart",
+	UI_TTF_KILLSTAT_UNARMED = "Unarmed",
+	UI_TTF_KILLSTAT_VEHICLE = "Vehicle",
+	UI_TTF_KILLSTAT_OTHER   = "Other",
+	UI_TTF_KILLSTAT_FIREARM = "Firearm",
+	
+	UI_TTF_STATS_TITLE = "TwisTonFire — Stats",
+
+	UI_TTF_TAB_CHART = "Chart",
+	UI_TTF_TAB_CATEGORIES = "Categories",
+	UI_TTF_TAB_WEAPONS = "Weapons",
+	UI_TTF_TOGGLE_HIDE = "UI Auto-Hide",
+	UI_TTF_TOGGLE_HIDE_TT_ON  = "Only charts/bars visible when not hovered.",
+	UI_TTF_TOGGLE_HIDE_TT_OFF = "Show full window UI at all times.",
+
+	UI_TTF_NO_DATA = "No data yet",
+	UI_TTF_TITLE_CATS = "Kills by Category (All Time)",
+	UI_TTF_TITLE_WEAP = "Kills by Weapon (Top %1)",
+	UI_TTF_TITLE_CHART_BASE = "Kills per Day — Days Survived",
+	UI_TTF_TITLE_CHART_LASTDAYS = "%1 (last %2 days)",
+	UI_TTF_TITLE_CHART_ALLTIME  = "%1 (All Time)",
+
+	UI_TTF_RANGE_WEEK     = "Week",
+	UI_TTF_RANGE_MONTH    = "Month",
+	UI_TTF_RANGE_HALFYEAR = "Half-Year",
+	UI_TTF_RANGE_YEAR     = "Year",
+	UI_TTF_RANGE_ALL      = "All",
+
+	UI_TTF_TOOLTIP_DAY   = "Day: %1",
+	UI_TTF_TOOLTIP_KILLS = "Kills: %1",
+	UI_TTF_TOOLTIP_AVG   = "Avg: %1",
+
+	UI_TTF_CAT = "Category",
+	UI_TTF_WEAPON = "Weapon",
+	UI_TTF_KILLS_FMT = "Kills: %1",
+	
+	UI_optionscreen_title_TwisTonFireStats = "TwisTonFire — Stats",
+	UI_optionscreen_binding_TwisTonFireStats_ToggleUI = "Toggle Stats Window",
+	UI_optionscreen_binding_TwisTonFireStats_ToggleMainUI = "Toggle Main Stats Window",
+
+	UI_optionscreen_TwisTonFireStats_ShowFatigueIndicator = "Show Fatigue Indicator",
+	UI_optionscreen_TwisTonFireStats_ShowWeightIndicator = "Show Weight Indicator",
+}

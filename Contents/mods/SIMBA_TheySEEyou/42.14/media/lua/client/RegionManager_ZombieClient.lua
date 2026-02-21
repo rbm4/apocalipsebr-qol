@@ -52,7 +52,7 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
 
         
         -- Debug: Show received data from server
-        print("SIMBA_TSY Client: Received zombie confirmation for ID: " .. tostring(args.zombieID))
+        -- print("SIMBA_TSY Client: Received zombie confirmation for ID: " .. tostring(args.zombieID))
         
         local zombieID = args.zombieID
         
@@ -72,7 +72,7 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
                 -- Apply all server-determined properties using the shared function
                 RegionManager.Shared.ServerSideProperties(zombie, args, sandboxOptions)
                 
-                print("SIMBA_TSY Client: Applied properties to zombie " .. zombieID)
+                -- print("SIMBA_TSY Client: Applied properties to zombie " .. zombieID)
                 if args.isSprinter then
                     print("  -> Converted to Sprinter")
                 end
