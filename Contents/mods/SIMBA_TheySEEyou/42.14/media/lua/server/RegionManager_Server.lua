@@ -126,11 +126,11 @@ local function registerRegion(region)
 
         -- Create NonPvpZone for safe zones (pvpEnabled = false)
         -- SafetySystemManager automatically detects NonPvpZone and manages Safety state
-        if props.pvpEnabled == false then
-            local zoneName = "SafeZone_" .. region.id
-            NonPvpZone.addNonPvpZone(zoneName, minX, minY, maxX, maxY)
-            log("Created NonPvpZone: " .. zoneName .. " - SafetySystemManager will auto-manage this zone")
-        end
+        -- if props.pvpEnabled == false then
+        --     local zoneName = "SafeZone_" .. region.id
+        --     NonPvpZone.addNonPvpZone(zoneName, minX, minY, maxX, maxY)
+        --     log("Created NonPvpZone: " .. zoneName .. " - SafetySystemManager will auto-manage this zone")
+        -- end
 
         return true
     else
@@ -224,6 +224,41 @@ end
 -- Register all configured regions
 local function registerAllRegions()
     log("=== Starting Region Registration ===")
+
+    -- Cleanup previous registration to avoid stale/duplicate zones
+
+    -- 1. Remove all engine-side NonPvpZones created by RegionManager (prefixed "SafeZone_")
+    local allNonPvp = NonPvpZone.getAllZones()
+    if allNonPvp then
+        -- Collect titles first to avoid modifying the Java ArrayList while iterating
+        local toRemove = {}
+        for i = 0, allNonPvp:size() - 1 do
+            local zone = allNonPvp:get(i)
+            local title = zone:getTitle()
+            if title and string.find(title, "^SafeZone_") then
+                table.insert(toRemove, title)
+            end
+        end
+        for _, title in ipairs(toRemove) do
+            local ok, err = pcall(NonPvpZone.removeNonPvpZone, title)
+            if ok then
+                log("Removed engine NonPvpZone: " .. title)
+            else
+                log("Could not remove engine NonPvpZone " .. title .. ": " .. tostring(err))
+            end
+        end
+        log("Cleaned up " .. #toRemove .. " engine NonPvpZone entries")
+    end
+
+    -- 2. Clear Lua-side registered zones table
+    local prevCount = 0
+    if RegionManager.Server.registeredZones then
+        for _ in pairs(RegionManager.Server.registeredZones) do
+            prevCount = prevCount + 1
+        end
+    end
+    RegionManager.Server.registeredZones = {}
+    log("Cleared " .. prevCount .. " previously registered Lua zones")
 
     -- Load regions from external JSON file (creates file with defaults if missing)
     local fileRegions = loadRegionsFromFile()

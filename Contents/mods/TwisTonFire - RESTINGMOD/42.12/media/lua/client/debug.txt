@@ -1,0 +1,81 @@
+--debug
+local MARQUA_Resting_LastShownPain = {}
+-- 
+
+----------------------------------------------------------------------------
+---------------------------------------------------------------------------
+-- === ADD: neutral debug popups for rising right-arm pain (like the pain moodle) ===
+
+-- Per-player last shown integer pain for right arm
+
+
+-- Optional small helper to fetch a localized "PAIN" label safely
+function _twf_getPainLabel()
+    -- Prefer your custom/localized string if available
+    if getCustomOrDefault then
+        return getCustomOrDefault(MARQUA_RESTINGMOD and MARQUA_RESTINGMOD.customPainLabel, "UI_PAIN")
+    end
+    if getText then
+        local t = getText("UI_PAIN")
+        if t and t ~= "UI_PAIN" then return t end
+    end
+    return "Pain"
+end
+
+-- Fallback if _twf_getRightArmMaxPain is not defined in this file
+if not _twf_getRightArmMaxPain then
+    local function _twf_getRightArmMaxPain(player)
+        local bd = player and player:getBodyDamage()
+        if not bd then return 0 end
+        local h = bd:getBodyPart(BodyPartType.Hand_R):getPain() or 0
+        local f = bd:getBodyPart(BodyPartType.ForeArm_R):getPain() or 0
+        local u = bd:getBodyPart(BodyPartType.UpperArm_R):getPain() or 0
+        return math.max(h, f, u)
+    end
+end
+
+-- Fallback if _twf_getPlayerKey is not defined in this file
+if not _twf_getPlayerKey then
+    local function _twf_getPlayerKey(player)
+        local id = player and player:getOnlineID()
+        if id and id ~= 0 then return tostring(id) end
+        local desc = player and player:getDescriptor()
+        return tostring((desc and desc:getID()) or 1)
+    end
+end
+
+-- Show neutral text whenever the integer pain value increases
+function MARQUA_Resting_DebugShowRightArmPain(player)
+    if not player or player:isDead() then return end
+
+    local key = _twf_getPlayerKey(player)
+    local maxPain = _twf_getRightArmMaxPain(player) or 0
+
+    -- Compare on integer steps to avoid spam from tiny float deltas
+    local currentInt = math.floor(maxPain + 0.0001)
+    local lastInt = MARQUA_Resting_LastShownPain[key]
+
+    if lastInt == nil then
+        -- initialize tracker without spamming on load
+        MARQUA_Resting_LastShownPain[key] = currentInt
+        return
+    end
+
+    if currentInt > lastInt then
+        -- Neutral color popup (like moodle, no red/green): addText()
+        HaloTextHelper.addText(player, string.format("%s (R): %d", _twf_getPainLabel(), currentInt))
+        MARQUA_Resting_LastShownPain[key] = currentInt
+        return
+    end
+
+    if currentInt < lastInt then
+        -- update downwards so next increases will show again
+        MARQUA_Resting_LastShownPain[key] = currentInt
+    end
+end
+
+-- Hook into update loop (separate from your other watchers)
+Events.OnPlayerUpdate.Add(MARQUA_Resting_DebugShowRightArmPain)
+
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------

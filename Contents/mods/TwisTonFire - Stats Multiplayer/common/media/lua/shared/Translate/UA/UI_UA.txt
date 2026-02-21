@@ -1,0 +1,78 @@
+UI_UA = {
+    -- isn't used or available to see
+    UI_TWIST_STATS_TITLE = "TwisTonFire - Статистика",
+
+    -- stats ui elements
+    UI_TWIST_STATS_DAILY_UI_ELEMENT = "Kills сьогодні: ",
+    UI_TWIST_STATS_AVERAGE_UI_ELEMENT_1 = "Сер. Kills: ",
+    UI_TWIST_STATS_AVERAGE_UI_ELEMENT_2 = "/день",
+
+    -- right click context menu
+    UI_TWIST_STATS_HIDE = "Сховати",
+    UI_TWIST_STATS_SHOW = "Показати",
+    UI_TWIST_STATS_TIMEALIVE = "Час у живих",
+    UI_TWIST_STATS_ZOMBIEKILLS = "Kills зомбі",
+    UI_TWIST_STATS_TRAVELED = "Пройд. відстань",
+    UI_TWIST_STATS_WEIGHT = "Вага",
+    UI_TWIST_STATS_DAILYKILLS = "Kills за день",
+    UI_TWIST_STATS_AVERAGE = "Сер. за день",
+    UI_TWIST_STATS_FONTSIZE = "Розмір шрифту",
+    UI_TWIST_STATS_LARGE = "Великий (стандарт)",
+    UI_TWIST_STATS_MEDIUM = "Середній",
+    UI_TWIST_STATS_SMALL = "Малий",
+
+    -- say outputs
+    UI_TWIST_RANDOM_MESSAGE1 = "Ні за що, цього не буде! Я цього не робитиму!",
+    UI_TWIST_RANDOM_MESSAGE2 = "Серйозно, нема чим зайнятись?",
+    UI_TWIST_RANDOM_MESSAGE3 = "Підказка: є кнопка для приховування всього інтерфейсу в налаштуваннях!",
+	UI_TWIST_STATS_ALIGNMENT = "Вирівнювання",
+	UI_TWIST_STATS_ALIGN_LEFT = "Ліворуч",
+	UI_TWIST_STATS_ALIGN_RIGHT = "Праворуч",
+	UI_TWIST_STATS_YEAR = "р",
+	UI_TWIST_STATS_MONTH = "міс",
+	UI_TWIST_STATS_DAYS = "д",
+	UI_TWIST_STATS_HOURS = "год",
+	UI_TWIST_STATS_SWITCHCALENDAR = "Змінити відображення календаря",
+	
+	UI_TWIST_STATS_OPEN_CHART = "Відкрити графік статистики",
+	UI_TTF_KILLSTAT_UNARMED = "Без зброї",
+	UI_TTF_KILLSTAT_VEHICLE = "Транспорт",
+	UI_TTF_KILLSTAT_OTHER   = "Інше",
+	UI_TTF_KILLSTAT_FIREARM = "Вогнепальна",
+
+	UI_TTF_STATS_TITLE = "TwisTonFire — Stats",
+
+	UI_TTF_TAB_CHART = "Графік",
+	UI_TTF_TAB_CATEGORIES = "Категорії",
+	UI_TTF_TAB_WEAPONS = "Зброя",
+	UI_TTF_TOGGLE_HIDE = "Автоприховування UI",
+	UI_TTF_TOGGLE_HIDE_TT_ON  = "Коли курсор не наведено — видно лише графіки/стовпчики.",
+	UI_TTF_TOGGLE_HIDE_TT_OFF = "Завжди показувати повний UI.",
+
+	UI_TTF_NO_DATA = "Даних поки немає",
+	UI_TTF_TITLE_CATS = "Kills за категоріями (За весь час)",
+	UI_TTF_TITLE_WEAP = "Kills за зброєю (Топ %1)",
+	UI_TTF_TITLE_CHART_BASE = "Kills за день — Днів виживання",
+	UI_TTF_TITLE_CHART_LASTDAYS = "%1 (останні %2 дні)",
+	UI_TTF_TITLE_CHART_ALLTIME  = "%1 (За весь час)",
+
+	UI_TTF_RANGE_WEEK     = "Тиждень",
+	UI_TTF_RANGE_MONTH    = "Місяць",
+	UI_TTF_RANGE_HALFYEAR = "Півроку",
+	UI_TTF_RANGE_YEAR     = "Рік",
+	UI_TTF_RANGE_ALL      = "Усе",
+
+	UI_TTF_TOOLTIP_DAY   = "День: %1",
+	UI_TTF_TOOLTIP_KILLS = "Kills: %1",
+	UI_TTF_TOOLTIP_AVG   = "Середнє: %1",
+
+	UI_TTF_CAT = "Категорія",
+	UI_TTF_WEAPON = "Зброя",
+	UI_TTF_KILLS_FMT = "Kills: %1",
+
+	UI_optionscreen_title_TwisTonFireStats = "TwisTonFire — Stats",
+	UI_optionscreen_binding_TwisTonFireStats_ToggleUI = "Перемкнути вікно статистики",
+	UI_optionscreen_binding_TwisTonFireStats_ToggleMainUI = "Перемкнути вікно основної статистики",
+	UI_optionscreen_TwisTonFireStats_ShowFatigueIndicator = "Показувати індикатор втоми",
+	UI_optionscreen_TwisTonFireStats_ShowWeightIndicator = "Показувати індикатор ваги",
+}

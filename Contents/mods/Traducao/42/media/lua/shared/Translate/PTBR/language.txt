@@ -1,0 +1,4 @@
+VERSION = 1,
+text = Portugues Brasileiro,
+charset = UTF-8,
+
