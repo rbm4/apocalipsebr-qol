@@ -4,26 +4,32 @@ module Trelai
 	{
 		Base
 	}	
-
-	recipe Make Dragonball Cluster
+/*
+	craftRecipe MakeDragonballCluster
 	{
-		Moveables.trelai_tiles_07_64=1,
-		Moveables.trelai_tiles_07_65=1,
-		Moveables.trelai_tiles_07_66=1,
-		Moveables.trelai_tiles_07_67=1,
-		Moveables.trelai_tiles_07_68=1,
-		Moveables.trelai_tiles_07_69=1,
-		Moveables.trelai_tiles_07_70=1,
-		
-		Result:Moveables.trelai_tiles_07_71,
-		Time:700.0,
-		Category:General,
-		AnimNode:Disassemble,
-		Sound:Painting,
-		OnGiveXP:DBZRecipe.OnGiveXP.Strength1000000,
+		timedAction = Disassemble,
+		time = 700,
+		category = General,
+		sound = Painting,
+		/* OnGiveXP:DBZRecipe.OnGiveXP.Strength1000000 - needs Lua callback migration */
+
+		inputs
+		{
+			item 1 [Moveables.trelai_tiles_07_64],
+			item 1 [Moveables.trelai_tiles_07_65],
+			item 1 [Moveables.trelai_tiles_07_66],
+			item 1 [Moveables.trelai_tiles_07_67],
+			item 1 [Moveables.trelai_tiles_07_68],
+			item 1 [Moveables.trelai_tiles_07_69],
+			item 1 [Moveables.trelai_tiles_07_70],
+		}
+		outputs
+		{
+			item 1 Moveables.trelai_tiles_07_71,
+		}
 	}
 
-/*
+
 	recipe Turn to Front Cover
     {
 		TrelaiGuidePage0,   
@@ -65,5 +71,5 @@ module Trelai
 		Result:TrelaiGuidePage0, 
 		Time:1.0,
     } 
-/*
+*/
 }

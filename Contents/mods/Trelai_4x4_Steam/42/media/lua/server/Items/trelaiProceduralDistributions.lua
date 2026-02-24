@@ -141,8 +141,8 @@ local function preDistributionMerge()
     table.insert(ProceduralDistributions.list.MagazineRackMaps.items, "Trelai.TrelaiGazette");
     table.insert(ProceduralDistributions.list.MagazineRackMaps.items, 10);
 
-    table.insert(ProceduralDistributions.list.BedroomSideTable.items, "Trelai.Tshirt_TACADEMY");
-    table.insert(ProceduralDistributions.list.BedroomSideTable.items, 1);
+    -- table.insert(ProceduralDistributions.list.BedroomSideTable.items, "Trelai.Tshirt_TACADEMY");
+    -- table.insert(ProceduralDistributions.list.BedroomSideTable.items, 1);
 end
 
 Events.OnPreDistributionMerge.Add(preDistributionMerge);

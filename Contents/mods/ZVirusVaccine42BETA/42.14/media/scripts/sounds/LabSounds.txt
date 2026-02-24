@@ -103,7 +103,6 @@ module LabSounds
 		clip { file = media/sound/Shatter_B.ogg, distanceMax = 10, volume = 0.8,} 
 	}
 	
-	//Royalty-free injection sound from pixabay
 	sound Injection_A
     {
 		category = Object, loop = false, is3D = true,

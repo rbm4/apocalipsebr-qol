@@ -437,7 +437,7 @@ LootMaps.Init.dragonballmap = function(mapUI)
 	--mapAPI:setBoundsInSquares(6600, 6600, 7799, 7799)
 	MapUtils.overlayPaper(mapUI)
     --overlayPNG(mapUI, 6600, 6600, 1.0, "lootMapPNG", "media/ui/trelaiitems/test.png", 1.0)
-    overlayPNG(mapUI, 6600, 6600, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/dragonball_note.png", 1.0)
+    --overlayPNG(mapUI, 6600, 6600, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/dragonball_note.png", 1.0)
 	--overlayPNG(mapUI, 7555, 6969, 0.333, "legend", "media/textures/worldMap/TrelaiLegend.png")
 end
 
@@ -448,37 +448,37 @@ local bookMAPY1 = 10
 local bookMAPX2 = 1700
 local bookMAPY2 = 1200
 
-LootMaps.Init.book0 = function(mapUI)
-	local mapAPI = mapUI.javaObject:getAPIv1()
-	MapUtils.initDirectoryMapData(mapUI, 'media/maps/Muldraugh, KY')
-	mapAPI:setBoundsInSquares(bookMAPX1, bookMAPY1, bookMAPX2, bookMAPY2)
-	overlayPNG(mapUI, bookMAPX1, bookMAPY1, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/book0.png", 1.0)
-end
+-- LootMaps.Init.book0 = function(mapUI)
+-- 	local mapAPI = mapUI.javaObject:getAPIv1()
+-- 	MapUtils.initDirectoryMapData(mapUI, 'media/maps/Muldraugh, KY')
+-- 	mapAPI:setBoundsInSquares(bookMAPX1, bookMAPY1, bookMAPX2, bookMAPY2)
+-- 	overlayPNG(mapUI, bookMAPX1, bookMAPY1, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/book0.png", 1.0)
+-- end
 
-LootMaps.Init.book1 = function(mapUI)
-	local mapAPI = mapUI.javaObject:getAPIv1()
-	MapUtils.initDirectoryMapData(mapUI, 'media/maps/Muldraugh, KY')
-	mapAPI:setBoundsInSquares(bookMAPX1, bookMAPY1, bookMAPX2, bookMAPY2)
-	overlayPNG(mapUI, bookMAPX1, bookMAPY1, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/book1.png", 1.0)
-end
+-- LootMaps.Init.book1 = function(mapUI)
+-- 	local mapAPI = mapUI.javaObject:getAPIv1()
+-- 	MapUtils.initDirectoryMapData(mapUI, 'media/maps/Muldraugh, KY')
+-- 	mapAPI:setBoundsInSquares(bookMAPX1, bookMAPY1, bookMAPX2, bookMAPY2)
+-- 	overlayPNG(mapUI, bookMAPX1, bookMAPY1, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/book1.png", 1.0)
+-- end
 
-LootMaps.Init.book2 = function(mapUI)
-	local mapAPI = mapUI.javaObject:getAPIv1()
-	MapUtils.initDirectoryMapData(mapUI, 'media/maps/Muldraugh, KY')
-	mapAPI:setBoundsInSquares(bookMAPX1, bookMAPY1, bookMAPX2, bookMAPY2)
-	overlayPNG(mapUI, bookMAPX1, bookMAPY1, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/book2.png", 1.0)
-end
+-- LootMaps.Init.book2 = function(mapUI)
+-- 	local mapAPI = mapUI.javaObject:getAPIv1()
+-- 	MapUtils.initDirectoryMapData(mapUI, 'media/maps/Muldraugh, KY')
+-- 	mapAPI:setBoundsInSquares(bookMAPX1, bookMAPY1, bookMAPX2, bookMAPY2)
+-- 	overlayPNG(mapUI, bookMAPX1, bookMAPY1, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/book2.png", 1.0)
+-- end
 
-LootMaps.Init.book3 = function(mapUI)
-	local mapAPI = mapUI.javaObject:getAPIv1()
-	MapUtils.initDirectoryMapData(mapUI, 'media/maps/Muldraugh, KY')
-	mapAPI:setBoundsInSquares(bookMAPX1, bookMAPY1, bookMAPX2, bookMAPY2)
-	overlayPNG(mapUI, bookMAPX1, bookMAPY1, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/book3.png", 1.0)
-end
+-- LootMaps.Init.book3 = function(mapUI)
+-- 	local mapAPI = mapUI.javaObject:getAPIv1()
+-- 	MapUtils.initDirectoryMapData(mapUI, 'media/maps/Muldraugh, KY')
+-- 	mapAPI:setBoundsInSquares(bookMAPX1, bookMAPY1, bookMAPX2, bookMAPY2)
+-- 	overlayPNG(mapUI, bookMAPX1, bookMAPY1, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/book3.png", 1.0)
+-- end
 
-LootMaps.Init.book4 = function(mapUI)
-	local mapAPI = mapUI.javaObject:getAPIv1()
-	MapUtils.initDirectoryMapData(mapUI, 'media/maps/Muldraugh, KY')
-	mapAPI:setBoundsInSquares(bookMAPX1, bookMAPY1, bookMAPX2, bookMAPY2)
-	overlayPNG(mapUI, bookMAPX1, bookMAPY1, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/book4.png", 1.0)
-end
+-- LootMaps.Init.book4 = function(mapUI)
+-- 	local mapAPI = mapUI.javaObject:getAPIv1()
+-- 	MapUtils.initDirectoryMapData(mapUI, 'media/maps/Muldraugh, KY')
+-- 	mapAPI:setBoundsInSquares(bookMAPX1, bookMAPY1, bookMAPX2, bookMAPY2)
+-- 	overlayPNG(mapUI, bookMAPX1, bookMAPY1, 1.0, "lootMapPNG", "media/ui/trelaiitems/notes/book4.png", 1.0)
+-- end
