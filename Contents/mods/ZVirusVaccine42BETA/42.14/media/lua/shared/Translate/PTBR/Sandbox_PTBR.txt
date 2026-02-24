@@ -1,0 +1,90 @@
+Sandbox_PTBR = {
+    Sandbox_ZombieVirusVaccineBETA = "Zombie Virus Vaccine (BETA)"
+    Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot = "Ativar o Loot Global"
+    Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot_tooltip = "Ativa ou desativa completamente o spawn de itens do Zombie Virus Vaccine no mundo."
+
+    Sandbox_ZombieVirusVaccineBETA_ExpandChemicalsLoot = "Expandir Químicos (Localização)",
+    Sandbox_ZombieVirusVaccineBETA_ExpandChemicalsLoot_tooltip = "Expandir a tabela de loot para produtos químicos",
+
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes = "Seringas (quantidade)"
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option1 = "Desativado"
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option2 = "Baixo"
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option3 = "Padrão"
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option4 = "Alto"
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_tooltip = "Define a quantidade de seringas do mod que aparecem no mundo."
+
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks = "Livros de Equipamentos (quantidade)"
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option1 = "Desativado"
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option2 = "Baixo"
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option3 = "Padrão"
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option4 = "Alto"
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_tooltip = "Define a quantidade de livros de equipamentos laboratoriais que aparecem no mundo."
+
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks = "Livros de Virologia (quantidade)"
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option1 = "Desativado"
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option2 = "Baixo"
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option3 = "Padrão"
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option4 = "Alto"
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_tooltip = "Define a quantidade de livros de virologia e química que aparecem no mundo."
+
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode = "Livros de Virologia – Local de spawn"
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_option1 = "Expandir locais de spawn"
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_option2 = "Apenas em locais específicos"
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_option3 = "Torná-los comuns"
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_tooltip = "Define se os livros de virologia aparecem apenas em locais específicos ou espalhados pelo mundo."
+
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals = "Produtos Químicos (quantidade)"
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option1 = "Desativado"
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option2 = "Baixo"
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option3 = "Padrão"
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option4 = "Alto"
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_tooltip = "Define a quantidade de itens químicos do mod que aparecem no mundo."
+
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingMode = "Ativar envelhecimento de sangue"
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingMode_tooltip = "Habilita ou desabilita o envelhecimento de sangue"
+
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingRadius = "Raio de procura para envelhecimento"
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingRadius_tooltip = "14 é o valor do mod original. Se houver problemas diminua esse valor ou desabilite o envelhecimento"
+    
+    Sandbox_ZombieVirusVaccineBETA_EnableLightPaints = "Permitir Pintura de Lâmpadas"
+    Sandbox_ZombieVirusVaccineBETA_EnableLightPaints_tooltip = "Ativa ou desativa o spawn da revista de pintura de lâmpadas. Se desativado os jogadores não poderão aprender a pintar lâmpadas"
+
+    Sandbox_ZombieVirusVaccineBETA_AllowAutopsyOnGround = "Permitir Autópsia no Chão"
+    Sandbox_ZombieVirusVaccineBETA_AllowAutopsyOnGround_tooltip = "Permite que os jogadores realizem autópsias diretamente no chão, sem necessidade de uma mesa."
+
+    Sandbox_ZombieVirusVaccineBETA_AutopsySpeed = "Velocidade de Autópsia (em ticks)"
+    Sandbox_ZombieVirusVaccineBETA_AutopsySpeed_tooltip = "<BHC>Alterar essa opção afetará o balanceamento do jogo. <RGB:1,1,1><LINE> Define quantos ticks são necessários para completar uma autópsia. Valores mais baixos = mais rápido. "
+
+    Sandbox_ZombieVirusVaccineBETA_TicksDecreasedByPerkLv = "Redução de Ticks por Nível de Perícia"
+    Sandbox_ZombieVirusVaccineBETA_TicksDecreasedByPerkLv_tooltip = "<BHC>Alterar essa opção afetará o balanceamento do jogo. <RGB:1,1,1><LINE> Quantos ticks são reduzidos do tempo de autópsia por cada nível de Primeiros Socorros."
+
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus = "Bônus de Velocidade da Mesa"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option1 = "Nenhum"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_tooltip = "<BHC>Alterar essa opção afetará o balanceamento do jogo. <RGB:1,1,1><LINE> Define o bônus de velocidade ao realizar autópsia em uma mesa de necropsia."
+
+    Sandbox_ZombieVirusVaccineBETA_AutopsyGroundXP = "XP de Autópsia no Chão"
+    Sandbox_ZombieVirusVaccineBETA_AutopsyGroundXP_tooltip = "<BHC>Alterar essa opção afetará o balanceamento do jogo. <RGB:1,1,1><LINE> Quantidade de experiência ganha ao realizar autópsia no chão."
+
+    Sandbox_ZombieVirusVaccineBETA_AutopsyTableXP = "XP de Autópsia na Mesa"
+    Sandbox_ZombieVirusVaccineBETA_AutopsyTableXP_tooltip = "<BHC>Alterar essa opção afetará o balanceamento do jogo. <RGB:1,1,1><LINE> Quantidade de experiência ganha ao realizar autópsia em uma mesa."
+
+    Sandbox_ZombieVirusVaccineBETA_AllowScalpelDegrade = "Permitir Degradação do Bisturi"
+    Sandbox_ZombieVirusVaccineBETA_AllowScalpelDegrade_tooltip = "Se ativado, os bisturis irão se degradar e quebrar com o uso."
+
+    Sandbox_ZombieVirusVaccineBETA_AllowSawDegrade = "Permitir Degradação da Serra"
+    Sandbox_ZombieVirusVaccineBETA_AllowSawDegrade_tooltip = "Se ativado, as serras irão se degradar e quebrar com o uso."
+
+    Sandbox_ZombieVirusVaccineBETA_EnableVehicleLoot = "Ativar Loot em Veículos"
+    Sandbox_ZombieVirusVaccineBETA_EnableVehicleLoot_tooltip = "Ativa ou desativa o spawn de itens em veículos."
+
+    Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot = "Ativar Loot em Mochilas de Sobreviventes"
+    Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot_tooltip = "Ativa ou desativa o spawn de itens em mochila de sobreviventes."
+
+    
+}

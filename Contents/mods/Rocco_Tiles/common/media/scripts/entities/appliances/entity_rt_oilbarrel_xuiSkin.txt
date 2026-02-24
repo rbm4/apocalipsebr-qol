@@ -1,0 +1,12 @@
+module Base
+{
+    xuiSkin default
+    {
+        entity ES_OilBarrel
+        {
+            LuaWindowClass = ISEntityTabWindow,
+            DisplayName = OilBarrel,
+            Icon = Build_OilBarrel,
+        }
+    }
+}

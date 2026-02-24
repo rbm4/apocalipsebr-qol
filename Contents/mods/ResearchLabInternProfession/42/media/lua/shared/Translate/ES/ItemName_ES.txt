@@ -1,0 +1,8 @@
+ItemName_ES = {
+	ItemName_ProfessionItems.DiaryPage1 = "Página de diário rasgada #1"
+	ItemName_ProfessionItems.DiaryPage2 = "Página de diário rasgada #2"
+	ItemName_ProfessionItems.DiaryPage3 = "Página de diário rasgada #3"
+	ItemName_ProfessionItems.DiaryPage4 = "Página de diário rasgada #4"
+	ItemName_ProfessionItems.DiaryPage5 = "Página de diário rasgada #5"
+	ItemName_ProfessionItems.DiaryPage6 = "Página de diário rasgada #6"
+}

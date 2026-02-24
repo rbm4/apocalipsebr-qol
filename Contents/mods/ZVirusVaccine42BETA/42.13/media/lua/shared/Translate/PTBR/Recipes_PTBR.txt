@@ -1,0 +1,150 @@
+Recipes_PTBR = {
+    // EQUIPAMENTOS DE LABORATÓRIO
+    Recipe_LabAssembleMicroscope = "Criar Microscópio",
+    Recipe_LabWorkbench = "Bancada de Trabalho",
+    Recipe_LabAssembleChromatograph = "Criar Cromatógrafo",
+    Recipe_LabAssembleChemistrySet = "Criar Bancada Química",
+    Recipe_LabAssembleSpectrometer = "Criar Espectrômetro",
+    Recipe_LabAssembleCentrifuge = "Criar Centrífuga",
+    Recipe_LabAssembleMuffleFurnace = "Criar Forno de Queima",
+    Recipe_LabAssembleWorkbench = "Criar Bancada de Trabalho",
+    Recipe_LabAssembleEasel = "Criar Cavalete",
+    Recipe_LabTableMorgue1 = "Criar Mesa de Necropsia",
+    
+    // DECORAÇÕES E MODELOS
+    Recipe_DecAssembleSkeleton = "Criar Modelo de Esqueleto",
+    Recipe_DecAssembleVirusModel = "Criar Modelo de Vírus",
+    Recipe_DecAssembleCaduceus = "Criar Caduceu",
+    Recipe_DecAssembleWhiteboard = "Criar Lousa",
+
+    Recipe_DecPaintPeriodicTablePoster = "Pintar Pôster da Tabela Periódica",
+    Recipe_DecPaintSexyNursePoster = "Pintar Pôster de Enfermeira",
+    Recipe_DecPaintWashYourHandsPoster = "Pintar Pôster 'Lave as Mãos'",
+    Recipe_DecPaintBiohazardPoster = "Pintar Pôster de Risco Biológico",
+    Recipe_DecPaintHumanBrainPoster = "Pintar Pôster do Cérebro Humano",
+    Recipe_DecAssemblePharmacyNeonSign = "Criar Letreiro Neon de Farmácia",
+    Recipe_DecAssemblePizzaNeonSign = "Criar Letreiro Neon de Pizza",
+	
+	// FORJA / VIDRARIA
+    Recipe_FrnMakeTestTube = "Criar Tubos de Ensaio (x2)",
+    Recipe_FrnMakeFlask = "Criar Frasco",
+    Recipe_FrnMakeJar = "Criar Pote",
+    Recipe_FrnMakeIngotMold = "Criar Molde de Lingote",
+    Recipe_FrnMeltGoldJewelry = "Derreter Joias de Ouro",
+    Recipe_FrnMeltSilverJewelry = "Derreter Joias de Prata",
+    Recipe_FrnMakeGolgIngot = "Criar Lingote de Ouro",
+    Recipe_FrnMakeSilverIngot = "Criar Lingote de Prata",
+
+    // PROCESSOS BIOLÓGICOS
+    Recipe_ChmCollectInfectedBlood = "1 - Coletar Sangue Infectado no Tubo",
+    Recipe_ChmDivideBloodIntoComponents = "2 - Separar Componentes do Sangue",
+	Recipe_ChmMixFlaskOfAmmoniumSulfate = "3 - Misturar Sulfato de Amônio",
+    Recipe_ChmExtractLeukocytesFromBloodCells = "4 - Extrair Leucócitos",
+    Recipe_ChmExtractAntibodiesFromLeukocytes = "5 - Extrair Anticorpos",
+	Recipe_ChmExtractBrainFromSkull = "6 - Extrair Cérebro",
+    Recipe_ChmExtractFluidFromBrain= "6 - Extrair Fluido Cerebrospinal",
+	
+    // VACINAS E CURA
+    Recipe_ChmSynthesizePlainVaccine = "5 - Fabricar Vacina Simples",
+    Recipe_ChmSynthesizeQualityVaccine = "7 - Fabricar Vacina de Qualidade",
+    Recipe_ChmSynthesizeAdvancedVaccine = "7 - Fabricar Vacina Avançada",
+    Recipe_ChmSynthesizeCure = "7 - Fabricar a Cura",
+
+    // REAGENTES QUÍMICOS
+    Recipe_ChmMixFlaskOfSodiumHypochlorite = "Misturar Hipoclorito de Sódio",
+    Recipe_ChmMixFlaskOfHydrogenPeroxide = "Misturar Peróxido de Hidrogênio",
+
+    // MEDICAMENTOS / SUPLEMENTOS
+    Recipe_ChmMakeAlbumin = "Produzir Albumina",
+    Recipe_ChmMakeChlorineTablets = "Produzir Tabletes de Cloro",
+    Recipe_ChmMakeBottleOfBleach = "Criar Garrafa de Água Sanitária",
+    Recipe_ChmMakeBottleOfDisinfectant = "Criar Frasco de Álcool",
+
+    // ESTERILIZAÇÃO
+    Recipe_ChmSterilizeGlasses = "Esterilizar Vidraria",
+	Recipe_ChmSterilizeLabSyringeReusable = "Esterilizar Seringa Reutilizável",
+    Recipe_OthClearWithChlorineTablets = "Purificar Água com Tabletes de Cloro",
+    Recipe_ChmSterilizeGlassesHW = "Esterilizar com Água Quente",
+	Recipe_ChmSterilizeGlassesHWPot = "Esterilizar com Água Quente (x5)",
+    Recipe_ChmSterilizeGlassesHWPot2 = "Esterilizar com Água Quente (x5)",
+    Recipe_ChmSterilizeGlassesHWBucket = "Esterilizar com Água Quente (x15)",
+    Recipe_ChmSterilizeGlassesHWBucket2 = "Esterilizar com Água Quente (x15)",
+	
+    // DESCARTE
+	Recipe_ChmDiscardBloodFromSyringe = "Descartar Material Biológico",
+    Recipe_ChmLabFlaskPourWaterOut = "Esvaziar o Frasco",
+    Recipe_ChmLabTestTubePourWaterOut = "Esvaziar o Tubo de Ensaio",
+
+    // SERINGAS
+    Recipe_ChmMakeSyringe = "Criar Seringa Reutilizável",
+
+    // OUTROS PROCESSOS
+    Recipe_OthShatterEmptyBottle = "Quebrar Garrafa Vazia",
+    Recipe_OthShatterCarGlassWindshields = "Quebrar Vidro de Carro",
+    Recipe_OthUnpackSyringes = "Abrir Caixa de Seringas",
+    Recipe_OthPackSyringes = "Guardar Seringas na Caixa",
+	Recipe_ChmMakeAlbuminPills = "Produzir Pílulas de Albumina",
+    Recipe_FrnMakeAluminum = "Criar Alumínio",
+    Recipe_LabPaintLightGreen = "Pintar Lâmpada de Verde",
+    Recipe_LabPaintLightRed = "Pintar Lâmpada de Vermelho",
+    Recipe_LabPaintLightBlue = "Pintar Lâmpada de Azul",
+    Recipe_LabPaintLightYellow = "Pintar Lâmpada de Amarelo",
+    Recipe_LabPaintLightCyan = "Pintar Lâmpada de Ciano",
+    Recipe_LabPaintLightOrange = "Pintar Lâmpada de Laranja",
+    Recipe_LabPaintLightPurple = "Pintar Lâmpada de Roxo",
+    Recipe_LabPaintLightPink = "Pintar Lâmpada de Rosa",
+	Recipe_OthFixSkull = "Consertar Crânio Humano",
+    Recipe_OthMakeCottonBalls = "Fazer Algodão",
+
+    // ARMAS
+    Recipe_MakeHBoneClub = "Fazer Clava de Osso",
+    Recipe_MakeHScrapMorningstar = "Fazer Maça de Metal Improvisada",
+    Recipe_MakeSpikedClub = "Fazer Clava com Espinhos",
+
+    /* OLD RECIPES, UNUSED. LEFT HERE FOR REFERENCE
+    Recipe_OthShatterPerfumeVial = "Quebrar Frasco de Perfume",
+    Recipe_OthShatterSmashedBottle = "Quebrar Garrafa",
+    Recipe_ChmLabFlaskFillWater = "Purificar Água com Cloro",
+    Recipe_ChmSynthesizeCureTwo = "Fabricar Cura (Reus.)",
+    Recipe_ChmGetBloodTestTwo = "Realizar Teste Sanguíneo (Reus.)",
+    Recipe_ChmPourInfectedBlood = "Descartar Sangue",
+	Recipe_PourAFlaskOut = "Esvaziar o Frasco",
+    Recipe_ChmSynthesizePlainVaccineTwo = "Fabricar Vacina Simples (Reus.)",
+    Recipe_ChmSynthesizeQualityVaccineTwo = "Fabricar Vacina de Qualidade (Reus.)",
+    Recipe_ChmSynthesizeAdvancedVaccineTwo = "Fabricar Vacina Avançada (Reus.)",
+    Recipe_ChmSterilizeFlaskDisinfectant = "Esterilizar Frasco com Desinfetante",
+    Recipe_ChmSterilizeLabSyringeReusableDisinfectant = "Esterilizar Seringa com Desinfetante",
+    Recipe_ChmSterilizeTestTubeDisinfectant = "Esterilizar Tubo de Ensaio com Desinfetante",
+    Recipe_ChmSterilizeTestTube = "Esterilizar Tubo de Ensaio",
+    Recipe_ChmSterilizeFlask = "Esterilizar Frasco",
+    Recipe_ChmGetAnInjection = "Aplicar Injeção",
+    Recipe_ChmTakeBloodForAnalysis = "Coletar Sangue para Análise",
+	Recipe_ChmTakeBloodForAnalysis_Reusable = "Coletar Sangue para Análise",
+    Recipe_ChmGetBloodTest = "Realizar Teste Sanguíneo",
+    Recipe_ChmPourTaintedBlood = "Descartar Sangue Contaminado",
+	Recipe_LabTableMorgue2 = "Criar Mesa de Necropsia 2/2",
+    Recipe_ChmAddTransferBrainFluidLow = "7 - Transferir Fluido Para Tubo de Ensaio",
+	Recipe_ChmAddTransferBrainFluidMid = "7 - Transferir Fluido Para Tubo de Ensaio",
+	Recipe_ChmAddTransferBrainFluidHigh = "7 - Transferir Fluido Para Tubo de Ensaio",
+    Recipe_LabTradeTickets = "Trocar Tickets de Compensação",
+    Recipe_LabTradeTickets2 = "Trocar Tickets de Compensação",
+    Recipe_LabTradeTickets3 = "Trocar Tickets de Compensação",
+    Recipe_LabTradeTickets4 = "Trocar Tickets de Compensação",
+    Recipe_LabTradeTickets5 = "Trocar Tickets de Compensação",
+    Recipe_LabTradeTickets6 = "Trocar Tickets de Compensação",
+    Recipe_LabTradeTickets7 = "Trocar Tickets de Compensação",
+    */
+
+    /* RECEITAS TEMPORÁRIAS */
+    Recipe_TradeOldItems1 = "ATUALIZAR ITEM",
+    Recipe_TradeOldItems2 = "ATUALIZAR ITEM",
+    Recipe_TradeOldItems3 = "ATUALIZAR ITEM",
+    Recipe_TradeOldItems4 = "ATUALIZAR ITEM",
+    Recipe_TradeOldItems5 = "ATUALIZAR ITEM",
+    Recipe_TradeOldItems6 = "ATUALIZAR ITEM",
+    Recipe_TradeOldItems7 = "ATUALIZAR ITEM",
+    Recipe_TradeOldItems8 = "ATUALIZAR ITEM",
+    Recipe_TradeOldItems9 = "ATUALIZAR ITEM",
+    Recipe_TradeOldItems10 = "ATUALIZAR ITEM",
+    Recipe_TurnHBoneIntoWP = "Transformar em Arma",
+}

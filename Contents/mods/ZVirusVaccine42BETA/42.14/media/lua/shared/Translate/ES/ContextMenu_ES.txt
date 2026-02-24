@@ -1,0 +1,50 @@
+ContextMenu_ES = {
+    ContextMenu_LabTestInfo = "Ver Condición",
+    ContextMenu_LabTestInfoItems = "Ver Información de los Objetos",
+    ContextMenu_LabClearWater = "Purificar con Tabletas de Cloro",
+    ContextMenu_LabClearWaterTooltip = "Se requieren %1 unidad(es). <LINE> <RGB:1,1,1> (Tienes %2 unidad(es))",
+
+    ContextMenu_LabCorpseAutopsy = "Realizar Autopsia",
+    ContextMenu_LabCorpse = "Cadáver",
+    ContextMenu_LabYes = ". Sí",
+    ContextMenu_LabNo = ". No",
+    ContextMenu_LabHrs = "hrs.",
+    ContextMenu_LabWasZombie = "¿Era un zombi?",
+    ContextMenu_LabCorpseAge = "Tiempo desde la Muerte",
+    ContextMenu_LabAutopsyDone = "Autopsia Completada",
+
+    ContextMenu_LabPutCorpseOnTable = "Colocar Cadáver en la Mesa de Autopsias",
+    ContextMenu_LabRemoveCorpseFromTable = "Retirar Cadáver de la Mesa de Autopsias",
+    ContextMenu_LabPutRemainsIntoSack = "Almacenar Restos en Bolsa Plástica",
+    ContextMenu_LabPutRemainsIntoBags = "Almacenar Restos en Bolsa de Basura",
+    ContextMenu_LabClearMorgueTable = "Limpiar Mesa de Autopsias",
+
+    ContextMenu_LabMustHaveItems = "<RGB:0.9,0.8,0.5>Objetos Necesarios:<RGB:1,1,1><LINE>",
+    ContextMenu_LabMustHaveItemsOr = "     o",
+    ContextMenu_LabMustHaveItemsAnd = "y también",
+    ContextMenu_LabSomethingMissing = "Falta algo...",
+
+    ContextMenu_LabInjectVaccine = "Aplicar Tratamiento Experimental",
+    ContextMenu_Inject = "Inyectando",
+
+    ContextMenu_LabCollectBloodBlood = "Recolectar Sangre Propia",
+    ContextMenu_TestBlood = "Realizar análisis de sangre",
+
+    ContextMenu_LabNeedSpectrometer = "Se requiere un Espectrómetro.",
+    ContextMenu_LabNeedAlcoholCotton = "Se requiere Algodón con Alcohol.",
+    ContextMenu_LabNeedSyringe = "Se requiere una Jeringa.",
+
+    ContextMenu_LabCannotAutopsyHere = "No es posible realizar una autopsia aquí.",
+
+    ContextMenu_LabCategoryMask = "MÁSCARA:",
+    ContextMenu_LabCategoryGloves = "GUANTES:",
+    ContextMenu_LabCategoryTools = "HERRAMIENTAS:",
+
+    ContextMenu_LabCollectBodyParts = "Recolectar Partes",
+    ContextMenu_LabCollectBrain = "Cerebro Infectado",
+    ContextMenu_LabCollectLargeBones = "Huesos Grandes",
+    ContextMenu_LabCollectTeeth = "Dientes",
+    ContextMenu_LabCollectSkull = "Cráneo",
+    ContextMenu_LabCollectSmallBones = "Huesos Pequeños",
+    ContextMenu_LabCollectRegularBones = "Huesos Medianos",
+}

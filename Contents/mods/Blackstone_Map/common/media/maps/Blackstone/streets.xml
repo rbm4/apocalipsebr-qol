@@ -1,0 +1,246 @@
+<streets version="1">
+    <street name="BlackHawk Rd" width="5">
+        <points>
+            <point x="15003.0" y="7748.0"/>
+            <point x="15003.0" y="6606.5"/>
+        </points>
+    </street>
+    <street name="AsinSina Rd" width="5">
+        <points>
+            <point x="15006.0" y="6603.0"/>
+            <point x="15125.5" y="6603.0"/>
+            <point x="15148.5" y="6623.5"/>
+            <point x="15195.0" y="6628.0"/>
+            <point x="15208.5" y="6632.0"/>
+            <point x="15243.5" y="6630.0"/>
+            <point x="15350.5" y="6660.5"/>
+            <point x="15379.0" y="6665.0"/>
+            <point x="15453.5" y="6665.5"/>
+            <point x="15466.5" y="6658.5"/>
+            <point x="15485.5" y="6661.0"/>
+            <point x="15538.0" y="6634.0"/>
+            <point x="15605.5" y="6625.5"/>
+            <point x="15675.0" y="6627.0"/>
+            <point x="15694.5" y="6631.0"/>
+            <point x="15704.0" y="6646.0"/>
+            <point x="15728.0" y="6648.0"/>
+            <point x="15808.5" y="6675.0"/>
+            <point x="15828.5" y="6690.0"/>
+            <point x="15850.0" y="6698.5"/>
+            <point x="15920.5" y="6747.0"/>
+            <point x="15932.5" y="6770.5"/>
+            <point x="15974.5" y="6788.5"/>
+            <point x="16035.0" y="6844.0"/>
+            <point x="16064.5" y="6863.0"/>
+            <point x="16111.5" y="6879.5"/>
+            <point x="16161.0" y="6857.0"/>
+            <point x="16214.5" y="6862.0"/>
+            <point x="16263.5" y="6859.5"/>
+            <point x="16321.5" y="6873.5"/>
+            <point x="16384.5" y="6818.0"/>
+            <point x="16414.0" y="6810.5"/>
+            <point x="16501.0" y="6826.5"/>
+            <point x="16510.5" y="6820.5"/>
+            <point x="16517.0" y="6799.5"/>
+            <point x="16619.0" y="6758.5"/>
+            <point x="16689.5" y="6708.5"/>
+            <point x="16733.5" y="6702.5"/>
+            <point x="16798.0" y="6751.0"/>
+        </points>
+    </street>
+    <street name="PeloPincho Rd" width="5">
+        <points>
+            <point x="16264.0" y="8230.0"/>
+            <point x="16308.0" y="8204.5"/>
+            <point x="16323.5" y="8202.0"/>
+            <point x="16327.0" y="8203.5"/>
+            <point x="16330.5" y="8205.0"/>
+            <point x="16333.5" y="8208.5"/>
+            <point x="16338.5" y="8213.0"/>
+            <point x="16354.5" y="8228.0"/>
+            <point x="16359.5" y="8229.0"/>
+            <point x="16365.0" y="8226.0"/>
+            <point x="16373.5" y="8219.0"/>
+            <point x="16378.0" y="8212.5"/>
+            <point x="16375.5" y="8172.0"/>
+            <point x="16381.5" y="8165.0"/>
+            <point x="16393.0" y="8162.0"/>
+            <point x="16398.5" y="8163.5"/>
+            <point x="16405.0" y="8168.0"/>
+            <point x="16412.5" y="8174.5"/>
+            <point x="16423.5" y="8187.5"/>
+            <point x="16445.5" y="8203.0"/>
+            <point x="16454.5" y="8210.0"/>
+            <point x="16478.5" y="8215.0"/>
+            <point x="16487.5" y="8221.5"/>
+            <point x="16491.5" y="8235.0"/>
+        </points>
+    </street>
+    <street name="Jirulo Rd" width="5">
+        <points>
+            <point x="16454.5" y="7842.5"/>
+            <point x="16464.0" y="7848.5"/>
+            <point x="16469.0" y="7849.0"/>
+            <point x="16484.0" y="7848.5"/>
+            <point x="16499.0" y="7854.5"/>
+            <point x="16501.0" y="7857.5"/>
+            <point x="16503.5" y="7873.5"/>
+            <point x="16514.0" y="7883.0"/>
+            <point x="16520.5" y="7899.0"/>
+            <point x="16534.5" y="7899.0"/>
+            <point x="16544.5" y="7906.0"/>
+            <point x="16559.5" y="7908.0"/>
+            <point x="16581.0" y="7918.0"/>
+            <point x="16588.0" y="7926.5"/>
+            <point x="16610.0" y="7937.5"/>
+            <point x="16624.0" y="7937.0"/>
+            <point x="16643.5" y="7932.0"/>
+            <point x="16700.0" y="7907.0"/>
+            <point x="16717.0" y="7906.0"/>
+            <point x="16741.0" y="7916.5"/>
+            <point x="16753.0" y="7926.5"/>
+            <point x="16765.5" y="7929.0"/>
+            <point x="16772.0" y="7937.0"/>
+            <point x="16789.5" y="7944.0"/>
+            <point x="16799.5" y="7941.0"/>
+        </points>
+    </street>
+    <street name="Don Pato Rd" width="5">
+        <points>
+            <point x="15007.0" y="7396.5"/>
+            <point x="15068.5" y="7399.5"/>
+            <point x="15126.5" y="7397.0"/>
+            <point x="15150.0" y="7400.5"/>
+            <point x="15184.0" y="7401.5"/>
+            <point x="15209.5" y="7393.5"/>
+            <point x="15280.5" y="7393.5"/>
+            <point x="15298.5" y="7402.0"/>
+            <point x="15325.0" y="7403.5"/>
+            <point x="15373.5" y="7393.5"/>
+            <point x="15453.5" y="7392.5"/>
+            <point x="15469.0" y="7386.5"/>
+            <point x="15570.5" y="7390.5"/>
+            <point x="15628.0" y="7392.5"/>
+        </points>
+    </street>
+    <street name="Edwin Rd" width="5">
+        <points>
+            <point x="15782.5" y="7140.0"/>
+            <point x="15788.0" y="7149.5"/>
+            <point x="15784.0" y="7167.5"/>
+            <point x="15778.0" y="7173.0"/>
+            <point x="15777.0" y="7179.0"/>
+            <point x="15779.5" y="7184.0"/>
+            <point x="15793.5" y="7195.5"/>
+            <point x="15807.5" y="7198.0"/>
+            <point x="15839.5" y="7215.0"/>
+            <point x="15865.0" y="7215.0"/>
+            <point x="15875.5" y="7218.0"/>
+        </points>
+    </street>
+    <street name="Goldaf Rd" width="5">
+        <points>
+            <point x="16506.0" y="6831.5"/>
+            <point x="16539.0" y="6867.0"/>
+            <point x="16556.0" y="6899.5"/>
+            <point x="16569.5" y="6918.0"/>
+            <point x="16583.5" y="6949.0"/>
+            <point x="16598.0" y="6964.5"/>
+            <point x="16603.5" y="6973.0"/>
+            <point x="16615.0" y="6995.0"/>
+        </points>
+    </street>
+    <street name="MouHulk Rd" width="5">
+        <points>
+            <point x="16149.5" y="7793.5"/>
+            <point x="16164.0" y="7783.5"/>
+            <point x="16189.5" y="7785.0"/>
+            <point x="16212.5" y="7770.0"/>
+            <point x="16216.0" y="7764.5"/>
+            <point x="16217.0" y="7731.5"/>
+            <point x="16231.0" y="7712.0"/>
+            <point x="16231.0" y="7692.5"/>
+        </points>
+    </street>
+    <street name="Gralinhammer Rd" width="5">
+        <points>
+            <point x="15607.0" y="6936.0"/>
+            <point x="15628.5" y="6926.0"/>
+            <point x="15686.5" y="6923.0"/>
+            <point x="15698.0" y="6915.0"/>
+            <point x="15704.5" y="6901.0"/>
+            <point x="15722.5" y="6879.0"/>
+            <point x="15750.5" y="6878.0"/>
+            <point x="15773.0" y="6869.0"/>
+            <point x="15818.5" y="6871.0"/>
+            <point x="15874.0" y="6851.5"/>
+            <point x="15921.0" y="6851.5"/>
+        </points>
+    </street>
+    <street name="LokiDH Rd" width="5">
+        <points>
+            <point x="15927.5" y="6852.0"/>
+            <point x="16006.0" y="6848.0"/>
+            <point x="16013.5" y="6844.5"/>
+            <point x="16019.5" y="6839.0"/>
+        </points>
+    </street>
+    <street name="Luisito Rd" width="5">
+        <points>
+            <point x="15916.5" y="6926.5"/>
+            <point x="15932.0" y="6932.5"/>
+            <point x="15941.5" y="6932.5"/>
+            <point x="15956.0" y="6942.5"/>
+            <point x="15973.5" y="6947.0"/>
+            <point x="16002.0" y="6973.5"/>
+        </points>
+    </street>
+    <street name="Magickindred Rd" width="5">
+        <points>
+            <point x="16698.0" y="6700.5"/>
+            <point x="16699.0" y="6694.5"/>
+            <point x="16705.0" y="6688.5"/>
+            <point x="16705.0" y="6667.5"/>
+            <point x="16690.0" y="6641.0"/>
+            <point x="16680.0" y="6629.5"/>
+            <point x="16675.5" y="6608.5"/>
+            <point x="16677.5" y="6601.0"/>
+        </points>
+    </street>
+    <street name="Caaritomc Rd" width="5">
+        <points>
+            <point x="15687.0" y="8209.0"/>
+            <point x="15716.5" y="8218.0"/>
+            <point x="15734.5" y="8215.5"/>
+            <point x="15747.0" y="8222.0"/>
+            <point x="15765.0" y="8222.0"/>
+        </points>
+    </street>
+    <street name="Gato Rd" width="5">
+        <points>
+            <point x="15995.0" y="8305.5"/>
+            <point x="15993.5" y="8251.0"/>
+        </points>
+    </street>
+    <street name="MilitarGamer Rd" width="5">
+        <points>
+            <point x="15491.5" y="7634.0"/>
+            <point x="15515.0" y="7642.5"/>
+            <point x="15536.0" y="7643.5"/>
+            <point x="15563.5" y="7661.5"/>
+            <point x="15598.0" y="7662.5"/>
+            <point x="15619.5" y="7667.0"/>
+            <point x="15649.5" y="7666.0"/>
+            <point x="15671.5" y="7672.5"/>
+            <point x="15705.0" y="7675.0"/>
+            <point x="15718.5" y="7681.0"/>
+            <point x="15739.0" y="7679.0"/>
+        </points>
+    </street>
+    <street name="FurieN Rd" width="5">
+        <points>
+            <point x="16057.0" y="7948.5"/>
+            <point x="16159.5" y="7946.5"/>
+        </points>
+    </street>
+</streets>

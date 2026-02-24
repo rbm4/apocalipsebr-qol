@@ -1,0 +1,49 @@
+module Base
+{
+    item PortableTvWhite
+    {
+        DisplayCategory = Communications,
+        ItemType = base:radio,
+        Weight = 4.5,
+        Icon = PortableTvWhite,
+        AcceptMediaType = 1,
+        BaseVolumeRange = 12,
+        DisappearOnUse = false,
+        IsHighTier = false,
+        IsPortable = true,
+        IsTelevision = true,
+        MaxChannel = 1000000,
+        MicRange = 0,
+        MinChannel = 200,
+        TransmitRange = 0,
+        TwoWay = false,
+        UseDelta = 0.009,
+        UseWhileEquipped = false,
+        UsesBattery = false,
+        WorldObjectSprite = Roccos_Tiles_Television_01_1,
+    }
+
+    item PortableTvBlack
+    {
+        DisplayCategory = Communications,
+        ItemType = base:radio,
+        Weight = 4.5,
+        Icon = PortableTvBlack,
+        AcceptMediaType = 1,
+        BaseVolumeRange = 12,
+        DisappearOnUse = false,
+        IsHighTier = false,
+        IsPortable = true,
+        IsTelevision = true,
+        MaxChannel = 1000000,
+        MicRange = 0,
+        MinChannel = 200,
+        TransmitRange = 0,
+        TwoWay = false,
+        UseDelta = 0.009,
+        UseWhileEquipped = false,
+        UsesBattery = false,
+        WorldObjectSprite = Roccos_Tiles_Television_01_5,
+    }
+}
+	

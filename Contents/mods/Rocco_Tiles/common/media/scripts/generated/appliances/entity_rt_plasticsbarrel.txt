@@ -1,0 +1,106 @@
+module Base
+{
+    entity PlasticsBarrel_Blue
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_PlasticsBarrel,
+            uiEnabled = false,
+        }
+        component FluidContainer
+        {
+            ContainerName = PlasticsBarrel,
+            Capacity = 150.0,
+        }
+        component SpriteConfig
+        {
+            health = 300,
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_20,
+                }
+            }
+        }
+    }
+
+    entity PlasticsBarrel_Orange
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_PlasticsBarrel,
+            uiEnabled = false,
+        }
+        component FluidContainer
+        {
+            ContainerName = PlasticsBarrel,
+            Capacity = 150.0,
+        }
+        component SpriteConfig
+        {
+            health = 300,
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_21,
+                }
+            }
+        }
+    }
+
+    entity PlasticsBarrel_Green
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_PlasticsBarrel,
+            uiEnabled = false,
+        }
+        component FluidContainer
+        {
+            ContainerName = PlasticsBarrel,
+            Capacity = 150.0,
+        }
+        component SpriteConfig
+        {
+            health = 300,
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_22,
+                }
+            }
+        }
+    }
+
+    entity PlasticsBarrel_White
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_PlasticsBarrel,
+            uiEnabled = false,
+        }
+        component FluidContainer
+        {
+            ContainerName = PlasticsBarrel,
+            Capacity = 150.0,
+        }
+        component SpriteConfig
+        {
+            health = 300,
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_23,
+                }
+            }
+        }
+    }
+}

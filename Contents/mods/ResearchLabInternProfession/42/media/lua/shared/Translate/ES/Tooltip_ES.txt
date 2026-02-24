@@ -1,0 +1,8 @@
+Tooltip_ES = {
+	Tooltip_DiaryPage1 = "Una página de un diario que arrancaste a toda prisa en medio del caos de el día anterior.",
+	Tooltip_DiaryPage2 = "Una página de un diario que arrancaste a toda prisa en medio del caos de el día anterior.",
+	Tooltip_DiaryPage3 = "Una página de un diario que arrancaste a toda prisa en medio del caos de el día anterior.",
+	Tooltip_DiaryPage4 = "Una página de un diario que arrancaste a toda prisa en medio del caos de el día anterior.",
+	Tooltip_DiaryPage5 = "Una página de un diario que arrancaste a toda prisa en medio del caos de el día anterior.",
+	Tooltip_DiaryPage6 = "Página arrancada de un diario que contiene notas sobre cómo montar un laboratorio.<br>Tu último intento de salvar parte del conocimiento que lograste adquirir durante tu pasantía.",
+}

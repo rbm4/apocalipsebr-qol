@@ -1,0 +1,117 @@
+Recipes_IT = {
+    // LABORATORY EQUIPMENT
+    Recipe_LabAssembleMicroscope = "Costruire Microscopio",
+    Recipe_LabWorkbench = "Banco da Lavoro",
+    Recipe_LabAssembleChromatograph = "Costruire Cromatografo",
+    Recipe_LabAssembleChemistrySet = "Costruire Banco di Chimica",
+    Recipe_LabAssembleSpectrometer = "Costruire Spettrometro",
+    Recipe_LabAssembleCentrifuge = "Costruire Centrifuga",
+    Recipe_LabAssembleMuffleFurnace = "Costruire Forno a Muffola",
+    Recipe_LabAssembleWorkbench = "Costruire Banco da Lavoro",
+    Recipe_LabAssembleEasel = "Costruire Cavalletto",
+    Recipe_LabTableMorgue1 = "Costruire Tavolo per Autopsia",
+
+    // DECORATIONS AND MODELS
+    Recipe_DecAssembleSkeleton = "Costruire Modello di Scheletro",
+    Recipe_DecAssembleVirusModel = "Costruire Modello di Virus",
+    Recipe_DecAssembleCaduceus = "Costruire Caduceo",
+    Recipe_DecAssembleWhiteboard = "Costruire Lavagna Bianca",
+
+    Recipe_DecPaintPeriodicTablePoster = "Dipingere Poster della Tavola Periodica",
+    Recipe_DecPaintSexyNursePoster = "Dipingere Poster dell'Infermiera",
+    Recipe_DecPaintWashYourHandsPoster = "Dipingere Poster \"Lavati le Mani\"",
+    Recipe_DecPaintBiohazardPoster = "Dipingere Poster Rischio Biologico",
+    Recipe_DecPaintHumanBrainPoster = "Dipingere Poster del Cervello Umano",
+    Recipe_DecAssemblePharmacyNeonSign = "Costruire Insegna al Neon Farmacia",
+    Recipe_DecAssemblePizzaNeonSign = "Costruire Insegna al Neon Pizzeria",
+
+    // FORGE / GLASSWORK
+    Recipe_FrnMakeTestTube = "Costruire Provette (x2)",
+    Recipe_FrnMakeFlask = "Costruire Beuta",
+    Recipe_FrnMakeJar = "Costruire Barattolo",
+    Recipe_FrnMakeIngotMold = "Costruire Stampo per Lingotti",
+    Recipe_FrnMeltGoldJewelry = "Fondere Gioielli d'Oro",
+    Recipe_FrnMeltSilverJewelry = "Fondere Gioielli d'Argento",
+    Recipe_FrnMakeGolgIngot = "Costruire Lingotto d'Oro",
+    Recipe_FrnMakeSilverIngot = "Costruire Lingotto d'Argento",
+
+    // BIOLOGICAL PROCESSES
+    Recipe_ChmCollectInfectedBlood = "1 - Raccogliere Sangue Infetto in Provetta",
+    Recipe_ChmDivideBloodIntoComponents = "2 - Separare i Componenti del Sangue",
+    Recipe_ChmMixFlaskOfAmmoniumSulfate = "3 - Mescolare Solfato di Ammonio",
+    Recipe_ChmExtractLeukocytesFromBloodCells = "4 - Estrarre i Leucociti",
+    Recipe_ChmExtractAntibodiesFromLeukocytes = "5 - Estrarre gli Anticorpi",
+    Recipe_ChmExtractBrainFromSkull = "6 - Estrarre il Cervello",
+    Recipe_ChmExtractFluidFromBrain = "6 - Estrarre il Liquido Cerebrospinale",
+
+    // VACCINES AND CURE
+    Recipe_ChmSynthesizePlainVaccine = "5 - Produrre Vaccino Base",
+    Recipe_ChmSynthesizeQualityVaccine = "7 - Produrre Vaccino di Qualità",
+    Recipe_ChmSynthesizeAdvancedVaccine = "7 - Produrre Vaccino Avanzato",
+    Recipe_ChmSynthesizeCure = "7 - Produrre la Cura",
+
+    // CHEMICAL REAGENTS
+    Recipe_ChmMixFlaskOfSodiumHypochlorite = "Mescolare Ipoclorito di Sodio",
+    Recipe_ChmMixFlaskOfHydrogenPeroxide = "Mescolare Perossido di Idrogeno",
+
+    // MEDICATIONS / SUPPLEMENTS
+    Recipe_ChmMakeAlbumin = "Produrre Albumina",
+    Recipe_ChmMakeChlorineTablets = "Produrre Compresse di Cloro",
+    Recipe_ChmMakeBottleOfBleach = "Costruire Bottiglia di Candeggina",
+    Recipe_ChmMakeBottleOfDisinfectant = "Costruire Bottiglia di Alcool",
+
+    // STERILIZATION
+    Recipe_ChmSterilizeGlasses = "Sterilizzare la Vetreria",
+    Recipe_ChmSterilizeLabSyringeReusable = "Sterilizzare Siringa Riutilizzabile",
+    Recipe_OthClearWithChlorineTablets = "Purificare l'Acqua con Compresse di Cloro",
+    Recipe_ChmSterilizeGlassesHW = "Sterilizzare con Acqua Calda",
+    Recipe_ChmSterilizeGlassesHWPot = "Sterilizzare con Acqua Calda (x5)",
+    Recipe_ChmSterilizeGlassesHWBucket = "Sterilizzare con Acqua Calda (x15)",
+    Recipe_ChmSterilizeGlassesHWPot2 = "Sterilizzare con Acqua Calda (x5)",
+    Recipe_ChmSterilizeGlassesHWBucket2 = "Sterilizzare con Acqua Calda (x15)",
+
+    // DISPOSAL
+    Recipe_ChmDiscardBloodFromSyringe = "Smaltire Materiale Biologico",
+    Recipe_ChmLabFlaskPourWaterOut = "Svuotare Beuta",
+    Recipe_ChmLabTestTubePourWaterOut = "Svuotare Provetta",
+
+    // SYRINGES
+    Recipe_ChmMakeSyringe = "Costruire Siringa Riutilizzabile",
+
+    // WEAPONS
+    Recipe_MakeHBoneClub = "Fabbricare Clava d'Osso",
+    Recipe_MakeHScrapMorningstar = "Fabbricare Mattina Stella di Rottami",
+    Recipe_MakeSpikedClub = "Fabbricare Clava con Punte",
+
+    // OTHER PROCESSES
+    Recipe_OthShatterEmptyBottle = "Rompere Bottiglia Vuota",
+    Recipe_OthShatterCarGlassWindshields = "Rompere Vetro dell'Auto",
+    Recipe_OthUnpackSyringes = "Aprire Scatola di Siringhe",
+    Recipe_OthPackSyringes = "Imballare Siringhe nella Scatola",
+    Recipe_ChmMakeAlbuminPills = "Produrre Pillole di Albumina",
+    Recipe_FrnMakeAluminum = "Costruire Alluminio",
+    Recipe_LabPaintLightGreen = "Dipingere Luce Verde",
+    Recipe_LabPaintLightRed = "Dipingere Luce Rossa",
+    Recipe_LabPaintLightBlue = "Dipingere Luce Blu",
+    Recipe_LabPaintLightYellow = "Dipingere Luce Gialla",
+    Recipe_LabPaintLightCyan = "Dipingere Luce Ciano",
+    Recipe_LabPaintLightOrange = "Dipingere Luce Arancione",
+    Recipe_LabPaintLightPurple = "Dipingere Luce Viola",
+    Recipe_LabPaintLightPink = "Dipingere Luce Rosa",
+    Recipe_OthFixSkull = "Riparare Cranio Umano",
+    Recipe_OthMakeCottonBalls = "Fare Batuffoli di Cotone",
+	
+    /* TEMPORARY RECIPES */
+    Recipe_TradeOldItems1 = "AGGIORNA OGGETTO",
+    Recipe_TradeOldItems2 = "AGGIORNA OGGETTO",
+    Recipe_TradeOldItems3 = "AGGIORNA OGGETTO",
+    Recipe_TradeOldItems4 = "AGGIORNA OGGETTO",
+    Recipe_TradeOldItems5 = "AGGIORNA OGGETTO",
+    Recipe_TradeOldItems6 = "AGGIORNA OGGETTO",
+    Recipe_TradeOldItems7 = "AGGIORNA OGGETTO",
+    Recipe_TradeOldItems8 = "AGGIORNA OGGETTO",
+    Recipe_TradeOldItems9 = "AGGIORNA OGGETTO",
+    Recipe_TradeOldItems10 = "AGGIORNA OGGETTO",
+    Recipe_TurnHBoneIntoWP = "Trasformare in Arma",
+
+}

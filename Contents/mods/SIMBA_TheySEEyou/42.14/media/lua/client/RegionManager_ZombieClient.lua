@@ -34,7 +34,7 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
         end
         local playerX = player:getX()
         local playerY = player:getY()
-        
+
         -- Check distance between player and zombie
         local distance = math.sqrt((playerX - zombieX) ^ 2 + (playerY - zombieY) ^ 2)
         if distance > 200 then
@@ -50,12 +50,11 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
             return
         end
 
-        
         -- Debug: Show received data from server
         -- print("SIMBA_TSY Client: Received zombie confirmation for ID: " .. tostring(args.zombieID))
-        
+
         local zombieID = args.zombieID
-        
+
         local cell = player:getCell()
         if not cell then
             return
@@ -71,7 +70,7 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
             if zombie and not zombie:isDead() and zombie:getOnlineID() == zombieID then
                 -- Apply all server-determined properties using the shared function
                 RegionManager.Shared.ServerSideProperties(zombie, args, sandboxOptions)
-                
+
                 -- print("SIMBA_TSY Client: Applied properties to zombie " .. zombieID)
                 if args.isSprinter then
                     print("  -> Converted to Sprinter")
@@ -91,7 +90,7 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
                 if args.hasNavigation then
                     print("  -> Navigation enabled")
                 end
-                
+
                 break
             end
         end
@@ -125,7 +124,7 @@ local function SIMBA_TSY_ProcessZombies(currentZones)
         -- Client no longer calculates chances or rolls
         -- Server makes all decisions in OnZombieCreate
         -- Client just scans and requests information
-        
+
         for i = 0, zombies:size() - 1 do
             local zombie = zombies:get(i)
 
@@ -136,7 +135,7 @@ local function SIMBA_TSY_ProcessZombies(currentZones)
                 -- Only process if not already processed
                 if not data.SIMBA_TSY_Processed then
                     data.SIMBA_TSY_Processed = true
-                    
+
                     -- Generate persistent ID for server lookup
                     local persistentID = RegionManager.Shared.GetZombiePersistentID(zombie)
 
@@ -148,6 +147,16 @@ local function SIMBA_TSY_ProcessZombies(currentZones)
                         x = zombie:getX(),
                         y = zombie:getY()
                     })
+                elseif data.SIMBA_TSY_Processed then
+                    -- =================================================================
+                    -- SPEED REVALIDATION PASS
+                    -- Check already-processed zombies whose walkType no longer matches
+                    -- the expected speed (owner change reset). Reapply if needed.
+                    -- =================================================================
+                    local zombie = zombies:get(i)
+                    if zombie and not zombie:isDead() then
+                        RegionManager.Shared.RevalidateZombieSpeed(zombie, sandboxOptions)
+                    end
                 end
             end
         end
@@ -157,7 +166,7 @@ local function SIMBA_TSY_ProcessZombies(currentZones)
             sendClientCommand(player, "SIMBA_TSY", "RequestZombieInfo", {
                 zombies = proposals
             })
-            print("SIMBA_TSY Client: Requested info for " .. #proposals .. " zombies from server")
+            -- print("SIMBA_TSY Client: Requested info for " .. #proposals .. " zombies from server")
         end
         return
     end
@@ -180,23 +189,6 @@ local sprinterModule = {
 RegionManager.ClientTick.registerModule(sprinterModule)
 
 -- ============================================================================
--- Stuck Zombie Recovery Module
--- Periodically scans nearby zombies for stuck state (stateEventDelayTimer
--- deep in negatives with no target) and forces a state reset.
--- Runs on a slower cadence than the main sprinter tick to save performance.
--- ============================================================================
-
--- ---@type TickModuleDef
--- local unstickModule = {
---     name = "SIMBA_TSY_UnstickZombies",
-
---     onTick = function(player, currentZones)
---         RegionManager.Shared.ScanAndUnstickZombies()
---     end
--- }
--- RegionManager.ClientTick.registerModule(unstickModule)
-
--- ============================================================================
 -- Zombie death handler
 -- ============================================================================
 local function onZombieDead(zombie)
@@ -207,7 +199,7 @@ local function onZombieDead(zombie)
     if not player then
         return
     end
-    
+
     local data = zombie:getModData()
     local attacker = zombie:getAttackedBy()
 
@@ -215,7 +207,7 @@ local function onZombieDead(zombie)
     if toughnessType == "tough" then
         print("SIMBA_TSY Client: Tough zombie died - " .. zombie:getOnlineID())
         if attacker and attacker == player then
-            ZKC_Main.recordKill(player,2)
+            ZKC_Main.recordKill(player, 2)
             return
         end
     end

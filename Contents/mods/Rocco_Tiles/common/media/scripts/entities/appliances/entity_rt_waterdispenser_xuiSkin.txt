@@ -1,0 +1,12 @@
+module Base
+{
+    xuiSkin default
+    {
+        entity RT_WaterDispenser
+        {
+            LuaWindowClass = ISEntityTabWindow,
+            DisplayName = Water Dispenser,
+            Icon = Item_WaterTank,
+        }
+    }
+}

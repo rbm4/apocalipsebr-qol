@@ -1,0 +1,228 @@
+module Base
+{
+    entity New_WaterDispenser
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = RT_WaterDispenser,
+            uiEnabled = false,
+        }
+        component ContextMenuConfig
+        {
+            contextEntry
+            {
+                menu = Take_Bottle,
+                icon = Item_WaterTank,
+                customFunction = RT_ContextMenuCode.TakeDispenserBottle,
+            }
+        }
+        component FluidContainer
+        {
+            ContainerName = Dispenser,
+            Capacity = 15.0,
+            InitialPercentMin = 0.0,
+            InitialPercentMax = 1.0,
+            InputLocked = true,
+            Fluids
+            {
+                fluid = Water:1.0,
+            }
+        }
+        component SpriteConfig
+        {
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_5,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_4,
+                }
+            }
+            face N
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_7,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_6,
+                }
+            }
+        }
+    }
+
+    entity New_WaterDispenserNoBottle
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = RT_WaterDispenser,
+            uiEnabled = false,
+        }
+        component ContextMenuConfig
+        {
+            contextEntry
+            {
+                menu = Add_Bottle,
+                icon = Item_WaterTank,
+                customSubmenu = RT_ContextMenuCode.AddDispenserBottle,
+            }
+        }
+        component SpriteConfig
+        {
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_1,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_0,
+                }
+            }
+            face N
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_3,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_2,
+                }
+            }
+        }
+    }
+
+    /*Old*/
+
+    entity Old_WaterDispenser
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = RT_WaterDispenser,
+            uiEnabled = false,
+        }
+        component ContextMenuConfig
+        {
+            contextEntry
+            {
+                menu = Take_Bottle,
+                icon = Item_WaterTank,
+                customFunction = RT_ContextMenuCode.TakeDispenserBottle,
+            }
+        }
+        component FluidContainer
+        {
+            ContainerName = Dispenser,
+            Capacity = 15.0,
+            InitialPercentMin = 0.0,
+            InitialPercentMax = 1.0,
+            InputLocked = true,
+            Fluids
+            {
+                fluid = Water:1.0,
+            }
+        }
+        component SpriteConfig
+        {
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_9,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_8,
+                }
+            }
+            face N
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_11,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_10,
+                }
+            }
+        }
+    }
+
+    entity Old_WaterDispenserNoBottle
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = RT_WaterDispenser,
+            uiEnabled = false,
+        }
+        component ContextMenuConfig
+        {
+            contextEntry
+            {
+                menu = Add_Bottle,
+                icon = Item_WaterTank,
+                customSubmenu = RT_ContextMenuCode.AddDispenserBottle,
+            }
+        }
+        component SpriteConfig
+        {
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_13,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_12,
+                }
+            }
+            face N
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_15,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_14,
+                }
+            }
+        }
+    }
+}

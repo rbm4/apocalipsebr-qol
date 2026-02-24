@@ -1,0 +1,6 @@
+UI_PTBR = {
+	UI_prof_LabIntern = "Cientista da Umbrella",
+    UI_prof_LabInternDesc = "Cientista de campo treinado pela Umbrella corporation para dar sequência às pesquisas da empresa",,
+	UI_trait_autopsyespecialist = "Especialista em Autópsias",
+	UI_trait_autopsyespecialistDesc = "Anos de estudo te levaram a algum lugar<br><br>+40% na Velocidade de Autópsia<br>+30% de XP em Autópsias<br>+ Melhora a Coleta de Sangue na Mesa de Necrotério",
+	}

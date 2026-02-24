@@ -1,0 +1,68 @@
+module Base
+{
+    entity IBCContainer_White
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_IBCContainer,
+            uiEnabled = false,
+        }
+        component FluidContainer
+        {
+            ContainerName = IBC Container,
+            Capacity = 200.0,
+        }
+        component SpriteConfig
+        {
+            health = 300,
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_17,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_16,
+                }
+            }
+        }
+    }
+
+    entity IBCContainer_Dark
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_IBCContainer,
+            uiEnabled = false,
+        }
+        component FluidContainer
+        {
+            ContainerName = IBC Container,
+            Capacity = 200.0,
+        }
+        component SpriteConfig
+        {
+            health = 300,
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_19,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_18,
+                }
+            }
+        }
+    }
+}

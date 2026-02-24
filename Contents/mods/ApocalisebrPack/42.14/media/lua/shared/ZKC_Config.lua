@@ -10,7 +10,7 @@ ZKC_Config.Storage = {
     filename = "ZKC_PlayerData.jsonl",
     
     -- Enable/disable debug logging
-    debug = true,
+    debug = false,
     
     -- Note: File format is newline-delimited JSON (JSONL)
     -- Each line is a complete JSON object that can be parsed independently

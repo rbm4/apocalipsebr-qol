@@ -1,0 +1,131 @@
+
+VERSION = 1,
+
+option ResidentEvilBackpackCapacity
+{
+	type = integer,
+	min = 10,
+	max = 1000,
+	default = 49,
+	page = RaccoonCity,
+	translation = ResidentEvilBackpackCapacity,
+}
+
+option ResidentEvilBackpackWeightReduction
+{
+	type = integer,
+	min = 10,
+	max = 100,
+	default = 98,
+	page = RaccoonCity,
+	translation = ResidentEvilBackpackWeightReduction,
+}
+
+option ResidentEvilSuspendersCapacity
+{
+	type = integer,
+	min = 3,
+	max = 1000,
+	default = 10,
+	page = RaccoonCity,
+	translation = ResidentEvilSuspendersCapacity,
+}
+
+option ResidentEvilSuspendersWeightReduction
+{
+	type = integer,
+	min = 10,
+	max = 100,
+	default = 98,
+	page = RaccoonCity,
+	translation = ResidentEvilSuspendersWeightReduction,
+}
+
+option RaccoonCityDivider0
+{
+    type = boolean,
+    default = false,
+    page = RaccoonCity,
+    translation = RaccoonCityDivider0,
+}
+
+option DisablePoliceMusic
+{
+    type = boolean,
+    default = false,
+    page = RaccoonCity,
+    translation = DisablePoliceMusic,
+}
+
+option DisableVaccines
+{
+    type = boolean,
+    default = false,
+    page = RaccoonCity,
+    translation = DisableVaccines,
+}
+
+option DisableDaBaoJian
+{
+    type = boolean,
+    default = false,
+    page = RaccoonCity,
+    translation = DisableDaBaoJian,
+}
+
+option DisableBenelli
+{
+    type = boolean,
+    default = false,
+    page = RaccoonCity,
+    translation = DisableBenelli,
+}
+
+option DisableQiBao
+{
+    type = boolean,
+    default = false,
+    page = RaccoonCity,
+    translation = DisableQiBao,
+}
+
+option DisableSamuraiEdge
+{
+    type = boolean,
+    default = false,
+    page = RaccoonCity,
+    translation = DisableSamuraiEdge,
+}
+
+option DisableResidentEvilRightClickMenu
+{
+    type = boolean,
+    default = false,
+    page = RaccoonCity,
+    translation = DisableResidentEvilRightClickMenu,
+}
+
+option DisableAdapterSuppressor
+{
+    type = boolean,
+    default = false,
+    page = RaccoonCity,
+    translation = DisableAdapterSuppressor,
+}
+
+option RaccoonCityDivider1
+{
+    type = boolean,
+    default = false,
+    page = RaccoonCity,
+    translation = RaccoonCityDivider1,
+}
+
+option ResidentEvilBuildAddBuildingCraft
+{
+    type = boolean,
+    default = false,
+    page = RaccoonCity,
+    translation = ResidentEvilBuildAddBuildingCraft,
+}
+

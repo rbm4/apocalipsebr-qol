@@ -1,0 +1,23 @@
+Fluids_FR = {
+	/* CONTENEURS */
+    Fluid_Container_FlaskLab = "Fiole",
+    Fluid_Container_TestTubeLab = "Tube à essai",
+	
+	/* FLUIDES */
+    Fluid_Name_TaintedBlood = "Sang coagulé",
+    Fluid_Name_InfectedBlood = "Sang infecté",
+    Fluid_Name_Antibodies = "Anticorps",
+    Fluid_Name_Leukocytes = "Leucocytes",
+    Fluid_Name_BloodCells = "Globules sanguins",
+    Fluid_Name_BloodPlasma = "Plasma sanguin",
+    Fluid_Name_AmmoniumSulfate = "Sulfate d'ammonium",
+    Fluid_Name_HydrogenPeroxide = "Peroxyde d'hydrogène",
+    Fluid_Name_SodiumHypochlorite = "Hypochlorite de sodium",
+    Fluid_Name_PurifiedWater = "Eau purifiée",
+    Fluid_Name_BrainFluidHigh = "Échantillon de liquide cérébrospinal de haute qualité",
+    Fluid_Name_BrainFluidMid = "Échantillon de liquide cérébrospinal de qualité moyenne",
+    Fluid_Name_BrainFluidLow = "Échantillon de liquide cérébrospinal de faible qualité",
+    Fluid_Name_HydrochloricAcid = "Acide chlorhydrique",
+    Fluid_Name_SulfuricAcid = "Acide sulfurique",
+
+}

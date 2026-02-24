@@ -1,0 +1,2217 @@
+tileGeometry
+{
+	VERSION = 2,
+
+	tileset
+	{
+		name = shisan_metalfence,
+
+		/* shisan_metalfence_0 */
+		tile
+		{
+			xy = 0x0,
+
+			box
+			{
+				translate = 152x0x-2910,
+				rotate = 0x0x0,
+				min = -5152x0x-1926,
+				max = 5152x24033x1926,
+			}
+		}
+
+		/* shisan_metalfence_1 */
+		tile
+		{
+			xy = 1x0,
+
+			box
+			{
+				translate = 19x0x-3095,
+				rotate = 0x0x0,
+				min = -5284x0x-1808,
+				max = 5284x24033x1808,
+			}
+		}
+
+		/* shisan_metalfence_2 */
+		tile
+		{
+			xy = 2x0,
+
+			box
+			{
+				translate = -3126x0x-433,
+				rotate = 0x-899802x0,
+				min = -5409x0x-1833,
+				max = 5409x24033x1833,
+			}
+		}
+
+		/* shisan_metalfence_3 */
+		tile
+		{
+			xy = 3x0,
+
+			box
+			{
+				translate = -2602x0x-11,
+				rotate = 0x-899802x0,
+				min = -5152x0x-1926,
+				max = 5152x24117x1926,
+			}
+		}
+
+		/* shisan_metalfence_4 */
+		tile
+		{
+			xy = 4x0,
+
+			box
+			{
+				translate = -3147x0x0,
+				rotate = 0x0x0,
+				min = -1709x0x-5000,
+				max = 1709x23697x5000,
+			}
+
+			box
+			{
+				translate = 103x0x-3250,
+				rotate = 0x0x0,
+				min = -4959x0x-1750,
+				max = 4959x23697x1750,
+			}
+		}
+
+		/* shisan_metalfence_5 */
+		tile
+		{
+			xy = 5x0,
+
+			box
+			{
+				translate = -3168x0x-3260,
+				rotate = 0x0x0,
+				min = -1832x0x-1740,
+				max = 1832x23907x1740,
+			}
+		}
+
+		/* shisan_metalfence_33 */
+		tile
+		{
+			xy = 1x4,
+
+			box
+			{
+				translate = -4162x0x0,
+				rotate = 0x0x0,
+				min = -837x0x-5000,
+				max = 837x24494x5000,
+			}
+		}
+
+		/* shisan_metalfence_34 */
+		tile
+		{
+			xy = 2x4,
+
+			box
+			{
+				translate = 0x0x-4258,
+				rotate = 0x0x0,
+				min = -5000x0x-741,
+				max = 5000x24494x741,
+			}
+		}
+
+		/* shisan_metalfence_36 */
+		tile
+		{
+			xy = 4x4,
+
+			box
+			{
+				translate = 960x0x-4117,
+				rotate = 0x0x0,
+				min = -5960x0x-882,
+				max = 5960x24494x882,
+			}
+		}
+
+		/* shisan_metalfence_44 */
+		tile
+		{
+			xy = 4x5,
+
+			box
+			{
+				translate = 0x0x4757,
+				rotate = 0x0x0,
+				min = -5000x0x-242,
+				max = 5000x24494x242,
+			}
+
+			polygon
+			{
+				translate = 0x0x743,
+				rotate = 2700000x0x0,
+				plane = XZ,
+				points = -5000x-5000 5000x-5000 5000x-4256 -5000x-4256,
+			}
+		}
+
+		/* shisan_metalfence_47 */
+		tile
+		{
+			xy = 7x5,
+
+			box
+			{
+				translate = 4836x0x0,
+				rotate = 0x0x0,
+				min = -163x0x-5000,
+				max = 163x24494x5000,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_furnace,
+
+		/* shisan_furnace_40 */
+		tile
+		{
+			xy = 0x5,
+
+			box
+			{
+				translate = -5145x0x-686,
+				rotate = 0x0x0,
+				min = -792x0x-4642,
+				max = 792x23118x4642,
+			}
+		}
+
+		/* shisan_furnace_41 */
+		tile
+		{
+			xy = 1x5,
+
+			box
+			{
+				translate = -5205x0x-650,
+				rotate = 0x0x0,
+				min = -852x0x-5642,
+				max = 852x23672x5642,
+			}
+		}
+
+		/* shisan_furnace_42 */
+		tile
+		{
+			xy = 2x5,
+
+			box
+			{
+				translate = 0x0x-4331,
+				rotate = 0x0x0,
+				min = -5000x0x-967,
+				max = 5000x24495x967,
+			}
+		}
+
+		/* shisan_furnace_43 */
+		tile
+		{
+			xy = 3x5,
+
+			box
+			{
+				translate = -580x0x-5343,
+				rotate = 0x0x0,
+				min = -4420x0x-1090,
+				max = 4420x22782x1090,
+			}
+		}
+
+		/* shisan_furnace_44 */
+		tile
+		{
+			xy = 4x5,
+
+			box
+			{
+				translate = 0x0x-4331,
+				rotate = 0x0x0,
+				min = -5000x0x-967,
+				max = 5000x24495x967,
+			}
+		}
+
+		/* shisan_furnace_45 */
+		tile
+		{
+			xy = 5x5,
+
+			box
+			{
+				translate = -580x0x-5343,
+				rotate = 0x0x0,
+				min = -4420x0x-1090,
+				max = 4420x22782x1090,
+			}
+		}
+
+		/* shisan_furnace_46 */
+		tile
+		{
+			xy = 6x5,
+
+			box
+			{
+				translate = -5145x0x-686,
+				rotate = 0x0x0,
+				min = -792x0x-4642,
+				max = 792x23118x4642,
+			}
+		}
+
+		/* shisan_furnace_47 */
+		tile
+		{
+			xy = 7x5,
+
+			box
+			{
+				translate = -5447x0x-898,
+				rotate = 0x0x0,
+				min = -1093x0x-5762,
+				max = 1093x23118x5762,
+			}
+		}
+
+		/* shisan_furnace_48 */
+		tile
+		{
+			xy = 0x6,
+
+			box
+			{
+				translate = -4997x0x-516,
+				rotate = 0x0x0,
+				min = -940x0x-4540,
+				max = 940x24025x4540,
+			}
+		}
+
+		/* shisan_furnace_49 */
+		tile
+		{
+			xy = 1x6,
+
+			box
+			{
+				translate = -4609x0x-399,
+				rotate = 0x0x0,
+				min = -587x0x-5546,
+				max = 587x23118x5546,
+			}
+		}
+
+		/* shisan_furnace_50 */
+		tile
+		{
+			xy = 2x6,
+
+			box
+			{
+				translate = -49x0x-4319,
+				rotate = 0x0x0,
+				min = -4951x0x-1053,
+				max = 4951x22782x1053,
+			}
+		}
+
+		/* shisan_furnace_51 */
+		tile
+		{
+			xy = 3x6,
+
+			box
+			{
+				translate = -506x0x-5232,
+				rotate = 0x0x0,
+				min = -4494x0x-1004,
+				max = 4494x23689x1004,
+			}
+		}
+
+		/* shisan_furnace_52 */
+		tile
+		{
+			xy = 4x6,
+
+			box
+			{
+				translate = -346x0x3358,
+				rotate = 0x0x0,
+				min = -5518x0x-1127,
+				max = 5518x23689x1127,
+			}
+		}
+
+		/* shisan_furnace_53 */
+		tile
+		{
+			xy = 5x6,
+
+			box
+			{
+				translate = -49x0x3506,
+				rotate = 0x0x0,
+				min = -4951x0x-880,
+				max = 4951x22782x880,
+			}
+		}
+
+		/* shisan_furnace_54 */
+		tile
+		{
+			xy = 6x6,
+
+			box
+			{
+				translate = 3215x0x-669,
+				rotate = 0x0x0,
+				min = -907x0x-4658,
+				max = 907x22687x4658,
+			}
+		}
+
+		/* shisan_furnace_55 */
+		tile
+		{
+			xy = 7x6,
+
+			box
+			{
+				translate = 3553x0x-587,
+				rotate = 0x0x0,
+				min = -552x0x-5530,
+				max = 552x24095x5530,
+			}
+		}
+
+		/* shisan_furnace_64 */
+		tile
+		{
+			xy = 0x8,
+
+			box
+			{
+				translate = -5145x0x-686,
+				rotate = 0x0x0,
+				min = -792x0x-4642,
+				max = 792x23118x4642,
+			}
+		}
+
+		/* shisan_furnace_65 */
+		tile
+		{
+			xy = 1x8,
+
+			box
+			{
+				translate = -5205x0x-650,
+				rotate = 0x0x0,
+				min = -852x0x-5642,
+				max = 852x23672x5642,
+			}
+		}
+
+		/* shisan_furnace_66 */
+		tile
+		{
+			xy = 2x8,
+
+			box
+			{
+				translate = 0x0x-4331,
+				rotate = 0x0x0,
+				min = -5000x0x-967,
+				max = 5000x24495x967,
+			}
+		}
+
+		/* shisan_furnace_67 */
+		tile
+		{
+			xy = 3x8,
+
+			box
+			{
+				translate = -580x0x-5343,
+				rotate = 0x0x0,
+				min = -4420x0x-1090,
+				max = 4420x22782x1090,
+			}
+		}
+
+		/* shisan_furnace_68 */
+		tile
+		{
+			xy = 4x8,
+
+			box
+			{
+				translate = 0x0x-4331,
+				rotate = 0x0x0,
+				min = -5000x0x-967,
+				max = 5000x24495x967,
+			}
+		}
+
+		/* shisan_furnace_69 */
+		tile
+		{
+			xy = 5x8,
+
+			box
+			{
+				translate = -580x0x-5343,
+				rotate = 0x0x0,
+				min = -4420x0x-1090,
+				max = 4420x22782x1090,
+			}
+		}
+
+		/* shisan_furnace_70 */
+		tile
+		{
+			xy = 6x8,
+
+			box
+			{
+				translate = -5145x0x-686,
+				rotate = 0x0x0,
+				min = -792x0x-4642,
+				max = 792x23118x4642,
+			}
+		}
+
+		/* shisan_furnace_71 */
+		tile
+		{
+			xy = 7x8,
+
+			box
+			{
+				translate = -5447x0x-898,
+				rotate = 0x0x0,
+				min = -1093x0x-5762,
+				max = 1093x23118x5762,
+			}
+		}
+
+		/* shisan_furnace_72 */
+		tile
+		{
+			xy = 0x9,
+
+			box
+			{
+				translate = -4997x0x-516,
+				rotate = 0x0x0,
+				min = -940x0x-4540,
+				max = 940x24025x4540,
+			}
+		}
+
+		/* shisan_furnace_73 */
+		tile
+		{
+			xy = 1x9,
+
+			box
+			{
+				translate = -4609x0x-399,
+				rotate = 0x0x0,
+				min = -587x0x-5546,
+				max = 587x23118x5546,
+			}
+		}
+
+		/* shisan_furnace_74 */
+		tile
+		{
+			xy = 2x9,
+
+			box
+			{
+				translate = -49x0x-4319,
+				rotate = 0x0x0,
+				min = -4951x0x-1053,
+				max = 4951x22782x1053,
+			}
+		}
+
+		/* shisan_furnace_75 */
+		tile
+		{
+			xy = 3x9,
+
+			box
+			{
+				translate = -506x0x-5232,
+				rotate = 0x0x0,
+				min = -4494x0x-1004,
+				max = 4494x23689x1004,
+			}
+		}
+
+		/* shisan_furnace_76 */
+		tile
+		{
+			xy = 4x9,
+
+			box
+			{
+				translate = -346x0x3358,
+				rotate = 0x0x0,
+				min = -5518x0x-1127,
+				max = 5518x23689x1127,
+			}
+		}
+
+		/* shisan_furnace_77 */
+		tile
+		{
+			xy = 5x9,
+
+			box
+			{
+				translate = -49x0x3506,
+				rotate = 0x0x0,
+				min = -4951x0x-880,
+				max = 4951x22782x880,
+			}
+		}
+
+		/* shisan_furnace_78 */
+		tile
+		{
+			xy = 6x9,
+
+			box
+			{
+				translate = 3215x0x-669,
+				rotate = 0x0x0,
+				min = -907x0x-4658,
+				max = 907x22687x4658,
+			}
+		}
+
+		/* shisan_furnace_79 */
+		tile
+		{
+			xy = 7x9,
+
+			box
+			{
+				translate = 3553x0x-587,
+				rotate = 0x0x0,
+				min = -552x0x-5530,
+				max = 552x24095x5530,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_furniture_2,
+
+		/* shisan_furniture_2_80 */
+		tile
+		{
+			xy = 0x10,
+
+			box
+			{
+				translate = -54x0x-2357,
+				rotate = 0x0x0,
+				min = -4810x0x-2101,
+				max = 4810x2654x2101,
+			}
+		}
+
+		/* shisan_furniture_2_81 */
+		tile
+		{
+			xy = 1x10,
+
+			box
+			{
+				translate = -2536x0x-89,
+				rotate = 0x-899802x0,
+				min = -4810x0x-2101,
+				max = 4810x2654x2101,
+			}
+		}
+
+		/* shisan_furniture_2_82 */
+		tile
+		{
+			xy = 2x10,
+
+			box
+			{
+				translate = -54x0x2359,
+				rotate = 0x0x0,
+				min = -4810x0x-2101,
+				max = 4810x2654x2101,
+			}
+		}
+
+		/* shisan_furniture_2_83 */
+		tile
+		{
+			xy = 3x10,
+
+			box
+			{
+				translate = 2592x0x-91,
+				rotate = 0x-899802x0,
+				min = -4810x0x-2101,
+				max = 4810x2654x2101,
+			}
+		}
+
+		/* shisan_furniture_2_84 */
+		tile
+		{
+			xy = 4x10,
+
+			box
+			{
+				translate = 149x0x-2411,
+				rotate = 0x0x0,
+				min = -4851x0x-2047,
+				max = 4851x2627x2047,
+			}
+		}
+
+		/* shisan_furniture_2_85 */
+		tile
+		{
+			xy = 5x10,
+
+			box
+			{
+				translate = -2109x0x39,
+				rotate = 0x-899802x0,
+				min = -4939x0x-1932,
+				max = 4939x2654x1932,
+			}
+		}
+
+		/* shisan_furniture_2_86 */
+		tile
+		{
+			xy = 6x10,
+
+			box
+			{
+				translate = 61x0x2331,
+				rotate = 0x0x0,
+				min = -4885x0x-2020,
+				max = 4885x2516x2020,
+			}
+		}
+
+		/* shisan_furniture_2_87 */
+		tile
+		{
+			xy = 7x10,
+
+			box
+			{
+				translate = 2470x0x-50,
+				rotate = 0x-899802x0,
+				min = -4878x0x-2033,
+				max = 4878x2489x2033,
+			}
+		}
+
+		/* shisan_furniture_2_108 */
+		tile
+		{
+			xy = 4x13,
+
+			box
+			{
+				translate = -41x0x-2283,
+				rotate = 0x0x0,
+				min = -5041x0x-2141,
+				max = 5041x4550x2141,
+			}
+		}
+
+		/* shisan_furniture_2_109 */
+		tile
+		{
+			xy = 5x13,
+
+			box
+			{
+				translate = -2478x0x-307,
+				rotate = 0x-899802x0,
+				min = -4979x0x-2233,
+				max = 4979x4466x2233,
+			}
+		}
+
+		/* shisan_furniture_2_110 */
+		tile
+		{
+			xy = 6x13,
+
+			box
+			{
+				translate = -10x0x-2067,
+				rotate = 0x0x0,
+				min = -5010x0x-2357,
+				max = 5010x5222x2357,
+			}
+		}
+
+		/* shisan_furniture_2_111 */
+		tile
+		{
+			xy = 7x13,
+
+			box
+			{
+				translate = -1851x0x-246,
+				rotate = 0x-899802x0,
+				min = -4918x0x-2388,
+				max = 4918x5222x2388,
+			}
+		}
+
+		/* shisan_furniture_2_112 */
+		tile
+		{
+			xy = 0x14,
+
+			box
+			{
+				translate = 298x0x-1954,
+				rotate = 0x0x0,
+				min = -4702x0x-2470,
+				max = 4702x4886x2470,
+			}
+		}
+
+		/* shisan_furniture_2_113 */
+		tile
+		{
+			xy = 1x14,
+
+			box
+			{
+				translate = -1933x0x-30,
+				rotate = 0x-899802x0,
+				min = -4702x0x-2470,
+				max = 4702x4886x2470,
+			}
+		}
+
+		/* shisan_furniture_2_114 */
+		tile
+		{
+			xy = 2x14,
+
+			box
+			{
+				translate = 326x0x-1267,
+				rotate = 0x0x0,
+				min = -4430x0x-3232,
+				max = 4430x5342x3232,
+			}
+		}
+
+		/* shisan_furniture_2_115 */
+		tile
+		{
+			xy = 3x14,
+
+			box
+			{
+				translate = -975x0x121,
+				rotate = 0x-899802x0,
+				min = -4430x0x-3232,
+				max = 4430x5342x3232,
+			}
+		}
+
+		/* shisan_furniture_2_116 */
+		tile
+		{
+			xy = 4x14,
+
+			box
+			{
+				translate = 182x0x1304,
+				rotate = 0x0x0,
+				min = -4430x0x-3232,
+				max = 4430x5342x3232,
+			}
+		}
+
+		/* shisan_furniture_2_117 */
+		tile
+		{
+			xy = 5x14,
+
+			box
+			{
+				translate = 1267x0x141,
+				rotate = 0x-899802x0,
+				min = -4430x0x-3232,
+				max = 4430x5342x3232,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_furniture_5,
+
+		/* shisan_furniture_5_24 */
+		tile
+		{
+			xy = 0x3,
+
+			box
+			{
+				translate = -117x0x-2268,
+				rotate = 0x0x0,
+				min = -5062x0x-2566,
+				max = 5062x3418x2566,
+			}
+		}
+
+		/* shisan_furniture_5_25 */
+		tile
+		{
+			xy = 1x3,
+
+			box
+			{
+				translate = -1812x0x-130,
+				rotate = 0x-899802x0,
+				min = -5062x0x-2566,
+				max = 5062x3418x2566,
+			}
+		}
+
+		/* shisan_furniture_5_26 */
+		tile
+		{
+			xy = 2x3,
+
+			box
+			{
+				translate = -159x0x2020,
+				rotate = 0x0x0,
+				min = -5062x0x-2566,
+				max = 5062x3418x2566,
+			}
+		}
+
+		/* shisan_furniture_5_27 */
+		tile
+		{
+			xy = 3x3,
+
+			box
+			{
+				translate = 2268x0x-117,
+				rotate = 0x-899802x0,
+				min = -5062x0x-2566,
+				max = 5062x3418x2566,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_rpd,
+
+		/* shisan_rpd_50 */
+		tile
+		{
+			xy = 2x6,
+
+			box
+			{
+				translate = -271x0x-3663,
+				rotate = 0x0x0,
+				min = -4367x0x-432,
+				max = 4367x22587x432,
+			}
+		}
+
+		/* shisan_rpd_51 */
+		tile
+		{
+			xy = 3x6,
+
+			box
+			{
+				translate = 3663x0x-452,
+				rotate = 0x-899802x0,
+				min = -4367x0x-432,
+				max = 4367x22587x432,
+			}
+		}
+
+		/* shisan_rpd_54 */
+		tile
+		{
+			xy = 6x6,
+
+			box
+			{
+				translate = -271x0x3422,
+				rotate = 0x0x0,
+				min = -4367x0x-432,
+				max = 4367x22587x432,
+			}
+		}
+
+		/* shisan_rpd_55 */
+		tile
+		{
+			xy = 7x6,
+
+			box
+			{
+				translate = -3571x0x-450,
+				rotate = 0x-899802x0,
+				min = -4367x0x-432,
+				max = 4367x22587x432,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_rpd2,
+
+		/* shisan_rpd2_85 */
+		tile
+		{
+			xy = 5x10,
+
+			box
+			{
+				translate = -1067x0x26,
+				rotate = 0x-899802x0,
+				min = -4975x0x-3832,
+				max = 4975x6955x3832,
+			}
+		}
+
+		/* shisan_rpd2_86 */
+		tile
+		{
+			xy = 6x10,
+
+			box
+			{
+				translate = 0x0x-980,
+				rotate = 0x0x0,
+				min = -5000x0x-3819,
+				max = 5000x6904x3819,
+			}
+		}
+
+		/* shisan_rpd2_106 */
+		tile
+		{
+			xy = 2x13,
+
+			box
+			{
+				translate = -653x0x2236,
+				rotate = 0x0x0,
+				min = -3744x0x-679,
+				max = 3744x18597x679,
+			}
+		}
+
+		/* shisan_rpd2_107 */
+		tile
+		{
+			xy = 3x13,
+
+			box
+			{
+				translate = -653x0x-2211,
+				rotate = 0x0x0,
+				min = -3744x0x-628,
+				max = 3744x18597x628,
+			}
+		}
+
+		/* shisan_rpd2_116 */
+		tile
+		{
+			xy = 4x14,
+
+			box
+			{
+				translate = 0x0x-1080,
+				rotate = 0x0x0,
+				min = -5000x0x-3920,
+				max = 5000x7468x3920,
+			}
+		}
+
+		/* shisan_rpd2_117 */
+		tile
+		{
+			xy = 5x14,
+
+			box
+			{
+				translate = -979x0x1,
+				rotate = 0x-899802x0,
+				min = -5000x0x-3920,
+				max = 5000x7468x3920,
+			}
+		}
+
+		/* shisan_rpd2_118 */
+		tile
+		{
+			xy = 6x14,
+
+			box
+			{
+				translate = 100x0x930,
+				rotate = 0x0x0,
+				min = -5000x0x-3920,
+				max = 5000x7468x3920,
+			}
+		}
+
+		/* shisan_rpd2_119 */
+		tile
+		{
+			xy = 7x14,
+
+			box
+			{
+				translate = 1080x0x0,
+				rotate = 0x-899802x0,
+				min = -5000x0x-3920,
+				max = 5000x7468x3920,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_rpd3,
+
+		/* shisan_rpd3_79 */
+		tile
+		{
+			xy = 7x9,
+
+			box
+			{
+				translate = -4950x0x-5012,
+				rotate = 0x0x0,
+				min = -1784x0x-1721,
+				max = 1784x21264x1721,
+			}
+		}
+
+		/* shisan_rpd3_80 */
+		tile
+		{
+			xy = 0x10,
+
+			box
+			{
+				translate = -2893x0x-317,
+				rotate = 0x0x0,
+				min = -1927x0x-5317,
+				max = 1927x22772x5317,
+			}
+		}
+
+		/* shisan_rpd3_81 */
+		tile
+		{
+			xy = 1x10,
+
+			box
+			{
+				translate = -2561x0x-317,
+				rotate = 0x0x0,
+				min = -1595x0x-5317,
+				max = 1595x23756x5317,
+			}
+		}
+
+		/* shisan_rpd3_82 */
+		tile
+		{
+			xy = 2x10,
+
+			box
+			{
+				translate = -1852x0x-317,
+				rotate = 0x0x0,
+				min = -886x0x-5317,
+				max = 886x22772x5317,
+			}
+		}
+
+		/* shisan_rpd3_83 */
+		tile
+		{
+			xy = 3x10,
+
+			box
+			{
+				translate = -2802x0x-136,
+				rotate = 0x0x0,
+				min = -1836x0x-5136,
+				max = 1836x16679x5136,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_rpd5,
+
+		/* shisan_rpd5_92 */
+		tile
+		{
+			xy = 4x11,
+
+			box
+			{
+				translate = -239x0x-2412,
+				rotate = 0x0x0,
+				min = -5239x0x-2588,
+				max = 5239x3314x2588,
+			}
+		}
+
+		/* shisan_rpd5_93 */
+		tile
+		{
+			xy = 5x11,
+
+			box
+			{
+				translate = -2310x0x-237,
+				rotate = 0x-899802x0,
+				min = -5239x0x-2588,
+				max = 5239x3314x2588,
+			}
+		}
+
+		/* shisan_rpd5_94 */
+		tile
+		{
+			xy = 6x11,
+
+			box
+			{
+				translate = -188x0x2035,
+				rotate = 0x0x0,
+				min = -5239x0x-2588,
+				max = 5239x3314x2588,
+			}
+		}
+
+		/* shisan_rpd5_95 */
+		tile
+		{
+			xy = 7x11,
+
+			box
+			{
+				translate = 2412x0x-239,
+				rotate = 0x-899802x0,
+				min = -5239x0x-2588,
+				max = 5239x3314x2588,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_rpd7,
+
+		/* shisan_rpd7_80 */
+		tile
+		{
+			xy = 0x10,
+
+			box
+			{
+				translate = -4799x0x-402,
+				rotate = 0x0x0,
+				min = -553x0x-4899,
+				max = 553x24495x4899,
+			}
+		}
+
+		/* shisan_rpd7_81 */
+		tile
+		{
+			xy = 1x10,
+
+			box
+			{
+				translate = -4585x0x-63,
+				rotate = 0x0x0,
+				min = -440x0x-5239,
+				max = 440x24495x5239,
+			}
+		}
+
+		/* shisan_rpd7_82 */
+		tile
+		{
+			xy = 2x10,
+
+			box
+			{
+				translate = -3090x0x-13,
+				rotate = 0x0x0,
+				min = -1960x0x-5289,
+				max = 1960x24495x5289,
+			}
+		}
+
+		/* shisan_rpd7_83 */
+		tile
+		{
+			xy = 3x10,
+
+			box
+			{
+				translate = -212x0x-3416,
+				rotate = 0x-899802x0,
+				min = -1734x0x-5315,
+				max = 1734x24495x5315,
+			}
+		}
+
+		/* shisan_rpd7_84 */
+		tile
+		{
+			xy = 4x10,
+
+			box
+			{
+				translate = 6x0x-4691,
+				rotate = 0x-899802x0,
+				min = -446x0x-5240,
+				max = 446x24495x5240,
+			}
+		}
+
+		/* shisan_rpd7_85 */
+		tile
+		{
+			xy = 5x10,
+
+			box
+			{
+				translate = -457x0x-4798,
+				rotate = 0x-899802x0,
+				min = -553x0x-4899,
+				max = 553x24495x4899,
+			}
+		}
+
+		/* shisan_rpd7_88 */
+		tile
+		{
+			xy = 0x11,
+
+			box
+			{
+				translate = -4799x0x-402,
+				rotate = 0x0x0,
+				min = -553x0x-4899,
+				max = 553x24495x4899,
+			}
+		}
+
+		/* shisan_rpd7_89 */
+		tile
+		{
+			xy = 1x11,
+
+			box
+			{
+				translate = -4585x14993x-63,
+				rotate = 0x0x0,
+				min = -440x0x-5239,
+				max = 440x9502x5239,
+			}
+		}
+
+		/* shisan_rpd7_90 */
+		tile
+		{
+			xy = 2x11,
+
+			box
+			{
+				translate = -3090x0x-13,
+				rotate = 0x0x0,
+				min = -1960x0x-5289,
+				max = 1960x24495x5289,
+			}
+		}
+
+		/* shisan_rpd7_91 */
+		tile
+		{
+			xy = 3x11,
+
+			box
+			{
+				translate = -212x0x-3416,
+				rotate = 0x-899802x0,
+				min = -1734x0x-5315,
+				max = 1734x24495x5315,
+			}
+		}
+
+		/* shisan_rpd7_92 */
+		tile
+		{
+			xy = 4x11,
+
+			box
+			{
+				translate = 6x15129x-4691,
+				rotate = 0x-899802x0,
+				min = -446x0x-5240,
+				max = 446x9366x5240,
+			}
+		}
+
+		/* shisan_rpd7_93 */
+		tile
+		{
+			xy = 5x11,
+
+			box
+			{
+				translate = -457x0x-4798,
+				rotate = 0x-899802x0,
+				min = -553x0x-4899,
+				max = 553x24495x4899,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_wasteland,
+
+		/* shisan_wasteland_48 */
+		tile
+		{
+			xy = 0x6,
+
+			box
+			{
+				translate = 5140x0x-1673,
+				rotate = 0x0x0,
+				min = -10140x0x-975,
+				max = 10140x25418x975,
+			}
+		}
+
+		/* shisan_wasteland_49 */
+		tile
+		{
+			xy = 1x6,
+
+			box
+			{
+				translate = -4860x0x-1673,
+				rotate = 0x0x0,
+				min = -10140x0x-975,
+				max = 10140x25418x975,
+			}
+		}
+
+		/* shisan_wasteland_50 */
+		tile
+		{
+			xy = 2x6,
+
+			box
+			{
+				translate = -1433x0x-5116,
+				rotate = 0x-899802x0,
+				min = -10140x0x-975,
+				max = 10140x25418x975,
+			}
+		}
+
+		/* shisan_wasteland_51 */
+		tile
+		{
+			xy = 3x6,
+
+			box
+			{
+				translate = -1433x0x4884,
+				rotate = 0x-899802x0,
+				min = -10140x0x-975,
+				max = 10140x25418x975,
+			}
+		}
+
+		/* shisan_wasteland_56 */
+		tile
+		{
+			xy = 0x7,
+
+			box
+			{
+				translate = 245x0x-1534,
+				rotate = 0x0x0,
+				min = -4969x0x-2238,
+				max = 4969x23430x2238,
+			}
+		}
+
+		/* shisan_wasteland_57 */
+		tile
+		{
+			xy = 1x7,
+
+			box
+			{
+				translate = 65x0x-1534,
+				rotate = 0x0x0,
+				min = -4969x0x-2238,
+				max = 4969x19045x2238,
+			}
+
+			box
+			{
+				translate = 138x18541x-2087,
+				rotate = 0x0x0,
+				min = -5660x0x-2300,
+				max = 5660x4951x2300,
+			}
+		}
+
+		/* shisan_wasteland_58 */
+		tile
+		{
+			xy = 2x7,
+
+			box
+			{
+				translate = -1576x0x29,
+				rotate = 0x-899802x0,
+				min = -4894x0x-2238,
+				max = 4894x19045x2238,
+			}
+
+			box
+			{
+				translate = -1173x19230x468,
+				rotate = 0x-899802x0,
+				min = -5988x0x-2300,
+				max = 5988x4503x2300,
+			}
+		}
+
+		/* shisan_wasteland_59 */
+		tile
+		{
+			xy = 3x7,
+
+			box
+			{
+				translate = -1455x0x146,
+				rotate = 0x-899802x0,
+				min = -4969x0x-2238,
+				max = 4969x23789x2238,
+			}
+		}
+
+		/* shisan_wasteland_102 */
+		tile
+		{
+			xy = 6x12,
+
+			box
+			{
+				translate = -1621x0x603,
+				rotate = 0x0x0,
+				min = -2299x0x-4472,
+				max = 2299x18495x4472,
+			}
+
+			box
+			{
+				translate = 565x0x-1583,
+				rotate = 0x0x0,
+				min = -4435x0x-2211,
+				max = 4435x18546x2211,
+			}
+
+			box
+			{
+				translate = -2713x17591x-63,
+				rotate = 0x0x0,
+				min = -2287x0x-4937,
+				max = 2287x6442x4937,
+			}
+
+			box
+			{
+				translate = 75x17591x-2789,
+				rotate = 0x0x0,
+				min = -5075x0x-2211,
+				max = 5075x6442x2211,
+			}
+		}
+
+		/* shisan_wasteland_103 */
+		tile
+		{
+			xy = 7x12,
+
+			box
+			{
+				translate = -2161x0x-2098,
+				rotate = 0x0x0,
+				min = -2940x0x-3053,
+				max = 2940x23623x3053,
+			}
+		}
+
+		/* shisan_wasteland_108 */
+		tile
+		{
+			xy = 4x13,
+
+			box
+			{
+				translate = 724x0x-935,
+				rotate = 0x0x0,
+				min = -4216x0x-3794,
+				max = 4216x17793x3794,
+			}
+		}
+
+		/* shisan_wasteland_109 */
+		tile
+		{
+			xy = 5x13,
+
+			box
+			{
+				translate = -920x5141x-1161,
+				rotate = 0x0x0,
+				min = -4985x0x-3839,
+				max = 4985x14000x3839,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_furniture_4,
+
+		/* shisan_furniture_4_92 */
+		tile
+		{
+			xy = 4x11,
+
+			box
+			{
+				translate = 510x2063x-283,
+				rotate = 0x0x0,
+				min = -5813x0x-2630,
+				max = 5813x5231x2630,
+			}
+
+			box
+			{
+				translate = -428x6496x-1134,
+				rotate = 0x0x0,
+				min = -5845x0x-3579,
+				max = 5845x1165x3579,
+			}
+
+			box
+			{
+				translate = -4974x111x1815,
+				rotate = 0x0x0,
+				min = -283x0x-368,
+				max = 283x1880x368,
+			}
+
+			box
+			{
+				translate = 4793x111x1815,
+				rotate = 0x0x0,
+				min = -283x0x-368,
+				max = 283x1880x368,
+			}
+
+			box
+			{
+				translate = 4793x111x-4005,
+				rotate = 0x0x0,
+				min = -283x0x-368,
+				max = 283x1880x368,
+			}
+		}
+
+		/* shisan_furniture_4_93 */
+		tile
+		{
+			xy = 5x11,
+
+			box
+			{
+				translate = 118x2063x510,
+				rotate = 145x-899802x145,
+				min = -5813x0x-2630,
+				max = 5813x5231x2630,
+			}
+
+			box
+			{
+				translate = -802x6496x-427,
+				rotate = 145x-899802x145,
+				min = -5845x0x-3579,
+				max = 5845x1165x3579,
+			}
+
+			box
+			{
+				translate = 2171x111x-4976,
+				rotate = 145x-899802x145,
+				min = -283x0x-368,
+				max = 283x1880x368,
+			}
+
+			box
+			{
+				translate = -3701x111x4794,
+				rotate = 145x-899802x145,
+				min = -283x0x-368,
+				max = 283x1880x368,
+			}
+
+			box
+			{
+				translate = 2086x111x4794,
+				rotate = 145x-899802x145,
+				min = -283x0x-368,
+				max = 283x1880x368,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_livingroom,
+
+		/* shisan_livingroom_22 */
+		tile
+		{
+			xy = 6x2,
+
+			cylinder
+			{
+				translate = -17x3346x-659,
+				rotate = 2700000x0x0,
+				radius1 = 1261,
+				radius2 = 1261,
+				height = 3922,
+			}
+
+			box
+			{
+				translate = 747x0x1032,
+				rotate = 0x0x0,
+				min = -76x0x-104,
+				max = 76x2355x104,
+			}
+
+			box
+			{
+				translate = 1655x0x-675,
+				rotate = 0x0x0,
+				min = -76x0x-104,
+				max = 76x2355x104,
+			}
+
+			box
+			{
+				translate = 70x0x-1637,
+				rotate = 0x0x0,
+				min = -76x0x-104,
+				max = 76x2355x104,
+			}
+
+			box
+			{
+				translate = -905x0x57,
+				rotate = 0x0x0,
+				min = -76x0x-104,
+				max = 76x2355x104,
+			}
+
+			box
+			{
+				translate = 1192x6243x765,
+				rotate = 0x0x0,
+				min = -3808x0x-3651,
+				max = 3808x10723x3651,
+			}
+		}
+
+		/* shisan_livingroom_23 */
+		tile
+		{
+			xy = 7x2,
+
+			cylinder
+			{
+				translate = -710x5243x-659,
+				rotate = 2700000x0x0,
+				radius1 = 2437,
+				radius2 = 2437,
+				height = 4800,
+			}
+
+			box
+			{
+				translate = 1657x0x1959,
+				rotate = 0x0x0,
+				min = -76x0x-104,
+				max = 76x7624x104,
+			}
+
+			box
+			{
+				translate = 1953x0x-1568,
+				rotate = 0x0x0,
+				min = -76x0x-104,
+				max = 76x7692x104,
+			}
+
+			box
+			{
+				translate = -1469x-34x-1835,
+				rotate = 0x0x0,
+				min = -76x0x-104,
+				max = 76x7827x104,
+			}
+
+			box
+			{
+				translate = -1948x0x1629,
+				rotate = 0x0x0,
+				min = -76x0x-104,
+				max = 76x7793x104,
+			}
+
+			box
+			{
+				translate = 353x9215x98,
+				rotate = 0x0x0,
+				min = -2525x0x-2614,
+				max = 2525x13445x2614,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_newbuild,
+
+		/* shisan_newbuild_44 */
+		tile
+		{
+			xy = 4x5,
+
+			box
+			{
+				translate = 110x8569x92,
+				rotate = 0x0x0,
+				min = -3969x0x-3951,
+				max = 3969x591x3951,
+			}
+		}
+
+		/* shisan_newbuild_45 */
+		tile
+		{
+			xy = 5x5,
+
+			box
+			{
+				translate = 110x8569x92,
+				rotate = 0x0x0,
+				min = -3969x0x-3951,
+				max = 3969x591x3951,
+			}
+		}
+
+		/* shisan_newbuild_46 */
+		tile
+		{
+			xy = 6x5,
+
+			box
+			{
+				translate = 110x8569x92,
+				rotate = 0x0x0,
+				min = -3969x0x-3951,
+				max = 3969x591x3951,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_resident,
+
+		/* shisan_resident_48 */
+		tile
+		{
+			xy = 0x6,
+
+			polygon
+			{
+				translate = 0x0x0,
+				rotate = 2700000x0x0,
+				plane = XZ,
+				points = -2813x2813 -313x0 -938x1563 -2891x3984,
+			}
+
+			polygon
+			{
+				translate = 0x0x0,
+				rotate = 2700000x0x0,
+				plane = XZ,
+				points = -312x0 703x-1484 391x391 -937x1562,
+			}
+
+			polygon
+			{
+				translate = 0x0x0,
+				rotate = 2700000x0x0,
+				plane = XZ,
+				points = 703x-1484 1094x-1719 1484x-1328 391x391,
+			}
+
+			box
+			{
+				translate = -678x3016x347,
+				rotate = 0x0x0,
+				min = -1518x0x-2784,
+				max = 1518x11017x2784,
+			}
+
+			box
+			{
+				translate = -2896x0x-1564,
+				rotate = 0x0x0,
+				min = -417x0x-971,
+				max = 417x556x971,
+			}
+		}
+
+		/* shisan_resident_59 */
+		tile
+		{
+			xy = 3x7,
+
+			polygon
+			{
+				translate = 0x0x0,
+				rotate = 2700000x0x0,
+				plane = XZ,
+				points = -3906x-2031 -1016x859 -1797x2266 -5234x-1172,
+			}
+
+			polygon
+			{
+				translate = 0x0x0,
+				rotate = 2700000x0x0,
+				plane = XZ,
+				points = -1875x2188 -1484x2578 -781x6406 -9688x10625,
+			}
+
+			cylinder
+			{
+				translate = -2614x256x472,
+				rotate = 2700000x0x0,
+				radius1 = 2035,
+				radius2 = 2035,
+				height = 678,
+			}
+
+			cylinder
+			{
+				translate = -2405x7202x647,
+				rotate = 2700000x0x0,
+				radius1 = 2737,
+				radius2 = 2737,
+				height = 10832,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_otherfurniture,
+
+		/* shisan_otherfurniture_3 */
+		tile
+		{
+			xy = 3x0,
+
+			cylinder
+			{
+				translate = 0x15579x0,
+				rotate = 2700000x0x0,
+				radius1 = 1097,
+				radius2 = 1097,
+				height = 22192,
+			}
+		}
+	}
+
+	tileset
+	{
+		name = shisan_bedroom,
+
+		/* shisan_bedroom_0 */
+		tile
+		{
+			xy = 0x0,
+
+			box
+			{
+				translate = -121x0x-280,
+				rotate = 0x0x0,
+				min = -4879x0x-4356,
+				max = 4879x6641x4356,
+			}
+		}
+
+		/* shisan_bedroom_1 */
+		tile
+		{
+			xy = 1x0,
+
+			box
+			{
+				translate = -427x0x-323,
+				rotate = 0x-899802x0,
+				min = -4879x0x-4356,
+				max = 4879x6641x4356,
+			}
+		}
+
+		/* shisan_bedroom_2 */
+		tile
+		{
+			xy = 2x0,
+
+			box
+			{
+				translate = 141x1980x-932,
+				rotate = -1800000x-198x-1800000,
+				min = -4697x0x-3649,
+				max = 4697x5857x3649,
+			}
+
+			box
+			{
+				translate = -4497x-55x2397,
+				rotate = 0x0x0,
+				min = -192x0x-178,
+				max = 192x2022x178,
+			}
+
+			box
+			{
+				translate = 4647x-55x2397,
+				rotate = 0x0x0,
+				min = -192x0x-178,
+				max = 192x2022x178,
+			}
+
+			box
+			{
+				translate = 4647x-55x-4431,
+				rotate = 0x0x0,
+				min = -192x0x-178,
+				max = 192x2022x178,
+			}
+		}
+
+		/* shisan_bedroom_3 */
+		tile
+		{
+			xy = 3x0,
+
+			box
+			{
+				translate = -401x2145x182,
+				rotate = 1799855x899802x-1799855,
+				min = -4656x0x-3608,
+				max = 4656x5898x3608,
+			}
+
+			box
+			{
+				translate = 2826x110x-4559,
+				rotate = 0x-899802x0,
+				min = -151x0x-127,
+				max = 151x1857x127,
+			}
+
+			box
+			{
+				translate = 2829x110x4537,
+				rotate = 0x-899802x0,
+				min = -151x0x-127,
+				max = 151x1857x127,
+			}
+
+			box
+			{
+				translate = -4001x110x4539,
+				rotate = 0x-899802x0,
+				min = -151x0x-127,
+				max = 151x1857x127,
+			}
+		}
+
+		/* shisan_bedroom_4 */
+		tile
+		{
+			xy = 4x0,
+
+			box
+			{
+				translate = 133x1023x-1714,
+				rotate = -1800000x-198x-1800000,
+				min = -4757x0x-2622,
+				max = 4757x7360x2622,
+			}
+
+			box
+			{
+				translate = 4709x-111x-1900,
+				rotate = 0x0x0,
+				min = -69x0x-2554,
+				max = 69x1041x2554,
+			}
+
+			box
+			{
+				translate = -4814x-152x-1900,
+				rotate = 0x0x0,
+				min = -69x0x-2554,
+				max = 69x1041x2554,
+			}
+		}
+
+		/* shisan_bedroom_5 */
+		tile
+		{
+			xy = 5x0,
+
+			box
+			{
+				translate = -1582x989x-133,
+				rotate = 646x-899802x646,
+				min = -4757x0x-2622,
+				max = 4757x7360x2622,
+			}
+
+			box
+			{
+				translate = -1536x-111x-4858,
+				rotate = 1799354x899802x-1799353,
+				min = -69x0x-2554,
+				max = 69x1041x2554,
+			}
+
+			box
+			{
+				translate = -1702x-152x4483,
+				rotate = 1799354x899802x-1799353,
+				min = -69x0x-2621,
+				max = 69x1041x2621,
+			}
+		}
+
+		/* shisan_bedroom_6 */
+		tile
+		{
+			xy = 6x0,
+
+			box
+			{
+				translate = 187x0x-921,
+				rotate = -1800000x-198x-1800000,
+				min = -4694x0x-3393,
+				max = 4694x10168x3393,
+			}
+		}
+
+		/* shisan_bedroom_7 */
+		tile
+		{
+			xy = 7x0,
+
+			box
+			{
+				translate = -659x0x188,
+				rotate = 1799855x899802x-1799855,
+				min = -4694x0x-3393,
+				max = 4694x10168x3393,
+			}
+		}
+	}
+}
