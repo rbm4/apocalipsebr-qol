@@ -1,0 +1,10 @@
+IGUI_TR = {
+
+    IGUI_ShowTooltip = "Araç İpuçları",
+    IGUI_CleanHotBar_StatusBar_Height = "Durum Çubuğu Yüksekliği",
+    IGUI_CleanHotBar_AmmoText_Scale   = "Cephane Metni Yüksekliği",
+    IGUI_CleanHotBar_DurabilityAlert = "Silah Dayanıklılığı Uyarısı",
+    IGUI_CleanHotBar_Hotbar = "Hızlı Erişim Çubuğu",
+    IGUI_CleanHotBar_EquipItem = "Elde donanmış",
+    
+}

@@ -1,0 +1,9 @@
+IGUI_RU = {
+
+    IGUI_ShowTooltip = "Всплывающие подсказки",
+    IGUI_CleanHotBar_StatusBar_Height = "Высота строки состояния",
+    IGUI_CleanHotBar_AmmoText_Scale = "Высота текста боеприпасов",
+    IGUI_CleanHotBar_DurabilityAlert = "Предупреждение о прочности оружия",
+    IGUI_CleanHotBar_Hotbar = "Быстрая панель",
+    IGUI_CleanHotBar_EquipItem = "В руках",
+}

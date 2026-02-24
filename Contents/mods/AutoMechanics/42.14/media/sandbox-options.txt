@@ -1,0 +1,11 @@
+VERSION = 1,
+
+option AutoMechanics.ConditionLossPercentageThreshold
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = AutoMechanics,
+    translation = AutoMechanics_ConditionLossPercentageThreshold,
+}

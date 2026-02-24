@@ -1,0 +1,10 @@
+IGUI_PTBR = {
+
+    IGUI_ShowTooltip = "Dicas de Ferramentas",
+    IGUI_CleanHotBar_StatusBar_Height = "Altura da barra de status",
+    IGUI_CleanHotBar_AmmoText_Scale   = "Altura do texto de munição",
+    IGUI_CleanHotBar_DurabilityAlert = "Aviso de durabilidade da arma",
+    IGUI_CleanHotBar_Hotbar = "Barra rápida",
+    IGUI_CleanHotBar_EquipItem = "Equipado na mão",
+    
+}

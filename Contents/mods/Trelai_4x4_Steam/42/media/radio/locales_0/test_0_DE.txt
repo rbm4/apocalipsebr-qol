@@ -1,0 +1,24 @@
+// Localization Table
+// Language: Deutsch
+[Info]
+	version = 0
+	guid = f442b449-ba50-40c4-b04e-b206e3e14cbb
+	language = DE
+	translator = unknown
+[/Info]
+
+[Translations]
+
+	//0. ORIGINAL [Blue]: Hello, Is Anybody Out There?
+	e5dcd341-05a0-4088-8458-4894cbcfc6ed = 
+
+	//1. ORIGINAL [Red]: I'm About To Die..
+	7a9f9c5d-8506-4d34-a89d-69d0295b1c02 = 
+
+	//2. ORIGINAL [Blue]: if you're hearing this, your the last one alive.
+	56435d84-8c42-431b-913e-801a1fddd262 = 
+
+	//3. ORIGINAL [Red]: **ZZXxxx*
+	b313c736-dc13-4883-a669-9420712a73b1 = 
+
+[/Translations]

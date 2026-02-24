@@ -1,0 +1,28 @@
+module Base
+{
+model TrelaiBook_open
+{
+	    mesh = WorldItems/meshbookcover, 
+        texture = WorldItems/trelaiguidebook_open, 
+		scale = 0.005,
+}
+
+model TrelaiBook_Closed
+{
+	mesh = WorldItems/BookClosed,
+	texture = WorldItems/BookGrey,
+	scale = 0.005,
+}
+
+model TBaseballBat
+	{
+		mesh = 2Handed/TBaseballBat,
+		texture = WorldItems/TBaseballBat,
+
+		attachment world
+		{
+			offset = 0.0000 0.2450 0.0000,
+			rotate = 0.0000 0.0000 0.0000,
+		}
+	}
+}

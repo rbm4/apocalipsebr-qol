@@ -8,6 +8,75 @@ require "RegionManager_ZombieShared"
 
 local sandboxOptions = getSandboxOptions()
 
+-- ============================================================================
+-- Decode compact bit-encoded payload from server (Protocol v2)
+-- Format: "BBBBBBBBBSXXXXXSYYYYYMM" (23 chars, fixed length)
+--   B(9):  28 boolean flags packed as a zero-padded decimal integer
+--   S(1):  coordinate sign digit (0 = negative, 1 = positive)
+--   X(5):  absolute X coordinate, zero-padded
+--   Y(5):  absolute Y coordinate, zero-padded
+--   M(2):  maxHits for tough zombies, zero-padded
+-- Bit layout (LSB first):
+--   0:isSprinter  1:isShambler      2:hawkVision      3:badVision
+--   4:normalVision 5:poorVision     6:randomVision    7:goodHearing
+--   8:badHearing   9:pinpointHearing 10:normalHearing 11:poorHearing
+--  12:randomHearing 13:isResistant  14:isTough        15:isNormalToughness
+--  16:isFragile    17:isRandomToughness 18:isSuperhuman 19:isNormalToughness2
+--  20:isWeak       21:isRandomToughness2 22:hasNavigation 23:hasMemoryLong
+--  24:hasMemoryNormal 25:hasMemoryShort 26:hasMemoryNone 27:hasMemoryRandom
+-- ============================================================================
+local function decodeConfirmPayload(args)
+    local r = args.r
+    local bits    = tonumber(string.sub(r, 1, 9))   or 0
+    local xSign   = tonumber(string.sub(r, 10, 10)) or 1
+    local xAbs    = tonumber(string.sub(r, 11, 15)) or 0
+    local ySign   = tonumber(string.sub(r, 16, 16)) or 1
+    local yAbs    = tonumber(string.sub(r, 17, 21)) or 0
+    local maxHits = tonumber(string.sub(r, 22, 23)) or RegionManager.Shared.DEFAULT_MAX_HITS
+
+    local x = xSign == 1 and xAbs or -xAbs
+    local y = ySign == 1 and yAbs or -yAbs
+
+    local function hasBit(pos)
+        return math.floor(bits / (2 ^ pos)) % 2 == 1
+    end
+
+    return {
+        zombieID           = args.z,
+        isSprinter         = hasBit(0),
+        isShambler         = hasBit(1),
+        hawkVision         = hasBit(2),
+        badVision          = hasBit(3),
+        normalVision       = hasBit(4),
+        poorVision         = hasBit(5),
+        randomVision       = hasBit(6),
+        goodHearing        = hasBit(7),
+        badHearing         = hasBit(8),
+        pinpointHearing    = hasBit(9),
+        normalHearing      = hasBit(10),
+        poorHearing        = hasBit(11),
+        randomHearing      = hasBit(12),
+        isResistant        = hasBit(13),
+        isTough            = hasBit(14),
+        isNormalToughness  = hasBit(15),
+        isFragile          = hasBit(16),
+        isRandomToughness  = hasBit(17),
+        isSuperhuman       = hasBit(18),
+        isNormalToughness2 = hasBit(19),
+        isWeak             = hasBit(20),
+        isRandomToughness2 = hasBit(21),
+        hasNavigation      = hasBit(22),
+        hasMemoryLong      = hasBit(23),
+        hasMemoryNormal    = hasBit(24),
+        hasMemoryShort     = hasBit(25),
+        hasMemoryNone      = hasBit(26),
+        hasMemoryRandom    = hasBit(27),
+        x       = x,
+        y       = y,
+        maxHits = maxHits,
+    }
+end
+
 -- Handle server commands
 ---@param module string
 ---@param command string
@@ -50,10 +119,9 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
             return
         end
 
-        -- Debug: Show received data from server
-        -- print("SIMBA_TSY Client: Received zombie confirmation for ID: " .. tostring(args.zombieID))
-
-        local zombieID = args.zombieID
+        -- Decode compact bit-encoded payload (Protocol v2)
+        local data = decodeConfirmPayload(args)
+        local zombieID = data.zombieID
 
         local cell = player:getCell()
         if not cell then
@@ -69,25 +137,25 @@ local function SIMBA_TSY_OnServerCommand(module, command, args)
             local zombie = zombieList:get(i)
             if zombie and not zombie:isDead() and zombie:getOnlineID() == zombieID then
                 -- Apply all server-determined properties using the shared function
-                RegionManager.Shared.ServerSideProperties(zombie, args, sandboxOptions)
+                RegionManager.Shared.ServerSideProperties(zombie, data, sandboxOptions)
 
                 -- print("SIMBA_TSY Client: Applied properties to zombie " .. zombieID)
-                if args.isSprinter then
+                if data.isSprinter then
                     print("  -> Converted to Sprinter")
                 end
-                if args.isShambler then
+                if data.isShambler then
                     print("  -> Converted to Shambler")
                 end
-                if args.hawkVision then
+                if data.hawkVision then
                     print("  -> Hawk Vision applied")
                 end
-                if args.goodHearing or args.pinpointHearing then
+                if data.goodHearing or data.pinpointHearing then
                     print("  -> Enhanced Hearing applied")
                 end
-                if args.isTough then
-                    print("  -> Tough applied")
+                if data.isTough then
+                    print("  -> Tough applied (maxHits=" .. tostring(data.maxHits) .. ")")
                 end
-                if args.hasNavigation then
+                if data.hasNavigation then
                     print("  -> Navigation enabled")
                 end
 
@@ -200,16 +268,18 @@ local function onZombieDead(zombie)
         return
     end
 
-    local data = zombie:getModData()
     local attacker = zombie:getAttackedBy()
+    if not attacker or attacker ~= player then
+        return
+    end
 
-    local toughnessType = data.SIMBA_TSY_ToughnessType
-    if toughnessType == "tough" then
-        print("SIMBA_TSY Client: Tough zombie died - " .. zombie:getOnlineID())
-        if attacker and attacker == player then
-            ZKC_Main.recordKill(player, 2)
-            return
-        end
+    local modData = zombie:getModData()
+    local killBonus = modData.SIMBA_TSY_KillBonus or 0
+    -- Base kill = 1, plus difficulty bonus (already clamped to >= 0)
+    local totalKillValue = 1 + killBonus
+    ZKC_Main.recordKill(player, totalKillValue)
+    if killBonus > 0 then
+        print("SIMBA_TSY: Player earned +" .. killBonus .. " extra kill points (total " .. totalKillValue .. ")")
     end
 end
 Events.OnZombieDead.Add(onZombieDead)

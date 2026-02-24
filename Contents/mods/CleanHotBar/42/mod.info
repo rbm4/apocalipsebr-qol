@@ -1,0 +1,6 @@
+name=CleanHotBar
+id=CleanHotBar
+description=CleanHotBar
+poster=poster.png
+incompatible=\qdx_item_condition,\TheStar
+icon=icon.png

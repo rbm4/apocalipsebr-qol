@@ -1,0 +1,49 @@
+
+# Stash_EN = {
+#     Stash_AnnotedMap = "Annotated Map",
+
+#     Trelai_NoTranslations = "No Translations Set Up",
+#     Trelai_Credits = " Trelai Credits",
+
+#     TrelaiStashMap_Text1 = "Rooftop Army",
+#     TrelaiStashMap_Text2 = "Firemen Horde",
+#     TrelaiStashMap_Text3 = "Gold Vault",
+#     TrelaiStashMap_Text4 = "Fire Station",
+#     TrelaiStashMap_Text5 = "Graveyard",
+#     TrelaiStashMap_Text6 = "say a prayer for us all",
+#     TrelaiStashMap_Text7 = "School",
+#     TrelaiStashMap_Text8 = "Checkpoint",
+#     TrelaiStashMap_Text9 = "Airport",
+#     TrelaiStashMap_Text10 = "House With Pool",
+#     TrelaiStashMap5_Text1 = "T-Town Were Here",
+#     TrelaiStashMap5_Text2 = "Scholars",
+
+#     TrelaiStashMap5_Text3 = "Bigz Waz Here",
+#     TrelaiStashMap5_Text4 = "Truth Waz Here",
+#     TrelaiStashMap5_Text5 = "Straty Waz Here",
+#     TrelaiStashMap5_Text6 = "Special Thanks",
+
+#     TrelaiStashMap5_Text7 = "To All Residents",
+#     TrelaiStashMap5_Text8 = "Trelai Credits",
+#     TrelaiStashMap5_Text9 = "Fairground",
+#     TrelaiStashMap5_Text10 = "Yacht Club Was Here",
+
+#     TrelaiStashMap3_Text1 = "Academy Dorm",
+#     TrelaiStashMap3_Text2 = "Main",
+#     TrelaiStashMap3_Text3 = "Library",
+#     TrelaiStashMap3_Text4 = "Dorms",
+#     TrelaiStashMap3_Text5 = "Science",
+#     TrelaiStashMap3_Text6 = "Gym",
+#     TrelaiStashMap3_Text4 = "Dorms",
+#     TrelaiStashMap3_Text5 = "Science",
+#     TrelaiStashMap3_Text6 = "Workshop",
+#     TrelaiStashMap3_Text4 = "The Fair",
+#     TrelaiStashMap3_Text5 = "Shopping",
+#     TrelaiStashMap3_Text6 = "Industry",
+
+    
+    
+# /*
+
+# */
+# }

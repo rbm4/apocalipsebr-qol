@@ -161,13 +161,13 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
 
         if stored and stored.isTough then
             if not stored.toughnessHitCounter then stored.toughnessHitCounter = 0 end
-            if not stored.toughnessMaxHits    then stored.toughnessMaxHits    = 5 end
+            local maxHits = stored.maxHits or RegionManager.Shared.DEFAULT_MAX_HITS
 
             local isExhausted = false
-            if stored.toughnessHitCounter < stored.toughnessMaxHits then
+            if stored.toughnessHitCounter < maxHits then
                 stored.toughnessHitCounter = stored.toughnessHitCounter + 1
                 print("SIMBA_TSY Server: Tough zombie " .. zombieID .. " hit (" ..
-                      stored.toughnessHitCounter .. "/" .. stored.toughnessMaxHits .. ")")
+                      stored.toughnessHitCounter .. "/" .. maxHits .. ")")
             else
                 isExhausted = true
                 print("SIMBA_TSY Server: Tough zombie " .. zombieID .. " exhausted all lives")
@@ -176,7 +176,7 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
             ZombieHelper.BroadcastToAll("SIMBA_TSY", "ToughZombieHit", {
                 zombieID    = zombieID,
                 hitCounter  = stored.toughnessHitCounter,
-                maxHits     = stored.toughnessMaxHits,
+                maxHits     = maxHits,
                 x           = x,
                 y           = y,
                 isExhausted = isExhausted,
@@ -185,8 +185,8 @@ local function SIMBA_TSY_OnClientCommand(module, command, player, args)
             -- No stored data – broadcast exhausted so client stops mitigating
             ZombieHelper.BroadcastToAll("SIMBA_TSY", "ToughZombieHit", {
                 zombieID    = zombieID,
-                hitCounter  = 5,
-                maxHits     = 5,
+                hitCounter  = RegionManager.Shared.DEFAULT_MAX_HITS,
+                maxHits     = RegionManager.Shared.DEFAULT_MAX_HITS,
                 x           = x,
                 y           = y,
                 isExhausted = true,

@@ -1,0 +1,69 @@
+module Trelai
+{
+	imports 
+	{
+		Base
+	}	
+
+	recipe Make Dragonball Cluster
+	{
+		Moveables.trelai_tiles_07_64=1,
+		Moveables.trelai_tiles_07_65=1,
+		Moveables.trelai_tiles_07_66=1,
+		Moveables.trelai_tiles_07_67=1,
+		Moveables.trelai_tiles_07_68=1,
+		Moveables.trelai_tiles_07_69=1,
+		Moveables.trelai_tiles_07_70=1,
+		
+		Result:Moveables.trelai_tiles_07_71,
+		Time:700.0,
+		Category:General,
+		AnimNode:Disassemble,
+		Sound:Painting,
+		OnGiveXP:DBZRecipe.OnGiveXP.Strength1000000,
+	}
+
+/*
+	recipe Turn to Front Cover
+    {
+		TrelaiGuidePage0,   
+		Result:TrelaiGuidePage1, 
+		Time:2.0,
+	} 	
+
+	recipe Turn to Page 1
+    {
+		TrelaiGuidePage0,   
+		Result:TrelaiGuidePage1, 
+		Time:2.0,
+    } 
+
+	recipe Turn to Page 2
+    {
+		TrelaiGuidePage1, 
+		Result:TrelaiGuidePage2,
+		Time:3.0,
+    } 	
+
+	recipe Turn to Page 3
+    {
+		TrelaiGuidePage2, 
+		Result:TrelaiGuidePage3,
+		Time:4.0,
+    } 	
+
+	recipe Turn to Page 4
+    {
+		TrelaiGuidePage3,
+		Result:TrelaiGuidePage4,
+		Time:5.0,
+    } 	
+
+	recipe Turn to Page 0
+    {
+		TrelaiGuidePage4/TrelaiGuidePage2/TrelaiGuidePage3/TrelaiGuidePage1,  
+		Result:TrelaiGuidePage0, 
+		Time:1.0,
+    } 
+/*
+}

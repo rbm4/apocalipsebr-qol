@@ -1,0 +1,17 @@
+name=1.Trelai Map 4x4
+id=Trelai_4x4_Steam
+poster=poster2.png
+description=TRELAI.  A 4x4 Town South Of Riverside v0.70. 
+pack=trelai_tilesx2
+pack=communitytilesx2
+
+
+tiledef=trelaitiles 663
+tiledef=communitytiles 664
+
+
+fixed2x=true
+
+
+
+

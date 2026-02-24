@@ -1,0 +1,10 @@
+IGUI_FR = {
+
+    IGUI_ShowTooltip = "Afficher l'aide contextuelle",
+    IGUI_CleanHotBar_StatusBar_Height = "Hauteur de la barre d'état",
+    IGUI_CleanHotBar_AmmoText_Scale = "Hauteur du texte des infos de munitions",
+    IGUI_CleanHotBar_DurabilityAlert = "Avertissement sur la durabilité de l'arme",
+    IGUI_CleanHotBar_Hotbar = "Barre rapide",
+    IGUI_CleanHotBar_EquipItem = "Équipé en main",
+    
+}

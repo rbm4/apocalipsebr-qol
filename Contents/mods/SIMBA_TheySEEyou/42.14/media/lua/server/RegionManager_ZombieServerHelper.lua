@@ -154,6 +154,7 @@ function ZombieHelper.AggregateChances(regions)
         memoryRandom          = 0,
         armorEffectiveness    = 0,
         armorDefense          = 0,
+        maxHits               = RegionManager.Shared.DEFAULT_MAX_HITS,  -- default tough zombie extra hits
     }
 
     for _, region in pairs(regions) do
@@ -188,6 +189,12 @@ function ZombieHelper.AggregateChances(regions)
         c.memoryRandom       = math.max(c.memoryRandom,        getChance(region, "memoryRandomChance"))
         c.armorEffectiveness = math.max(c.armorEffectiveness,   getArmorEffectiveness(region))
         c.armorDefense       = math.max(c.armorDefense,         getChance(region, "armorDefensePercentage"))
+
+        -- maxHits: number of extra hits tough zombies resist (not a chance, direct value)
+        local regionMaxHits = region.properties.maxHits
+        if regionMaxHits and type(regionMaxHits) == "number" then
+            c.maxHits = math.max(c.maxHits, math.floor(math.max(1, math.min(99, regionMaxHits))))
+        end
     end
 
     return c
@@ -238,6 +245,7 @@ function ZombieHelper.RollDecisions(chances, x, y)
         hasMemoryRandom         = roll < chances.memoryRandom,
         armorEffectivenessMultiplier = chances.armorEffectiveness,
         armorDefensePercentage       = chances.armorDefense,
+        maxHits = chances.maxHits,
         x = math.floor(x),
         y = math.floor(y),
     }
@@ -247,45 +255,78 @@ end
 -- Build the network payload sent to clients via ConfirmZombie
 -- ============================================================================
 
---- Build the table passed to sendServerCommand for ConfirmZombie.
+--- Build the compact payload sent to clients via ConfirmZombie.
+--- Protocol v2: Bit-encoded communication for minimal network overhead.
+--- Payload:  { z = zombieID, r = "BBBBBBBBBSXXXXXSYYYYYMM" }
+---   B(9):  28 boolean flags packed as a zero-padded decimal integer
+---   S(1):  coordinate sign digit (0 = negative, 1 = positive)
+---   X(5):  absolute X coordinate, zero-padded
+---   Y(5):  absolute Y coordinate, zero-padded
+---   M(2):  maxHits for tough zombies, zero-padded
+--- Bit layout (LSB first):
+---   0:isSprinter  1:isShambler      2:hawkVision      3:badVision
+---   4:normalVision 5:poorVision     6:randomVision    7:goodHearing
+---   8:badHearing   9:pinpointHearing 10:normalHearing 11:poorHearing
+---  12:randomHearing 13:isResistant  14:isTough        15:isNormalToughness
+---  16:isFragile    17:isRandomToughness 18:isSuperhuman 19:isNormalToughness2
+---  20:isWeak       21:isRandomToughness2 22:hasNavigation 23:hasMemoryLong
+---  24:hasMemoryNormal 25:hasMemoryShort 26:hasMemoryNone 27:hasMemoryRandom
 ---@param zombieID number   Online ID of the zombie
 ---@param stored table      Decision data from ModData
 ---@return table payload
 function ZombieHelper.BuildConfirmPayload(zombieID, stored)
+    -- Pack 28 booleans into a single integer
+    local bits = 0
+    local function setBit(pos, value)
+        if value then bits = bits + (2 ^ pos) end
+    end
+
+    setBit(0,  stored.isSprinter)
+    setBit(1,  stored.isShambler)
+    setBit(2,  stored.hawkVision)
+    setBit(3,  stored.badVision)
+    setBit(4,  stored.normalVision)
+    setBit(5,  stored.poorVision)
+    setBit(6,  stored.randomVision)
+    setBit(7,  stored.goodHearing)
+    setBit(8,  stored.badHearing)
+    setBit(9,  stored.pinpointHearing)
+    setBit(10, stored.normalHearing)
+    setBit(11, stored.poorHearing)
+    setBit(12, stored.randomHearing)
+    setBit(13, stored.isResistant)
+    setBit(14, stored.isTough)
+    setBit(15, stored.isNormalToughness)
+    setBit(16, stored.isFragile)
+    setBit(17, stored.isRandomToughness)
+    setBit(18, stored.isSuperhuman)
+    setBit(19, stored.isNormalToughness2)
+    setBit(20, stored.isWeak)
+    setBit(21, stored.isRandomToughness2)
+    setBit(22, stored.hasNavigation)
+    setBit(23, stored.hasMemoryLong)
+    setBit(24, stored.hasMemoryNormal)
+    setBit(25, stored.hasMemoryShort)
+    setBit(26, stored.hasMemoryNone)
+    setBit(27, stored.hasMemoryRandom)
+
+    -- Encode coordinates: sign digit (0=neg, 1=pos) + 5-digit zero-padded absolute
+    local x = math.floor(stored.x or 0)
+    local y = math.floor(stored.y or 0)
+    local xSign = x >= 0 and 1 or 0
+    local ySign = y >= 0 and 1 or 0
+    local xAbs = math.abs(x)
+    local yAbs = math.abs(y)
+
+    -- maxHits: 2-digit zero-padded (1-99)
+    local maxHits = math.min(99, math.max(1, stored.maxHits or RegionManager.Shared.DEFAULT_MAX_HITS))
+
+    -- Format: BBBBBBBBB SXXXXX SYYYYY MM  (23 chars, no separators)
+    local r = string.format("%09d%d%05d%d%05d%02d", bits, xSign, xAbs, ySign, yAbs, maxHits)
+
     return {
-        zombieID            = zombieID,
-        isSprinter          = stored.isSprinter or false,
-        isShambler          = stored.isShambler or false,
-        hawkVision          = stored.hawkVision or false,
-        badVision           = stored.badVision or false,
-        normalVision        = stored.normalVision or false,
-        poorVision          = stored.poorVision or false,
-        randomVision        = stored.randomVision or false,
-        goodHearing         = stored.goodHearing or false,
-        badHearing          = stored.badHearing or false,
-        pinpointHearing     = stored.pinpointHearing or false,
-        normalHearing       = stored.normalHearing or false,
-        poorHearing         = stored.poorHearing or false,
-        randomHearing       = stored.randomHearing or false,
-        hasArmor            = stored.hasArmor or false,
-        isResistant         = stored.isResistant or false,
-        isTough             = stored.isTough or false,
-        isNormalToughness   = stored.isNormalToughness or false,
-        isFragile           = stored.isFragile or false,
-        isRandomToughness   = stored.isRandomToughness or false,
-        isSuperhuman        = stored.isSuperhuman or false,
-        isNormalToughness2  = stored.isNormalToughness2 or false,
-        isWeak              = stored.isWeak or false,
-        isRandomToughness2  = stored.isRandomToughness2 or false,
-        hasNavigation       = stored.hasNavigation or false,
-        hasMemoryLong       = stored.hasMemoryLong or false,
-        hasMemoryNormal     = stored.hasMemoryNormal or false,
-        hasMemoryShort      = stored.hasMemoryShort or false,
-        hasMemoryNone       = stored.hasMemoryNone or false,
-        hasMemoryRandom     = stored.hasMemoryRandom or false,
-        x                   = stored.x,
-        y                   = stored.y,
-        walkType            = stored.walkType or "1",
+        z = zombieID,
+        r = r,
     }
 end
 

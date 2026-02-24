@@ -1,0 +1,10 @@
+IGUI_JP = {
+
+    IGUI_ShowTooltip = "ツールチップ",
+    IGUI_CleanHotBar_StatusBar_Height = "ステータスバーの高さ",
+    IGUI_CleanHotBar_AmmoText_Scale   = "弾薬テキストの高さ",
+    IGUI_CleanHotBar_DurabilityAlert = "武器耐久性警告",
+    IGUI_CleanHotBar_Hotbar = "ホットバー",
+    IGUI_CleanHotBar_EquipItem = "手に装備中",
+    
+}

@@ -44,6 +44,7 @@
 ---@field zombieRespawn boolean
 ---@field lootModifier number
 ---@field sprinterChance number 1-100 percentage of zombies that become sprinters
+---@field maxHits number Number of extra hits tough zombies can resist before dying (default 2, range 1-99)
 ---@field message string Notification message shown on zone entry
 --- Server-side registered zone data, stored in RegionManager.Server.registeredZones[id].
 --- Contains the original RegionDefinition, the merged ZoneProperties, computed Bounds,

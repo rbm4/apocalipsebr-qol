@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<outfitManager>
+	<m_FemaleOutfits>
+		<m_Name>AcademyT</m_Name>
+		<m_Guid>3af7df2f-c620-4f04-ac3e-4ad15025e8f3</m_Guid>
+		<m_Top>true</m_Top>
+		<m_Pants>false</m_Pants>
+		</m_items>
+	</m_FemaleOutfits>
+	<m_MaleOutfits>
+		<m_Name>AcademyT</m_Name>
+		<m_Guid>3af7df2f-c620-4f04-ac3e-4ad15025e8f3</m_Guid>
+		<m_Top>true</m_Top>
+		<m_Pants>false</m_Pants>
+	</m_MaleOutfits>
+</outfitManager>

@@ -1,0 +1,31 @@
+module Trelai {
+	
+	item Hat_Crown1
+    {
+        DisplayCategory = Accessory,
+        Type = Clothing,
+        DisplayName = Crown,
+        ClothingItem = Hat_Crown1,
+        BodyLocation = Hat,
+        Icon = CrownIcon,
+        CanHaveHoles = false,
+        ChanceToFall = 60,
+        Insulation = 0.1,
+        BloodLocation = Head,
+        Weight = 2,
+	}
+	item Hat_Crown2
+    {
+        DisplayCategory = Accessory,
+        Type = Clothing,
+        DisplayName =  Fancy Crown,
+        ClothingItem = Hat_Crown2,
+        BodyLocation = Hat,
+        Icon = CrownFancyIcon,
+        CanHaveHoles = false,
+        ChanceToFall = 60,
+        Insulation = 0.1,
+        BloodLocation = Head,
+        Weight = 2,
+	}
+}

@@ -3,6 +3,12 @@ RegionManager.Shared = RegionManager.Shared or {}
 -- Module dependencies
 RegionManager.Shared.sandboxOptions = nil
 
+-- Default number of extra hits tough zombies resist before dying (1-99)
+-- Used as fallback when the region does not specify maxHits.
+-- Shared between client & server code: change ONLY here.
+---@type number
+RegionManager.Shared.DEFAULT_MAX_HITS = 2
+
 ---@type string[]
 local SIMBA_TSY_SprinterWalkTypes = {"sprint1", "sprint2", "sprint3", "sprint4", "sprint5"}
 
@@ -716,7 +722,7 @@ function RegionManager.Shared.ServerSideProperties(zombie, data, sandboxOptions)
             health = health + 3.5 -- Tough: 3.5 to 3.8 initial health
             modData.SIMBA_TSY_ToughnessType = "tough"
             modData.SIMBA_TSY_ToughnessHitCounter = 0 -- Track hits taken
-            modData.SIMBA_TSY_ToughnessMaxHits = 5 -- Number of extra "hits" (heals)
+            modData.SIMBA_TSY_ToughnessMaxHits = data.maxHits or RegionManager.Shared.DEFAULT_MAX_HITS -- Region-configured extra hits
             zombie:setHealth(health)
         elseif data.isFragile then
             health = health + 0.5 -- Fragile: 0.5 to 0.8
@@ -763,6 +769,39 @@ function RegionManager.Shared.ServerSideProperties(zombie, data, sandboxOptions)
     hearingConfigOption:setValue(originalHearing)
     sightConfigOption:setValue(originalSight)
     cognitionConfigOption:setValue(originalCognition)
+
+    -- ========================================================================
+    -- 8. COMPUTE KILL BONUS - Dynamic difficulty-based reward stored in modData
+    -- Hard properties add points, weak properties deduct. Min extra = 0.
+    -- ========================================================================
+    local killBonus = 0
+    -- Speed: sprinter = hard, shambler = weak
+    if data.isSprinter then killBonus = killBonus + 5 end
+    if data.isShambler then killBonus = killBonus - 5 end
+    -- Vision: hawk = hard, poor/bad = weak
+    if data.hawkVision then killBonus = killBonus + 1 end
+    if data.poorVision or data.badVision then killBonus = killBonus - 1 end
+    -- Hearing: pinpoint/good = hard, poor/bad = weak
+    if data.pinpointHearing or data.goodHearing then killBonus = killBonus + 1 end
+    if data.poorHearing or data.badHearing then killBonus = killBonus - 1 end
+    -- Toughness: tough = hard, fragile = weak
+    if data.isTough then killBonus = killBonus + 3 end
+    if data.isFragile then killBonus = killBonus - 1 end
+    -- Strength: superhuman = hard, weak = weak
+    if data.isSuperhuman then killBonus = killBonus + 1 end
+    if data.isWeak then killBonus = killBonus - 1 end
+    -- Cognition: navigation = hard
+    if data.hasNavigation then killBonus = killBonus + 2 end
+    -- Memory: long = hard, short/none = weak
+    if data.hasMemoryLong then killBonus = killBonus + 1 end
+    if data.hasMemoryShort then killBonus = killBonus - 1 end
+    if data.hasMemoryNone then killBonus = killBonus - 2 end
+    -- Resistant = hard
+    if data.isResistant then killBonus = killBonus + 1 end
+    if data.maxHits then killBonus = killBonus + math.floor(data.maxHits * 0.5) end
+
+    -- Clamp: extra never goes below 0
+    modData.SIMBA_TSY_KillBonus = math.max(0, killBonus)
     
     -- Note: Armor settings are not applied here as BLTRandomZombies doesn't handle them
     -- and they may not be directly modifiable per-zombie
@@ -906,7 +945,7 @@ local function OnWeaponHitCharacter(attacker, target, weapon, damage)
     if toughnessType == "tough" then
         local zombieID = target:getOnlineID()
         local hitCounter = modData.SIMBA_TSY_ToughnessHitCounter or 0
-        local maxHits = modData.SIMBA_TSY_ToughnessMaxHits or 5
+        local maxHits = modData.SIMBA_TSY_ToughnessMaxHits or RegionManager.Shared.DEFAULT_MAX_HITS
 
         -- Optimistic local application: immediately protect the zombie on this client
         -- The server will send the authoritative state back shortly

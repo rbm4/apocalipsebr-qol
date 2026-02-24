@@ -1,0 +1,83 @@
+module Trelai
+{
+	/****************** DragonBalls *******************/
+	item Mov_dragonballstack
+	{
+		Weight				= 20.0,
+		Type				= Moveable,
+		DisplayName 		= All 7 DragonBalls,
+        Icon 				= Dragonballs.png,
+		WorldObjectSprite 	= trelai_tiles_07_71,
+		DisplayCategory 	= Furniture,
+	}
+	
+	item Mov_Dragonball1
+	{
+		Weight				= 5.0,
+		Type				= Moveable,
+		DisplayName 		= Dragonball1,
+        Icon				= default,
+		WorldObjectSprite 	= trelai_tiles_07_64,
+		DisplayCategory 	= Furniture,
+	}
+	
+	item Mov_Dragonball2
+	{
+		Weight				= 5.0,
+		Type				= Moveable,
+		DisplayName 		= Dragonball2,
+        Icon 				= Dragonball.png,
+		WorldObjectSprite 	= trelai_tiles_07_65,
+		DisplayCategory 	= Furniture,
+	}
+	
+	item Mov_Dragonball3
+	{
+		Weight				= 5.0,
+		Type				= Moveable,
+		DisplayName 		= Dragonball3,
+        Icon 				= Dragonball.png,
+		WorldObjectSprite 	= trelai_tiles_07_66,
+		DisplayCategory 	= Furniture,
+	}
+	
+	item Mov_Dragonball4
+	{
+		Weight				= 5.0,
+		Type				= Moveable,
+		DisplayName 		= Dragonball4,
+        Icon 				= Dragonball.png,
+		WorldObjectSprite 	= trelai_tiles_07_67,
+		DisplayCategory 	= Furniture,
+	}
+	
+	item Mov_Dragonball5
+	{
+		Weight				= 5.0,
+		Type				= Moveable,
+		DisplayName 		= Dragonball5,
+        Icon 				= Dragonball.png,
+		WorldObjectSprite 	= trelai_tiles_07_68,
+		DisplayCategory 	= Furniture,
+	}
+	
+	item Mov_Dragonball6
+	{
+		Weight				= 5.0,
+		Type				= Moveable,
+		DisplayName 		= Dragonball6,
+        Icon 				= Dragonball.png,
+		WorldObjectSprite 	= trelai_tiles_07_69,
+		DisplayCategory 	= Furniture,
+	}
+	
+	item Mov_Dragonball7
+	{
+		Weight				= 5.0,
+		Type				= Moveable,
+		DisplayName 		= Dragonball7,
+        Icon 				= Dragonball.png,
+		WorldObjectSprite 	= trelai_tiles_07_70,
+		DisplayCategory 	= Furniture,
+	}
+}
