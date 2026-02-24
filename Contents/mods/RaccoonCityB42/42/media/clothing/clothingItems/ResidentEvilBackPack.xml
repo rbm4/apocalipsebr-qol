@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>Skinned\Backpacks\M_ResidentEvilBackPack</m_MaleModel>
+	<m_FemaleModel>Skinned\Backpacks\F_ResidentEvilBackPack</m_FemaleModel>
+	<m_GUID>95bb97f6-d308-42b0-8b95-ef66f93b2ee1</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<textureChoices>ResidentEvilBackPack</textureChoices>
+</clothingItem>

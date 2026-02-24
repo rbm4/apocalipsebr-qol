@@ -1,0 +1,6 @@
+VERSION = 1,
+
+option ProxInv.ZombieOnly = {
+  type = boolean, default = false, 
+  page = ProxInv, translation = ZombieOnly,
+}

@@ -1,0 +1,26 @@
+- Corrigido um problema em que o som de serra não parava ao remover os restos de cadáver da mesa
+- Corrigido um problema em que cancelar a ação de coletar partes fazia com que recomeçar a ação ficasse bugada até que o jogar equipasse e desequipasse algo das mãos
+- Ossos humanos agora podem ser usados como armas
+- Alteradas algumas receitas vanilla para que ossos humanos possam ser utilizados como ingrediente (isso foi feito via LUA, problemas podem acontecer, como incompatibilidade com mods que alteram receitas vanilla)
+- Ossos humanos agora podem ser usados como armas (ossos coletados antes da atualização precisam ser atualizados, novos ossos coletados serão armas por padrão. Essa medida foi necessária, pois mudar as configurações de um item já existente quebra o save, então criamos novos itens, atualizamos e depois de um tempo removemos o antigo com segurança).
+- Adicionada tradução para Italiano. Parte da tradução foi enviada pelo usuário AKAYN, porém a maior parte foi feito com a utilização da CLAUDE AI, devido a tradução enviada não ter todas as entradas corretamente. Deste modo podem haver erros, ou a tradução ficar muito genérica. Se alguém se habilitar pode fazer as correções e enviar.
+- Adicionada a traudção para Francês. Tradução enviada pelo usuário F3niix.
+- Consertado um problema ao realizar autópsias quando o jogador tinha trait de hemofóbico
+- Adicionado DisplayName para cérebros de infectados. O multiplayer não lê corretamente o ItemName, voltando sempre para o uso do DisplayName, a falta dele nos parâmetros do item faz com que o jogo passe a ler o fullType (LabItems.Item...)
+- Consertada uma opção de sandbox que estava invisível.
+- Consertado um problema nas opções de sandbox que ficavam sempre resetando para as configurações padrão
+
+Adicionar loots aqui?
+CyberCafeDesk
+ControlRoomCounter
+BookstoreBlueCollar
+BookstoreBooks
+CyberCafeFilingCabinet
+ElectronicStoreMagazines
+EngineerTools
+ElectricianOutfit
+ElectricianTools
+GarageMechanics
+GeneratorRoom
+CarpenterTools
+CarpenterOutfit

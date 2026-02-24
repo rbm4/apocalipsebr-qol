@@ -1,0 +1,12 @@
+module Base
+{
+    xuiSkin default
+    {
+        entity ES_PlasticsBarrel
+        {
+            LuaWindowClass = ISEntityTabWindow,
+            DisplayName = PlasticsBarrel,
+            Icon = Build_PlasticsBarrel,
+        }
+    }
+}

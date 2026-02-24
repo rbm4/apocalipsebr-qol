@@ -1,0 +1,124 @@
+Tooltip_FR = {
+	/* ÉQUIPEMENT DE LABORATOIRE */
+	Tooltip_LabMicroscope = "Microscope de paillasse utilisé pour analyser les cellules et séparer les leucocytes des échantillons sanguins.",
+	Tooltip_LabChromatograph = "Chromatographe simple utilisé pour extraire les anticorps et séparer les composés.<br>Nécessite un ordinateur à proximité.",
+	Tooltip_LabSpectrometer = "Spectromètre portable utilisé pour détecter la présence du virus zombie dans le sang.",
+	Tooltip_LabChemistrySet = "Paillasse de chimie utilisée pour la synthèse, le mélange et la purification.",
+	Tooltip_LabCentrifuge = "Centrifugeuse de laboratoire utilisée pour séparer le sang en plasma et en cellules.",
+	Tooltip_LabMuffleFurnace = "Four à haute température utilisé pour fondre le verre et les métaux.",
+	Tooltip_LabWorkbench = "Table robuste pour assembler et entretenir le matériel.",
+	Tooltip_LabEasel = "Chevalet utilisé pour créer des posters et panneaux illustratifs.",
+	Tooltip_LabDecorSkeleton = "Modèle anatomique humain utilisé à des fins éducatives.",
+	Tooltip_LabDecorVirusModel = "Modèle de virus stylisé utilisé comme décoration scientifique.",
+	Tooltip_LabDecorCaduceus = "Symbole médical classique utilisé comme objet décoratif.",
+	Tooltip_LabDecorWhiteboard = "Tableau blanc utilisé pour prendre des notes et inscrire des formules.",
+	Tooltip_LabPosterPeriodicTable = "Poster de la table périodique manuscrit.",
+	Tooltip_LabPosterSexyNurse = "Poster décoratif thématique.",
+	Tooltip_LabPosterWashHands = "Poster éducatif sur l’hygiène des mains.",
+	Tooltip_LabPosterBiohazard = "Poster avertissant du danger biologique.",
+	Tooltip_LabPosterHumanBrain = "Poster illustratif du cerveau humain.",
+	Tooltip_LabNeonSignPharmacy = "Enseigne au néon représentant une pharmacie.",
+	Tooltip_LabNeonSignPizza = "Enseigne au néon représentant une pizzeria.",
+
+	/* MATÉRIAUX */
+	Tooltip_LabSyringe = "Seringue stérile jetable.<br>Utilisée pour les injections et la collecte de sang.",
+	Tooltip_LabSyringeReusable = "Seringue en verre réutilisable.<br>Peut être stérilisée.",
+	Tooltip_LabSyringeReusableUsed = "Seringue réutilisable utilisée.<br>Nécessite une stérilisation.",
+	Tooltip_LabSyringePack = "Pack contenant 10 seringues stériles jetables.",
+	Tooltip_LabSyringeUsed = "Seringue utilisée. Ne peut pas être réutilisée.",
+	Tooltip_LabTestTube = "Tube à essai propre utilisé pour les échantillons biologiques.<br>Mieux vaut ne rien y boire.",
+	Tooltip_LabTestTubeDirty = "Tube à essai contaminé.<br>Doit être stérilisé.",
+	Tooltip_LabFlaskDirty = "Flacon contaminé.<br>Nécessite une stérilisation.",
+	Tooltip_LabTestResultNegative = "Résultat du test sanguin : négatif pour l’infection.<br>Tu as eu de la chance cette fois...",
+	Tooltip_LabTestResultPositive = "Résultat du test sanguin : positif pour l’infection.<br>On dirait que les jours sont comptés.",
+	Tooltip_LabGarbageBagWithRemains = "Restes de cadavre stockés dans un sac renforcé.<br>Plus sûr pour l’élimination.",
+	Tooltip_LabPlasticBagWithRemains = "Restes biologiques de recherche stockés dans un sac plastique.<br>Horrible. Mais mieux que de laisser pourrir dans la pièce.",
+	Tooltip_MatInfectedBlood = "Échantillon frais de sang infecté par zombification. Très instable.",
+	Tooltip_MatTaintedBlood = "Échantillon inutilisable de sang coagulé.",
+	Tooltip_MatShatteredGlass = "Verre brisé. Peut être refondu pour créer des contenants à nouveau.",
+	Tooltip_HumanBrainLow = "Cerveau humain infecté dans un état horrible.<br>Mieux que rien, au moins.<br><br>L’échantillon peut être analysé au microscope.",
+	Tooltip_HumanBrainMid = "Cerveau humain infecté dans un état acceptable.<br>On peut encore en tirer quelque chose.<br><br>L’échantillon peut être analysé au microscope.",
+	Tooltip_HumanBrainHigh = "Cerveau humain infecté dans un état excellent.<br>Un échantillon parfait peut en être extrait.<br><br>L’échantillon peut être analysé au microscope.",
+	Tooltip_LabRegularHumanBone = "Os humain commun.<br>Peut être utilisé pour créer des modèles anatomiques.",
+	Tooltip_LabSmallRandomHumanBones = "Petits os humains aléatoires.<br>Peut être utilisé pour créer des modèles anatomiques.",
+	Tooltip_LabHumanSkullWithBrain = "Crâne humain parfaitement extrait d’un corps.<br>Il y a un cerveau à l’intérieur !",
+	Tooltip_LabHumanSkull = "Crâne humain endommagé.<br>Peut être réparé.",
+	Tooltip_LabHumanSkullFixed = "Crâne humain creux réparé par quelqu’un de peu expérimenté.<br>Pourquoi quelqu’un aurait-il ça ?<br><br>Utilisé pour créer des modèles anatomiques.",
+	Tooltip_LabHumanSkullPart = "Fragment de crâne humain.<br>Utilisé pour réparer un crâne endommagé.",
+	Tooltip_HumanTeeth = "Dents humaines.<br>Peuvent être utilisées pour créer des modèles anatomiques.",
+	Tooltip_HumanBoneLarge = "Grand os humain.<br>Utilisé pour créer des modèles anatomiques.",
+	Tooltip_BurntHumanBrain = "Cerveau de zombie complètement brûlé.<br><br>Ne me dis pas que tu essayais de le cuire !?",
+	Tooltip_RottenHumanBrain = "Cerveau de zombie complètement pourri.<br>Complètement inutile maintenant.",
+
+
+	/* RÉACTIFS CHIMIQUES */
+	Tooltip_ChHydrochloricAcidCan = "Acide chlorhydrique concentré. Manipuler avec une extrême prudence.",
+	Tooltip_ChSodiumHydroxideBag = "Hydroxyde de sodium — réactif de base pour la synthèse chimique.",
+	Tooltip_ChAmmonia = "Solution d’ammoniaque. Largement utilisée dans les réactions chimiques et le nettoyage intensif.",
+	Tooltip_ChSulfuricAcidCan = "Acide sulfurique hautement corrosif. Usage spécialisé uniquement.",
+
+	/* COMPOSÉS ET FLUIDES */
+	Tooltip_CmpSyringeWithBlood = "Échantillon de sang prélevé à l’aide d’une seringue. Peut être analysé.",
+	Tooltip_CmpSyringeWithTaintedBlood = "Sang coagulé, inutilisable pour la recherche.",
+	Tooltip_CmpSyringeWithBrainFluidLow = "Seringue contenant un échantillon de liquide cérébrospinal de faible qualité.",
+	Tooltip_CmpSyringeWithBrainFluidMid = "Seringue contenant un échantillon de liquide cérébrospinal de qualité acceptable.",
+	Tooltip_CmpSyringeWithBrainFluidHigh = "Seringue contenant un échantillon de liquide cérébrospinal de haute qualité.",
+
+	/* MÉDICAMENTS ET TRAITEMENTS */
+	Tooltip_CmpAlbuminPills = "Albumine purifiée. Améliore la récupération et prolonge les effets du vaccin.",
+	Tooltip_CmpChlorineTablets = "Comprimés de purification de l’eau.<br>À utiliser uniquement dans un environnement contrôlé pour purifier l’eau à des fins scientifiques.",
+
+	/* VACCINS ET CURE */
+	Tooltip_CmpSyringeWithPlainVaccine = "Vaccin de base. Ralentit la progression de l’infection.<br>Ne pas utiliser en bonne santé. Risque élevé d’auto-infection.",
+	Tooltip_CmpSyringeWithQualityVaccine = "Vaccin de qualité. Ralentit l’infection plus longtemps et offre une faible chance de guérison.<br>Il existe un faible risque d’auto-infection.",
+	Tooltip_CmpSyringeWithAdvancedVaccine = "Vaccin avancé. Offre une résistance temporaire forte et une chance modérée de guérison.<br>Risque minimal d’auto-infection.",
+	Tooltip_CmpSyringeWithCure = "CURE COMPLÈTE. Élimine totalement l’infection virale.<br><br>Essaie de ne pas te faire mordre à nouveau.",
+
+	/* LIVRES */
+	Tooltip_BkLaboratoryEquipment1 = "Guide technique sur la construction d’équipements de laboratoire.",
+	Tooltip_BkLaboratoryEquipment2 = "Manuel pour la construction de décorations scientifiques.",
+	Tooltip_BkLaboratoryEquipment3 = "Guide complet sur l’utilisation du four de laboratoire.",
+	Tooltip_BkVirologyCourses1 = "Contient les premières notes du Dr. Hughson sur les anomalies sanguines observées avant l’incident de Knox.<br>Enseigne les bases de la collecte et de l’analyse de matériaux biologiques.",
+	Tooltip_BkVirologyCourses2 = "Contient des notes confidentielles du Dr. Hughson.<br>Enseigne des méthodologies avancées pour la création de vaccins et d’antiviraux.",
+	Tooltip_BkChemistryCourse = "Semble être un livre de chimie de base, mais rempli de notes manuscrites sur des réactifs instables utilisés en laboratoire.<br>Ne semble pas destiné à la circulation publique.",
+	Tooltip_LabMorgueTable = "Table d’autopsie utilisée pour les nécropsies et la séparation des restes biologiques.",
+
+	/* AUTRES */
+	Tooltip_BloodTest_Analysis = "Analyse en laboratoire",
+	Tooltip_BloodTest_InfectionDetected = "Infection détectée",
+	Tooltip_BloodTest_ProgressionRate = "Taux de progression",
+	Tooltip_BloodTest_Severity = "Sévérité",
+	Tooltip_BloodTest_Yes = "OUI",
+	Tooltip_BloodTest_No = "NON",
+	Tooltip_CompensationTickets = "BILLET DE COMPENSATION<br><br>Permet l’échange contre des objets pour compenser les pertes causées par les mises à jour du mod.<br>Appuyez sur B et allez dans la catégorie TICKET_TRADE pour l’utiliser.",
+
+
+	/* RECETTES */
+	Tooltip_LabAssembleChromatograph = "Les ampoules vertes peuvent être facilement trouvées en démontant des talkies-walkies.",
+	Tooltip_ChmExtractAntibodiesFromLeukocytes = "Extrait les anticorps des leucocytes à l'aide de la chromatographie.<br>Nécessite un ordinateur placé à côté.",
+
+	/* CONTENANTS */
+	Tooltip_item_LabFlask = "Fiole de laboratoire utilisée pour stocker des liquides et des réactifs.<br><br>L’eau peut être collectée directement depuis un lavabo :<br>- L’eau peut être purifiée par ébullition.<br>- L’eau peut être purifiée avec des comprimés de chlore.",
+	Tooltip_item_LabTestTube = "Tube à essai utilisé pour collecter des échantillons biologiques.",
+
+	/* SERA SUPPRIMÉ DANS LES FUTURES MISES À JOUR */
+	Tooltip_BloodTest_Severity_Low = "Faible (Phase précoce)",
+	Tooltip_BloodTest_Severity_Medium = "Moyenne (Phase intermédiaire)",
+	Tooltip_BloodTest_Severity_High = "Élevée (Phase avancée)",
+	Tooltip_LabFlask = "Fiole de laboratoire utilisée pour stocker des liquides et des réactifs.",
+	Tooltip_LabFlaskWater = "Fiole contenant de l’eau. Peut être utilisée dans des réactions chimiques.",
+	Tooltip_LabFlaskFilledWithBleach = "Fiole contenant de l’eau de Javel produite en laboratoire.",
+	Tooltip_LabFlaskFilledWithDisinfectant = "Fiole contenant un désinfectant préparé en laboratoire.",
+	Tooltip_CmpFlaskWithAntibodies = "Anticorps purifiés stockés dans une fiole — base pour la synthèse avancée.",
+	Tooltip_LabFlaskWithPurifiedWater = "Eau purifiée prête à être utilisée dans des réactions chimiques.",
+	Tooltip_CmpTestTubeWithInfectedBlood = "Échantillon purifié de sang infecté. Matériel de recherche essentiel.",
+	Tooltip_CmpFlaskWithBloodCells = "Suspension de cellules sanguines concentrées.",
+	Tooltip_CmpFlaskWithBloodPlasma = "Plasma sanguin propre — base pour la synthèse et les médicaments.",
+	Tooltip_CmpFlaskWithLeukocytes = "Leucocytes isolés — étape essentielle pour l’extraction d’anticorps.",
+	Tooltip_CmpTestTubeWithAntibodies = "Anticorps purifiés prêts pour la synthèse de cures.",
+	Tooltip_CmpFlaskWithSodiumHypochlorite = "Hypochlorite purifié — utilisé dans les vaccins et réactifs.",
+	Tooltip_CmpFlaskWithAmmoniumSulfate = "Sulfate d’ammonium — utilisé pour la précipitation biologique.",
+	Tooltip_CmpFlaskWithHydrogenPeroxide = "Peroxyde d’hydrogène concentré.",
+	Tooltip_LabNeedUpdate = "CET OBJET N’EST PLUS VALIDE.<br>CLIQUE GAUCHE POUR LE METTRE À JOUR"
+
+}

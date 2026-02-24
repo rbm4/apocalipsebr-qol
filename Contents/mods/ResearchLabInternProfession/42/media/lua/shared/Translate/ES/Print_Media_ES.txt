@@ -1,0 +1,21 @@
+Print_Media_ES = {
+	Print_Media_DiaryPage1_title = "PRIMEROS MESES: EL INICIO DEL FIN",
+	Print_Media_DiaryPage2_title = "LAS PRIMERAS SEÑALES",
+	Print_Media_DiaryPage3_title = "LA MUESTRA NO ERA HUMANA",
+	Print_Media_DiaryPage4_title = "EL DÍA EN QUE TODO SE ROMPIÓ",
+	Print_Media_DiaryPage5_title = "LA ÚLTIMA NOCHE ANTES DEL INFIERNO",
+	Print_Media_DiaryPage6_title = "MIS NOTAS — 'Cómo intentar reproducir el laboratorio del campus'",
+
+	Print_Media_DiaryPage1_info = "<type:parent, width:1024, height:1536>" ..
+        "<type:texture, x:0, y:0, texture:getTexture("media/textures/printMedia/FlyerPic/DiaryPage1ES.png"), width:1024, height:1536>",
+	Print_Media_DiaryPage2_info = "<type:parent, width:1024, height:1536>" ..
+        "<type:texture, x:0, y:0, texture:getTexture("media/textures/printMedia/FlyerPic/DiaryPage2ES.png"), width:1024, height:1536>",
+	Print_Media_DiaryPage3_info = "<type:parent, width:1024, height:1536>" ..
+        "<type:texture, x:0, y:0, texture:getTexture("media/textures/printMedia/FlyerPic/DiaryPage3ES.png"), width:1024, height:1536>",
+	Print_Media_DiaryPage4_info = "<type:parent, width:1024, height:1536>" ..
+        "<type:texture, x:0, y:0, texture:getTexture("media/textures/printMedia/FlyerPic/DiaryPage4ES.png"), width:1024, height:1536>",
+	Print_Media_DiaryPage5_info = "<type:parent, width:1024, height:1536>" ..
+        "<type:texture, x:0, y:0, texture:getTexture("media/textures/printMedia/FlyerPic/DiaryPage5ES.png"), width:1024, height:1536>",
+	Print_Media_DiaryPage6_info = "<type:parent, width:1024, height:1536>" ..
+        "<type:texture, x:0, y:0, texture:getTexture("media/textures/printMedia/FlyerPic/DiaryPage6ES.png"), width:1024, height:1536>",
+}

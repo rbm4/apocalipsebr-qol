@@ -1,0 +1,7 @@
+name=Rocco's Tiles
+id=Roccos_Tiles
+icon=icon.png
+description=Rocco's Tiles
+poster=poster.png
+pack=Roccos_Tiles
+tiledef=Roccos_TilesDef 7906

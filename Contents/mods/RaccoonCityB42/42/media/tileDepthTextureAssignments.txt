@@ -1,0 +1,15 @@
+tileDepthTextureAssignments
+{
+	VERSION = 1,
+	shisan_metalfence_11 = shisan_metalfence_10,
+	shisan_metalfence_13 = shisan_metalfence_12,
+	shisan_metalfence_14 = shisan_metalfence_9,
+	shisan_metalfence_15 = shisan_metalfence_9,
+	shisan_metalfence_16 = shisan_metalfence_9,
+	shisan_metalfence_17 = shisan_metalfence_9,
+	shisan_metalfence_18 = shisan_metalfence_10,
+	shisan_metalfence_19 = shisan_metalfence_10,
+	shisan_metalfence_21 = shisan_metalfence_20,
+	shisan_metalfence_22 = shisan_metalfence_23,
+	shisan_metalfence_8 = shisan_metalfence_9,
+}

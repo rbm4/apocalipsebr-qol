@@ -1,0 +1,208 @@
+VERSION = 1,
+
+option ZombieVirusVaccineBETA.DebugMode
+{
+    type = boolean,
+    default = false,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_DebugMode,
+    tooltip = ZombieVirusVaccineBETA_DebugMode_tooltip,
+}
+
+option ZombieVirusVaccineBETA.EnableWorldLoot
+{
+    type = boolean,
+    default = true,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_EnableWorldLoot,
+    tooltip = ZombieVirusVaccineBETA_EnableWorldLoot_tooltip,
+}
+
+option ZombieVirusVaccineBETA.LootChemicals
+{
+    type = enum,
+    numValues = 4,
+    default = 3,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_LootChemicals,
+    tooltip = ZombieVirusVaccineBETA_LootChemicals_tooltip,
+}
+
+option ZombieVirusVaccineBETA.ExpandChemicalsLoot
+{
+    type = boolean,
+    default = false,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_ExpandChemicalsLoot,
+    tooltip = ZombieVirusVaccineBETA_ExpandChemicalsLoot_tooltip,
+}
+
+option ZombieVirusVaccineBETA.EnableVehicleLoot
+{
+    type = boolean,
+    default = true,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_EnableVehicleLoot,
+    tooltip = ZombieVirusVaccineBETA_EnableVehicleLoot_tooltip,
+}
+
+option ZombieVirusVaccineBETA.EnableBagsLoot
+{
+    type = boolean,
+    default = true,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_EnableBagsLoot,
+    tooltip = ZombieVirusVaccineBETA_EnableBagsLoot_tooltip,
+}
+
+option ZombieVirusVaccineBETA.LootSyringes
+{
+    type = enum,
+    numValues = 4,
+    default = 3,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_LootSyringes,
+    tooltip = ZombieVirusVaccineBETA_LootSyringes_tooltip,
+}
+
+option ZombieVirusVaccineBETA.LootEquipmentBooks
+{
+    type = enum,
+    numValues = 4,
+    default = 3,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_LootEquipmentBooks,
+    tooltip = ZombieVirusVaccineBETA_LootEquipmentBooks_tooltip,
+}
+
+option ZombieVirusVaccineBETA.LootVirologyBooks
+{
+    type = enum,
+    numValues = 4,
+    default = 3,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_LootVirologyBooks,
+    tooltip = ZombieVirusVaccineBETA_LootVirologyBooks_tooltip,
+}
+
+option ZombieVirusVaccineBETA.VirologyBooksSpawnMode
+{
+    type = enum,
+    numValues = 3,
+    default = 2,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_VirologyBooksSpawnMode,
+    tooltip = ZombieVirusVaccineBETA_VirologyBooksSpawnMode_tooltip,
+}
+
+option ZombieVirusVaccineBETA.BloodAgingMode
+{
+    type = boolean,
+    default = true,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_BloodAgingMode,
+    tooltip = ZombieVirusVaccineBETA_BloodAgingMode_tooltip,
+}
+
+option ZombieVirusVaccineBETA.BloodAgingRadius
+{
+    type = integer,
+	min = 5,
+	max = 21,
+    default = 14,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_BloodAgingRadius,
+    tooltip = ZombieVirusVaccineBETA_BloodAgingRadius_tooltip,
+}
+
+option ZombieVirusVaccineBETA.EnableLightPaints
+{
+    type = boolean,
+    default = true,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_EnableLightPaints,
+    tooltip = ZombieVirusVaccineBETA_EnableLightPaints_tooltip,
+}
+
+option ZombieVirusVaccineBETA.AllowAutopsyOnGround
+{
+    type = boolean,
+    default = true,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_AllowAutopsyOnGround,
+    tooltip = ZombieVirusVaccineBETA_AllowAutopsyOnGround_tooltip,
+}
+
+option ZombieVirusVaccineBETA.AutopsySpeed
+{
+    type = integer,
+	min = 800,
+	max = 1800,
+    default = 1200,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_AutopsySpeed,
+    tooltip = ZombieVirusVaccineBETA_AutopsySpeed_tooltip,
+}
+
+option ZombieVirusVaccineBETA.TicksDecreasedByPerkLv
+{
+    type = integer,
+	min = 0,
+	max = 30,
+    default = 30,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_TicksDecreasedByPerkLv,
+    tooltip = ZombieVirusVaccineBETA_TicksDecreasedByPerkLv_tooltip,
+}
+
+
+option ZombieVirusVaccineBETA.TableSpeedBonus
+{
+    type = enum,
+    numValues = 7,
+    default = 6,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_TableSpeedBonus,
+    tooltip = ZombieVirusVaccineBETA_TableSpeedBonus_tooltip,
+}
+
+option ZombieVirusVaccineBETA.AutopsyGroundXP
+{
+    type = integer,
+	min = 0,
+	max = 15,
+    default = 15,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_AutopsyGroundXP,
+    tooltip = ZombieVirusVaccineBETA_AutopsyGroundXP_tooltip,
+}
+
+
+option ZombieVirusVaccineBETA.AutopsyTableXP
+{
+    type = integer,
+	min = 0,
+	max = 30,
+    default = 30,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_AutopsyTableXP,
+    tooltip = ZombieVirusVaccineBETA_AutopsyTableXP_tooltip,
+}
+
+option ZombieVirusVaccineBETA.AllowScalpelDegrade
+{
+    type = boolean,
+    default = false,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_AllowScalpelDegrade,
+    tooltip = ZombieVirusVaccineBETA_AllowScalpelDegrade_tooltip,
+}
+
+option ZombieVirusVaccineBETA.AllowSawDegrade
+{
+    type = boolean,
+    default = true,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_AllowSawDegrade,
+    tooltip = ZombieVirusVaccineBETA_AllowSawDegrade_tooltip,
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>skinned\backPacks\ResidentEvilBackPack_RHand</m_MaleModel>
+	<m_FemaleModel>skinned\backPacks\ResidentEvilBackPack_RHand</m_FemaleModel>
+	<m_GUID>ed7e4b00-6f1b-4d02-b774-c074215a0a31</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<textureChoices>ResidentEvilBackPack</textureChoices>
+</clothingItem>

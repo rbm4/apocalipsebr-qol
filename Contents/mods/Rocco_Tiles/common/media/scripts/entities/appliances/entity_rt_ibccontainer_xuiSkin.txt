@@ -1,0 +1,12 @@
+module Base
+{
+    xuiSkin default
+    {
+        entity ES_IBCContainer
+        {
+            LuaWindowClass = ISEntityTabWindow,
+            DisplayName = IBCContainer,
+            Icon = Build_IBCContainer,
+        }
+    }
+}

@@ -1,0 +1,7 @@
+UI_ES = {
+	
+	UI_prof_LabIntern = "Practicante de Laboratorio",
+	UI_prof_LabInternDesc = "Aunque no tenga toda la experiencia para crear una cura, domina los procedimientos y comprende la lógica detrás del trabajo de laboratorio.",
+	UI_trait_autopsyespecialist = "Especialista en Autopsias",
+	UI_trait_autopsyespecialistDesc = "Años de estudio finalmente dieron frutos<br><br>+40% Velocidad de Autopsia<br>+30% de XP en Autopsias<br>+Mejora la Recolección de Sangre en la Mesa de Morgue",
+}

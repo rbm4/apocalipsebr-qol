@@ -1,0 +1,10 @@
+IGUI_ES = {
+    IGUI_ProxInv_Text_ForceSelectOn = "Forzar selección: ON",
+    IGUI_ProxInv_Text_ForceSelectOff = "Forzar selección: OFF",
+    IGUI_ProxInv_Context_ToggleOn = "Desactivar",
+    IGUI_ProxInv_Context_ToggleOff = "Encender",
+    IGUI_ProxInv_Context_ForceSelectOn = "Desactivar",
+    IGUI_ProxInv_Context_ForceSelectOff = "Forzar Selección",
+    IGUI_ProxInv_Context_HighlightOn = "Quitar Marca",
+    IGUI_ProxInv_Context_HighlightOff = "Iluminar Contenedores",
+}

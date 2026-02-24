@@ -1,0 +1,106 @@
+module Base
+{
+    entity OilBarrel_Red
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_OilBarrel,
+            uiEnabled = false,
+        }
+        component FluidContainer
+        {
+            ContainerName = OilBarrel,
+            Capacity = 150.0,
+        }
+        component SpriteConfig
+        {
+            health = 300,
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_40,
+                }
+            }
+        }
+    }
+
+    entity OilBarrel_Yellow
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_OilBarrel,
+            uiEnabled = false,
+        }
+        component FluidContainer
+        {
+            ContainerName = OilBarrel,
+            Capacity = 150.0,
+        }
+        component SpriteConfig
+        {
+            health = 300,
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_41,
+                }
+            }
+        }
+    }
+
+    entity OilBarrel_Blue
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_OilBarrel,
+            uiEnabled = false,
+        }
+        component FluidContainer
+        {
+            ContainerName = OilBarrel,
+            Capacity = 150.0,
+        }
+        component SpriteConfig
+        {
+            health = 300,
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_42,
+                }
+            }
+        }
+    }
+
+    entity OilBarrel_Green
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_OilBarrel,
+            uiEnabled = false,
+        }
+        component FluidContainer
+        {
+            ContainerName = OilBarrel,
+            Capacity = 150.0,
+        }
+        component SpriteConfig
+        {
+            health = 300,
+            face S
+            {
+                layer
+                {
+                    row = Roccos_Tiles_Appliances_01_43,
+                }
+            }
+        }
+    }
+}

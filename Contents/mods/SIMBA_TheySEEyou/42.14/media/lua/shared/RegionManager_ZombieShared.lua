@@ -656,15 +656,19 @@ function RegionManager.Shared.ServerSideProperties(zombie, data, sandboxOptions)
     -- ========================================================================
     -- 1. APPLY SPEED (Sprinter/Shambler) - BLTRandomZombies style
     -- Uses makeInactive() WITHOUT DoZombieStats()
+    -- Store expected speed in modData for owner-change revalidation
     -- ========================================================================
+    local modData = zombie:getModData()
     if data.isSprinter then
         speedConfigOption:setValue(SPEED_SPRINTER)
         zombie:makeInactive(true)
         zombie:makeInactive(false)
+        modData.SIMBA_TSY_ExpectedSpeed = "sprinter"
     elseif data.isShambler then
         speedConfigOption:setValue(SPEED_SHAMBLER)
         zombie:makeInactive(true)
         zombie:makeInactive(false)
+        modData.SIMBA_TSY_ExpectedSpeed = "shambler"
     end
 
     speedConfigOption:setValue(originalSpeed)
@@ -705,8 +709,7 @@ function RegionManager.Shared.ServerSideProperties(zombie, data, sandboxOptions)
     -- Store toughness in ModData for OnHit event handling
     -- Initial health set + dynamic damage mitigation
     -- ========================================================================
-    local modData = zombie:getModData()
-
+    -- Re-use modData from speed section above (already declared)
     if not zombie:getAttackedBy() and not zombie:isOnFire() then
         local health = 0.1 * ZombRand(4) -- Random 0.0 to 0.3 base
         if data.isTough then
@@ -763,6 +766,71 @@ function RegionManager.Shared.ServerSideProperties(zombie, data, sandboxOptions)
     
     -- Note: Armor settings are not applied here as BLTRandomZombies doesn't handle them
     -- and they may not be directly modifiable per-zombie
+end
+
+-- ============================================================================
+-- Speed Revalidation
+-- When a zombie changes authority owner in MP, the new owner may recalculate
+-- its speed from sandbox defaults, losing the sprinter/shambler override.
+-- This function checks a single zombie's current walkType against the expected
+-- speed stored in modData and reapplies if mismatched.
+-- Returns true if the speed was corrected.
+-- ============================================================================
+---@param zombie IsoZombie
+---@param sandboxOptions table
+---@return boolean corrected
+function RegionManager.Shared.RevalidateZombieSpeed(zombie, sandboxOptions)
+    if not zombie or zombie:isDead() then
+        return false
+    end
+
+    -- Only fix zombies we are currently simulating (we are the auth owner)
+    if zombie:isRemoteZombie() then
+        return false
+    end
+
+    local modData = zombie:getModData()
+    local expected = modData.SIMBA_TSY_ExpectedSpeed
+    if not expected then
+        return false -- not a zombie we modified, skip
+    end
+
+    -- Read the current walkType from the animation variable
+    local walkType = zombie:getVariableString("zombiewalktype")
+    if not walkType then
+        walkType = ""
+    end
+    walkType = string.lower(tostring(walkType))
+
+    if expected == "sprinter" then
+        -- Sprinter walkType should contain "sprint"
+        if string.find(walkType, "sprint") then
+            return false -- already correct
+        end
+        -- Mismatch: zombie should be sprinting but isn't
+        RegionManager.Shared.makeSprint(zombie, sandboxOptions)
+        print("SIMBA_TSY: Revalidated sprinter zombie " .. tostring(zombie:getOnlineID())
+              .. " (walkType was '" .. walkType .. "')")
+        return true
+
+    elseif expected == "shambler" then
+        -- Shambler walkType should contain "slow" (slow1, slow2, slow3)
+        if string.find(walkType, "slow") then
+            return false -- already correct
+        end
+        -- Also accept empty/nil as possibly OK if the zombie is idle,
+        -- but if it contains "sprint" that is definitely wrong
+        if not string.find(walkType, "sprint") then
+            return false -- not clearly wrong, leave it
+        end
+        -- Mismatch: zombie is sprinting but should be shambling
+        RegionManager.Shared.makeShamble(zombie, sandboxOptions)
+        print("SIMBA_TSY: Revalidated shambler zombie " .. tostring(zombie:getOnlineID())
+              .. " (walkType was '" .. walkType .. "')")
+        return true
+    end
+
+    return false
 end
 
 -- ============================================================================
@@ -864,135 +932,4 @@ if not isServer() then
     print("SIMBA_TSY: Networked toughness system initialized (OnWeaponHitCharacter)")
 end
 
--- ============================================================================
--- Stuck Zombie Detection & Recovery
---
--- ROOT CAUSE: When zombie speed is changed dynamically to sprinter, the engine
--- sets walkType to "sprint1-5". The walktoward AnimSet sprint tracks require
--- both "shouldSprint=true" AND "bHasTarget=true" as conditions. When the
--- zombie loses its target (e.g. player goes invisible), both conditions become
--- false, but walkType is still "sprint*". The animation system can't match
--- any track — sprint tracks fail the conditions, slow tracks fail the
--- zombieWalkType match. Result: empty AnimTrack → frozen zombie with
--- stateEventDelayTimer decreasing indefinitely into negatives.
---
--- FIX: Force walkType to a shambler-compatible value ("slow1/2/3") so the
--- walktoward slow animations can resolve, then force the zombie into
--- ZombieIdleState for a clean restart. The zombie will wander using shambler
--- animations but retains sprinter speedType — when it next acquires a target,
--- shouldSprint becomes true and proper sprint animations will play.
--- ============================================================================
 
---- Threshold below which we consider a zombie state-stuck.
---- The timer normally hovers around 0 and briefly goes negative between
---- state transitions. Values around -500 already indicate a stuck zombie.
-local STUCK_TIMER_THRESHOLD = -500
-
---- States that are safe to interrupt for unsticking.
---- We must NOT interrupt climbing, falling, hit reactions, etc.
-local SAFE_STATES_TO_UNSTICK = {
-    ["WalkTowardState"]         = true,
-    ["WalkTowardNetworkState"]  = true,
-    ["PathFindState"]           = true,
-    ["ZombieIdleState"]         = true,
-    ["IdleState"]               = true,
-}
-
---- Attempt to unstick a single zombie if it meets the stuck criteria.
---- Returns true if the zombie was unstuck, false otherwise.
----@param zombie IsoZombie
----@return boolean unstuck
-function RegionManager.Shared.UnstickZombie(zombie)
-    if not zombie or zombie:isDead() then
-        return false
-    end
-
-    -- Only the simulating client should fix state; skip remote zombies
-    if zombie:isRemoteZombie() then
-        return false
-    end
-
-    -- Check if the timer is stuck (deep negative)
-    local timer = zombie:getStateEventDelayTimer()
-    if timer >= STUCK_TIMER_THRESHOLD then
-        return false
-    end
-
-    -- If the zombie has a target, the state machine should resolve naturally
-    -- (e.g. it's chasing/attacking someone). Don't interfere.
-    local target = zombie:getTarget()
-    if target then
-        return false
-    end
-
-    -- Only unstick from safe states — don't interrupt climbing, falling, etc.
-    local stateName = zombie:getCurrentStateName()
-    if stateName and not SAFE_STATES_TO_UNSTICK[stateName] then
-        return false
-    end
-
-    -- ----------------------------------------------------------------
-    -- The actual fix: address the animation track mismatch
-    -- ----------------------------------------------------------------
-    initializeReflectionCache()
-
-    local zombieSpeed = speedField and getClassFieldVal(zombie, speedField) or nil
-    local isSprinter = (zombieSpeed == SPEED_SPRINTER)
-
-    -- For sprinters without a target, the walktoward sprint AnimSet tracks
-    -- won't resolve (they require shouldSprint/bHasTarget = true).
-    -- Set walkType to a shambler-compatible value so the slow walktoward
-    -- animations can play instead. The sprinter identity (speedType=1) is
-    -- preserved — next time the zombie acquires a target, shouldSprint will
-    -- be true and sprint animations will work normally.
-    if isSprinter then
-        local slowWalk = "slow" .. tostring(ZombRand(3) + 1)
-        zombie:setWalkType(slowWalk)
-    end
-
-    -- Force transition to ZombieIdleState for a clean animation restart.
-    -- ZombieIdleState.enter() resets movement variables and sets a fresh
-    -- positive stateEventDelayTimer (wander interval), so the zombie will
-    -- naturally resume wandering after a short delay.
-    zombie:setMoving(false)
-    zombie:changeState(ZombieIdleState.instance())
-
-    -- Clear any stale repath delay so the zombie can navigate freely
-    -- zombie.allowRepathDelay = 0
-
-    print("SIMBA_TSY: Unstuck zombie " .. tostring(zombie:getOnlineID())
-          .. " (timer was " .. string.format("%.0f", timer)
-          .. ", state=" .. tostring(stateName)
-          .. ", sprinter=" .. tostring(isSprinter) .. ")")
-    return true
-end
-
---- Scan all zombies in the player's cell and unstick any that are frozen.
---- Intended to be called periodically from a client tick module.
----@return number count Number of zombies that were unstuck
-function RegionManager.Shared.ScanAndUnstickZombies()
-    local player = getPlayer()
-    if not player then return 0 end
-
-    local cell = player:getCell()
-    if not cell then return 0 end
-
-    local zombies = cell:getZombieList()
-    if not zombies then return 0 end
-
-    local unstuckCount = 0
-    for i = 0, zombies:size() - 1 do
-        local zombie = zombies:get(i)
-        if zombie then
-            if RegionManager.Shared.UnstickZombie(zombie) then
-                unstuckCount = unstuckCount + 1
-            end
-        end
-    end
-
-    if unstuckCount > 0 then
-        print("SIMBA_TSY: Unstuck " .. unstuckCount .. " frozen zombies this scan")
-    end
-
-    return unstuckCount
-end

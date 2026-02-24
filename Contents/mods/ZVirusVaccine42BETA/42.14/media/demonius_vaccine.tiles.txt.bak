@@ -1,0 +1,1323 @@
+version = 1
+tileset
+{
+    file = demonius_vaccine_01
+    size = 8,11
+    id = 3
+    // demonius_vaccine_01_0
+    tile
+    {
+        xy = 0,0
+        BlocksPlacement = 
+        CustomName = Microscope
+        Facing = S
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 50
+        Surface = 34
+    }
+    // demonius_vaccine_01_1
+    tile
+    {
+        xy = 1,0
+        BlocksPlacement = 
+        CustomName = Microscope
+        Facing = E
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 50
+        Surface = 34
+    }
+    // demonius_vaccine_01_2
+    tile
+    {
+        xy = 2,0
+        BlocksPlacement = 
+        CustomName = Microscope
+        Facing = N
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 50
+        Surface = 34
+    }
+    // demonius_vaccine_01_3
+    tile
+    {
+        xy = 3,0
+        BlocksPlacement = 
+        CustomName = Microscope
+        Facing = W
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 50
+        Surface = 34
+    }
+    // demonius_vaccine_01_4
+    tile
+    {
+        xy = 4,0
+        BlocksPlacement = 
+        CustomName = Chromatograph
+        Facing = S
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 160
+        Surface = 37
+    }
+    // demonius_vaccine_01_5
+    tile
+    {
+        xy = 5,0
+        BlocksPlacement = 
+        CustomName = Chromatograph
+        Facing = E
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 160
+        Surface = 37
+    }
+    // demonius_vaccine_01_6
+    tile
+    {
+        xy = 6,0
+        BlocksPlacement = 
+        CustomName = Chromatograph
+        Facing = N
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 160
+        Surface = 37
+    }
+    // demonius_vaccine_01_7
+    tile
+    {
+        xy = 7,0
+        BlocksPlacement = 
+        CustomName = Chromatograph
+        Facing = W
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 160
+        Surface = 37
+    }
+    // demonius_vaccine_01_8
+    tile
+    {
+        xy = 0,1
+        BlocksPlacement = 
+        CustomName = Spectrometer
+        Facing = S
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 120
+        Surface = 34
+    }
+    // demonius_vaccine_01_9
+    tile
+    {
+        xy = 1,1
+        BlocksPlacement = 
+        CustomName = Spectrometer
+        Facing = E
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 120
+        Surface = 34
+    }
+    // demonius_vaccine_01_10
+    tile
+    {
+        xy = 2,1
+        BlocksPlacement = 
+        CustomName = Spectrometer
+        Facing = N
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 120
+        Surface = 34
+    }
+    // demonius_vaccine_01_11
+    tile
+    {
+        xy = 3,1
+        BlocksPlacement = 
+        CustomName = Spectrometer
+        Facing = W
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 120
+        Surface = 34
+    }
+    // demonius_vaccine_01_12
+    tile
+    {
+        xy = 4,1
+        BlocksPlacement = 
+        CustomName = Chemistry Set
+        Facing = S
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 80
+        Surface = 34
+    }
+    // demonius_vaccine_01_13
+    tile
+    {
+        xy = 5,1
+        BlocksPlacement = 
+        CustomName = Chemistry Set
+        Facing = E
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 80
+        Surface = 34
+    }
+    // demonius_vaccine_01_14
+    tile
+    {
+        xy = 6,1
+        BlocksPlacement = 
+        CustomName = Chemistry Set
+        Facing = N
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 80
+        Surface = 34
+    }
+    // demonius_vaccine_01_15
+    tile
+    {
+        xy = 7,1
+        BlocksPlacement = 
+        CustomName = Chemistry Set
+        Facing = W
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 80
+        Surface = 34
+    }
+    // demonius_vaccine_01_16
+    tile
+    {
+        xy = 0,2
+        BlocksPlacement = 
+        CustomName = Centrifuge
+        Facing = S
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 120
+        Surface = 34
+    }
+    // demonius_vaccine_01_17
+    tile
+    {
+        xy = 1,2
+        BlocksPlacement = 
+        CustomName = Centrifuge
+        Facing = E
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 120
+        Surface = 34
+    }
+    // demonius_vaccine_01_18
+    tile
+    {
+        xy = 2,2
+        BlocksPlacement = 
+        CustomName = Centrifuge
+        Facing = N
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 120
+        Surface = 34
+    }
+    // demonius_vaccine_01_19
+    tile
+    {
+        xy = 3,2
+        BlocksPlacement = 
+        CustomName = Centrifuge
+        Facing = W
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 120
+        Surface = 34
+    }
+    // demonius_vaccine_01_20
+    tile
+    {
+        xy = 4,2
+        BlocksPlacement = 
+        CustomName = Muffle Furnace
+        Facing = S
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 140
+        Surface = 34
+    }
+    // demonius_vaccine_01_21
+    tile
+    {
+        xy = 5,2
+        BlocksPlacement = 
+        CustomName = Muffle Furnace
+        Facing = E
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 140
+        Surface = 34
+    }
+    // demonius_vaccine_01_22
+    tile
+    {
+        xy = 6,2
+        BlocksPlacement = 
+        CustomName = Muffle Furnace
+        Facing = N
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 140
+        Surface = 34
+    }
+    // demonius_vaccine_01_23
+    tile
+    {
+        xy = 7,2
+        BlocksPlacement = 
+        CustomName = Muffle Furnace
+        Facing = W
+        GroupName = Lab
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 140
+        Surface = 34
+    }
+    // demonius_vaccine_01_24
+    tile
+    {
+        xy = 0,3
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = LabItems.LabDecorSkeleton
+        CustomName = Lab Decoration
+        Facing = S
+        GroupName = Skeleton
+        IsMoveAble = 
+        Material = Wood
+        Material2 = MetalBars
+        PickUpTool = Hammer
+        PickUpWeight = 150
+        PlaceTool = Hammer
+        ScrapSize = Small
+        solidtrans = 
+    }
+    // demonius_vaccine_01_25
+    tile
+    {
+        xy = 1,3
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = LabItems.LabDecorSkeleton
+        CustomName = Lab Decoration
+        Facing = E
+        GroupName = Skeleton
+        IsMoveAble = 
+        Material = Wood
+        Material2 = MetalBars
+        PickUpTool = Hammer
+        PickUpWeight = 150
+        PlaceTool = Hammer
+        ScrapSize = Small
+        solidtrans = 
+    }
+    // demonius_vaccine_01_26
+    tile
+    {
+        xy = 2,3
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = LabItems.LabDecorSkeleton
+        CustomName = Lab Decoration
+        Facing = N
+        GroupName = Skeleton
+        IsMoveAble = 
+        Material = Wood
+        Material2 = MetalBars
+        PickUpTool = Hammer
+        PickUpWeight = 150
+        PlaceTool = Hammer
+        ScrapSize = Small
+        solidtrans = 
+    }
+    // demonius_vaccine_01_27
+    tile
+    {
+        xy = 3,3
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = LabItems.LabDecorSkeleton
+        CustomName = Lab Decoration
+        Facing = W
+        GroupName = Skeleton
+        IsMoveAble = 
+        Material = Wood
+        Material2 = MetalBars
+        PickUpTool = Hammer
+        PickUpWeight = 150
+        PlaceTool = Hammer
+        ScrapSize = Small
+        solidtrans = 
+    }
+    // demonius_vaccine_01_28
+    tile
+    {
+        xy = 4,3
+        BlocksPlacement = 
+        CustomItem = LabItems.LabDecorVirusModel
+        CustomName = Lab Decoration
+        Facing = S
+        GroupName = Virus Model
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 30
+        Surface = 34
+    }
+    // demonius_vaccine_01_29
+    tile
+    {
+        xy = 5,3
+        BlocksPlacement = 
+        CustomItem = LabItems.LabDecorVirusModel
+        CustomName = Lab Decoration
+        Facing = E
+        GroupName = Virus Model
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 30
+        Surface = 34
+    }
+    // demonius_vaccine_01_30
+    tile
+    {
+        xy = 6,3
+        BlocksPlacement = 
+        CustomItem = LabItems.LabDecorVirusModel
+        CustomName = Lab Decoration
+        Facing = N
+        GroupName = Virus Model
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 30
+        Surface = 34
+    }
+    // demonius_vaccine_01_31
+    tile
+    {
+        xy = 7,3
+        BlocksPlacement = 
+        CustomItem = LabItems.LabDecorVirusModel
+        CustomName = Lab Decoration
+        Facing = W
+        GroupName = Virus Model
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        PickUpWeight = 30
+        Surface = 34
+    }
+    // demonius_vaccine_01_32
+    tile
+    {
+        xy = 0,4
+        CustomItem = LabItems.LabPosterPeriodicTable
+        CustomName = Poster
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Periodic Table
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 30
+        SpriteGridPos = 0,1
+        WallOverlay = 
+        attachedW = 
+    }
+    // demonius_vaccine_01_33
+    tile
+    {
+        xy = 1,4
+        CustomItem = LabItems.LabPosterPeriodicTable
+        CustomName = Poster
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Periodic Table
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 30
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        attachedW = 
+    }
+    // demonius_vaccine_01_34
+    tile
+    {
+        xy = 2,4
+        CustomItem = LabItems.LabPosterPeriodicTable
+        CustomName = Poster
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Periodic Table
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 30
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        attachedN = 
+    }
+    // demonius_vaccine_01_35
+    tile
+    {
+        xy = 3,4
+        CustomItem = LabItems.LabPosterPeriodicTable
+        CustomName = Poster
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Periodic Table
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 30
+        SpriteGridPos = 1,0
+        WallOverlay = 
+        attachedN = 
+    }
+    // demonius_vaccine_01_36
+    tile
+    {
+        xy = 4,4
+        CustomItem = LabItems.LabDecorCaduceus
+        CustomName = Lab Decoration
+        Facing = S
+        GroupName = Caduceus
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 50
+        attachedN = 
+    }
+    // demonius_vaccine_01_37
+    tile
+    {
+        xy = 5,4
+        CustomItem = LabItems.LabDecorCaduceus
+        CustomName = Lab Decoration
+        Facing = E
+        GroupName = Caduceus
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 50
+        attachedW = 
+    }
+    // demonius_vaccine_01_38
+    tile
+    {
+        xy = 6,4
+        CustomItem = LabItems.LabDecorCaduceus
+        CustomName = Lab Decoration
+        Facing = N
+        GroupName = Caduceus
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 50
+        attachedS = 
+    }
+    // demonius_vaccine_01_39
+    tile
+    {
+        xy = 7,4
+        CustomItem = LabItems.LabDecorCaduceus
+        CustomName = Lab Decoration
+        Facing = W
+        GroupName = Caduceus
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 50
+        attachedE = 
+    }
+    // demonius_vaccine_01_40
+    tile
+    {
+        xy = 0,5
+        CustomItem = LabItems.LabPosterSexyNurse
+        CustomName = Poster
+        Facing = S
+        GroupName = Sexy Nurse
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 10
+        WallOverlay = 
+        attachedN = 
+    }
+    // demonius_vaccine_01_41
+    tile
+    {
+        xy = 1,5
+        CustomItem = LabItems.LabPosterSexyNurse
+        CustomName = Poster
+        Facing = E
+        GroupName = Sexy Nurse
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 10
+        WallOverlay = 
+        attachedW = 
+    }
+    // demonius_vaccine_01_42
+    tile
+    {
+        xy = 2,5
+        CustomItem = LabItems.LabPosterWashHands
+        CustomName = Poster
+        Facing = S
+        GroupName = Wash Hands
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 10
+        WallOverlay = 
+        attachedN = 
+    }
+    // demonius_vaccine_01_43
+    tile
+    {
+        xy = 3,5
+        CustomItem = LabItems.LabPosterWashHands
+        CustomName = Poster
+        Facing = E
+        GroupName = Wash Hands
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 10
+        WallOverlay = 
+        attachedW = 
+    }
+    // demonius_vaccine_01_44
+    tile
+    {
+        xy = 4,5
+        CustomItem = LabItems.LabDecorWhiteboard
+        CustomName = Lab Decoration
+        Facing = S
+        GroupName = Whiteboard
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 50
+        attachedN = 
+    }
+    // demonius_vaccine_01_45
+    tile
+    {
+        xy = 5,5
+        CustomItem = LabItems.LabDecorWhiteboard
+        CustomName = Lab Decoration
+        Facing = E
+        GroupName = Whiteboard
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 50
+        attachedW = 
+    }
+    // demonius_vaccine_01_46
+    tile
+    {
+        xy = 6,5
+        CustomItem = LabItems.LabDecorWhiteboard
+        CustomName = Lab Decoration
+        Facing = N
+        GroupName = Whiteboard
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 50
+        attachedS = 
+    }
+    // demonius_vaccine_01_47
+    tile
+    {
+        xy = 7,5
+        CustomItem = LabItems.LabDecorWhiteboard
+        CustomName = Lab Decoration
+        Facing = W
+        GroupName = Whiteboard
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 50
+        attachedE = 
+    }
+    // demonius_vaccine_01_48
+    tile
+    {
+        xy = 0,6
+        CustomItem = LabItems.LabNeonSignPharmacy
+        CustomName = Neon Sign
+        Facing = S
+        GroupName = Pharmacy
+        IsHigh = 
+        IsMoveAble = 
+        LightRadius = 7
+        MoveType = WallObject
+        PickUpLevel = 1
+        PickUpTool = Electrician
+        PickUpWeight = 50
+        PlaceTool = Electrician
+        attachedN = 
+        lightB = 200
+        lightG = 255
+        lightR = 200
+        lightswitch = 
+    }
+    // demonius_vaccine_01_49
+    tile
+    {
+        xy = 1,6
+        CustomItem = LabItems.LabNeonSignPharmacy
+        CustomName = Neon Sign
+        Facing = E
+        GroupName = Pharmacy
+        IsHigh = 
+        IsMoveAble = 
+        LightRadius = 7
+        MoveType = WallObject
+        PickUpLevel = 1
+        PickUpTool = Electrician
+        PickUpWeight = 50
+        PlaceTool = Electrician
+        attachedW = 
+        lightB = 200
+        lightG = 255
+        lightR = 200
+        lightswitch = 
+    }
+    // demonius_vaccine_01_50
+    tile
+    {
+        xy = 2,6
+        CustomItem = LabItems.LabNeonSignPharmacy
+        CustomName = Neon Sign
+        Facing = N
+        GroupName = Pharmacy
+        IsHigh = 
+        IsMoveAble = 
+        LightRadius = 7
+        MoveType = WallObject
+        PickUpLevel = 1
+        PickUpTool = Electrician
+        PickUpWeight = 50
+        PlaceTool = Electrician
+        attachedS = 
+        lightB = 200
+        lightG = 255
+        lightR = 200
+        lightswitch = 
+    }
+    // demonius_vaccine_01_51
+    tile
+    {
+        xy = 3,6
+        CustomItem = LabItems.LabNeonSignPharmacy
+        CustomName = Neon Sign
+        Facing = W
+        GroupName = Pharmacy
+        IsHigh = 
+        IsMoveAble = 
+        LightRadius = 7
+        MoveType = WallObject
+        PickUpLevel = 1
+        PickUpTool = Electrician
+        PickUpWeight = 50
+        PlaceTool = Electrician
+        attachedE = 
+        lightB = 170
+        lightG = 255
+        lightR = 170
+        lightswitch = 
+    }
+    // demonius_vaccine_01_52
+    tile
+    {
+        xy = 4,6
+        CustomItem = LabItems.LabNeonSignPizza
+        CustomName = Neon Sign
+        Facing = S
+        GroupName = Pizza
+        IsHigh = 
+        IsMoveAble = 
+        LightRadius = 7
+        MoveType = WallObject
+        PickUpLevel = 1
+        PickUpTool = Electrician
+        PickUpWeight = 50
+        PlaceTool = Electrician
+        attachedN = 
+        lightB = 140
+        lightG = 210
+        lightR = 255
+        lightswitch = 
+    }
+    // demonius_vaccine_01_53
+    tile
+    {
+        xy = 5,6
+        CustomItem = LabItems.LabNeonSignPizza
+        CustomName = Neon Sign
+        Facing = E
+        GroupName = Pizza
+        IsHigh = 
+        IsMoveAble = 
+        LightRadius = 7
+        MoveType = WallObject
+        PickUpLevel = 1
+        PickUpTool = Electrician
+        PickUpWeight = 50
+        PlaceTool = Electrician
+        attachedW = 
+        lightB = 140
+        lightG = 210
+        lightR = 255
+        lightswitch = 
+    }
+    // demonius_vaccine_01_54
+    tile
+    {
+        xy = 6,6
+        CustomItem = LabItems.LabNeonSignPizza
+        CustomName = Neon Sign
+        Facing = N
+        GroupName = Pizza
+        IsHigh = 
+        IsMoveAble = 
+        LightRadius = 7
+        MoveType = WallObject
+        PickUpLevel = 1
+        PickUpTool = Electrician
+        PickUpWeight = 50
+        PlaceTool = Electrician
+        attachedS = 
+        lightB = 140
+        lightG = 210
+        lightR = 255
+        lightswitch = 
+    }
+    // demonius_vaccine_01_55
+    tile
+    {
+        xy = 7,6
+        CustomItem = LabItems.LabNeonSignPizza
+        CustomName = Neon Sign
+        Facing = W
+        GroupName = Pizza
+        IsHigh = 
+        IsMoveAble = 
+        LightRadius = 7
+        MoveType = WallObject
+        PickUpLevel = 1
+        PickUpTool = Electrician
+        PickUpWeight = 50
+        PlaceTool = Electrician
+        attachedE = 
+        lightB = 140
+        lightG = 210
+        lightR = 255
+        lightswitch = 
+    }
+    // demonius_vaccine_01_56
+    tile
+    {
+        xy = 0,7
+        BlocksPlacement = 
+        CustomName = WorkBench
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Lab
+        IsLow = 
+        IsMoveAble = 
+        PickUpWeight = 200
+        SpriteGridPos = 0,0
+        Surface = 35
+        solidtrans = 
+    }
+    // demonius_vaccine_01_57
+    tile
+    {
+        xy = 1,7
+        BlocksPlacement = 
+        CustomName = WorkBench
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Lab
+        IsLow = 
+        IsMoveAble = 
+        PickUpWeight = 200
+        SpriteGridPos = 1,0
+        Surface = 35
+        solidtrans = 
+    }
+    // demonius_vaccine_01_58
+    tile
+    {
+        xy = 2,7
+        BlocksPlacement = 
+        CustomName = WorkBench
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Lab
+        IsLow = 
+        IsMoveAble = 
+        PickUpWeight = 200
+        SpriteGridPos = 0,1
+        Surface = 35
+        solidtrans = 
+    }
+    // demonius_vaccine_01_59
+    tile
+    {
+        xy = 3,7
+        BlocksPlacement = 
+        CustomName = WorkBench
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Lab
+        IsLow = 
+        IsMoveAble = 
+        PickUpWeight = 200
+        SpriteGridPos = 0,0
+        Surface = 35
+        solidtrans = 
+    }
+    // demonius_vaccine_01_60
+    tile
+    {
+        xy = 4,7
+        BlocksPlacement = 
+        CustomName = WorkBench
+        Facing = N
+        ForceSingleItem = 
+        GroupName = Lab
+        IsLow = 
+        IsMoveAble = 
+        PickUpWeight = 200
+        SpriteGridPos = 0,0
+        Surface = 35
+        solidtrans = 
+    }
+    // demonius_vaccine_01_61
+    tile
+    {
+        xy = 5,7
+        BlocksPlacement = 
+        CustomName = WorkBench
+        Facing = N
+        ForceSingleItem = 
+        GroupName = Lab
+        IsLow = 
+        IsMoveAble = 
+        PickUpWeight = 200
+        SpriteGridPos = 1,0
+        Surface = 35
+        solidtrans = 
+    }
+    // demonius_vaccine_01_62
+    tile
+    {
+        xy = 6,7
+        BlocksPlacement = 
+        CustomName = WorkBench
+        Facing = W
+        ForceSingleItem = 
+        GroupName = Lab
+        IsLow = 
+        IsMoveAble = 
+        PickUpWeight = 200
+        SpriteGridPos = 0,1
+        Surface = 35
+        solidtrans = 
+    }
+    // demonius_vaccine_01_63
+    tile
+    {
+        xy = 7,7
+        BlocksPlacement = 
+        CustomName = WorkBench
+        Facing = W
+        ForceSingleItem = 
+        GroupName = Lab
+        IsLow = 
+        IsMoveAble = 
+        PickUpWeight = 200
+        SpriteGridPos = 0,0
+        Surface = 35
+        solidtrans = 
+    }
+    // demonius_vaccine_01_64
+    tile
+    {
+        xy = 0,8
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = LabItems.LabEasel
+        CustomName = Lab Equipment
+        Facing = S
+        GroupName = Easel
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Nails
+        PickUpWeight = 60
+        ScrapSize = Small
+        solidtrans = 
+    }
+    // demonius_vaccine_01_65
+    tile
+    {
+        xy = 1,8
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = LabItems.LabEasel
+        CustomName = Lab Equipment
+        Facing = E
+        GroupName = Easel
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Nails
+        PickUpWeight = 60
+        ScrapSize = Small
+        solidtrans = 
+    }
+    // demonius_vaccine_01_66
+    tile
+    {
+        xy = 2,8
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = LabItems.LabEasel
+        CustomName = Lab Equipment
+        Facing = N
+        GroupName = Easel
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Nails
+        PickUpWeight = 60
+        ScrapSize = Small
+        solidtrans = 
+    }
+    // demonius_vaccine_01_67
+    tile
+    {
+        xy = 3,8
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = LabItems.LabEasel
+        CustomName = Lab Equipment
+        Facing = W
+        GroupName = Easel
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Nails
+        PickUpWeight = 60
+        ScrapSize = Small
+        solidtrans = 
+    }
+    // demonius_vaccine_01_68
+    tile
+    {
+        xy = 4,8
+        CustomItem = LabItems.LabPosterBiohazard
+        CustomName = Poster
+        Facing = S
+        GroupName = Biohazard
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 10
+        WallOverlay = 
+        attachedN = 
+    }
+    // demonius_vaccine_01_69
+    tile
+    {
+        xy = 5,8
+        CustomItem = LabItems.LabPosterBiohazard
+        CustomName = Poster
+        Facing = E
+        GroupName = Biohazard
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 10
+        WallOverlay = 
+        attachedW = 
+    }
+    // demonius_vaccine_01_70
+    tile
+    {
+        xy = 6,8
+        CustomItem = LabItems.LabPosterHumanBrain
+        CustomName = Poster
+        Facing = S
+        GroupName = Human Brain
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 10
+        WallOverlay = 
+        attachedN = 
+    }
+    // demonius_vaccine_01_71
+    tile
+    {
+        xy = 7,8
+        CustomItem = LabItems.LabPosterHumanBrain
+        CustomName = Poster
+        Facing = E
+        GroupName = Human Brain
+        IsHigh = 
+        IsMoveAble = 
+        MoveType = WallObject
+        PickUpWeight = 10
+        WallOverlay = 
+        attachedW = 
+    }
+    // demonius_vaccine_01_72
+    tile
+    {
+        xy = 0,9
+        BlocksPlacement = 
+        CustomName = Table Zombie
+        Facing = E
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 0,0
+        solidtrans = 
+    }
+    // demonius_vaccine_01_73
+    tile
+    {
+        xy = 1,9
+        BlocksPlacement = 
+        CustomName = Table Zombie
+        Facing = E
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 1,0
+        solidtrans = 
+    }
+    // demonius_vaccine_01_74
+    tile
+    {
+        xy = 2,9
+        BlocksPlacement = 
+        CustomName = Table Zombie
+        Facing = S
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 0,1
+        solidtrans = 
+    }
+    // demonius_vaccine_01_75
+    tile
+    {
+        xy = 3,9
+        BlocksPlacement = 
+        CustomName = Table Zombie
+        Facing = S
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 0,0
+        solidtrans = 
+    }
+    // demonius_vaccine_01_76
+    tile
+    {
+        xy = 4,9
+        BlocksPlacement = 
+        CustomName = Table Zombie 2
+        Facing = E
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 0,0
+        solidtrans = 
+    }
+    // demonius_vaccine_01_77
+    tile
+    {
+        xy = 5,9
+        BlocksPlacement = 
+        CustomName = Table Zombie 2
+        Facing = E
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 1,0
+        solidtrans = 
+    }
+    // demonius_vaccine_01_78
+    tile
+    {
+        xy = 6,9
+        BlocksPlacement = 
+        CustomName = Table Zombie 2
+        Facing = S
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 0,1
+        solidtrans = 
+    }
+    // demonius_vaccine_01_79
+    tile
+    {
+        xy = 7,9
+        BlocksPlacement = 
+        CustomName = Table Zombie 2
+        Facing = S
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 0,0
+        solidtrans = 
+    }
+    // demonius_vaccine_01_80
+    tile
+    {
+        xy = 0,10
+        BlocksPlacement = 
+        CustomName = Table Dirty
+        Facing = E
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 0,0
+        solidtrans = 
+    }
+    // demonius_vaccine_01_81
+    tile
+    {
+        xy = 1,10
+        BlocksPlacement = 
+        CustomName = Table Dirty
+        Facing = E
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 1,0
+        solidtrans = 
+    }
+    // demonius_vaccine_01_82
+    tile
+    {
+        xy = 2,10
+        BlocksPlacement = 
+        CustomName = Table Dirty
+        Facing = S
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 0,1
+        solidtrans = 
+    }
+    // demonius_vaccine_01_83
+    tile
+    {
+        xy = 3,10
+        BlocksPlacement = 
+        CustomName = Table Dirty
+        Facing = S
+        GroupName = Morgue
+        PickUpWeight = 300
+        SpriteGridPos = 0,0
+        solidtrans = 
+    }
+}

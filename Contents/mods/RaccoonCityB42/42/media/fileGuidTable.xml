@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fileGuidTable>
+	<files>
+		<path>media/clothing/clothingItems/ResidentEvilBackPack.xml</path>
+		<guid>95bb97f6-d308-42b0-8b95-ef66f93b2ee1</guid>
+	</files>
+	<files>
+		<path>media/clothing/clothingItems/ResidentEvilBackPack_LHand.xml</path>
+		<guid>347ee3bf-688f-43ff-a2a7-a2876b621781</guid>
+	</files>
+	<files>
+		<path>media/clothing/clothingItems/ResidentEvilBackPack_RHand.xml</path>
+		<guid>ed7e4b00-6f1b-4d02-b774-c074215a0a31</guid>
+	</files>
+</fileGuidTable>
