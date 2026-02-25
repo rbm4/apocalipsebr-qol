@@ -1012,11 +1012,176 @@ public class ConvertMap {
         if (!xmlFile.exists()) return;
         System.out.println("Generating worldmap.xml.bin (bypasses buggy game XML parser)...");
 
-        // Parse the XML
         List<String> lines = Files.readAllLines(xmlFile.toPath(), StandardCharsets.UTF_8);
-        List<WMCell> cells = parseWorldMapXml(lines);
+        List<WMCell> xmlCells = parseWorldMapXml(lines);
+        writeWorldMapBin(xmlCells, new File(outputDir, "worldmap.xml.bin"));
+    }
 
-        // Build string table (collect all unique strings)
+    // Also generate for worldmap-forest.xml if present
+    void generateForestMapBin() throws IOException {
+        File xmlFile = new File(outputDir, "worldmap-forest.xml");
+        if (!xmlFile.exists()) return;
+        System.out.println("Generating worldmap-forest.xml.bin...");
+
+        List<String> lines = Files.readAllLines(xmlFile.toPath(), StandardCharsets.UTF_8);
+        List<WMCell> xmlCells = parseWorldMapXml(lines);
+        writeWorldMapBin(xmlCells, new File(outputDir, "worldmap-forest.xml.bin"));
+    }
+
+    /**
+     * Remap features from 300-unit cell coordinates to 256-unit cell coordinates,
+     * then write the IGMB v2 binary.
+     *
+     * Matches the game's POTWorldMapData exactly:
+     * - For each feature, compute its bounding box in world coords
+     * - getMinSquareX/Y = cell.x*300 + geometry.minX/Y
+     * - getMaxSquareX/Y = cell.x*300 + geometry.maxX/Y
+     * - Assign to ALL 256-cells the bbox overlaps: minSquare/256 .. maxSquare/256
+     *   (Java integer division — truncation toward zero — works for positive coords)
+     * - Convert coordinates to 256-cell-relative: worldCoord - newCell*256
+     *
+     * Reference: zombie.pot.POTWorldMapData.addFeature() + convertFeature() + saveBIN()
+     */
+    void writeWorldMapBin(List<WMCell> xmlCells, File binFile) throws IOException {
+        // Step 1: Convert all 300-unit features to 256-unit cells.
+        //         Each feature is duplicated to ALL 256-cells its bounding box
+        //         overlaps, matching the game's POTWorldMapData.addFeature().
+        Map<Long, WMCell> newCellMap = new LinkedHashMap<>();
+        int totalFeatures = 0;
+        int totalCopies = 0;
+
+        for (WMCell oldCell : xmlCells) {
+            for (WMFeature feat : oldCell.features) {
+                totalFeatures++;
+
+                // Compute bounding box in world coords (matching game's getMinSquareX/Y)
+                // Game uses: cell.x * 300 + geometry.minX (where geometry.minX is min
+                // of all points across all coordinate blocks)
+                int minWX = Integer.MAX_VALUE, minWY = Integer.MAX_VALUE;
+                int maxWX = Integer.MIN_VALUE, maxWY = Integer.MIN_VALUE;
+                for (List<short[]> block : feat.coordBlocks) {
+                    for (short[] pt : block) {
+                        int wx = oldCell.x * 300 + pt[0];
+                        int wy = oldCell.y * 300 + pt[1];
+                        minWX = Math.min(minWX, wx); maxWX = Math.max(maxWX, wx);
+                        minWY = Math.min(minWY, wy); maxWY = Math.max(maxWY, wy);
+                    }
+                }
+
+                if (minWX == Integer.MAX_VALUE) {
+                    // Feature with no points — use cell center
+                    minWX = maxWX = oldCell.x * 300 + 150;
+                    minWY = maxWY = oldCell.y * 300 + 150;
+                }
+
+                // Game uses Java integer division (truncation toward zero):
+                //   int minCellX = getMinSquareX(feature) / 256;
+                // For positive coordinates (which map data always has), this is
+                // identical to Math.floorDiv.
+                int minCellX = minWX / 256;
+                int minCellY = minWY / 256;
+                int maxCellX = maxWX / 256;
+                int maxCellY = maxWY / 256;
+
+                // Duplicate feature to each overlapping cell
+                for (int cy = minCellY; cy <= maxCellY; cy++) {
+                    for (int cx = minCellX; cx <= maxCellX; cx++) {
+                        long key = ((long) cx << 32) | (cy & 0xFFFFFFFFL);
+
+                        WMCell newCell = newCellMap.computeIfAbsent(key, k -> {
+                            WMCell c = new WMCell();
+                            c.x = (int)(k >> 32);
+                            c.y = (int)(k & 0xFFFFFFFFL);
+                            return c;
+                        });
+
+                        // Create copy with coordinates relative to THIS 256-cell
+                        // (matching game's POTWorldMapData.convertFeature:
+                        //   newX = oldCell.x*300 + oldPt - newCell.x*256)
+                        WMFeature newFeat = new WMFeature();
+                        newFeat.geometryType = feat.geometryType;
+                        newFeat.properties = feat.properties;
+
+                        for (List<short[]> block : feat.coordBlocks) {
+                            List<short[]> newBlock = new ArrayList<>(block.size());
+                            for (short[] pt : block) {
+                                int worldX = oldCell.x * 300 + pt[0];
+                                int worldY = oldCell.y * 300 + pt[1];
+                                int relX = worldX - cx * 256;
+                                int relY = worldY - cy * 256;
+                                newBlock.add(new short[]{ (short) relX, (short) relY });
+                            }
+                            newFeat.coordBlocks.add(newBlock);
+                        }
+
+                        newCell.features.add(newFeat);
+                        totalCopies++;
+                    }
+                }
+            }
+        }
+
+        // Step 1b: Cap features per cell to avoid game bug.
+        // The game's WorldMapGeometry.triangulate() does:
+        //   this.firstIndex = (short)indexBuffer.position();
+        // which overflows for cells with >~30K total triangle indices, causing
+        // IndexOutOfBoundsException in fillPolygon.
+        // Estimated index cost per feature:
+        //   highway: 7 passes * 3*(numPoints-2) = 21*(numPoints-2)
+        //   non-highway: 1 pass * 3*(numPoints-2)
+        // We cap at MAX_INDICES = 30000 per cell (under 32767 with headroom).
+        final int MAX_INDICES = 30000;
+        int totalDropped = 0;
+        for (WMCell cell : newCellMap.values()) {
+            // Estimate total index cost for this cell
+            int estIndices = 0;
+            for (WMFeature f : cell.features) {
+                int pts = 0;
+                for (List<short[]> b : f.coordBlocks) pts += b.size();
+                boolean isHighway = false;
+                for (String[] kv : f.properties) {
+                    if ("highway".equals(kv[0])) { isHighway = true; break; }
+                }
+                int tri = Math.max(pts - 2, 1) * 3;
+                estIndices += isHighway ? tri * 7 : tri;
+            }
+
+            if (estIndices > MAX_INDICES) {
+                // Sort features by priority (highest first) then by index cost (lowest first)
+                // Priority: water=100, highway-primary=90, highway-secondary=80,
+                //           building=60, highway-tertiary=70, railway=50,
+                //           highway-trail=40, natural=10, other=30
+                cell.features.sort((a, b) -> {
+                    int pa = featurePriority(a), pb = featurePriority(b);
+                    if (pa != pb) return pb - pa; // higher priority first
+                    int ca = featureIndexCost(a), cb = featureIndexCost(b);
+                    return ca - cb; // lower cost first (keep cheap features)
+                });
+
+                // Keep features until we'd exceed the budget
+                int budget = 0;
+                int keep = 0;
+                for (int i = 0; i < cell.features.size(); i++) {
+                    int cost = featureIndexCost(cell.features.get(i));
+                    if (budget + cost > MAX_INDICES && keep > 0) break;
+                    budget += cost;
+                    keep++;
+                }
+                int dropped = cell.features.size() - keep;
+                if (dropped > 0) {
+                    System.out.println("  WARNING: Cell(" + cell.x + "," + cell.y + "): " +
+                            cell.features.size() + " features (~" + estIndices + " indices) exceeds limit. " +
+                            "Keeping " + keep + ", dropping " + dropped + " low-priority features.");
+                    cell.features.subList(keep, cell.features.size()).clear();
+                    totalDropped += dropped;
+                    totalCopies -= dropped;
+                }
+            }
+        }
+
+        List<WMCell> cells = new ArrayList<>(newCellMap.values());
+
+        // Step 2: Build string table
         LinkedHashMap<String, Integer> stringTable = new LinkedHashMap<>();
         for (WMCell cell : cells) {
             for (WMFeature feat : cell.features) {
@@ -1028,7 +1193,7 @@ public class ConvertMap {
             }
         }
 
-        // Determine grid bounds
+        // Step 3: Determine grid bounds (in 256-unit cell coordinates)
         int minCX = Integer.MAX_VALUE, maxCX = Integer.MIN_VALUE;
         int minCY = Integer.MAX_VALUE, maxCY = Integer.MIN_VALUE;
         for (WMCell c : cells) {
@@ -1038,25 +1203,22 @@ public class ConvertMap {
         int gridW = maxCX - minCX + 1;
         int gridH = maxCY - minCY + 1;
 
-        // Index cells by grid position
-        Map<Long, WMCell> cellMap = new HashMap<>();
+        Map<Long, WMCell> gridMap = new HashMap<>();
         for (WMCell c : cells) {
-            cellMap.put((long)(c.x - minCX) + (long)(c.y - minCY) * 10000L, c);
+            gridMap.put((long)(c.x - minCX) + (long)(c.y - minCY) * 10000L, c);
         }
 
-        // Write binary
-        File binFile = new File(outputDir, "worldmap.xml.bin");
+        // Step 4: Write binary (matching game's POTWorldMapData.saveBIN format)
         try (DataOutputStream dos = new DataOutputStream(
                 new BufferedOutputStream(new FileOutputStream(binFile)))) {
 
-            // Magic: "IGMB"
-            dos.write(new byte[]{ 0x49, 0x47, 0x4D, 0x42 });
+            dos.write(new byte[]{ 0x49, 0x47, 0x4D, 0x42 }); // Magic: "IGMB"
             writeIntLE(dos, 2);   // version
-            writeIntLE(dos, 256); // cellSize (required=256 for v2)
+            writeIntLE(dos, 256); // cellSize
             writeIntLE(dos, gridW);
             writeIntLE(dos, gridH);
 
-            // String table
+            // String table (matching game's WriteStringUTF: short len + UTF-8 bytes)
             writeIntLE(dos, stringTable.size());
             for (String s : stringTable.keySet()) {
                 byte[] utf = s.getBytes(StandardCharsets.UTF_8);
@@ -1064,29 +1226,32 @@ public class ConvertMap {
                 dos.write(utf);
             }
 
-            // Cells grid (row-major: y then x)
+            // Cells grid (row-major: y then x, matching game's saveBIN loop)
             for (int gy = 0; gy < gridH; gy++) {
                 for (int gx = 0; gx < gridW; gx++) {
-                    WMCell cell = cellMap.get((long) gx + (long) gy * 10000L);
-                    if (cell == null) {
-                        writeIntLE(dos, -1); // empty cell marker
+                    WMCell cell = gridMap.get((long) gx + (long) gy * 10000L);
+                    if (cell == null || cell.features.isEmpty()) {
+                        // Game writes -1 for both null cells AND cells with no features
+                        writeIntLE(dos, -1);
                     } else {
                         writeIntLE(dos, cell.x);
                         writeIntLE(dos, cell.y);
                         writeIntLE(dos, cell.features.size());
                         for (WMFeature feat : cell.features) {
-                            // Geometry
+                            // Geometry type (string table index)
                             writeShortLE(dos, (short)(int) stringTable.get(feat.geometryType));
-                            dos.write(feat.coordBlocks.size()); // byte: numCoordinateBlocks
+                            // Number of coordinate blocks
+                            dos.write(feat.coordBlocks.size());
                             for (List<short[]> block : feat.coordBlocks) {
-                                writeShortLE(dos, (short) block.size()); // numPoints
+                                // Number of points in this block
+                                writeShortLE(dos, (short) block.size());
                                 for (short[] pt : block) {
-                                    writeShortLE(dos, pt[0]); // x
-                                    writeShortLE(dos, pt[1]); // y
+                                    writeShortLE(dos, pt[0]); // x (256-cell-relative)
+                                    writeShortLE(dos, pt[1]); // y (256-cell-relative)
                                 }
                             }
-                            // Properties
-                            dos.write(feat.properties.size()); // byte: numProperties
+                            // Properties (key-value pairs as string table indices)
+                            dos.write(feat.properties.size());
                             for (String[] kv : feat.properties) {
                                 writeShortLE(dos, (short)(int) stringTable.get(kv[0]));
                                 writeShortLE(dos, (short)(int) stringTable.get(kv[1]));
@@ -1099,87 +1264,12 @@ public class ConvertMap {
 
         long size = binFile.length();
         System.out.println("  Generated " + binFile.getName() + " (" + size + " bytes, " +
-                cells.size() + " cells, " + stringTable.size() + " strings)");
-    }
-
-    // Also generate for worldmap-forest.xml if present
-    void generateForestMapBin() throws IOException {
-        File xmlFile = new File(outputDir, "worldmap-forest.xml");
-        if (!xmlFile.exists()) return;
-        System.out.println("Generating worldmap-forest.xml.bin...");
-
-        List<String> lines = Files.readAllLines(xmlFile.toPath(), StandardCharsets.UTF_8);
-        List<WMCell> cells = parseWorldMapXml(lines);
-
-        LinkedHashMap<String, Integer> stringTable = new LinkedHashMap<>();
-        for (WMCell cell : cells) {
-            for (WMFeature feat : cell.features) {
-                internString(stringTable, feat.geometryType);
-                for (String[] kv : feat.properties) {
-                    internString(stringTable, kv[0]);
-                    internString(stringTable, kv[1]);
-                }
-            }
-        }
-
-        int minCX = Integer.MAX_VALUE, maxCX = Integer.MIN_VALUE;
-        int minCY = Integer.MAX_VALUE, maxCY = Integer.MIN_VALUE;
-        for (WMCell c : cells) {
-            minCX = Math.min(minCX, c.x); maxCX = Math.max(maxCX, c.x);
-            minCY = Math.min(minCY, c.y); maxCY = Math.max(maxCY, c.y);
-        }
-        int gridW = maxCX - minCX + 1;
-        int gridH = maxCY - minCY + 1;
-        Map<Long, WMCell> cellMap = new HashMap<>();
-        for (WMCell c : cells) {
-            cellMap.put((long)(c.x - minCX) + (long)(c.y - minCY) * 10000L, c);
-        }
-
-        File binFile = new File(outputDir, "worldmap-forest.xml.bin");
-        try (DataOutputStream dos = new DataOutputStream(
-                new BufferedOutputStream(new FileOutputStream(binFile)))) {
-            dos.write(new byte[]{ 0x49, 0x47, 0x4D, 0x42 });
-            writeIntLE(dos, 2);
-            writeIntLE(dos, 256);
-            writeIntLE(dos, gridW);
-            writeIntLE(dos, gridH);
-            writeIntLE(dos, stringTable.size());
-            for (String s : stringTable.keySet()) {
-                byte[] utf = s.getBytes(StandardCharsets.UTF_8);
-                writeShortLE(dos, (short) utf.length);
-                dos.write(utf);
-            }
-            for (int gy = 0; gy < gridH; gy++) {
-                for (int gx = 0; gx < gridW; gx++) {
-                    WMCell cell = cellMap.get((long) gx + (long) gy * 10000L);
-                    if (cell == null) {
-                        writeIntLE(dos, -1);
-                    } else {
-                        writeIntLE(dos, cell.x);
-                        writeIntLE(dos, cell.y);
-                        writeIntLE(dos, cell.features.size());
-                        for (WMFeature feat : cell.features) {
-                            writeShortLE(dos, (short)(int) stringTable.get(feat.geometryType));
-                            dos.write(feat.coordBlocks.size());
-                            for (List<short[]> block : feat.coordBlocks) {
-                                writeShortLE(dos, (short) block.size());
-                                for (short[] pt : block) {
-                                    writeShortLE(dos, pt[0]);
-                                    writeShortLE(dos, pt[1]);
-                                }
-                            }
-                            dos.write(feat.properties.size());
-                            for (String[] kv : feat.properties) {
-                                writeShortLE(dos, (short)(int) stringTable.get(kv[0]));
-                                writeShortLE(dos, (short)(int) stringTable.get(kv[1]));
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        long size = binFile.length();
-        System.out.println("  Generated " + binFile.getName() + " (" + size + " bytes)");
+                cells.size() + " cells [remapped 300→256, bbox duplication], " +
+                totalFeatures + " unique features → " + totalCopies + " copies" +
+                (totalDropped > 0 ? " (" + totalDropped + " dropped for density)" : "") +
+                ", " + stringTable.size() + " strings)");
+        System.out.println("  Grid: " + gridW + "x" + gridH + " cells [" +
+                minCX + "," + minCY + " to " + maxCX + "," + maxCY + "]");
     }
 
     // ── XML worldmap parser ──
@@ -1264,6 +1354,44 @@ public class ConvertMap {
         if (!table.containsKey(s)) {
             table.put(s, table.size());
         }
+    }
+
+    /** Estimate triangulation index count for a feature (matches game's triangulate). */
+    static int featureIndexCost(WMFeature f) {
+        int pts = 0;
+        for (List<short[]> b : f.coordBlocks) pts += b.size();
+        boolean isHighway = false;
+        for (String[] kv : f.properties) {
+            if ("highway".equals(kv[0])) { isHighway = true; break; }
+        }
+        int tri = Math.max(pts - 2, 1) * 3;
+        return isHighway ? tri * 7 : tri; // highway gets 7 pass (base + 6 delta)
+    }
+
+    /** Priority score for feature type (higher = keep first). */
+    static int featurePriority(WMFeature f) {
+        String highway = null, building = null, natural = null, water = null;
+        for (String[] kv : f.properties) {
+            switch (kv[0]) {
+                case "highway": highway = kv[1]; break;
+                case "building": building = kv[1]; break;
+                case "natural": natural = kv[1]; break;
+                case "water": water = kv[1]; break;
+            }
+        }
+        if (water != null) return 100;
+        if (highway != null) {
+            switch (highway) {
+                case "primary": return 90;
+                case "secondary": return 80;
+                case "tertiary": return 70;
+                case "trail": return 40;
+                default: return 50;
+            }
+        }
+        if (building != null) return 60;
+        if (natural != null) return 10;
+        return 30;
     }
 
     static void writeIntLE(DataOutputStream dos, int v) throws IOException {
