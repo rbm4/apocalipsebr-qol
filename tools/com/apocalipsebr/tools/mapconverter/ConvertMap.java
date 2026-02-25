@@ -5,7 +5,6 @@ import java.nio.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.*;
-import java.util.regex.*;
 
 /**
  * Standalone Project Zomboid B41→B42 map converter.
