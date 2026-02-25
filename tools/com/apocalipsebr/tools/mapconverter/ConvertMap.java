@@ -19,9 +19,13 @@ import java.util.regex.*;
  * - chunkdata_X_Y.bin
  *
  * Text formats handled:
- * - objects.lua (zone coordinates)
- * - spawnpoints.lua (cell-relative spawn positions)
- * - worldmap.xml (cell-relative feature coordinates)
+ * - objects.lua (zone coordinates — copied as-is, uses absolute world coords)
+ * - spawnpoints.lua (copied as-is — uses 300-unit cell coordinate system)
+ * - worldmap.xml (copied as-is — uses 300-unit cell coordinate system)
+ *
+ * NOTE: worldmap.xml and spawnpoints.lua always use the 300-unit cell grid
+ * for positioning (absolute = cellX * 300 + point). The game resolves these
+ * with a fixed 300 multiplier regardless of binary lot cell size (256 in B42).
  */
 public class ConvertMap {
 
@@ -941,219 +945,36 @@ public class ConvertMap {
     }
 
     /**
-     * spawnpoints.lua: worldX/worldY are old B41 cell coordinates, posX/posY are cell-relative.
-     * Convert: absolute = worldX_old * 300 + posX_old
-     *          worldX_new = absolute / 256
-     *          posX_new = absolute % 256
+     * spawnpoints.lua: worldX/worldY are cell coordinates, posX/posY are cell-relative.
+     * The game resolves spawn positions using: absolute = worldX * 300 + posX.
+     * The 300-unit cell multiplier is used by the game for spawnpoints.lua regardless of
+     * whether the binary lot data uses B41 (300) or B42 (256) cell sizes.
+     * Therefore, no conversion is needed — the file is copied as-is.
+     * (Confirmed by comparing with Maplewood which has B42 binary lots at cells 31-33
+     * but spawnpoints.lua still uses 300-based cell 27,28.)
      */
     void convertSpawnPointsLua() throws IOException {
         File src = new File(inputDir, "spawnpoints.lua");
         if (!src.exists()) return;
-        System.out.println("Converting spawnpoints.lua...");
-
-        String content = Files.readString(src.toPath(), StandardCharsets.UTF_8);
-        // Match patterns like: { worldX = 22, worldY = 23, posX = 153, posY = 187, posZ = 0 }
-        Pattern p = Pattern.compile(
-            "\\{\\s*worldX\\s*=\\s*(\\d+)\\s*,\\s*worldY\\s*=\\s*(\\d+)\\s*,\\s*posX\\s*=\\s*(\\d+)\\s*,\\s*posY\\s*=\\s*(\\d+)\\s*,\\s*posZ\\s*=\\s*(\\d+)\\s*\\}"
-        );
-        Matcher m = p.matcher(content);
-        StringBuilder result = new StringBuilder();
-        while (m.find()) {
-            int wX = Integer.parseInt(m.group(1));
-            int wY = Integer.parseInt(m.group(2));
-            int pX = Integer.parseInt(m.group(3));
-            int pY = Integer.parseInt(m.group(4));
-            int pZ = Integer.parseInt(m.group(5));
-
-            int absX = wX * CELL_DIM_OLD + pX;
-            int absY = wY * CELL_DIM_OLD + pY;
-            int newWX = absX / CELL_DIM_NEW;
-            int newWY = absY / CELL_DIM_NEW;
-            int newPX = absX % CELL_DIM_NEW;
-            int newPY = absY % CELL_DIM_NEW;
-
-            m.appendReplacement(result, String.format(
-                "{ worldX = %d, worldY = %d, posX = %d, posY = %d, posZ = %d }",
-                newWX, newWY, newPX, newPY, pZ
-            ));
-        }
-        m.appendTail(result);
-        Files.writeString(new File(outputDir, "spawnpoints.lua").toPath(), result.toString(), StandardCharsets.UTF_8);
+        System.out.println("Copying spawnpoints.lua (300-unit cell coordinates, no remapping needed)...");
+        Files.copy(src.toPath(), new File(outputDir, "spawnpoints.lua").toPath(), StandardCopyOption.REPLACE_EXISTING);
     }
 
     /**
-     * worldmap.xml: cell x/y are old B41 cell coordinates, point x/y are cell-relative (0..301).
-     * Convert: absolute = cell_old * 300 + point
-     *          cell_new = absolute / 256
-     *          point_new = absolute % 256
+     * worldmap.xml: cell x/y and point x/y use the 300-unit cell coordinate system.
+     * The game resolves feature positions using: absolute = cellX * 300 + pointX.
+     * This multiplier is always 300, regardless of whether binary lot data uses
+     * B41 (300) or B42 (256) cell sizes.
+     * Therefore, no conversion is needed — the file is copied as-is.
+     * (Confirmed by comparing with Maplewood: B42 binary lots at cells 31-33,
+     * but worldmap.xml uses cell 27,28 with points 0-300, and
+     * setBoundsInSquares starts at 27*300=8100.)
      */
     void convertWorldMapXml() throws IOException {
         File src = new File(inputDir, "worldmap.xml");
         if (!src.exists()) return;
-        System.out.println("Converting worldmap.xml...");
-
-        List<String> lines = Files.readAllLines(src.toPath(), StandardCharsets.UTF_8);
-        // Track current cell coordinates
-        int currentCellX = 0, currentCellY = 0;
-
-        // We need to restructure: old cell-relative points → new cell-relative points
-        // Since features can span new cell boundaries, we parse and rebuild
-
-        // Simple approach: convert all points to absolute, then group by new cell
-        List<FeatureData> features = new ArrayList<>();
-        FeatureData currentFeature = null;
-        String currentGeomType = null;
-        List<int[]> currentPoints = null;
-        Map<String, String> currentProps = null;
-        boolean inCoords = false;
-        boolean inProps = false;
-
-        for (String line : lines) {
-            String trimmed = line.trim();
-
-            // <cell x="22" y="22">
-            Matcher cellMatch = Pattern.compile("<cell\\s+x=\"(\\d+)\"\\s+y=\"(\\d+)\"").matcher(trimmed);
-            if (cellMatch.find()) {
-                currentCellX = Integer.parseInt(cellMatch.group(1));
-                currentCellY = Integer.parseInt(cellMatch.group(2));
-                continue;
-            }
-
-            if (trimmed.equals("</cell>")) continue;
-
-            if (trimmed.equals("<feature>")) {
-                currentFeature = new FeatureData();
-                currentProps = new LinkedHashMap<>();
-                continue;
-            }
-
-            if (trimmed.equals("</feature>")) {
-                if (currentFeature != null) {
-                    currentFeature.properties = currentProps;
-                    features.add(currentFeature);
-                }
-                currentFeature = null;
-                continue;
-            }
-
-            // <geometry type="Polygon">
-            Matcher geomMatch = Pattern.compile("<geometry\\s+type=\"([^\"]+)\"").matcher(trimmed);
-            if (geomMatch.find() && currentFeature != null) {
-                currentFeature.geometryType = geomMatch.group(1);
-                continue;
-            }
-            if (trimmed.equals("</geometry>")) continue;
-
-            if (trimmed.equals("<coordinates>")) {
-                currentPoints = new ArrayList<>();
-                continue;
-            }
-            if (trimmed.equals("</coordinates>")) {
-                if (currentPoints != null && currentFeature != null) {
-                    // Convert points to absolute
-                    List<int[]> absPoints = new ArrayList<>();
-                    for (int[] pt : currentPoints) {
-                        absPoints.add(new int[]{
-                            currentCellX * CELL_DIM_OLD + pt[0],
-                            currentCellY * CELL_DIM_OLD + pt[1]
-                        });
-                    }
-                    currentFeature.pointGroups.add(absPoints);
-                }
-                currentPoints = null;
-                continue;
-            }
-
-            // <point x="0" y="0"/>
-            Matcher ptMatch = Pattern.compile("<point\\s+x=\"(-?\\d+)\"\\s+y=\"(-?\\d+)\"").matcher(trimmed);
-            if (ptMatch.find() && currentPoints != null) {
-                currentPoints.add(new int[]{
-                    Integer.parseInt(ptMatch.group(1)),
-                    Integer.parseInt(ptMatch.group(2))
-                });
-                continue;
-            }
-
-            if (trimmed.equals("<properties>") || trimmed.equals("<properties/>")) {
-                inProps = trimmed.equals("<properties>");
-                continue;
-            }
-            if (trimmed.equals("</properties>")) {
-                inProps = false;
-                continue;
-            }
-
-            // <property name="x" value="y"/>
-            if (inProps && currentProps != null) {
-                Matcher propMatch = Pattern.compile("<property\\s+name=\"([^\"]+)\"\\s+value=\"([^\"]*)\"").matcher(trimmed);
-                if (propMatch.find()) {
-                    currentProps.put(propMatch.group(1), propMatch.group(2));
-                }
-            }
-        }
-
-        // Now group features by new cell and write
-        // Each feature goes to the new cell of its first point
-        Map<Integer, List<FeatureData>> cellFeatures = new LinkedHashMap<>();
-        for (FeatureData fd : features) {
-            if (fd.pointGroups.isEmpty() || fd.pointGroups.get(0).isEmpty()) continue;
-            int[] firstPt = fd.pointGroups.get(0).get(0);
-            int newCX = firstPt[0] / CELL_DIM_NEW;
-            int newCY = firstPt[1] / CELL_DIM_NEW;
-            int key = newCX + newCY * 10000;
-            cellFeatures.computeIfAbsent(key, k -> new ArrayList<>()).add(fd);
-        }
-
-        StringBuilder xml = new StringBuilder();
-        xml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-        xml.append("<world version=\"1.0\">\n");
-
-        for (var entry : cellFeatures.entrySet()) {
-            int key = entry.getKey();
-            int newCY = key / 10000;
-            int newCX = key % 10000;
-            xml.append(" <cell x=\"").append(newCX).append("\" y=\"").append(newCY).append("\">\n");
-
-            for (FeatureData fd : entry.getValue()) {
-                if (fd.geometryType == null || fd.pointGroups.isEmpty()) continue;
-                boolean hasPoints = false;
-                for (List<int[]> pg : fd.pointGroups) { if (!pg.isEmpty()) { hasPoints = true; break; } }
-                if (!hasPoints) continue;
-                xml.append("  <feature>\n");
-                xml.append("   <geometry type=\"").append(fd.geometryType).append("\">\n");
-                for (List<int[]> pts : fd.pointGroups) {
-                    xml.append("    <coordinates>\n");
-                    for (int[] pt : pts) {
-                        int relX = pt[0] - newCX * CELL_DIM_NEW;
-                        int relY = pt[1] - newCY * CELL_DIM_NEW;
-                        xml.append("     <point x=\"").append(relX).append("\" y=\"").append(relY).append("\"/>\n");
-                    }
-                    xml.append("    </coordinates>\n");
-                }
-                xml.append("   </geometry>\n");
-                if (fd.properties == null || fd.properties.isEmpty()) {
-                    xml.append("   <properties/>\n");
-                } else {
-                    xml.append("   <properties>\n");
-                    for (var prop : fd.properties.entrySet()) {
-                        xml.append("    <property name=\"").append(prop.getKey())
-                           .append("\" value=\"").append(prop.getValue()).append("\"/>\n");
-                    }
-                    xml.append("   </properties>\n");
-                }
-                xml.append("  </feature>\n");
-            }
-            xml.append(" </cell>\n");
-        }
-        xml.append("</world>\n");
-
-        Files.writeString(new File(outputDir, "worldmap.xml").toPath(), xml.toString(), StandardCharsets.UTF_8);
-    }
-
-    static class FeatureData {
-        String geometryType;
-        List<List<int[]>> pointGroups = new ArrayList<>(); // each group is a <coordinates> block
-        Map<String, String> properties;
+        System.out.println("Copying worldmap.xml (300-unit cell coordinates, no remapping needed)...");
+        Files.copy(src.toPath(), new File(outputDir, "worldmap.xml").toPath(), StandardCopyOption.REPLACE_EXISTING);
     }
 
     /**
