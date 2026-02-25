@@ -1124,26 +1124,25 @@ public class ConvertMap {
         // Step 1b: Cap features per cell to avoid game bug.
         // The game's WorldMapGeometry.triangulate() does:
         //   this.firstIndex = (short)indexBuffer.position();
-        // which overflows for cells with >~30K total triangle indices, causing
-        // IndexOutOfBoundsException in fillPolygon.
-        // Estimated index cost per feature:
-        //   highway: 7 passes * 3*(numPoints-2) = 21*(numPoints-2)
-        //   non-highway: 1 pass * 3*(numPoints-2)
-        // We cap at MAX_INDICES = 30000 per cell (under 32767 with headroom).
-        final int MAX_INDICES = 30000;
+        // which overflows when the per-cell cumulative index count > 32767,
+        // causing IndexOutOfBoundsException in fillPolygon.
+        //
+        // Our estimate of 3*(pts-2) per polygon is a LOWER BOUND because the
+        // game's Clipper clips polygons against neighboring features which can
+        // multiply triangle count by 2-3x. We use a conservative limit of
+        // 10000 estimated indices (which maps to ~25000-30000 actual after
+        // clipping overhead), safely under the 32767 short overflow threshold.
+        //
+        // Additionally, indexCount is a short field, so per-feature counts
+        // and the indexBuffer.put((short)(firstPoint + offset)) also overflow
+        // if triangle vertices exceed 32767 per cell.
+        final int MAX_INDICES = 10000;
         int totalDropped = 0;
         for (WMCell cell : newCellMap.values()) {
             // Estimate total index cost for this cell
             int estIndices = 0;
             for (WMFeature f : cell.features) {
-                int pts = 0;
-                for (List<short[]> b : f.coordBlocks) pts += b.size();
-                boolean isHighway = false;
-                for (String[] kv : f.properties) {
-                    if ("highway".equals(kv[0])) { isHighway = true; break; }
-                }
-                int tri = Math.max(pts - 2, 1) * 3;
-                estIndices += isHighway ? tri * 7 : tri;
+                estIndices += featureIndexCost(f);
             }
 
             if (estIndices > MAX_INDICES) {
