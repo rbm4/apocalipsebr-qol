@@ -1,4 +1,4 @@
-package tools.com.apocalipsebr.tools.mapconverter;
+package com.apocalipsebr.tools.mapconverter;
 
 import java.io.*;
 import java.nio.*;

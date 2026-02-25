@@ -1374,9 +1374,9 @@
     <ChannelEntry ID="87634aeb-9a7d-4b68-b790-9a58e04a61a0" name="Trelai HQ Radio" cat="Radio" freq="101000" startscript="init_infection">
       <ScriptEntry ID="b2f553a0-f6a2-4f4b-9304-83f8ca551bc9" name="main" startdelay="0" timestampmode="Static" loopmin="365" loopmax="365">
         <ExitOptions>
-          <ExitOption chance="50" script="followup A" delay="10" />
-          <ExitOption chance="50" script="Followup B" delay="0" />
-          <ExitOption chance="100" script="main" delay="1" />
+          <ExitOption chance="25" script="followup A" delay="10" />
+          <ExitOption chance="25" script="Followup B" delay="0" />
+          <ExitOption chance="50" script="main" delay="1" />
           <ExitOption chance="0" script="main" delay="0" />
         </ExitOptions>
         <BroadcastEntry ID="5cf11fb6-62a5-4c4a-a682-59ced8c2e4ff" timestamp="0" endstamp="90" type="ActivateBroadcast" day="0" advertCat="none" isSegment="false">
@@ -1438,11 +1438,8 @@
       </ScriptEntry>
       <ScriptEntry ID="14c60f63-1ef6-42ac-83df-c98a237ab04d" name="init_infection" startdelay="0" timestampmode="Static" loopmin="1" loopmax="1">
         <ExitOptions>
-          <ExitOption chance="100" script="static" delay="15" />
-          <ExitOption chance="100" script="followup A" delay="0" />
-          <ExitOption chance="10" script="Followup B" delay="0" />
-          <ExitOption chance="0" script="init_infection" delay="0" />
-          <ExitOption chance="0" script="init_infection" delay="0" />
+          <ExitOption chance="85" script="main" delay="0" />
+          <ExitOption chance="15" script="static" delay="15" />
         </ExitOptions>
         <BroadcastEntry ID="e9c39321-ef37-4110-a5f4-0b7499a0d380" timestamp="0" endstamp="30" type="ActivateBroadcast" day="0" advertCat="none" isSegment="false" />
         <BroadcastEntry ID="a3b38832-35c5-4865-adf9-df03c05f6941" timestamp="30" endstamp="60" type="ActivateBroadcast" day="0" advertCat="none" isSegment="false" />
@@ -3100,14 +3097,14 @@
           <LineEntry ID="6b3d8f55-43ae-49af-9d89-db81dd8b2595" r="0" g="128" b="64">This is your 6am Automated, Wake-up Call From us at Trelai HQ.</LineEntry>
           <LineEntry ID="aa1a9005-344b-494e-9a83-d8212919e7d9" r="0" g="128" b="64">Have a splendid day.</LineEntry>
         </BroadcastEntry>
-        <BroadcastEntry ID="0612597c-1ac9-4128-8219-2788a3729701" timestamp="14790" endstamp="14790" type="ActivateBroadcast" day="10" advertCat="c1d62d2d-af2a-4b20-8e40-a142e783a4b2" isSegment="false">
+        <BroadcastEntry ID="0612597c-1ac9-4128-8219-2788a3729701" timestamp="14790" endstamp="14820" type="ActivateBroadcast" day="10" advertCat="c1d62d2d-af2a-4b20-8e40-a142e783a4b2" isSegment="false">
           <LineEntry ID="5605449a-a4e1-4d01-8a43-9271c61def52" r="128" g="128" b="255">"Coming up next on Trelai TV, we have a full schedule of exciting programming.  Stay tuned for a special episode of 'Trelai's Hidden Gems' And.. </LineEntry>
           <LineEntry ID="ff2f48ae-7c12-4ac4-9acc-523e3b70ddda" r="128" g="128" b="255">After that, it's time for 'Cooking with Chef Carlos' as he shows us how to make some mouth-watering dishes using local produce as usual.</LineEntry>
           <LineEntry ID="820fb43a-fad1-4158-af2e-72997819ee3a" r="128" g="128" b="255">And last but not least, we have a thrilling episode of 'The Town,' where we follow the brave men and women of the town's emergency services as they go about their daily duties. So stay tuned for all this and more, only on Trelai TV!"</LineEntry>
           <LineEntry ID="096897ac-9189-444a-b427-bd60f9928b44" r="128" g="128" b="255">&lt;broadcast signal weak&gt;</LineEntry>
           <LineEntry ID="8848a95e-c725-41eb-afee-0761286f4d0a" r="128" g="128" b="255">&lt;Mast Damage&gt;</LineEntry>
         </BroadcastEntry>
-        <BroadcastEntry ID="df1152a6-8b14-48f4-bc14-a1916b2632e5" timestamp="14790" endstamp="14820" type="ActivateBroadcast" day="10" advertCat="c1d62d2d-af2a-4b20-8e40-a142e783a4b2" isSegment="false">
+        <BroadcastEntry ID="df1152a6-8b14-48f4-bc14-a1916b2632e5" timestamp="14820" endstamp="14850" type="ActivateBroadcast" day="10" advertCat="c1d62d2d-af2a-4b20-8e40-a142e783a4b2" isSegment="false">
           <LineEntry ID="6ecbd5b2-122a-4fa3-9174-edec36107db1" r="128" g="128" b="255">Coming up Next on Trelai Tv</LineEntry>
           <LineEntry ID="d3837c1a-c4b9-43e7-a6dc-905799018edd" r="128" g="128" b="255">EP 10 - Cooking With Carlos, This was a Live Show</LineEntry>
           <LineEntry ID="e0048c66-4d91-4009-aff9-369d14293cad" r="0" g="128" b="64">HELLO AGAIN ALL,WE'RE ALL UNDER THE WEATHER A LITTLE BIT TODAY</LineEntry>
@@ -3122,21 +3119,21 @@
           <LineEntry ID="f51782f9-a733-439c-a386-b7ee3413197d" r="0" g="128" b="64">I NEED A BREAK, TURN OFF THE CAMERAS.</LineEntry>
           <LineEntry ID="6bfc568a-f96a-470f-8c21-53df9131ec29" r="0" g="128" b="64">&lt;End of Recording&gt;</LineEntry>
         </BroadcastEntry>
-        <BroadcastEntry ID="f1cf2392-19ac-490e-9615-5d4dc175bf91" timestamp="14820" endstamp="14850" type="ActivateBroadcast" day="10" advertCat="c0633947-541a-4e5c-a849-0f9f8fbe6ffb" isSegment="false">
+        <BroadcastEntry ID="f1cf2392-19ac-490e-9615-5d4dc175bf91" timestamp="14850" endstamp="14880" type="ActivateBroadcast" day="10" advertCat="c0633947-541a-4e5c-a849-0f9f8fbe6ffb" isSegment="false">
           <LineEntry ID="c357b619-500f-426d-b5b0-de9c0f85a15d" r="255" g="128" b="64" codes="PAN-1">* Testing *</LineEntry>
           <LineEntry ID="604e27d4-ba2b-423b-a08e-c80222ffce7a" r="255" g="128" b="64">***</LineEntry>
           <LineEntry ID="cb4d07f7-9cd7-49f2-9832-3260d97fe0c6" r="255" g="128" b="64" codes="PAN-1">*** Hello ***</LineEntry>
           <LineEntry ID="90c4275d-6ca9-4ffa-be0f-46683cbc3965" r="255" g="128" b="64">****</LineEntry>
         </BroadcastEntry>
-        <BroadcastEntry ID="33d31447-d052-43b1-a33c-9da08b2b9023" timestamp="14850" endstamp="14850" type="ActivateBroadcast" day="10" advertCat="df6df74d-63da-47d2-af8e-8e0e1d1c0194" isSegment="false">
+        <!-- <BroadcastEntry ID="33d31447-d052-43b1-a33c-9da08b2b9023" timestamp="14850" endstamp="14850" type="ActivateBroadcast" day="10" advertCat="df6df74d-63da-47d2-af8e-8e0e1d1c0194" isSegment="false">
           <LineEntry ID="f9388404-e8b5-482e-a080-bc5acd7c2d87" r="128" g="128" b="64">[ Morning Slot ]</LineEntry>
           <LineEntry ID="b4023aaf-784e-4a4b-85ea-b358b3a5ff43" r="128" g="128" b="255">&lt;signal error&gt;</LineEntry>
           <LineEntry ID="f61b447f-06d9-431f-89b4-3cb531b0b592" r="128" g="128" b="255">&lt;Trelai HQ Mast Damaged&gt;</LineEntry>
           <LineEntry ID="7120b123-fe1c-4ed6-b7a0-065b9d79f348" r="128" g="128" b="255">&lt;signal error&gt;</LineEntry>
           <LineEntry ID="1e504bab-269e-447d-82cc-31374d9b1691" r="128" g="128" b="255">&lt;Day 10&gt;</LineEntry>
           <LineEntry ID="da68cde3-2b3f-4126-a7dd-b7de4c4ede7c" r="128" g="128" b="255">&lt;broadcast signal weak&gt;</LineEntry>
-        </BroadcastEntry>
-        <BroadcastEntry ID="b538817d-60cc-4fe5-aba6-ca2237674701" timestamp="14850" endstamp="15210" type="ActivateBroadcast" day="10" advertCat="ce253bb7-0744-4aa3-aa03-63906571e4ab" isSegment="false">
+        </BroadcastEntry> -->
+        <BroadcastEntry ID="b538817d-60cc-4fe5-aba6-ca2237674701" timestamp="14880" endstamp="15210" type="ActivateBroadcast" day="10" advertCat="ce253bb7-0744-4aa3-aa03-63906571e4ab" isSegment="false">
           <LineEntry ID="50fd5a0a-0f87-4973-9517-07c5ed69f546" r="128" g="128" b="255" codes="STS-1,BOR-1">Next on Trelai TV, Trelai's Hidden Gems.</LineEntry>
           <LineEntry ID="7bf5dee8-e213-458c-8e83-edcfbf1e9c17" r="128" g="128" b="255" codes="STS-1,BOR-1">"Good evening,  Are you ready to see the best weapons the town has to offer? Today, we're showcasing Trelai's finest weapons. From firearms to blades, we've got it all. Let's take a look!"</LineEntry>
           <LineEntry ID="fd5f60bc-968e-47ba-9b2b-893521471a32" r="128" g="128" b="64" codes="STS-1">(Cut to footage of a gun store in Trelai, with the owner showing off his collection of firearms.)</LineEntry>
