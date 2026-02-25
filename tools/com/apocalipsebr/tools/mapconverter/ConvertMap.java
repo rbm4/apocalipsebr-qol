@@ -702,6 +702,8 @@ public class ConvertMap {
     String inputDir, outputDir;
     int minX = Integer.MAX_VALUE, minY = Integer.MAX_VALUE;
     int maxX = Integer.MIN_VALUE, maxY = Integer.MIN_VALUE;
+    // New B42 cell range (computed from old cell range in readFileNames)
+    int newMinCellX, newMaxCellX, newMinCellY, newMaxCellY;
     final Map<Integer, File> lotHeaderFiles = new HashMap<>();
     final Map<Integer, File> lotPackFiles = new HashMap<>();
     final Map<Integer, File> chunkDataFiles = new HashMap<>();
@@ -745,10 +747,22 @@ public class ConvertMap {
             }
         }
 
+        // Compute new B42 cell range from old B41 cell range
+        // Old cells cover squares [minX*300 .. (maxX+1)*300-1]
+        // New cells must cover that entire range at 256-unit granularity
+        newMinCellX = (minX * CELL_DIM_OLD) / CELL_DIM_NEW;
+        newMaxCellX = ((maxX + 1) * CELL_DIM_OLD - 1) / CELL_DIM_NEW;
+        newMinCellY = (minY * CELL_DIM_OLD) / CELL_DIM_NEW;
+        newMaxCellY = ((maxY + 1) * CELL_DIM_OLD - 1) / CELL_DIM_NEW;
+
         System.out.println("Found cells: X[" + minX + ".." + maxX + "] Y[" + minY + ".." + maxY + "]");
         System.out.println("  " + lotHeaderFiles.size() + " .lotheader files");
         System.out.println("  " + lotPackFiles.size() + " .lotpack files");
         System.out.println("  " + chunkDataFiles.size() + " chunkdata files");
+        System.out.println("  Old square range: [" + (minX * CELL_DIM_OLD) + ".." + ((maxX + 1) * CELL_DIM_OLD - 1) + "] x [" + (minY * CELL_DIM_OLD) + ".." + ((maxY + 1) * CELL_DIM_OLD - 1) + "]");
+        System.out.println("  New cell range: X[" + newMinCellX + ".." + newMaxCellX + "] Y[" + newMinCellY + ".." + newMaxCellY + "]");
+        int totalNewCells = (newMaxCellX - newMinCellX + 1) * (newMaxCellY - newMinCellY + 1);
+        System.out.println("  Total new cells: " + totalNewCells + " (" + (newMaxCellX - newMinCellX + 1) + "x" + (newMaxCellY - newMinCellY + 1) + ")");
     }
 
     LotHeaderData getOldLotHeader(int cellX, int cellY) throws IOException {
@@ -814,9 +828,9 @@ public class ConvertMap {
 
     void convertLotHeaders() throws IOException {
         System.out.println("Converting lot headers...");
-        for (int y = minY * CELL_DIM_OLD; y < (maxY + 1) * CELL_DIM_OLD; y += CELL_DIM_NEW) {
-            for (int x = minX * CELL_DIM_OLD; x <= (maxX + 1) * CELL_DIM_OLD; x += CELL_DIM_NEW) {
-                convertLotHeader(x / CELL_DIM_NEW, y / CELL_DIM_NEW);
+        for (int newCellY = newMinCellY; newCellY <= newMaxCellY; newCellY++) {
+            for (int newCellX = newMinCellX; newCellX <= newMaxCellX; newCellX++) {
+                convertLotHeader(newCellX, newCellY);
             }
         }
     }
@@ -845,8 +859,10 @@ public class ConvertMap {
                     for (int lx = 0; lx < CELL_DIM_NEW; lx++) {
                         int absX = newCellX * CELL_DIM_NEW + lx;
                         int absY = newCellY * CELL_DIM_NEW + ly;
-                        zombieDensityPerSquare[lx + ly * CELL_DIM_NEW] =
-                            oldHdr.getZombieDensityForSquare(absX, absY);
+                        if (oldHdr.containsSquare(absX, absY)) {
+                            zombieDensityPerSquare[lx + ly * CELL_DIM_NEW] =
+                                oldHdr.getZombieDensityForSquare(absX, absY);
+                        }
                     }
                 }
             }
@@ -858,22 +874,9 @@ public class ConvertMap {
 
     void convertLotPacks() throws IOException {
         System.out.println("Converting lot packs...");
-        for (int y = minY * CELL_DIM_OLD; y < (maxY + 1) * CELL_DIM_OLD; y += CELL_DIM_NEW) {
-            for (int x = minX * CELL_DIM_OLD; x < (maxX + 1) * CELL_DIM_OLD; x += CELL_DIM_NEW) {
-                int newCellX = x / CELL_DIM_NEW;
-                int newCellY = y / CELL_DIM_NEW;
+        for (int newCellY = newMinCellY; newCellY <= newMaxCellY; newCellY++) {
+            for (int newCellX = newMinCellX; newCellX <= newMaxCellX; newCellX++) {
                 convertLotPack(newCellX, newCellY);
-
-                // Free old cells no longer needed
-                int oldCellX = x / CELL_DIM_OLD - 1;
-                for (int y2 = minY; y2 <= maxY; y2++) {
-                    for (int x2 = minX; x2 <= maxX; x2++) {
-                        if (x2 == oldCellX && y2 == y / CELL_DIM_OLD) continue;
-                        int key = x2 + y2 * 1000;
-                        oldLotPacks.remove(key);
-                        oldLotHeaders.remove(key);
-                    }
-                }
             }
         }
     }
@@ -912,10 +915,8 @@ public class ConvertMap {
 
     void convertChunkDatas() throws IOException {
         System.out.println("Converting chunk data...");
-        for (int y = minY * CELL_DIM_OLD; y < (maxY + 1) * CELL_DIM_OLD; y += CELL_DIM_NEW) {
-            for (int x = minX * CELL_DIM_OLD; x < (maxX + 1) * CELL_DIM_OLD; x += CELL_DIM_NEW) {
-                int newCellX = x / CELL_DIM_NEW;
-                int newCellY = y / CELL_DIM_NEW;
+        for (int newCellY = newMinCellY; newCellY <= newMaxCellY; newCellY++) {
+            for (int newCellX = newMinCellX; newCellX <= newMaxCellX; newCellX++) {
                 convertChunkData(newCellX, newCellY);
             }
         }
