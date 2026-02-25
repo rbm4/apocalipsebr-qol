@@ -5,6 +5,7 @@ import java.nio.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.*;
+import java.util.regex.*;
 
 /**
  * Standalone Project Zomboid B41→B42 map converter.
@@ -21,10 +22,12 @@ import java.util.*;
  * - objects.lua (zone coordinates — copied as-is, uses absolute world coords)
  * - spawnpoints.lua (copied as-is — uses 300-unit cell coordinate system)
  * - worldmap.xml (copied as-is — uses 300-unit cell coordinate system)
+ * - worldmap.xml.bin (GENERATED from XML — bypasses buggy game XML parser)
  *
- * NOTE: worldmap.xml and spawnpoints.lua always use the 300-unit cell grid
- * for positioning (absolute = cellX * 300 + point). The game resolves these
- * with a fixed 300 multiplier regardless of binary lot cell size (256 in B42).
+ * NOTE: The game's WorldMapXML parser has a bug where it sets
+ * pointCount = numShorts (2*numPoints) instead of pointCount = numPoints.
+ * The binary reader (WorldMapBinary) does it correctly. By generating the
+ * .bin file, we ensure the game uses the correct binary reader.
  */
 public class ConvertMap {
 
@@ -976,6 +979,318 @@ public class ConvertMap {
         Files.copy(src.toPath(), new File(outputDir, "worldmap.xml").toPath(), StandardCopyOption.REPLACE_EXISTING);
     }
 
+    // =================== worldmap.xml.bin Generator ====================
+
+    /**
+     * Generate worldmap.xml.bin from worldmap.xml.
+     *
+     * The game's WorldMapXML parser has a bug: in parseGeometryCoordinates(),
+     * it calls setPoints((short)firstPoint, (short)(lastPoint - firstPoint))
+     * which stores numShorts (= numPoints * 2) as pointCount. But getX(i)
+     * does pointBuffer.get(firstPoint + i * 2) and numPoints() returns
+     * pointCount, so calculateBounds() iterates 2*N times with stride 2,
+     * accessing firstPoint + (2N-1)*2 = firstPoint + 4N-2, way past the
+     * N*2 shorts stored. Result: IndexOutOfBoundsException on the last
+     * feature, garbage bounds/triangulation on all others.
+     *
+     * The binary reader (WorldMapBinary) correctly stores numPoints as
+     * pointCount. By generating the .bin file, the game's asset manager
+     * prefers it over the .xml, completely bypassing the buggy XML parser.
+     *
+     * Binary format (IGMB version 2):
+     *   Header: magic "IGMB", int version=2, int cellSize=256, int width, int height
+     *   String table: int numStrings, then (short len + UTF-8 bytes) per string
+     *   Cells: width*height entries, each starting with int cellX (-1 = empty)
+     *          then int cellY, int numFeatures, and feature data
+     *   Feature: geometry (string type, byte numCoordBlocks, per-block:
+     *            short numPoints, short x, short y per point) +
+     *            properties (byte numProps, per-prop: string name, string value)
+     *   Strings referenced by short index into the string table.
+     */
+    void generateWorldMapBin() throws IOException {
+        File xmlFile = new File(outputDir, "worldmap.xml");
+        if (!xmlFile.exists()) return;
+        System.out.println("Generating worldmap.xml.bin (bypasses buggy game XML parser)...");
+
+        // Parse the XML
+        List<String> lines = Files.readAllLines(xmlFile.toPath(), StandardCharsets.UTF_8);
+        List<WMCell> cells = parseWorldMapXml(lines);
+
+        // Build string table (collect all unique strings)
+        LinkedHashMap<String, Integer> stringTable = new LinkedHashMap<>();
+        for (WMCell cell : cells) {
+            for (WMFeature feat : cell.features) {
+                internString(stringTable, feat.geometryType);
+                for (String[] kv : feat.properties) {
+                    internString(stringTable, kv[0]);
+                    internString(stringTable, kv[1]);
+                }
+            }
+        }
+
+        // Determine grid bounds
+        int minCX = Integer.MAX_VALUE, maxCX = Integer.MIN_VALUE;
+        int minCY = Integer.MAX_VALUE, maxCY = Integer.MIN_VALUE;
+        for (WMCell c : cells) {
+            minCX = Math.min(minCX, c.x); maxCX = Math.max(maxCX, c.x);
+            minCY = Math.min(minCY, c.y); maxCY = Math.max(maxCY, c.y);
+        }
+        int gridW = maxCX - minCX + 1;
+        int gridH = maxCY - minCY + 1;
+
+        // Index cells by grid position
+        Map<Long, WMCell> cellMap = new HashMap<>();
+        for (WMCell c : cells) {
+            cellMap.put((long)(c.x - minCX) + (long)(c.y - minCY) * 10000L, c);
+        }
+
+        // Write binary
+        File binFile = new File(outputDir, "worldmap.xml.bin");
+        try (DataOutputStream dos = new DataOutputStream(
+                new BufferedOutputStream(new FileOutputStream(binFile)))) {
+
+            // Magic: "IGMB"
+            dos.write(new byte[]{ 0x49, 0x47, 0x4D, 0x42 });
+            writeIntLE(dos, 2);   // version
+            writeIntLE(dos, 256); // cellSize (required=256 for v2)
+            writeIntLE(dos, gridW);
+            writeIntLE(dos, gridH);
+
+            // String table
+            writeIntLE(dos, stringTable.size());
+            for (String s : stringTable.keySet()) {
+                byte[] utf = s.getBytes(StandardCharsets.UTF_8);
+                writeShortLE(dos, (short) utf.length);
+                dos.write(utf);
+            }
+
+            // Cells grid (row-major: y then x)
+            for (int gy = 0; gy < gridH; gy++) {
+                for (int gx = 0; gx < gridW; gx++) {
+                    WMCell cell = cellMap.get((long) gx + (long) gy * 10000L);
+                    if (cell == null) {
+                        writeIntLE(dos, -1); // empty cell marker
+                    } else {
+                        writeIntLE(dos, cell.x);
+                        writeIntLE(dos, cell.y);
+                        writeIntLE(dos, cell.features.size());
+                        for (WMFeature feat : cell.features) {
+                            // Geometry
+                            writeShortLE(dos, (short)(int) stringTable.get(feat.geometryType));
+                            dos.write(feat.coordBlocks.size()); // byte: numCoordinateBlocks
+                            for (List<short[]> block : feat.coordBlocks) {
+                                writeShortLE(dos, (short) block.size()); // numPoints
+                                for (short[] pt : block) {
+                                    writeShortLE(dos, pt[0]); // x
+                                    writeShortLE(dos, pt[1]); // y
+                                }
+                            }
+                            // Properties
+                            dos.write(feat.properties.size()); // byte: numProperties
+                            for (String[] kv : feat.properties) {
+                                writeShortLE(dos, (short)(int) stringTable.get(kv[0]));
+                                writeShortLE(dos, (short)(int) stringTable.get(kv[1]));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        long size = binFile.length();
+        System.out.println("  Generated " + binFile.getName() + " (" + size + " bytes, " +
+                cells.size() + " cells, " + stringTable.size() + " strings)");
+    }
+
+    // Also generate for worldmap-forest.xml if present
+    void generateForestMapBin() throws IOException {
+        File xmlFile = new File(outputDir, "worldmap-forest.xml");
+        if (!xmlFile.exists()) return;
+        System.out.println("Generating worldmap-forest.xml.bin...");
+
+        List<String> lines = Files.readAllLines(xmlFile.toPath(), StandardCharsets.UTF_8);
+        List<WMCell> cells = parseWorldMapXml(lines);
+
+        LinkedHashMap<String, Integer> stringTable = new LinkedHashMap<>();
+        for (WMCell cell : cells) {
+            for (WMFeature feat : cell.features) {
+                internString(stringTable, feat.geometryType);
+                for (String[] kv : feat.properties) {
+                    internString(stringTable, kv[0]);
+                    internString(stringTable, kv[1]);
+                }
+            }
+        }
+
+        int minCX = Integer.MAX_VALUE, maxCX = Integer.MIN_VALUE;
+        int minCY = Integer.MAX_VALUE, maxCY = Integer.MIN_VALUE;
+        for (WMCell c : cells) {
+            minCX = Math.min(minCX, c.x); maxCX = Math.max(maxCX, c.x);
+            minCY = Math.min(minCY, c.y); maxCY = Math.max(maxCY, c.y);
+        }
+        int gridW = maxCX - minCX + 1;
+        int gridH = maxCY - minCY + 1;
+        Map<Long, WMCell> cellMap = new HashMap<>();
+        for (WMCell c : cells) {
+            cellMap.put((long)(c.x - minCX) + (long)(c.y - minCY) * 10000L, c);
+        }
+
+        File binFile = new File(outputDir, "worldmap-forest.xml.bin");
+        try (DataOutputStream dos = new DataOutputStream(
+                new BufferedOutputStream(new FileOutputStream(binFile)))) {
+            dos.write(new byte[]{ 0x49, 0x47, 0x4D, 0x42 });
+            writeIntLE(dos, 2);
+            writeIntLE(dos, 256);
+            writeIntLE(dos, gridW);
+            writeIntLE(dos, gridH);
+            writeIntLE(dos, stringTable.size());
+            for (String s : stringTable.keySet()) {
+                byte[] utf = s.getBytes(StandardCharsets.UTF_8);
+                writeShortLE(dos, (short) utf.length);
+                dos.write(utf);
+            }
+            for (int gy = 0; gy < gridH; gy++) {
+                for (int gx = 0; gx < gridW; gx++) {
+                    WMCell cell = cellMap.get((long) gx + (long) gy * 10000L);
+                    if (cell == null) {
+                        writeIntLE(dos, -1);
+                    } else {
+                        writeIntLE(dos, cell.x);
+                        writeIntLE(dos, cell.y);
+                        writeIntLE(dos, cell.features.size());
+                        for (WMFeature feat : cell.features) {
+                            writeShortLE(dos, (short)(int) stringTable.get(feat.geometryType));
+                            dos.write(feat.coordBlocks.size());
+                            for (List<short[]> block : feat.coordBlocks) {
+                                writeShortLE(dos, (short) block.size());
+                                for (short[] pt : block) {
+                                    writeShortLE(dos, pt[0]);
+                                    writeShortLE(dos, pt[1]);
+                                }
+                            }
+                            dos.write(feat.properties.size());
+                            for (String[] kv : feat.properties) {
+                                writeShortLE(dos, (short)(int) stringTable.get(kv[0]));
+                                writeShortLE(dos, (short)(int) stringTable.get(kv[1]));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        long size = binFile.length();
+        System.out.println("  Generated " + binFile.getName() + " (" + size + " bytes)");
+    }
+
+    // ── XML worldmap parser ──
+
+    private static final Pattern CELL_PAT = Pattern.compile("<cell\\s+x=\"(\\d+)\"\\s+y=\"(\\d+)\"");
+    private static final Pattern GEOM_PAT = Pattern.compile("<geometry\\s+type=\"([^\"]+)\"");
+    private static final Pattern POINT_PAT = Pattern.compile("<point\\s+x=\"(-?\\d+)\"\\s+y=\"(-?\\d+)\"");
+    private static final Pattern PROP_PAT = Pattern.compile("<property\\s+name=\"([^\"]+)\"\\s+value=\"([^\"]*)\"");
+
+    List<WMCell> parseWorldMapXml(List<String> lines) {
+        List<WMCell> cells = new ArrayList<>();
+        WMCell currentCell = null;
+        WMFeature currentFeature = null;
+        List<short[]> currentCoords = null;
+        boolean inProperties = false;
+
+        for (String line : lines) {
+            String t = line.trim();
+
+            Matcher m;
+            if ((m = CELL_PAT.matcher(t)).find()) {
+                currentCell = new WMCell();
+                currentCell.x = Integer.parseInt(m.group(1));
+                currentCell.y = Integer.parseInt(m.group(2));
+                cells.add(currentCell);
+                continue;
+            }
+            if (t.equals("</cell>")) { currentCell = null; continue; }
+
+            if (t.equals("<feature>")) {
+                currentFeature = new WMFeature();
+                continue;
+            }
+            if (t.equals("</feature>")) {
+                if (currentCell != null && currentFeature != null) {
+                    currentCell.features.add(currentFeature);
+                }
+                currentFeature = null;
+                continue;
+            }
+
+            if ((m = GEOM_PAT.matcher(t)).find() && currentFeature != null) {
+                currentFeature.geometryType = m.group(1);
+                continue;
+            }
+
+            if (t.equals("<coordinates>")) {
+                currentCoords = new ArrayList<>();
+                continue;
+            }
+            if (t.equals("</coordinates>")) {
+                if (currentCoords != null && currentFeature != null) {
+                    currentFeature.coordBlocks.add(currentCoords);
+                }
+                currentCoords = null;
+                continue;
+            }
+
+            if ((m = POINT_PAT.matcher(t)).find() && currentCoords != null) {
+                currentCoords.add(new short[]{
+                    (short) Integer.parseInt(m.group(1)),
+                    (short) Integer.parseInt(m.group(2))
+                });
+                continue;
+            }
+
+            if (t.equals("<properties>")) { inProperties = true; continue; }
+            if (t.equals("</properties>") || t.equals("<properties/>")) {
+                inProperties = false;
+                continue;
+            }
+
+            if (inProperties && currentFeature != null && (m = PROP_PAT.matcher(t)).find()) {
+                currentFeature.properties.add(new String[]{ m.group(1), m.group(2) });
+            }
+        }
+
+        return cells;
+    }
+
+    static void internString(LinkedHashMap<String, Integer> table, String s) {
+        if (!table.containsKey(s)) {
+            table.put(s, table.size());
+        }
+    }
+
+    static void writeIntLE(DataOutputStream dos, int v) throws IOException {
+        dos.write(v & 0xFF);
+        dos.write((v >> 8) & 0xFF);
+        dos.write((v >> 16) & 0xFF);
+        dos.write((v >> 24) & 0xFF);
+    }
+
+    static void writeShortLE(DataOutputStream dos, short v) throws IOException {
+        dos.write(v & 0xFF);
+        dos.write((v >> 8) & 0xFF);
+    }
+
+    // ── Data classes for worldmap parsing ──
+
+    static class WMCell {
+        int x, y;
+        List<WMFeature> features = new ArrayList<>();
+    }
+
+    static class WMFeature {
+        String geometryType = "Polygon";
+        List<List<short[]>> coordBlocks = new ArrayList<>(); // each block is a <coordinates> set
+        List<String[]> properties = new ArrayList<>(); // each is [name, value]
+    }
+
     /**
      * Copy non-binary files that don't need coordinate remapping.
      */
@@ -1016,6 +1331,8 @@ public class ConvertMap {
         convertObjectsLua();
         convertSpawnPointsLua();
         convertWorldMapXml();
+        generateWorldMapBin();
+        generateForestMapBin();
         copyOtherFiles();
 
         long elapsed = System.currentTimeMillis() - startTime;
@@ -1023,14 +1340,38 @@ public class ConvertMap {
         System.out.println("=== Conversion complete in " + elapsed + "ms ===");
     }
 
+    /**
+     * Generate only worldmap.xml.bin (and worldmap-forest.xml.bin if present)
+     * from an existing map directory. No binary conversion; just the worldmap binary.
+     */
+    public void generateBinOnly(String mapDir) throws Exception {
+        this.outputDir = mapDir;
+        System.out.println("=== Worldmap Binary Generator ===");
+        System.out.println("Directory: " + mapDir);
+        System.out.println();
+        generateWorldMapBin();
+        generateForestMapBin();
+        System.out.println();
+        System.out.println("=== Done ===");
+    }
+
     // ========================== Entry Point ==========================
 
     public static void main(String[] args) throws Exception {
+        if (args.length >= 2 && "--gen-bin".equals(args[0])) {
+            // Generate worldmap.xml.bin only
+            new ConvertMap().generateBinOnly(args[1]);
+            return;
+        }
+
         if (args.length < 2) {
-            System.out.println("Usage: java ConvertMap <inputDir> <outputDir>");
+            System.out.println("Usage:");
+            System.out.println("  java ConvertMap <inputDir> <outputDir>");
+            System.out.println("    Convert a B41 map to B42 format.");
             System.out.println();
-            System.out.println("Converts a Project Zomboid B41 map (300-cell, 10x10 chunks)");
-            System.out.println("to B42 format (256-cell, 8x8 chunks).");
+            System.out.println("  java ConvertMap --gen-bin <mapDir>");
+            System.out.println("    Generate worldmap.xml.bin from existing worldmap.xml.");
+            System.out.println("    (Bypasses buggy game XML parser)");
             System.exit(1);
         }
 
