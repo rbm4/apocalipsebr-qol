@@ -1,7 +1,7 @@
 --require "ISMapDefinitions"
 require "Maps/ISMapDefinitions"
 
-MapUtils = {}
+-- MapUtils = {}
 
  
 function MapUtils.initDirectoryMapData(mapUI, directory)
@@ -333,14 +333,14 @@ LootMaps.Init.trelaimap = function(mapUI)
 	MapUtils.initDefaultStyleV1(mapUI)
 
 	-- Use solid color for water instead of a texture.
-	--replaceWaterStyle(mapUI)
+	replaceWaterStyle(mapUI)
 
 	-- 3Show only this area from the full map.
 	--mapAPI:setBoundsInSquares(6600, 6600, 7799, 7799)
 	mapAPI:setBoundsInSquares(6600, 6600, 7799, 7799)
 
 	-- Add the town-name PNG.
-	--overlayPNG(mapUI, 7540, 6820, 0.666, "badge", "media/textures/worldMap/trelaibadge.png")
+	overlayPNG(mapUI, 7540, 6820, 0.666, "badge", "media/textures/worldMap/trelaibadge.png")
 
 	-- Add the legend PNG.
 	overlayPNG(mapUI, 6666, 7500, 0.555, "legend", "media/textures/worldMap/TrelaiLegend.png")

@@ -170,9 +170,11 @@ public class ConvertMap {
 
         void addBuilding(BuildingDef src) {
             BuildingDef bnew = new BuildingDef();
-            bnew.id = buildings.size();
+            int buildingIndex = buildings.size();
+            bnew.id = makeBuildingID(cellX, cellY, buildingIndex);
             for (RoomDef rd : src.rooms) {
-                RoomDef rn = new RoomDef(roomList.size(), rd.name);
+                int roomIndex = roomList.size();
+                RoomDef rn = new RoomDef(makeRoomID(cellX, cellY, roomIndex), rd.name);
                 rn.level = rd.level;
                 rn.rects.addAll(rd.rects);
                 rn.objects.addAll(rd.objects);
@@ -1113,6 +1115,10 @@ public class ConvertMap {
             xml.append(" <cell x=\"").append(newCX).append("\" y=\"").append(newCY).append("\">\n");
 
             for (FeatureData fd : entry.getValue()) {
+                if (fd.geometryType == null || fd.pointGroups.isEmpty()) continue;
+                boolean hasPoints = false;
+                for (List<int[]> pg : fd.pointGroups) { if (!pg.isEmpty()) { hasPoints = true; break; } }
+                if (!hasPoints) continue;
                 xml.append("  <feature>\n");
                 xml.append("   <geometry type=\"").append(fd.geometryType).append("\">\n");
                 for (List<int[]> pts : fd.pointGroups) {
