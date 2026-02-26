@@ -1112,71 +1112,112 @@ public class ConvertMap {
                                 int relY = worldY - cy * 256;
                                 newBlock.add(new short[]{ (short) relX, (short) relY });
                             }
-                            newFeat.coordBlocks.add(newBlock);
+
+                            // Simplify polygon (Douglas-Peucker, tolerance=1.5)
+                            // Removes redundant collinear/near-collinear vertices
+                            newBlock = simplifyPolygon(newBlock, 1.5);
+
+                            // Pre-clip polygon to [0,256] cell bounds.
+                            // Reduces vertex count for cross-boundary features.
+                            if (newBlock.size() >= 3) {
+                                List<short[]> clipped = clipPolygonToCell(newBlock);
+                                if (clipped != null && clipped.size() >= 3) {
+                                    newBlock = clipped;
+                                }
+                            }
+
+                            if (newBlock.size() >= 3) {
+                                newFeat.coordBlocks.add(newBlock);
+                            }
                         }
 
-                        newCell.features.add(newFeat);
-                        totalCopies++;
+                        // Only add feature if it has at least one valid polygon block
+                        if (!newFeat.coordBlocks.isEmpty()) {
+                            newCell.features.add(newFeat);
+                            totalCopies++;
+                        }
                     }
                 }
             }
         }
 
-        // Step 1b: Cap features per cell to avoid game bug.
-        // The game's WorldMapGeometry.triangulate() does:
-        //   this.firstIndex = (short)indexBuffer.position();
-        // which overflows when the per-cell cumulative index count > 32767,
-        // causing IndexOutOfBoundsException in fillPolygon.
+        // Step 1c: Cap features per cell — split budget for highways vs buildings.
+        // Highways cost 7x (zoom triangulation passes). Splitting budgets prevents
+        // them from starving cheap building polygons.
         //
-        // Our estimate of 3*(pts-2) per polygon is a LOWER BOUND because the
-        // game's Clipper clips polygons against neighboring features which can
-        // multiply triangle count by 2-3x. We use a conservative limit of
-        // 10000 estimated indices (which maps to ~25000-30000 actual after
-        // clipping overhead), safely under the 32767 short overflow threshold.
-        //
-        // Additionally, indexCount is a short field, so per-feature counts
-        // and the indexBuffer.put((short)(firstPoint + offset)) also overflow
-        // if triangle vertices exceed 32767 per cell.
-        final int MAX_INDICES = 10000;
+        // Pre-clipping and simplification (above) reduce per-feature costs,
+        // so more features fit within the same budget.
+        final int MAX_HIGHWAY_INDICES = 4000;  // highways are 7x expensive
+        final int MAX_OTHER_INDICES = 8000;    // buildings, water, natural, etc.
+        // Total: up to 12000 estimated → ~30000-36000 actual after clipping
+        // overhead, under the 32767 short overflow threshold.
         int totalDropped = 0;
         for (WMCell cell : newCellMap.values()) {
-            // Estimate total index cost for this cell
-            int estIndices = 0;
+            // Separate highways from non-highways
+            List<WMFeature> highways = new ArrayList<>();
+            List<WMFeature> others = new ArrayList<>();
+            int hwIndices = 0, otherIndices = 0;
             for (WMFeature f : cell.features) {
-                estIndices += featureIndexCost(f);
+                if (isHighway(f)) {
+                    highways.add(f);
+                    hwIndices += featureIndexCost(f);
+                } else {
+                    others.add(f);
+                    otherIndices += featureIndexCost(f);
+                }
             }
 
-            if (estIndices > MAX_INDICES) {
-                // Sort features by priority (highest first) then by index cost (lowest first)
-                // Priority: water=100, highway-primary=90, highway-secondary=80,
-                //           building=60, highway-tertiary=70, railway=50,
-                //           highway-trail=40, natural=10, other=30
-                cell.features.sort((a, b) -> {
-                    int pa = featurePriority(a), pb = featurePriority(b);
-                    if (pa != pb) return pb - pa; // higher priority first
-                    int ca = featureIndexCost(a), cb = featureIndexCost(b);
-                    return ca - cb; // lower cost first (keep cheap features)
-                });
+            boolean hwCapped = hwIndices > MAX_HIGHWAY_INDICES;
+            boolean otherCapped = otherIndices > MAX_OTHER_INDICES;
+            if (!hwCapped && !otherCapped) continue;
 
-                // Keep features until we'd exceed the budget
-                int budget = 0;
-                int keep = 0;
-                for (int i = 0; i < cell.features.size(); i++) {
-                    int cost = featureIndexCost(cell.features.get(i));
-                    if (budget + cost > MAX_INDICES && keep > 0) break;
+            Comparator<WMFeature> cmp = (a, b) -> {
+                int pa = featurePriority(a), pb = featurePriority(b);
+                if (pa != pb) return pb - pa;
+                return featureIndexCost(a) - featureIndexCost(b);
+            };
+
+            int hwDropped = 0, otherDropped = 0;
+
+            if (hwCapped) {
+                highways.sort(cmp);
+                int budget = 0, keep = 0;
+                for (int i = 0; i < highways.size(); i++) {
+                    int cost = featureIndexCost(highways.get(i));
+                    if (budget + cost > MAX_HIGHWAY_INDICES && keep > 0) break;
                     budget += cost;
                     keep++;
                 }
-                int dropped = cell.features.size() - keep;
-                if (dropped > 0) {
-                    System.out.println("  WARNING: Cell(" + cell.x + "," + cell.y + "): " +
-                            cell.features.size() + " features (~" + estIndices + " indices) exceeds limit. " +
-                            "Keeping " + keep + ", dropping " + dropped + " low-priority features.");
-                    cell.features.subList(keep, cell.features.size()).clear();
-                    totalDropped += dropped;
-                    totalCopies -= dropped;
-                }
+                hwDropped = highways.size() - keep;
+                if (hwDropped > 0) highways.subList(keep, highways.size()).clear();
             }
+
+            if (otherCapped) {
+                others.sort(cmp);
+                int budget = 0, keep = 0;
+                for (int i = 0; i < others.size(); i++) {
+                    int cost = featureIndexCost(others.get(i));
+                    if (budget + cost > MAX_OTHER_INDICES && keep > 0) break;
+                    budget += cost;
+                    keep++;
+                }
+                otherDropped = others.size() - keep;
+                if (otherDropped > 0) others.subList(keep, others.size()).clear();
+            }
+
+            int dropped = hwDropped + otherDropped;
+            if (dropped > 0) {
+                System.out.println("  WARNING: Cell(" + cell.x + "," + cell.y + "): " +
+                        "capped. Dropped " + hwDropped + " highways, " +
+                        otherDropped + " other features (" +
+                        "keeping " + highways.size() + " hw + " + others.size() + " other).");
+                totalDropped += dropped;
+                totalCopies -= dropped;
+            }
+
+            cell.features.clear();
+            cell.features.addAll(highways);
+            cell.features.addAll(others);
         }
 
         List<WMCell> cells = new ArrayList<>(newCellMap.values());
@@ -1380,6 +1421,7 @@ public class ConvertMap {
             }
         }
         if (water != null) return 100;
+        if (building != null) return 85; // buildings are key for minimap — above all highways except primary
         if (highway != null) {
             switch (highway) {
                 case "primary": return 90;
@@ -1389,7 +1431,6 @@ public class ConvertMap {
                 default: return 50;
             }
         }
-        if (building != null) return 60;
         if (natural != null) return 10;
         return 30;
     }
@@ -1404,6 +1445,132 @@ public class ConvertMap {
     static void writeShortLE(DataOutputStream dos, short v) throws IOException {
         dos.write(v & 0xFF);
         dos.write((v >> 8) & 0xFF);
+    }
+
+    // ── Polygon optimization utilities ──
+
+    /**
+     * Ramer-Douglas-Peucker polygon simplification.
+     * Tolerance of 1-2 units is sub-tile and visually imperceptible.
+     */
+    static List<short[]> simplifyPolygon(List<short[]> points, double tolerance) {
+        if (points.size() <= 3) return points;
+
+        boolean closed = points.size() > 1 &&
+            points.get(0)[0] == points.get(points.size() - 1)[0] &&
+            points.get(0)[1] == points.get(points.size() - 1)[1];
+
+        List<short[]> work = closed ? new ArrayList<>(points.subList(0, points.size() - 1)) : points;
+        if (work.size() <= 3) return points;
+
+        boolean[] keep = new boolean[work.size()];
+        keep[0] = true;
+        keep[work.size() - 1] = true;
+        rdpSimplify(work, 0, work.size() - 1, tolerance * tolerance, keep);
+
+        List<short[]> result = new ArrayList<>();
+        for (int i = 0; i < work.size(); i++) {
+            if (keep[i]) result.add(work.get(i));
+        }
+
+        if (closed && result.size() > 1) {
+            result.add(new short[]{ result.get(0)[0], result.get(0)[1] });
+        }
+
+        int unique = closed ? result.size() - 1 : result.size();
+        if (unique < 3) return points;
+        return result;
+    }
+
+    private static void rdpSimplify(List<short[]> pts, int start, int end,
+                                     double tolSq, boolean[] keep) {
+        if (end - start < 2) return;
+        double maxDist = 0;
+        int maxIdx = start;
+        double ax = pts.get(start)[0], ay = pts.get(start)[1];
+        double bx = pts.get(end)[0], by = pts.get(end)[1];
+        double dx = bx - ax, dy = by - ay;
+        double lenSq = dx * dx + dy * dy;
+
+        for (int i = start + 1; i < end; i++) {
+            double px = pts.get(i)[0] - ax;
+            double py = pts.get(i)[1] - ay;
+            double dist;
+            if (lenSq < 1e-10) {
+                dist = px * px + py * py;
+            } else {
+                double t = (px * dx + py * dy) / lenSq;
+                t = Math.max(0, Math.min(1, t));
+                double projX = px - t * dx;
+                double projY = py - t * dy;
+                dist = projX * projX + projY * projY;
+            }
+            if (dist > maxDist) { maxDist = dist; maxIdx = i; }
+        }
+
+        if (maxDist > tolSq) {
+            keep[maxIdx] = true;
+            rdpSimplify(pts, start, maxIdx, tolSq, keep);
+            rdpSimplify(pts, maxIdx, end, tolSq, keep);
+        }
+    }
+
+    /** Sutherland-Hodgman polygon clipping against [0, 256] cell bounds. */
+    static List<short[]> clipPolygonToCell(List<short[]> polygon) {
+        List<short[]> output = polygon;
+        output = clipEdge(output, 0, true, false);
+        if (output.isEmpty()) return null;
+        output = clipEdge(output, 256, false, false);
+        if (output.isEmpty()) return null;
+        output = clipEdge(output, 0, true, true);
+        if (output.isEmpty()) return null;
+        output = clipEdge(output, 256, false, true);
+        if (output.isEmpty()) return null;
+        return output;
+    }
+
+    private static List<short[]> clipEdge(List<short[]> poly, int threshold,
+                                           boolean greaterThan, boolean useY) {
+        if (poly == null || poly.size() < 2) return poly != null ? poly : new ArrayList<>();
+        List<short[]> result = new ArrayList<>();
+        for (int i = 0; i < poly.size(); i++) {
+            short[] current = poly.get(i);
+            short[] prev = poly.get((i + poly.size() - 1) % poly.size());
+            int cVal = useY ? current[1] : current[0];
+            int pVal = useY ? prev[1] : prev[0];
+            boolean cInside = greaterThan ? cVal >= threshold : cVal <= threshold;
+            boolean pInside = greaterThan ? pVal >= threshold : pVal <= threshold;
+            if (cInside) {
+                if (!pInside) result.add(intersect(prev, current, threshold, useY));
+                result.add(current);
+            } else if (pInside) {
+                result.add(intersect(prev, current, threshold, useY));
+            }
+        }
+        return result;
+    }
+
+    private static short[] intersect(short[] a, short[] b, int threshold, boolean useY) {
+        double ax = a[0], ay = a[1], bx = b[0], by = b[1];
+        double t;
+        if (useY) {
+            t = (ay == by) ? 0.5 : (threshold - ay) / (by - ay);
+        } else {
+            t = (ax == bx) ? 0.5 : (threshold - ax) / (bx - ax);
+        }
+        t = Math.max(0, Math.min(1, t));
+        return new short[]{
+            (short) Math.round(ax + t * (bx - ax)),
+            (short) Math.round(ay + t * (by - ay))
+        };
+    }
+
+    /** Check if a feature is a highway. */
+    static boolean isHighway(WMFeature f) {
+        for (String[] kv : f.properties) {
+            if ("highway".equals(kv[0])) return true;
+        }
+        return false;
     }
 
     // ── Data classes for worldmap parsing ──
