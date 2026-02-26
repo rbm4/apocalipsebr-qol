@@ -1,0 +1,12 @@
+# Trelai B41→B42 broken tile name replacements
+# Format: broken_name,correct_name
+# Lines starting with # are comments
+#
+# How to find broken tiles:
+#   1. Run the game with -debug flag
+#   2. Walk around Trelai, look for pink/missing textures
+#   3. Use tile info overlay to get the broken sprite name
+#   4. Find the correct B42 sprite name
+#   5. Add a line below: broken_name,correct_name
+
+vegetation_groundcover_01_18,d_generic_1_87
