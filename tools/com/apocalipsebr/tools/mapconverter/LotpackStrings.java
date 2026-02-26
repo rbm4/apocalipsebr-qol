@@ -106,19 +106,117 @@ public class LotpackStrings {
             return;
         }
 
-        // Load mapping from CSV
+        // Load mapping from CSV (preserves insertion order)
         Map<String, String> mapping = loadCsv(csvFile);
         if (mapping.isEmpty()) {
             System.out.println("No valid mappings found in " + csvFile.getName());
             return;
         }
-        System.out.printf("Loaded %d replacement mappings from %s%n", mapping.size(), csvFile.getName());
+        System.out.printf("Loaded %d replacement mappings from %s%n%n", mapping.size(), csvFile.getName());
 
+        // Pre-scan: for each broken tile name, find which cells contain it
+        System.out.println("Scanning cells for broken tile names...");
+        // cellName → set of tile names present in that cell
+        Map<String, Set<String>> cellTiles = new LinkedHashMap<>();
+        Map<String, File> cellFiles = new LinkedHashMap<>();
+        for (File f : lotHeaders) {
+            String cellName = f.getName().replace(".lotheader", "");
+            List<String> names = readTileNames(f);
+            cellTiles.put(cellName, new HashSet<>(names));
+            cellFiles.put(cellName, f);
+        }
+
+        // Build per-mapping: which cells contain the broken tile?
+        // brokenName → list of cell names that contain it
+        Map<String, List<String>> brokenToCells = new LinkedHashMap<>();
+        for (String broken : mapping.keySet()) {
+            List<String> cells = new ArrayList<>();
+            for (Map.Entry<String, Set<String>> entry : cellTiles.entrySet()) {
+                if (entry.getValue().contains(broken)) {
+                    cells.add(entry.getKey());
+                }
+            }
+            brokenToCells.put(broken, cells);
+        }
+
+        // Interactive prompt per mapping line
+        Scanner scanner = new Scanner(System.in);
+        // Accumulate which mappings apply to which files
+        // file → mapping subset to apply
+        Map<File, Map<String, String>> fileMappings = new LinkedHashMap<>();
+
+        for (Map.Entry<String, String> entry : mapping.entrySet()) {
+            String broken = entry.getKey();
+            String correct = entry.getValue();
+            List<String> cellsWithTile = brokenToCells.get(broken);
+
+            System.out.println("=".repeat(60));
+            System.out.printf("  Replacement: %s -> %s%n", broken, correct);
+
+            if (cellsWithTile.isEmpty()) {
+                System.out.println("  (not found in any cell, skipping)");
+                continue;
+            }
+
+            Collections.sort(cellsWithTile);
+            System.out.printf("  Found in %d cell(s): %s%n", cellsWithTile.size(), String.join(", ", cellsWithTile));
+            System.out.print("  Apply to which cells? [Enter=ALL, or comma-separated xx_yy coords, S=skip]: ");
+            System.out.flush();
+
+            String input = scanner.nextLine().trim();
+
+            List<String> selectedCells;
+            if (input.isEmpty()) {
+                // Apply to all cells that have this tile
+                selectedCells = cellsWithTile;
+                System.out.println("  -> Applying to ALL cells");
+            } else if (input.equalsIgnoreCase("S")) {
+                System.out.println("  -> Skipped");
+                continue;
+            } else {
+                // Parse user-specified cells
+                selectedCells = new ArrayList<>();
+                String[] parts = input.split("[,\\s]+");
+                for (String part : parts) {
+                    part = part.trim();
+                    if (part.isEmpty()) continue;
+                    if (cellsWithTile.contains(part)) {
+                        selectedCells.add(part);
+                    } else if (cellFiles.containsKey(part)) {
+                        System.out.printf("  WARNING: cell %s exists but doesn't contain '%s', skipping%n", part, broken);
+                    } else {
+                        System.out.printf("  WARNING: cell %s not found, skipping%n", part);
+                    }
+                }
+                if (selectedCells.isEmpty()) {
+                    System.out.println("  -> No valid cells selected, skipping");
+                    continue;
+                }
+                System.out.printf("  -> Applying to: %s%n", String.join(", ", selectedCells));
+            }
+
+            // Register this mapping for the selected cell files
+            for (String cell : selectedCells) {
+                File f = cellFiles.get(cell);
+                fileMappings.computeIfAbsent(f, k -> new LinkedHashMap<>()).put(broken, correct);
+            }
+        }
+
+        System.out.println("\n" + "=".repeat(60));
+
+        if (fileMappings.isEmpty()) {
+            System.out.println("No replacements to apply.");
+            return;
+        }
+
+        // Apply replacements per file
         int totalReplacements = 0;
         int filesModified = 0;
 
-        for (File f : lotHeaders) {
-            int count = replaceInLotheader(f, mapping);
+        for (Map.Entry<File, Map<String, String>> fe : fileMappings.entrySet()) {
+            File f = fe.getKey();
+            Map<String, String> fileMapping = fe.getValue();
+            int count = replaceInLotheader(f, fileMapping);
             if (count > 0) {
                 System.out.printf("  %s: %d replacements%n", f.getName(), count);
                 totalReplacements += count;

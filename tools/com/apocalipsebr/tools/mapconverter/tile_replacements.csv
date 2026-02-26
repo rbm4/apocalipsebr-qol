@@ -8,6 +8,12 @@
 #   3. Use tile info overlay to get the broken sprite name
 #   4. Find the correct B42 sprite name
 #   5. Add a line below: broken_name,correct_name
+#  30_27
+#  en_newburbs_walls_01_white_76,overlay_grime_floor_01_0
+#  en_newburbs_walls_01_white_77,overlay_grime_floor_01_0
+
+
+
 
 vegetation_groundcover_01_18,d_generic_1_87
 flooring_raised_ddd_50,blends_natural_02_5
@@ -15,3 +21,9 @@ flooring_raised_ddd_51,blends_natural_02_5
 flooring_raised_ddd_52,blends_natural_02_5
 flooring_raised_ddd_53,blends_natural_02_5
 flooring_raised_ddd_54,blends_natural_02_5
+fixtures_doors_fences_01_64,fixtures_doors_fences_01_4
+en_newburbs_walls_01_white_76,overlay_grime_floor_01_0
+en_newburbs_walls_01_white_77,overlay_grime_floor_01_0
+vegetation_groundcover_01_21,d_generic_1_48
+vegetation_groundcover_01_23,d_generic_1_48
+walls_exterior_house_02_15,overlay_grime_floor_01_0
