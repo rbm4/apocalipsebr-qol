@@ -22,9 +22,10 @@ import java.util.*;
  *   --add        &lt;mapDir&gt; &lt;worldX&gt; &lt;worldY&gt; &lt;z&gt; &lt;tileName&gt;
  *   --patch      &lt;mapDir&gt; &lt;patchFile.csv&gt;
  *
- * Patch CSV actions: add, remove, set, removeAllRange, addAllRange
+ * Patch CSV actions: add, remove, set, removeAllRange, addAllRange, removeAllBut
  *   removeAllRange: x1, y1, z1, x2, y2, z2 — clears ALL objects in the 3D box.
  *   addAllRange:    x1, y1, z1, x2, y2, z2, tileName — adds a tile to every square in the 3D box.
+ *   removeAllBut:   x, y, z, tileName — removes all objects EXCEPT the named tile.
  *
  * World coordinates are absolute tile positions (use -debug tile inspector in-game).
  * Cell is auto-derived: cellX = worldX / 256, cellY = worldY / 256.
@@ -723,6 +724,26 @@ public class LotpackEditor {
                                 tileName, newTile, worldX, worldY, z, cc[0], cc[1]);
                         break;
                     }
+                    case "removeallbut": {
+                        Integer keepIdx = cell.tileIndex.get(tileName);
+                        List<Integer> tl = cell.tiles.get(sqIdx);
+                        if (tl == null || tl.isEmpty()) break;
+                        int before = tl.size();
+                        if (keepIdx != null) {
+                            tl.removeIf(idx -> !idx.equals(keepIdx));
+                        } else {
+                            tl.clear();
+                        }
+                        int removed = before - tl.size();
+                        if (removed > 0) {
+                            if (tl.isEmpty()) { cell.tiles.remove(sqIdx); cell.rooms.remove(sqIdx); }
+                            dirty = true;
+                            totalOps++;
+                            System.out.printf("  KEEPONLY '%s' at (%d,%d,%d) — removed %d of %d [cell %d_%d]%n",
+                                    tileName, worldX, worldY, z, removed, before, cc[0], cc[1]);
+                        }
+                        break;
+                    }
                     default:
                         System.err.printf("  WARN: unknown action '%s'%n", action);
                 }
@@ -832,7 +853,8 @@ public class LotpackEditor {
         System.out.println("               action, worldX, worldY, z, tileName[, newTile]");
         System.out.println("               or: removeAllRange, x1, y1, z1, x2, y2, z2");
         System.out.println("               or: addAllRange, x1, y1, z1, x2, y2, z2, tileName");
-        System.out.println("               Actions: add, remove, set, removeAllRange, addAllRange");
+        System.out.println("               or: removeAllBut, x, y, z, tileName");
+        System.out.println("               Actions: add, remove, set, removeAllRange, addAllRange, removeAllBut");
         System.out.println();
         System.out.println("World coordinates are absolute tile positions (use -debug in-game).");
         System.out.println("Cell is auto-derived: cellX = worldX / 256, cellY = worldY / 256.");
