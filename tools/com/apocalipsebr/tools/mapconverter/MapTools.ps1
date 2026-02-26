@@ -16,7 +16,7 @@ $toolsDir    = Split-Path -Parent $MyInvocation.MyCommand.Path | Split-Path -Par
 $repoRoot    = Split-Path -Parent $toolsDir
 $mapDir      = Join-Path $repoRoot "Contents\mods\Trelai_4x4_Steam\common\media\maps\Trelai_4x4"
 $backupDir   = Join-Path $repoRoot "Contents\mods\Trelai_4x4_Steam\common\media\maps\Trelai_4x4_backup"
-$csvFile     = Join-Path $toolsDir "tile_replacements.csv"
+$csvFile     = Join-Path $srcDir "tile_replacements.csv"
 $srcDir      = Join-Path $toolsDir "com\apocalipsebr\tools\mapconverter"
 $pkg         = "com.apocalipsebr.tools.mapconverter"
 

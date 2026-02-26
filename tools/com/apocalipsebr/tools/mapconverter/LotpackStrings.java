@@ -61,7 +61,12 @@ public class LotpackStrings {
                 if (args.length >= 3) {
                     csvFile = new File(args[2]);
                 } else {
-                    csvFile = new File(CSV_DEFAULT);
+                    // Look for CSV next to the .class file (source folder)
+                    csvFile = new File(getSourceDir(), CSV_DEFAULT);
+                    if (!csvFile.isFile()) {
+                        // Fallback to current working directory
+                        csvFile = new File(CSV_DEFAULT);
+                    }
                 }
                 replaceMode(lotHeaders, csvFile);
                 break;
@@ -258,6 +263,24 @@ public class LotpackStrings {
         }
 
         return replacements;
+    }
+
+    // ========================== Path Helpers ==========================
+
+    /**
+     * Get the directory where the LotpackStrings.class file lives.
+     * This resolves to the source/package folder regardless of CWD.
+     */
+    static File getSourceDir() {
+        try {
+            java.net.URL url = LotpackStrings.class.getProtectionDomain().getCodeSource().getLocation();
+            File classRoot = new File(url.toURI());
+            // classRoot is the -cp root (e.g. tools/). Append the package path.
+            return new File(classRoot, "com/apocalipsebr/tools/mapconverter");
+        } catch (Exception e) {
+            // Fallback: CWD
+            return new File(".");
+        }
     }
 
     // ========================== Binary Helpers ==========================
