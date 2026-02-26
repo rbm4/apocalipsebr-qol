@@ -28,6 +28,7 @@ function Compile-Sources {
     $sources = @(
         "com\apocalipsebr\tools\mapconverter\ConvertMap.java",
         "com\apocalipsebr\tools\mapconverter\LotpackStrings.java",
+        "com\apocalipsebr\tools\mapconverter\LotpackEditor.java",
         "com\apocalipsebr\tools\mapconverter\VerifyBin.java"
     )
     & javac -encoding UTF-8 @sources
@@ -78,6 +79,29 @@ function Show-Menu {
     Write-Host ""
     Write-Host "  [5] Verify worldmap.xml.bin" -ForegroundColor White
     Write-Host "      (validates binary format)" -ForegroundColor DarkGray
+    Write-Host ""
+    Write-Host "  --- Lotpack Editor ---" -ForegroundColor Magenta
+    Write-Host ""
+    Write-Host "  [6] Inspect Cell / Chunk" -ForegroundColor White
+    Write-Host "      (list all objects in a cell, or detailed for one chunk)" -ForegroundColor DarkGray
+    Write-Host ""
+    Write-Host "  [7] Inspect At Coordinate" -ForegroundColor White
+    Write-Host "      (show all objects stacked at a world x,y,z)" -ForegroundColor DarkGray
+    Write-Host ""
+    Write-Host "  [8] Search Tile in Cell" -ForegroundColor White
+    Write-Host "      (find every square containing a specific tile name)" -ForegroundColor DarkGray
+    Write-Host ""
+    Write-Host "  [9] Remove Object" -ForegroundColor White
+    Write-Host "      (delete a tile object at a world coordinate)" -ForegroundColor DarkGray
+    Write-Host ""
+    Write-Host "  [A] Set Object (swap tile)" -ForegroundColor White
+    Write-Host "      (change a tile to a different one at a coordinate)" -ForegroundColor DarkGray
+    Write-Host ""
+    Write-Host "  [B] Add Object" -ForegroundColor White
+    Write-Host "      (place a new tile object at a coordinate)" -ForegroundColor DarkGray
+    Write-Host ""
+    Write-Host "  [C] Apply Patch File" -ForegroundColor White
+    Write-Host "      (batch add/remove/set from a CSV patch file)" -ForegroundColor DarkGray
     Write-Host ""
     Write-Host "  [Q] Quit" -ForegroundColor DarkGray
     Write-Host ""
@@ -135,6 +159,78 @@ do {
             }
             if (!(Compile-Sources)) { break }
             Run-Java "VerifyBin" @($bin)
+        }
+        "6" {
+            Write-Host "`n=== Inspect Cell / Chunk ===" -ForegroundColor Cyan
+            Write-Host "  Map: $mapDir" -ForegroundColor DarkGray
+            $cellCoords = Read-Host "Cell coords (e.g. 24_25)"
+            $chunkCoords = Read-Host "Chunk filter (e.g. 15,20) or Enter for summary"
+            if (!(Compile-Sources)) { break }
+            $javaArgs = @("--inspect", $mapDir, $cellCoords)
+            if ($chunkCoords.Trim() -ne "") { $javaArgs += $chunkCoords.Trim() }
+            Run-Java "LotpackEditor" $javaArgs
+        }
+        "7" {
+            Write-Host "`n=== Inspect At Coordinate ===" -ForegroundColor Cyan
+            Write-Host "  Map: $mapDir" -ForegroundColor DarkGray
+            $worldX = Read-Host "World X"
+            $worldY = Read-Host "World Y"
+            $z = Read-Host "Z level (default 0)"
+            if ($z.Trim() -eq "") { $z = "0" }
+            if (!(Compile-Sources)) { break }
+            Run-Java "LotpackEditor" @("--inspect-at", $mapDir, $worldX, $worldY, $z)
+        }
+        "8" {
+            Write-Host "`n=== Search Tile in Cell ===" -ForegroundColor Cyan
+            Write-Host "  Map: $mapDir" -ForegroundColor DarkGray
+            $cellCoords = Read-Host "Cell coords (e.g. 24_25)"
+            $tileName = Read-Host "Tile name to search"
+            if (!(Compile-Sources)) { break }
+            Run-Java "LotpackEditor" @("--search", $mapDir, $cellCoords, $tileName)
+        }
+        "9" {
+            Write-Host "`n=== Remove Object ===" -ForegroundColor Cyan
+            Write-Host "  Map: $mapDir" -ForegroundColor DarkGray
+            $worldX = Read-Host "World X"
+            $worldY = Read-Host "World Y"
+            $z = Read-Host "Z level (default 0)"
+            if ($z.Trim() -eq "") { $z = "0" }
+            $tileName = Read-Host "Tile name to remove"
+            if (!(Compile-Sources)) { break }
+            Run-Java "LotpackEditor" @("--remove", $mapDir, $worldX, $worldY, $z, $tileName)
+        }
+        "A" {
+            Write-Host "`n=== Set Object (Swap Tile) ===" -ForegroundColor Cyan
+            Write-Host "  Map: $mapDir" -ForegroundColor DarkGray
+            $worldX = Read-Host "World X"
+            $worldY = Read-Host "World Y"
+            $z = Read-Host "Z level (default 0)"
+            if ($z.Trim() -eq "") { $z = "0" }
+            $oldTile = Read-Host "Current tile name"
+            $newTile = Read-Host "New tile name"
+            if (!(Compile-Sources)) { break }
+            Run-Java "LotpackEditor" @("--set", $mapDir, $worldX, $worldY, $z, $oldTile, $newTile)
+        }
+        "B" {
+            Write-Host "`n=== Add Object ===" -ForegroundColor Cyan
+            Write-Host "  Map: $mapDir" -ForegroundColor DarkGray
+            $worldX = Read-Host "World X"
+            $worldY = Read-Host "World Y"
+            $z = Read-Host "Z level (default 0)"
+            if ($z.Trim() -eq "") { $z = "0" }
+            $tileName = Read-Host "Tile name to add"
+            if (!(Compile-Sources)) { break }
+            Run-Java "LotpackEditor" @("--add", $mapDir, $worldX, $worldY, $z, $tileName)
+        }
+        "C" {
+            Write-Host "`n=== Apply Patch File ===" -ForegroundColor Cyan
+            $patchPath = Read-Host "Patch CSV file path"
+            if (!(Test-Path $patchPath)) {
+                Write-Host " File not found: $patchPath" -ForegroundColor Red
+                break
+            }
+            if (!(Compile-Sources)) { break }
+            Run-Java "LotpackEditor" @("--patch", $mapDir, $patchPath)
         }
         "Q" {
             Write-Host "`nBye!" -ForegroundColor Cyan

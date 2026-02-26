@@ -1,0 +1,50 @@
+# Lotpack Editor Patch File
+# Format: action, worldX, worldY, z, tileName[, newTile]
+#
+# Actions:
+#   add            — place a new tile object at the coordinate
+#   remove         — delete a tile object at the coordinate
+#   set            — change an existing tile to a different one (needs 6th field)
+#   removeAllRange — clear ALL objects in a 3D box: x1, y1, z1, x2, y2, z2
+#   addAllRange    — add a tile to every square in a 3D box: x1, y1, z1, x2, y2, z2, tileName
+#
+# Cell is automatically derived: cellX = worldX / 256, cellY = worldY / 256
+#
+# How to find world coordinates:
+#   1. Run PZ with -debug flag
+#   2. Enable tile info overlay (debug panel)
+#   3. Hover over the tile — note the X, Y, Z and sprite name
+#
+# Tips:
+#   - Use LotpackEditor --search to find all locations of a tile
+#   - Use LotpackEditor --inspect-at to see what's stacked at a position
+#   - Multiple objects can exist at the same (x,y,z) — they render in order
+#   - Backups (.bak) are created automatically before any write
+#
+# ============================================================
+# Example: Remove a clipping door wall at a specific coordinate
+# remove, 6637, 6608, 0, fixtures_doors_fences_01_64
+#
+# Example: Swap a broken texture for a correct one at a coordinate
+# set, 6637, 6608, 0, vegetation_groundcover_01_18, d_generic_1_87
+#
+# Example: Add road tiles to connect a gap (one per square)
+# add, 6637, 6608, 0, floors_exterior_street_01_0
+# add, 6638, 6608, 0, floors_exterior_street_01_0
+# add, 6639, 6608, 0, floors_exterior_street_01_0
+#
+# Example: Add bridge pieces over water
+# add, 6650, 6700, 0, construction_01_48
+# add, 6651, 6700, 0, construction_01_48
+# add, 6652, 6700, 0, construction_01_48
+#
+# Example: Clear all objects in a rectangular area (e.g. to flatten for road)
+# removeAllRange, 6780, 6600, 0, 6800, 6605, 0
+#
+# Example: Add road surface to every square in a rectangular area
+# addAllRange, 6780, 6600, 0, 6800, 6605, 0, floors_exterior_street_01_0
+# addAllRange, 6775, 6637, 0, 6771, 6604, 0, blends_street_01_85
+remove, 6838, 7314, 0, walls_exterior_house_02_15
+remove, 6839, 7314, 0, walls_exterior_house_02_15
+removeAllRange, 6786, 6600, 0, 6793, 6600, 0
+removeAllRange, 6772, 6637, 0, 6772, 6604, 0
