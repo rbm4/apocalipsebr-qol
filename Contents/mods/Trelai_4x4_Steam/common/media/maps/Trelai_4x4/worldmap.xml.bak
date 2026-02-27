@@ -5232,32 +5232,6 @@
     <property name="natural" value="forest"/>
    </properties>
   </feature>
-  <feature>
-   <geometry type="Polygon">
-    <coordinates>
-     <point x="171" y="11"/>
-     <point x="176" y="11"/>
-     <point x="176" y="40"/>
-     <point x="171" y="40"/>
-    </coordinates>
-   </geometry>
-   <properties>
-    <property name="highway" value="tertiary"/>
-   </properties>
-  </feature>
-  <feature>
-   <geometry type="Polygon">
-    <coordinates>
-     <point x="76" y="12"/>
-     <point x="78" y="12"/>
-     <point x="78" y="15"/>
-     <point x="76" y="15"/>
-    </coordinates>
-   </geometry>
-   <properties>
-    <property name="highway" value="tertiary"/>
-   </properties>
-  </feature>
  </cell>
  <cell x="23" y="22">
   <feature>

@@ -39,6 +39,7 @@ public class LotpackEditor {
     static final int CHUNK_DIM = 8;
     static final int CHUNKS_PER_CELL = 32;
     static final int CELL_DIM = 256; // CHUNK_DIM * CHUNKS_PER_CELL
+    static final int XML_CELL_DIM = 300; // worldmap.xml uses 300-unit cells
 
     static final byte[] LOTH_MAGIC = { 'L', 'O', 'T', 'H' };
     static final byte[] LOTP_MAGIC = { 'L', 'O', 'T', 'P' };
@@ -854,9 +855,9 @@ public class LotpackEditor {
      * Sync worldmap.xml: inject road polygon features and optionally remove building
      * features that are fully inside cleared areas.
      *
-     * <p>World tile coordinates (256-cell system) are converted to 300-cell XML coordinates:
-     *   cellID = worldCoord / 256 (shared between both systems)
-     *   xmlLocal = tileLocal * 300 / 256
+     * <p>World tile coordinates are mapped to 300-cell XML coordinates:
+     *   xmlCellID = worldCoord / 300
+     *   xmlLocal  = worldCoord - xmlCellID * 300
      *
      * <p>After modifying the XML, worldmap.xml.bin is auto-regenerated via ConvertMap.
      */
@@ -872,11 +873,11 @@ public class LotpackEditor {
         Map<String, List<Object[]>> roadFeaturesByCell = new LinkedHashMap<>();
         for (Map.Entry<String, Set<Long>> entry : roadTilesByHighway.entrySet()) {
             String highway = entry.getKey();
-            // Group positions by cell
+            // Group positions by XML cell (300-unit grid)
             Map<String, Set<Long>> byCell = new LinkedHashMap<>();
             for (long pos : entry.getValue()) {
                 int wx = posX(pos), wy = posY(pos);
-                String cellKey = (wx / CELL_DIM) + "_" + (wy / CELL_DIM);
+                String cellKey = (wx / XML_CELL_DIM) + "_" + (wy / XML_CELL_DIM);
                 byCell.computeIfAbsent(cellKey, k -> new HashSet<>()).add(pos);
             }
             // Flood-fill connected components within each cell → bounding rectangles
@@ -907,19 +908,15 @@ public class LotpackEditor {
             for (int[] area : clearAreas) {
                 int minZ = Math.min(area[2], area[5]);
                 if (minZ > 0) continue; // only z≤0 affects worldmap
-                int cellX1 = area[0] / CELL_DIM, cellX2 = area[3] / CELL_DIM;
-                int cellY1 = area[1] / CELL_DIM, cellY2 = area[4] / CELL_DIM;
+                int cellX1 = area[0] / XML_CELL_DIM, cellX2 = area[3] / XML_CELL_DIM;
+                int cellY1 = area[1] / XML_CELL_DIM, cellY2 = area[4] / XML_CELL_DIM;
                 for (int cx = cellX1; cx <= cellX2; cx++) {
                     for (int cy = cellY1; cy <= cellY2; cy++) {
                         String cellKey = cx + "_" + cy;
-                        int localMinX = Math.max(area[0], cx * CELL_DIM) - cx * CELL_DIM;
-                        int localMinY = Math.max(area[1], cy * CELL_DIM) - cy * CELL_DIM;
-                        int localMaxX = Math.min(area[3], (cx + 1) * CELL_DIM - 1) - cx * CELL_DIM;
-                        int localMaxY = Math.min(area[4], (cy + 1) * CELL_DIM - 1) - cy * CELL_DIM;
-                        double x1 = localMinX * 300.0 / 256.0;
-                        double y1 = localMinY * 300.0 / 256.0;
-                        double x2 = (localMaxX + 1) * 300.0 / 256.0;
-                        double y2 = (localMaxY + 1) * 300.0 / 256.0;
+                        double x1 = Math.max(area[0], cx * XML_CELL_DIM) - cx * XML_CELL_DIM;
+                        double y1 = Math.max(area[1], cy * XML_CELL_DIM) - cy * XML_CELL_DIM;
+                        double x2 = Math.min(area[3] + 1, (cx + 1) * XML_CELL_DIM) - cx * XML_CELL_DIM;
+                        double y2 = Math.min(area[4] + 1, (cy + 1) * XML_CELL_DIM) - cy * XML_CELL_DIM;
                         clearByCell.computeIfAbsent(cellKey, k -> new ArrayList<>())
                                 .add(new double[]{x1, y1, x2, y2});
                     }
@@ -965,15 +962,15 @@ public class LotpackEditor {
             if (trimmed.equals("</cell>")) {
                 if (currentCellKey != null && roadFeaturesByCell.containsKey(currentCellKey)) {
                     int[] cc = parseCellCoords(currentCellKey);
-                    int cellBaseX = cc[0] * CELL_DIM, cellBaseY = cc[1] * CELL_DIM;
+                    int cellBaseX = cc[0] * XML_CELL_DIM, cellBaseY = cc[1] * XML_CELL_DIM;
                     for (Object[] rf : roadFeaturesByCell.get(currentCellKey)) {
                         int wMinX = (int) rf[0], wMinY = (int) rf[1];
                         int wMaxX = (int) rf[2], wMaxY = (int) rf[3];
                         String highway = (String) rf[4];
-                        int px1 = (int) Math.round((wMinX - cellBaseX) * 300.0 / 256.0);
-                        int py1 = (int) Math.round((wMinY - cellBaseY) * 300.0 / 256.0);
-                        int px2 = (int) Math.round((wMaxX - cellBaseX + 1) * 300.0 / 256.0);
-                        int py2 = (int) Math.round((wMaxY - cellBaseY + 1) * 300.0 / 256.0);
+                        int px1 = wMinX - cellBaseX;
+                        int py1 = wMinY - cellBaseY;
+                        int px2 = wMaxX - cellBaseX + 1;
+                        int py2 = wMaxY - cellBaseY + 1;
                         output.add("  <feature>");
                         output.add("   <geometry type=\"Polygon\">");
                         output.add("    <coordinates>");

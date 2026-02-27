@@ -235,7 +235,7 @@ do {
             if ($worldmapPath.Trim() -ne "" -and (Test-Path $worldmapPath)) {
                 $javaArgs += $worldmapPath
             } elseif ($worldmapPath.Trim() -ne "") {
-                Write-Host " Worldmap file not found: $worldmapPath — skipping sync" -ForegroundColor Yellow
+                Write-Host " Worldmap file not found: $worldmapPath - skipping sync" -ForegroundColor Yellow
             }
             Run-Java "LotpackEditor" $javaArgs
         }
