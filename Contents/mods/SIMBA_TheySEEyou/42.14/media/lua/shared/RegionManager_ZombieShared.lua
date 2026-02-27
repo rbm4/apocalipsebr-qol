@@ -712,17 +712,18 @@ function RegionManager.Shared.ServerSideProperties(zombie, data, sandboxOptions)
 
     -- ========================================================================
     -- 5. APPLY TOUGHNESS - Hybrid approach
-    -- Store toughness in ModData for OnHit event handling
-    -- Initial health set + dynamic damage mitigation
+    -- Primary: scale zombie HP directly with maxHits so it takes many swings.
+    -- Secondary: avoidDamage hit counter as supplementary protection.
     -- ========================================================================
     -- Re-use modData from speed section above (already declared)
     if not zombie:getAttackedBy() and not zombie:isOnFire() then
         local health = 0.1 * ZombRand(4) -- Random 0.0 to 0.3 base
         if data.isTough then
-            health = health + 3.5 -- Tough: 3.5 to 3.8 initial health
+            local maxHits = data.maxHits or RegionManager.Shared.DEFAULT_MAX_HITS
+            health = health + maxHits -- Scale HP directly with region-configured maxHits
             modData.SIMBA_TSY_ToughnessType = "tough"
             modData.SIMBA_TSY_ToughnessHitCounter = 0 -- Track hits taken
-            modData.SIMBA_TSY_ToughnessMaxHits = data.maxHits or RegionManager.Shared.DEFAULT_MAX_HITS -- Region-configured extra hits
+            modData.SIMBA_TSY_ToughnessMaxHits = maxHits -- Region-configured extra hits
             zombie:setHealth(health)
         elseif data.isFragile then
             health = health + 0.5 -- Fragile: 0.5 to 0.8

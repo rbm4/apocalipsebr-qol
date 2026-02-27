@@ -23,20 +23,16 @@
 #   - Backups (.bak) are created automatically before any write
 #
 # ============================================================
-# Worldmap Sync Directives (optional — need worldmap.xml path):
+# Worldmap Sync (optional - need worldmap.xml path):
 #
-# @roadFeature, tileName, highwayValue
-#   Maps a road tile name to a highway type for worldmap rendering.
-#   When 'add' places this tile at z=0, a road polygon is emitted.
-#   highwayValue: primary, secondary, tertiary, trial
+# Road polygons: any 'add' at z=0 of 'blends_street_01_85' automatically
+#   emits a tertiary highway polygon in worldmap.xml.
 #
-# @removeBuildings
-#   Remove building features from worldmap.xml that are fully inside
-#   removeAllRange cleared areas.
+# Polygon clipping: removeAllRange clear areas automatically clip
+#   overlapping worldmap features (forest, vegetation, buildings, etc.)
+#   so the underlying tile graphics render on the minimap.
 #
-# Example:
-# @roadFeature, blends_street_01_85, tertiary
-# @removeBuildings
+# worldmap.xml.bin is auto-regenerated after sync.
 # ============================================================
 #
 # ============================================================
@@ -62,8 +58,7 @@
 # Example: Add road surface to every square in a rectangular area
 # addAllRange, 6780, 6600, 0, 6800, 6605, 0, floors_exterior_street_01_0
 # addAllRange, 6775, 6637, 0, 6771, 6604, 0, blends_street_01_85
-@roadFeature, blends_street_01_85, tertiary
-@removeBuildings
+
 remove, 6838, 7314, 0, walls_exterior_house_02_15
 remove, 6839, 7314, 0, walls_exterior_house_02_15
 removeAllRange, 6781, 6600, 0, 6793, 6600, 0
@@ -136,3 +131,46 @@ add, 6978, 6600, 0, fencing_01_65
 add, 6977, 6600, 0, fencing_01_64
 add, 6976, 6600, 0, fencing_01_65
 add, 6975, 6600, 0, fencing_01_64
+add, 6974, 6600, 0, fencing_01_65
+addAllRange, 6776, 6617, 0, 6776, 6607, 0, blends_street_01_85
+addAllRange, 6777, 6616, 0, 6777, 6606, 0, blends_street_01_85
+addAllRange, 6778, 6615, 0, 6778, 6605, 0, blends_street_01_85
+addAllRange, 6779, 6614, 0, 6779, 6605, 0, blends_street_01_85
+addAllRange, 6780, 6613, 0, 6780, 6604, 0, blends_street_01_85
+addAllRange, 6781, 6612, 0, 6781, 6604, 0, blends_street_01_85
+addAllRange, 6782, 6611, 0, 6782, 6604, 0, blends_street_01_85
+addAllRange, 6783, 6610, 0, 6783, 6604, 0, blends_street_01_85
+addAllRange, 6784, 6609, 0, 6784, 6604, 0, blends_street_01_85
+addAllRange, 6785, 6608, 0, 6785, 6604, 0, blends_street_01_85
+addAllRange, 6786, 6607, 0, 6786, 6604, 0, blends_street_01_85
+addAllRange, 6787, 6606, 0, 6787, 6604, 0, blends_street_01_85
+addAllRange, 6788, 6605, 0, 6788, 6604, 0, blends_street_01_85
+add, 6989, 6604, 0, blends_street_01_85
+add, 6774, 6609, 0, blends_street_01_85
+add, 6773, 6610, 0, blends_street_01_85
+add, 6774, 6610, 0, blends_street_01_85
+add, 6775, 6610, 0, blends_street_01_85
+add, 6775, 6609, 0, blends_street_01_85
+add, 6775, 6608, 0, blends_street_01_85
+add, 6788, 6605, 0, blends_natural_01_18
+add, 6787, 6606, 0, blends_natural_01_18
+add, 6786, 6607, 0, blends_natural_01_18
+add, 6785, 6608, 0, blends_natural_01_18
+add, 6784, 6609, 0, blends_natural_01_18
+add, 6783, 6610, 0, blends_natural_01_18
+add, 6782, 6611, 0, blends_natural_01_18
+add, 6781, 6612, 0, blends_natural_01_18
+add, 6780, 6613, 0, blends_natural_01_18
+add, 6779, 6614, 0, blends_natural_01_18
+add, 6778, 6615, 0, blends_natural_01_18
+add, 6777, 6616, 0, blends_natural_01_18
+add, 6776, 6617, 0, blends_natural_01_18
+addAllRange, 7714, 7118, 0, 7707, 7117, 0, floors_interior_tilesandwood_01_52
+addAllRange, 7714, 7119, 0, 7708, 7119, 0, flooring_raised_ddd_40
+remove,7707,7718,0,flooring_raised_02_ddd_38
+remove,7707,7717,0,flooring_raised_02_ddd_38
+remove,7719,7118,0,flooring_raised_02_ddd_38
+remove,7719,7118,0,flooring_raised_ddd_45
+remove,7719,7117,0,flooring_raised_ddd_45
+removeAllRange, 7722, 7121, 0, 7719, 7115, 0
+addAllRange, 7722, 7121, 0, 7719, 7115, 0, blends_street_01_54
