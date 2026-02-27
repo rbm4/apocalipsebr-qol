@@ -101,7 +101,7 @@ function Show-Menu {
     Write-Host "      (place a new tile object at a coordinate)" -ForegroundColor DarkGray
     Write-Host ""
     Write-Host "  [C] Apply Patch File" -ForegroundColor White
-    Write-Host "      (batch add/remove/set from a CSV patch file)" -ForegroundColor DarkGray
+    Write-Host "      (batch add/remove/set from CSV; optional worldmap.xml sync)" -ForegroundColor DarkGray
     Write-Host ""
     Write-Host "  [Q] Quit" -ForegroundColor DarkGray
     Write-Host ""
@@ -229,8 +229,15 @@ do {
                 Write-Host " File not found: $patchPath" -ForegroundColor Red
                 break
             }
+            $worldmapPath = Read-Host "Worldmap XML path (Enter to skip worldmap sync)"
             if (!(Compile-Sources)) { break }
-            Run-Java "LotpackEditor" @("--patch", $mapDir, $patchPath)
+            $javaArgs = @("--patch", $mapDir, $patchPath)
+            if ($worldmapPath.Trim() -ne "" -and (Test-Path $worldmapPath)) {
+                $javaArgs += $worldmapPath
+            } elseif ($worldmapPath.Trim() -ne "") {
+                Write-Host " Worldmap file not found: $worldmapPath — skipping sync" -ForegroundColor Yellow
+            }
+            Run-Java "LotpackEditor" $javaArgs
         }
         "Q" {
             Write-Host "`nBye!" -ForegroundColor Cyan

@@ -20,12 +20,16 @@ import java.util.*;
  *   --remove     &lt;mapDir&gt; &lt;worldX&gt; &lt;worldY&gt; &lt;z&gt; &lt;tileName&gt;
  *   --set        &lt;mapDir&gt; &lt;worldX&gt; &lt;worldY&gt; &lt;z&gt; &lt;oldTile&gt; &lt;newTile&gt;
  *   --add        &lt;mapDir&gt; &lt;worldX&gt; &lt;worldY&gt; &lt;z&gt; &lt;tileName&gt;
- *   --patch      &lt;mapDir&gt; &lt;patchFile.csv&gt;
+ *   --patch      <mapDir> <patchFile.csv> [worldmap.xml]
  *
  * Patch CSV actions: add, remove, set, removeAllRange, addAllRange, removeAllBut
  *   removeAllRange: x1, y1, z1, x2, y2, z2 — clears ALL objects in the 3D box.
  *   addAllRange:    x1, y1, z1, x2, y2, z2, tileName — adds a tile to every square in the 3D box.
  *   removeAllBut:   x, y, z, tileName — removes all objects EXCEPT the named tile.
+ *
+ * Patch CSV directives (for worldmap sync when worldmap.xml path is provided):
+ *   @roadFeature, tileName, highwayValue — map a road tile to a worldmap highway type.
+ *   @removeBuildings — remove building features inside cleared areas.
  *
  * World coordinates are absolute tile positions (use -debug tile inspector in-game).
  * Cell is auto-derived: cellX = worldX / 256, cellY = worldY / 256.
@@ -554,7 +558,7 @@ public class LotpackEditor {
         saveLotpack(cell);
     }
 
-    static void doPatch(File mapDir, File patchFile) throws IOException {
+    static void doPatch(File mapDir, File patchFile, File worldmapFile) throws IOException {
         if (!patchFile.isFile()) {
             System.err.println("Patch file not found: " + patchFile);
             System.exit(1);
@@ -570,9 +574,44 @@ public class LotpackEditor {
                 operations.add(line.split(",\\s*"));
             }
         }
-        System.out.printf("Loaded %d operations from %s%n", operations.size(), patchFile.getName());
+        System.out.printf("Loaded %d lines from %s%n", operations.size(), patchFile.getName());
 
-        // Pre-expand removeAllRange into individual _removeall ops
+        // ── Parse @ directives ──
+        Map<String, String> roadFeatureTiles = new LinkedHashMap<>(); // tileName → highwayValue
+        boolean doRemoveBuildings = false;
+        List<String[]> normalOps = new ArrayList<>();
+        for (String[] op : operations) {
+            String act0 = op[0].trim();
+            if (act0.startsWith("@")) {
+                String directive = act0.substring(1).toLowerCase();
+                switch (directive) {
+                    case "roadfeature":
+                        if (op.length >= 3) {
+                            roadFeatureTiles.put(op[1].trim(), op[2].trim());
+                            System.out.printf("  Directive: @roadFeature '%s' → highway=%s%n",
+                                    op[1].trim(), op[2].trim());
+                        } else {
+                            System.err.println("  WARN: @roadFeature needs: @roadFeature, tileName, highwayValue");
+                        }
+                        break;
+                    case "removebuildings":
+                        doRemoveBuildings = true;
+                        System.out.println("  Directive: @removeBuildings — will remove overlapping building features");
+                        break;
+                    default:
+                        System.err.printf("  WARN: unknown directive '@%s'%n", directive);
+                }
+            } else {
+                normalOps.add(op);
+            }
+        }
+        operations = normalOps;
+        if (worldmapFile == null && (!roadFeatureTiles.isEmpty() || doRemoveBuildings)) {
+            System.err.println("WARN: worldmap directives found but no worldmap.xml provided — skipping sync.");
+        }
+
+        // ── Pre-expand range operations ──
+        List<int[]> clearAreas = new ArrayList<>();
         List<String[]> expanded = new ArrayList<>();
         for (String[] op : operations) {
             String action = op[0].trim().toLowerCase();
@@ -587,6 +626,7 @@ public class LotpackEditor {
                 int minX = Math.min(x1, x2), maxX = Math.max(x1, x2);
                 int minY = Math.min(y1, y2), maxY = Math.max(y1, y2);
                 int minZ = Math.min(z1, z2), maxZ = Math.max(z1, z2);
+                clearAreas.add(new int[]{minX, minY, minZ, maxX, maxY, maxZ});
                 int count = (maxX - minX + 1) * (maxY - minY + 1) * (maxZ - minZ + 1);
                 System.out.printf("  Expanding removeAllRange (%d,%d,%d)->(%d,%d,%d) = %d squares%n",
                         minX, minY, minZ, maxX, maxY, maxZ, count);
@@ -636,6 +676,7 @@ public class LotpackEditor {
         }
 
         int totalOps = 0;
+        Map<String, Set<Long>> roadTilesByHighway = new LinkedHashMap<>();
 
         for (Map.Entry<String, List<String[]>> entry : byCell.entrySet()) {
             int[] cc = parseCellCoords(entry.getKey());
@@ -673,6 +714,12 @@ public class LotpackEditor {
                         totalOps++;
                         System.out.printf("  ADD    '%s' at (%d,%d,%d) [cell %d_%d]%n",
                                 tileName, worldX, worldY, z, cc[0], cc[1]);
+                        // Track road tiles for worldmap sync
+                        if (z == 0 && roadFeatureTiles.containsKey(tileName)) {
+                            roadTilesByHighway.computeIfAbsent(
+                                    roadFeatureTiles.get(tileName), k -> new HashSet<>())
+                                    .add(posKey(worldX, worldY));
+                        }
                         break;
                     }
                     case "remove": {
@@ -755,6 +802,286 @@ public class LotpackEditor {
             }
         }
         System.out.printf("%nDone. %d operations applied.%n", totalOps);
+
+        // ── Worldmap sync ──
+        if (worldmapFile != null && worldmapFile.isFile()
+                && (!roadTilesByHighway.isEmpty() || (doRemoveBuildings && !clearAreas.isEmpty()))) {
+            syncWorldmap(worldmapFile, roadTilesByHighway, clearAreas, doRemoveBuildings, mapDir);
+        }
+    }
+
+    // ========================== Worldmap Sync ==========================
+
+    static long posKey(int x, int y) { return ((long) x << 32) | (y & 0xFFFFFFFFL); }
+    static int posX(long key) { return (int) (key >> 32); }
+    static int posY(long key) { return (int) (key & 0xFFFFFFFFL); }
+
+    /** Group tile positions into 4-connected components via flood fill. */
+    static List<Set<Long>> groupConnectedTiles(Set<Long> tiles) {
+        Set<Long> remaining = new HashSet<>(tiles);
+        List<Set<Long>> groups = new ArrayList<>();
+        while (!remaining.isEmpty()) {
+            long seed = remaining.iterator().next();
+            Set<Long> group = new HashSet<>();
+            Deque<Long> queue = new ArrayDeque<>();
+            queue.add(seed);
+            remaining.remove(seed);
+            while (!queue.isEmpty()) {
+                long pos = queue.poll();
+                group.add(pos);
+                int x = posX(pos), y = posY(pos);
+                for (long nb : new long[]{posKey(x - 1, y), posKey(x + 1, y),
+                                          posKey(x, y - 1), posKey(x, y + 1)}) {
+                    if (remaining.remove(nb)) queue.add(nb);
+                }
+            }
+            groups.add(group);
+        }
+        return groups;
+    }
+
+    /** Extract an XML attribute value from a tag string, e.g. extractAttr(tag, "x"). */
+    static String extractAttr(String tag, String attr) {
+        String prefix = attr + "=\"";
+        int start = tag.indexOf(prefix);
+        if (start < 0) return null;
+        start += prefix.length();
+        int end = tag.indexOf('"', start);
+        return tag.substring(start, end);
+    }
+
+    /**
+     * Sync worldmap.xml: inject road polygon features and optionally remove building
+     * features that are fully inside cleared areas.
+     *
+     * <p>World tile coordinates (256-cell system) are converted to 300-cell XML coordinates:
+     *   cellID = worldCoord / 256 (shared between both systems)
+     *   xmlLocal = tileLocal * 300 / 256
+     *
+     * <p>After modifying the XML, worldmap.xml.bin is auto-regenerated via ConvertMap.
+     */
+    static void syncWorldmap(File worldmapFile,
+                              Map<String, Set<Long>> roadTilesByHighway,
+                              List<int[]> clearAreas,
+                              boolean removeBuildings,
+                              File mapDir) throws IOException {
+        System.out.println("\n=== Worldmap Sync ===");
+
+        // ── Step 1: Prepare road features grouped by cell ──
+        // cellKey → list of {minX, minY, maxX, maxY, highway}
+        Map<String, List<Object[]>> roadFeaturesByCell = new LinkedHashMap<>();
+        for (Map.Entry<String, Set<Long>> entry : roadTilesByHighway.entrySet()) {
+            String highway = entry.getKey();
+            // Group positions by cell
+            Map<String, Set<Long>> byCell = new LinkedHashMap<>();
+            for (long pos : entry.getValue()) {
+                int wx = posX(pos), wy = posY(pos);
+                String cellKey = (wx / CELL_DIM) + "_" + (wy / CELL_DIM);
+                byCell.computeIfAbsent(cellKey, k -> new HashSet<>()).add(pos);
+            }
+            // Flood-fill connected components within each cell → bounding rectangles
+            for (Map.Entry<String, Set<Long>> cellEntry : byCell.entrySet()) {
+                List<Set<Long>> components = groupConnectedTiles(cellEntry.getValue());
+                for (Set<Long> comp : components) {
+                    int minX = Integer.MAX_VALUE, maxX = Integer.MIN_VALUE;
+                    int minY = Integer.MAX_VALUE, maxY = Integer.MIN_VALUE;
+                    for (long pos : comp) {
+                        int x = posX(pos), y = posY(pos);
+                        minX = Math.min(minX, x); maxX = Math.max(maxX, x);
+                        minY = Math.min(minY, y); maxY = Math.max(maxY, y);
+                    }
+                    roadFeaturesByCell.computeIfAbsent(cellEntry.getKey(), k -> new ArrayList<>())
+                            .add(new Object[]{minX, minY, maxX, maxY, highway});
+                }
+            }
+        }
+        int totalPolygons = 0;
+        for (List<Object[]> v : roadFeaturesByCell.values()) totalPolygons += v.size();
+        System.out.printf("  Road features to inject: %d polygons in %d cells%n",
+                totalPolygons, roadFeaturesByCell.size());
+
+        // ── Step 2: Prepare clear-area bboxes in 300-cell coords for building removal ──
+        // cellKey → list of [xmlX1, xmlY1, xmlX2, xmlY2]
+        Map<String, List<double[]>> clearByCell = new LinkedHashMap<>();
+        if (removeBuildings) {
+            for (int[] area : clearAreas) {
+                int minZ = Math.min(area[2], area[5]);
+                if (minZ > 0) continue; // only z≤0 affects worldmap
+                int cellX1 = area[0] / CELL_DIM, cellX2 = area[3] / CELL_DIM;
+                int cellY1 = area[1] / CELL_DIM, cellY2 = area[4] / CELL_DIM;
+                for (int cx = cellX1; cx <= cellX2; cx++) {
+                    for (int cy = cellY1; cy <= cellY2; cy++) {
+                        String cellKey = cx + "_" + cy;
+                        int localMinX = Math.max(area[0], cx * CELL_DIM) - cx * CELL_DIM;
+                        int localMinY = Math.max(area[1], cy * CELL_DIM) - cy * CELL_DIM;
+                        int localMaxX = Math.min(area[3], (cx + 1) * CELL_DIM - 1) - cx * CELL_DIM;
+                        int localMaxY = Math.min(area[4], (cy + 1) * CELL_DIM - 1) - cy * CELL_DIM;
+                        double x1 = localMinX * 300.0 / 256.0;
+                        double y1 = localMinY * 300.0 / 256.0;
+                        double x2 = (localMaxX + 1) * 300.0 / 256.0;
+                        double y2 = (localMaxY + 1) * 300.0 / 256.0;
+                        clearByCell.computeIfAbsent(cellKey, k -> new ArrayList<>())
+                                .add(new double[]{x1, y1, x2, y2});
+                    }
+                }
+            }
+            int totalClearAreas = 0;
+            for (List<double[]> v : clearByCell.values()) totalClearAreas += v.size();
+            System.out.printf("  Clear areas for building removal: %d areas in %d cells%n",
+                    totalClearAreas, clearByCell.size());
+        }
+
+        // ── Step 3: Process XML line by line ──
+        backup(worldmapFile);
+
+        List<String> lines = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(new FileInputStream(worldmapFile), StandardCharsets.UTF_8))) {
+            String ln;
+            while ((ln = br.readLine()) != null) lines.add(ln);
+        }
+
+        List<String> output = new ArrayList<>();
+        String currentCellKey = null;
+        boolean inFeature = false;
+        List<String> featureLines = new ArrayList<>();
+        boolean skipFeature = false;
+        int injectedRoads = 0;
+        int removedBuildings2 = 0;
+
+        for (String ln : lines) {
+            String trimmed = ln.trim();
+
+            // Track current cell
+            if (trimmed.startsWith("<cell ")) {
+                String cx = extractAttr(trimmed, "x");
+                String cy = extractAttr(trimmed, "y");
+                if (cx != null && cy != null) currentCellKey = cx + "_" + cy;
+                output.add(ln);
+                continue;
+            }
+
+            // Inject road features before </cell>
+            if (trimmed.equals("</cell>")) {
+                if (currentCellKey != null && roadFeaturesByCell.containsKey(currentCellKey)) {
+                    int[] cc = parseCellCoords(currentCellKey);
+                    int cellBaseX = cc[0] * CELL_DIM, cellBaseY = cc[1] * CELL_DIM;
+                    for (Object[] rf : roadFeaturesByCell.get(currentCellKey)) {
+                        int wMinX = (int) rf[0], wMinY = (int) rf[1];
+                        int wMaxX = (int) rf[2], wMaxY = (int) rf[3];
+                        String highway = (String) rf[4];
+                        int px1 = (int) Math.round((wMinX - cellBaseX) * 300.0 / 256.0);
+                        int py1 = (int) Math.round((wMinY - cellBaseY) * 300.0 / 256.0);
+                        int px2 = (int) Math.round((wMaxX - cellBaseX + 1) * 300.0 / 256.0);
+                        int py2 = (int) Math.round((wMaxY - cellBaseY + 1) * 300.0 / 256.0);
+                        output.add("  <feature>");
+                        output.add("   <geometry type=\"Polygon\">");
+                        output.add("    <coordinates>");
+                        output.add("     <point x=\"" + px1 + "\" y=\"" + py1 + "\"/>");
+                        output.add("     <point x=\"" + px2 + "\" y=\"" + py1 + "\"/>");
+                        output.add("     <point x=\"" + px2 + "\" y=\"" + py2 + "\"/>");
+                        output.add("     <point x=\"" + px1 + "\" y=\"" + py2 + "\"/>");
+                        output.add("    </coordinates>");
+                        output.add("   </geometry>");
+                        output.add("   <properties>");
+                        output.add("    <property name=\"highway\" value=\"" + highway + "\"/>");
+                        output.add("   </properties>");
+                        output.add("  </feature>");
+                        injectedRoads++;
+                    }
+                }
+                currentCellKey = null;
+                output.add(ln);
+                continue;
+            }
+
+            // Feature-level processing for building removal
+            if (removeBuildings && trimmed.equals("<feature>")) {
+                inFeature = true;
+                featureLines.clear();
+                featureLines.add(ln);
+                skipFeature = false;
+                continue;
+            }
+
+            if (inFeature) {
+                featureLines.add(ln);
+                if (trimmed.equals("</feature>")) {
+                    inFeature = false;
+                    if (currentCellKey != null && clearByCell.containsKey(currentCellKey)) {
+                        boolean isBuilding = false;
+                        double bMinX = Double.MAX_VALUE, bMinY = Double.MAX_VALUE;
+                        double bMaxX = -Double.MAX_VALUE, bMaxY = -Double.MAX_VALUE;
+                        for (String fl : featureLines) {
+                            String ft = fl.trim();
+                            if (ft.contains("name=\"building\"")) isBuilding = true;
+                            if (ft.startsWith("<point ")) {
+                                String px = extractAttr(ft, "x");
+                                String py = extractAttr(ft, "y");
+                                if (px != null && py != null) {
+                                    double xv = Double.parseDouble(px);
+                                    double yv = Double.parseDouble(py);
+                                    bMinX = Math.min(bMinX, xv);
+                                    bMinY = Math.min(bMinY, yv);
+                                    bMaxX = Math.max(bMaxX, xv);
+                                    bMaxY = Math.max(bMaxY, yv);
+                                }
+                            }
+                        }
+                        if (isBuilding) {
+                            for (double[] ca : clearByCell.get(currentCellKey)) {
+                                if (bMinX >= ca[0] && bMinY >= ca[1]
+                                        && bMaxX <= ca[2] && bMaxY <= ca[3]) {
+                                    skipFeature = true;
+                                    System.out.printf("  Removing building in cell %s (bbox %.0f,%.0f \u2192 %.0f,%.0f)%n",
+                                            currentCellKey, bMinX, bMinY, bMaxX, bMaxY);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (!skipFeature) {
+                        output.addAll(featureLines);
+                    } else {
+                        removedBuildings2++;
+                    }
+                }
+                continue;
+            }
+
+            output.add(ln);
+        }
+
+        // Write modified XML
+        try (BufferedWriter bw = new BufferedWriter(
+                new OutputStreamWriter(new FileOutputStream(worldmapFile), StandardCharsets.UTF_8))) {
+            for (int i = 0; i < output.size(); i++) {
+                bw.write(output.get(i));
+                if (i < output.size() - 1) bw.newLine();
+            }
+        }
+        System.out.printf("  Worldmap updated: %d road features injected, %d buildings removed.%n",
+                injectedRoads, removedBuildings2);
+
+        // ── Step 4: Regenerate worldmap.xml.bin ──
+        System.out.println("  Regenerating worldmap.xml.bin...");
+        try {
+            String cp = System.getProperty("java.class.path");
+            ProcessBuilder pb = new ProcessBuilder(
+                    "java", "-cp", cp,
+                    "com.apocalipsebr.tools.mapconverter.ConvertMap",
+                    "--gen-bin", mapDir.getAbsolutePath());
+            pb.inheritIO();
+            int exitCode = pb.start().waitFor();
+            if (exitCode == 0) {
+                System.out.println("  worldmap.xml.bin regenerated OK.");
+            } else {
+                System.err.println("  WARN: ConvertMap --gen-bin exited with code " + exitCode);
+            }
+        } catch (Exception e) {
+            System.err.println("  WARN: Could not regenerate worldmap.xml.bin: " + e.getMessage());
+            System.err.println("  Run option [4] in MapTools to regenerate manually.");
+        }
     }
 
     // ========================== Main ==========================
@@ -815,7 +1142,8 @@ public class LotpackEditor {
             }
             case "--patch": {
                 if (args.length < 3) { printUsage(); System.exit(1); }
-                doPatch(mapDir, new File(args[2]));
+                File worldmapFile = (args.length >= 4) ? new File(args[3]) : null;
+                doPatch(mapDir, new File(args[2]), worldmapFile);
                 break;
             }
             default:
@@ -848,13 +1176,21 @@ public class LotpackEditor {
         System.out.println("  --add        <mapDir> <worldX> <worldY> <z> <tileName>");
         System.out.println("               Add a new tile object at a coordinate.");
         System.out.println();
-        System.out.println("  --patch      <mapDir> <patchFile.csv>");
+        System.out.println("  --patch      <mapDir> <patchFile.csv> [worldmap.xml]");
         System.out.println("               Batch operations from CSV. Format per line:");
         System.out.println("               action, worldX, worldY, z, tileName[, newTile]");
         System.out.println("               or: removeAllRange, x1, y1, z1, x2, y2, z2");
         System.out.println("               or: addAllRange, x1, y1, z1, x2, y2, z2, tileName");
         System.out.println("               or: removeAllBut, x, y, z, tileName");
         System.out.println("               Actions: add, remove, set, removeAllRange, addAllRange, removeAllBut");
+        System.out.println();
+        System.out.println("               Worldmap sync (optional \u2014 requires worldmap.xml path):");
+        System.out.println("               @roadFeature, tileName, highwayValue");
+        System.out.println("                 Maps a tile to a highway type (tertiary/secondary/primary/trial).");
+        System.out.println("                 z=0 'add' ops with this tile emit road polygons in worldmap.");
+        System.out.println("               @removeBuildings");
+        System.out.println("                 Remove building features fully inside removeAllRange areas.");
+        System.out.println("               worldmap.xml.bin is auto-regenerated after sync.");
         System.out.println();
         System.out.println("World coordinates are absolute tile positions (use -debug in-game).");
         System.out.println("Cell is auto-derived: cellX = worldX / 256, cellY = worldY / 256.");
