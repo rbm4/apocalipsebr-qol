@@ -13,7 +13,18 @@ local function SRJ_generateTooltip(JMD, player, isFullJournal)
 	local warning --= {}
 
 	local oneTimeUse = (SandboxVars.SkillRecoveryJournal.RecoveryJournalUsed == true)
-	
+
+	-- Full Journal Charges: determine if charges are exhausted
+	local fullJournalChargesExhausted = false
+	local fullJournalMaxCharges = SandboxVars.SkillRecoveryJournal.FullJournalCharges or 3
+	local fullJournalUseCount = JMD.useCount or 0
+	if isFullJournal and fullJournalMaxCharges > 0 then
+		fullJournalChargesExhausted = (fullJournalUseCount >= fullJournalMaxCharges)
+	end
+
+	-- For display purposes: treat as one-time-use if charges exhausted on full journal
+	local effectiveOneTimeUse = oneTimeUse or fullJournalChargesExhausted
+
 	if (not JMD.renamedJournal) then
 
 		warning = warning or {}
@@ -27,6 +38,16 @@ local function SRJ_generateTooltip(JMD, player, isFullJournal)
 		if oneTimeUse then
 			warning = warning or {}
 			table.insert(warning, "IGUI_OneTimeUse_Warning")
+		end
+
+		if isFullJournal and fullJournalMaxCharges > 0 then
+			warning = warning or {}
+			if fullJournalChargesExhausted then
+				table.insert(warning, "IGUI_FullJournal_ChargesExhausted")
+			else
+				table.insert(warning, "IGUI_FullJournal_ChargesWarning")
+			end
+			table.insert(warning, "IGUI_FullJournal_ChargeInfo")
 		end
 	end
 
@@ -43,7 +64,7 @@ local function SRJ_generateTooltip(JMD, player, isFullJournal)
 			if show then
 				local journalXP = xp
 				local jmdUsedXP = JMD.recoveryJournalXpLog
-				if oneTimeUse and jmdUsedXP and jmdUsedXP[perkID] and jmdUsedXP[perkID] then
+				if effectiveOneTimeUse and jmdUsedXP and jmdUsedXP[perkID] and jmdUsedXP[perkID] then
 					journalXP = math.max(0, journalXP-jmdUsedXP[perkID])
 				end
 
@@ -52,13 +73,19 @@ local function SRJ_generateTooltip(JMD, player, isFullJournal)
 				local availableXP = round(((journalXP)*multi), 2)
 
 				skillsRecord = skillsRecord..perkName.." ("..availableXP
-				if oneTimeUse then
+				if effectiveOneTimeUse then
 					local totalXP = round(((xp)*multi), 2)
 					skillsRecord = skillsRecord.."/"..totalXP
 				end
 				skillsRecord = skillsRecord.." xp)\n"
 			end
 		end
+	end
+
+	-- Show charges info for full journal
+	if isFullJournal and fullJournalMaxCharges > 0 then
+		local remaining = math.max(0, fullJournalMaxCharges - fullJournalUseCount)
+		skillsRecord = skillsRecord.."\n"..getText("IGUI_FullJournal_ChargesRemaining", tostring(remaining), tostring(fullJournalMaxCharges)).."\n"
 	end
 
 	if SandboxVars.SkillRecoveryJournal.RecoverRecipes == true then

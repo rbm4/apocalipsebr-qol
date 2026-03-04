@@ -33,5 +33,10 @@ IGUI_EN = {
     IGUI_OLDXP_WARNING = "Warning: This journal contains 'OLD' XP from before the but update(s). The journal make have some issues initially. This warning message will go away the more this journal is used.",
     IGUI_OneTimeUse_Warning = "Sandbox Option for XP Used When Read is enabled.",
     IGUI_TV_XP_Warning = "Sandbox Option for XP earned from TV shows and VHS tapes is disabled.",
+    IGUI_FullJournal_ChargesRemaining = "Free reads remaining: %1/%2",
+    IGUI_FullJournal_ChargesExhausted = "Free reads exhausted. XP will be consumed when read.",
+    IGUI_FullJournal_ChargesWarning = "Enchanted Journal has limited free reads.",
+    IGUI_FullJournal_ConfirmCharge = "Reading will consume a charge. (%1/%2 remaining)\nA charge is only spent if experience is actually gained.\nReading after interrupting a reading session doesn't consume a charge.\nContinue?",
+    IGUI_FullJournal_ChargeInfo = "A charge is only consumed when experience is gained. Reading completly or reading and dying.",
     IGUI_Rename_Warning = "Rename this journal to disable this alert.",
 }

@@ -54,5 +54,8 @@ option SkillRecoveryJournal.CraftRecipeNeedLearn
 option SkillRecoveryJournal.ModDataTrack
 {type = string, default = , page = SkillRecoveryJournal, translation = SkillRecoveryJournalModDataTrack,}
 
+option SkillRecoveryJournal.FullJournalCharges
+{type = integer, min = 0, max = 100, default = 3, page = SkillRecoveryJournal, translation = SkillRecoveryJournalFullJournalCharges,}
+
 option SkillRecoveryJournal.SecurityFeatures
 {type = enum, numValues = 3, default = 1, page = SkillRecoveryJournal, translation = SkillRecoveryJournal_SecurityFeatures, valueTranslation = SkillRecoveryJournal_SecFeat_Values,}

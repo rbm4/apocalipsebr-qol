@@ -1,0 +1,197 @@
+VERSION = 1,
+
+option SVUC.timeLight
+{
+	type = integer,
+	min = 10,
+	max = 50,
+	default = 15,
+
+	page = SVUC,
+	translation = SVUC_timeLight,
+}
+option SVUC.timeHeavy
+{
+	type = integer,
+	min = 10,
+	max = 50,
+	default = 30,
+
+	page = SVUC,
+	translation = SVUC_timeHeavy,
+}
+option SVUC.timeReinforced
+{
+	type = integer,
+	min = 10,
+	max = 50,
+	default = 45,
+
+	page = SVUC,
+	translation = SVUC_timeReinforced,
+}
+option SVUC.timeMods
+{
+	type = integer,
+	min = 10,
+	max = 50,
+	default = 15,
+
+	page = SVUC,
+	translation = SVUC_timeMods,
+}
+option SVUC.timeWheels
+{
+	type = integer,
+	min = 10,
+	max = 50,
+	default = 15,
+
+	page = SVUC,
+	translation = SVUC_timeWheels,
+}
+option SVUC.protectionHealthTriger
+{
+	type = integer,
+	min = 50,
+	max = 80,
+	default = 80,
+
+	page = SVUC,
+	translation = SVUC_protectionHealthTriger,
+}
+option SVUC.protectionLightHealthDelta
+{
+	type = integer,
+	min = 1,
+	max = 10,
+	default = 5,
+
+	page = SVUC,
+	translation = SVUC_protectionLightHealthDelta,
+}
+option SVUC.protectionHeavyHealthDelta
+{
+	type = integer,
+	min = 1,
+	max = 10,
+	default = 4,
+
+	page = SVUC,
+	translation = SVUC_protectionHeavyHealthDelta,
+}
+option SVUC.protectionReinforcedHealthDelta
+{
+	type = integer,
+	min = 1,
+	max = 10,
+	default = 3,
+
+	page = SVUC,
+	translation = SVUC_protectionReinforcedHealthDelta,
+}
+option SVUC.protectionBullbarSmallHealthDelta
+{
+	type = integer,
+	min = 1,
+	max = 10,
+	default = 6,
+
+	page = SVUC,
+	translation = SVUC_protectionBullbarSmallHealthDelta,
+}
+option SVUC.protectionBullbarMediumHealthDelta
+{
+	type = integer,
+	min = 1,
+	max = 10,
+	default = 5,
+
+	page = SVUC,
+	translation = SVUC_protectionBullbarMediumHealthDelta,
+}
+option SVUC.protectionBullbarLargeHealthDelta
+{
+	type = integer,
+	min = 1,
+	max = 10,
+	default = 4,
+
+	page = SVUC,
+	translation = SVUC_protectionBullbarLargeHealthDelta,
+}
+option SVUC.protectionPlowHealthDelta
+{
+	type = integer,
+	min = 1,
+	max = 10,
+	default = 3,
+
+	page = SVUC,
+	translation = SVUC_protectionPlowHealthDelta,
+}
+option SVUC.protectionWheelsHealthDelta
+{
+	type = integer,
+	min = 1,
+	max = 10,
+	default = 1,
+
+	page = SVUC,
+	translation = SVUC_protectionWheelsHealthDelta,
+}
+
+option SVUC.protectionEngineSmallPowerIncrease
+{
+	type = integer,
+	min = 0,
+	max = 50,
+	default = 10,
+
+	page = SVUC,
+	translation = SVUC_protectionEngineSmallPowerIncrease,
+}
+
+option SVUC.protectionEngineMediumPowerIncrease
+{
+	type = integer,
+	min = 0,
+	max = 50,
+	default = 20,
+
+	page = SVUC,
+	translation = SVUC_protectionEngineMediumPowerIncrease,
+}
+
+option SVUC.protectionEngineLargePowerIncrease
+{
+	type = integer,
+	min = 0,
+	max = 50,
+	default = 35,
+
+	page = SVUC,
+	translation = SVUC_protectionEngineLargePowerIncrease,
+}
+
+option SVUC.protectionEnginePipedPowerIncrease
+{
+	type = integer,
+	min = 0,
+	max = 50,
+	default = 50,
+
+	page = SVUC,
+	translation = SVUC_protectionEnginePipedPowerIncrease,
+}
+
+option SVUC.protectionEngineSnorkelPowerIncrease
+{
+	type = integer,
+	min = 0,
+	max = 50,
+	default = 15,
+
+	page = SVUC,
+	translation = SVUC_protectionEngineSnorkelPowerIncrease,
+}

@@ -51,6 +51,9 @@ Sandbox_EN = {
 
     Sandbox_SkillRecoveryJournalKillsTrack = "Zombie/Survivor Kills Recovery Percentage"
 
+    Sandbox_SkillRecoveryJournalFullJournalCharges = "Enchanted Journal Free Read Charges"
+    Sandbox_SkillRecoveryJournalFullJournalCharges_tooltip = "Number of times the Enchanted Bound Journal can be read without consuming XP. After all free charges are used, reading will consume XP from the journal (like 'Journal XP Used When Read'). Set to 0 for unlimited free reads (charges disabled)."
+
     Sandbox_SkillRecoveryJournal_SecurityFeatures = "Account Security Protections",
     Sandbox_SkillRecoveryJournal_SecurityFeatures_tooltip = "Whether journals check against username, steamID, both, or none. Warning: Disabling this entirely would mean people can share journals.",
 

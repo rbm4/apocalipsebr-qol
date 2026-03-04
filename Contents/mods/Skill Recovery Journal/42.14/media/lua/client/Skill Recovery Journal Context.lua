@@ -30,13 +30,59 @@ function contextSRJ.postContextMenu(playerID, context, items)
 end
 
 
+function contextSRJ.startReading(player, item)
+	if item:getContainer() ~= nil then
+		ISInventoryPaneContextMenu.transferIfNeeded(player, item)
+	end
+	ISTimedActionQueue.add(ReadSkillRecoveryJournal:new(player, item))
+end
+
+
+function contextSRJ.onConfirmReadCharge(target, button, player, item)
+	if button.internal == "YES" then
+		contextSRJ.startReading(player, item)
+	end
+end
+
+
 function contextSRJ.readItems(items, player)
 	items = ISInventoryPane.getActualItems(items)
 	for i,item in ipairs(items) do
-		if item:getContainer() ~= nil then
-			ISInventoryPaneContextMenu.transferIfNeeded(player, item)
+		-- Check if this is a full journal that would consume a new charge
+		if SRJ.isFullRecoveryJournal(item) then
+			local maxCharges = SandboxVars.SkillRecoveryJournal.FullJournalCharges or 3
+			if maxCharges > 0 then
+				local JMD = SRJ.modDataHandler.getItemModData(item)
+				local readerKey = tostring(player:getSteamID())
+				local pMD = SRJ.modDataHandler.getPlayerModData(player)
+				local itemID = item:getID()
+				local isResuming = JMD.chargeReaders and JMD.chargeReaders[readerKey] and (pMD.chargeSession == itemID)
+
+				if not isResuming then
+					-- New session would consume a charge — show confirmation
+					local remaining = math.max(0, maxCharges - (JMD.useCount or 0))
+					local msg = getText("IGUI_FullJournal_ConfirmCharge", tostring(remaining), tostring(maxCharges))
+					local modal = ISModalDialog:new(
+						getCore():getScreenWidth() / 2 - 190,
+						getCore():getScreenHeight() / 2 - 60,
+						380,
+						120,
+						msg,
+						true,
+						nil,
+						contextSRJ.onConfirmReadCharge,
+						player:getPlayerNum(),
+						player,
+						item
+					)
+					modal:initialise()
+					modal:addToUIManager()
+					return
+				end
+			end
 		end
-		ISTimedActionQueue.add(ReadSkillRecoveryJournal:new(player, item))
+
+		contextSRJ.startReading(player, item)
 		break
 	end
 end

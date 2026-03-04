@@ -1,0 +1,11 @@
+module Base
+{
+    timedAction RoofLightWeldingSurface
+    {
+        metabolics = UsingTools,
+        actionAnim = Welding_Surface,
+        prop1 = Base.CraftingWeldingTorch,
+        prop2 = Base.CraftingWeldingPipe,
+        sound = Blow_Torch_A,
+    }
+}

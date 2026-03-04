@@ -26,6 +26,41 @@ function ReadSkillRecoveryJournal:start()
 	self.character:setReading(true)
 	self.character:reportEvent("EventRead")
 
+	-- Full Journal Charges: consume a charge on read start (only if not resuming)
+	if self.isFullJournal then
+		local maxCharges = SandboxVars.SkillRecoveryJournal.FullJournalCharges or 3
+		if maxCharges > 0 then
+			local JMD = SRJ.modDataHandler.getItemModData(self.item)
+			JMD.chargeReaders = JMD.chargeReaders or {}
+			local readerKey = tostring(self.character:getSteamID())
+			local pMD = SRJ.modDataHandler.getPlayerModData(self.character)
+			local itemID = self.item:getID()
+
+			-- Detect stale session (player died/respawned or switched journals)
+			-- Player ModData resets on death, so chargeSession will be nil for new characters
+			if JMD.chargeReaders[readerKey] and pMD.chargeSession ~= itemID then
+				-- Stale session: clear it so a new charge is consumed below
+				JMD.chargeReaders[readerKey] = nil
+			end
+
+			if not JMD.chargeReaders[readerKey] then
+				-- New read session: consume a charge
+				JMD.useCount = (JMD.useCount or 0) + 1
+				JMD.chargeReaders[readerKey] = true
+			end
+			-- else: resuming an interrupted session, don't consume charge
+
+			-- Track active session on player ModData (survives interrupts, lost on death)
+			pMD.chargeSession = itemID
+
+			self.chargesExhausted = ((JMD.useCount or 0) > maxCharges)
+			-- sync immediately so charge is persisted even if reading is interrupted
+			SRJ.modDataHandler.sendModDataToServer(self.character, self.item)
+		else
+			self.chargesExhausted = false
+		end
+	end
+
 	local logText = ISLogSystem.getGenericLogText(self.character)
 	sendClientCommand(self.character, 'ISLogSystem', 'writeLog', {loggerName = "PerkLog", logText = logText.."[SRJ START READING]"})
 end
@@ -36,6 +71,30 @@ function ReadSkillRecoveryJournal:forceStop()
 	self.item:setJobDelta(0.0)
 	if self.action then self.action:setLoopedAction(false) end
 	self.character:playSound("CloseBook")
+
+	-- Clear charge session only if reading completed logically (not interrupted)
+	if self.readingComplete and self.isFullJournal then
+		local maxCharges = SandboxVars.SkillRecoveryJournal.FullJournalCharges or 3
+		if maxCharges > 0 then
+			local JMD = SRJ.modDataHandler.getItemModData(self.item)
+
+			-- Refund the charge if no XP was actually awarded during this session
+			if not self.xpWasAwarded and JMD.useCount and JMD.useCount > 0 then
+				JMD.useCount = JMD.useCount - 1
+			end
+
+			if JMD.chargeReaders then
+				local readerKey = tostring(self.character:getSteamID())
+				JMD.chargeReaders[readerKey] = nil
+			end
+			-- Clear active session marker from player
+			local pMD = SRJ.modDataHandler.getPlayerModData(self.character)
+			pMD.chargeSession = nil
+
+			SRJ.modDataHandler.sendModDataToServer(self.character, self.item)
+		end
+	end
+
 	local logText = ISLogSystem.getGenericLogText(self.character)
 	sendClientCommand(self.character, 'ISLogSystem', 'writeLog', {loggerName = "PerkLog", logText = logText.."[SRJ STOP READING] (forceStop)"})
 	ISBaseTimedAction.forceStop(self)
@@ -201,7 +260,7 @@ function ReadSkillRecoveryJournal:update()
 				JMD.recoveryJournalXpLog = JMD.recoveryJournalXpLog or {}
 				local jmdUsedXP = JMD.recoveryJournalXpLog
 
-				local oneTimeUse = (SandboxVars.SkillRecoveryJournal.RecoveryJournalUsed == true)
+				local oneTimeUse = (SandboxVars.SkillRecoveryJournal.RecoveryJournalUsed == true) or (self.chargesExhausted == true)
 
 				for skill,xp in pairs(XpStoredInJournal) do
 					totalRecoverableXP = totalRecoverableXP + xp
@@ -251,6 +310,7 @@ function ReadSkillRecoveryJournal:update()
                                     amount = addedXP
                                 })
 
+								self.xpWasAwarded = true
 								changesMade = true
 
 								-- build halo text
@@ -347,7 +407,10 @@ function ReadSkillRecoveryJournal:update()
 			self.spoke = true
 			player:Say(sayText, 0.55, 0.55, 0.55, UIFont.Dialogue, 0, "default")
 		end
-		if delayedStop then self:forceStop() end
+		if delayedStop then
+			self.readingComplete = true
+			self:forceStop()
+		end
 	end
 end
 
@@ -376,6 +439,26 @@ function ReadSkillRecoveryJournal:new(character, item)
 	o.recipeIntervals = 0
 	o.maxTime = -1
 	o.haloTextDelay = 0
+	o.chargesExhausted = false
+	o.xpWasAwarded = false
+
+	-- Pre-calculate charge exhaustion state (actual increment happens in start())
+	if o.isFullJournal then
+		local maxCharges = SandboxVars.SkillRecoveryJournal.FullJournalCharges or 3
+		if maxCharges > 0 then
+			local preJMD = SRJ.modDataHandler.getItemModData(item)
+			local readerKey = tostring(character:getSteamID())
+			local pMD = SRJ.modDataHandler.getPlayerModData(character)
+			local itemID = item:getID()
+			-- Resuming only if journal has active session AND player ModData confirms it
+			local isResuming = preJMD.chargeReaders and preJMD.chargeReaders[readerKey] and (pMD.chargeSession == itemID)
+			local effectiveUseCount = preJMD.useCount or 0
+			if not isResuming then
+				effectiveUseCount = effectiveUseCount + 1
+			end
+			o.chargesExhausted = (effectiveUseCount > maxCharges)
+		end
+	end
 
 	local JMD = SRJ.modDataHandler.getItemModData(item)
 	if JMD then

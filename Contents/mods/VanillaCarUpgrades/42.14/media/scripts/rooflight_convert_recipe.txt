@@ -1,0 +1,44 @@
+module Base
+{
+    craftRecipe ConvertATARoofLightItem
+    {
+        time            = 35,
+        category        = Welding,
+        timedAction     = RoofLightWeldingSurface,
+        SkillRequired   = MetalWelding:2,
+        NeedToBeLearn   = false,
+        xpAward         = MetalWelding:10,
+
+        inputs
+        {
+            item 1 [ATA2.ATAFrontRoofLightItem],
+            item 3 [BlowTorch] flags[DontRecordInput],
+            item 1 tags[base:weldingmask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATAItems.ATARoofLightItem,
+        }
+    }
+
+    craftRecipe ConvertATAFrontRoofLightItem
+    {
+        time            = 35,
+        category        = Welding,
+        timedAction     = RoofLightWeldingSurface,
+        SkillRequired   = MetalWelding:2,
+        NeedToBeLearn   = false,
+        xpAward         = MetalWelding:10,
+
+        inputs
+        {
+            item 1 [ATAItems.ATARoofLightItem],
+            item 3 [BlowTorch] flags[DontRecordInput],
+            item 1 tags[base:weldingmask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATAFrontRoofLightItem,
+        }
+    }
+}
