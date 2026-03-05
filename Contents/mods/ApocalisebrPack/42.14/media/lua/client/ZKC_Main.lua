@@ -138,6 +138,17 @@ local function collectPlayerData(player)
     -- Character info
     if ZKC_Config.PlayerData.includeCharacterInfo then
         data.hoursSurvived = math.floor(player:getHoursSurvived())
+
+        -- Collect raw XP and level for all skills
+        data.skills = {}
+        local xpObj = player:getXp()
+        for i = 1, Perks.getMaxIndex() - 1 do
+            local perk = Perks.fromIndex(i)
+            if perk and perk:getParent():getId() ~= "None" then
+                local perkId = perk:getId()
+                data.skills[perkId] = xpObj:getXP(perk)
+            end
+        end
     end
 
     return data

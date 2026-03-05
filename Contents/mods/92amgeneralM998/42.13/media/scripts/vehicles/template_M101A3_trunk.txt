@@ -48,7 +48,7 @@ module Base
 			repairMechanic = true,
 			container
 			{
-				capacity = 70,
+				capacity = 90,
 				conditionAffectsCapacity = false,
 				test = M101A3.ContainerAccess.TruckBedTop,
 			}

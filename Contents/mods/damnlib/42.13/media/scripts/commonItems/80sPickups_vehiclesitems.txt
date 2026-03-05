@@ -10,7 +10,7 @@ module Base
         ItemType = base:normal,
         DisplayName	=	80s Pickup Roofrack,
         Icon	=	80Sroofrack_1,
-        MaxCapacity = 65,
+        MaxCapacity = 165,
         ConditionAffectsCapacity = false,
         ConditionMax = 100,
         ChanceToSpawnDamaged = 20,

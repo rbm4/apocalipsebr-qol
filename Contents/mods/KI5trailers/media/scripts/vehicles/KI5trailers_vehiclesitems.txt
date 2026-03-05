@@ -25,7 +25,7 @@ module Base
         VehicleType =   2,
         DisplayName	=	Utility Trailer Toolbox,
         Icon	=	KI5TR_toolbox,
-        MaxCapacity = 15,
+        MaxCapacity = 25,
         ConditionAffectsCapacity = false,
         ConditionMax = 100,
         ChanceToSpawnDamaged = 20,

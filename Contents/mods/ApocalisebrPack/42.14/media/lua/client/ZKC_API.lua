@@ -51,28 +51,38 @@ function ZKC_API.writeKillDataToFile(killData)
     return true
 end
 
+-- Serialize a Lua value to a JSON string
+-- @param value any Lua value
+-- @return string JSON formatted string
+local function serializeValue(value)
+    local vtype = type(value)
+    if vtype == "string" then
+        return '"' .. value:gsub('"', '\\"') .. '"'
+    elseif vtype == "number" then
+        -- Preserve decimals for floats, strip for integers
+        if value == math.floor(value) then
+            return string.format("%.0f", value)
+        else
+            return tostring(value)
+        end
+    elseif vtype == "boolean" then
+        return value and "true" or "false"
+    elseif vtype == "table" then
+        local parts = {}
+        for k, v in pairs(value) do
+            table.insert(parts, '"' .. tostring(k) .. '":' .. serializeValue(v))
+        end
+        return "{" .. table.concat(parts, ",") .. "}"
+    else
+        return '"' .. tostring(value) .. '"'
+    end
+end
+
 -- Create JSON payload from kill data
 -- @param killData table containing kill information
 -- @return string JSON formatted string
 function ZKC_API.createJsonPayload(killData)
-    -- Simple JSON serialization (you might want to use a proper JSON library for complex data)
-    local parts = {}
-    
-    for key, value in pairs(killData) do
-        local valueStr
-        if type(value) == "string" then
-            valueStr = '"' .. value:gsub('"', '\\"') .. '"'
-        elseif type(value) == "number" then
-            valueStr = string.format("%.0f", value)
-        elseif type(value) == "boolean" then
-            valueStr = value and "true" or "false"
-        else
-            valueStr = '"' .. tostring(value) .. '"'
-        end
-        table.insert(parts, '"' .. key .. '":' .. valueStr)
-    end
-    
-    return "{" .. table.concat(parts, ",") .. "}"
+    return serializeValue(killData)
 end
 
 -- Test sending data to server
