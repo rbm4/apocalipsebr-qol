@@ -333,7 +333,7 @@ module Base
 
 			container
 			{
-				capacity = 7,
+				capacity = 40,
 				test = Vehicles.ContainerAccess.GloveBox,
 			}
 
@@ -350,7 +350,7 @@ module Base
 			container
 			{
 				conditionAffectsCapacity = false,
-				capacity = 95,
+				capacity = 125,
 			}
 
 			install

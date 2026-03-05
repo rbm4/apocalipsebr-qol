@@ -12,7 +12,7 @@ module Base
             durability = 5,
 			container
 			{
-				capacity = 110,
+				capacity = 210,
 				test = DAMN.ContainerAccess.TrunkInner,
 			}
 			lua

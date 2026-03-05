@@ -134,7 +134,7 @@ module Base
 		{
 			container
 			{
-				capacity = 180,
+				capacity = 220,
 			}
 		}
 
