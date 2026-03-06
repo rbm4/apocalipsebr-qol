@@ -94,7 +94,7 @@ module Base
         mass = 1000,
         engineLoudness = 90,
         engineQuality = 90,
-        maxSpeed = 120f,
+        maxSpeed = 140f,
         gearRatioCount = 5,
         gearRatioR = 3.5,
         gearRatio1 = 4.11,

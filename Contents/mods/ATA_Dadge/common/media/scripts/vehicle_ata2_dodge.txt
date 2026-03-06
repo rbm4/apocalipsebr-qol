@@ -48,7 +48,7 @@ module Base
 	vehicle ATADodgePpg
 	{
 		template! = ATADodge,
-		engineForce = 6200,
+		engineForce = 6900,
 
 		skin
 		{
@@ -109,7 +109,7 @@ module Base
 	vehicle ATADodge
 	{
 		template! = ATADodge,
-		engineForce = 5700,
+		engineForce = 6300,
 
 		skin
 		{
