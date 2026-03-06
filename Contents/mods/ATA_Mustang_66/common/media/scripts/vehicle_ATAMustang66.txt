@@ -94,7 +94,7 @@ module Base
 			texture = ATAMustang66/vehicle_9s,
 		}
 
-		engineForce = 5000,
+		engineForce = 6000,
 	}
 	vehicle ATAMustang66Custom
 	{
@@ -198,6 +198,6 @@ module Base
 			texture = ATAMustang66/vehicle_9s,
 		}
 
-		engineForce = 6000,
+		engineForce = 7000,
 	}
 }
