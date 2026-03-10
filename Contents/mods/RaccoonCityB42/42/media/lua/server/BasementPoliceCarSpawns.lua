@@ -8,6 +8,18 @@
 BasementPoliceCarSpawns = BasementPoliceCarSpawns or {}
 BasementPoliceCarSpawns.ModName = 'BasementPoliceCarSpawns'
 
+-- Modded vehicle prefixes to exclude from natural spawning (sold in store only)
+BasementPoliceCarSpawns.BlockedPrefixes = {
+	"Base.ATA",       -- All ATA vehicles (Dodge, Mustang, Samara, Jeep, Van)
+	"Base.92amgeneral", -- Humvee M998
+	"Base.TrailerM101", -- Military trailer
+	"Base.TrailerKI5", -- KI5 trailers
+	"Base.Biochemical", -- Biochemical pickup
+	"Base.en21_",      -- Bronco
+	"Base.U1550L",     -- Unimog
+	"Base.UnimogTrailer", -- Unimog trailer
+}
+
 
 
 BasementPoliceCarSpawns.DirRandom1 = 
@@ -60,10 +72,21 @@ BasementPoliceCarSpawns.CarLocationList =
 	['10424,10276,-1'] = {CarTypeList = VehicleZoneDistribution.good.vehicles, SpawnsChance = 80, RandomDir = false, dir = IsoDirections.W, SpawnsKey = 10},
 }
 
+function BasementPoliceCarSpawns.IsBlockedVehicle(vehicleType)
+	for _, prefix in ipairs(BasementPoliceCarSpawns.BlockedPrefixes) do
+		if string.sub(vehicleType, 1, string.len(prefix)) == prefix then
+			return true
+		end
+	end
+	return false
+end
+
 function BasementPoliceCarSpawns.GetCarFullType(charlist)
 	local temp = {}
 	for strType, v in pairs(charlist) do
-		table.insert(temp,strType)
+		if not BasementPoliceCarSpawns.IsBlockedVehicle(strType) then
+			table.insert(temp,strType)
+		end
 		--print(strType, v)
 	end
 	if #temp >= 1 then 
