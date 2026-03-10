@@ -1,8 +1,5 @@
 require "TsarSpawnList"
 require "VehicleZoneDefinition"
 
-VehicleZoneDistribution = VehicleZoneDistribution or {};
-
-VehicleZoneDistribution.parkingstall.vehicles["Base.ATAMustang66"] = {index = -1, spawnChance = 0};
-VehicleZoneDistribution.good.vehicles["Base.ATAMustang66"] = {index = -1, spawnChance = 0};
-VehicleZoneDistribution.good.vehicles["Base.ATAMustang66Custom"] = {index = -1, spawnChance = 0};
+-- Vehicle spawn registrations removed: modded vehicles are sold in the server store only.
+-- Original entries for ATAMustang66 (parkingstall, good) and ATAMustang66Custom (good) were here.

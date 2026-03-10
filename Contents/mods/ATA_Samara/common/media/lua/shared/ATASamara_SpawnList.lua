@@ -1,10 +1,3 @@
-VehicleZoneDistribution = VehicleZoneDistribution or {};
-
-VehicleZoneDistribution.parkingstall.vehicles["Base.ATASamaraClassic"] = {index = -1, spawnChance = 0};
-VehicleZoneDistribution.medium.vehicles["Base.ATASamaraClassic"] = {index = -1, spawnChance = 0};
-VehicleZoneDistribution.good.vehicles["Base.ATASamaraClassic"] = {index = -1, spawnChance = 0};
-VehicleZoneDistribution.ranger.vehicles["Base.ATASamaraClassic"] = {index = -1, spawnChance = 0};
-
-VehicleZoneDistribution.ranger.vehicles["Base.ATASamaraPolice"] = {index = -1, spawnChance = 0};
-VehicleZoneDistribution.police.vehicles["Base.ATASamaraPolice"] = {index = -1, spawnChance = 0};
+-- Vehicle spawn registrations removed: modded vehicles are sold in the server store only.
+-- Original entries for ATASamaraClassic (parkingstall, medium, good, ranger) and ATASamaraPolice (ranger, police) were here.
 

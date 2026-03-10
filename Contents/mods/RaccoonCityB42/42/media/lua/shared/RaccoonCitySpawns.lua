@@ -1,60 +1,42 @@
 if VehicleZoneDistribution then
-	-- 生化皮卡
+	-- Biochemical zone - vanilla SUV replacement (modded vehicles sold in store only)
 	VehicleZoneDistribution.biochemical = VehicleZoneDistribution.biochemical or {};
 	VehicleZoneDistribution.biochemical.vehicles = VehicleZoneDistribution.biochemical.vehicles or {};
 
-	VehicleZoneDistribution.biochemical.vehicles["Base.Biochemical_PickupTruck"] = {index = -1, spawnChance = 0};
+	VehicleZoneDistribution.biochemical.vehicles["Base.SUV"] = {index = -1, spawnChance = 50};
+	VehicleZoneDistribution.biochemical.vehicles["Base.PickUpTruck"] = {index = -1, spawnChance = 50};
 
 	VehicleZoneDistribution.biochemical.baseVehicleQuality = 2.0;
 	VehicleZoneDistribution.biochemical.chanceToSpawnKey = 50;
 	VehicleZoneDistribution.biochemical.chanceToSpawnSpecial = 0;
 	VehicleZoneDistribution.biochemical.spawnRate = 1000;
 	
-	-- MOD普通车
+	-- Vanilla civilian vehicles (modded vehicles removed - sold in store only)
 	VehicleZoneDistribution.modplain = VehicleZoneDistribution.modplain or {};
 	VehicleZoneDistribution.modplain.vehicles = VehicleZoneDistribution.modplain.vehicles or {};
 
-	VehicleZoneDistribution.modplain.vehicles["Base.U1550L"] = {index = -1, spawnChance = 0};
-	VehicleZoneDistribution.modplain.vehicles["Base.UnimogTrailer"] = {index = -1, spawnChance = 0};
-	VehicleZoneDistribution.modplain.vehicles["Base.en21_Bronco"] = {index = -1, spawnChance = 0};
-	--VehicleZoneDistribution.modplain.vehicles["Base.86econolinerv"] = {index = -1, spawnChance = 10};
-	--VehicleZoneDistribution.modplain.vehicles["Base.86bounder"] = {index = -1, spawnChance = 10};
-	VehicleZoneDistribution.modplain.vehicles["Base.ATA_VanDeRumba"] = {index = -1, spawnChance = 0};
-	VehicleZoneDistribution.modplain.vehicles["Base.ATAJeepClassic"] = {index = -1, spawnChance = 0};
-	VehicleZoneDistribution.modplain.vehicles["Base.ATAJeepRubicon"] = {index = -1, spawnChance = 0};
-	VehicleZoneDistribution.modplain.vehicles["Base.ATAMustangClassic"] = {index = -1, spawnChance = 0};
-	VehicleZoneDistribution.modplain.vehicles["Base.ATADodge"] = {index = -1, spawnChance = 0};
+	VehicleZoneDistribution.modplain.vehicles["Base.CarNormal"] = {index = -1, spawnChance = 15};
+	VehicleZoneDistribution.modplain.vehicles["Base.SmallCar"] = {index = -1, spawnChance = 15};
+	VehicleZoneDistribution.modplain.vehicles["Base.ModernCar"] = {index = -1, spawnChance = 12};
+	VehicleZoneDistribution.modplain.vehicles["Base.PickUpTruck"] = {index = -1, spawnChance = 12};
+	VehicleZoneDistribution.modplain.vehicles["Base.SUV"] = {index = -1, spawnChance = 10};
+	VehicleZoneDistribution.modplain.vehicles["Base.Van"] = {index = -1, spawnChance = 10};
+	VehicleZoneDistribution.modplain.vehicles["Base.CarStationWagon"] = {index = -1, spawnChance = 14};
+	VehicleZoneDistribution.modplain.vehicles["Base.SportsCar"] = {index = -1, spawnChance = 8};
+	VehicleZoneDistribution.modplain.vehicles["Base.OffRoad"] = {index = -1, spawnChance = 4};
 
 	VehicleZoneDistribution.modplain.baseVehicleQuality = 1.1;
 	VehicleZoneDistribution.modplain.chanceToSpawnKey = 5;
 	VehicleZoneDistribution.modplain.chanceToSpawnSpecial = 0;
 	VehicleZoneDistribution.modplain.spawnRate = 25;
 	
-	-- MOD军车
-	--VehicleZoneDistribution.modmilitary = VehicleZoneDistribution.modmilitary or {};
-	--VehicleZoneDistribution.modmilitary.vehicles = VehicleZoneDistribution.modmilitary.vehicles or {};
-	--
-	--VehicleZoneDistribution.modmilitary.vehicles["Base.SC_M35A1"] = {index = -1, spawnChance = 10};
-	--VehicleZoneDistribution.modmilitary.vehicles["Base.80manKat1"] = {index = -1, spawnChance = 10};
-	--VehicleZoneDistribution.modmilitary.vehicles["Base.83amgeneralM923"] = {index = -1, spawnChance = 10};
-	--VehicleZoneDistribution.modmilitary.vehicles["Base.78amgeneralM35A2"] = {index = -1, spawnChance = 15};
-	--VehicleZoneDistribution.modmilitary.vehicles["Base.78amgeneralM49A2C"] = {index = -1, spawnChance = 10};
-	--VehicleZoneDistribution.modmilitary.vehicles["Base.78amgeneralM50A3"] = {index = -1, spawnChance = 10};
-	--VehicleZoneDistribution.modmilitary.vehicles["Base.92amgeneralM998"] = {index = -1, spawnChance = 15};
-	--VehicleZoneDistribution.modmilitary.vehicles["Base.86oshkoshKYFD"] = {index = -1, spawnChance = 10};
-	--VehicleZoneDistribution.modmilitary.vehicles["Base.HEMTTLoadHandling"] = {index = -1, spawnChance = 10};
-	--
-	--VehicleZoneDistribution.modmilitary.baseVehicleQuality = 1.1;
-	--VehicleZoneDistribution.modmilitary.chanceToSpawnKey = 5;
-	--VehicleZoneDistribution.modmilitary.chanceToSpawnSpecial = 0;
-	--VehicleZoneDistribution.modmilitary.spawnRate = 40;
-	
-	-- 特殊车
+	-- Vanilla special vehicles (modded vehicles removed - sold in store only)
 	VehicleZoneDistribution.modspecial = VehicleZoneDistribution.modspecial or {};
 	VehicleZoneDistribution.modspecial.vehicles = VehicleZoneDistribution.modspecial.vehicles or {};
 	
-	VehicleZoneDistribution.modspecial.vehicles["Base.ATAJeepArcher"] = {index = -1, spawnChance = 0};
-	VehicleZoneDistribution.modspecial.vehicles["Base.ATADodgePpg"] = {index = -1, spawnChance = 0};
+	VehicleZoneDistribution.modspecial.vehicles["Base.CarLightsPolice"] = {index = -1, spawnChance = 40};
+	VehicleZoneDistribution.modspecial.vehicles["Base.CarLightsRanger"] = {index = -1, spawnChance = 30};
+	VehicleZoneDistribution.modspecial.vehicles["Base.CarLuxury"] = {index = -1, spawnChance = 30};
 	
 	VehicleZoneDistribution.modspecial.baseVehicleQuality = 1.1;
 	VehicleZoneDistribution.modspecial.chanceToSpawnKey = 0;
