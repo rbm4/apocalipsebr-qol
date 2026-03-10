@@ -1,0 +1,8 @@
+{
+    "IGUI_ShowTooltip": "툴팁",
+    "IGUI_CleanHotBar_StatusBar_Height": "상태 표시줄 높이",
+    "IGUI_CleanHotBar_AmmoText_Scale": "탄약 텍스트 높이",
+    "IGUI_CleanHotBar_DurabilityAlert": "무기 내구도 경고",
+    "IGUI_CleanHotBar_Hotbar": "단축바",
+    "IGUI_CleanHotBar_EquipItem": "손에 장착됨"
+}

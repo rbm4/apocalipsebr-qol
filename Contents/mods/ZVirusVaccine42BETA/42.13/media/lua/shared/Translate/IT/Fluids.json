@@ -1,0 +1,19 @@
+{
+    "Fluid_Container_FlaskLab": "Beuta",
+    "Fluid_Container_TestTubeLab": "Provetta",
+    "Fluid_Name_TaintedBlood": "Sangue Coagulato",
+    "Fluid_Name_InfectedBlood": "Sangue Infetto",
+    "Fluid_Name_Antibodies": "Anticorpi",
+    "Fluid_Name_Leukocytes": "Leucociti",
+    "Fluid_Name_BloodCells": "Cellule del Sangue",
+    "Fluid_Name_BloodPlasma": "Plasma",
+    "Fluid_Name_AmmoniumSulfate": "Solfato di Ammonio",
+    "Fluid_Name_HydrogenPeroxide": "Perossido di Idrogeno",
+    "Fluid_Name_SodiumHypochlorite": "Ipoclorito di Sodio",
+    "Fluid_Name_PurifiedWater": "Acqua Purificata",
+    "Fluid_Name_BrainFluidHigh": "Campione di Liquido Cerebrospinale di Alta Qualità",
+    "Fluid_Name_BrainFluidMid": "Campione di Liquido Cerebrospinale di Qualità Media",
+    "Fluid_Name_BrainFluidLow": "Campione di Liquido Cerebrospinale di Bassa Qualità",
+    "Fluid_Name_HydrochloricAcid": "Acido Cloridrico",
+    "Fluid_Name_SulfuricAcid": "Acido Solforico"
+}

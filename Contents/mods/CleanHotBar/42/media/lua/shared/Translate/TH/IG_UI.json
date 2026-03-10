@@ -1,0 +1,8 @@
+{
+    "IGUI_ShowTooltip": "คำแนะนำ (Tooltip)",
+    "IGUI_CleanHotBar_StatusBar_Height": "ความสูงของแถบสถานะ",
+    "IGUI_CleanHotBar_AmmoText_Scale": "ขนาดข้อความกระสุน",
+    "IGUI_CleanHotBar_DurabilityAlert": "คำเตือนความทนทานของอาวุธ",
+    "IGUI_CleanHotBar_Hotbar": "แถบลัด",
+    "IGUI_CleanHotBar_EquipItem": "ถือในมือ"
+}

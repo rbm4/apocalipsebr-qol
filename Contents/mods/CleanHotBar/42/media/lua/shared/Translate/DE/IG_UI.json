@@ -1,0 +1,8 @@
+{
+    "IGUI_ShowTooltip": "Tooltips",
+    "IGUI_CleanHotBar_StatusBar_Height": "Statusleiste",
+    "IGUI_CleanHotBar_AmmoText_Scale": "AmmoText-Höhe",
+    "IGUI_CleanHotBar_DurabilityAlert": "Waffenhaltbarkeitswarnung",
+    "IGUI_CleanHotBar_Hotbar": "Schnellleiste",
+    "IGUI_CleanHotBar_EquipItem": "In der Hand"
+}

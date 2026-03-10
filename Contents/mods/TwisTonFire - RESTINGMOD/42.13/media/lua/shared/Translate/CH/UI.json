@@ -1,0 +1,22 @@
+{
+    "UI_Resting": "...",
+    "UI_Finished_resting_F": "休息好了！",
+    "UI_Finished_resting_M": "休息好了！",
+    "UI_Stiffness_Right_Arm": "疼痛",
+    "UI_POISONSTATE": "生病",
+    "UI_RestingMod_label_resting": "休息期間的文字：",
+    "UI_RestingMod_Mode": "若符合條件則降低遊戲速度",
+    "UI_RestingMod_mode_never": "永不",
+    "UI_RestingMod_mode_pain": "休息完畢",
+    "UI_RestingMod_mode_nopain": "休息完畢 - 無疼痛",
+    "UI_RestingMod_tooltip": "輸入自訂訊息。",
+    "UI_RestingMod_tooltip_when": "何時應將遊戲速度恢復為正常？",
+    "UI_RestingMod_male": "男性",
+    "UI_RestingMod_female": "女性",
+    "UI_RestingMod_txtfielddsc": "在此輸入你的自訂訊息：",
+    "UI_RestingMod_ResetDefaults": "重置",
+    "UI_RestingMod_ResetDefaults_Tooltip": "重置為預設值",
+    "UI_RestingMod_SitKeybind": "坐下（按鍵綁定）",
+    "UI_RestingMod_SitKeybind_Tooltip": "選擇一個按鍵讓角色坐下。保持未綁定以停用。",
+    "UI_RestingMod_SitUnsafe": "現在坐下似乎不太安全。"
+}

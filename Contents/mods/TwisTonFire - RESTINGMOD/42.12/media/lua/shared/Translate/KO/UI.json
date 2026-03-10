@@ -1,0 +1,19 @@
+{
+    "UI_Resting": "...",
+    "UI_Finished_resting_F": "충분히 쉬었다!",
+    "UI_Finished_resting_M": "충분히 쉬었다!",
+    "UI_Stiffness_Right_Arm": "통증",
+    "UI_POISONSTATE": "질병",
+    "UI_RestingMod_label_resting": "휴식 중 텍스트:",
+    "UI_RestingMod_Mode": "다음일 때 게임 속도 느리게",
+    "UI_RestingMod_mode_never": "안 함",
+    "UI_RestingMod_mode_pain": "휴식 완료",
+    "UI_RestingMod_mode_nopain": "휴식 완료 - 통증 없음",
+    "UI_RestingMod_tooltip": "사용자 지정 메시지를 입력하세요.",
+    "UI_RestingMod_tooltip_when": "게임 속도를 언제 정상으로 되돌릴까요?",
+    "UI_RestingMod_male": "남성",
+    "UI_RestingMod_female": "여성",
+    "UI_RestingMod_txtfielddsc": "여기에 사용자 지정 메시지를 입력하세요:",
+    "UI_RestingMod_ResetDefaults": "초기화",
+    "UI_RestingMod_ResetDefaults_Tooltip": "기본값으로 초기화"
+}

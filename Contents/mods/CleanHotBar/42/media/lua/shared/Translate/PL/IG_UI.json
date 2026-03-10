@@ -1,0 +1,8 @@
+{
+    "IGUI_ShowTooltip": "Podpowiedzi",
+    "IGUI_CleanHotBar_StatusBar_Height": "Wysokość paska stanu",
+    "IGUI_CleanHotBar_AmmoText_Scale": "Wysokość tekstu amunicji",
+    "IGUI_CleanHotBar_DurabilityAlert": "Ostrzeżenie: Wytrzymałość broni",
+    "IGUI_CleanHotBar_Hotbar": "Pasek skrótów",
+    "IGUI_CleanHotBar_EquipItem": "Wyposażone w ręce"
+}

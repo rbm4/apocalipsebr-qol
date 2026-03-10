@@ -1,0 +1,19 @@
+{
+    "Fluid_Container_FlaskLab": "Frasco",
+    "Fluid_Container_TestTubeLab": "Tubo de Ensaio",
+    "Fluid_Name_TaintedBlood": "Sangue Coagulado",
+    "Fluid_Name_InfectedBlood": "Sangue Infectado",
+    "Fluid_Name_Antibodies": "Anticorpos",
+    "Fluid_Name_Leukocytes": "Leucócitos",
+    "Fluid_Name_BloodCells": "Células Sanguíneas",
+    "Fluid_Name_BloodPlasma": "Plasma",
+    "Fluid_Name_AmmoniumSulfate": "Sulfato de Amônio",
+    "Fluid_Name_HydrogenPeroxide": "Peróxido de Hidrogênio",
+    "Fluid_Name_SodiumHypochlorite": "Hipoclorito de Sódio",
+    "Fluid_Name_PurifiedWater": "Água Purificada",
+    "Fluid_Name_BrainFluidHigh": "Ótima Amostra de Fluído Cerebrospinal",
+    "Fluid_Name_BrainFluidMid": "Amostra Média de Fluído Cerebrospinal",
+    "Fluid_Name_BrainFluidLow": "Péssima Amostra de Fluído Cerebrospinal",
+    "Fluid_Name_HydrochloricAcid": "Ácido Hidroclorídrico",
+    "Fluid_Name_SulfuricAcid": "Ácido Sulfúrico"
+}

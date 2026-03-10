@@ -1,0 +1,8 @@
+{
+    "IGUI_ShowTooltip": "Підказки",
+    "IGUI_CleanHotBar_StatusBar_Height": "Висота панелі стану",
+    "IGUI_CleanHotBar_AmmoText_Scale": "Висота тексту боєприпасів",
+    "IGUI_CleanHotBar_DurabilityAlert": "Попередження про міцність зброї",
+    "IGUI_CleanHotBar_Hotbar": "Швидка панель",
+    "IGUI_CleanHotBar_EquipItem": "У руці"
+}

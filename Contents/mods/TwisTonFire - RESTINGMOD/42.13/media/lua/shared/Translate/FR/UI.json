@@ -1,0 +1,22 @@
+{
+    "UI_Resting": "...",
+    "UI_Finished_resting_F": "REPOSÉE !",
+    "UI_Finished_resting_M": "REPOSÉ !",
+    "UI_Stiffness_Right_Arm": "DOULEUR",
+    "UI_POISONSTATE": "MALADE",
+    "UI_RestingMod_label_resting": "TEXTE PENDANT LE REPOS :",
+    "UI_RestingMod_Mode": "RALENTIR LA VITESSE DU JEU SI",
+    "UI_RestingMod_mode_never": "JAMAIS",
+    "UI_RestingMod_mode_pain": "REPOS COMPLET",
+    "UI_RestingMod_mode_nopain": "REPOS COMPLET - SANS DOULEUR",
+    "UI_RestingMod_tooltip": "Saisissez votre message personnalisé.",
+    "UI_RestingMod_tooltip_when": "Quand la vitesse du jeu doit-elle redevenir normale ?",
+    "UI_RestingMod_male": "Homme",
+    "UI_RestingMod_female": "Femme",
+    "UI_RestingMod_txtfielddsc": "Saisissez ici vos messages personnalisés :",
+    "UI_RestingMod_ResetDefaults": "RÉINITIALISER",
+    "UI_RestingMod_ResetDefaults_Tooltip": "Réinitialiser les paramètres par défaut",
+    "UI_RestingMod_SitKeybind": "S’asseoir (raccourci clavier)",
+    "UI_RestingMod_SitKeybind_Tooltip": "Choisissez une touche pour vous asseoir par terre. Laissez non assigné pour désactiver.",
+    "UI_RestingMod_SitUnsafe": "Ce n’est pas prudent de s’asseoir maintenant."
+}
