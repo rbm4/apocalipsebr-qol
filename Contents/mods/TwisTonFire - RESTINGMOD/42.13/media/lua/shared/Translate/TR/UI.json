@@ -1,0 +1,22 @@
+{
+    "UI_Resting": "...",
+    "UI_Finished_resting_F": "DİNLENMİŞ!",
+    "UI_Finished_resting_M": "DİNLENMİŞ!",
+    "UI_Stiffness_Right_Arm": "AĞRI",
+    "UI_POISONSTATE": "HASTA",
+    "UI_RestingMod_label_resting": "DİNLENİRKEN METİN:",
+    "UI_RestingMod_Mode": "OYUN HIZINI ŞU DURUMDA YAVAŞLAT",
+    "UI_RestingMod_mode_never": "ASLA",
+    "UI_RestingMod_mode_pain": "DİNLENME TAMAM",
+    "UI_RestingMod_mode_nopain": "DİNLENME TAMAM - AĞRI YOK",
+    "UI_RestingMod_tooltip": "Özel mesajınızı girin.",
+    "UI_RestingMod_tooltip_when": "Oyun hızı ne zaman normale dönmeli?",
+    "UI_RestingMod_male": "Erkek",
+    "UI_RestingMod_female": "Kadın",
+    "UI_RestingMod_txtfielddsc": "Özel mesajlarınızı buraya girin:",
+    "UI_RestingMod_ResetDefaults": "SIFIRLA",
+    "UI_RestingMod_ResetDefaults_Tooltip": "Varsayılanlara sıfırla",
+    "UI_RestingMod_SitKeybind": "Otur (tuş ataması)",
+    "UI_RestingMod_SitKeybind_Tooltip": "Yere oturmak için bir tuş seçin. Devre dışı bırakmak için boş bırakın.",
+    "UI_RestingMod_SitUnsafe": "Şu anda oturmak güvenli değil gibi."
+}

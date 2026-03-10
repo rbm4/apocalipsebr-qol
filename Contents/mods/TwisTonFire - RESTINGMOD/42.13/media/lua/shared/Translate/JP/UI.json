@@ -1,0 +1,22 @@
+{
+    "UI_Resting": "...",
+    "UI_Finished_resting_F": "十分休んだ！",
+    "UI_Finished_resting_M": "十分休んだ！",
+    "UI_Stiffness_Right_Arm": "痛み",
+    "UI_POISONSTATE": "病気",
+    "UI_RestingMod_label_resting": "休憩中のテキスト：",
+    "UI_RestingMod_Mode": "以下の場合にゲーム速度を遅くする",
+    "UI_RestingMod_mode_never": "しない",
+    "UI_RestingMod_mode_pain": "休息完了",
+    "UI_RestingMod_mode_nopain": "休息完了 - 痛みなし",
+    "UI_RestingMod_tooltip": "カスタムメッセージを入力してください。",
+    "UI_RestingMod_tooltip_when": "いつゲーム速度を通常に戻しますか？",
+    "UI_RestingMod_male": "男性",
+    "UI_RestingMod_female": "女性",
+    "UI_RestingMod_txtfielddsc": "ここにカスタムメッセージを入力してください：",
+    "UI_RestingMod_ResetDefaults": "リセット",
+    "UI_RestingMod_ResetDefaults_Tooltip": "デフォルトにリセット",
+    "UI_RestingMod_SitKeybind": "座る（キー割り当て）",
+    "UI_RestingMod_SitKeybind_Tooltip": "地面に座るためのキーを選択します。未割り当てのままにすると無効になります。",
+    "UI_RestingMod_SitUnsafe": "今は座るのは危険そうだ。"
+}

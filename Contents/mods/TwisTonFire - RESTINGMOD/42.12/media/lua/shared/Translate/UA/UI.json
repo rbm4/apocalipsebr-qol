@@ -1,0 +1,19 @@
+{
+    "UI_Resting": "...",
+    "UI_Finished_resting_F": "ВІДПОЧИЛА!",
+    "UI_Finished_resting_M": "ВІДПОЧИВ!",
+    "UI_Stiffness_Right_Arm": "БІЛЬ",
+    "UI_POISONSTATE": "ХВОРОБА",
+    "UI_RestingMod_label_resting": "ТЕКСТ ПІД ЧАС ВІДПОЧИНКУ:",
+    "UI_RestingMod_Mode": "УПОВІЛЬНЮВАТИ ШВИДКІСТЬ ГРИ, ЯКЩО",
+    "UI_RestingMod_mode_never": "НІКОЛИ",
+    "UI_RestingMod_mode_pain": "ВІДПОЧИНОК ЗАВЕРШЕНО",
+    "UI_RestingMod_mode_nopain": "ВІДПОЧИНОК ЗАВЕРШЕНО - БЕЗ БОЛЮ",
+    "UI_RestingMod_tooltip": "Введіть власне повідомлення.",
+    "UI_RestingMod_tooltip_when": "Коли швидкість гри має повернутися до норми?",
+    "UI_RestingMod_male": "Чоловік",
+    "UI_RestingMod_female": "Жінка",
+    "UI_RestingMod_txtfielddsc": "Введіть тут власні повідомлення:",
+    "UI_RestingMod_ResetDefaults": "СКИНУТИ",
+    "UI_RestingMod_ResetDefaults_Tooltip": "Скинути до типових значень"
+}

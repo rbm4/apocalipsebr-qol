@@ -1,0 +1,22 @@
+{
+    "UI_Resting": "...",
+    "UI_Finished_resting_F": "AUSGERUHT!",
+    "UI_Finished_resting_M": "AUSGERUHT!",
+    "UI_Stiffness_Right_Arm": "SCHMERZ",
+    "UI_POISONSTATE": "KRANK",
+    "UI_RestingMod_label_resting": "TEXT WÄHREND DES AUSRUHENS:",
+    "UI_RestingMod_Mode": "SPIELGESCHWINDIGKEIT VERLANGSAMEN, WENN",
+    "UI_RestingMod_mode_never": "NIE",
+    "UI_RestingMod_mode_pain": "AUSGERUHT",
+    "UI_RestingMod_mode_nopain": "AUSGERUHT - KEIN SCHMERZ",
+    "UI_RestingMod_tooltip": "Gib deine benutzerdefinierte Nachricht ein.",
+    "UI_RestingMod_tooltip_when": "Wann soll die Spielgeschwindigkeit wieder normal sein?",
+    "UI_RestingMod_male": "Männlich",
+    "UI_RestingMod_female": "Weiblich",
+    "UI_RestingMod_txtfielddsc": "Gib hier deine benutzerdefinierten Nachrichten ein:",
+    "UI_RestingMod_ResetDefaults": "ZURÜCKSETZEN",
+    "UI_RestingMod_ResetDefaults_Tooltip": "Auf Standardwerte zurücksetzen",
+    "UI_RestingMod_SitKeybind": "Hinsetzen (Tastenbelegung)",
+    "UI_RestingMod_SitKeybind_Tooltip": "Wähle eine Taste, um dich auf den Boden zu setzen. Unbelegt lassen, um es zu deaktivieren.",
+    "UI_RestingMod_SitUnsafe": "Es fühlt sich gerade nicht sicher an, sich hinzusetzen."
+}

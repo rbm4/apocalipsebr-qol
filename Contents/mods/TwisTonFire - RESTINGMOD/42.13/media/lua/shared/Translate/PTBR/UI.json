@@ -1,0 +1,22 @@
+{
+    "UI_Resting": "...",
+    "UI_Finished_resting_F": "DESCANSADA!",
+    "UI_Finished_resting_M": "DESCANSADO!",
+    "UI_Stiffness_Right_Arm": "DOR",
+    "UI_POISONSTATE": "DOENTE",
+    "UI_RestingMod_label_resting": "TEXTO DURANTE O DESCANSO:",
+    "UI_RestingMod_Mode": "DIMINUIR A VELOCIDADE DO JOGO SE",
+    "UI_RestingMod_mode_never": "NUNCA",
+    "UI_RestingMod_mode_pain": "DESCANSO CONCLUÍDO",
+    "UI_RestingMod_mode_nopain": "DESCANSO CONCLUÍDO - SEM DOR",
+    "UI_RestingMod_tooltip": "Insira sua mensagem personalizada.",
+    "UI_RestingMod_tooltip_when": "Quando a velocidade do jogo deve voltar ao normal?",
+    "UI_RestingMod_male": "Masculino",
+    "UI_RestingMod_female": "Feminino",
+    "UI_RestingMod_txtfielddsc": "Insira aqui suas mensagens personalizadas:",
+    "UI_RestingMod_ResetDefaults": "REDEFINIR",
+    "UI_RestingMod_ResetDefaults_Tooltip": "Redefinir para os padrões",
+    "UI_RestingMod_SitKeybind": "Sentar (tecla de atalho)",
+    "UI_RestingMod_SitKeybind_Tooltip": "Escolha uma tecla para sentar no chão. Deixe sem atribuição para desativar.",
+    "UI_RestingMod_SitUnsafe": "Não parece seguro sentar agora."
+}
