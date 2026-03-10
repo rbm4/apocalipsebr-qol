@@ -13,7 +13,7 @@ module Base
 			{
 				conditionAffectsCapacity = false,
 				test = DAMN.ContainerAccess.Gunrack,
-				capacity = 5,
+				capacity = 25,
 			}
 			lua
 			{

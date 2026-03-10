@@ -3,7 +3,7 @@ if VehicleZoneDistribution then
 	VehicleZoneDistribution.biochemical = VehicleZoneDistribution.biochemical or {};
 	VehicleZoneDistribution.biochemical.vehicles = VehicleZoneDistribution.biochemical.vehicles or {};
 
-	VehicleZoneDistribution.biochemical.vehicles["Base.Biochemical_PickupTruck"] = {index = -1, spawnChance = 1000};
+	VehicleZoneDistribution.biochemical.vehicles["Base.Biochemical_PickupTruck"] = {index = -1, spawnChance = 0};
 
 	VehicleZoneDistribution.biochemical.baseVehicleQuality = 2.0;
 	VehicleZoneDistribution.biochemical.chanceToSpawnKey = 50;
@@ -14,16 +14,16 @@ if VehicleZoneDistribution then
 	VehicleZoneDistribution.modplain = VehicleZoneDistribution.modplain or {};
 	VehicleZoneDistribution.modplain.vehicles = VehicleZoneDistribution.modplain.vehicles or {};
 
-	VehicleZoneDistribution.modplain.vehicles["Base.U1550L"] = {index = -1, spawnChance = 12};
-	VehicleZoneDistribution.modplain.vehicles["Base.UnimogTrailer"] = {index = -1, spawnChance = 12};
-	VehicleZoneDistribution.modplain.vehicles["Base.en21_Bronco"] = {index = -1, spawnChance = 14};
+	VehicleZoneDistribution.modplain.vehicles["Base.U1550L"] = {index = -1, spawnChance = 0};
+	VehicleZoneDistribution.modplain.vehicles["Base.UnimogTrailer"] = {index = -1, spawnChance = 0};
+	VehicleZoneDistribution.modplain.vehicles["Base.en21_Bronco"] = {index = -1, spawnChance = 0};
 	--VehicleZoneDistribution.modplain.vehicles["Base.86econolinerv"] = {index = -1, spawnChance = 10};
 	--VehicleZoneDistribution.modplain.vehicles["Base.86bounder"] = {index = -1, spawnChance = 10};
-	VehicleZoneDistribution.modplain.vehicles["Base.ATA_VanDeRumba"] = {index = -1, spawnChance = 12};
-	VehicleZoneDistribution.modplain.vehicles["Base.ATAJeepClassic"] = {index = -1, spawnChance = 12};
-	VehicleZoneDistribution.modplain.vehicles["Base.ATAJeepRubicon"] = {index = -1, spawnChance = 12};
-	VehicleZoneDistribution.modplain.vehicles["Base.ATAMustangClassic"] = {index = -1, spawnChance = 12};
-	VehicleZoneDistribution.modplain.vehicles["Base.ATADodge"] = {index = -1, spawnChance = 14};
+	VehicleZoneDistribution.modplain.vehicles["Base.ATA_VanDeRumba"] = {index = -1, spawnChance = 0};
+	VehicleZoneDistribution.modplain.vehicles["Base.ATAJeepClassic"] = {index = -1, spawnChance = 0};
+	VehicleZoneDistribution.modplain.vehicles["Base.ATAJeepRubicon"] = {index = -1, spawnChance = 0};
+	VehicleZoneDistribution.modplain.vehicles["Base.ATAMustangClassic"] = {index = -1, spawnChance = 0};
+	VehicleZoneDistribution.modplain.vehicles["Base.ATADodge"] = {index = -1, spawnChance = 0};
 
 	VehicleZoneDistribution.modplain.baseVehicleQuality = 1.1;
 	VehicleZoneDistribution.modplain.chanceToSpawnKey = 5;
@@ -53,8 +53,8 @@ if VehicleZoneDistribution then
 	VehicleZoneDistribution.modspecial = VehicleZoneDistribution.modspecial or {};
 	VehicleZoneDistribution.modspecial.vehicles = VehicleZoneDistribution.modspecial.vehicles or {};
 	
-	VehicleZoneDistribution.modspecial.vehicles["Base.ATAJeepArcher"] = {index = -1, spawnChance = 30};
-	VehicleZoneDistribution.modspecial.vehicles["Base.ATADodgePpg"] = {index = -1, spawnChance = 70};
+	VehicleZoneDistribution.modspecial.vehicles["Base.ATAJeepArcher"] = {index = -1, spawnChance = 0};
+	VehicleZoneDistribution.modspecial.vehicles["Base.ATADodgePpg"] = {index = -1, spawnChance = 0};
 	
 	VehicleZoneDistribution.modspecial.baseVehicleQuality = 1.1;
 	VehicleZoneDistribution.modspecial.chanceToSpawnKey = 0;
