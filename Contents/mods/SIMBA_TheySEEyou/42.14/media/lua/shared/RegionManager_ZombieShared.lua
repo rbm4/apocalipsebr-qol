@@ -553,12 +553,6 @@ end
 -- Reflection helpers (like BLTRandomZombies)
 -- ============================================================================
 
--- Cached field references
-local cognitionField = nil
-local speedField = nil
-local sightField = nil
-local hearingField = nil
-
 -- Cached ConfigOption references (NOT just values)
 local speedConfigOption = nil
 local cognitionConfigOption = nil
@@ -568,27 +562,10 @@ local toughnessConfigOption = nil
 local strengthConfigOption = nil
 local memoryConfigOption = nil
 
--- Find a field by name using reflection (BLTRandomZombies approach)
-local function findField(o, fname)
-    for i = 0, getNumClassFields(o) - 1 do
-        local f = getClassField(o, i)
-        if tostring(f) == fname then
-            return f
-        end
-    end
-    return nil
-end
 
 -- Initialize field and config option references (call once)
 local function initializeReflectionCache()
     if not speedConfigOption then
-        local dummyZombie = IsoZombie.new(nil)
-
-        -- Find private fields using reflection
-        cognitionField = findField(dummyZombie, "public int zombie.characters.IsoZombie.cognition")
-        speedField = findField(dummyZombie, "public int zombie.characters.IsoZombie.speedType")
-        sightField = findField(dummyZombie, "public int zombie.characters.IsoZombie.sight")
-        hearingField = findField(dummyZombie, "public int zombie.characters.IsoZombie.hearing")
 
         -- Get ConfigOption references (NOT just sandbox options)
         local sandbox = getSandboxOptions()
