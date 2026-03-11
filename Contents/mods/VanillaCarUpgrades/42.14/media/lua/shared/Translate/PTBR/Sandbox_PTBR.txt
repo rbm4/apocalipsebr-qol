@@ -1,0 +1,71 @@
+Sandbox_PTBR = {
+
+	Sandbox_SVUC = "Standardized Vehicle Upgrades 3",
+
+	Sandbox_SVUC_timeLight = "Tempo de Instalação da Blindagem Leve",
+	Sandbox_SVUC_timeLight_tooltip = "Quanto tempo leva para instalar e desinstalar a blindagem leve.",
+
+	Sandbox_SVUC_timeHeavy = "Tempo de Instalação da Blindagem Pesada",
+	Sandbox_SVUC_timeHeavy_tooltip = "Quanto tempo leva para instalar e desinstalar a blindagem pesada.",
+
+	Sandbox_SVUC_timeReinforced = "Tempo de Instalação da Blindagem Reforçada",
+	Sandbox_SVUC_timeReinforced_tooltip = "Quanto tempo leva para instalar e desinstalar a blindagem reforçada.",
+
+	Sandbox_SVUC_timeMods = "Tempo de Instalação de Modificações",
+	Sandbox_SVUC_timeMods = "Quanto tempo leva para instalar e desinstalar modificações.",
+
+	Sandbox_SVUC_timeWheels = "Tempo de Instalação das Correntes de Roda",
+	Sandbox_SVUC_timeWheels_tooltip = "Quanto tempo leva para instalar e desinstalar correntes de roda.",
+
+	Sandbox_SVUC_protectionHealthTriger = "Gatilho de Vida da Proteção",
+	Sandbox_SVUC_protectionHealthTriger_tooltip = "O HP da peça precisa cair abaixo deste número para ser reparado.",
+
+	Sandbox_SVUC_protectionLightHealthDelta = "Dano da Blindagem Leve",
+	Sandbox_SVUC_protectionLightHealthDelta_tooltip = "Quanto dano causar à blindagem leve quando ela repara uma peça.",
+
+	Sandbox_SVUC_protectionHeavyHealthDelta = "Dano da Blindagem Pesada",
+	Sandbox_SVUC_protectionHeavyHealthDelta_tooltip = "Quanto dano causar à blindagem pesada quando ela repara uma peça.",
+
+	Sandbox_SVUC_protectionReinforcedHealthDelta = "Dano da Blindagem Reforçada",
+	Sandbox_SVUC_protectionReinforcedHealthDelta_tooltip = "Quanto dano causar à blindagem reforçada quando ela repara uma peça.",
+
+	Sandbox_SVUC_protectionBullbarSmallHealthDelta = "Dano do Quebra-mato Pequeno",
+	Sandbox_SVUC_protectionBullbarSmallHealthDelta_tooltip = "Quanto dano causar aos quebra-matos pequenos quando eles reparam uma peça.",
+
+	Sandbox_SVUC_protectionBullbarMediumHealthDelta = "Dano do Quebra-mato Médio",
+	Sandbox_SVUC_protectionBullbarMediumHealthDelta_tooltip = "Quanto dano causar aos quebra-matos médios quando eles reparam uma peça.",
+
+	Sandbox_SVUC_protectionBullbarLargeHealthDelta = "Dano do Quebra-mato Grande",
+	Sandbox_SVUC_protectionBullbarLargeHealthDelta_tooltip = "Quanto dano causar aos quebra-matos grandes quando eles reparam uma peça.",
+
+	Sandbox_SVUC_protectionPlowHealthDelta = "Dano da Lâmina",
+	Sandbox_SVUC_protectionPlowHealthDelta_tooltip = "Quanto dano causar às lâminas quando elas reparam uma peça.",
+
+	Sandbox_SVUC_protectionWheelsHealthDelta = "Dano das Correntes de Roda",
+	Sandbox_SVUC_protectionWheelsHealthDelta_tooltip = "Quanto dano causar às correntes de roda quando elas reparam uma peça.",
+
+	Sandbox_SVUC_protectionEngineNonePowerIncrease = "Aumento de Potência do Supercompressor",
+	Sandbox_SVUC_protectionEngineNonePowerIncrease_tooltip = "Quanta potência adicionar quando uma entrada de ar está instalada.",
+
+	Sandbox_SVUC_protectionEngineSmallPowerIncrease = "Aumento de Potência da Entrada de Ar Pequena",
+	Sandbox_SVUC_protectionEngineSmallPowerIncrease_tooltip = "Quanta potência adicionar quando uma entrada de ar está instalada.",
+
+	Sandbox_SVUC_protectionEngineSmallPowerIncrease = "Aumento de Potência da Entrada de Ar Pequena",
+	Sandbox_SVUC_protectionEngineSmallPowerIncrease_tooltip = "Quanta potência adicionar quando uma entrada de ar está instalada.",
+
+	Sandbox_SVUC_protectionEngineMediumPowerIncrease = "Aumento de Potência da Entrada de Ar Média",
+	Sandbox_SVUC_protectionEngineMediumPowerIncrease_tooltip = "Quanta potência adicionar quando uma entrada de ar está instalada.",
+
+	Sandbox_SVUC_protectionEngineLargePowerIncrease = "Aumento de Potência da Entrada de Ar Grande",
+	Sandbox_SVUC_protectionEngineLargePowerIncrease_tooltip = "Quanta potência adicionar quando uma entrada de ar está instalada.",
+
+	Sandbox_SVUC_protectionEnginePipedPowerIncrease = "Aumento de Potência da Entrada de Ar Tubular",
+	Sandbox_SVUC_protectionEnginePipedPowerIncrease_tooltip = "Quanta potência adicionar quando uma entrada de ar está instalada.",
+
+	Sandbox_SVUC_protectionEngineSnorkelNonePowerIncrease = "Aumento de Potência do Filtro de Ar",
+	Sandbox_SVUC_protectionEngineSnorkelNonePowerIncrease_tooltip = "Quanta potência adicionar quando um snorkel está instalado.",
+
+	Sandbox_SVUC_protectionEngineSnorkelPowerIncrease = "Aumento de Potência do Snorkel",
+	Sandbox_SVUC_protectionEngineSnorkelPowerIncrease_tooltip = "Quanta potência adicionar quando um snorkel está instalado.",
+
+}

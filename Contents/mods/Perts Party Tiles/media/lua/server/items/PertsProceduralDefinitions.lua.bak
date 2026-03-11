@@ -1,0 +1,2 @@
+table.insert(ProceduralDistributions["list"]["LivingRoomShelf"].items, "base.OverlookFireAxe")
+table.insert(ProceduralDistributions["list"]["LivingRoomShelf"].items, 0.5)

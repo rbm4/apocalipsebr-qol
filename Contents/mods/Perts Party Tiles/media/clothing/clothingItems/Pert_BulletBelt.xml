@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>media/models_X/Skinned/Clothes/BeltBullets_M.fbx</m_MaleModel>
+	<m_FemaleModel>media/models_X/Skinned/Clothes/BeltBullets_F.fbx</m_FemaleModel>
+	<m_GUID>4d4c2654-dd5f-4955-bc0f-6c2a7572742f</m_GUID>
+	<m_Static>true</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<textureChoices>Clothes/BeltBullets</textureChoices>
+</clothingItem>
