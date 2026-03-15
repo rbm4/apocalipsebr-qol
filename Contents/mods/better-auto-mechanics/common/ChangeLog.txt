@@ -1,0 +1,89 @@
+[ ALERT_CONFIG ]
+link1 = Workshop = https://steamcommunity.com/sharedfiles/filedetails/?id=3635856965
+link2 = Hotox's Kofi = https://steamcommunity.com/linkfilter/?u=https://ko-fi.com/hotox,
+link3 = Github = https://steamcommunity.com/linkfilter/?u=https://github.com/Darkblader24/pz-better-auto-mechanics,
+[ ------ ]
+
+[ 1.0 ]
+- Initial release
+[ ------ ]
+
+[ 1.1 ]
+- Added full multiplayer support
+- Broken parts now get dropped to the ground
+- Added small info to tooltip when the car is locked and the player doesn't have the key
+[ ------ ]
+
+[ 1.2 ]
+- Stuck doors on crashed vehicles and physically unreachable parts should no longer cause the training to be interrupted
+- Added translation files for English, German, Spanish, and Simplified and Traditional Chinese
+- More minor improvements
+[ ------ ]
+
+[ 1.3 ]
+- Added French and Japanese translations
+- Fixed error when doing any mechanics action without training first after login
+[ ------ ]
+
+[ 1.4 ]
+- Added option "Minimum Vehicle Part Success Chance" which prevents training on parts with a success chance below the set value
+- Added detailed description for this option with translations
+- Added success chance check when installing parts. Installing parts will no longer ignore the success chance minimum
+[ ------ ]
+
+[ 1.5 ]
+- If a vehicle part on the ground is too heavy to pick up, it will now be skipped instead of stopping the training
+- Added sandbox option for servers to enforce a specific "Minimum Vehicle Part Success Chance". This server-overwrite is disabled by default.
+- Added Russian translation (credits to Kavinsky!)
+[ ------ ]
+
+[ 1.6 ]
+- Fixed potential error after each training action
+- Hopefully fixed "Train Mechanics" button not appearing
+[ ------ ]
+
+[ 1.7 ]
+- Added support for all earlier B42 versions (not B41)
+- Improved multiplayer XP tracking
+- Improved pathfinding randomly stopping training
+[ ------ ]
+
+[ 1.8 ]
+- Added Portuguese (Brazil) translations (credits to Rasido!)
+- Some minor optimizations
+[ ------ ]
+
+[ 1.9 ]
+- Fixed the "Train Mechanics" button causing errors in rare situations
+[ ------ ]
+
+[ 1.10 ]
+- Fixed timed actions randomly getting canceled after mechanics training
+[ ------ ]
+
+[ 1.11 ]
+- Added fix for disappearing "Train Mechanics" button
+- Refactored install and uninstall logic to improve compatibility with other vehicle mods
+- Improved game speed handling during mechanics training
+- Improved recipe check to display all required recipes for the current vehicle
+- Added Polish translations (Thanks to Marcus Vallerdon!)
+[ ------ ]
+
+[ 1.12 ]
+- Greatly improved keeping the game speed consistent during mechanics training in SP
+  - You can now speed up the game during training without it resetting to normal speed all the time
+  - Only an approaching zombie will reset the game speed to normal
+[ ------ ]
+
+[ 1.13 ]
+- Added "Train Mechanics" button to menu when directly right-clicking a vehicle in the world
+- Added an icon to the "Train Mechanics" button
+- Moving larger distances between vehicle parts now makes the player sneak-run instead of walk
+- Moving or pressing ESC during training now stops the training session
+- The "Train Mechanics" button now gets hidden once you reach level 10 in mechanics (it's always visible in Debug mode)
+- Improved general stability and mod compatibility
+[ ------ ]
+
+[ 1.14 ]
+- Added compatibility for B42.15
+[ ------ ]

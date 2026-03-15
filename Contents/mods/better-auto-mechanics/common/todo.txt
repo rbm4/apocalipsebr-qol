@@ -1,0 +1,3 @@
+- If not all tools are equipped, display a different DONE message
+- If the server restarted, remove all mod data from this mod. Maybe only when a player joins it checks if the server was restarted? Is would only exist to avoid mod data cluttering
+- Add joypad movement detection and B presses and stop training then

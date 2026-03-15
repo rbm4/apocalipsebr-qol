@@ -1,0 +1,10 @@
+Sandbox_EN = {
+    Sandbox_BAM = "Better Auto Mechanics",
+    Sandbox_BAM.min_success_chance = "Enforce: Minimum Vehicle Part Success Chance",
+    Sandbox_BAM.min_success_chance_tooltip = "Parts with a success chance below this value will be skipped during training." ..
+                                            " <LINE> At '-1' this setting is not enforced, any value over '-1' is enforced server-wide." ..
+                                            " <LINE> " ..
+                                            " <LINE> 0% -> All parts will be worked on. Parts will break at lower skill levels." ..
+                                            " <LINE> 30% -> Default setting for a good balance." ..
+                                            " <LINE> 100% -> Only parts that are guaranteed to succeed will be worked on. Completely safe at all skill levels.",
+}

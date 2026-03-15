@@ -1,0 +1,13 @@
+VERSION = 1,
+
+option BAM_Server_MinSuccessChance
+{
+    type = integer,
+    default = -1,
+    min = -1,
+    max = 100,
+    step = 1,
+
+    page = BAM,
+    translation = BAM.min_success_chance,
+}

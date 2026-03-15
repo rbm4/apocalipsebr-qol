@@ -1,0 +1,8 @@
+name=Better Auto Mechanics
+id=better-auto-mechanics
+author=Hotox
+description=<RGB:1,0.4,0.8>Train mechanics with a single click! Better Auto Mechanics is a smart, efficiency-focused rewrite of the classic mod. It automatically skips parts that give no XP, works in Multiplayer, and lets you pick up exactly where you left off if interrupted.
+modversion=1.14
+versionMin=42.0.0
+poster=poster.png
+icon=icon.png

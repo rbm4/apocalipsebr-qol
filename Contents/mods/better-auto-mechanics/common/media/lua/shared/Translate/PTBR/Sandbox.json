@@ -1,0 +1,5 @@
+{
+    "Sandbox_BAM": "Mecânica Automotiva Melhorada",
+    "Sandbox_BAM.min_success_chance": "Aplicar: Chance Mínima de Sucesso da Peca do Veiculo",
+    "Sandbox_BAM.min_success_chance_tooltip": "Peças com chance de sucesso abaixo deste valor serão ignoradas durante o treinamento. <LINE> Em '-1' esta configuração não é aplicada; qualquer valor acima de '-1' é aplicado em todo o servidor. <LINE>  <LINE> 0% -> Todas as peças serão trabalhadas. Peças podem quebrar em níveis baixos de habilidade. <LINE> 30% -> Configuração padrão para um bom equilíbrio. <LINE> 100% -> Apenas peças com sucesso garantido serão trabalhadas. Totalmente seguro em todos os niveis de habilidade."
+}

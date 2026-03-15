@@ -1,0 +1,5 @@
+{
+    "Sandbox_BAM": "Better Auto Mechanics",
+    "Sandbox_BAM.min_success_chance": "Wymuś: Minimalna szansa powodzenia naprawy części",
+    "Sandbox_BAM.min_success_chance_tooltip": "Części z szansą powodzenia poniżej tej wartości będą pomijane podczas szkolenia. <LINE> Przy wartości „-1” ustawienie nie jest wymuszane; każda wartość powyżej „-1” obowiązuje globalnie na serwerze. <LINE>  <LINE> 0% → Wszystkie części zostaną poddane pracom. Części mogą się psuć przy niższych poziomach umiejętności. <LINE> 30% → Ustawienie domyślne, zapewniające dobry balans. <LINE> 100% → Naprawiane będą wyłącznie części z gwarantowanym powodzeniem. Całkowicie bezpieczne na wszystkich poziomach umiejętności."
+}
