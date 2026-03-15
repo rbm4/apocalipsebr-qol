@@ -1,0 +1,19 @@
+UI_TR = {
+	UI_NO_TITLE = "Baslik Yok",
+
+UI_NO_DESCRIPTION = "Açiklama Yok",
+
+UI_mapspawn_random = "Rastgele",
+
+UI_PZMockingbirdMod_Options = "PZ Mockingbird Mod Seçenekleri",
+
+UI_PZMockingbirdMod_Options_Desc = "PZ Mockingbird Mod Seçenekleri Yalnizca Yeni Bir Oyuna Baslamadan Önce Geçerli Olur.",
+
+UI_Allow_Other_Maps_Ask = "Mockingbird haritasini göster",
+
+UI_Allow_Other_Maps_Ask_tooltip = "Mockingbird haritasini göster.",
+
+UI_Allow_Vanilla_Maps_Ask = "Vanilla haritasini göster",
+
+UI_Allow_Vanilla_Maps_Ask_tooltip = "Etkinlestirilmisse eklenen haritalar görüntülenmeyecektir.",
+}

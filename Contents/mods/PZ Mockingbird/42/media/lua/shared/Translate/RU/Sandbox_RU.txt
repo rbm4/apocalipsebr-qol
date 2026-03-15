@@ -1,0 +1,4 @@
+Sandbox_RU = {
+	Sandbox_Mockingbird = "Mockingbird",
+	Sandbox_Mockingbird_MapAllowed = "Начните с карты Пересмешника.",
+}

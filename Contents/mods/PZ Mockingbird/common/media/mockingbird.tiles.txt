@@ -1,0 +1,8811 @@
+version = 1
+tileset
+{
+    file = ghostbusters_signs
+    size = 8,4
+    id = 1
+    // ghostbusters_signs_0
+    tile
+    {
+        xy = 0,0
+        CustomItem = Mockingbird_Items.GhostbustersSign
+        CustomName = Sign
+        Facing = S
+        GroupName = Ghostbusters Sign
+        IsLow = 
+        IsMoveAble = 
+        LightRadius = 4
+        MoveType = WallObject
+        PickUpLevel = 1
+        PickUpTool = Electrician
+        PickUpWeight = 50
+        PlaceTool = Electrician
+        attachedN = 
+        lightB = 110
+        lightG = 25
+        lightR = 110
+        lightswitch = 
+    }
+    // ghostbusters_signs_1
+    tile
+    {
+        xy = 1,0
+        CustomItem = Mockingbird_Items.GhostbustersSign
+        CustomName = Sign
+        Facing = S
+        GroupName = Ghostbusters Sign
+        IsLow = 
+        IsMoveAble = 
+        LightRadius = 4
+        MoveType = WallObject
+        PickUpLevel = 1
+        PickUpTool = Electrician
+        PickUpWeight = 50
+        PlaceTool = Electrician
+        attachedW = 
+        lightB = 110
+        lightG = 25
+        lightR = 110
+        lightswitch = 
+    }
+}
+tileset
+{
+    file = ghostbusters_signs_on
+    size = 8,4
+    id = 2
+}
+tileset
+{
+    file = ghostbusters_television
+    size = 8,16
+    id = 3
+    // ghostbusters_television_0
+    tile
+    {
+        xy = 0,0
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvPlasmaScreen
+        CustomName = Television
+        Facing = E
+        GroupName = Plasma Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_1
+    tile
+    {
+        xy = 1,0
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvPlasmaScreen
+        CustomName = Television
+        Facing = S
+        GroupName = Plasma Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_2
+    tile
+    {
+        xy = 2,0
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvPlasmaScreen
+        CustomName = Television
+        Facing = W
+        GroupName = Plasma Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_3
+    tile
+    {
+        xy = 3,0
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvPlasmaScreen
+        CustomName = Television
+        Facing = N
+        GroupName = Plasma Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_4
+    tile
+    {
+        xy = 4,0
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvLCDScreen
+        CustomName = Television
+        Facing = E
+        GroupName = LCD Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_5
+    tile
+    {
+        xy = 5,0
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvLCDScreen
+        CustomName = Television
+        Facing = S
+        GroupName = LCD Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_6
+    tile
+    {
+        xy = 6,0
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvLCDScreen
+        CustomName = Television
+        Facing = W
+        GroupName = LCD Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_7
+    tile
+    {
+        xy = 7,0
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvLCDScreen
+        CustomName = Television
+        Facing = N
+        GroupName = LCD Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_8
+    tile
+    {
+        xy = 0,1
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvPlasmaScreen2
+        CustomName = Television
+        Facing = E
+        GroupName = Plasma Old Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_9
+    tile
+    {
+        xy = 1,1
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvPlasmaScreen2
+        CustomName = Television
+        Facing = S
+        GroupName = Plasma Old Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_10
+    tile
+    {
+        xy = 2,1
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvPlasmaScreen2
+        CustomName = Television
+        Facing = W
+        GroupName = Plasma Old Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_11
+    tile
+    {
+        xy = 3,1
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvPlasmaScreen2
+        CustomName = Television
+        Facing = N
+        GroupName = Plasma Old Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_12
+    tile
+    {
+        xy = 4,1
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvLCDScreen2
+        CustomName = Television
+        Facing = E
+        GroupName = LCD Old Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_13
+    tile
+    {
+        xy = 5,1
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvLCDScreen2
+        CustomName = Television
+        Facing = S
+        GroupName = LCD Old Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_14
+    tile
+    {
+        xy = 6,1
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvLCDScreen2
+        CustomName = Television
+        Facing = W
+        GroupName = LCD Old Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+    // ghostbusters_television_15
+    tile
+    {
+        xy = 7,1
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Base.TvLCDScreen2
+        CustomName = Television
+        Facing = N
+        GroupName = LCD Old Technologies
+        IgnoreSurfaceSnap = 
+        IsMoveAble = 
+        IsSurfaceOffset = 
+        IsTableTop = 
+        IsoType = IsoTelevision
+        Material = Electric
+        MaterialType = Glass_Light
+        PickUpWeight = 100
+        Surface = 15
+        signal = tv
+        solidtrans = 
+    }
+}
+tileset
+{
+    file = ghostbusters_tile1
+    size = 8,16
+    id = 4
+    // ghostbusters_tile1_0
+    tile
+    {
+        xy = 0,0
+        CustomItem = Mockingbird_Items.ShipSimpsons
+        GroupName = Ship Simpsons
+        IsMoveAble = 
+        MoveType = WallObject
+        WallOverlay = 
+        attachedW = 
+    }
+    // ghostbusters_tile1_1
+    tile
+    {
+        xy = 1,0
+        CustomItem = Mockingbird_Items.ShipSimpsons
+        GroupName = Ship Simpsons
+        IsMoveAble = 
+        MoveType = WallObject
+        WallOverlay = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_2
+    tile
+    {
+        xy = 2,0
+        GroupName = Ghostbusters Graffiti
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_3
+    tile
+    {
+        xy = 3,0
+        GroupName = Ghostbusters Graffiti
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_4
+    tile
+    {
+        xy = 4,0
+        GroupName = Ghostbusters Graffiti
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_5
+    tile
+    {
+        xy = 5,0
+        GroupName = Ghostbusters Graffiti
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_6
+    tile
+    {
+        xy = 6,0
+        GroupName = Ghostbusters Graffiti
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_8
+    tile
+    {
+        xy = 0,1
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile1_9
+    tile
+    {
+        xy = 1,1
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile1_10
+    tile
+    {
+        xy = 2,1
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile1_11
+    tile
+    {
+        xy = 3,1
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile1_12
+    tile
+    {
+        xy = 4,1
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Wood_Solid
+        stairsBW = 
+    }
+    // ghostbusters_tile1_13
+    tile
+    {
+        xy = 5,1
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Wood_Solid
+        stairsMW = 
+    }
+    // ghostbusters_tile1_14
+    tile
+    {
+        xy = 6,1
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Wood_Solid
+        stairsTW = 
+    }
+    // ghostbusters_tile1_16
+    tile
+    {
+        xy = 0,2
+        BedType = badBed
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Mockingbird_Items.ElectricChair
+        CustomName = Electric Chair
+        Facing = S
+        GroupName = Electric Chair
+        IsLow = 
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Wood
+        PickUpWeight = 75
+        ScrapSize = Small
+        Surface = 17
+        bed = 
+    }
+    // ghostbusters_tile1_17
+    tile
+    {
+        xy = 1,2
+        BedType = badBed
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Mockingbird_Items.ElectricChair
+        CustomName = Electric Chair
+        Facing = E
+        GroupName = Electric Chair
+        IsLow = 
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Wood
+        PickUpWeight = 75
+        ScrapSize = Small
+        Surface = 17
+        bed = 
+    }
+    // ghostbusters_tile1_18
+    tile
+    {
+        xy = 2,2
+        BedType = badBed
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Mockingbird_Items.ElectricChair
+        CustomName = Electric Chair
+        Facing = N
+        GroupName = Electric Chair
+        IsLow = 
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Wood
+        PickUpWeight = 75
+        ScrapSize = Small
+        Surface = 17
+        bed = 
+    }
+    // ghostbusters_tile1_19
+    tile
+    {
+        xy = 3,2
+        BedType = badBed
+        BlocksPlacement = 
+        CanScrap = 
+        CustomItem = Mockingbird_Items.ElectricChair
+        CustomName = Electric Chair
+        Facing = W
+        GroupName = Electric Chair
+        IsLow = 
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Wood
+        PickUpWeight = 75
+        ScrapSize = Small
+        Surface = 17
+        bed = 
+    }
+    // ghostbusters_tile1_20
+    tile
+    {
+        xy = 4,2
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Wood_Solid
+        stairsBN = 
+    }
+    // ghostbusters_tile1_21
+    tile
+    {
+        xy = 5,2
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Wood_Solid
+        stairsMN = 
+    }
+    // ghostbusters_tile1_22
+    tile
+    {
+        xy = 6,2
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Wood_Solid
+        stairsTN = 
+    }
+    // ghostbusters_tile1_24
+    tile
+    {
+        xy = 0,3
+        CanBreak = 
+        CanScrap = 
+        ContainerCapacity = 40
+        ContainerPosition = High
+        CustomItem = Mockingbird_Items.GhostbustersContainer
+        CustomName = GhostbustersContainer
+        Facing = S
+        GroupName = Ghostbusters Container
+        IsHigh = 
+        IsMoveAble = 
+        Material = MetalPlates
+        Material2 = MetalBars
+        Material3 = Electric
+        MaterialType = Metal_Solid
+        MoveType = WallObject
+        PickUpTool = Screwdriver
+        PickUpWeight = 100
+        PlaceTool = Screwdriver
+        Surface = 78
+        WallOverlay = 
+        attachedN = 
+        container = ghostcontainer
+    }
+    // ghostbusters_tile1_25
+    tile
+    {
+        xy = 1,3
+        CanBreak = 
+        CanScrap = 
+        ContainerCapacity = 40
+        ContainerPosition = High
+        CustomItem = Mockingbird_Items.GhostbustersContainer
+        CustomName = GhostbustersContainer
+        Facing = E
+        GroupName = Ghostbusters Container
+        IsHigh = 
+        IsMoveAble = 
+        Material = MetalPlates
+        Material2 = MetalBars
+        Material3 = Electric
+        MaterialType = Metal_Solid
+        MoveType = WallObject
+        PickUpTool = Screwdriver
+        PickUpWeight = 100
+        PlaceTool = Screwdriver
+        Surface = 80
+        WallOverlay = 
+        attachedW = 
+        container = ghostcontainer
+    }
+    // ghostbusters_tile1_26
+    tile
+    {
+        xy = 2,3
+        WallOverlay = 
+        alwaysDraw = 
+        attachedW = 
+    }
+    // ghostbusters_tile1_27
+    tile
+    {
+        xy = 3,3
+        WallOverlay = 
+        alwaysDraw = 
+        attachedW = 
+    }
+    // ghostbusters_tile1_28
+    tile
+    {
+        xy = 4,3
+        CanBreak = 
+        CanScrap = 
+        ContainerCapacity = 15
+        ContainerPosition = High
+        CustomItem = Mockingbird_Items.RavenClock
+        CustomName = Shelves
+        Facing = S
+        GroupName = Raven Clock
+        IsHigh = 
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Screws
+        MoveType = WallObject
+        PickUpTool = Hammer
+        PickUpWeight = 75
+        PlaceTool = Hammer
+        ScrapSize = Small
+        Surface = 92
+        attachedN = 
+        container = ravenclockcontainer
+    }
+    // ghostbusters_tile1_29
+    tile
+    {
+        xy = 5,3
+        CanBreak = 
+        CanScrap = 
+        ContainerCapacity = 15
+        ContainerPosition = High
+        CustomItem = Mockingbird_Items.RavenClock
+        CustomName = Shelves
+        Facing = E
+        GroupName = Raven Clock
+        IsHigh = 
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Screws
+        MoveType = WallObject
+        PickUpTool = Hammer
+        PickUpWeight = 75
+        PlaceTool = Hammer
+        ScrapSize = Small
+        Surface = 93
+        attachedW = 
+        container = ravenclockcontainer
+    }
+    // ghostbusters_tile1_30
+    tile
+    {
+        xy = 6,3
+        CanBreak = 
+        CanScrap = 
+        ContainerCapacity = 15
+        ContainerPosition = High
+        CustomItem = Mockingbird_Items.RavenClock
+        CustomName = Shelves
+        Facing = W
+        GroupName = Raven Clock
+        IsHigh = 
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Screws
+        MoveType = WallObject
+        PickUpTool = Hammer
+        PickUpWeight = 75
+        PlaceTool = Hammer
+        ScrapSize = Small
+        Surface = 94
+        attachedE = 
+        container = ravenclockcontainer
+    }
+    // ghostbusters_tile1_31
+    tile
+    {
+        xy = 7,3
+        CanBreak = 
+        CanScrap = 
+        ContainerCapacity = 15
+        ContainerPosition = High
+        CustomItem = Mockingbird_Items.RavenClock
+        CustomName = Shelves
+        Facing = N
+        GroupName = Raven Clock
+        IsHigh = 
+        IsMoveAble = 
+        Material = Wood
+        Material2 = Screws
+        MoveType = WallObject
+        PickUpTool = Hammer
+        PickUpWeight = 75
+        PlaceTool = Hammer
+        ScrapSize = Small
+        Surface = 93
+        attachedS = 
+        container = ravenclockcontainer
+    }
+    // ghostbusters_tile1_32
+    tile
+    {
+        xy = 0,4
+        CanScrap = 
+        CustomName = Door
+        GroupName = Munster Door
+        Material = Door
+        Material2 = Wood
+        MaterialType = Wood_Solid
+        attachedW = 
+        doorW = 
+    }
+    // ghostbusters_tile1_33
+    tile
+    {
+        xy = 1,4
+        CanScrap = 
+        CustomName = Door
+        GroupName = Munster Door
+        Material = Door
+        Material2 = Wood
+        MaterialType = Wood_Solid
+        attachedN = 
+        doorN = 
+    }
+    // ghostbusters_tile1_34
+    tile
+    {
+        xy = 2,4
+        CanScrap = 
+        CustomName = Door
+        GroupName = Munster Door
+        Material = Door
+        Material2 = Wood
+        MaterialType = Wood_Solid
+        attachedW = 
+    }
+    // ghostbusters_tile1_35
+    tile
+    {
+        xy = 3,4
+        CanScrap = 
+        CustomName = Door
+        GroupName = Munster Door
+        Material = Door
+        Material2 = Wood
+        MaterialType = Wood_Solid
+        attachedN = 
+    }
+    // ghostbusters_tile1_36
+    tile
+    {
+        xy = 4,4
+        climbSheetS = 
+    }
+    // ghostbusters_tile1_37
+    tile
+    {
+        xy = 5,4
+        climbSheetS = 
+    }
+    // ghostbusters_tile1_38
+    tile
+    {
+        xy = 6,4
+        climbSheetTopS = 
+    }
+    // ghostbusters_tile1_40
+    tile
+    {
+        xy = 0,5
+        Facing = S
+        ForceSingleItem = 
+        GroupName = March Ridge Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_41
+    tile
+    {
+        xy = 1,5
+        Facing = S
+        ForceSingleItem = 
+        GroupName = March Ridge Sign
+        MaterialType = Metal
+        SpriteGridPos = 1,0
+    }
+    // ghostbusters_tile1_42
+    tile
+    {
+        xy = 2,5
+        Facing = E
+        ForceSingleItem = 
+        GroupName = March Ridge Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,1
+    }
+    // ghostbusters_tile1_43
+    tile
+    {
+        xy = 3,5
+        Facing = E
+        ForceSingleItem = 
+        GroupName = March Ridge Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_44
+    tile
+    {
+        xy = 4,5
+        Facing = W
+        ForceSingleItem = 
+        GroupName = March Ridge Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,1
+    }
+    // ghostbusters_tile1_45
+    tile
+    {
+        xy = 5,5
+        Facing = W
+        ForceSingleItem = 
+        GroupName = March Ridge Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_46
+    tile
+    {
+        xy = 6,5
+        Facing = N
+        ForceSingleItem = 
+        GroupName = March Ridge Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_47
+    tile
+    {
+        xy = 7,5
+        Facing = N
+        ForceSingleItem = 
+        GroupName = March Ridge Sign
+        MaterialType = Metal
+        SpriteGridPos = 1,0
+    }
+    // ghostbusters_tile1_48
+    tile
+    {
+        xy = 0,6
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Mockingbird Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,1
+    }
+    // ghostbusters_tile1_49
+    tile
+    {
+        xy = 1,6
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Mockingbird Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_50
+    tile
+    {
+        xy = 2,6
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Mockingbird Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_51
+    tile
+    {
+        xy = 3,6
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Mockingbird Sign
+        MaterialType = Metal
+        SpriteGridPos = 1,0
+    }
+    // ghostbusters_tile1_52
+    tile
+    {
+        xy = 4,6
+        Facing = W
+        ForceSingleItem = 
+        GroupName = Mockingbird Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,1
+    }
+    // ghostbusters_tile1_53
+    tile
+    {
+        xy = 5,6
+        Facing = W
+        ForceSingleItem = 
+        GroupName = Mockingbird Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_54
+    tile
+    {
+        xy = 6,6
+        Facing = N
+        ForceSingleItem = 
+        GroupName = Mockingbird Sign
+        MaterialType = Metal
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_55
+    tile
+    {
+        xy = 7,6
+        Facing = N
+        ForceSingleItem = 
+        GroupName = Mockingbird Sign
+        MaterialType = Metal
+        SpriteGridPos = 1,0
+    }
+    // ghostbusters_tile1_56
+    tile
+    {
+        xy = 0,7
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Green Valley Sign
+        MaterialType = Wood_Solid
+        SpriteGridPos = 0,1
+    }
+    // ghostbusters_tile1_57
+    tile
+    {
+        xy = 1,7
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Green Valley Sign
+        MaterialType = Wood_Solid
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_58
+    tile
+    {
+        xy = 2,7
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Green Valley Sign
+        MaterialType = Wood_Solid
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_59
+    tile
+    {
+        xy = 3,7
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Green Valley Sign
+        MaterialType = Wood_Solid
+        SpriteGridPos = 1,0
+    }
+    // ghostbusters_tile1_60
+    tile
+    {
+        xy = 4,7
+        Facing = W
+        ForceSingleItem = 
+        GroupName = Green Valley Sign
+        MaterialType = Wood_Solid
+        SpriteGridPos = 0,1
+    }
+    // ghostbusters_tile1_61
+    tile
+    {
+        xy = 5,7
+        Facing = W
+        ForceSingleItem = 
+        GroupName = Green Valley Sign
+        MaterialType = Wood_Solid
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_62
+    tile
+    {
+        xy = 6,7
+        Facing = N
+        ForceSingleItem = 
+        GroupName = Green Valley Sign
+        MaterialType = Wood_Solid
+        SpriteGridPos = 0,0
+    }
+    // ghostbusters_tile1_63
+    tile
+    {
+        xy = 7,7
+        Facing = N
+        ForceSingleItem = 
+        GroupName = Green Valley Sign
+        MaterialType = Wood_Solid
+        SpriteGridPos = 1,0
+    }
+    // ghostbusters_tile1_64
+    tile
+    {
+        xy = 0,8
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 1
+        SpriteGridPos = 0,3
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_65
+    tile
+    {
+        xy = 1,8
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 1
+        SpriteGridPos = 0,2
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_66
+    tile
+    {
+        xy = 2,8
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 1
+        SpriteGridPos = 0,1
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_67
+    tile
+    {
+        xy = 3,8
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 1
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_68
+    tile
+    {
+        xy = 4,8
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 1
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_69
+    tile
+    {
+        xy = 5,8
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 1
+        SpriteGridPos = 1,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_70
+    tile
+    {
+        xy = 6,8
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 1
+        SpriteGridPos = 2,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_71
+    tile
+    {
+        xy = 7,8
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 1
+        SpriteGridPos = 3,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_72
+    tile
+    {
+        xy = 0,9
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 2
+        SpriteGridPos = 0,3
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_73
+    tile
+    {
+        xy = 1,9
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 2
+        SpriteGridPos = 0,2
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_74
+    tile
+    {
+        xy = 2,9
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 2
+        SpriteGridPos = 0,1
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_75
+    tile
+    {
+        xy = 3,9
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 2
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_76
+    tile
+    {
+        xy = 4,9
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 2
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_77
+    tile
+    {
+        xy = 5,9
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 2
+        SpriteGridPos = 1,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_78
+    tile
+    {
+        xy = 6,9
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 2
+        SpriteGridPos = 2,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_79
+    tile
+    {
+        xy = 7,9
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 2
+        SpriteGridPos = 3,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_80
+    tile
+    {
+        xy = 0,10
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 3
+        SpriteGridPos = 0,3
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_81
+    tile
+    {
+        xy = 1,10
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 3
+        SpriteGridPos = 0,2
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_82
+    tile
+    {
+        xy = 2,10
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 3
+        SpriteGridPos = 0,1
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_83
+    tile
+    {
+        xy = 3,10
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 3
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_84
+    tile
+    {
+        xy = 4,10
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 3
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_85
+    tile
+    {
+        xy = 5,10
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 3
+        SpriteGridPos = 1,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_86
+    tile
+    {
+        xy = 6,10
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 3
+        SpriteGridPos = 2,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_87
+    tile
+    {
+        xy = 7,10
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 3
+        SpriteGridPos = 3,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_88
+    tile
+    {
+        xy = 0,11
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 4
+        SpriteGridPos = 0,3
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_89
+    tile
+    {
+        xy = 1,11
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 4
+        SpriteGridPos = 0,2
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_90
+    tile
+    {
+        xy = 2,11
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 4
+        SpriteGridPos = 0,1
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_91
+    tile
+    {
+        xy = 3,11
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 4
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_92
+    tile
+    {
+        xy = 4,11
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 4
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_93
+    tile
+    {
+        xy = 5,11
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 4
+        SpriteGridPos = 1,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_94
+    tile
+    {
+        xy = 6,11
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 4
+        SpriteGridPos = 2,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_95
+    tile
+    {
+        xy = 7,11
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 4
+        SpriteGridPos = 3,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_96
+    tile
+    {
+        xy = 0,12
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 5
+        SpriteGridPos = 0,3
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_97
+    tile
+    {
+        xy = 1,12
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 5
+        SpriteGridPos = 0,2
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_98
+    tile
+    {
+        xy = 2,12
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 5
+        SpriteGridPos = 0,1
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_99
+    tile
+    {
+        xy = 3,12
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 5
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_100
+    tile
+    {
+        xy = 4,12
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 5
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_101
+    tile
+    {
+        xy = 5,12
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 5
+        SpriteGridPos = 1,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_102
+    tile
+    {
+        xy = 6,12
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 5
+        SpriteGridPos = 2,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_103
+    tile
+    {
+        xy = 7,12
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 5
+        SpriteGridPos = 3,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_104
+    tile
+    {
+        xy = 0,13
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 6
+        SpriteGridPos = 0,3
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_105
+    tile
+    {
+        xy = 1,13
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 6
+        SpriteGridPos = 0,2
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_106
+    tile
+    {
+        xy = 2,13
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 6
+        SpriteGridPos = 0,1
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_107
+    tile
+    {
+        xy = 3,13
+        Facing = E
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 6
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedE = 
+    }
+    // ghostbusters_tile1_108
+    tile
+    {
+        xy = 4,13
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 6
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_109
+    tile
+    {
+        xy = 5,13
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 6
+        SpriteGridPos = 1,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_110
+    tile
+    {
+        xy = 6,13
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 6
+        SpriteGridPos = 2,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_111
+    tile
+    {
+        xy = 7,13
+        Facing = S
+        ForceSingleItem = 
+        GroupName = Poster Spiffo 6
+        SpriteGridPos = 3,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_112
+    tile
+    {
+        xy = 0,14
+        Facing = E
+        GroupName = Small Happyness TV Sign
+        WallOverlay = 
+        alwaysDraw = 
+        attachedW = 
+    }
+    // ghostbusters_tile1_113
+    tile
+    {
+        xy = 1,14
+        Facing = E
+        GroupName = Small Happyness TV Sign
+        WallOverlay = 
+        alwaysDraw = 
+        attachedW = 
+    }
+    // ghostbusters_tile1_114
+    tile
+    {
+        xy = 2,14
+        Facing = E
+        GroupName = Small Happyness TV Sign
+        WallOverlay = 
+        alwaysDraw = 
+        attachedW = 
+    }
+    // ghostbusters_tile1_115
+    tile
+    {
+        xy = 3,14
+        Facing = E
+        GroupName = Small Happyness TV Sign
+        WallOverlay = 
+        alwaysDraw = 
+        attachedW = 
+    }
+    // ghostbusters_tile1_116
+    tile
+    {
+        xy = 4,14
+        Facing = E
+        GroupName = Small Happyness TV Sign
+        WallOverlay = 
+        alwaysDraw = 
+        attachedW = 
+    }
+    // ghostbusters_tile1_120
+    tile
+    {
+        xy = 0,15
+        Facing = S
+        GroupName = Small Happyness TV Sign
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_121
+    tile
+    {
+        xy = 1,15
+        Facing = S
+        GroupName = Small Happyness TV Sign
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_122
+    tile
+    {
+        xy = 2,15
+        Facing = S
+        GroupName = Small Happyness TV Sign
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_123
+    tile
+    {
+        xy = 3,15
+        Facing = S
+        GroupName = Small Happyness TV Sign
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_124
+    tile
+    {
+        xy = 4,15
+        Facing = S
+        GroupName = Small Happyness TV Sign
+        SpriteGridPos = 0,0
+        WallOverlay = 
+        alwaysDraw = 
+        attachedN = 
+    }
+    // ghostbusters_tile1_125
+    tile
+    {
+        xy = 5,15
+        BlocksPlacement = 
+        CanBreak = 
+        CanScrap = 
+        ContainerCapacity = 80
+        CustomItem = Mockingbird_Items.Ataud
+        CustomName = Ataud
+        Facing = E
+        GroupName = Oakwood Ataud
+        IsMoveAble = 
+        IsTrashCan = 
+        Material = Wood
+        Material2 = Screws
+        MaterialType = Wood
+        PickUpTool = Hammer
+        PickUpWeight = 200
+        PlaceTool = Hammer
+        ScrapSize = Large
+        Surface = 65
+        container = ataudcontainer
+        solid = 
+    }
+    // ghostbusters_tile1_126
+    tile
+    {
+        xy = 6,15
+        BlocksPlacement = 
+        CanBreak = 
+        CanScrap = 
+        ContainerCapacity = 80
+        CustomItem = Mockingbird_Items.Ataud
+        CustomName = Ataud
+        Facing = S
+        GroupName = Oakwood Ataud
+        IsMoveAble = 
+        IsTrashCan = 
+        Material = Wood
+        Material2 = Screws
+        MaterialType = Wood
+        PickUpTool = Hammer
+        PickUpWeight = 200
+        PlaceTool = Hammer
+        ScrapSize = Large
+        Surface = 65
+        container = ataudcontainer
+        solid = 
+    }
+}
+tileset
+{
+    file = ghostbusters_tile2
+    size = 8,16
+    id = 5
+    // ghostbusters_tile2_0
+    tile
+    {
+        xy = 0,0
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_1
+    tile
+    {
+        xy = 1,0
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_2
+    tile
+    {
+        xy = 2,0
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_3
+    tile
+    {
+        xy = 3,0
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_4
+    tile
+    {
+        xy = 4,0
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_5
+    tile
+    {
+        xy = 5,0
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_6
+    tile
+    {
+        xy = 6,0
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_7
+    tile
+    {
+        xy = 7,0
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_8
+    tile
+    {
+        xy = 0,1
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_9
+    tile
+    {
+        xy = 1,1
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_10
+    tile
+    {
+        xy = 2,1
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_11
+    tile
+    {
+        xy = 3,1
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_12
+    tile
+    {
+        xy = 4,1
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_13
+    tile
+    {
+        xy = 5,1
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_14
+    tile
+    {
+        xy = 6,1
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_15
+    tile
+    {
+        xy = 7,1
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_16
+    tile
+    {
+        xy = 0,2
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_17
+    tile
+    {
+        xy = 1,2
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_18
+    tile
+    {
+        xy = 2,2
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_19
+    tile
+    {
+        xy = 3,2
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_20
+    tile
+    {
+        xy = 4,2
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_21
+    tile
+    {
+        xy = 5,2
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_22
+    tile
+    {
+        xy = 6,2
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_23
+    tile
+    {
+        xy = 7,2
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_24
+    tile
+    {
+        xy = 0,3
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_25
+    tile
+    {
+        xy = 1,3
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_26
+    tile
+    {
+        xy = 2,3
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_27
+    tile
+    {
+        xy = 3,3
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_28
+    tile
+    {
+        xy = 4,3
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_29
+    tile
+    {
+        xy = 5,3
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile2_30
+    tile
+    {
+        xy = 6,3
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_31
+    tile
+    {
+        xy = 7,3
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile2_32
+    tile
+    {
+        xy = 0,4
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_33
+    tile
+    {
+        xy = 1,4
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_34
+    tile
+    {
+        xy = 2,4
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_35
+    tile
+    {
+        xy = 3,4
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_36
+    tile
+    {
+        xy = 4,4
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_37
+    tile
+    {
+        xy = 5,4
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_38
+    tile
+    {
+        xy = 6,4
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_39
+    tile
+    {
+        xy = 7,4
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_40
+    tile
+    {
+        xy = 0,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_41
+    tile
+    {
+        xy = 1,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_42
+    tile
+    {
+        xy = 2,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_43
+    tile
+    {
+        xy = 3,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_44
+    tile
+    {
+        xy = 4,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_45
+    tile
+    {
+        xy = 5,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_46
+    tile
+    {
+        xy = 6,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_47
+    tile
+    {
+        xy = 7,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_48
+    tile
+    {
+        xy = 0,6
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_49
+    tile
+    {
+        xy = 1,6
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_50
+    tile
+    {
+        xy = 2,6
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_51
+    tile
+    {
+        xy = 3,6
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_52
+    tile
+    {
+        xy = 4,6
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_53
+    tile
+    {
+        xy = 5,6
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_54
+    tile
+    {
+        xy = 6,6
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_55
+    tile
+    {
+        xy = 7,6
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_56
+    tile
+    {
+        xy = 0,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_57
+    tile
+    {
+        xy = 1,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_58
+    tile
+    {
+        xy = 2,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_59
+    tile
+    {
+        xy = 3,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_60
+    tile
+    {
+        xy = 4,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_61
+    tile
+    {
+        xy = 5,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_62
+    tile
+    {
+        xy = 6,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_63
+    tile
+    {
+        xy = 7,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_64
+    tile
+    {
+        xy = 0,8
+        CutawayHint = DoubleDoorLeft
+        DoorWallW = 
+        DoubleDoor1 = 
+        GrimeType = FullWindow
+        cutW = 
+        wall = 
+    }
+    // ghostbusters_tile2_65
+    tile
+    {
+        xy = 1,8
+        CutawayHint = DoubleDoorRight
+        DoorWallW = 
+        DoubleDoor2 = 
+        GrimeType = FullWindow
+        cutW = 
+        wall = 
+    }
+    // ghostbusters_tile2_66
+    tile
+    {
+        xy = 2,8
+        CutawayHint = DoubleDoorLeft
+        DoorWallN = 
+        DoubleDoor1 = 
+        GrimeType = FullWindow
+        cutN = 
+        wall = 
+    }
+    // ghostbusters_tile2_67
+    tile
+    {
+        xy = 3,8
+        CutawayHint = DoubleDoorRight
+        DoorWallN = 
+        DoubleDoor2 = 
+        GrimeType = FullWindow
+        cutN = 
+        wall = 
+    }
+    // ghostbusters_tile2_72
+    tile
+    {
+        xy = 0,9
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_73
+    tile
+    {
+        xy = 1,9
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_74
+    tile
+    {
+        xy = 2,9
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_75
+    tile
+    {
+        xy = 3,9
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_76
+    tile
+    {
+        xy = 4,9
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_77
+    tile
+    {
+        xy = 5,9
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_78
+    tile
+    {
+        xy = 6,9
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_79
+    tile
+    {
+        xy = 7,9
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_80
+    tile
+    {
+        xy = 0,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_81
+    tile
+    {
+        xy = 1,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_82
+    tile
+    {
+        xy = 2,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_83
+    tile
+    {
+        xy = 3,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_84
+    tile
+    {
+        xy = 4,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_85
+    tile
+    {
+        xy = 5,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_86
+    tile
+    {
+        xy = 6,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_87
+    tile
+    {
+        xy = 7,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_88
+    tile
+    {
+        xy = 0,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_89
+    tile
+    {
+        xy = 1,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_90
+    tile
+    {
+        xy = 2,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_91
+    tile
+    {
+        xy = 3,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_92
+    tile
+    {
+        xy = 4,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_93
+    tile
+    {
+        xy = 5,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_94
+    tile
+    {
+        xy = 6,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_95
+    tile
+    {
+        xy = 7,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile2_96
+    tile
+    {
+        xy = 0,12
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_97
+    tile
+    {
+        xy = 1,12
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_98
+    tile
+    {
+        xy = 2,12
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_99
+    tile
+    {
+        xy = 3,12
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_100
+    tile
+    {
+        xy = 4,12
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_101
+    tile
+    {
+        xy = 5,12
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_102
+    tile
+    {
+        xy = 6,12
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_103
+    tile
+    {
+        xy = 7,12
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_104
+    tile
+    {
+        xy = 0,13
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_105
+    tile
+    {
+        xy = 1,13
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_106
+    tile
+    {
+        xy = 2,13
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_107
+    tile
+    {
+        xy = 3,13
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_108
+    tile
+    {
+        xy = 4,13
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_109
+    tile
+    {
+        xy = 5,13
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_110
+    tile
+    {
+        xy = 6,13
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_111
+    tile
+    {
+        xy = 7,13
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile2_112
+    tile
+    {
+        xy = 0,14
+        CanScrap = 
+        CustomName = Curtain
+        Facing = E
+        IsClosedState = 
+        IsLow = 
+        IsMoveAble = 
+        MaterialType = Fabric
+        MoveType = WindowObject
+        PickUpWeight = 30
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedW = 
+        curtainW = 
+    }
+    // ghostbusters_tile2_113
+    tile
+    {
+        xy = 1,14
+        CanScrap = 
+        CustomName = Curtain
+        Facing = W
+        IsClosedState = 
+        IsLow = 
+        IsMoveAble = 
+        MaterialType = Fabric
+        MoveType = WindowObject
+        PickUpWeight = 30
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedE = 
+        curtainE = 
+    }
+    // ghostbusters_tile2_114
+    tile
+    {
+        xy = 2,14
+        CanScrap = 
+        CustomName = Curtain
+        Facing = S
+        IsClosedState = 
+        IsLow = 
+        IsMoveAble = 
+        MaterialType = Fabric
+        MoveType = WindowObject
+        PickUpWeight = 30
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedN = 
+        curtainN = 
+    }
+    // ghostbusters_tile2_115
+    tile
+    {
+        xy = 3,14
+        CanScrap = 
+        CustomName = Curtain
+        Facing = N
+        IsClosedState = 
+        IsLow = 
+        IsMoveAble = 
+        MaterialType = Fabric
+        MoveType = WindowObject
+        PickUpWeight = 30
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedS = 
+        curtainS = 
+    }
+    // ghostbusters_tile2_116
+    tile
+    {
+        xy = 4,14
+        CanScrap = 
+        CustomItem = Mockingbird_Items.Mov_LongMexCurtain
+        CustomName = Curtain
+        Facing = E
+        GroupName = Long Mexican
+        IsLow = 
+        IsMoveAble = 
+        MoveType = WindowObject
+        PickUpWeight = 30
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedW = 
+        curtainW = 
+    }
+    // ghostbusters_tile2_117
+    tile
+    {
+        xy = 5,14
+        CanScrap = 
+        CustomItem = Mockingbird_Items.Mov_LongMexCurtain
+        CustomName = Curtain
+        Facing = W
+        GroupName = Long Mexican
+        IsLow = 
+        IsMoveAble = 
+        MoveType = WindowObject
+        PickUpWeight = 30
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedE = 
+        curtainE = 
+    }
+    // ghostbusters_tile2_118
+    tile
+    {
+        xy = 6,14
+        CanScrap = 
+        CustomItem = Mockingbird_Items.Mov_LongMexCurtain
+        CustomName = Curtain
+        Facing = S
+        GroupName = Long Mexican
+        IsLow = 
+        IsMoveAble = 
+        MoveType = WindowObject
+        PickUpWeight = 30
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedN = 
+        curtainN = 
+    }
+    // ghostbusters_tile2_119
+    tile
+    {
+        xy = 7,14
+        CanScrap = 
+        CustomItem = Mockingbird_Items.Mov_LongMexCurtain
+        CustomName = Curtain
+        Facing = N
+        GroupName = Long Mexican
+        IsLow = 
+        IsMoveAble = 
+        MoveType = WindowObject
+        PickUpWeight = 30
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedS = 
+        curtainS = 
+    }
+    // ghostbusters_tile2_120
+    tile
+    {
+        xy = 0,15
+        CanScrap = 
+        CustomName = Curtain
+        Facing = E
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Fabric
+        MoveType = WindowObject
+        PickUpWeight = 20
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedW = 
+        curtainW = 
+    }
+    // ghostbusters_tile2_121
+    tile
+    {
+        xy = 1,15
+        CanScrap = 
+        CustomName = Curtain
+        Facing = W
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Fabric
+        MoveType = WindowObject
+        PickUpWeight = 20
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedE = 
+        curtainE = 
+    }
+    // ghostbusters_tile2_122
+    tile
+    {
+        xy = 2,15
+        CanScrap = 
+        CustomName = Curtain
+        Facing = S
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Fabric
+        MoveType = WindowObject
+        PickUpWeight = 20
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedN = 
+        curtainN = 
+    }
+    // ghostbusters_tile2_123
+    tile
+    {
+        xy = 3,15
+        CanScrap = 
+        CustomName = Curtain
+        Facing = N
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Fabric
+        MoveType = WindowObject
+        PickUpWeight = 20
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedS = 
+        curtainS = 
+    }
+    // ghostbusters_tile2_124
+    tile
+    {
+        xy = 4,15
+        CanScrap = 
+        CustomItem = Mockingbird_Items.Mov_MexCurtain
+        CustomName = Curtain
+        Facing = E
+        GroupName = Mex Curtain
+        IsMoveAble = 
+        MoveType = WindowObject
+        PickUpWeight = 10
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedW = 
+        curtainW = 
+    }
+    // ghostbusters_tile2_125
+    tile
+    {
+        xy = 5,15
+        CanScrap = 
+        CustomItem = Mockingbird_Items.Mov_MexCurtain
+        CustomName = Curtain
+        Facing = W
+        GroupName = Mex Curtain
+        IsMoveAble = 
+        MoveType = WindowObject
+        PickUpWeight = 10
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedE = 
+        curtainE = 
+    }
+    // ghostbusters_tile2_126
+    tile
+    {
+        xy = 6,15
+        CanScrap = 
+        CustomItem = Mockingbird_Items.Mov_MexCurtain
+        CustomName = Curtain
+        Facing = S
+        GroupName = Mex Curtain
+        IsMoveAble = 
+        MoveType = WindowObject
+        PickUpWeight = 10
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedN = 
+        curtainN = 
+    }
+    // ghostbusters_tile2_127
+    tile
+    {
+        xy = 7,15
+        CanScrap = 
+        CustomItem = Mockingbird_Items.Mov_MexCurtain
+        CustomName = Curtain
+        Facing = N
+        GroupName = Mex Curtain
+        IsMoveAble = 
+        MoveType = WindowObject
+        PickUpWeight = 10
+        ScrapUseSkill = 
+        ScrapUseTool = 
+        WallOverlay = 
+        attachedS = 
+        curtainS = 
+    }
+}
+tileset
+{
+    file = ghostbusters_tile4
+    size = 8,16
+    id = 6
+    // ghostbusters_tile4_0
+    tile
+    {
+        xy = 0,0
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_1
+    tile
+    {
+        xy = 1,0
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_2
+    tile
+    {
+        xy = 2,0
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_3
+    tile
+    {
+        xy = 3,0
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_4
+    tile
+    {
+        xy = 4,0
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_5
+    tile
+    {
+        xy = 5,0
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_6
+    tile
+    {
+        xy = 6,0
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_7
+    tile
+    {
+        xy = 7,0
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_8
+    tile
+    {
+        xy = 0,1
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_9
+    tile
+    {
+        xy = 1,1
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_10
+    tile
+    {
+        xy = 2,1
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_11
+    tile
+    {
+        xy = 3,1
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_12
+    tile
+    {
+        xy = 4,1
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_13
+    tile
+    {
+        xy = 5,1
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_14
+    tile
+    {
+        xy = 6,1
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_15
+    tile
+    {
+        xy = 7,1
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_16
+    tile
+    {
+        xy = 0,2
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_17
+    tile
+    {
+        xy = 1,2
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_18
+    tile
+    {
+        xy = 2,2
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_19
+    tile
+    {
+        xy = 3,2
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_20
+    tile
+    {
+        xy = 4,2
+        IsPaintable = 
+        PaintingType = wall
+        WallNW = 
+        wall = 
+    }
+    // ghostbusters_tile4_24
+    tile
+    {
+        xy = 0,3
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_25
+    tile
+    {
+        xy = 1,3
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_26
+    tile
+    {
+        xy = 2,3
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_27
+    tile
+    {
+        xy = 3,3
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_28
+    tile
+    {
+        xy = 4,3
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_29
+    tile
+    {
+        xy = 5,3
+        IsPaintable = 
+        PaintingType = wall
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile4_30
+    tile
+    {
+        xy = 6,3
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_31
+    tile
+    {
+        xy = 7,3
+        IsPaintable = 
+        PaintingType = wall
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile4_32
+    tile
+    {
+        xy = 0,4
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_33
+    tile
+    {
+        xy = 1,4
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_34
+    tile
+    {
+        xy = 2,4
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_35
+    tile
+    {
+        xy = 3,4
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_36
+    tile
+    {
+        xy = 4,4
+        IsPaintable = 
+        PaintingType = dblwindowframeleft
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_37
+    tile
+    {
+        xy = 5,4
+        IsPaintable = 
+        PaintingType = dblwindowframeright
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_38
+    tile
+    {
+        xy = 6,4
+        IsPaintable = 
+        PaintingType = dblwindowframeleft
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_39
+    tile
+    {
+        xy = 7,4
+        IsPaintable = 
+        PaintingType = dblwindowframeright
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_40
+    tile
+    {
+        xy = 0,5
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_41
+    tile
+    {
+        xy = 1,5
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_42
+    tile
+    {
+        xy = 2,5
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_43
+    tile
+    {
+        xy = 3,5
+        IsPaintable = 
+        PaintingType = dblwindowframeleft
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_44
+    tile
+    {
+        xy = 4,5
+        IsPaintable = 
+        PaintingType = dblwindowframeright
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_45
+    tile
+    {
+        xy = 5,5
+        IsPaintable = 
+        PaintingType = dblwindowframeleft
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_46
+    tile
+    {
+        xy = 6,5
+        PaintingType = windowsframe
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_47
+    tile
+    {
+        xy = 7,5
+        IsPaintable = 
+        PaintingType = dblwindowframeright
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_48
+    tile
+    {
+        xy = 0,6
+        IsPaintable = 
+        PaintingType = dblwindowframeleft
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_49
+    tile
+    {
+        xy = 1,6
+        IsPaintable = 
+        PaintingType = dblwindowframeright
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_50
+    tile
+    {
+        xy = 2,6
+        IsPaintable = 
+        PaintingType = dblwindowframeleft
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_51
+    tile
+    {
+        xy = 3,6
+        IsPaintable = 
+        PaintingType = dblwindowframeright
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_52
+    tile
+    {
+        xy = 4,6
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_53
+    tile
+    {
+        xy = 5,6
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_54
+    tile
+    {
+        xy = 6,6
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_55
+    tile
+    {
+        xy = 7,6
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_56
+    tile
+    {
+        xy = 0,7
+        IsPaintable = 
+        PaintingType = dblwindowframeleft
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_57
+    tile
+    {
+        xy = 1,7
+        PaintingType = windowsframe
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_58
+    tile
+    {
+        xy = 2,7
+        IsPaintable = 
+        PaintingType = dblwindowframeright
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_59
+    tile
+    {
+        xy = 3,7
+        IsPaintable = 
+        PaintingType = dblwindowframeleft
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_60
+    tile
+    {
+        xy = 4,7
+        IsPaintable = 
+        PaintingType = dblwindowframeright
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_61
+    tile
+    {
+        xy = 5,7
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_62
+    tile
+    {
+        xy = 6,7
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_63
+    tile
+    {
+        xy = 7,7
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_64
+    tile
+    {
+        xy = 0,8
+        IsPaintable = 
+        PaintingType = dblwindowframeleft
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_65
+    tile
+    {
+        xy = 1,8
+        IsPaintable = 
+        PaintingType = dblwindowframeright
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_66
+    tile
+    {
+        xy = 2,8
+        IsPaintable = 
+        PaintingType = dblwindowframeleft
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_67
+    tile
+    {
+        xy = 3,8
+        IsPaintable = 
+        PaintingType = dblwindowframeright
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_68
+    tile
+    {
+        xy = 4,8
+        CutawayHint = DoubleDoorLeft
+        DoorWallW = 
+        DoubleDoor1 = 
+        GrimeType = FullWindow
+        cutW = 
+        wall = 
+    }
+    // ghostbusters_tile4_69
+    tile
+    {
+        xy = 5,8
+        CutawayHint = DoubleDoorRight
+        DoorWallW = 
+        DoubleDoor2 = 
+        GrimeType = FullWindow
+        cutW = 
+        wall = 
+    }
+    // ghostbusters_tile4_70
+    tile
+    {
+        xy = 6,8
+        CutawayHint = DoubleDoorLeft
+        DoorWallN = 
+        DoubleDoor1 = 
+        GrimeType = FullWindow
+        cutN = 
+        wall = 
+    }
+    // ghostbusters_tile4_71
+    tile
+    {
+        xy = 7,8
+        CutawayHint = DoubleDoorRight
+        DoorWallN = 
+        DoubleDoor2 = 
+        GrimeType = FullWindow
+        cutN = 
+        wall = 
+    }
+    // ghostbusters_tile4_72
+    tile
+    {
+        xy = 0,9
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_73
+    tile
+    {
+        xy = 1,9
+        IsPaintable = 
+        PaintingType = windowsframe
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_74
+    tile
+    {
+        xy = 2,9
+        DoorWallW = 
+        IsPaintable = 
+        PaintingType = doorframe
+        wall = 
+    }
+    // ghostbusters_tile4_75
+    tile
+    {
+        xy = 3,9
+        DoorWallN = 
+        IsPaintable = 
+        PaintingType = doorframe
+        wall = 
+    }
+    // ghostbusters_tile4_76
+    tile
+    {
+        xy = 4,9
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile4_77
+    tile
+    {
+        xy = 5,9
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile4_78
+    tile
+    {
+        xy = 6,9
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile4_79
+    tile
+    {
+        xy = 7,9
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile4_80
+    tile
+    {
+        xy = 0,10
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_81
+    tile
+    {
+        xy = 1,10
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_82
+    tile
+    {
+        xy = 2,10
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_83
+    tile
+    {
+        xy = 3,10
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_84
+    tile
+    {
+        xy = 4,10
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_85
+    tile
+    {
+        xy = 5,10
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_86
+    tile
+    {
+        xy = 6,10
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_87
+    tile
+    {
+        xy = 7,10
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_88
+    tile
+    {
+        xy = 0,11
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_89
+    tile
+    {
+        xy = 1,11
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_90
+    tile
+    {
+        xy = 2,11
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_91
+    tile
+    {
+        xy = 3,11
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_92
+    tile
+    {
+        xy = 4,11
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_93
+    tile
+    {
+        xy = 5,11
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_94
+    tile
+    {
+        xy = 6,11
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_95
+    tile
+    {
+        xy = 7,11
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_96
+    tile
+    {
+        xy = 0,12
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_97
+    tile
+    {
+        xy = 1,12
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_98
+    tile
+    {
+        xy = 2,12
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_99
+    tile
+    {
+        xy = 3,12
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_100
+    tile
+    {
+        xy = 4,12
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_101
+    tile
+    {
+        xy = 5,12
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_102
+    tile
+    {
+        xy = 6,12
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_103
+    tile
+    {
+        xy = 7,12
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_104
+    tile
+    {
+        xy = 0,13
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_105
+    tile
+    {
+        xy = 1,13
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_106
+    tile
+    {
+        xy = 2,13
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_107
+    tile
+    {
+        xy = 3,13
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_108
+    tile
+    {
+        xy = 4,13
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_109
+    tile
+    {
+        xy = 5,13
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_110
+    tile
+    {
+        xy = 6,13
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_111
+    tile
+    {
+        xy = 7,13
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile4_112
+    tile
+    {
+        xy = 0,14
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_113
+    tile
+    {
+        xy = 1,14
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_114
+    tile
+    {
+        xy = 2,14
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_115
+    tile
+    {
+        xy = 3,14
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_116
+    tile
+    {
+        xy = 4,14
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_117
+    tile
+    {
+        xy = 5,14
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_118
+    tile
+    {
+        xy = 6,14
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_119
+    tile
+    {
+        xy = 7,14
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_120
+    tile
+    {
+        xy = 0,15
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_121
+    tile
+    {
+        xy = 1,15
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_122
+    tile
+    {
+        xy = 2,15
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_123
+    tile
+    {
+        xy = 3,15
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_124
+    tile
+    {
+        xy = 4,15
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_125
+    tile
+    {
+        xy = 5,15
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_126
+    tile
+    {
+        xy = 6,15
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile4_127
+    tile
+    {
+        xy = 7,15
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+}
+tileset
+{
+    file = ghostbusters_tile5
+    size = 8,16
+    id = 7
+    // ghostbusters_tile5_0
+    tile
+    {
+        xy = 0,0
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteCircleTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Circle Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_1
+    tile
+    {
+        xy = 1,0
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteCircleTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Circle Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_2
+    tile
+    {
+        xy = 2,0
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_3
+    tile
+    {
+        xy = 3,0
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_4
+    tile
+    {
+        xy = 4,0
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_5
+    tile
+    {
+        xy = 5,0
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_8
+    tile
+    {
+        xy = 0,1
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteMiddleBigTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Middle Big Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_9
+    tile
+    {
+        xy = 1,1
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteMiddleBigTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Middle Big Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_10
+    tile
+    {
+        xy = 2,1
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_11
+    tile
+    {
+        xy = 3,1
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_12
+    tile
+    {
+        xy = 4,1
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_13
+    tile
+    {
+        xy = 5,1
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_16
+    tile
+    {
+        xy = 0,2
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteLeftBigTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Left Big Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_17
+    tile
+    {
+        xy = 1,2
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteLeftBigTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Left Big Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_18
+    tile
+    {
+        xy = 2,2
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_19
+    tile
+    {
+        xy = 3,2
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_20
+    tile
+    {
+        xy = 4,2
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_21
+    tile
+    {
+        xy = 5,2
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_24
+    tile
+    {
+        xy = 0,3
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteRightBigTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Right Big Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_25
+    tile
+    {
+        xy = 1,3
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteRightBigTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Right Big Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_26
+    tile
+    {
+        xy = 2,3
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_27
+    tile
+    {
+        xy = 3,3
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_28
+    tile
+    {
+        xy = 4,3
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_29
+    tile
+    {
+        xy = 5,3
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_32
+    tile
+    {
+        xy = 0,4
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSmallArchTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Small Arch Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_33
+    tile
+    {
+        xy = 1,4
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSmallArchTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Small Arch Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_34
+    tile
+    {
+        xy = 2,4
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_35
+    tile
+    {
+        xy = 3,4
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_36
+    tile
+    {
+        xy = 4,4
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_37
+    tile
+    {
+        xy = 5,4
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_40
+    tile
+    {
+        xy = 0,5
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteMediumMiddleTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Medium Middle Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_41
+    tile
+    {
+        xy = 1,5
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteMediumMiddleTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Medium Middle Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_42
+    tile
+    {
+        xy = 2,5
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_43
+    tile
+    {
+        xy = 3,5
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_44
+    tile
+    {
+        xy = 4,5
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_45
+    tile
+    {
+        xy = 5,5
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_48
+    tile
+    {
+        xy = 0,6
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteLeftMiddleTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Left Middle Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_49
+    tile
+    {
+        xy = 1,6
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteLeftMiddleTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Left Middle Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_50
+    tile
+    {
+        xy = 2,6
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_51
+    tile
+    {
+        xy = 3,6
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_52
+    tile
+    {
+        xy = 4,6
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_53
+    tile
+    {
+        xy = 5,6
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_56
+    tile
+    {
+        xy = 0,7
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteRightMiddleTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Right Middle Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_57
+    tile
+    {
+        xy = 1,7
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteRightMiddleTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Right Middle Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_58
+    tile
+    {
+        xy = 2,7
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_59
+    tile
+    {
+        xy = 3,7
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_60
+    tile
+    {
+        xy = 4,7
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_61
+    tile
+    {
+        xy = 5,7
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_64
+    tile
+    {
+        xy = 0,8
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteMiddleArchTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Middle Arch Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_65
+    tile
+    {
+        xy = 1,8
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteMiddleArchTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Middle Arch Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_66
+    tile
+    {
+        xy = 2,8
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_67
+    tile
+    {
+        xy = 3,8
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_68
+    tile
+    {
+        xy = 4,8
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_69
+    tile
+    {
+        xy = 5,8
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_72
+    tile
+    {
+        xy = 0,9
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareMiddleTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Square Middle Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_73
+    tile
+    {
+        xy = 1,9
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareMiddleTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Square Middle Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_74
+    tile
+    {
+        xy = 2,9
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_75
+    tile
+    {
+        xy = 3,9
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_76
+    tile
+    {
+        xy = 4,9
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_77
+    tile
+    {
+        xy = 5,9
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_80
+    tile
+    {
+        xy = 0,10
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareLeftTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Square Left Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_81
+    tile
+    {
+        xy = 1,10
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareLeftTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Square Left Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_82
+    tile
+    {
+        xy = 2,10
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_83
+    tile
+    {
+        xy = 3,10
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_84
+    tile
+    {
+        xy = 4,10
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_85
+    tile
+    {
+        xy = 5,10
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_88
+    tile
+    {
+        xy = 0,11
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareRightTiled
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Square Right Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_89
+    tile
+    {
+        xy = 1,11
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareRightTiled
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Square Right Tiled
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_90
+    tile
+    {
+        xy = 2,11
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_91
+    tile
+    {
+        xy = 3,11
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_92
+    tile
+    {
+        xy = 4,11
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_93
+    tile
+    {
+        xy = 5,11
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_96
+    tile
+    {
+        xy = 0,12
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareLeft
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Square Left
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_97
+    tile
+    {
+        xy = 1,12
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareLeft
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Square Left
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_98
+    tile
+    {
+        xy = 2,12
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_99
+    tile
+    {
+        xy = 3,12
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_100
+    tile
+    {
+        xy = 4,12
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_101
+    tile
+    {
+        xy = 5,12
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_104
+    tile
+    {
+        xy = 0,13
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareMiddle
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Square Middle
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_105
+    tile
+    {
+        xy = 1,13
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareMiddle
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Square Middle
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_106
+    tile
+    {
+        xy = 2,13
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_107
+    tile
+    {
+        xy = 3,13
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_108
+    tile
+    {
+        xy = 4,13
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_109
+    tile
+    {
+        xy = 5,13
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_112
+    tile
+    {
+        xy = 0,14
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareRight
+        CustomName = Window
+        Facing = W
+        GlassRemovedOffset = 4
+        GroupName = White Square Right
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedW = 
+        windowW = 
+    }
+    // ghostbusters_tile5_113
+    tile
+    {
+        xy = 1,14
+        CanBreak = 
+        CustomItem = Mockingbird_Items.WhiteSquareRight
+        CustomName = Window
+        Facing = N
+        GlassRemovedOffset = 4
+        GroupName = White Square Right
+        IsClosedState = 
+        IsMoveAble = 
+        MaterialType = Glass
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        SmashedTileOffset = 2
+        WindowLocked = 
+        attachedN = 
+        windowN = 
+    }
+    // ghostbusters_tile5_114
+    tile
+    {
+        xy = 2,14
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_115
+    tile
+    {
+        xy = 3,14
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MaterialType = Glass_Light
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+    // ghostbusters_tile5_116
+    tile
+    {
+        xy = 4,14
+        CanBreak = 
+        CustomName = Window
+        Facing = W
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedW = 
+    }
+    // ghostbusters_tile5_117
+    tile
+    {
+        xy = 5,14
+        CanBreak = 
+        CustomName = Window
+        Facing = N
+        IsMoveAble = 
+        MoveType = Window
+        PickUpLevel = 2
+        PickUpTool = Crowbar
+        PickUpWeight = 100
+        PlaceTool = Hammer
+        attachedN = 
+    }
+}
+tileset
+{
+    file = ghostbusters_tile6
+    size = 8,16
+    id = 8
+    // ghostbusters_tile6_0
+    tile
+    {
+        xy = 0,0
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile6_1
+    tile
+    {
+        xy = 1,0
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile6_2
+    tile
+    {
+        xy = 2,0
+        MaterialType = Wood
+        WallNW = 
+        wall = 
+    }
+    // ghostbusters_tile6_4
+    tile
+    {
+        xy = 4,0
+        MaterialType = Brick
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile6_5
+    tile
+    {
+        xy = 5,0
+        MaterialType = Brick
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile6_6
+    tile
+    {
+        xy = 6,0
+        MaterialType = Brick
+        WallNW = 
+        wall = 
+    }
+    // ghostbusters_tile6_8
+    tile
+    {
+        xy = 0,1
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_9
+    tile
+    {
+        xy = 1,1
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_10
+    tile
+    {
+        xy = 2,1
+        DoorWallW = 
+        MaterialType = Wood
+        wall = 
+    }
+    // ghostbusters_tile6_11
+    tile
+    {
+        xy = 3,1
+        DoorWallN = 
+        MaterialType = Wood
+        wall = 
+    }
+    // ghostbusters_tile6_12
+    tile
+    {
+        xy = 4,1
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_13
+    tile
+    {
+        xy = 5,1
+        MaterialType = Brick
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_14
+    tile
+    {
+        xy = 6,1
+        DoorWallW = 
+        MaterialType = Brick
+        wall = 
+    }
+    // ghostbusters_tile6_15
+    tile
+    {
+        xy = 7,1
+        DoorWallN = 
+        MaterialType = Brick
+        wall = 
+    }
+    // ghostbusters_tile6_16
+    tile
+    {
+        xy = 0,2
+        DoubleDoor1 = 
+        MaterialType = Wood
+        doorFrW = 
+    }
+    // ghostbusters_tile6_17
+    tile
+    {
+        xy = 1,2
+        DoubleDoor2 = 
+        MaterialType = Wood
+        doorFrW = 
+    }
+    // ghostbusters_tile6_18
+    tile
+    {
+        xy = 2,2
+        DoubleDoor1 = 
+        MaterialType = Wood
+        doorFrN = 
+    }
+    // ghostbusters_tile6_19
+    tile
+    {
+        xy = 3,2
+        DoubleDoor2 = 
+        MaterialType = Wood
+        doorFrN = 
+    }
+    // ghostbusters_tile6_20
+    tile
+    {
+        xy = 4,2
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile6_21
+    tile
+    {
+        xy = 5,2
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile6_22
+    tile
+    {
+        xy = 6,2
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile6_23
+    tile
+    {
+        xy = 7,2
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile6_24
+    tile
+    {
+        xy = 0,3
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile6_25
+    tile
+    {
+        xy = 1,3
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile6_26
+    tile
+    {
+        xy = 2,3
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile6_27
+    tile
+    {
+        xy = 3,3
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile6_28
+    tile
+    {
+        xy = 4,3
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile6_29
+    tile
+    {
+        xy = 5,3
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile6_30
+    tile
+    {
+        xy = 6,3
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile6_31
+    tile
+    {
+        xy = 7,3
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile6_32
+    tile
+    {
+        xy = 0,4
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile6_33
+    tile
+    {
+        xy = 1,4
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile6_34
+    tile
+    {
+        xy = 2,4
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile6_35
+    tile
+    {
+        xy = 3,4
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile6_36
+    tile
+    {
+        xy = 4,4
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile6_37
+    tile
+    {
+        xy = 5,4
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrW = 
+    }
+    // ghostbusters_tile6_38
+    tile
+    {
+        xy = 6,4
+        DoubleDoor1 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile6_39
+    tile
+    {
+        xy = 7,4
+        DoubleDoor2 = 
+        MaterialType = Brick
+        doorFrN = 
+    }
+    // ghostbusters_tile6_40
+    tile
+    {
+        xy = 0,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_41
+    tile
+    {
+        xy = 1,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_42
+    tile
+    {
+        xy = 2,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_43
+    tile
+    {
+        xy = 3,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_44
+    tile
+    {
+        xy = 4,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_45
+    tile
+    {
+        xy = 5,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_46
+    tile
+    {
+        xy = 6,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_47
+    tile
+    {
+        xy = 7,5
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_48
+    tile
+    {
+        xy = 0,6
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_49
+    tile
+    {
+        xy = 1,6
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_50
+    tile
+    {
+        xy = 2,6
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_51
+    tile
+    {
+        xy = 3,6
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_52
+    tile
+    {
+        xy = 4,6
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_53
+    tile
+    {
+        xy = 5,6
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_54
+    tile
+    {
+        xy = 6,6
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_55
+    tile
+    {
+        xy = 7,6
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_56
+    tile
+    {
+        xy = 0,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_57
+    tile
+    {
+        xy = 1,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_58
+    tile
+    {
+        xy = 2,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_59
+    tile
+    {
+        xy = 3,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_60
+    tile
+    {
+        xy = 4,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_61
+    tile
+    {
+        xy = 5,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_62
+    tile
+    {
+        xy = 6,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_63
+    tile
+    {
+        xy = 7,7
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_64
+    tile
+    {
+        xy = 0,8
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_65
+    tile
+    {
+        xy = 1,8
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_66
+    tile
+    {
+        xy = 2,8
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_67
+    tile
+    {
+        xy = 3,8
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_68
+    tile
+    {
+        xy = 4,8
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_69
+    tile
+    {
+        xy = 5,8
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_70
+    tile
+    {
+        xy = 6,8
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_71
+    tile
+    {
+        xy = 7,8
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_72
+    tile
+    {
+        xy = 0,9
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile6_73
+    tile
+    {
+        xy = 1,9
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile6_74
+    tile
+    {
+        xy = 2,9
+        MaterialType = Wood
+        WallNW = 
+        wall = 
+    }
+    // ghostbusters_tile6_76
+    tile
+    {
+        xy = 4,9
+        DoorWallW = 
+        MaterialType = Wood
+        wall = 
+    }
+    // ghostbusters_tile6_77
+    tile
+    {
+        xy = 5,9
+        DoorWallN = 
+        MaterialType = Wood
+        wall = 
+    }
+    // ghostbusters_tile6_80
+    tile
+    {
+        xy = 0,10
+        DoubleDoor1 = 
+        MaterialType = Wood
+        doorFrW = 
+    }
+    // ghostbusters_tile6_81
+    tile
+    {
+        xy = 1,10
+        DoubleDoor1 = 
+        MaterialType = Wood
+        doorFrW = 
+    }
+    // ghostbusters_tile6_82
+    tile
+    {
+        xy = 2,10
+        DoubleDoor1 = 
+        MaterialType = Wood
+        doorFrN = 
+    }
+    // ghostbusters_tile6_83
+    tile
+    {
+        xy = 3,10
+        DoubleDoor1 = 
+        MaterialType = Wood
+        doorFrN = 
+    }
+    // ghostbusters_tile6_84
+    tile
+    {
+        xy = 4,10
+        IsPaintable = 
+        MaterialType = Wood
+        PaintingType = windowsframe
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_85
+    tile
+    {
+        xy = 5,10
+        IsPaintable = 
+        MaterialType = Wood
+        PaintingType = windowsframe
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_88
+    tile
+    {
+        xy = 0,11
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_89
+    tile
+    {
+        xy = 1,11
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_90
+    tile
+    {
+        xy = 2,11
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_91
+    tile
+    {
+        xy = 3,11
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_92
+    tile
+    {
+        xy = 4,11
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_93
+    tile
+    {
+        xy = 5,11
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_94
+    tile
+    {
+        xy = 6,11
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_95
+    tile
+    {
+        xy = 7,11
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_96
+    tile
+    {
+        xy = 0,12
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile6_97
+    tile
+    {
+        xy = 1,12
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile6_98
+    tile
+    {
+        xy = 2,12
+        MaterialType = Wood
+        WallNW = 
+        wall = 
+    }
+    // ghostbusters_tile6_100
+    tile
+    {
+        xy = 4,12
+        MaterialType = Wood
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile6_101
+    tile
+    {
+        xy = 5,12
+        MaterialType = Wood
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile6_104
+    tile
+    {
+        xy = 0,13
+        MaterialType = Wood
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_105
+    tile
+    {
+        xy = 1,13
+        MaterialType = Wood
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile6_106
+    tile
+    {
+        xy = 2,13
+        DoorWallW = 
+        MaterialType = Wood
+        wall = 
+    }
+    // ghostbusters_tile6_107
+    tile
+    {
+        xy = 3,13
+        DoorWallN = 
+        MaterialType = Wood
+        wall = 
+    }
+    // ghostbusters_tile6_112
+    tile
+    {
+        xy = 0,14
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_113
+    tile
+    {
+        xy = 1,14
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_114
+    tile
+    {
+        xy = 2,14
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_115
+    tile
+    {
+        xy = 3,14
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_116
+    tile
+    {
+        xy = 4,14
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_117
+    tile
+    {
+        xy = 5,14
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_118
+    tile
+    {
+        xy = 6,14
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_119
+    tile
+    {
+        xy = 7,14
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_120
+    tile
+    {
+        xy = 0,15
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_121
+    tile
+    {
+        xy = 1,15
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_122
+    tile
+    {
+        xy = 2,15
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_123
+    tile
+    {
+        xy = 3,15
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_124
+    tile
+    {
+        xy = 4,15
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_125
+    tile
+    {
+        xy = 5,15
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_126
+    tile
+    {
+        xy = 6,15
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile6_127
+    tile
+    {
+        xy = 7,15
+        MaterialType = Brick
+        WindowW = 
+        wall = 
+    }
+}
+tileset
+{
+    file = ghostbusters_tile7
+    size = 8,16
+    id = 9
+    // ghostbusters_tile7_0
+    tile
+    {
+        xy = 0,0
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_032
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_1
+    tile
+    {
+        xy = 1,0
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_033
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_2
+    tile
+    {
+        xy = 2,0
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_034
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_3
+    tile
+    {
+        xy = 3,0
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_035
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_4
+    tile
+    {
+        xy = 4,0
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_036
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_5
+    tile
+    {
+        xy = 5,0
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_037
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_6
+    tile
+    {
+        xy = 6,0
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_038
+        WestRoofT = 
+        attachedN = 
+    }
+    // ghostbusters_tile7_7
+    tile
+    {
+        xy = 7,0
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_039
+        WestRoofT = 
+        attachedW = 
+    }
+    // ghostbusters_tile7_8
+    tile
+    {
+        xy = 0,1
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_040
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_9
+    tile
+    {
+        xy = 1,1
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_041
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_10
+    tile
+    {
+        xy = 2,1
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_042
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_11
+    tile
+    {
+        xy = 3,1
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_043
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_12
+    tile
+    {
+        xy = 4,1
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_044
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_13
+    tile
+    {
+        xy = 5,1
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_045
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_14
+    tile
+    {
+        xy = 6,1
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_046
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_15
+    tile
+    {
+        xy = 7,1
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_047
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_16
+    tile
+    {
+        xy = 0,2
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_17
+    tile
+    {
+        xy = 1,2
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_18
+    tile
+    {
+        xy = 2,2
+        FloorHeight = OneThird
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_090
+        WestRoofT = 
+        solidfloor = 
+        transparentFloor = 
+    }
+    // ghostbusters_tile7_19
+    tile
+    {
+        xy = 3,2
+        FloorHeight = OneThird
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_091
+        WestRoofT = 
+        solidfloor = 
+        transparentFloor = 
+    }
+    // ghostbusters_tile7_20
+    tile
+    {
+        xy = 4,2
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_052
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_21
+    tile
+    {
+        xy = 5,2
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_053
+        WestRoofT = 
+        attachedE = 
+    }
+    // ghostbusters_tile7_22
+    tile
+    {
+        xy = 6,2
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_054
+        attachedFloor = 
+        diamondFloor = 
+        exterior = 
+        solidfloor = 
+        transparentFloor = 
+    }
+    // ghostbusters_tile7_23
+    tile
+    {
+        xy = 7,2
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_055
+        attachedFloor = 
+        diamondFloor = 
+        exterior = 
+        solidfloor = 
+        transparentFloor = 
+    }
+    // ghostbusters_tile7_24
+    tile
+    {
+        xy = 0,3
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_056
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_25
+    tile
+    {
+        xy = 1,3
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_057
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_26
+    tile
+    {
+        xy = 2,3
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_058
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_27
+    tile
+    {
+        xy = 3,3
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_059
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_28
+    tile
+    {
+        xy = 4,3
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_060
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_29
+    tile
+    {
+        xy = 5,3
+        BlockRain = 
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_061
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_30
+    tile
+    {
+        xy = 6,3
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_030
+        WestRoofT = 
+        attachedN = 
+    }
+    // ghostbusters_tile7_31
+    tile
+    {
+        xy = 7,3
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_031
+        WestRoofT = 
+        attachedW = 
+    }
+    // ghostbusters_tile7_32
+    tile
+    {
+        xy = 0,4
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_064
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_33
+    tile
+    {
+        xy = 1,4
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_065
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_34
+    tile
+    {
+        xy = 2,4
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_066
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_35
+    tile
+    {
+        xy = 3,4
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_067
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_36
+    tile
+    {
+        xy = 4,4
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_068
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_37
+    tile
+    {
+        xy = 5,4
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_069
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_38
+    tile
+    {
+        xy = 6,4
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_070
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_39
+    tile
+    {
+        xy = 7,4
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_071
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_40
+    tile
+    {
+        xy = 0,5
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_080
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_41
+    tile
+    {
+        xy = 1,5
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_081
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_42
+    tile
+    {
+        xy = 2,5
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_082
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_43
+    tile
+    {
+        xy = 3,5
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_083
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_44
+    tile
+    {
+        xy = 4,5
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_084
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_45
+    tile
+    {
+        xy = 5,5
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_085
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_46
+    tile
+    {
+        xy = 6,5
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_086
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_47
+    tile
+    {
+        xy = 7,5
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_087
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_48
+    tile
+    {
+        xy = 0,6
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_088
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_49
+    tile
+    {
+        xy = 1,6
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_089
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_50
+    tile
+    {
+        xy = 2,6
+        FloorHeight = OneThird
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_090
+        attachedFloor = 
+        diamondFloor = 
+        exterior = 
+        solidfloor = 
+    }
+    // ghostbusters_tile7_51
+    tile
+    {
+        xy = 3,6
+        FloorHeight = OneThird
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_091
+        attachedFloor = 
+        diamondFloor = 
+        exterior = 
+        solidfloor = 
+    }
+    // ghostbusters_tile7_52
+    tile
+    {
+        xy = 4,6
+        FloorHeight = TwoThirds
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_092
+        attachedFloor = 
+        diamondFloor = 
+        exterior = 
+        solidfloor = 
+    }
+    // ghostbusters_tile7_53
+    tile
+    {
+        xy = 5,6
+        FloorHeight = TwoThirds
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_093
+        attachedFloor = 
+        diamondFloor = 
+        exterior = 
+        solidfloor = 
+    }
+    // ghostbusters_tile7_54
+    tile
+    {
+        xy = 6,6
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_094
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_55
+    tile
+    {
+        xy = 7,6
+        ForceAmbient = 
+        Material = Glass
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_095
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_56
+    tile
+    {
+        xy = 0,7
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_096
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_57
+    tile
+    {
+        xy = 1,7
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_097
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_58
+    tile
+    {
+        xy = 2,7
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_098
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_59
+    tile
+    {
+        xy = 3,7
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_099
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_60
+    tile
+    {
+        xy = 4,7
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_100
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_61
+    tile
+    {
+        xy = 5,7
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_101
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_62
+    tile
+    {
+        xy = 6,7
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_102
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_63
+    tile
+    {
+        xy = 7,7
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_103
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_64
+    tile
+    {
+        xy = 0,8
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_032
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_65
+    tile
+    {
+        xy = 1,8
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_033
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_66
+    tile
+    {
+        xy = 2,8
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_032
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_67
+    tile
+    {
+        xy = 3,8
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_033
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_68
+    tile
+    {
+        xy = 4,8
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_036
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_69
+    tile
+    {
+        xy = 5,8
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_037
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_70
+    tile
+    {
+        xy = 6,8
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_036
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_71
+    tile
+    {
+        xy = 7,8
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_037
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_72
+    tile
+    {
+        xy = 0,9
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_73
+    tile
+    {
+        xy = 1,9
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_74
+    tile
+    {
+        xy = 2,9
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_75
+    tile
+    {
+        xy = 3,9
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_76
+    tile
+    {
+        xy = 4,9
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_77
+    tile
+    {
+        xy = 5,9
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_78
+    tile
+    {
+        xy = 6,9
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_79
+    tile
+    {
+        xy = 7,9
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_80
+    tile
+    {
+        xy = 0,10
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_81
+    tile
+    {
+        xy = 1,10
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_82
+    tile
+    {
+        xy = 2,10
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_83
+    tile
+    {
+        xy = 3,10
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_84
+    tile
+    {
+        xy = 4,10
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_85
+    tile
+    {
+        xy = 5,10
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_86
+    tile
+    {
+        xy = 6,10
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_87
+    tile
+    {
+        xy = 7,10
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_88
+    tile
+    {
+        xy = 0,11
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_89
+    tile
+    {
+        xy = 1,11
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_90
+    tile
+    {
+        xy = 2,11
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_91
+    tile
+    {
+        xy = 3,11
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_92
+    tile
+    {
+        xy = 4,11
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_93
+    tile
+    {
+        xy = 5,11
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_94
+    tile
+    {
+        xy = 6,11
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_95
+    tile
+    {
+        xy = 7,11
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_96
+    tile
+    {
+        xy = 0,12
+        MaterialType = Glass_Solid
+        WallW = 
+        wall = 
+    }
+    // ghostbusters_tile7_97
+    tile
+    {
+        xy = 1,12
+        MaterialType = Glass_Solid
+        WallN = 
+        wall = 
+    }
+    // ghostbusters_tile7_98
+    tile
+    {
+        xy = 2,12
+        MaterialType = Glass_Solid
+        WallNW = 
+        wall = 
+    }
+    // ghostbusters_tile7_100
+    tile
+    {
+        xy = 4,12
+        IsPaintable = 
+        MaterialType = Glass_Solid
+        PaintingType = windowsframe
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile7_101
+    tile
+    {
+        xy = 5,12
+        IsPaintable = 
+        MaterialType = Glass_Solid
+        PaintingType = windowsframe
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile7_102
+    tile
+    {
+        xy = 6,12
+        DoorWallW = 
+        IsPaintable = 
+        MaterialType = Glass_Solid
+        PaintingType = doorframe
+        wall = 
+    }
+    // ghostbusters_tile7_103
+    tile
+    {
+        xy = 7,12
+        DoorWallN = 
+        IsPaintable = 
+        MaterialType = Glass_Solid
+        PaintingType = doorframe
+        wall = 
+    }
+    // ghostbusters_tile7_104
+    tile
+    {
+        xy = 0,13
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_080
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_105
+    tile
+    {
+        xy = 1,13
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_081
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_106
+    tile
+    {
+        xy = 2,13
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_082
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_107
+    tile
+    {
+        xy = 3,13
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_083
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_108
+    tile
+    {
+        xy = 4,13
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_084
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_109
+    tile
+    {
+        xy = 5,13
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_085
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_110
+    tile
+    {
+        xy = 6,13
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_086
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_111
+    tile
+    {
+        xy = 7,13
+        BlockRain = 
+        ForceAmbient = 
+        MaterialType = Glass_Solid
+        SnowTile = e_roof_snow_1_087
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_112
+    tile
+    {
+        xy = 0,14
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_113
+    tile
+    {
+        xy = 1,14
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_114
+    tile
+    {
+        xy = 2,14
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_115
+    tile
+    {
+        xy = 3,14
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_116
+    tile
+    {
+        xy = 4,14
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_117
+    tile
+    {
+        xy = 5,14
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_118
+    tile
+    {
+        xy = 6,14
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_119
+    tile
+    {
+        xy = 7,14
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_120
+    tile
+    {
+        xy = 0,15
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_121
+    tile
+    {
+        xy = 1,15
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_122
+    tile
+    {
+        xy = 2,15
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_123
+    tile
+    {
+        xy = 3,15
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_124
+    tile
+    {
+        xy = 4,15
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_125
+    tile
+    {
+        xy = 5,15
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_126
+    tile
+    {
+        xy = 6,15
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+    // ghostbusters_tile7_127
+    tile
+    {
+        xy = 7,15
+        BlockRain = 
+        ForceAmbient = 
+        WestRoofT = 
+    }
+}
+tileset
+{
+    file = ghostbusters_tile8
+    size = 8,16
+    id = 10
+    // ghostbusters_tile8_0
+    tile
+    {
+        xy = 0,0
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_1
+    tile
+    {
+        xy = 1,0
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_2
+    tile
+    {
+        xy = 2,0
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_3
+    tile
+    {
+        xy = 3,0
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_4
+    tile
+    {
+        xy = 4,0
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_5
+    tile
+    {
+        xy = 5,0
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_6
+    tile
+    {
+        xy = 6,0
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_7
+    tile
+    {
+        xy = 7,0
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_8
+    tile
+    {
+        xy = 0,1
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_9
+    tile
+    {
+        xy = 1,1
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_10
+    tile
+    {
+        xy = 2,1
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_11
+    tile
+    {
+        xy = 3,1
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_12
+    tile
+    {
+        xy = 4,1
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_13
+    tile
+    {
+        xy = 5,1
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_14
+    tile
+    {
+        xy = 6,1
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_15
+    tile
+    {
+        xy = 7,1
+        MaterialType = Glass_Solid
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_16
+    tile
+    {
+        xy = 0,2
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_17
+    tile
+    {
+        xy = 1,2
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_18
+    tile
+    {
+        xy = 2,2
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_19
+    tile
+    {
+        xy = 3,2
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_20
+    tile
+    {
+        xy = 4,2
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_21
+    tile
+    {
+        xy = 5,2
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_22
+    tile
+    {
+        xy = 6,2
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_23
+    tile
+    {
+        xy = 7,2
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_24
+    tile
+    {
+        xy = 0,3
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_25
+    tile
+    {
+        xy = 1,3
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_26
+    tile
+    {
+        xy = 2,3
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_27
+    tile
+    {
+        xy = 3,3
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_28
+    tile
+    {
+        xy = 4,3
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_29
+    tile
+    {
+        xy = 5,3
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_30
+    tile
+    {
+        xy = 6,3
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_31
+    tile
+    {
+        xy = 7,3
+        MaterialType = Glass_Solid
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_32
+    tile
+    {
+        xy = 0,4
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_33
+    tile
+    {
+        xy = 1,4
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_34
+    tile
+    {
+        xy = 2,4
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_35
+    tile
+    {
+        xy = 3,4
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_36
+    tile
+    {
+        xy = 4,4
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_37
+    tile
+    {
+        xy = 5,4
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_38
+    tile
+    {
+        xy = 6,4
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_39
+    tile
+    {
+        xy = 7,4
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_40
+    tile
+    {
+        xy = 0,5
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_41
+    tile
+    {
+        xy = 1,5
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_42
+    tile
+    {
+        xy = 2,5
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_43
+    tile
+    {
+        xy = 3,5
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_44
+    tile
+    {
+        xy = 4,5
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_45
+    tile
+    {
+        xy = 5,5
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_46
+    tile
+    {
+        xy = 6,5
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_47
+    tile
+    {
+        xy = 7,5
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_48
+    tile
+    {
+        xy = 0,6
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_49
+    tile
+    {
+        xy = 1,6
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_50
+    tile
+    {
+        xy = 2,6
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_51
+    tile
+    {
+        xy = 3,6
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_52
+    tile
+    {
+        xy = 4,6
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_53
+    tile
+    {
+        xy = 5,6
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_54
+    tile
+    {
+        xy = 6,6
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_55
+    tile
+    {
+        xy = 7,6
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_56
+    tile
+    {
+        xy = 0,7
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_57
+    tile
+    {
+        xy = 1,7
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_58
+    tile
+    {
+        xy = 2,7
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_59
+    tile
+    {
+        xy = 3,7
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_60
+    tile
+    {
+        xy = 4,7
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_61
+    tile
+    {
+        xy = 5,7
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_62
+    tile
+    {
+        xy = 6,7
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_63
+    tile
+    {
+        xy = 7,7
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_64
+    tile
+    {
+        xy = 0,8
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_65
+    tile
+    {
+        xy = 1,8
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_66
+    tile
+    {
+        xy = 2,8
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_67
+    tile
+    {
+        xy = 3,8
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_68
+    tile
+    {
+        xy = 4,8
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_69
+    tile
+    {
+        xy = 5,8
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_70
+    tile
+    {
+        xy = 6,8
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_71
+    tile
+    {
+        xy = 7,8
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_72
+    tile
+    {
+        xy = 0,9
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_73
+    tile
+    {
+        xy = 1,9
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_74
+    tile
+    {
+        xy = 2,9
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_75
+    tile
+    {
+        xy = 3,9
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_76
+    tile
+    {
+        xy = 4,9
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_77
+    tile
+    {
+        xy = 5,9
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_78
+    tile
+    {
+        xy = 6,9
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_79
+    tile
+    {
+        xy = 7,9
+        MaterialType = Concrete
+        WindowN = 
+        wall = 
+    }
+    // ghostbusters_tile8_80
+    tile
+    {
+        xy = 0,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_81
+    tile
+    {
+        xy = 1,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_82
+    tile
+    {
+        xy = 2,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_83
+    tile
+    {
+        xy = 3,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_84
+    tile
+    {
+        xy = 4,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_85
+    tile
+    {
+        xy = 5,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_86
+    tile
+    {
+        xy = 6,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_87
+    tile
+    {
+        xy = 7,10
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_88
+    tile
+    {
+        xy = 0,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_89
+    tile
+    {
+        xy = 1,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_90
+    tile
+    {
+        xy = 2,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_91
+    tile
+    {
+        xy = 3,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_92
+    tile
+    {
+        xy = 4,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_93
+    tile
+    {
+        xy = 5,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_94
+    tile
+    {
+        xy = 6,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_95
+    tile
+    {
+        xy = 7,11
+        MaterialType = Concrete
+        WindowW = 
+        wall = 
+    }
+    // ghostbusters_tile8_96
+    tile
+    {
+        xy = 0,12
+        climbSheetW = 
+    }
+    // ghostbusters_tile8_97
+    tile
+    {
+        xy = 1,12
+        climbSheetW = 
+    }
+    // ghostbusters_tile8_98
+    tile
+    {
+        xy = 2,12
+        climbSheetTopW = 
+    }
+    // ghostbusters_tile8_100
+    tile
+    {
+        xy = 4,12
+        climbSheetN = 
+    }
+    // ghostbusters_tile8_101
+    tile
+    {
+        xy = 5,12
+        climbSheetN = 
+    }
+    // ghostbusters_tile8_102
+    tile
+    {
+        xy = 6,12
+        climbSheetTopN = 
+    }
+    // ghostbusters_tile8_104
+    tile
+    {
+        xy = 0,13
+        climbSheetE = 
+    }
+    // ghostbusters_tile8_105
+    tile
+    {
+        xy = 1,13
+        climbSheetE = 
+    }
+    // ghostbusters_tile8_106
+    tile
+    {
+        xy = 2,13
+        climbSheetTopE = 
+    }
+    // ghostbusters_tile8_112
+    tile
+    {
+        xy = 0,14
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Stone
+        stairsBW = 
+    }
+    // ghostbusters_tile8_113
+    tile
+    {
+        xy = 1,14
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Stone
+        stairsMW = 
+    }
+    // ghostbusters_tile8_114
+    tile
+    {
+        xy = 2,14
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Stone
+        stairsTW = 
+    }
+    // ghostbusters_tile8_116
+    tile
+    {
+        xy = 4,14
+        WallOverlay = 
+        attachedN = 
+    }
+    // ghostbusters_tile8_117
+    tile
+    {
+        xy = 5,14
+        WallOverlay = 
+        attachedW = 
+    }
+    // ghostbusters_tile8_119
+    tile
+    {
+        xy = 7,14
+        CornerNorthWall = walls_detailing_01_74
+        CornerWestWall = walls_detailing_01_73
+        MaterialType = Brick
+    }
+    // ghostbusters_tile8_120
+    tile
+    {
+        xy = 0,15
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Stone
+        stairsBN = 
+    }
+    // ghostbusters_tile8_121
+    tile
+    {
+        xy = 1,15
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Stone
+        stairsMN = 
+    }
+    // ghostbusters_tile8_122
+    tile
+    {
+        xy = 2,15
+        BlocksPlacement = 
+        Material = Wood
+        Material2 = Nails
+        MaterialType = Stone
+        stairsTN = 
+    }
+}

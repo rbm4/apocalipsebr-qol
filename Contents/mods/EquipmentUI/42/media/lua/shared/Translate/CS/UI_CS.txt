@@ -1,0 +1,21 @@
+UI_CS = {
+    UI_optionscreen_binding_EquipmentUI = "Rozhraní vybavení"
+    UI_optionscreen_binding_equipment_toggle_window = "Otevøít okno s vybavením",
+    UI_equipment_options_scale = "Mìøítko rozhraní vybavení",
+    UI_equipment_options_hide_equipped_items = "Schovat vybavené pøedmìty",
+
+    UI_equipment_equipment = "Vybavení",
+    UI_equipment_hotbar = "Lišta",
+
+    UI_equipment_head = "Hlava",
+    UI_equipment_face = "Oblièej",
+    UI_equipment_torso = "Trup",
+    UI_equipment_vest = "Vesta",
+    UI_equipment_back = "Záda",
+    UI_equipment_waist = "Pás",
+    UI_equipment_left_hand = "Levá ruka",
+    UI_equipment_right_hand = "Pravá ruka",
+    UI_equipment_jewelry = "Šperky",
+    UI_equipment_legs = "Nohy",
+    UI_equipment_feet = "Chodidla",
+}

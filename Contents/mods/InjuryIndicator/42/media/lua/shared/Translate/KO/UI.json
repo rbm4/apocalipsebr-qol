@@ -1,0 +1,38 @@
+{
+	"UI_InjuryIndicator_Hand_L" : "왼손",
+	"UI_InjuryIndicator_Hand_R" : "오른손",
+	"UI_InjuryIndicator_ForeArm_L" : "왼 팔목",
+	"UI_InjuryIndicator_ForeArm_R" : "오른 팔목",
+	"UI_InjuryIndicator_UpperArm_L" : "왼 팔뚝",
+	"UI_InjuryIndicator_UpperArm_R" : "오른 팔뚝",
+	"UI_InjuryIndicator_Torso_Upper" : "가슴",
+	"UI_InjuryIndicator_Torso_Lower" : "복부",
+	"UI_InjuryIndicator_Head" : "머리",
+	"UI_InjuryIndicator_Neck" : "목",
+	"UI_InjuryIndicator_Groin" : "사타구니",
+	"UI_InjuryIndicator_UpperLeg_L" : "왼 허벅지",
+	"UI_InjuryIndicator_UpperLeg_R" : "오른 허벅지",
+	"UI_InjuryIndicator_LowerLeg_L" : "왼 정강이",
+	"UI_InjuryIndicator_LowerLeg_R" : "오른 정강이",
+	"UI_InjuryIndicator_Foot_L" : "왼발",
+	"UI_InjuryIndicator_Foot_R" : "오른발",
+	
+	"UI_InjuryIndicator_HurtSpeech0" : "아야",
+	"UI_InjuryIndicator_HurtSpeech1" : "앗",
+	"UI_InjuryIndicator_HurtSpeech2" : "윽",
+	"UI_InjuryIndicator_HurtSpeech3" : "아악",
+	"UI_InjuryIndicator_HurtSpeech4" : "안 돼",
+	
+    "UI_InjuryIndicator_HealSpeech0" : "is healed",
+    "UI_InjuryIndicator_HealSpeech1" : "is feeling better",
+	"UI_InjuryIndicator_HealSpeech2" : "feels better now",
+    "UI_InjuryIndicator_HealSpeech3" : "is feeling fine",
+    "UI_InjuryIndicator_HealSpeech4" : "feels fine now",
+
+	"UI_InjuryIndicator_EnableInjureNotify" : "Enable injury pop-up",
+	"UI_InjuryIndicator_EnableInjureNotify_Tooltip" : "Enables pop-up text when injured.<br>This is the main purpose of the mod.",
+	"UI_InjuryIndicator_SpeechSwitch" : "의성어 텍스트 사용",
+	"UI_InjuryIndicator_SpeechSwitch_Tooltip" : "의성어 텍스트의 사용 여부를 선택할 수 있습니다.<br>'스킬 업' 텍스트와 같이 표시됩니다.",
+	"UI_InjuryIndicator_EnableHealNotify" : "회복 완료 알림 활성화",
+	"UI_InjuryIndicator_EnableHealNotify_Tooltip" : "회복이 완료되었을 때 텍스트 표시를 활성화합니다."
+}

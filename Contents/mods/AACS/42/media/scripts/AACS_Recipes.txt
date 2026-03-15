@@ -1,0 +1,25 @@
+module Base
+{
+    /* ============================================================ */
+    /*              AACS - SANDBOX ITEM CRAFT RECIPE                */
+    /*                    BUILD 42 CRAFTING FORMAT                  */
+    /*   NOTE: Must be in module Base for MP server compatibility   */
+    /* ============================================================ */
+
+    craftRecipe Craft_DocumentPet
+    {
+        timedAction = Making,
+        time = 25,
+        Tags = AnySurfaceCraft,
+        category = Miscellaneous,
+        inputs
+        {
+            item 1 [Base.SheetPaper2],
+            item 1 tags[base:write] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.DocumentPet,
+        }
+    }
+}

@@ -1,0 +1,3 @@
+Recipe_JP = {	
+	Recipe_Dismantle_Modern_Television = "現代のテレビを解体する",
+}

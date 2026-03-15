@@ -1,0 +1,21 @@
+UI_ES = {
+	UI_optionscreen_binding_EquipmentUI = "UI de equipamiento"
+	UI_optionscreen_binding_equipment_toggle_window = "Abrir ventana de equipo",
+	UI_equipment_options_scale = "Escala de IU de equipamiento",
+	UI_equipment_options_hide_equipped_items = "Ocultar objetos equipados",
+
+	UI_equipment_equipment = "Equipamiento",
+	UI_equipment_hotbar = "Barra de acceso rápido",
+	
+	UI_equipment_head = "Cabeza",
+	UI_equipment_face = "Rostro",
+	UI_equipment_torso = "Torso",
+	UI_equipment_vest = "Chaleco",
+	UI_equipment_back = "Espalda",
+	UI_equipment_waist = "Cintura",
+	UI_equipment_left_hand = "Mano izquierda",
+	UI_equipment_right_hand = "Mano derecha",
+	UI_equipment_jewelry = "Joyas",
+	UI_equipment_legs = "Piernas",
+	UI_equipment_feet = "Pies",
+}

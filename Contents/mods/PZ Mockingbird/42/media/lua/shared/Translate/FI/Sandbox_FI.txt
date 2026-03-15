@@ -1,0 +1,4 @@
+Sandbox_FI = {
+	Sandbox_Mockingbird = "Mockingbird",
+	Sandbox_Mockingbird_MapAllowed = "Aloita Mockingbirdin kartalla",
+}

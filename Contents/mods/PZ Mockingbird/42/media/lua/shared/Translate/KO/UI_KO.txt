@@ -1,0 +1,19 @@
+UI_KO = {
+	UI_NO_TITLE = "제목 없음",
+
+UI_NO_DESCRIPTION = "설명 없음",
+
+UI_mapspawn_random = "랜덤",
+
+UI_PZMockingbirdMod_Options = "PZ Mockingbird 모드 옵션",
+
+UI_PZMockingbirdMod_Options_Desc = "PZ Mockingbird 모드 옵션은 새 게임을 시작하기 전에만 적용됩니다.",
+
+UI_Allow_Other_Maps_Ask = "Mockingbird 맵 표시",
+
+UI_Allow_Other_Maps_Ask_tooltip = "Mockingbird 맵을 표시합니다.",
+
+UI_Allow_Vanilla_Maps_Ask = "바닐라 맵 표시",
+
+UI_Allow_Vanilla_Maps_Ask_tooltip = "활성화된 추가 맵은 표시되지 않습니다."
+}

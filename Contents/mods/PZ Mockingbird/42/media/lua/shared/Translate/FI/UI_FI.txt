@@ -1,0 +1,19 @@
+UI_FI = {
+	UI_NO_TITLE = "Ei otsikkoa",
+
+UI_NO_DESCRIPTION = "Ei kuvausta",
+
+UI_mapspawn_random = "Satunnainen",
+
+UI_PZMockingbirdMod_Options = "PZ Mockingbird -modiasetukset",
+
+UI_PZMockingbirdMod_Options_Desc = "PZ Mockingbird -modiasetukset astuvat voimaan vasta ennen uuden pelin aloittamista.",
+
+UI_Allow_Other_Maps_Ask = "Näytä Mockingbird-kartta",
+
+UI_Allow_Other_Maps_Ask_tooltip = "Näytä Mockingbird-kartta.",
+
+UI_Allow_Vanilla_Maps_Ask = "Näytä peruskartta",
+
+UI_Allow_Vanilla_Maps_Ask_tooltip = "Jos aktiivisia karttoja on lisätty, niitä ei näytetä.",
+}

@@ -1,0 +1,9 @@
+{
+  "ContextMenu_AACS_OpenManager": "Adoção de Animais",
+  "ContextMenu_AACS_OpenAdminManager": "Adoção de Animais (Gerenciador ADM)",
+  "ContextMenu_AACS_AdoptAnimal": "Adotar animal",
+  "ContextMenu_AACS_ManageThisAnimal": "Gerenciar este animal",
+  "ContextMenu_AACS_UnadoptAnimal": "Remover adoção",
+  "ContextMenu_AACS_ClaimInfo": "Dono: %1  |  Código: %2",
+  "ContextMenu_AACS_OwnedBy": "Dono: %1"
+}

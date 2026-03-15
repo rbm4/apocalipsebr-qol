@@ -1,0 +1,21 @@
+{
+    "Lua.workspace.library": [
+        "${addons}/umbrella-unstable/module/library"
+    ],
+    "Lua.runtime.version": "Lua 5.1",
+    "Lua.runtime.path": [
+        "?.lua",
+        "?/init.lua",
+        "server/?.lua",
+        "client/?.lua",
+        "shared/?.lua"
+    ],
+    "Lua.completion.requireSeparator": "/",
+    "Lua.workspace.preloadFileSize": 800,
+    "Lua.workspace.checkThirdParty": false,
+    "Lua.runtime.builtin": {
+        "debug": "disable",
+        "io": "disable",
+        "package": "disable"
+    }
+}

@@ -1,0 +1,3 @@
+Recipe_CA = {
+	Recipe_Dismantle_Modern_Television = "Desmantellar televisió de led",
+}

@@ -1,0 +1,1675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<world version="1.0">
+ <cell x="34" y="43">
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="146" y="190"/>
+     <point x="43" y="190"/>
+     <point x="43" y="45"/>
+     <point x="245" y="45"/>
+     <point x="263" y="26"/>
+     <point x="283" y="6"/>
+     <point x="289" y="0"/>
+     <point x="296" y="0"/>
+     <point x="296" y="6"/>
+     <point x="276" y="25"/>
+     <point x="256" y="45"/>
+     <point x="249" y="52"/>
+     <point x="249" y="250"/>
+     <point x="146" y="250"/>
+    </coordinates>
+    <coordinates>
+     <point x="212" y="224"/>
+     <point x="218" y="224"/>
+     <point x="218" y="242"/>
+     <point x="241" y="242"/>
+     <point x="241" y="190"/>
+     <point x="201" y="190"/>
+     <point x="201" y="207"/>
+     <point x="196" y="207"/>
+     <point x="196" y="190"/>
+     <point x="154" y="190"/>
+     <point x="154" y="242"/>
+     <point x="212" y="242"/>
+    </coordinates>
+    <coordinates>
+     <point x="146" y="145"/>
+     <point x="51" y="145"/>
+     <point x="51" y="182"/>
+     <point x="146" y="182"/>
+    </coordinates>
+    <coordinates>
+     <point x="154" y="182"/>
+     <point x="241" y="182"/>
+     <point x="241" y="96"/>
+     <point x="51" y="96"/>
+     <point x="51" y="137"/>
+     <point x="154" y="137"/>
+    </coordinates>
+    <coordinates>
+     <point x="241" y="53"/>
+     <point x="51" y="53"/>
+     <point x="51" y="88"/>
+     <point x="241" y="88"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="highway" value="primary"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="13" y="286"/>
+     <point x="13" y="273"/>
+     <point x="17" y="273"/>
+     <point x="17" y="282"/>
+     <point x="24" y="282"/>
+     <point x="24" y="251"/>
+     <point x="46" y="251"/>
+     <point x="46" y="255"/>
+     <point x="28" y="255"/>
+     <point x="28" y="291"/>
+     <point x="59" y="291"/>
+     <point x="59" y="280"/>
+     <point x="70" y="280"/>
+     <point x="70" y="190"/>
+     <point x="74" y="190"/>
+     <point x="74" y="284"/>
+     <point x="63" y="284"/>
+     <point x="63" y="295"/>
+     <point x="24" y="295"/>
+     <point x="24" y="286"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="highway" value="secondary"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="132" y="38"/>
+     <point x="132" y="11"/>
+     <point x="167" y="11"/>
+     <point x="167" y="38"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+    <property name="RoomTone" value="Tvstudio"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="159" y="236"/>
+     <point x="159" y="224"/>
+     <point x="171" y="224"/>
+     <point x="171" y="236"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+    <property name="RoomTone" value="Warehousestorage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="100" y="178"/>
+     <point x="100" y="160"/>
+     <point x="118" y="160"/>
+     <point x="118" y="178"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+    <property name="RoomTone" value="Warehousestorage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="110" y="67"/>
+     <point x="110" y="76"/>
+     <point x="108" y="76"/>
+     <point x="108" y="84"/>
+     <point x="97" y="84"/>
+     <point x="97" y="67"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+    <property name="RoomTone" value="Warehousestorage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="86" y="120"/>
+     <point x="97" y="120"/>
+     <point x="97" y="133"/>
+     <point x="89" y="133"/>
+     <point x="89" y="130"/>
+     <point x="86" y="130"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+    <property name="RoomTone" value="Warehousestorage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="22" y="96"/>
+     <point x="25" y="96"/>
+     <point x="25" y="102"/>
+     <point x="21" y="102"/>
+     <point x="21" y="99"/>
+     <point x="22" y="99"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Stables"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="11" y="114"/>
+     <point x="11" y="105"/>
+     <point x="14" y="105"/>
+     <point x="14" y="114"/>
+     <point x="15" y="114"/>
+     <point x="15" y="121"/>
+     <point x="10" y="121"/>
+     <point x="10" y="114"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Stables"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="256" y="266"/>
+     <point x="253" y="266"/>
+     <point x="253" y="263"/>
+     <point x="256" y="263"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Cabin"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="95" y="60"/>
+     <point x="95" y="61"/>
+     <point x="91" y="61"/>
+     <point x="91" y="55"/>
+     <point x="99" y="55"/>
+     <point x="99" y="60"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="139" y="242"/>
+     <point x="139" y="247"/>
+     <point x="134" y="247"/>
+     <point x="134" y="242"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="124" y="274"/>
+     <point x="124" y="255"/>
+     <point x="143" y="255"/>
+     <point x="143" y="274"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="CommunityServices"/>
+    <property name="RoomTone" value="Church"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="147" y="135"/>
+     <point x="147" y="130"/>
+     <point x="146" y="130"/>
+     <point x="146" y="124"/>
+     <point x="147" y="124"/>
+     <point x="147" y="119"/>
+     <point x="152" y="119"/>
+     <point x="152" y="135"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="CommunityServices"/>
+    <property name="RoomTone" value="Firestation"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="181" y="193"/>
+     <point x="193" y="193"/>
+     <point x="193" y="207"/>
+     <point x="188" y="207"/>
+     <point x="188" y="203"/>
+     <point x="181" y="203"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="Slaughterhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="200" y="236"/>
+     <point x="195" y="236"/>
+     <point x="195" y="231"/>
+     <point x="202" y="231"/>
+     <point x="202" y="235"/>
+     <point x="206" y="235"/>
+     <point x="206" y="240"/>
+     <point x="200" y="240"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseSmall"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="130" y="116"/>
+     <point x="130" y="133"/>
+     <point x="114" y="133"/>
+     <point x="114" y="116"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RestaurantsAndEntertainment"/>
+    <property name="RoomTone" value="Restaurant"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="183" y="84"/>
+     <point x="183" y="66"/>
+     <point x="195" y="66"/>
+     <point x="195" y="84"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="CommunityServices"/>
+    <property name="RoomTone" value="Police"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="214" y="81"/>
+     <point x="214" y="86"/>
+     <point x="208" y="86"/>
+     <point x="208" y="81"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="41" y="136"/>
+     <point x="41" y="142"/>
+     <point x="36" y="142"/>
+     <point x="36" y="136"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="183" y="225"/>
+     <point x="189" y="225"/>
+     <point x="189" y="228"/>
+     <point x="183" y="228"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Medical"/>
+    <property name="RoomTone" value="Nursinghome"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="205" y="213"/>
+     <point x="205" y="223"/>
+     <point x="197" y="223"/>
+     <point x="197" y="219"/>
+     <point x="192" y="219"/>
+     <point x="192" y="223"/>
+     <point x="187" y="223"/>
+     <point x="187" y="213"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Medical"/>
+    <property name="RoomTone" value="Nursinghome"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="184" y="218"/>
+     <point x="183" y="218"/>
+     <point x="183" y="216"/>
+     <point x="184" y="216"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Medical"/>
+    <property name="RoomTone" value="Nursinghome"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="169" y="268"/>
+     <point x="169" y="254"/>
+     <point x="186" y="254"/>
+     <point x="186" y="264"/>
+     <point x="184" y="264"/>
+     <point x="184" y="268"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="Townhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="132" y="147"/>
+     <point x="143" y="147"/>
+     <point x="143" y="159"/>
+     <point x="132" y="159"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+    <property name="RoomTone" value="Mechanic"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="167" y="164"/>
+     <point x="167" y="165"/>
+     <point x="172" y="165"/>
+     <point x="172" y="178"/>
+     <point x="156" y="178"/>
+     <point x="156" y="165"/>
+     <point x="162" y="165"/>
+     <point x="162" y="164"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+    <property name="RoomTone" value="Departmentstore"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="152" y="104"/>
+     <point x="144" y="104"/>
+     <point x="144" y="99"/>
+     <point x="152" y="99"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="CommunityServices"/>
+    <property name="RoomTone" value="Church"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="27" y="168"/>
+     <point x="22" y="168"/>
+     <point x="22" y="163"/>
+     <point x="21" y="163"/>
+     <point x="21" y="151"/>
+     <point x="22" y="151"/>
+     <point x="22" y="150"/>
+     <point x="35" y="150"/>
+     <point x="35" y="157"/>
+     <point x="33" y="157"/>
+     <point x="33" y="168"/>
+     <point x="29" y="168"/>
+     <point x="29" y="169"/>
+     <point x="27" y="169"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseMedium"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="64" y="84"/>
+     <point x="60" y="84"/>
+     <point x="60" y="83"/>
+     <point x="53" y="83"/>
+     <point x="53" y="75"/>
+     <point x="64" y="75"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseMedium"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="69" y="158"/>
+     <point x="69" y="155"/>
+     <point x="68" y="155"/>
+     <point x="68" y="150"/>
+     <point x="69" y="150"/>
+     <point x="69" y="149"/>
+     <point x="76" y="149"/>
+     <point x="76" y="158"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseMedium"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="234" y="62"/>
+     <point x="234" y="66"/>
+     <point x="229" y="66"/>
+     <point x="229" y="57"/>
+     <point x="236" y="57"/>
+     <point x="236" y="62"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseMedium"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="230" y="82"/>
+     <point x="230" y="81"/>
+     <point x="228" y="81"/>
+     <point x="228" y="70"/>
+     <point x="237" y="70"/>
+     <point x="237" y="74"/>
+     <point x="235" y="74"/>
+     <point x="235" y="82"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseMedium"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="230" y="192"/>
+     <point x="236" y="192"/>
+     <point x="236" y="196"/>
+     <point x="237" y="196"/>
+     <point x="237" y="200"/>
+     <point x="230" y="200"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseMedium"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="228" y="238"/>
+     <point x="228" y="229"/>
+     <point x="235" y="229"/>
+     <point x="235" y="231"/>
+     <point x="238" y="231"/>
+     <point x="238" y="236"/>
+     <point x="235" y="236"/>
+     <point x="235" y="238"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="234" y="109"/>
+     <point x="235" y="109"/>
+     <point x="235" y="112"/>
+     <point x="234" y="112"/>
+     <point x="234" y="118"/>
+     <point x="235" y="118"/>
+     <point x="235" y="121"/>
+     <point x="234" y="121"/>
+     <point x="234" y="122"/>
+     <point x="222" y="122"/>
+     <point x="222" y="118"/>
+     <point x="218" y="118"/>
+     <point x="218" y="113"/>
+     <point x="223" y="113"/>
+     <point x="223" y="104"/>
+     <point x="228" y="104"/>
+     <point x="228" y="108"/>
+     <point x="234" y="108"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="Mansion"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="217" y="128"/>
+     <point x="211" y="128"/>
+     <point x="211" y="122"/>
+     <point x="217" y="122"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="HouseGarage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="230" y="142"/>
+     <point x="230" y="153"/>
+     <point x="218" y="153"/>
+     <point x="218" y="135"/>
+     <point x="225" y="135"/>
+     <point x="225" y="134"/>
+     <point x="231" y="134"/>
+     <point x="231" y="142"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="Mansion"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="269" y="121"/>
+     <point x="256" y="121"/>
+     <point x="256" y="109"/>
+     <point x="269" y="109"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+    <property name="RoomTone" value="Gas"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="275" y="124"/>
+     <point x="275" y="110"/>
+     <point x="282" y="110"/>
+     <point x="282" y="113"/>
+     <point x="284" y="113"/>
+     <point x="284" y="120"/>
+     <point x="282" y="120"/>
+     <point x="282" y="124"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+    <property name="RoomTone" value="Gas"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="133" y="178"/>
+     <point x="133" y="167"/>
+     <point x="143" y="167"/>
+     <point x="143" y="168"/>
+     <point x="144" y="168"/>
+     <point x="144" y="171"/>
+     <point x="143" y="171"/>
+     <point x="143" y="178"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseSmall"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="24" y="89"/>
+     <point x="24" y="94"/>
+     <point x="12" y="94"/>
+     <point x="12" y="79"/>
+     <point x="27" y="79"/>
+     <point x="27" y="89"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseLarge"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="26" y="70"/>
+     <point x="16" y="70"/>
+     <point x="16" y="65"/>
+     <point x="26" y="65"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="Greenhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="28" y="62"/>
+     <point x="13" y="62"/>
+     <point x="13" y="56"/>
+     <point x="28" y="56"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="FarmStorage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="139" y="69"/>
+     <point x="144" y="69"/>
+     <point x="144" y="74"/>
+     <point x="139" y="74"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="181" y="84"/>
+     <point x="171" y="84"/>
+     <point x="171" y="74"/>
+     <point x="181" y="74"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+    <property name="RoomTone" value="Library"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="178" y="100"/>
+     <point x="192" y="100"/>
+     <point x="192" y="111"/>
+     <point x="178" y="111"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+    <property name="RoomTone" value="ApartmentBuilding"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="96" y="173"/>
+     <point x="96" y="180"/>
+     <point x="88" y="180"/>
+     <point x="88" y="173"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+    <property name="RoomTone" value="Bakery"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="150" y="63"/>
+     <point x="139" y="63"/>
+     <point x="139" y="56"/>
+     <point x="150" y="56"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="Barn"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="18" y="263"/>
+     <point x="22" y="263"/>
+     <point x="22" y="280"/>
+     <point x="20" y="280"/>
+     <point x="20" y="277"/>
+     <point x="18" y="277"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+    <property name="RoomTone" value="RestareaBathrooms"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="98" y="32"/>
+     <point x="92" y="32"/>
+     <point x="92" y="12"/>
+     <point x="98" y="12"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RestaurantsAndEntertainment"/>
+    <property name="RoomTone" value="Cabin"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="66" y="22"/>
+     <point x="65" y="22"/>
+     <point x="65" y="20"/>
+     <point x="66" y="20"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Cabin"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="125" y="65"/>
+     <point x="118" y="65"/>
+     <point x="118" y="64"/>
+     <point x="116" y="64"/>
+     <point x="116" y="59"/>
+     <point x="118" y="59"/>
+     <point x="118" y="56"/>
+     <point x="125" y="56"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+    <property name="RoomTone" value="Cornerstore"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="293" y="147"/>
+     <point x="290" y="147"/>
+     <point x="290" y="144"/>
+     <point x="293" y="144"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="CommunityServices"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="103" y="153"/>
+     <point x="103" y="147"/>
+     <point x="109" y="147"/>
+     <point x="109" y="153"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="37" y="256"/>
+     <point x="37" y="264"/>
+     <point x="33" y="264"/>
+     <point x="33" y="267"/>
+     <point x="29" y="267"/>
+     <point x="29" y="256"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+    <property name="RoomTone" value="FarmStorage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="61" y="267"/>
+     <point x="47" y="267"/>
+     <point x="47" y="253"/>
+     <point x="61" y="253"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+    <property name="RoomTone" value="FarmStorage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="22" y="295"/>
+     <point x="7" y="295"/>
+     <point x="7" y="287"/>
+     <point x="22" y="287"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+    <property name="RoomTone" value="FarmStorage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="88" y="60"/>
+     <point x="84" y="60"/>
+     <point x="84" y="57"/>
+     <point x="88" y="57"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="Garagestorage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="4" y="205"/>
+     <point x="63" y="205"/>
+     <point x="63" y="248"/>
+     <point x="35" y="248"/>
+     <point x="35" y="250"/>
+     <point x="32" y="250"/>
+     <point x="32" y="248"/>
+     <point x="4" y="248"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+    <property name="RoomTone" value="Greenhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="66" y="108"/>
+     <point x="59" y="108"/>
+     <point x="59" y="109"/>
+     <point x="55" y="109"/>
+     <point x="55" y="100"/>
+     <point x="59" y="100"/>
+     <point x="59" y="102"/>
+     <point x="66" y="102"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseMedium"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="223" y="177"/>
+     <point x="223" y="167"/>
+     <point x="228" y="167"/>
+     <point x="228" y="169"/>
+     <point x="233" y="169"/>
+     <point x="233" y="177"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="RedbrickTownhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="213" y="197"/>
+     <point x="213" y="201"/>
+     <point x="212" y="201"/>
+     <point x="212" y="202"/>
+     <point x="205" y="202"/>
+     <point x="205" y="197"/>
+     <point x="203" y="197"/>
+     <point x="203" y="193"/>
+     <point x="207" y="193"/>
+     <point x="207" y="192"/>
+     <point x="210" y="192"/>
+     <point x="210" y="193"/>
+     <point x="212" y="193"/>
+     <point x="212" y="197"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="BrownbrickTownhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="151" y="83"/>
+     <point x="150" y="83"/>
+     <point x="150" y="77"/>
+     <point x="151" y="77"/>
+     <point x="151" y="76"/>
+     <point x="158" y="76"/>
+     <point x="158" y="81"/>
+     <point x="160" y="81"/>
+     <point x="160" y="85"/>
+     <point x="156" y="85"/>
+     <point x="156" y="86"/>
+     <point x="153" y="86"/>
+     <point x="153" y="85"/>
+     <point x="151" y="85"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="BrownbrickTownhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="203" y="173"/>
+     <point x="203" y="178"/>
+     <point x="195" y="178"/>
+     <point x="195" y="168"/>
+     <point x="205" y="168"/>
+     <point x="205" y="173"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="RedbrickTownhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="157" y="214"/>
+     <point x="157" y="205"/>
+     <point x="169" y="205"/>
+     <point x="169" y="214"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseMedium"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="168" y="201"/>
+     <point x="168" y="203"/>
+     <point x="157" y="203"/>
+     <point x="157" y="193"/>
+     <point x="161" y="193"/>
+     <point x="161" y="196"/>
+     <point x="169" y="196"/>
+     <point x="169" y="201"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="RedbrickTownhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="189" y="238"/>
+     <point x="182" y="238"/>
+     <point x="182" y="232"/>
+     <point x="189" y="232"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseSmall"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="44" y="279"/>
+     <point x="29" y="279"/>
+     <point x="29" y="270"/>
+     <point x="44" y="270"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="Farmhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="87" y="153"/>
+     <point x="87" y="147"/>
+     <point x="96" y="147"/>
+     <point x="96" y="153"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+    <property name="RoomTone" value="Laundromat"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="73" y="55"/>
+     <point x="73" y="62"/>
+     <point x="55" y="62"/>
+     <point x="55" y="64"/>
+     <point x="53" y="64"/>
+     <point x="53" y="55"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Hospitality"/>
+    <property name="RoomTone" value="Motel"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="94" y="71"/>
+     <point x="94" y="85"/>
+     <point x="79" y="85"/>
+     <point x="79" y="71"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+    <property name="RoomTone" value="Movierental"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="3" y="280"/>
+     <point x="3" y="267"/>
+     <point x="12" y="267"/>
+     <point x="12" y="271"/>
+     <point x="10" y="271"/>
+     <point x="10" y="276"/>
+     <point x="12" y="276"/>
+     <point x="12" y="280"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="187" y="141"/>
+     <point x="177" y="141"/>
+     <point x="177" y="132"/>
+     <point x="187" y="132"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="217" y="209"/>
+     <point x="217" y="216"/>
+     <point x="213" y="216"/>
+     <point x="213" y="209"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="ParkPlayhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="256" y="157"/>
+     <point x="252" y="157"/>
+     <point x="252" y="155"/>
+     <point x="256" y="155"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Security"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="243" y="39"/>
+     <point x="241" y="39"/>
+     <point x="241" y="35"/>
+     <point x="243" y="35"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Security"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="179" y="38"/>
+     <point x="177" y="38"/>
+     <point x="177" y="36"/>
+     <point x="179" y="36"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Security"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="151" y="113"/>
+     <point x="148" y="113"/>
+     <point x="148" y="110"/>
+     <point x="151" y="110"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Shed"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="219" y="164"/>
+     <point x="216" y="164"/>
+     <point x="216" y="161"/>
+     <point x="219" y="161"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Shed"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="215" y="134"/>
+     <point x="212" y="134"/>
+     <point x="212" y="131"/>
+     <point x="215" y="131"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Shed"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="218" y="59"/>
+     <point x="215" y="59"/>
+     <point x="215" y="56"/>
+     <point x="218" y="56"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Shed"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="266" y="245"/>
+     <point x="253" y="245"/>
+     <point x="253" y="241"/>
+     <point x="266" y="241"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="Trailer"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="89" y="111"/>
+     <point x="89" y="104"/>
+     <point x="86" y="104"/>
+     <point x="86" y="99"/>
+     <point x="89" y="99"/>
+     <point x="89" y="98"/>
+     <point x="98" y="98"/>
+     <point x="98" y="111"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="RetailAndCommercial"/>
+    <property name="RoomTone" value="Zippee"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="253" y="201"/>
+     <point x="253" y="164"/>
+     <point x="271" y="164"/>
+     <point x="271" y="201"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Industrial"/>
+    <property name="RoomTone" value="Garagestorage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="63" y="126"/>
+     <point x="63" y="131"/>
+     <point x="55" y="131"/>
+     <point x="55" y="121"/>
+     <point x="65" y="121"/>
+     <point x="65" y="126"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="RedbrickTownhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="54" y="172"/>
+     <point x="56" y="172"/>
+     <point x="56" y="169"/>
+     <point x="64" y="169"/>
+     <point x="64" y="178"/>
+     <point x="58" y="178"/>
+     <point x="58" y="177"/>
+     <point x="54" y="177"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="RedbrickTownhouse"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="74" y="179"/>
+     <point x="69" y="179"/>
+     <point x="69" y="175"/>
+     <point x="74" y="175"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="HouseGarage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="73" y="132"/>
+     <point x="69" y="132"/>
+     <point x="69" y="127"/>
+     <point x="73" y="127"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="HouseGarage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="74" y="85"/>
+     <point x="70" y="85"/>
+     <point x="70" y="80"/>
+     <point x="74" y="80"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseGarage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="62" y="153"/>
+     <point x="57" y="153"/>
+     <point x="57" y="149"/>
+     <point x="62" y="149"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="HouseGarage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="222" y="83"/>
+     <point x="218" y="83"/>
+     <point x="218" y="78"/>
+     <point x="222" y="78"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="HouseGarage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="203" y="66"/>
+     <point x="202" y="66"/>
+     <point x="202" y="56"/>
+     <point x="209" y="56"/>
+     <point x="209" y="66"/>
+     <point x="208" y="66"/>
+     <point x="208" y="67"/>
+     <point x="203" y="67"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseMedium"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="170" y="63"/>
+     <point x="170" y="64"/>
+     <point x="165" y="64"/>
+     <point x="165" y="56"/>
+     <point x="177" y="56"/>
+     <point x="177" y="63"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseMedium"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="75" y="104"/>
+     <point x="70" y="104"/>
+     <point x="70" y="100"/>
+     <point x="75" y="100"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="HouseGarage"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="222" y="232"/>
+     <point x="219" y="232"/>
+     <point x="219" y="229"/>
+     <point x="222" y="229"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Shed"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="220" y="201"/>
+     <point x="218" y="201"/>
+     <point x="218" y="198"/>
+     <point x="220" y="198"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Shed"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="22" y="77"/>
+     <point x="16" y="77"/>
+     <point x="16" y="73"/>
+     <point x="22" y="73"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="yes"/>
+    <property name="RoomTone" value="Shed"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="208" y="34"/>
+     <point x="208" y="38"/>
+     <point x="203" y="38"/>
+     <point x="203" y="39"/>
+     <point x="194" y="39"/>
+     <point x="194" y="26"/>
+     <point x="209" y="26"/>
+     <point x="209" y="34"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseLarge"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="219" y="40"/>
+     <point x="219" y="37"/>
+     <point x="214" y="37"/>
+     <point x="214" y="31"/>
+     <point x="213" y="31"/>
+     <point x="213" y="25"/>
+     <point x="228" y="25"/>
+     <point x="228" y="37"/>
+     <point x="223" y="37"/>
+     <point x="223" y="40"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseLarge"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="256" y="78"/>
+     <point x="256" y="73"/>
+     <point x="269" y="73"/>
+     <point x="269" y="88"/>
+     <point x="261" y="88"/>
+     <point x="261" y="87"/>
+     <point x="257" y="87"/>
+     <point x="257" y="81"/>
+     <point x="258" y="81"/>
+     <point x="258" y="78"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseLarge"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="82" y="207"/>
+     <point x="82" y="192"/>
+     <point x="91" y="192"/>
+     <point x="91" y="196"/>
+     <point x="96" y="196"/>
+     <point x="96" y="201"/>
+     <point x="94" y="201"/>
+     <point x="94" y="207"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseLarge"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="37" y="177"/>
+     <point x="37" y="186"/>
+     <point x="22" y="186"/>
+     <point x="22" y="174"/>
+     <point x="28" y="174"/>
+     <point x="28" y="172"/>
+     <point x="33" y="172"/>
+     <point x="33" y="177"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseLarge"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="259" y="150"/>
+     <point x="259" y="145"/>
+     <point x="256" y="145"/>
+     <point x="256" y="135"/>
+     <point x="271" y="135"/>
+     <point x="271" y="150"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="building" value="Residential"/>
+    <property name="RoomTone" value="HouseLarge"/>
+   </properties>
+  </feature>
+ </cell>
+</world>

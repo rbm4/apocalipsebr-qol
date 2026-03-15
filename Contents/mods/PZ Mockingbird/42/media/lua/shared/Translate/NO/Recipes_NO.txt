@@ -1,0 +1,3 @@
+Recipe_NO = {
+	Recipe_Dismantle_Modern_Television = "Demonter moderne TV",
+}

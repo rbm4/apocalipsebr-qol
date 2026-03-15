@@ -1,0 +1,3 @@
+Recipe_TR = {
+	Recipe_Dismantle_Modern_Television = "Modern Televizyonu Parçalayin",
+}

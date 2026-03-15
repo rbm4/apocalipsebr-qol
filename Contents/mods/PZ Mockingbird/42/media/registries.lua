@@ -1,0 +1,3 @@
+-- not implemented yet xD
+-- Brochure.register("pzmockingbird:GreenValley")
+-- Flier.register("pzmockingbird:MockingbirdTrip")

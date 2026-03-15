@@ -1,0 +1,5 @@
+MapSymbolDefinitions.getInstance():addTexture("Gasolinera", "media/ui/LootableMaps/map_gasolina.png")
+MapSymbolDefinitions.getInstance():addTexture("Ghostbusters", "media/ui/LootableMaps/map_ghostbusters.png")
+MapSymbolDefinitions.getInstance():addTexture("OnePunchMan", "media/ui/LootableMaps/map_punch.png")
+MapSymbolDefinitions.getInstance():addTexture("Munsters", "media/ui/LootableMaps/map_munster.png")
+MapSymbolDefinitions.getInstance():addTexture("Xolo", "media/ui/LootableMaps/map_xolo.png")

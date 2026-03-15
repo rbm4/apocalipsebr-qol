@@ -1,0 +1,38 @@
+<streets version="1">
+    <street name="Mockingbird Lane" width="8">
+        <points>
+            <point x="10441.0" y="12953.0"/>
+            <point x="10441.0" y="13141.0"/>
+        </points>
+    </street>
+    <street name="Evergreen Terrace" width="8">
+        <points>
+            <point x="10243.0" y="12953.0"/>
+            <point x="10243.0" y="13081.0"/>
+        </points>
+    </street>
+    <street name="Ganton St" width="8">
+        <points>
+            <point x="10251.0" y="13082.0"/>
+            <point x="10440.0" y="13082.0"/>
+        </points>
+    </street>
+    <street name="Old Road" width="9">
+        <points>
+            <point x="11404.0" y="6823.5"/>
+            <point x="11547.9" y="6823.5"/>
+        </points>
+    </street>
+    <street name="Ant St" width="8">
+        <points>
+            <point x="10354.0" y="13142.0"/>
+            <point x="10440.0" y="13142.0"/>
+        </points>
+    </street>
+    <street name="North Moore St" width="8">
+        <points>
+            <point x="10251.0" y="13037.0"/>
+            <point x="10353.0" y="13037.0"/>
+        </points>
+    </street>
+</streets>

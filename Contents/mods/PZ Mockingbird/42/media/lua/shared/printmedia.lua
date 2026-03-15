@@ -1,0 +1,2 @@
+PrintMediaDefinitions.MiscDetails["pzmockingbird:GreenValley"] = { location1 = { { x1 = 10255, y1 = 13178, x2 = 10279, y2 = 13177,}, }, }
+PrintMediaDefinitions.MiscDetails["pzmockingbird:MockingbirdTrip"] = { location1 = { { x1 = 10336, y1 = 13031, x2 = 10362, y2= 13035,},},}

@@ -1,0 +1,4 @@
+Sandbox_ID = {
+	Sandbox_Mockingbird = "Mockingbird",
+	Sandbox_Mockingbird_MapAllowed = "Mulailah dengan peta Mockingbird",
+}

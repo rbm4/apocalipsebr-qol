@@ -1,0 +1,25 @@
+module Mockingbird_Recipes
+{
+	imports
+    {
+		Base,
+	}
+    craftRecipe Dismantle Modern Television
+    {
+        timedAction = DismantleElectrical,
+        time = 60,
+        OnCreate = DismantleModernTVOnCreate,
+        Tags = AnySurfaceCraft,
+        category = Electrical,
+        xpAward = Electricity:4,
+        inputs
+        {
+            item 1 [Base.TvPlasmaScreen;Base.TvLCDScreen;Base.TvPlasmaScreen2;Base.TvLCDScreen2] flags[NoBrokenItems] mode:destroy,
+            item 1 tags[Screwdriver] mode:keep flags[MayDegradeLight;NoBrokenItems],
+        }
+        outputs
+        {
+            item 1 Base.ElectronicsScrap,
+        }
+	}
+}

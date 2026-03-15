@@ -1,0 +1,11 @@
+UI_ID = {
+	UI_NO_TITLE = "Tanpa Judul",
+UI_NO_DESCRIPTION = "Tanpa Deskripsi",
+UI_mapspawn_random = "Acak",
+UI_PZMockingbirdMod_Options = "Opsi Mod PZ Mockingbird",
+UI_PZMockingbirdMod_Options_Desc = "Opsi Mod PZ Mockingbird Hanya Berlaku Sebelum Memulai Permainan Baru.",
+UI_Allow_Other_Maps_Ask = "Tampilkan peta Mockingbird",
+UI_Allow_Other_Maps_Ask_tooltip = "Tampilkan peta Mockingbird.",
+UI_Allow_Vanilla_Maps_Ask = "Tampilkan peta vanilla",
+UI_Allow_Vanilla_Maps_Ask_tooltip = "Jika aktif, peta tambahan tidak akan ditampilkan.",
+}

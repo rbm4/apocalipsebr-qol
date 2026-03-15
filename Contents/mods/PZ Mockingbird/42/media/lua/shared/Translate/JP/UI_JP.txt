@@ -1,0 +1,11 @@
+UI_JP = {
+	UI_NO_TITLE = "タイトルなし",
+UI_NO_DESCRIPTION = "説明なし",
+UI_mapspawn_random = "ランダム",
+UI_PZMockingbirdMod_Options = "PZ Mockingbird Modオプション",
+UI_PZMockingbirdMod_Options_Desc = "PZ Mockingbird Modオプションは新規ゲーム開始前にのみ有効になります。",
+UI_Allow_Other_Maps_Ask = "Mockingbirdマップを表示",
+UI_Allow_Other_Maps_Ask_tooltip = "Mockingbirdマップを表示します。",
+UI_Allow_Vanilla_Maps_Ask = "バニラマップを表示",
+UI_Allow_Vanilla_Maps_Ask_tooltip = "アクティブな追加マップは表示されません。",
+}

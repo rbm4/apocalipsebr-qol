@@ -1,0 +1,12 @@
+name=[B42] PZ Mockingbird
+id=Mockingbird
+icon=icon.png
+poster=poster1.png
+poster=poster2.png
+poster=poster3.png
+versionMin=42.0.0
+author=Hermago
+description=(EN) Map with Ghostbusters headquarters and Munster's mansion. Cell 34x43 <LINE> (ES) Mapa con el cuartel de los cazafantasmas y la mansión Munster. Celda 34x43 <LINE> (FR) Carte avec le quartier général des chasseurs de fantômes et le manoir de Munster. cellule 34x43 <LINE> (PTBR) Mapa com a sede dos caça-fantasmas e a mansão Munster. célula 34x43 <LINE> (RU) Карта со штаб-квартирой охотников за привидениями и особняком Мюнстера. ячейка 34x43 <LINE> (DE) Karte mit Ghostbusters-Hauptquartier und Munsters Herrenhaus. Zelle 34x43 <LINE> (IT) Mappa con il quartier generale degli Acchiappafantasmi e la villa di Munster. Cella 34x43 <LINE> (AU) Карта зі штаб-квартирою Мисливців за привидами та особняком Мюнстера. Клітка 34х43 <LINE> (FI) Kartta Ghostbustersin päämajalla ja Munsterin kartanolla. Solu 34x43 <LINE> (NO) Kart med Ghostbusters hovedkvarter og Munsters herskapshus. Celle 34x43 <LINE> (CA) Mapa amb la seu dels Caçafantasmes i la mansió de Munster. Cel·la 34x43 <LINE> (CS) Zemljevid s sedežem Ghostbusters in Munsterjevim dvorcem. Celica 34x43 <LINE> (DA) Kort med Ghostbusters hovedkvarter og Munsters palæ. Celle 34x43 <LINE> (HU) Térkép a Szellemirtók főhadiszállásával és Munster kastélyával. Cella 34x43 <LINE> (ID) Peta dengan markas Ghostbusters dan mansion Munster. Sel 34x43 <LINE> (NL) Kaart met het hoofdkwartier van Ghostbusters en het landhuis van Munster. Cel 34x43 <LINE> (NO) Kart med Ghostbusters hovedkvarter og Munsters herskapshus. Celle 34x43 <LINE> (PH) Mapa na may punong-tanggapan ng Ghostbusters at mansyon ng Munster. Cell 34x43 <LINE> (PL) Mapa z siedzibą Pogromców duchów i rezydencją Munstera. Cela 34x43 <LINE> (RO) Hartă cu sediul Ghostbusters și conacul lui Munster. Celula 34x43 <LINE> (TR) Ghostbusters merkezini ve Munster'ın malikanesini gösteren harita. Hücre 34x43
+incompatible=\muldraughmilitarybaseas24
+pack=mockingbird
+tiledef=mockingbird 7503

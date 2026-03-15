@@ -1,0 +1,8 @@
+name=Equipment UI Patch
+id=equipmentuipatch
+description= Translation Patch and Icon Scaling Patch
+versionMin=42.15
+require=EQUIPMENT_UI
+loadModAfter=EQUIPMENT_UI
+poster=poster.png
+icon=statsIcon.png

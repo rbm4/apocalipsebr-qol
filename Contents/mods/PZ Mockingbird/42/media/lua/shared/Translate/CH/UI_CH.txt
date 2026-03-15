@@ -1,0 +1,11 @@
+UI_CH = {
+	UI_NO_TITLE = "無標題",
+	UI_NO_DESCRIPTION = "無描述",
+	UI_mapspawn_random = "隨機",
+	UI_PZMockingbirdMod_Options = "PZ Mockingbird Mod 選項",
+	UI_PZMockingbirdMod_Options_Desc = "PZ Mockingbird Mod 選項僅在開始新遊戲前生效。",
+	UI_Allow_Other_Maps_Ask = "顯示 Mockingbird 地圖",
+	UI_Allow_Other_Maps_Ask_tooltip = "顯示 Mockingbird 地圖。",
+	UI_Allow_Vanilla_Maps_Ask = "顯示原始地圖",
+	UI_Allow_Vanilla_Maps_Ask_tooltip = "如果已激活，則不會顯示已新增的地圖。",
+}

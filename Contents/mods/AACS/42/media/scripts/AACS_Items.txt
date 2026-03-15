@@ -1,0 +1,23 @@
+module Base
+{
+    /* ============================================================ */
+    /*                    AACS - SANDBOX REQUIRED ITEM              */
+    /*                    BUILD 42 ITEM SCRIPT FORMAT               */
+    /* ============================================================ */
+
+    /* Item usado para a opção Sandbox (tipo "item") do mod */
+    item DocumentPet
+    {
+        DisplayName = Adoption Document,
+        DisplayCategory = Literature,
+        ItemType = base:normal,
+        Weight = 0.1,
+        Icon = DocumentPet,
+        StaticModel = SheetPaper2,
+        WorldStaticModel = SheetPaper2_Ground,
+        CanBeWrite = false,
+        BoredomChange = 0,
+        StressChange = 0,
+        UnhappyChange = 0,
+    }
+}

@@ -1,0 +1,4 @@
+Sandbox_RO = {
+	Sandbox_Mockingbird = "Mockingbird",
+	Sandbox_Mockingbird_MapAllowed = "Începeți cu o hartă a Mockingbird",
+}

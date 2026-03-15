@@ -1,0 +1,4 @@
+Sandbox_CN = {
+	Sandbox_Mockingbird = "Mockingbird",
+	Sandbox_Mockingbird_MapAllowed = "从 Mockingbird 地图开始",
+}

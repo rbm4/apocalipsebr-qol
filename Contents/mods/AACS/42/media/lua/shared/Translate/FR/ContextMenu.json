@@ -1,0 +1,9 @@
+{
+  "ContextMenu_AACS_OpenManager": "Adoption de l'animal",
+  "ContextMenu_AACS_OpenAdminManager": "Adoption de l'animal (Admin Manager)",
+  "ContextMenu_AACS_AdoptAnimal": "Adopter l'animal",
+  "ContextMenu_AACS_ManageThisAnimal": "Gestion de l'animal",
+  "ContextMenu_AACS_UnadoptAnimal": "Annuler l'adoption",
+  "ContextMenu_AACS_ClaimInfo": "Propriétaire : %1  |  Code : %2",
+  "ContextMenu_AACS_OwnedBy": "Propriétaire : %1"
+}

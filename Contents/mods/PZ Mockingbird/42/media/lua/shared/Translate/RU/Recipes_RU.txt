@@ -1,0 +1,3 @@
+Recipe_RU = {
+	Recipe_Dismantle_Modern_Television = "демонтировать современное телевидение",
+}

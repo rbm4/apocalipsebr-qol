@@ -1,0 +1,9 @@
+VERSION = 1,
+
+option Mockingbird.MapAllowed
+{
+	type = boolean,
+	default = false,
+	page = Mockingbird,
+	translation = Mockingbird_MapAllowed,
+}

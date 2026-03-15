@@ -1,0 +1,256 @@
+module Mockingbird_Items
+{
+	imports
+    {
+		Base,
+	}
+    item RavenClock
+	{
+		DisplayCategory 	=	Furniture,
+        ItemType			=	base:moveable,
+		Icon				=	RavenClock,
+		Weight			  	=	0.5,
+		WorldObjectSprite	=	ghostbusters_tile1_44,
+	}
+	item ElectricChair
+	{
+		DisplayCategory		=	Furniture,
+		ItemType			=	base:moveable,
+		Icon				=	ElectricChair,
+		Weight		  		=	0.5,
+		WorldObjectSprite	=	ghostbusters_tile1_16,
+	}
+	
+	item GhostbustersSign
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= GhostbustersSign,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_signs_0,
+	}
+	item GhostbustersContainer
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= GhostbustersContainer,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_tile1_24,
+	}
+	item Ataud
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= Ataud,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_tile1_125,
+	}
+	item ShipSimpsons
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= ShipFrame,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_tile1_0,
+		Tags				= base:isfirefuel;base:isfiretinder,
+	}
+	item Mov_LongMexCurtain
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= CurtainsLongMexican,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_tile2_116,
+	}
+	item Mov_MexCurtain
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= CurtainsMexican,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_tile2_124,
+	}
+	item SpiffoPoster1
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= SpiffoPoster1,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_tile1_16,
+	}
+	item SpiffoPoster2
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= SpiffoPoster2,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_tile1_24,
+	}
+	item SpiffoPoster3
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= SpiffoPoster3,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_tile1_32,
+	}
+	item SpiffoPoster4
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= SpiffoPoster4,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_tile1_40,
+	}
+	item SpiffoPoster5
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= SpiffoPoster5,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_tile1_48,
+	}
+	item SpiffoPoster6
+	{
+		DisplayCategory		= Furniture,
+		ItemType			= base:moveable,
+		Icon				= SpiffoPoster6,
+		Weight				= 0.5,
+		WorldObjectSprite	= ghostbusters_tile1_56,
+	}
+    item WhiteCircleTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_0,
+    }
+
+    item WhiteMiddleBigTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_8,
+    }
+
+    item WhiteLeftBigTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_16,
+    }
+
+    item WhiteRightBigTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_24,
+    }
+
+    item WhiteSmallArchTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_32,
+    }
+
+    item WhiteMediumMiddleTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_40,
+    }
+
+    item WhiteLeftMiddleTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_48,
+    }
+
+    item WhiteRightMiddleTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_56,
+    }
+
+    item WhiteMiddleArchTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_64,
+    }
+
+    item WhiteSquareMiddleTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_72,
+    }
+
+    item WhiteSquareLeftTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_80,
+    }
+
+    item WhiteSquareRightTiled
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_88,
+    }
+
+    item WhiteSquareLeft
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_96,
+    }
+
+    item WhiteSquareMiddle
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_104,
+    }
+
+    item WhiteSquareRight
+    {
+        DisplayCategory		= Furniture,
+        ItemType			= base:moveable,
+        Icon				= default,
+        Weight				= 0.5,
+        WorldObjectSprite	= ghostbusters_tile5_112,
+    }
+
+}

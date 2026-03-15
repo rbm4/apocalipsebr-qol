@@ -1,0 +1,3 @@
+Recipe_TH = {
+	Recipe_Dismantle_Modern_Television = "รื้อโทรทัศน์สมัยใหม่",
+}

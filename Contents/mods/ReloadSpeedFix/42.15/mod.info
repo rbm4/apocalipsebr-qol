@@ -1,0 +1,13 @@
+name=Reload Speed Fix [B42]
+id=ReloadSpeedFix
+description=Fixes a vanilla bug where the Reloading perk has no effect on magazine loading and unloading speed.
+description=
+description=ROOT CAUSE: ISLoadBulletsInMagazine and ISUnloadBulletsFromMagazine both drive their looped animations by manually accumulating getAnimationTimeDelta() each frame, bypassing the standard m_SpeedScale=ReloadSpeed hook that all other reload actions rely on. The raw delta is never multiplied by ReloadSpeed, so perk level has zero effect on these actions.
+description=
+description=FIX: Overrides updateLoadingTime() in both classes to scale getAnimationTimeDelta() by the character's current ReloadSpeed. Magazine loading and unloading now correctly speeds up with each Reloading perk level, matching the behavior already present in all other reload types.
+description=
+description=Affects: ISLoadBulletsInMagazine, ISUnloadBulletsFromMagazine. All other reload types were already working correctly.
+poster=../common/poster.png
+icon=../common/poster.png
+authors=
+versionMin=42.15

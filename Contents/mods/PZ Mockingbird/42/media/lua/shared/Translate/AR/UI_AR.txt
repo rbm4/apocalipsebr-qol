@@ -1,0 +1,11 @@
+UI_AR = {
+	UI_NO_TITLE = "Sin título",
+	UI_NO_DESCRIPTION = "Sin descripción",
+	UI_mapspawn_random = "Al azar",
+	UI_PZMockingbirdMod_Options = "Opciones PZ Mockingbird Mod",
+	UI_PZMockingbirdMod_Options_Desc = "las options de PZ Mockingbird Mod sólo tomarán efecto antes de iniciar una nueva partida.",
+	UI_Allow_Other_Maps_Ask = "Mostrar mapa de Mockingbird",
+	UI_Allow_Other_Maps_Ask_tooltip = "Muestra el mapa de Mockingbird.",
+	UI_Allow_Vanilla_Maps_Ask = "Mostrar mapa vanilla",
+	UI_Allow_Vanilla_Maps_Ask_tooltip = "Estando activo no se muestran los mapas agregados.",
+}

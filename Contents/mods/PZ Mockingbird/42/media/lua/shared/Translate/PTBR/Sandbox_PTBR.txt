@@ -1,0 +1,4 @@
+Sandbox_PTBR = {
+	Sandbox_Mockingbird = "Mockingbird",
+	Sandbox_Mockingbird_MapAllowed = "Comece com um mapa de Mockingbird",
+}

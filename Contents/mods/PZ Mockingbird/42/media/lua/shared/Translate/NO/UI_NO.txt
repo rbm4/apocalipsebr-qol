@@ -1,0 +1,11 @@
+UI_NO = {
+	UI_NO_TITLE = "Ingen tittel",
+UI_NO_DESCRIPTION = "Ingen beskrivelse",
+UI_mapspawn_random = "Tilfeldig",
+UI_PZMockingbirdMod_Options = "PZ Mockingbird Mod-alternativer",
+UI_PZMockingbirdMod_Options_Desc = "PZ Mockingbird Mod-alternativer trer bare i kraft før et nytt spill starter.",
+UI_Allow_Other_Maps_Ask = "Vis Mockingbird-kartet",
+UI_Allow_Other_Maps_Ask_tooltip = "Vis Mockingbird-kartet.",
+UI_Allow_Vanilla_Maps_Ask = "Vis vanlige kart",
+UI_Allow_Vanilla_Maps_Ask_tooltip = "HVIS aktive kart legges til, vil ikke vises.",
+}

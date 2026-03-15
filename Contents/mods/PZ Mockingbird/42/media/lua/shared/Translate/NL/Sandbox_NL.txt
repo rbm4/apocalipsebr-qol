@@ -1,0 +1,4 @@
+Sandbox_NL = {
+	Sandbox_Mockingbird = "Mockingbird",
+	Sandbox_Mockingbird_MapAllowed = "Begin met een kaart van Mockingbird",
+}

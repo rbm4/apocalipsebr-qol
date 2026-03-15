@@ -1,0 +1,3 @@
+Recipe_HU = {
+	Recipe_Dismantle_Modern_Television = "Szerelje szét a modern televíziót",
+}

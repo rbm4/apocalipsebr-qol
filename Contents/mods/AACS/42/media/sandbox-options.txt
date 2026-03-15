@@ -1,0 +1,73 @@
+VERSION = 1,
+
+/* AACS - Sharing */
+option AACS.AllowFaction
+{
+    type = boolean, default = true,
+    page = AACS, translation = AACS_AllowFaction,
+}
+
+option AACS.AllowSafehouse
+{
+    type = boolean, default = true,
+    page = AACS, translation = AACS_AllowSafehouse,
+}
+
+/* AACS - Overrides / Admin */
+option AACS.AdminBypass
+{
+    type = boolean, default = true,
+    page = AACS, translation = AACS_AdminBypass,
+}
+
+/* AACS - Default permissions */
+option AACS.DefaultPickupMode
+{
+    type = enum,
+    numValues = 4,
+    default = 1,
+    page = AACS, translation = AACS_DefaultPickupMode,
+    valueTranslation = AACS_DefaultPickupMode,
+}
+
+option AACS.DefaultLeashMode
+{
+    type = enum,
+    numValues = 4,
+    default = 1,
+    page = AACS, translation = AACS_DefaultLeashMode,
+    valueTranslation = AACS_DefaultLeashMode,
+}
+
+option AACS.VerboseLogs
+{
+    type = boolean, default = false,
+    page = AACS, translation = AACS_VerboseLogs,
+}
+
+/* AACS - Document requirement */
+option AACS.RequireDocumentToAdopt
+{
+    type = boolean, default = false,
+    page = AACS, translation = AACS_RequireDocumentToAdopt,
+}
+
+option AACS.ReturnDocumentOnUnadopt
+{
+    type = boolean, default = true,
+    page = AACS, translation = AACS_ReturnDocumentOnUnadopt,
+}
+
+/* AACS - Adoption limit */
+option AACS.MaxAdoptedAnimalsPerPlayer
+{
+    type = integer, min = 0, max = 999, default = 0,
+    page = AACS, translation = AACS_MaxAdoptedAnimalsPerPlayer,
+}
+
+/* AACS - Adoption expiry */
+option AACS.AdoptionExpiryDays
+{
+    type = integer, min = 0, max = 999, default = 0,
+    page = AACS, translation = AACS_AdoptionExpiryDays,
+}

@@ -1,0 +1,4 @@
+Sandbox_AR = {
+	Sandbox_Mockingbird = "Mockingbird",
+	Sandbox_Mockingbird_MapAllowed = "Comenzar con un mapa de Mockingbird",
+}

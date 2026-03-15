@@ -1,0 +1,60 @@
+module mockingbird_seating
+{
+	imports
+	{
+		seating
+	}
+
+    tileset
+    {
+        name = ghostbusters_tile1,
+
+        /* ghostbusters_tile1_24 */
+        tile
+        {
+            xy = 0 2,
+
+            position
+            {
+                id = S,
+                translate = 988 1351 848,
+            }
+        }
+
+        /* ghostbusters_tile1_25 */
+        tile
+        {
+            xy = 1 2,
+
+            position
+            {
+                id = E,
+                translate = 961 1309 210,
+            }
+        }
+
+        /* ghostbusters_tile1_26 */
+        tile
+        {
+            xy = 2 2,
+
+            position
+            {
+                id = N,
+                translate = 942 1332 322,
+            }
+        }
+
+        /* ghostbusters_tile1_27 */
+        tile
+        {
+            xy = 3 2,
+
+            position
+            {
+                id = W,
+                translate = 581 1366 311,
+            }
+        }
+	}
+}

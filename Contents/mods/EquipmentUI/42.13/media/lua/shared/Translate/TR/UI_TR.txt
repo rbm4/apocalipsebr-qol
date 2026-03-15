@@ -1,0 +1,21 @@
+UI_TR = {
+    UI_optionscreen_binding_EquipmentUI = "Ekipman Arayüz"
+    UI_optionscreen_binding_equipment_toggle_window = "Ekipman Penceresini Aç",
+    UI_equipment_options_scale = "Ekipman Arayüz Ölçeði",
+    UI_equipment_options_hide_equipped_items = "Kuþanýlmýþ Ekipmanlarý Gizle",
+
+    UI_equipment_equipment = "Ekipman",
+    UI_equipment_hotbar = "Eþya Barý",
+
+    UI_equipment_head = "Kafa",
+    UI_equipment_face = "Yüz",
+    UI_equipment_torso = "Göðüs",
+    UI_equipment_vest = "Yelek",
+    UI_equipment_back = "Sýrt",
+    UI_equipment_waist = "Bel",
+    UI_equipment_left_hand = "Sol El",
+    UI_equipment_right_hand = "Sað El",
+    UI_equipment_jewelry = "Taký",
+    UI_equipment_legs = "Bacak",
+    UI_equipment_feet = "Ayak",
+}

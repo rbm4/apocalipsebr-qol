@@ -1,0 +1,20 @@
+UI_CH = {
+    UI_optionscreen_binding_EquipmentUI = "裝備頁面"
+    UI_optionscreen_binding_equipment_toggle_window = "打開裝備頁面",
+    UI_equipment_options_scale = "設置裝備頁面",
+    UI_equipment_options_hide_equipped_items = "隱藏已裝備物品",
+
+    UI_equipment_equipment = "裝備",
+    UI_equipment_hotbar = "快捷欄",
+    UI_equipment_head = "頭部",
+    UI_equipment_face = "臉部",
+    UI_equipment_torso = "軀幹",
+    UI_equipment_vest = "馬甲",
+    UI_equipment_back = "背部",
+    UI_equipment_waist = "腰部",
+    UI_equipment_left_hand = "左手",
+    UI_equipment_right_hand = "右手",
+    UI_equipment_jewelry = "珠寶",
+    UI_equipment_legs = "腿部",
+    UI_equipment_feet = "腳部",
+}
