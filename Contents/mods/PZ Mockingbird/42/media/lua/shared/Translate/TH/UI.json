@@ -1,0 +1,11 @@
+{
+    "UI_NO_TITLE": "ไม่มีชื่อเรื่อง",
+    "UI_NO_DESCRIPTION": "ไม่มีคำอธิบาย",
+    "UI_mapspawn_random": "สุ่ม",
+    "UI_PZMockingbirdMod_Options": "ตัวเลือกม็อด PZ Mockingbird",
+    "UI_PZMockingbirdMod_Options_Desc": "ตัวเลือกม็อด PZ Mockingbird จะมีผลเฉพาะก่อนเริ่มเกมใหม่เท่านั้น",
+    "UI_Allow_Other_Maps_Ask": "แสดงแผนที่ Mockingbird",
+    "UI_Allow_Other_Maps_Ask_tooltip": "แสดงแผนที่ Mockingbird",
+    "UI_Allow_Vanilla_Maps_Ask": "แสดงแผนที่แบบดั้งเดิม",
+    "UI_Allow_Vanilla_Maps_Ask_tooltip": "หากเปิดใช้งานแผนที่ที่เพิ่มเข้ามา แผนที่เหล่านั้นจะไม่แสดง"
+}

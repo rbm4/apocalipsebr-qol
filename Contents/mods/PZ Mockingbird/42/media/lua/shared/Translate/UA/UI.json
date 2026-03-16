@@ -1,0 +1,11 @@
+{
+    "UI_NO_TITLE": "Без назви",
+    "UI_NO_DESCRIPTION": "Без опису",
+    "UI_mapspawn_random": "Випадково",
+    "UI_PZMockingbirdMod_Options": "Параметри моду PZ Mockingbird",
+    "UI_PZMockingbirdMod_Options_Desc": "Параметри моду PZ Mockingbird набувають чинності лише перед початком нової гри.",
+    "UI_Allow_Other_Maps_Ask": "Показати карту Mockingbird",
+    "UI_Allow_Other_Maps_Ask_tooltip": "Показати карту Mockingbird.",
+    "UI_Allow_Vanilla_Maps_Ask": "Показати стандартну карту",
+    "UI_Allow_Vanilla_Maps_Ask_tooltip": "ЯКЩО активні додані карти не відображатимуться."
+}

@@ -1,0 +1,11 @@
+{
+    "UI_NO_TITLE": "Naj titlo",
+    "UI_NO_DESCRIPTION": "Naj deskripcia",
+    "UI_mapspawn_random": "Random",
+    "UI_PZMockingbirdMod_Options": "PZ Mockingbird Mod Options",
+    "UI_PZMockingbirdMod_Options_Desc": "PZ Mockingbird Mod Opcie numaj len efekto anglal te kezdis jekh nevo khelipe.",
+    "UI_Allow_Other_Maps_Ask": "Sikav e Mockingbird mapa",
+    "UI_Allow_Other_Maps_Ask_tooltip": "Sikav e Mockingbird mapa.",
+    "UI_Allow_Vanilla_Maps_Ask": "Show vanilla map",
+    "UI_Allow_Vanilla_Maps_Ask_tooltip": "TE na ka sikaven pes e aktivno thodine karte."
+}

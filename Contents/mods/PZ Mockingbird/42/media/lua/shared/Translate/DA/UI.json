@@ -1,0 +1,11 @@
+{
+    "UI_NO_TITLE": "Ingen titel",
+    "UI_NO_DESCRIPTION": "Ingen beskrivelse",
+    "UI_mapspawn_random": "Tilfældig",
+    "UI_PZMockingbirdMod_Options": "PZ Mockingbird Mod-indstillinger",
+    "UI_PZMockingbirdMod_Options_Desc": "PZ Mockingbird Mod-indstillinger træder kun i kraft, før et nyt spil startes.",
+    "UI_Allow_Other_Maps_Ask": "Vis Mockingbird-kortet",
+    "UI_Allow_Other_Maps_Ask_tooltip": "Vis Mockingbird-kortet.",
+    "UI_Allow_Vanilla_Maps_Ask": "Vis standardkort",
+    "UI_Allow_Vanilla_Maps_Ask_tooltip": "HVIS aktive tilføjede kort ikke vises."
+}

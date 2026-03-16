@@ -1,0 +1,19 @@
+{
+    "UI_optionscreen_binding_EquipmentUI": "���� ����������",
+    "UI_optionscreen_binding_equipment_toggle_window": "������� ���� ����������",
+    "UI_equipment_options_scale": "������� ���� ����������",
+    "UI_equipment_options_hide_equipped_items": "�������� ������������� ��������",
+    "UI_equipment_equipment": "����������",
+    "UI_equipment_hotbar": "������ �������� �������",
+    "UI_equipment_head": "������",
+    "UI_equipment_face": "����",
+    "UI_equipment_torso": "����",
+    "UI_equipment_vest": "�����",
+    "UI_equipment_back": "�����",
+    "UI_equipment_waist": "�����",
+    "UI_equipment_left_hand": "����� ����",
+    "UI_equipment_right_hand": "������ ����",
+    "UI_equipment_jewelry": "���������",
+    "UI_equipment_legs": "����",
+    "UI_equipment_feet": "������"
+}

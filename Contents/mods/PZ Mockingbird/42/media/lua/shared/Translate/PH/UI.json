@@ -1,0 +1,11 @@
+{
+    "UI_NO_TITLE": "Walang Pamagat",
+    "UI_NO_DESCRIPTION": "Walang Paglalarawan",
+    "UI_mapspawn_random": "Random",
+    "UI_PZMockingbirdMod_Options": "Mga Opsyon sa Mod ng PZ Mockingbird",
+    "UI_PZMockingbirdMod_Options_Desc": "Ang Mga Opsyon sa Mod ng PZ Mockingbird ay Magkakabisa Lamang Bago Magsimula ng Bagong Laro.",
+    "UI_Allow_Other_Maps_Ask": "Ipakita ang mapa ng Mockingbird",
+    "UI_Allow_Other_Maps_Ask_tooltip": "Ipakita ang mapa ng Mockingbird.",
+    "UI_Allow_Vanilla_Maps_Ask": "Ipakita ang mapa ng vanilla",
+    "UI_Allow_Vanilla_Maps_Ask_tooltip": "KUNG ang mga aktibong idinagdag na mapa ay hindi ipapakita."
+}

@@ -1,0 +1,11 @@
+{
+    "UI_NO_TITLE": "Aucun titre",
+    "UI_NO_DESCRIPTION": "Aucune description",
+    "UI_mapspawn_random": "Aléatoire",
+    "UI_PZMockingbirdMod_Options": "Options du mod PZ Mockingbird",
+    "UI_PZMockingbirdMod_Options_Desc": "Les options du mod PZ Mockingbird ne sont effectives qu'avant le début d'une nouvelle partie.",
+    "UI_Allow_Other_Maps_Ask": "Afficher la carte Mockingbird",
+    "UI_Allow_Other_Maps_Ask_tooltip": "Afficher la carte Mockingbird.",
+    "UI_Allow_Vanilla_Maps_Ask": "Afficher la carte vanilla",
+    "UI_Allow_Vanilla_Maps_Ask_tooltip": "Les cartes ajoutées actives ne seront pas affichées."
+}

@@ -1,0 +1,11 @@
+{
+    "UI_NO_TITLE": "Bez názvu",
+    "UI_NO_DESCRIPTION": "Bez popisu",
+    "UI_mapspawn_random": "Náhodné",
+    "UI_PZMockingbirdMod_Options": "Možnosti modu PZ Mockingbird",
+    "UI_PZMockingbirdMod_Options_Desc": "Možnosti modu PZ Mockingbird se projeví pouze před zahájením nové hry.",
+    "UI_Allow_Other_Maps_Ask": "Zobrazit mapu Mockingbird",
+    "UI_Allow_Other_Maps_Ask_tooltip": "Zobrazit mapu Mockingbird.",
+    "UI_Allow_Vanilla_Maps_Ask": "Zobrazit základní mapu",
+    "UI_Allow_Vanilla_Maps_Ask_tooltip": "Pokud jsou aktivní, přidané mapy se nezobrazí."
+}

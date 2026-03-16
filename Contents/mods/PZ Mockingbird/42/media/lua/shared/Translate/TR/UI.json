@@ -1,0 +1,11 @@
+{
+    "UI_NO_TITLE": "Baslik Yok",
+    "UI_NO_DESCRIPTION": "A�iklama Yok",
+    "UI_mapspawn_random": "Rastgele",
+    "UI_PZMockingbirdMod_Options": "PZ Mockingbird Mod Se�enekleri",
+    "UI_PZMockingbirdMod_Options_Desc": "PZ Mockingbird Mod Se�enekleri Yalnizca Yeni Bir Oyuna Baslamadan �nce Ge�erli Olur.",
+    "UI_Allow_Other_Maps_Ask": "Mockingbird haritasini g�ster",
+    "UI_Allow_Other_Maps_Ask_tooltip": "Mockingbird haritasini g�ster.",
+    "UI_Allow_Vanilla_Maps_Ask": "Vanilla haritasini g�ster",
+    "UI_Allow_Vanilla_Maps_Ask_tooltip": "Etkinlestirilmisse eklenen haritalar g�r�nt�lenmeyecektir."
+}

@@ -1,6 +1,6 @@
 name='85 Chevrolet Step-Van
 id=85chevyStepVan
-require=\damnlib
+require=\APOCALIPSE_DL
 poster=preview.png
 icon=icon.png
 description=This mod adds Chevrolet Step-Van from 1985

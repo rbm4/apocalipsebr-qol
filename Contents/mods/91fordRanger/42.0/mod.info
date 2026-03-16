@@ -1,6 +1,6 @@
 name='91 Ford Ranger
 id=91fordRanger
-require=\damnlib
+require=\APOCALIPSE_DL
 poster=preview.png
 icon=icon.png
 description=This mod adds Ford Ranger trucks from 1991

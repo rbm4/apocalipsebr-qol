@@ -1,0 +1,9 @@
+{
+    "UI_options_SwapIt_WithHeldTitle": "보유한 것과 교체",
+    "UI_options_SwapIt_WithHeldDesc": "보유한 아이템과 아이템을 교체할 수 있는 기능을 활성화합니다(슬롯이 둘 다 지원하는 경우).",
+    "UI_options_SwapIt_DirectAddTitle": "직접 추가",
+    "UI_options_SwapIt_DirectAddDesc": "빈 핫슬롯에 아이템을 직접 추가할 수 있는 기능을 활성화합니다.",
+    "UI_options_SwapIt_Slot": "슬롯 %1",
+    "UI_options_SwapIt_SlotMAX": "최대 슬롯 수",
+    "UI_options_SwapIt_SlotMAXDesc": "적용하려면 게임을 다시 시작해야 합니다."
+}

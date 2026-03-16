@@ -1,6 +1,6 @@
 name='90 Ford F350 Ambulance Type 1
 id=90fordF350ambulance
-require=\damnlib
+require=\APOCALIPSE_DL
 poster=preview.png
 icon=icon.png
 description=This mod adds Ford F350, Type 1 Ambulance from 1990

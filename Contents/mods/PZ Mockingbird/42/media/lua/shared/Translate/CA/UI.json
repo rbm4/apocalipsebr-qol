@@ -1,0 +1,11 @@
+{
+    "UI_NO_TITLE": "Sense títol",
+    "UI_NO_DESCRIPTION": "Sense descripció",
+    "UI_mapspawn_random": "A l'atzar",
+    "UI_PZMockingbirdMod_Options": "Opcions PZ Mockingbird Mod",
+    "UI_PZMockingbirdMod_Options_Desc": "les opcions de PZ Mockingbird Mod només faran efecte abans d'iniciar una nova partida.",
+    "UI_Allow_Other_Maps_Ask": "Mostra el mapa de Mockingbird",
+    "UI_Allow_Other_Maps_Ask_tooltip": "Mostra el mapa de Mockingbird.",
+    "UI_Allow_Vanilla_Maps_Ask": "Mostra mapa vanilla",
+    "UI_Allow_Vanilla_Maps_Ask_tooltip": "Estant actiu no es mostren els mapes agregats."
+}

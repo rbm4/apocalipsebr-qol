@@ -1,5 +1,5 @@
 name='89 LAND ROVER Defender
 id=89defender
-require=damnlib
+require=APOCALIPSE_DL
 description=This mod adds LAND ROVER Defender series 90, 110 and 130, Offroaders from 1989
 poster=preview.png

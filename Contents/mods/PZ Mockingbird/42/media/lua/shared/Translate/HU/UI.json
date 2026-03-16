@@ -1,0 +1,11 @@
+{
+    "UI_NO_TITLE": "Nincs cím",
+    "UI_NO_DESCRIPTION": "Nincs leírás",
+    "UI_mapspawn_random": "Véletlenszerű",
+    "UI_PZMockingbirdMod_Options": "PZ Mockingbird Mod opciók",
+    "UI_PZMockingbirdMod_Options_Desc": "A PZ Mockingbird Mod opciók csak új játék indítása előtt lépnek életbe.",
+    "UI_Allow_Other_Maps_Ask": "Mockingbird térkép megjelenítése",
+    "UI_Allow_Other_Maps_Ask_tooltip": "A Mockingbird térkép megjelenítése.",
+    "UI_Allow_Vanilla_Maps_Ask": "Alap térkép megjelenítése",
+    "UI_Allow_Vanilla_Maps_Ask_tooltip": "HA aktívak, a hozzáadott térképek nem jelennek meg."
+}

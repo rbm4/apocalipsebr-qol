@@ -1,0 +1,11 @@
+{
+    "UI_NO_TITLE": "无标题",
+    "UI_NO_DESCRIPTION": "无描述",
+    "UI_mapspawn_random": "随机",
+    "UI_PZMockingbirdMod_Options": "PZ Mockingbird Mod 选项",
+    "UI_PZMockingbirdMod_Options_Desc": "PZ Mockingbird Mod 选项仅在开始新游戏前生效。",
+    "UI_Allow_Other_Maps_Ask": "显示 Mockingbird 地图",
+    "UI_Allow_Other_Maps_Ask_tooltip": "显示 Mockingbird 地图。",
+    "UI_Allow_Vanilla_Maps_Ask": "显示原版地图",
+    "UI_Allow_Vanilla_Maps_Ask_tooltip": "如果已激活，则不会显示已添加的地图。"
+}
