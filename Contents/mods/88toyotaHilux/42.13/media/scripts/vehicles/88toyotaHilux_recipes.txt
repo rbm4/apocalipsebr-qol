@@ -244,10 +244,10 @@ module Base
 
         inputs
         {
-            item 2 [Base.SheetMetal],
-            item 3 [Base.SmallSheetMetal],
-            item 3 [Base.MetalPipe],
-            item 2 [Base.Screws],
+            item 4 [Base.SheetMetal],
+            item 6 [Base.SmallSheetMetal],
+            item 6 [Base.MetalPipe],
+            item 4 [Base.Screws],
 			item 10 [Base.BlowTorch],
             item 1 tags[WeldingMask] mode:keep,
         }
@@ -268,9 +268,9 @@ module Base
 
         inputs
         {
-            item 2 [Base.SheetMetal],
-            item 2 [Base.SmallSheetMetal],
-            item 2 [Base.Screws],
+            item 4 [Base.SheetMetal],
+            item 4 [Base.SmallSheetMetal],
+            item 4 [Base.Screws],
 			item 7 [Base.BlowTorch],
             item 1 tags[WeldingMask] mode:keep,
         }
@@ -291,9 +291,9 @@ module Base
 
         inputs
         {
-            item 1 [Base.SheetMetal],
-            item 1 [Base.SmallSheetMetal],
-            item 2 [Base.Screws],
+            item 2 [Base.SheetMetal],
+            item 2 [Base.SmallSheetMetal],
+            item 4 [Base.Screws],
 			item 6 [Base.BlowTorch],
             item 1 tags[WeldingMask] mode:keep,
         }
@@ -314,9 +314,9 @@ module Base
 
         inputs
         {
-            item 3 [Base.SheetMetal],
-            item 2 [Base.SmallSheetMetal],
-            item 3 [Base.Screws],
+            item 6 [Base.SheetMetal],
+            item 4 [Base.SmallSheetMetal],
+            item 6 [Base.Screws],
 			item 8 [Base.BlowTorch],
             item 1 tags[WeldingMask] mode:keep,
         }
@@ -337,8 +337,8 @@ module Base
 
         inputs
         {
-            item 3 [Base.SheetMetal],
-            item 2 [Base.Screws],
+            item 6 [Base.SheetMetal],
+            item 4 [Base.Screws],
 			item 6 [Base.BlowTorch],
             item 1 tags[WeldingMask] mode:keep,
         }
@@ -359,8 +359,8 @@ module Base
 
         inputs
         {
-            item 3 [Base.SheetMetal],
-            item 2 [Base.Screws],
+            item 6 [Base.SheetMetal],
+            item 4 [Base.Screws],
 			item 6 [Base.BlowTorch],
             item 1 tags[WeldingMask] mode:keep,
         }
@@ -381,9 +381,9 @@ module Base
 
         inputs
         {
-            item 5 [Base.SheetMetal],
-            item 4 [Base.MetalPipe],
-            item 3 [Base.Screws],
+            item 10 [Base.SheetMetal],
+            item 8 [Base.MetalPipe],
+            item 6 [Base.Screws],
 			item 10 [Base.BlowTorch],
             item 1 tags[WeldingMask] mode:keep,
         }
@@ -404,9 +404,9 @@ module Base
 
         inputs
         {
-            item 2 [Base.SheetMetal],
-            item 2 [Base.MetalPipe],
-            item 3 [Base.Screws],
+            item 4 [Base.SheetMetal],
+            item 4 [Base.MetalPipe],
+            item 6 [Base.Screws],
 			item 8 [Base.BlowTorch],
             item 1 tags[WeldingMask] mode:keep,
         }
@@ -427,10 +427,10 @@ module Base
 
         inputs
         {
-            item 4 [Base.SmallSheetMetal],
-            item 4 [Base.MetalPipe],
-            item 4 [Base.LightBulb],
-            item 4 [Base.Screws],
+            item 8 [Base.SmallSheetMetal],
+            item 8 [Base.MetalPipe],
+            item 8 [Base.LightBulb],
+            item 8 [Base.Screws],
 			item 10 [Base.BlowTorch],
             item 1 tags[WeldingMask] mode:keep,
         }
