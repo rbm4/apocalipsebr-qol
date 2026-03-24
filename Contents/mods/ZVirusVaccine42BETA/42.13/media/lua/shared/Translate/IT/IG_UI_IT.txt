@@ -1,4 +1,9 @@
 IGUI_IT = {
+	/*=======================================
+	TRANSLATIONS BY AKAYN
+    Part was done using Claude for missing entries
+	========================================*/
+    
     IGUI_CraftCategory_Equipment = "Equipaggiamento",
     IGUI_CraftCategory_Decorations = "Decorazioni",
     IGUI_CraftCategory_Chemistry = "Chimica",

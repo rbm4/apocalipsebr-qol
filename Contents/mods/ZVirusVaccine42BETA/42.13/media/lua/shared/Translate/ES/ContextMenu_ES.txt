@@ -1,4 +1,10 @@
 ContextMenu_ES = {
+	/*=======================================
+	TRANSLATIONS BY ChatGPT --
+	If the translations are overly generic,
+	please be free to review and send new translations
+	========================================*/
+    
     ContextMenu_LabTestInfo = "Ver Condición",
     ContextMenu_LabTestInfoItems = "Ver Información de los Objetos",
     ContextMenu_LabClearWater = "Purificar con Tabletas de Cloro",

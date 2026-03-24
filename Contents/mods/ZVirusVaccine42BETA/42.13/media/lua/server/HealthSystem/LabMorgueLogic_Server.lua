@@ -1,10 +1,9 @@
 -- LabMorgueLogic_Server.lua
--- Logica das ações de morgue (SERVER-ONLY)
+-- Logica das ações de necropsia (SERVER)
 
 local LabMorgueLogic = {}
 local LabSpriteSynchHandler = require("HealthSystem/LabSpriteSynchHandler_Server")
-
-local _sb = SandboxVars.ZombieVirusVaccineBETA or {}
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
 local function DispatchMorgueFeedback(player, action)
     if not player or not action then return end
@@ -96,8 +95,7 @@ function LabMorgueLogic.GetRemains(player, args)
     local itemAdded = nil
     
     if args.hasSack then
-        local sack = inv:getFirstTypeRecurse("Garbagebag")
-                    or inv:getFirstTypeRecurse("Bag_TrashBag")
+        local sack = LabRecipes_GetFirstEquip(inv, LabConst.SACKS)
         if sack then
             inv:Remove(sack)
             sendRemoveItemFromContainer(inv, sack)
@@ -111,17 +109,12 @@ function LabMorgueLogic.GetRemains(player, args)
         end
         
     elseif args.hasTwoPlastics then
-        local plasticList = inv:getItemsFromType("Plasticbag")
-                            or inv:getItemsFromType("Plasticbag_Bags")
-                            or inv:getItemsFromType("Plasticbag_Clothing")
-        if plasticList and plasticList:size() >= 2 then
-            local removed1 = plasticList:get(0)
-            inv:Remove(removed1)
-            sendRemoveItemFromContainer(inv, removed1)
-            
-            local removed2 = plasticList:get(1)
-            inv:Remove(removed2)
-            sendRemoveItemFromContainer(inv, removed2)
+        local plastics = LabRecipes_CollectItemsFromList(inv, LabConst.PLASTICS, 2)
+        if plastics then
+            for _, p in ipairs(plastics) do
+                inv:Remove(p)
+                sendRemoveItemFromContainer(inv, p)
+            end
             
             itemAdded = inv:AddItem("LabItems.LabPlasticBagWithRemains")
             local newB = inv:AddItem("LabItems.LabPlasticBagWithRemains")
@@ -135,7 +128,7 @@ function LabMorgueLogic.GetRemains(player, args)
     
     if itemAdded and result == "Success" then
         player:setPrimaryHandItem(itemAdded)
-        player:setSecondaryHandItem(nil)
+        player:setSecondaryHandItem(newB)
         triggerEvent("OnRefreshInventoryWindowContainers", player)
     end
     
@@ -167,8 +160,7 @@ function LabMorgueLogic.RemoveCorpseFromTable(player, args)
     local itemAdded = nil
     
     if args.hasSack then
-        local sack = inv:getFirstTypeRecurse("Garbagebag")
-                    or inv:getFirstTypeRecurse("Bag_TrashBag")
+        local sack = LabRecipes_GetFirstEquip(inv, LabConst.SACKS)
         if sack then
             inv:Remove(sack)
             sendRemoveItemFromContainer(inv, sack)
@@ -182,17 +174,12 @@ function LabMorgueLogic.RemoveCorpseFromTable(player, args)
         end
         
     elseif args.hasTwoPlastics then
-        local plasticList = inv:getItemsFromType("Plasticbag")
-                            or inv:getItemsFromType("Plasticbag_Bags")
-                            or inv:getItemsFromType("Plasticbag_Clothing")
-        if plasticList and plasticList:size() >= 2 then
-            local removed1 = plasticList:get(0)
-            inv:Remove(removed1)
-            sendRemoveItemFromContainer(inv, removed1)
-            
-            local removed2 = plasticList:get(1)
-            inv:Remove(removed2)
-            sendRemoveItemFromContainer(inv, removed2)
+        local plastics = LabRecipes_CollectItemsFromList(inv, LabConst.PLASTICS, 2)
+        if plastics then
+            for _, p in ipairs(plastics) do
+                inv:Remove(p)
+                sendRemoveItemFromContainer(inv, p)
+            end
             
             itemAdded = inv:AddItem("LabItems.LabPlasticBagWithRemains")
             local newB = inv:AddItem("LabItems.LabPlasticBagWithRemains")
@@ -206,7 +193,7 @@ function LabMorgueLogic.RemoveCorpseFromTable(player, args)
     
     if itemAdded and result == "Success" then
         player:setPrimaryHandItem(itemAdded)
-        player:setSecondaryHandItem(nil)
+        player:setSecondaryHandItem(newB)
         triggerEvent("OnRefreshInventoryWindowContainers", player)
     end
     
@@ -285,18 +272,125 @@ function LabMorgueLogic.CollectBodyPart(player, args)
     local finalItemType = args.itemType
     
     if finalItemType == "RANDOM_BRAIN" then
-        local roll = ZombRand(100)
-        if roll < 50 then
-            finalItemType = "LabItems.HumanBrainLow"
-        elseif roll < 80 then
+        -- ======================================================
+        -- PROBABILIDADE DINÂMICA DE QUALIDADE DO CÉREBRO
+        -- ======================================================
+        -- Score máximo absoluto do sistema = 114
+        -- Outra profissão + skills 10/10   = SQ 40  → ~30% High
+        -- Médico + skills 10/10            = SQ 58  → ~40% High
+        -- Estagiário + skills 10/10        = SQ 70  → ~50% High
+        -- ======================================================
+
+        local butchering = player:getPerkLevel(Perks.Butchering)  -- 0~10
+        local firstAid   = player:getPerkLevel(Perks.Doctor)      -- 0~10
+
+        local skillScore = (butchering * 2) + (firstAid * 2)      -- Máx: 40
+
+        -- Profissão e trait são mutuamente exclusivos:
+        -- Doctor             +18 (teto SQ: 58  → ~40% High)
+        -- AutopsySpecialist  +30 (teto SQ: 80  → ~50% High)
+        -- Outra profissão      0 (teto SQ: 40  → ~30% High)
+        local prof          = player:getDescriptor():getCharacterProfession()
+        local isDoctor      = (prof == CharacterProfession.DOCTOR)
+        local isIntern      = _G.RLPTraitEffects and player:hasTrait(RLP.CharacterTrait.AUTOPSY_SPECIALIST) or false
+
+        local profBonus = 0
+        if isIntern then
+            profBonus = 30
+        elseif isDoctor then
+            profBonus = 18
+        end
+
+        -- Hemofóbico penaliza independente da profissão
+        local hemophobicDebuff = 0
+        if player:hasTrait(CharacterTrait.HEMOPHOBIC) then
+            hemophobicDebuff = -LabSandboxOptions.GetHemophobicDebuff()
+        end
+
+        local SQ = math.max(0, skillScore + profBonus + hemophobicDebuff)
+
+        -- SQ_MAX e teto de High% são definidos por profissão
+        -- t vai de 0.0 a 1.0 dentro da escala de cada profissão
+        -- No máximo (t=1.0): chanceHigh = ceiling
+        -- No mínimo (t=0.0): chanceHigh = offset (sandbox)
+        local SQ_MAX, ceiling
+		if isIntern then
+			SQ_MAX  = 70
+			ceiling = 50
+		elseif isDoctor then
+			SQ_MAX  = 58
+			ceiling = 40
+		else
+			SQ_MAX  = 40
+			ceiling = 30
+		end
+
+		-- ==========================================
+		-- Science bonus: +0.5% por nível (máx +5%)
+		-- ==========================================
+		if Perks.Science then
+			local scienceLevel = player:getPerkLevel(Perks.Science) -- it's ssssssccccccccciiiiiieeeeeeence, biiiiitch!
+			if scienceLevel > 0 then
+				local scienceBonus = math.min(scienceLevel * 0.5, 5) -- Máx +5%. Maybe increase this later. I need to play first to see how it feels.
+				ceiling = ceiling + scienceBonus
+			end
+		end
+		
+        local t = math.min(SQ / SQ_MAX, 1.0)
+
+        local offset     = LabSandboxOptions.GetBrainHighOffset()
+        local chanceHigh = offset + (t ^ 1.2) * (ceiling - offset)
+        local remaining  = 100 - chanceHigh
+
+        -- Mid e Low dividem o espaço restante proporcionalmente
+        -- t=0: Mid ocupa ~33% do remaining (30/90), Low ~67%
+        -- t=1: Mid ocupa ~57% do remaining (40/70), Low ~43%
+        local midRatio     = 0.33 + (t ^ 0.8) * (0.57 - 0.33)
+        local chanceMedium = remaining * midRatio
+        local chanceLow    = remaining * (1 - midRatio)
+        local roll = ZombRand(1000) / 10  -- Precisão de 0.1%
+
+        if roll < chanceHigh then
+            finalItemType = "LabItems.HumanBrainHigh"
+        elseif roll < (chanceHigh + chanceMedium) then
             finalItemType = "LabItems.HumanBrainMid"
         else
-            finalItemType = "LabItems.HumanBrainHigh"
+            finalItemType = "LabItems.HumanBrainLow"
+        end
+		
+        if LabSandboxOptions.IsDebugMode() then -- só porque eu quis
+			local finalItemName = "Unknown Brain Quality"
+
+            if finalItemType == "LabItems.HumanBrainLow" then
+                finalItemName = "Low Quality Brain"
+
+                elseif finalItemType == "LabItems.HumanBrainMid" then
+                    finalItemName = "Medium Quality Brain"
+
+                elseif finalItemType == "LabItems.HumanBrainHigh" then
+                    finalItemName = "Perfect Extracted Brain"
+            end
+        
+            if LabSandboxOptions.IsDebugMode() then
+                print("========== BRAIN QUALITY DEBUG ==========")
+                print("Butchering     :", butchering)
+                print("First Aid      :", firstAid)
+                print("Skill Score    :", skillScore)
+                print("Prof Bonus     :", profBonus, "(Doctor:", isDoctor, "/ Intern:", isIntern, ")")
+                print("Hemophobic     :", hemophobicDebuff ~= 0)
+                print("SQ Final       :", SQ)
+                print("t (normalized) :", string.format("%.3f", t))
+                print("Chance High    :", string.format("%.1f%%", chanceHigh))
+                print("Chance Medium  :", string.format("%.1f%%", chanceMedium))
+                print("Chance Low     :", string.format("%.1f%%", chanceLow))
+                print("Roll           :", roll)
+                print("Brain Result   :", finalItemName)
+                print("==========================================")
+            end
         end
     end
     
-    -- Usar e desgastar ferramentas conforme sandbox
-    if _sb.AllowScalpelDegrade == true then
+    if LabSandboxOptions.IsScalpelDegradeAllowed() then
         local scalpel = inv:getFirstTypeRecurse("Scalpel")
         if scalpel then
             scalpel:setCondition(scalpel:getCondition() - 1)
@@ -304,12 +398,12 @@ function LabMorgueLogic.CollectBodyPart(player, args)
                 inv:Remove(scalpel)
                 sendRemoveItemFromContainer(inv, scalpel)
             else
-                syncItemFields(player, scalpel)
+                scalpel:syncItemFields()
             end
         end
     end
     
-    if _sb.AllowSawDegrade ~= false then
+    if LabSandboxOptions.IsSawDegradeAllowed() then
         local saw = inv:getFirstTypeRecurse("Saw")
         if saw then
             saw:setCondition(saw:getCondition() - 1)
@@ -323,8 +417,7 @@ function LabMorgueLogic.CollectBodyPart(player, args)
     end
     
     if args.hasSack then
-        local sack = inv:getFirstTypeRecurse("Garbagebag")
-                    or inv:getFirstTypeRecurse("Bag_TrashBag")
+        local sack = LabRecipes_GetFirstEquip(inv, LabConst.SACKS)
         if sack then
             inv:Remove(sack)
             sendRemoveItemFromContainer(inv, sack)
@@ -343,17 +436,12 @@ function LabMorgueLogic.CollectBodyPart(player, args)
         end
         
     elseif args.hasTwoPlastics then
-        local plasticList = inv:getItemsFromType("Plasticbag")
-                            or inv:getItemsFromType("Plasticbag_Bags")
-                            or inv:getItemsFromType("Plasticbag_Clothing")
-        if plasticList and plasticList:size() >= 2 then
-            local removed1 = plasticList:get(0)
-            inv:Remove(removed1)
-            sendRemoveItemFromContainer(inv, removed1)
-            
-            local removed2 = plasticList:get(1)
-            inv:Remove(removed2)
-            sendRemoveItemFromContainer(inv, removed2)
+        local plastics = LabRecipes_CollectItemsFromList(inv, LabConst.PLASTICS, 2)
+        if plastics then
+            for _, p in ipairs(plastics) do
+                inv:Remove(p)
+                sendRemoveItemFromContainer(inv, p)
+            end
             
             bagAdded = inv:AddItem("LabItems.LabPlasticBagWithRemains")
             local bagB = inv:AddItem("LabItems.LabPlasticBagWithRemains")
@@ -374,14 +462,49 @@ function LabMorgueLogic.CollectBodyPart(player, args)
         player:setPrimaryHandItem(bagAdded)
         player:setSecondaryHandItem(nil)
         triggerEvent("OnRefreshInventoryWindowContainers", player)
+
+        -- XP variável por qualidade do cérebro coletado
+        local baseXp = LabSandboxOptions.GetCollectPartXP()
+
+        local brainXpMultiplier = {
+            ["LabItems.HumanBrainHigh"] = 1.5, -- +50%
+            ["LabItems.HumanBrainMid"]  = 1.2, -- +20%
+            ["LabItems.HumanBrainLow"]  = 0.5, -- 1/2
+        }
+
+        local isBrain = brainXpMultiplier[finalItemType] ~= nil
+
+        if isBrain then
+            -- Cérebro: XP de Butchering e Doctor, variável por qualidade
+            local xpMult       = brainXpMultiplier[finalItemType]
+            local xpButchering = baseXp * xpMult
+            local xpDoctor     = math.floor(xpButchering * 0.5)
+
+            addXp(player, Perks.Butchering, xpButchering)
+            addXp(player, Perks.Doctor,     xpDoctor)
+            if LabSandboxOptions.IsDebugMode() then
+                print(string.format("Granted XP - Butchering: %.1f, Doctor: %d (multiplier: %.1f)", xpButchering, xpDoctor, xpMult))
+            end
+        else
+            -- Outra parte: só Butchering
+            addXp(player, Perks.Butchering, baseXp)
+            if LabSandboxOptions.IsDebugMode() then
+                print(string.format("Granted XP - Butchering: %.1f (non-brain part)", baseXp))
+            end
+        end
     end
     
     local playerSquare = player:getCurrentSquare()
     if playerSquare then
         addBloodSplat(playerSquare, ZombRand(15))
     end
-    
-    -- Trocar sprite da mesa para "Dirty"
+
+    if player:hasTrait(CharacterTrait.HEMOPHOBIC) then
+        player:getStats():add(CharacterStat.PANIC, 25)
+        syncPlayerStats(player, 0x00000100)
+    end
+        
+    -- Troca sprite da mesa para "Dirty"
     local cell = getCell()
     local topSquare = cell:getGridSquare(args.topX, args.topY, args.topZ)
     
@@ -399,7 +522,7 @@ function LabMorgueLogic.CollectBodyPart(player, args)
         end
     end
     
-    -- Enviar feedback ao cliente
+    -- Envia feedback ao cliente
     DispatchMorgueFeedback(
         player,
         result == "Success" and "BodyPartCollected" or result

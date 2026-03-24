@@ -1,5 +1,9 @@
 ContextMenu_IT = {
-
+	/*=======================================
+	TRANSLATIONS BY AKAYN
+    Part was done using Claude for missing entries
+	========================================*/
+    
     ContextMenu_LabTestInfo = "Controlla Condizione",
     ContextMenu_LabTestInfoItems = "Controlla Informazioni Oggetto",
     ContextMenu_LabClearWater = "Purifica con Compresse di Cloro",
@@ -46,6 +50,4 @@ ContextMenu_IT = {
     ContextMenu_LabCollectSkull = "Cranio",
     ContextMenu_LabCollectSmallBones = "Ossa Piccole",
     ContextMenu_LabCollectRegularBones = "Ossa Medie",
-}
-
 }

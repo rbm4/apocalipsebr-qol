@@ -1,0 +1,107 @@
+Recipes_RU = {
+    // LABORATORY EQUIPMENT
+    Recipe_LabAssembleMicroscope = "Создать Микроскоп",
+    Recipe_LabWorkbench = "Верстак",
+    Recipe_LabAssembleChromatograph = "Создать Хроматограф",
+    Recipe_LabAssembleChemistrySet = "Создать Химический Стол",
+    Recipe_LabAssembleSpectrometer = "Создать Спектрометр",
+    Recipe_LabAssembleCentrifuge = "Создать Центрифуга",
+    Recipe_LabAssembleMuffleFurnace = "Создать Муфельная Печь",
+    Recipe_LabAssembleWorkbench = "Создать Верстак",
+    Recipe_LabAssembleEasel = "Создать Мольберт",
+    Recipe_LabTableMorgue1 = "Создать Стол для Вскрытия",
+
+    // DECORATIONS AND MODELS
+    Recipe_DecAssembleSkeleton = "Создать образец Скелета",
+    Recipe_DecAssembleVirusModel = "Создать образец Вируса",
+    Recipe_DecAssembleCaduceus = "Создать Кадуцей",
+    Recipe_DecAssembleWhiteboard = "Создать Белая Доска",
+
+    Recipe_DecPaintPeriodicTablePoster = "Нарисовать Плакат с таблицей Менделеева",
+    Recipe_DecPaintSexyNursePoster = "Нарисовать Плакат Медсестры",
+    Recipe_DecPaintWashYourHandsPoster = "Нарисовать \"Помойте Руки\" Плакат",
+    Recipe_DecPaintBiohazardPoster = "Нарисовать Плакат о биологической опасности",
+    Recipe_DecPaintHumanBrainPoster = "Нарисовать Плакат с изображением человеческого мозга",
+    Recipe_DecAssemblePharmacyNeonSign = "Создать Неоновая вывеска аптеки",
+    Recipe_DecAssemblePizzaNeonSign = "Создать Неоновая вывеска пиццерии",
+
+    // FORGE / GLASSWORK
+    Recipe_FrnMakeTestTube = "Создать Пробирка (x2)",
+    Recipe_FrnMakeFlask = "Создать Колба",
+    Recipe_FrnMakeJar = "Создать Банка",
+    Recipe_FrnMakeIngotMold = "Создать Форма для слитков",
+    Recipe_FrnMeltGoldJewelry = "Плавить Золотые Украшения",
+    Recipe_FrnMeltSilverJewelry = "Плавить Серебряные Украшения",
+    Recipe_FrnMakeGolgIngot = "Создать Слиток Золота",
+    Recipe_FrnMakeSilverIngot = "Создать Слиток Серебра",
+
+    // BIOLOGICAL PROCESSES
+    Recipe_ChmCollectInfectedBlood = "1 - Собрать Заражённую Кровь в Пробирку",
+    Recipe_ChmDivideBloodIntoComponents = "2 - Отделить компоненты крови",
+    Recipe_ChmMixFlaskOfAmmoniumSulfate = "3 - Смешать Сульфат Аммония",
+    Recipe_ChmExtractLeukocytesFromBloodCells = "4 - Извлечь Лейкоциты",
+    Recipe_ChmExtractBrainFromSkull = "5A - Извлечь Мозг",
+    Recipe_ChmExtractFluidFromBrain = "5B - Извлечь Спинномозговую Жидкость",
+    Recipe_ChmExtractAntibodiesFromLeukocytes = "8 - Извлечь Антитела",
+
+    // VACCINES AND CURE
+    Recipe_ChmSynthesizePlainVaccine = "7A - Синтезировать Базовую Вакцину",
+    Recipe_ChmSynthesizeQualityVaccine = "7B - Синтезировать Качественную Вакцину",
+    Recipe_ChmSynthesizeAdvancedVaccine = "9A - Синтезировать Продвинутую Вакцину",
+    Recipe_ChmSynthesizeCure = "9 - Синтезировать Лекарство",
+
+    // CHEMICAL REAGENTS
+    Recipe_ChmMixFlaskOfSodiumHypochlorite = "6 - Смешать Гипохлорит Натрия",
+    Recipe_ChmMixFlaskOfHydrogenPeroxide = "Смешать Перекись Водорода",
+
+    // MEDICATIONS / SUPPLEMENTS
+    Recipe_ChmMakeAlbumin = "Произвести Альбумин",
+    Recipe_ChmMakeChlorineTablets = "Произвести Таблетки с хлором",
+    Recipe_ChmMakeBottleOfBleach = "Создать Бутылка отбеливателя",
+    Recipe_ChmMakeBottleOfDisinfectant = "Создать Бутылка алкоголя",
+
+    // STERILIZATION
+    Recipe_ChmSterilizeGlasses = "Стерилизовать Стеклотару",
+    Recipe_ChmSterilizeLabSyringeReusable = "Стерилизовать Многоразовый шприц",
+    Recipe_OthClearWithChlorineTablets = "Очистить воду Таблетками с хлором",
+    Recipe_ChmSterilizeGlassesHW = "Стерилизовать Горячей водой",
+    Recipe_ChmSterilizeGlassesHWPot = "Стерилизовать Горячей водой (x5)",
+    Recipe_ChmSterilizeGlassesHWBucket = "Стерилизовать Горячей водой (x15)",
+    Recipe_ChmSterilizeGlassesHWPot2 = "Стерилизовать Горячей водой (x5)",
+    Recipe_ChmSterilizeGlassesHWBucket2 = "Стерилизовать Горячей водой (x15)",
+
+    // DISPOSAL
+    Recipe_ChmDiscardBloodFromSyringe = "Выбросить Биологический Материал",
+    Recipe_ChmLabFlaskPourWaterOut = "Пустая Колба",
+    Recipe_ChmLabTestTubePourWaterOut = "Пустая Пробирка",
+
+    // SYRINGES
+    Recipe_ChmMakeSyringe = "Создать Многоразовый Шприц",
+
+    // WEAPONS
+    Recipe_MakeHBoneClub = "Сделать Костяная Дубинка",
+    Recipe_MakeHScrapMorningstar = "Сделать Моргенштерн из Металлолома",
+    Recipe_MakeSpikedClub = "Сделать Дубинка с шипами",
+
+    // OTHER PROCESSES
+    Recipe_OthShatterEmptyBottle = "Разбить Пустая бутылка",
+    Recipe_OthShatterCarGlassWindshields = "Разбить Стекло в машине",
+    Recipe_OthUnpackSyringes = "Открыть Коробку с Шприцами",
+    Recipe_OthPackSyringes = "Упаковать Шприцы в Коробку",
+    Recipe_ChmMakeAlbuminPills = "Произвести Таблетки Альбумина",
+    Recipe_FrnMakeAluminum = "Создать Алюминий",
+    Recipe_LabPaintLightGreen = "Покрасить Зелёный Свет",
+    Recipe_LabPaintLightRed = "Покрасить Красный Свет",
+    Recipe_LabPaintLightBlue = "Покрасить Синий Свет",
+    Recipe_LabPaintLightYellow = "Покрасить Жёлтый Свет",
+    Recipe_LabPaintLightCyan = "Покрасить Голубой Свет",
+    Recipe_LabPaintLightOrange = "Покрасить Оранжевый Свет",
+    Recipe_LabPaintLightPurple = "Покрасить Фиолетовый Свет",
+    Recipe_LabPaintLightPink = "Покрасить Розовый Свет",
+    Recipe_OthFixSkull = "Починить Человеческий Череп",
+    Recipe_OthMakeCottonBalls = "Сделать Ватные Шарики",
+	
+    /* TEMPORARY RECIPES */
+    Recipe_TurnHBoneIntoWP = "Превратить в Оружие",
+
+}

@@ -2,6 +2,7 @@
 -- Logica de coleta de sangue (SERVER-ONLY)
 
 local LabCollectBloodLogic = {}
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
 local function InfectionRate(player)
     if not player then return 0 end

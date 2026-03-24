@@ -1,4 +1,7 @@
 Tooltip_FR = {
+	/*=======================================
+	TRANSLATIONS BY F3niix
+	========================================*/
 	/* ÉQUIPEMENT DE LABORATOIRE */
 	Tooltip_LabMicroscope = "Microscope de paillasse utilisé pour analyser les cellules et séparer les leucocytes des échantillons sanguins.",
 	Tooltip_LabChromatograph = "Chromatographe simple utilisé pour extraire les anticorps et séparer les composés.<br>Nécessite un ordinateur à proximité.",
@@ -92,33 +95,15 @@ Tooltip_FR = {
 	Tooltip_BloodTest_No = "NON",
 	Tooltip_CompensationTickets = "BILLET DE COMPENSATION<br><br>Permet l’échange contre des objets pour compenser les pertes causées par les mises à jour du mod.<br>Appuyez sur B et allez dans la catégorie TICKET_TRADE pour l’utiliser.",
 
-
 	/* RECETTES */
 	Tooltip_LabAssembleChromatograph = "Les ampoules vertes peuvent être facilement trouvées en démontant des talkies-walkies.",
 	Tooltip_ChmExtractAntibodiesFromLeukocytes = "Extrait les anticorps des leucocytes à l'aide de la chromatographie.<br>Nécessite un ordinateur placé à côté.",
-
+	Tooltip_ChmExtractFluidFromBrain = "Extrait le liquide céphalorachidien d’un cerveau<br>La qualité du fluide dépend de l’état du cerveau utilisé.",
+	
 	/* CONTENANTS */
 	Tooltip_item_LabFlask = "Fiole de laboratoire utilisée pour stocker des liquides et des réactifs.<br><br>L’eau peut être collectée directement depuis un lavabo :<br>- L’eau peut être purifiée par ébullition.<br>- L’eau peut être purifiée avec des comprimés de chlore.",
 	Tooltip_item_LabTestTube = "Tube à essai utilisé pour collecter des échantillons biologiques.",
 
 	/* SERA SUPPRIMÉ DANS LES FUTURES MISES À JOUR */
-	Tooltip_BloodTest_Severity_Low = "Faible (Phase précoce)",
-	Tooltip_BloodTest_Severity_Medium = "Moyenne (Phase intermédiaire)",
-	Tooltip_BloodTest_Severity_High = "Élevée (Phase avancée)",
-	Tooltip_LabFlask = "Fiole de laboratoire utilisée pour stocker des liquides et des réactifs.",
-	Tooltip_LabFlaskWater = "Fiole contenant de l’eau. Peut être utilisée dans des réactions chimiques.",
-	Tooltip_LabFlaskFilledWithBleach = "Fiole contenant de l’eau de Javel produite en laboratoire.",
-	Tooltip_LabFlaskFilledWithDisinfectant = "Fiole contenant un désinfectant préparé en laboratoire.",
-	Tooltip_CmpFlaskWithAntibodies = "Anticorps purifiés stockés dans une fiole — base pour la synthèse avancée.",
-	Tooltip_LabFlaskWithPurifiedWater = "Eau purifiée prête à être utilisée dans des réactions chimiques.",
-	Tooltip_CmpTestTubeWithInfectedBlood = "Échantillon purifié de sang infecté. Matériel de recherche essentiel.",
-	Tooltip_CmpFlaskWithBloodCells = "Suspension de cellules sanguines concentrées.",
-	Tooltip_CmpFlaskWithBloodPlasma = "Plasma sanguin propre — base pour la synthèse et les médicaments.",
-	Tooltip_CmpFlaskWithLeukocytes = "Leucocytes isolés — étape essentielle pour l’extraction d’anticorps.",
-	Tooltip_CmpTestTubeWithAntibodies = "Anticorps purifiés prêts pour la synthèse de cures.",
-	Tooltip_CmpFlaskWithSodiumHypochlorite = "Hypochlorite purifié — utilisé dans les vaccins et réactifs.",
-	Tooltip_CmpFlaskWithAmmoniumSulfate = "Sulfate d’ammonium — utilisé pour la précipitation biologique.",
-	Tooltip_CmpFlaskWithHydrogenPeroxide = "Peroxyde d’hydrogène concentré.",
 	Tooltip_LabNeedUpdate = "CET OBJET N’EST PLUS VALIDE.<br>CLIQUE GAUCHE POUR LE METTRE À JOUR"
-
 }

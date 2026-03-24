@@ -14,12 +14,12 @@ local vaccineEffect = {
     },
     CmpSyringeWithQualityVaccine = {
         Min = 0.10, Max = 0.91, CureChance = 10, InfectChance = 10,
-        Time = 168, Strength = 20, AlbuminMin = 5, AlbuminDelta = 5, Recess = 6,
+        Time = 168, Strength = 25, AlbuminMin = 5, AlbuminDelta = 5, Recess = 6,
         Quality = 2
     },
     CmpSyringeWithAdvancedVaccine = {
         Min = 0.05, Max = 0.96, CureChance = 15, InfectChance = 1,
-        Time = 504, Strength = 65, AlbuminMin = 8, AlbuminDelta = 6, Recess = 12,
+        Time = 504, Strength = 70, AlbuminMin = 8, AlbuminDelta = 6, Recess = 12,
         Quality = 3
     },
     CmpSyringeWithCure = {
@@ -34,12 +34,12 @@ local vaccineEffect = {
     },
     CmpSyringeReusableWithQualityVaccine = {
         Min = 0.10, Max = 0.91, CureChance = 10, InfectChance = 10,
-        Time = 168, Strength = 20, AlbuminMin = 5, AlbuminDelta = 5, Recess = 6,
+        Time = 168, Strength = 25, AlbuminMin = 5, AlbuminDelta = 5, Recess = 6,
         Quality = 2
     },
     CmpSyringeReusableWithAdvancedVaccine = {
         Min = 0.05, Max = 0.96, CureChance = 15, InfectChance = 1,
-        Time = 504, Strength = 65, AlbuminMin = 8, AlbuminDelta = 6, Recess = 12,
+        Time = 504, Strength = 70, AlbuminMin = 8, AlbuminDelta = 6, Recess = 12,
         Quality = 3
     },
     CmpSyringeReusableWithCure = {
@@ -228,6 +228,14 @@ function VaccineLogic.ProcessInjection(player, itemType)
         pMod.VaccineStrength = vaccine.Strength
         pMod.VaccineRecess = vaccine.Recess
         pMod.VaccineQuality = newQuality
+
+		-- Albumina também pré-carregada na vacinação preventiva.
+        local currentDoses = pMod.AlbuminDoses or 0
+        local newDoses = vaccine.AlbuminMin + ZombRand(vaccine.AlbuminDelta)
+        -- Não sobrescreve se o jogador já tem doses superiores
+        if newDoses > currentDoses then
+            pMod.AlbuminDoses = newDoses
+        end
     end
     
     player:transmitModData()

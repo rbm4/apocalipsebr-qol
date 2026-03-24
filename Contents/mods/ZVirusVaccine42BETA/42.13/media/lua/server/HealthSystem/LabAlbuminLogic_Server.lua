@@ -2,6 +2,7 @@
 -- Logica de albumina (SERVER-ONLY)
 
 local LabAlbuminLogic = {}
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
 local albuminEff = {
     [1] = 2,
@@ -58,7 +59,15 @@ function LabAlbuminLogic.TakeAlbumin(player, pillsType)
     
     -- correção no uso da albumina
     if pills then
-        pills:Use() -- sincroniza nativamente o uso do item
+        pills:Use()
+        if isServer() then
+            sendItemStats(pills)
+            player:transmitModData()  -- sincroniza AlbuminDoses pro cliente
+        end
+    end
+    
+	if LabSandboxOptions.IsDebugMode() then
+	    print("Albumin: Player " .. player:getUsername() .. " | Doses left: " .. (pMod.AlbuminDoses or 0) .. " | Eff: " .. (eff or 0))
     end
 end
 

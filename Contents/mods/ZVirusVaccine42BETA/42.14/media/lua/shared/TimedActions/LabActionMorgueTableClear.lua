@@ -5,29 +5,18 @@ require "TimedActions/ISBaseTimedAction"
 
 LabActionMorgueTableClear = ISBaseTimedAction:derive("LabActionMorgueTableClear")
 
--- Predicado: bleach suficiente (≥ 0.2L)
-local function predicateBleachEnough(item)
-    if not item then return false end
-    if not item:hasComponent(ComponentType.FluidContainer) then return false end
-    
-    local fc = item:getFluidContainer()
-    if not fc then return false end
-    
-    return fc:contains(Fluid.Bleach) and (fc:getAmount() >= 0.2)
-end
 
 function LabActionMorgueTableClear:isValid()
     local inv = self.character:getInventory()
-    
-    -- Bleach suficiente
-    local bleach = inv:getFirstEvalRecurse(predicateBleachEnough)
-    if not bleach then return false end
-    
-    -- Pano ou toalha
-    if not (inv:containsTypeRecurse("DishCloth") or inv:containsTypeRecurse("BathTowel")) then
+
+    if not inv:getFirstEvalRecurse(LabRecipes_PredicateCleaningLiquidEnough) then
         return false
     end
-    
+
+    if not LabRecipes_GetFirstEquip(inv, LabConst.TOOLS_CLEAN) then
+        return false
+    end
+
     return true
 end
 
@@ -43,7 +32,7 @@ end
 
 function LabActionMorgueTableClear:start()
     local inv = self.character:getInventory()
-    self.bleach = inv:getFirstEvalRecurse(predicateBleachEnough)
+    self.bleach = inv:getFirstEvalRecurse(LabRecipes_PredicateCleaningLiquidEnough)
     
     self:setActionAnim("Loot")
     self.character:SetVariable("LootPosition", "Mid")
@@ -67,7 +56,7 @@ end
 
 function LabActionMorgueTableClear:complete()
     local inv = self.character:getInventory()
-    local bleach = inv:getFirstEvalRecurse(predicateBleachEnough)
+    local bleach = inv:getFirstEvalRecurse(LabRecipes_PredicateCleaningLiquidEnough)
     
     if bleach then
         local fc = bleach:getFluidContainer()
@@ -77,7 +66,7 @@ function LabActionMorgueTableClear:complete()
         end
     end
     
-    -- Envia comando ao servidor para lógica adicional (limpar mesa, etc)
+    -- Envia comando ao servidor
     sendClientCommand(
         self.character,
         "ZVirusVaccine42BETA",

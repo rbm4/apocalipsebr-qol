@@ -94,6 +94,7 @@ Tooltip_PTBR = {
 	/* RECEITAS */
 	Tooltip_LabAssembleChromatograph = "Lâmpadas verdes podem ser facilmente encontradas desmontando Walkie-Talkies.",
 	Tooltip_ChmExtractAntibodiesFromLeukocytes = "Extrai anticorpos de leucócitos usando cromatografia.<br>Requer um computador próximo.",
+	Tooltip_ChmExtractFluidFromBrain = "Extrai fluido cerebrospinal de um cérebro<br>A qualidade do fluido depende do estado do cérebro usado.",
 	
 	/* CONTEINERES */
 	Tooltip_item_LabFlask = "Frasco de laboratório usado para armazenar líquidos e reagentes.<br><br>A água pode ser coletada diretamente da pia:<br>- A água pode ser purificada através da fervura.<br>- A água pode ser purificada com tabletes de cloro.",

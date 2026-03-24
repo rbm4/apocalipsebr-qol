@@ -1,4 +1,10 @@
 IGUI_ES = {
+	/*=======================================
+	TRANSLATIONS BY ChatGPT --
+	If the translations are overly generic,
+	please be free to review and send new translations
+	========================================*/
+	
 	IGUI_CraftCategory_Equipment = "Equipos",
 	IGUI_CraftCategory_Decorations = "Decoraciones",
 	IGUI_CraftCategory_Chemistry = "Química",

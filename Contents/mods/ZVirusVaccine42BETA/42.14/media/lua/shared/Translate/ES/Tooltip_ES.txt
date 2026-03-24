@@ -1,4 +1,10 @@
 Tooltip_ES = {
+	/*=======================================
+	TRANSLATIONS BY ChatGPT --
+	If the translations are overly generic,
+	please be free to review and send new translations
+	========================================*/
+	
 	/* EQUIPOS DE LABORATORIO */
 	Tooltip_LabMicroscope = "Microscopio de sobremesa utilizado para analizar células y separar leucocitos de muestras de sangre.",
 	Tooltip_LabChromatograph = "Cromatógrafo simple utilizado para extraer anticuerpos y separar compuestos.<br>Requiere una computadora cercana.",
@@ -97,25 +103,9 @@ Tooltip_ES = {
 	/* RECETAS */
 	Tooltip_LabAssembleChromatograph = "Las bombillas verdes se pueden encontrar fácilmente desmontando Walkie-Talkies.",
 	Tooltip_ChmExtractAntibodiesFromLeukocytes = "Cromatógrafo simple utilizado para extraer anticuerpos y separar compuestos.<br>Requiere una computadora cercana.",
-
+    Tooltip_ChmExtractFluidFromBrain = "Extrae líquido cefalorraquídeo de un cerebro<br>La calidad del fluido depende del estado del cerebro utilizado.",
+	
 	/* SERÁN DESCARTADOS EN FUTURAS ACTUALIZACIONES */
-	Tooltip_BloodTest_Severity_Low = "Baja (Etapa Inicial)",
-	Tooltip_BloodTest_Severity_Medium = "Media (Etapa Intermedia)",
-	Tooltip_BloodTest_Severity_High = "Alta (Etapa Avanzada)",
-	Tooltip_LabFlask = "Frasco de laboratorio utilizado para almacenar líquidos y reactivos.",
-	Tooltip_LabFlaskWater = "Frasco que contiene agua. Puede utilizarse en reacciones químicas.",
-	Tooltip_LabFlaskFilledWithBleach = "Frasco que contiene lejía producida en laboratorio.",
-	Tooltip_LabFlaskFilledWithDisinfectant = "Frasco que contiene desinfectante preparado en laboratorio.",
-	Tooltip_CmpFlaskWithAntibodies = "Anticuerpos purificados almacenados en un frasco — base para síntesis avanzadas.",
-	Tooltip_LabFlaskWithPurifiedWater = "Agua purificada lista para su uso en reacciones químicas.",
-	Tooltip_CmpTestTubeWithInfectedBlood = "Muestra purificada de sangre infectada. Material esencial para la investigación.",
-	Tooltip_CmpFlaskWithBloodCells = "Suspensión de células sanguíneas concentradas.",
-	Tooltip_CmpFlaskWithBloodPlasma = "Plasma sanguíneo limpio — base para síntesis y medicamentos.",
-	Tooltip_CmpFlaskWithLeukocytes = "Leucocitos aislados — etapa esencial para la obtención de anticuerpos.",
-	Tooltip_CmpTestTubeWithAntibodies = "Anticuerpos purificados listos para la síntesis de la cura.",
-	Tooltip_CmpFlaskWithSodiumHypochlorite = "Hipoclorito purificado — utilizado en vacunas y reactivos.",
-	Tooltip_CmpFlaskWithAmmoniumSulfate = "Sulfato de amonio — utilizado para la precipitación biológica.",
-	Tooltip_CmpFlaskWithHydrogenPeroxide = "Peróxido de hidrógeno concentrado.",
+
 	Tooltip_LabNeedUpdate = "ESTE OBJETO YA NO ES VÁLIDO.<br>HAZ CLIC IZQUIERDO PARA ACTUALIZARLO"
-	Tooltip_CompensationTickets = "TICKET DE COMPENSACIÓN<br><br>Permite intercambiarlo por objetos para compensar pérdidas causadas por actualizaciones del mod.<br>Presiona B y ve a la categoría TICKET_TRADE para usarlo.",
 }

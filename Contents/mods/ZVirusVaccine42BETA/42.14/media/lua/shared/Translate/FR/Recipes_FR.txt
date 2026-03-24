@@ -1,4 +1,8 @@
 Recipes_FR = {
+	/*=======================================
+	TRANSLATIONS BY F3niix
+	========================================*/
+    
     // ÉQUIPEMENT DE LABORATOIRE
     Recipe_LabAssembleMicroscope = "Fabriquer un microscope",
     Recipe_LabWorkbench = "Établi",
@@ -40,18 +44,18 @@ Recipes_FR = {
     Recipe_ChmDivideBloodIntoComponents = "2 - Séparer les composants sanguins",
     Recipe_ChmMixFlaskOfAmmoniumSulfate = "3 - Mélanger du sulfate d’ammonium",
     Recipe_ChmExtractLeukocytesFromBloodCells = "4 - Extraire les leucocytes",
-    Recipe_ChmExtractAntibodiesFromLeukocytes = "5 - Extraire les anticorps",
-    Recipe_ChmExtractBrainFromSkull = "6 - Extraire le cerveau",
-    Recipe_ChmExtractFluidFromBrain = "6 - Extraire le liquide cérébrospinal",
+    Recipe_ChmExtractAntibodiesFromLeukocytes = "8 - Extraire les anticorps",
+    Recipe_ChmExtractBrainFromSkull = "5A - Extraire le cerveau",
+    Recipe_ChmExtractFluidFromBrain = "5B - Extraire le liquide cérébrospinal",
 
     // VACCINS ET CURE
-    Recipe_ChmSynthesizePlainVaccine = "5 - Produire un vaccin de base",
-    Recipe_ChmSynthesizeQualityVaccine = "7 - Produire un vaccin de qualité",
-    Recipe_ChmSynthesizeAdvancedVaccine = "7 - Produire un vaccin avancé",
-    Recipe_ChmSynthesizeCure = "7 - Produire la cure",
+    Recipe_ChmSynthesizePlainVaccine = "7A - Produire un vaccin de base",
+    Recipe_ChmSynthesizeQualityVaccine = "7B - Produire un vaccin de qualité",
+    Recipe_ChmSynthesizeAdvancedVaccine = "9A - Produire un vaccin avancé",
+    Recipe_ChmSynthesizeCure = "9B - Produire la cure",
 
     // RÉACTIFS CHIMIQUES
-    Recipe_ChmMixFlaskOfSodiumHypochlorite = "Mélanger de l’hypochlorite de sodium",
+    Recipe_ChmMixFlaskOfSodiumHypochlorite = "6 - Mélanger de l’hypochlorite de sodium",
     Recipe_ChmMixFlaskOfHydrogenPeroxide = "Mélanger du peroxyde d’hydrogène",
 
     // MÉDICAMENTS / SUPPLÉMENTS
@@ -97,22 +101,4 @@ Recipes_FR = {
     Recipe_OthMakeCottonBalls = "Fabriquer des boules de coton",
 
     /* RECETTES TEMPORAIRES */
-    Recipe_TradeOldItems1 = "MISE À JOUR DE L’OBJET",
-    Recipe_TradeOldItems2 = "MISE À JOUR DE L’OBJET",
-    Recipe_TradeOldItems3 = "MISE À JOUR DE L’OBJET",
-    Recipe_TradeOldItems4 = "MISE À JOUR DE L’OBJET",
-    Recipe_TradeOldItems5 = "MISE À JOUR DE L’OBJET",
-    Recipe_TradeOldItems6 = "MISE À JOUR DE L’OBJET",
-    Recipe_TradeOldItems7 = "MISE À JOUR DE L’OBJET",
-    Recipe_TradeOldItems8 = "MISE À JOUR DE L’OBJET",
-    Recipe_TradeOldItems9 = "MISE À JOUR DE L’OBJET",
-    Recipe_TradeOldItems10 = "MISE À JOUR DE L’OBJET",
-    Recipe_LabTradeTickets = "Échanger des tickets de compensation",
-    Recipe_LabTradeTickets2 = "Échanger des tickets de compensation",
-    Recipe_LabTradeTickets3 = "Échanger des tickets de compensation",
-    Recipe_LabTradeTickets4 = "Échanger des tickets de compensation",
-    Recipe_LabTradeTickets5 = "Échanger des tickets de compensation",
-    Recipe_LabTradeTickets6 = "Échanger des tickets de compensation",
-    Recipe_LabTradeTickets7 = "Échanger des tickets de compensation",
-
 }

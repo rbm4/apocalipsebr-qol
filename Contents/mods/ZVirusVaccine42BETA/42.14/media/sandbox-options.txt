@@ -189,6 +189,39 @@ option ZombieVirusVaccineBETA.AutopsyTableXP
     tooltip = ZombieVirusVaccineBETA_AutopsyTableXP_tooltip,
 }
 
+option ZombieVirusVaccineBETA.CollectPartXP
+{
+    type = integer,
+	min = 0,
+	max = 30,
+    default = 15,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_CollectPartXP,
+    tooltip = ZombieVirusVaccineBETA_CollectPartXP_tooltip,
+}
+
+option ZombieVirusVaccineBETA.BrainHighOffset
+{
+    type = integer,
+    min = 0,
+    max = 15,
+    default = 10,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_BrainHighOffset,
+    tooltip = ZombieVirusVaccineBETA_BrainHighOffset_tooltip,
+}
+
+option ZombieVirusVaccineBETA.HemophobicDebuff
+{
+    type = integer,
+    min = 0,
+    max = 30,
+    default = 10,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_HemophobicDebuff,
+    tooltip = ZombieVirusVaccineBETA_HemophobicDebuff_tooltip,
+}
+
 option ZombieVirusVaccineBETA.AllowScalpelDegrade
 {
     type = boolean,

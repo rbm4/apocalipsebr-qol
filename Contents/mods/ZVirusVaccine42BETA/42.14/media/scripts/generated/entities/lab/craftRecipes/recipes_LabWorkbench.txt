@@ -8,17 +8,17 @@ module Base
 		Tags            = ZVirusVaccine42BETA:Workbench,
         SkillRequired   = Electricity:3;Woodwork:3,
         NeedToBeLearn   = True,
-		xpAward         = Electricity:100,
+		xpAward         = Electricity:20,
 
         inputs
         {
-            item 3 [Plank],
-            item 8 [Screws],
+            item 2 [Plank],
+            item 4 [Screws],
             item 4 [LabItems.LabTestTube] flags[Prop2],
             item 1 [Glasses_Normal;Glasses_Reading],
-            item 10 [ElectronicsScrap],
-            item 3 [MetalPipe],
-            item 6 [SmallSheetMetal],
+            item 5 [ElectronicsScrap],
+            item 1 [MetalPipe],
+            item 4 [SmallSheetMetal],
             item 1 tags[base:screwdriver] mode:keep flags[Prop1;MayDegradeLight],
         }
         outputs
@@ -41,14 +41,14 @@ module Base
         inputs
         {
             item 8  [SheetMetal],
-            item 12 [SmallSheetMetal],
-            item 6  [ScrapMetal],
-            item 18 [Screws],
-            item 22 [ElectronicsScrap],
-            item 6  [ElectricWire],
+            item 10 [SmallSheetMetal],
+            item 4  [ScrapMetal],
+            item 12 [Screws],
+            item 18 [ElectronicsScrap],
+            item 4  [ElectricWire],
             item 1  [CarBattery1;CarBattery2;CarBattery3] mode:destroy,
             item 4  [LightBulb],
-            item 4  [LightBulbGreen],
+            item 2  [LightBulbGreen],
             item 5  [WeldingRods] flags[DontRecordInput],
             item 1  [BlowTorch] flags[DontRecordInput],
             item 1 tags[base:weldingmask] mode:keep,
@@ -71,15 +71,14 @@ module Base
 
         inputs
         {
-            item 6 [SheetMetal],
+            item 2 [SheetMetal],
             item 4 [SmallSheetMetal],
             item 10 [ElectronicsScrap],
-            item 16 [Screws],
+            item 8 [Screws],
             item 3 [DuctTape],
             item 3 [Aluminum],
             item 2 [LightBulb],
-            item 4 [LightBulbBlue],
-            item 4 [ElectricWire],
+            item 2 [ElectricWire],
             item 1 [CarBattery1;CarBattery2;CarBattery3] mode:destroy,
             item 5 [WeldingRods] flags[DontRecordInput],
             item 1 [BlowTorch] flags[DontRecordInput],
@@ -103,12 +102,12 @@ module Base
 
         inputs
         {
-            item 4 [Plank],
-            item 16 [Nails],
+            item 2 [Plank],
+            item 6 [Nails],
             item 4 [LabItems.LabTestTube],
             item 4 [LabItems.LabFlask],
             item 5 [MetalBar],
-            item 3 [SmallSheetMetal],
+            item 1 [SmallSheetMetal],
             item 5 [Wire],
             item 1 tags[base:hammer] mode:keep,
         }
@@ -284,8 +283,8 @@ module Base
         inputs
         {
             item 1  [LabItems.LabHumanSkullFixed;LabItems.LabHumanSkullWithBrain],
-            item 2  [LabItems.LabHumanBoneLarge;LabItems.LabHumanBoneLargeWP],
-            item 6  [LabItems.LabRegularHumanBone;LabItems.LabRegularHumanBoneWP],
+            item 2  [LabItems.LabHumanBoneLargeWP],
+            item 6  [LabItems.LabRegularHumanBoneWP],
             item 6  [LabItems.LabSmallRandomHumanBones],
             item 1  [Plank],
             item 6  [Nails],

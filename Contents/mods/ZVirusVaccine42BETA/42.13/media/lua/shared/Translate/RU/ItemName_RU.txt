@@ -1,0 +1,110 @@
+ItemName_RU = {
+    /* EQUIPMENT / LAB DECOR */
+    ItemName_LabItems.LabMicroscope = "Микроскоп",
+    ItemName_LabItems.LabChromatograph = "Хроматограф",
+    ItemName_LabItems.LabSpectrometer = "Спектрометр",
+    ItemName_LabItems.LabChemistrySet = "Химический Стол",
+    ItemName_LabItems.LabCentrifuge = "Центрифуга",
+    ItemName_LabItems.LabMuffleFurnace = "Муфельная Печь",
+    ItemName_LabItems.LabWorkbench = "Верстак",
+    ItemName_LabItems.LabEasel = "Мольберт",
+    ItemName_LabItems.LabDecorSkeleton = "Декоративный Скелет",
+    ItemName_LabItems.LabDecorVirusModel = "Образец Вируса",
+    ItemName_LabItems.LabDecorCaduceus = "Кадуцей",
+    ItemName_LabItems.LabDecorWhiteboard = "Белая Доска",
+    ItemName_LabItems.LabPosterPeriodicTable = "Таблица Менделеева",
+    ItemName_LabItems.LabPosterSexyNurse = "Плакат Сексуальной Медсестры",
+    ItemName_LabItems.LabPosterWashHands = "Плакат Мойте Ваши Руки",
+    ItemName_LabItems.LabPosterBiohazard = "Плакат Биологической Угрозы",
+    ItemName_LabItems.LabPosterHumanBrain = "Плакат Человеческого Мозга",
+    ItemName_LabItems.LabNeonSignPharmacy = "Неоновая Вывеска Аптеки",
+    ItemName_LabItems.LabNeonSignPizza = "Неоновая Вывеска Пиццерии",
+    ItemName_LabItems.Mov_Morge1 = "Стол для Вскрытия (Часть 1)",
+    ItemName_LabItems.Mov_Morge2 = "Стол для Вскрытия (Часть 2)",
+
+    /* SYRINGES / TUBES / FLASKS */
+    ItemName_LabItems.LabSyringe = "Шприц",
+    ItemName_LabItems.LabSyringeReusable = "Многоразовый Шприц",
+    ItemName_LabItems.LabSyringeReusableUsed = "Использованный Многоразовый Шприц",
+    ItemName_LabItems.LabSyringePack = "Упаковка Шприцов",
+    ItemName_LabItems.LabSyringeUsed = "Использованный Шприц",
+    ItemName_LabItems.LabTestTube = "Пробирка",
+    ItemName_LabItems.LabTestTubeDirty = "Грязная Пробирка",
+    ItemName_LabItems.LabFlask = "Колба",
+    ItemName_LabItems.LabFlaskDirty = "Грязная Колба",
+    ItemName_LabItems.CmpSyringeWithBrainFluidLow = "Шприц с CSF (Низкое Качество)",
+    ItemName_LabItems.CmpSyringeWithBrainFluidMid = "Шприц с CSF (Среднее Качество)",
+    ItemName_LabItems.CmpSyringeWithBrainFluidHigh = "Шприц с CSF (Высокое Качество)",
+    ItemName_LabItems.CmpSyringeReusableWithBrainFluidLow = "Многоразовый Шприц с CSF (Низкое Качество)",
+    ItemName_LabItems.CmpSyringeReusableWithBrainFluidMid = "Многоразовый Шприц с CSF (Среднее Качество)",
+    ItemName_LabItems.CmpSyringeReusableWithBrainFluidHigh = "Многоразовый Шприц с CSF (Высокое Качество)",
+
+    /* BIOLOGICAL MATERIALS */
+    ItemName_LabItems.MatInfectedBlood = "Заражённая Кровь",
+    ItemName_LabItems.MatTaintedBlood = "Свёрнутая Кровь",
+    ItemName_LabItems.MatShatteredGlass = "Разбитое Стекло",
+
+    /* CHEMICAL PRODUCTS (CH) */
+    ItemName_LabItems.ChHydrochloricAcidCan = "Соляная Кислота",
+    ItemName_LabItems.ChSodiumHydroxideBag = "Гидроксид Натрия",
+    ItemName_LabItems.ChAmmonia = "Аммиак",
+    ItemName_LabItems.ChSulfuricAcidCan = "Серная Кислота",
+
+    /* COMPONENTS / PROCESSING */
+    ItemName_LabItems.CmpSyringeWithBlood = "Шприц с Кровью",
+    ItemName_LabItems.CmpSyringeWithTaintedBlood = "Шприц с Свёрнутой Кровью",
+    ItemName_LabItems.CmpSyringeReusableWithTaintedBlood = "Многоразовый Шприц с Свёрнутой Кровью",
+    ItemName_LabItems.CmpSyringeReusableWithBlood = "Многоразовый Шприц с Кровью",
+
+    /* VACCINES / CURE */
+    ItemName_LabItems.CmpSyringeWithPlainVaccine = "Базовая Вакцина",
+    ItemName_LabItems.CmpSyringeWithQualityVaccine = "Качественная Вакцина",
+    ItemName_LabItems.CmpSyringeWithAdvancedVaccine = "Продвинутая Вакцина",
+    ItemName_LabItems.CmpSyringeWithCure = "Экспериментальное Лечение",
+    ItemName_LabItems.CmpSyringeReusableWithPlainVaccine = "Базовая Вакцина (Многораз.)",
+    ItemName_LabItems.CmpSyringeReusableWithQualityVaccine = "Качественная Вакцина (Многораз.)",
+    ItemName_LabItems.CmpSyringeReusableWithAdvancedVaccine = "Продвинутая Вакцина (Многораз.)",
+    ItemName_LabItems.CmpSyringeReusableWithCure = "Экспериментальное Лечение (Многораз.)",
+
+    /* PILLS / MEDICATIONS */
+    ItemName_LabItems.CmpAlbuminPills = "Альбумин",
+    ItemName_LabItems.CmpChlorineTablets = "Таблетки с хлором",
+
+    /* BOOKS */
+    ItemName_LabBooks.BkLaboratoryEquipment1 = "Лабораторное Оборудование Том. 1",
+    ItemName_LabBooks.BkLaboratoryEquipment2 = "Лабораторное Оборудование Том. 2",
+    ItemName_LabBooks.BkLaboratoryEquipment3 = "Лабораторное Оборудование Том. 3",
+	ItemName_LabBooks.BkVirologyCourses1 = "Книга по Вирусологии с заметками ",
+	ItemName_LabBooks.BkVirologyCourses2 = "Продвинутая Книга по Вирусологии с заметками",
+	ItemName_LabBooks.BkChemistryCourse = "Введение в основы Химии",
+    ItemName_LabBooks.LabPaintLightsMag = "СДЕЛАЙ САМ: Самодельные декоративные лампы",
+
+    /* OTHERS */
+    ItemName_LabItems.FrnIngotMold = "Форма для Слитков",
+    ItemName_LabItems.FrnGolgNugget = "Золотой Самородок",
+    ItemName_LabItems.FrnSilverNugget = "Серебряный Самородок",
+    ItemName_LabItems.FrnGolgIngot = "Слиток Золота",
+    ItemName_LabItems.FrnSilverIngot = "Слиток Золота",
+    ItemName_LabItems.LabGarbageBagWithRemains = "Мусорный мешок с Останками",
+    ItemName_LabItems.LabPlasticBagWithRemains = "Пластиковый мешок с Останками",
+    ItemName_LabItems.LabTestResultNegative = "Результат: Отрицательный",
+    ItemName_LabItems.LabTestResultPositive = "Результат: Положительный",
+    ItemName_LabItems.HumanBrainLow = "Заражённый Человеческий Мозг",
+    ItemName_LabItems.HumanBrainMid = "Заражённый Человеческий Мозг",
+    ItemName_LabItems.HumanBrainHigh = "Заражённый Человеческий Мозг",
+    ItemName_LabItems.RottenHumanBrain = "Сгнивший Человеческий Мозг",
+    ItemName_LabItems.BurntHumanBrain = "Сожжённый Человеческий Мозг",
+    ItemName_LabItems.LabHumanBoneLargeWP = "Огромная Человеческая Кость",
+    ItemName_LabItems.LabHumanTeeth = "Человеческий Зуб",
+    ItemName_LabItems.LabHumanSkullWithBrain = "Череп Человека",
+    ItemName_LabItems.LabHumanSkull = "Повреждённый Череп Человека",
+    ItemName_LabItems.LabHumanSkullPart = "Фрагмент Черепа Человека",
+    ItemName_LabItems.LabHumanSkullFixed = "Полый Череп Человека",
+    ItemName_LabItems.LabSmallRandomHumanBones = "Маленькие Человеческий Кости",
+    ItemName_LabItems.LabRegularHumanBoneWP = "Средняя Человеческая Кость",
+
+    /* WILL BE DISCARDED IN FUTURE UPDATES */
+    ItemName_LabItems.LabRegularHumanBone = "Средние Человеческие Кости",
+    ItemName_LabItems.LabHumanBoneLarge = "Огромные Человеческие Кости",
+
+}

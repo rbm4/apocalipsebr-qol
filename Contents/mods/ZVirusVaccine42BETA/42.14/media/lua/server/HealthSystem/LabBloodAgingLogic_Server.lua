@@ -3,13 +3,15 @@
 -- Funcionando corretamente em MP e SP.
 
 local LabBloodAgingLogic = {}
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
 -- Configuração de vida do sangue (em minutos x10)
 local bloodLife = {
     MatInfectedBlood = { Target = "MatTaintedBlood", Time = 3 }, -- 30 minutos
     CmpSyringeWithBlood = { Target = "CmpSyringeWithTaintedBlood", Time = 12 }, -- 2 horas
     CmpSyringeReusableWithBlood = { Target = "CmpSyringeReusableWithTaintedBlood", Time = 12 }, -- 2 horas
-    --CmpTestTubeWithInfectedBlood = { Target = "CmpTestTubeWithTaintedBlood", Time = 12960 }, -- 90 dias
+    -- CmpTestTubeWithInfectedBlood = { Target = "CmpTestTubeWithTaintedBlood", Time = 12960 }, -- 90 dias
+    -- Eu poderia envelhecer os fluidos também, mas a duração no tubo já é tão longa que não faria muita diferença.
 }
 
 local function UpdateBloodAge(item, container, square)
@@ -33,7 +35,7 @@ local function UpdateBloodAge(item, container, square)
     
     local targetType = "LabItems." .. obj.Target
     
-    -- CASO 1: dentro de um container (funcionando corretamente)
+    -- CASO 1: dentro de um container
     if type(container) ~= "string" and container then
         if container.DoRemoveItem and container.removeItemOnServer then
             container:DoRemoveItem(item)
@@ -216,9 +218,7 @@ function LabBloodAgingLogic.AdjustBloodCondition()
     end
 
     -- CONFIGURAÇÃO DO SANDBOX
-    local sandboxOptions = SandboxVars.ZombieVirusVaccineBETA or {}
-    local bloodRadius = sandboxOptions.BloodAgingRadius
-    if bloodRadius == nil then bloodRadius = 5 end
+    local bloodRadius = LabSandboxOptions.GetBloodAgingRadius()
 
     local players = getOnlinePlayers()
 
@@ -242,6 +242,5 @@ function LabBloodAgingLogic.AdjustBloodCondition()
         end
     end
 end
-
 
 return LabBloodAgingLogic

@@ -38,20 +38,20 @@ Recipes_PTBR = {
     // PROCESSOS BIOLÓGICOS
     Recipe_ChmCollectInfectedBlood = "1 - Coletar Sangue Infectado no Tubo",
     Recipe_ChmDivideBloodIntoComponents = "2 - Separar Componentes do Sangue",
-	Recipe_ChmMixFlaskOfAmmoniumSulfate = "3 - Misturar Sulfato de Amônio",
     Recipe_ChmExtractLeukocytesFromBloodCells = "4 - Extrair Leucócitos",
-    Recipe_ChmExtractAntibodiesFromLeukocytes = "5 - Extrair Anticorpos",
-	Recipe_ChmExtractBrainFromSkull = "6 - Extrair Cérebro",
-    Recipe_ChmExtractFluidFromBrain= "6 - Extrair Fluido Cerebrospinal",
+    Recipe_ChmExtractBrainFromSkull = "5A - Extrair Cérebro",
+    Recipe_ChmExtractFluidFromBrain= "5B - Extrair Fluido Cerebrospinal",
+    Recipe_ChmExtractAntibodiesFromLeukocytes = "8 - Extrair Anticorpos",
 	
     // VACINAS E CURA
-    Recipe_ChmSynthesizePlainVaccine = "5 - Fabricar Vacina Simples",
-    Recipe_ChmSynthesizeQualityVaccine = "7 - Fabricar Vacina de Qualidade",
-    Recipe_ChmSynthesizeAdvancedVaccine = "7 - Fabricar Vacina Avançada",
-    Recipe_ChmSynthesizeCure = "7 - Fabricar a Cura",
+    Recipe_ChmSynthesizePlainVaccine = "7A - Sintetizar Vacina Simples",
+    Recipe_ChmSynthesizeQualityVaccine = "7B - Sintetizar Vacina de Qualidade",
+    Recipe_ChmSynthesizeAdvancedVaccine = "9A - Sintetizar Vacina Avançada",
+    Recipe_ChmSynthesizeCure = "9B - Sintetizar a Cura",
 
     // REAGENTES QUÍMICOS
-    Recipe_ChmMixFlaskOfSodiumHypochlorite = "Misturar Hipoclorito de Sódio",
+    Recipe_ChmMixFlaskOfSodiumHypochlorite = "6 - Misturar Hipoclorito de Sódio",
+    Recipe_ChmMixFlaskOfAmmoniumSulfate = "3 - Misturar Sulfato de Amônio",
     Recipe_ChmMixFlaskOfHydrogenPeroxide = "Misturar Peróxido de Hidrogênio",
 
     // MEDICAMENTOS / SUPLEMENTOS

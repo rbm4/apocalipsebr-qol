@@ -9,7 +9,7 @@
 local newInputs = [[{ inputs { 
             item 1 tags[base:whetstone;base:file] mode:keep flags[MayDegradeLight],
             item 1 tags[base:saw;base:smallsaw;base:crudesaw;base:sharpknife;base:meatcleaver] mode:keep flags[MayDegradeLight],
-            item 1 [Base.AnimalBone;Base.LargeAnimalBone;LabItems.LabRegularHumanBone;LabItems.LabHumanBoneLarge;LabItems.LabRegularHumanBoneWP;LabItems.LabHumanBoneLargeWP] flags[Prop2;AllowDestroyedItem],
+            item 1 [Base.AnimalBone;Base.LargeAnimalBone;LabItems.LabRegularHumanBoneWP;LabItems.LabHumanBoneLargeWP] flags[Prop2;AllowDestroyedItem],
 } }]]
 local recipe = getScriptManager():getCraftRecipe("SharpenLongBone")
 recipe:getInputs():clear()
@@ -45,7 +45,7 @@ recipe:Load("MakeBoneForearmArmor", newInputs)
 local newInputs = [[{ inputs {
             item 1 tags[base:sharpknife;base:meatcleaver] mode:keep flags[MayDegradeLight;IsNotDull],
             item 1 tags[base:whetstone;base:file] mode:keep flags[MayDegradeLight],
-            item 1 [Base.AnimalBone;Base.LargeAnimalBone;Base.JawboneBovide;LabItems.LabRegularHumanBone;LabItems.LabHumanBoneLarge;LabItems.LabRegularHumanBoneWP;LabItems.LabHumanBoneLargeWP] flags[AllowDestroyedItem],
+            item 1 [Base.AnimalBone;Base.LargeAnimalBone;Base.JawboneBovide;LabItems.LabRegularHumanBoneWP;LabItems.LabHumanBoneLargeWP] flags[AllowDestroyedItem],
             item 1 tags[base:drillwood;base:drillmetal;base:drillwoodpoor] mode:keep flags[MayDegradeLight],
 } }]]
 local recipe = getScriptManager():getCraftRecipe("MakeLargeBoneBeads")
@@ -97,7 +97,7 @@ recipe:Load("MakeBonePectoral", newInputs)
 -- MAKEBONESHINARMOR
 -- ============================
 local newInputs = [[{ inputs {
-            item 3 [Base.AnimalBone;LabItems.LabRegularHumanBone;LabItems.LabRegularHumanBoneWP] flags[Prop2],
+            item 3 [Base.AnimalBone;LabItems.LabRegularHumanBoneWP] flags[Prop2],
             item 2 [Base.LeatherStrips] mode:destroy,
             item 1 tags[base:sharpknife] mode:keep flags[IsNotDull;MayDegradeLight;Prop1],
             item 1 tags[base:saw;base:smallsaw;base:crudesaw] mode:keep flags[MayDegradeLight],
@@ -126,7 +126,7 @@ recipe:Load("MakeBoneShoulderArmor", newInputs)
 -- MAKEBONETHIGHARMOR
 -- ============================
 local newInputs = [[{ inputs {
-            item 3 [Base.AnimalBone;LabItems.LabRegularHumanBone;LabItems.LabRegularHumanBoneWP] flags[Prop2],
+            item 3 [Base.AnimalBone;LabItems.LabRegularHumanBoneWP] flags[Prop2],
             item 2 [Base.LeatherStrips] mode:destroy,
             item 1 tags[base:sharpknife] mode:keep flags[IsNotDull;MayDegradeLight;Prop1],
             item 1 tags[base:saw;base:smallsaw;base:crudesaw] mode:keep flags[MayDegradeLight],
@@ -156,7 +156,7 @@ recipe:Load("MakeBoneArmoredGloves", newInputs)
 -- ============================
 local newInputs = [[{ inputs {
             item 1 tags[base:saw;base:smallsaw;base:crudesaw;base:sharpknife;base:meatcleaver] mode:keep flags[MayDegradeLight],
-            item 1 [Base.JawboneBovide;Base.LargeAnimalBone;LabItems.LabHumanBoneLarge;LabItems.LabHumanBoneLargeWP] flags[Prop2],
+            item 1 [Base.JawboneBovide;Base.LargeAnimalBone;LabItems.LabHumanBoneLargeWP] flags[Prop2],
             item 1 tags[base:whetstone;base:file] mode:keep flags[MayDegradeLight],
 } }]]
 local recipe = getScriptManager():getCraftRecipe("MakeBoneHatchetHead")
@@ -168,7 +168,7 @@ recipe:Load("MakeBoneHatchetHead", newInputs)
 -- ============================
 local newInputs = [[{ inputs {
             item 1 tags[base:sharpknife;base:meatcleaver;base:saw;base:smallsaw;base:crudesaw] mode:keep flags[MayDegrade;IsNotDull],
-            item 1 [Base.AnimalBone;Base.LargeAnimalBone;LabItems.LabHumanBoneLarge;LabItems.LabHumanBoneLargeWP;LabItems.LabRegularHumanBone;LabItems.LabRegularHumanBoneWP] flags[InheritCondition],
+            item 1 [Base.AnimalBone;Base.LargeAnimalBone;LabItems.LabHumanBoneLargeWP;LabItems.LabRegularHumanBoneWP] flags[InheritCondition],
 } }]]
 local recipe = getScriptManager():getCraftRecipe("CarveFleshingTool")
 recipe:getInputs():clear()

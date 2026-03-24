@@ -1,5 +1,8 @@
 ContextMenu_FR = {
-
+	/*=======================================
+	TRANSLATIONS BY F3niix
+	========================================*/
+    
     ContextMenu_LabTestInfo = "Vérifier l’état",
     ContextMenu_LabTestInfoItems = "Vérifier les informations de l’objet",
     ContextMenu_LabClearWater = "Purifier avec des comprimés de chlore",

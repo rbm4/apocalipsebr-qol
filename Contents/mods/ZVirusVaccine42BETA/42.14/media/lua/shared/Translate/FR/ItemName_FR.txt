@@ -1,4 +1,8 @@
 ItemName_FR = {
+	/*=======================================
+	TRANSLATIONS BY F3niix
+	========================================*/
+
     /* ÉQUIPEMENT / DÉCOR DE LABORATOIRE */
     ItemName_LabItems.LabMicroscope = "Microscope",
     ItemName_LabItems.LabChromatograph = "Chromatographe",
@@ -107,21 +111,4 @@ ItemName_FR = {
     ItemName_LabItems.LabRegularHumanBoneWP = "Os humains moyens",
 
     /* SERA SUPPRIMÉ DANS LES FUTURES MISES À JOUR */
-    ItemName_LabItems.CmpTestTubeWithBloodCells = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpTestTubeWithBloodPlasma = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpTestTubeWithLeukocytes = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpFlaskWithAntibodies = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.LabFlaskWithPurifiedWater  = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpFlaskWithBloodPlasma = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpFlaskWithBloodCells = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpFlaskWithLeukocytes = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpTestTubeWithAntibodies = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.LabFlaskWater = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpFlaskWithSodiumHypochlorite = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpFlaskWithAmmoniumSulfate = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpFlaskWithHydrogenPeroxide = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpTestTubeWithInfectedBlood = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.CmpTestTubeWithTaintedBlood = "MISE À JOUR DE CET OBJET",
-    ItemName_LabItems.LabDebugger = "Débug",
-
 }

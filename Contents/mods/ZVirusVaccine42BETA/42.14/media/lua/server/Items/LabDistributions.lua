@@ -7,11 +7,11 @@ require "Items/Distribution_BagsAndContainers"
 require "Vehicles/VehicleDistributions"
 
 local T = require "Items/LabDistributions_Tables"
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
---==============================
+local function ApplyDistributions()
+
 -- SANDBOXVARS
---==============================
-
 local _sb = SandboxVars.ZombieVirusVaccineBETA or {}
 
 local function getLootMultiplier(option)
@@ -41,23 +41,20 @@ local function debugPrint(...)
     if debugMode == true then print("[ZVirusVaccine]", ...) end
 end
 
---[[
-print("========================================")
-print("[ZVirusVaccine] READING RAW SANDBOX SETTINGS...")
-print("========================================")
-print("World Loot:", SandboxVars.ZombieVirusVaccineBETA.EnableWorldLoot)
-print("Light Paints:", SandboxVars.ZombieVirusVaccineBETA.EnableLightPaints)
-print("Expand Chemicals Loot:", SandboxVars.ZombieVirusVaccineBETA.ExpandChemicalsLoot)
-print("Vehicle Loot:", SandboxVars.ZombieVirusVaccineBETA.EnableVehicleLoot)
-print("Bags Loot:", SandboxVars.ZombieVirusVaccineBETA.EnableBagsLoot)
-print("Debug Mode:", SandboxVars.ZombieVirusVaccineBETA.DebugMode)
-print("Chemicals Multiplier:", SandboxVars.ZombieVirusVaccineBETA.LootChemicals)
-print("Syringes Multiplier:", SandboxVars.ZombieVirusVaccineBETA.LootSyringes)
-print("Equipment Books Multiplier:", SandboxVars.ZombieVirusVaccineBETA.LootEquipmentBooks)
-print("Virology Books Multiplier:", SandboxVars.ZombieVirusVaccineBETA.LootVirologyBooks)
-print("Virology Books Spawn Mode:", SandboxVars.ZombieVirusVaccineBETA.VirologyBooksSpawnMode)
-print("========================================")
-print("[ZVirusVaccine] READING LOCAL SANDBOX SETTINGS:")
+if enableWorldLoot then
+    if virologyBooksSpawnMode == 1 then
+        spawnModePrint = "EXPANDED"
+    elseif virologyBooksSpawnMode == 2 then
+        spawnModePrint = "STANDARD"
+    elseif virologyBooksSpawnMode == 3 then
+        spawnModePrint = "FULL SPAWN"
+    else
+        spawnModePrint = "UNKNOWN (" .. tostring(virologyBooksSpawnMode) .. ")"
+    end
+else
+    spawnModePrint = "OFF (World Loot Disabled)"
+end
+print("[ZVirusVaccine] READING LOCAL SANDBOX LOOT SETTINGS:")
 print("========================================")
 print("World Loot:", enableWorldLoot)
 print("Light Paints:", enableLightPaints)
@@ -69,13 +66,10 @@ print("Chemicals Multiplier:", chemicalsMultiplier)
 print("Syringes Multiplier:", syringesMultiplier)
 print("Equipment Books Multiplier:", equipmentBooksMultiplier)
 print("Virology Books Multiplier:", virologyBooksMultiplier)
-print("Virology Books Spawn Mode:", virologyBooksSpawnMode)
+print("Virology Books Spawn Mode:", spawnModePrint)
 print("========================================")
-]]
---==============================
--- FUNÇÕES AUXILIARES
---==============================
 
+-- FUNÇÕES AUXILIARES
 local function addCategoryToTables(tables, items, multiplier)
     if not enableWorldLoot or multiplier <= 0 then return end
 
@@ -149,10 +143,7 @@ local function applyVehicleCategory(containerTable, items, multiplier)
     end
 end
 
---==============================
 -- APLICAÇÃO DO LOOT PADRÃO
---==============================
-
 addCategoryToTables(T.chemicalsTables,       T.chemicalItems,                 chemicalsMultiplier)
 addCategoryToTables(T.syringesTables,        {"LabItems.LabSyringe"},         syringesMultiplier)
 addCategoryToTables(T.syringePackTables,     {"LabItems.LabSyringePack"},     syringesMultiplier)
@@ -162,36 +153,33 @@ addCategoryToTables(T.equipmentBookTables,   T.labEquipmentBooks,             eq
 addCategoryToTables(T.chemistryCourseTables, {"LabBooks.BkChemistryCourse"},  virologyBooksMultiplier)
 addCategoryToTables(T.virologyBooksTables,   T.labVirologybooks,              virologyBooksMultiplier)
 
--- spawn de livros de virologia (modo sandbox)
+-- spawn de livros de virologia
 if enableWorldLoot == true and virologyBooksSpawnMode == 1 then
-    debugPrint("Virology Books Spawn Mode: EXPANDED")
+    debugPrint("[VIROLOGY BOOKS] EXPANDED")
     addCategoryToTables(T.virologyExpandedTables, T.bagVirologyBooks, virologyBooksMultiplier)
 elseif enableWorldLoot == true and virologyBooksSpawnMode == 3 then
-    debugPrint("Virology Books Spawn Mode: FULL SPAWN")
+    debugPrint("[VIROLOGY BOOKS] FULL SPAWN")
     addCategoryToTables(T.virologyBooksFullTables, T.bagVirologyBooks, virologyBooksMultiplier)
 else
-    debugPrint("Virology Books is in standard spawn mode. Skipping additional spawn points...")
+    debugPrint("[VIROLOGY BOOKS] STANDARD. Skipping additional spawn points...")
 end
 
--- spawn de revistas de tintas coloridas
 if enableWorldLoot == true and enableLightPaints then
-    debugPrint("Adding spawn points for Paint Lights Magazine...")
+    debugPrint("[MAGAZINE] Adding spawn points for Paint Lights Magazine...")
     addCategoryToTables(T.paintLightsTables, {"LabBooks.LabPaintLightsMag"}, equipmentBooksMultiplier)
 else
-    debugPrint("Paint Lights Magazine spawn points disabled. Players won't be able to craft colored light bulbs.")
+    debugPrint("[MAGAZINE] DISABLED. Players won't be able to craft colored light bulbs.")
 end
 
--- spawn expandido de produtos químicos
 if enableWorldLoot == true and expandChemicalsLoot then
-    debugPrint("Adding additional spawn points for Lab Chemicals...")
+    debugPrint("[CHEMICALS] EXPANDED. Adding additional spawn points...")
     addCategoryToTables(T.expandedChemicalsTables, T.chemicalItems, chemicalsMultiplier)
 else
-    debugPrint("Additional Lab Chemicals spawn points DISABLED. Skipping additional spawn points...")
+    debugPrint("[CHEMICALS] Aditional spawn points DISABLED. Skipping...")
 end
 
--- spawn em veículos
 if enableWorldLoot == true and enableVehicleLoot then
-    debugPrint("Adding spawn points for Vehicle Distributions...")
+    debugPrint("[VEHICLE] Adding spawn points for Vehicle Distributions...")
     applyVehicleCategory(T.vehicleEquipmentContainers, T.labEquipmentBooks, equipmentBooksMultiplier)
     applyVehicleCategory(T.medicalVehicleContainers,   T.medicalItems,      syringesMultiplier)
 
@@ -201,35 +189,41 @@ if enableWorldLoot == true and enableVehicleLoot then
 
     if virologyBooksSpawnMode == 3 or virologyBooksSpawnMode == 1 then
         applyVehicleCategory(T.medicalVehicleContainers, T.bagVirologyBooks, virologyBooksMultiplier)
-        debugPrint("Virology Books Spawning in vehicles...")
+        debugPrint("[VIROLOGY BOOKS] Spawning in vehicles...")
     end
 
     if expandChemicalsLoot then
         applyVehicleCategory(T.vehicleChemicalContainers, T.chemicalItems, chemicalsMultiplier)
-        debugPrint("Additional Lab Chemicals spawning in vehicles...")
+        debugPrint("[CHEMICALS] spawning in vehicles...")
     end
 else
-    debugPrint("Vehicle Distributions spawn points DISABLED. Skipping additional spawn points...")
+    debugPrint("[VEHICLE] DISABLED. Skipping additional spawn points...")
 end
 
--- spawn em mochilas de sobreviventes
 if enableWorldLoot == true and enableBagsLoot then
     applyBagCategory(T.bagEquipmentBookTables, T.labEquipmentBooks, equipmentBooksMultiplier)
     applyBagIndividualItems({ SurvivorItems = true }, T.bagChemicalItems, chemicalsMultiplier)
-    debugPrint("Adding spawn points for survivor Bags...")
+    debugPrint("[BAGS] Adding spawn points for survivor Bags...")
 
     if virologyBooksSpawnMode == 3 then
         applyBagCategory(T.bagVirologyTables, T.bagVirologyBooks, virologyBooksMultiplier)
-        debugPrint("Virology Books Spawning in survivor Bags...")
+        debugPrint("[VIROLOGY BOOKS] Virology Books Spawning in survivor Bags...")
     end
 else
-    debugPrint("Bags spawn points DISABLED. Skipping additional spawn points...")
+    debugPrint("[BAGS] DISABLED. Skipping additional spawn points...")
 end
 
---==============================================
--- REMOÇÃO DE ITENS EM ZONAS RESTRITAS
---==============================================
+	if enableWorldLoot then
+		ItemPickerJava.Parse() -- Eis a cereja do bolo
+		print("========================================")
+		print("[ZVirusVaccine] Distributions applied and Java tables reloaded")
+		print("========================================")
+	end
+end
 
+Events.OnInitGlobalModData.Add(ApplyDistributions)
+
+-- REMOÇÃO DE ITENS EM ZONAS RESTRITAS
 T.restrictedZones[1].items = T.labVirologybooks
 
 local function buildItemLookup(itemList)
@@ -255,17 +249,21 @@ local function removeRestrictedItems(container, zone)
         local fullType = item:getFullType()
 
         if zone.itemLookup[fullType] then
-            debugPrint("[removeRestrictedItems] Removing item:", fullType)
+            if LabSandboxOptions.IsDebugMode() then
+                print("[removeRestrictedItems] Removing item:", fullType)
+            end
             container:Remove(item)
             sendRemoveItemFromContainer(container, item)
             removedCount = removedCount + 1
         end
     end
 
-    if removedCount > 0 then
-        debugPrint("[removeRestrictedItems] Zone:", zone.name,
+    if LabSandboxOptions.IsDebugMode() then
+        if removedCount > 0 then
+        print("[removeRestrictedItems] Zone:", zone.name,
             "| Container:", container:getType(),
             "| Removed:", removedCount)
+        end
     end
 end
 
@@ -288,7 +286,9 @@ local function restrictedZoneLootFilter(roomType, containerType, container)
         if z == zone.z and
            x >= zone.xMin and x <= zone.xMax and
            y >= zone.yMin and y <= zone.yMax then
-            debugPrint("[restrictedZoneLootFilter] Triggered in zone:", zone.name)
+            if LabSandboxOptions.IsDebugMode() then
+                print("[restrictedZoneLootFilter] Triggered in zone:", zone.name)
+            end
             removeRestrictedItems(container, zone)
         end
     end

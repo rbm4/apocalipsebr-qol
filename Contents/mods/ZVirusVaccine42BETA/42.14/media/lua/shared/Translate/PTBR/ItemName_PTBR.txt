@@ -141,6 +141,4 @@ ItemName_PTBR = {
     ItemName_LabItems.CmpTestTubeWithTaintedBlood = "Tubo com Sangue Coagulado",
     ItemName_LabItems.LabDebugger = "Debugger",
     */
-
-    ItemName_Base.HumanBrainHigh2 = "Cérebro de Infectado",
 }

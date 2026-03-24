@@ -2,8 +2,7 @@
 -- TimedAction para autopsia
 
 require "TimedActions/ISBaseTimedAction"
-
-local _sb = SandboxVars.ZombieVirusVaccineBETA or {}
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
 LabActionMakeAutopsy = ISBaseTimedAction:derive("LabActionMakeAutopsy")
 
@@ -115,24 +114,23 @@ function LabActionMakeAutopsy:getDuration()
     if self.character:isTimedActionInstant() then return 1 end
     
     -- Usar velocidade base do sandbox
-    local time = _sb.AutopsySpeed or 1200
+    local time = LabSandboxOptions.GetAutopsyBaseSpeed()
 
     -- Redução por nível de Primeiros Socorros
     local perk = self.character:getPerkLevel(Perks.Doctor)
     if perk > 1 then
-        local reduction = _sb.TicksDecreasedByPerkLv or 30
+        local reduction = LabSandboxOptions.GetTicksDecreasedByPerkLevel()
         time = time - (perk - 1) * reduction
     end
 
-    -- Bônus de profissão (Doctor = 15% mais rápido)
+    -- Bônus de profissão (Doctor = 20% mais rápido)
     if self.character:getDescriptor():getCharacterProfession() == CharacterProfession.DOCTOR then
-        time = math.floor(time * 0.85)
+        time = math.floor(time * 0.80)
     end
 
     -- Bônus da mesa de autópsia
     if self.top then
-        -- TableSpeedBonus: enum 1-7, default 6 → (value-1)*10 = % de redução
-        local bonusPercent = ((_sb.TableSpeedBonus or 6) - 1) * 10
+        local bonusPercent = LabSandboxOptions.GetTableSpeedBonusPercent()
         local multiplier = 1.0 - (bonusPercent / 100)
         time = math.floor(time * multiplier)
     end
@@ -145,6 +143,15 @@ function LabActionMakeAutopsy:getDuration()
     -- Mod RLP
     if _G.RLPTraitEffects then
         time = _G.RLPTraitEffects.ModifyAutopsyDuration(self.character, time)
+    end
+
+    -- Bônus de Science +1% de velocidade por nível (1-10)
+    if Perks and Perks.Science then
+        local scienceLevel = self.character:getPerkLevel(Perks.Science)
+        if scienceLevel > 0 then
+            local scienceMultiplier = 1.0 - (scienceLevel * 0.01)
+            time = math.floor(time * scienceMultiplier)
+        end
     end
 
     return math.max(1, time)

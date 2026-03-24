@@ -1,14 +1,13 @@
--- Override the inventory context menu for lab fluid containers
--- When using the "pour out" option on lab items, it returns the dirty version.
--- However, the "empty" and "transfer" context menu does not handle this, so we need to override it here.
--- It won't prevent players from selecting other vanilla/modded conteiners and selecting "transfer" to pour lab fluids into them,
--- but at least it removes the obvious option.
--- Also I can add debug options to add lab fluids directly for testing.
+-- We hook into vanilla functions to override the inventory context menu for lab fluid containers.
+-- I can add debug options to add lab fluids directly for testing.
+-- Also overrides the empty action to add a dirty variant of the item.
+-- Personally I think this makes the mod very fragile between official updates, because we mess with vanilla code that might change, like it did last time.
+-- But I do love logical things, and having LabTestTubes and LabFlasks that can actually contain fluids and be emptied returning dirty version is just too good to pass up. So here we are.
 
--- TIS MADE CHANGES IN THEIR CODE. THIS BROKE THE CODE. I DO NOT HAVE TIME TO LOOK INTO IT NOW, SO I AM COMMENTING OUT THIS ENTIRE FILE TO PREVENT CRASHES. I WILL REWORK THIS LATER.
---[[
+require "Util/LabSharedUtils"
+
 local LAB_ITEMS = {
-    ["LabItems.LabFlask"] = true,
+    ["LabItems.LabFlask"]    = true,
     ["LabItems.LabTestTube"] = true,
 }
 
@@ -25,63 +24,66 @@ local LAB_FLUIDS = {
     "TaintedBlood",
 }
 
-local Original_ContextFluidContainer = ISInventoryMenuElements.ContextFluidContainer
-
-function ISInventoryMenuElements.ContextFluidContainer()
-    local self = Original_ContextFluidContainer()
-
-    local originalCreateMenu = self.createMenu
-
-    function self.addDebugFluid(_p, cont, fluid)
-        cont:Empty()
-        cont:addFluid(fluid, cont:getCapacity())
+local function labEmptyFluidContainer(playerObj, owner)
+    local fluidType = ""
+    if owner:hasComponent(ComponentType.FluidContainer) then
+        local fc = owner:getFluidContainer()
+        if fc and fc:getPrimaryFluid() then
+            fluidType = fc:getPrimaryFluid():getFluidTypeString()
+        end
     end
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, owner, true)
+    ISTimedActionQueue.add(LabActionEmptyFluid:new(playerObj, owner, fluidType)) -- calls our very own empty action, not the vanilla one.
+end
 
-    function self.createMenu(_item)
-        if instanceof(_item, "InventoryItem") and LAB_ITEMS[_item:getFullType()] then
-            local cont = _item:getFluidContainer()
-                or (_item:getWorldItem() and _item:getWorldItem():getFluidContainer())
+local function labAddDebugFluid(cont, fluidName)
+    cont:Empty()
+    cont:addFluid(fluidName, cont:getCapacity())
+    if isServer() then
+        cont:syncItemFields()
+    end
+end
 
-            if cont and cont:canPlayerEmpty() then
-                local parent = self.invMenu.context:addOption(
-                    _item:getDisplayName(),
-                    self.invMenu,
-                    nil
-                )
-                parent.itemForTexture = _item
-
-                local subMenu = ISContextMenu:getNew(self.invMenu.context)
-                self.invMenu.context:addSubMenu(parent, subMenu)
-
-                subMenu:addOption(getText("Fluid_Show_Info"), self.invMenu, self.showInfo, cont)
-
-                -- DEBUG APENAS COM FLUIDOS DO MOD
-                if getDebug() then
-                    local addFluidOption =
-                        subMenu:addDebugOption(getText("ContextMenu_AddFluid"), nil, nil)
-
-                    local addFluidSubMenu = ISContextMenu:getNew(subMenu)
-                    subMenu:addSubMenu(addFluidOption, addFluidSubMenu)
-
-                    for _, fluidName in ipairs(LAB_FLUIDS) do
-                        addFluidSubMenu:addOption(
-                            fluidName,
-                            self.invMenu,
-                            self.addDebugFluid,
-                            cont,
-                            fluidName
-                        )
-                    end
-                end
-            end
-
-            return
+labHook(ISFluidContainerMenu, {
+    createMenu = function(orig, context, item, waterContainer, playerObj)
+        local owner = item or waterContainer
+        if not owner or not instanceof(owner, "InventoryItem") then
+            return orig(context, item, waterContainer, playerObj)
         end
 
-        -- fallback vanilla
-        originalCreateMenu(_item)
-    end
+        if not LAB_ITEMS[owner:getFullType()] then
+            return orig(context, item, waterContainer, playerObj)
+        end
 
-    return self
-end
-]]
+        -- item de lab constrói menu próprio
+        local cont = owner:getFluidContainer()
+            or (owner:getWorldItem() ~= nil and owner:getWorldItem():getFluidContainer())
+
+        if not cont or not cont:canPlayerEmpty() then
+            return orig(context, item, waterContainer, playerObj)
+        end
+
+        local option = context:addOption(getText("ContextMenu_Fluid"), nil)
+        option.iconTexture = getTexture("Item_WaterDrop")
+        local subMenu = ISContextMenu:getNew(context)
+        context:addSubMenu(option, subMenu)
+
+        local contWrapper = ISFluidContainer:new(cont)
+        subMenu:addOption(getText("Fluid_Show_Info"), playerObj, ISFluidContainerMenu.showInfo, contWrapper)
+        subMenu:addOption(getText("Fluid_Transfer_Fluids"), playerObj, ISFluidContainerMenu.transferFluids, contWrapper)
+
+        if not cont:isEmpty() then
+            subMenu:addOption(getText("Fluid_Empty"), playerObj, labEmptyFluidContainer, owner)
+        end
+
+        if getDebug() then
+            local addFluidOption = subMenu:addDebugOption(getText("ContextMenu_AddFluid"), nil, nil)
+            local addFluidSubMenu = ISContextMenu:getNew(subMenu)
+            subMenu:addSubMenu(addFluidOption, addFluidSubMenu)
+
+            for _, fluidName in ipairs(LAB_FLUIDS) do
+                addFluidSubMenu:addOption(fluidName, cont, labAddDebugFluid, fluidName)
+            end
+        end
+    end
+})

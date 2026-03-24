@@ -1,0 +1,103 @@
+IGUI_RU = {
+    IGUI_CraftCategory_Equipment = "Оборудование",
+    IGUI_CraftCategory_Decorations = "Декорация",
+    IGUI_CraftCategory_Chemistry = "Химия",
+    IGUI_CraftCategory_Other = "Другое",
+
+    IGUI_PlayerText_NeedSpectrometer = "Мне нужен Спектрометр для этого.",
+    IGUI_PlayerText_InvalidSample = "Этот образец не подходит.",
+
+    IGUI_PlayerText_PainFromNeedle1 = "Ох! Кажется задело.",
+    IGUI_PlayerText_PainFromNeedle2 = "Аргх… чёртова игла.",
+    IGUI_PlayerText_PainFromNeedle3 = "Уфф… ненавижу уколы.",
+    IGUI_PlayerText_PainFromNeedle4 = "Сука… ну и больно!",
+    IGUI_PlayerText_PainFromNeedle5 = "Ай! Поаккуратнее нельзя?",
+    
+    IGUI_PlayerText_AutopsyInfected1 = "Ммм, свеженький. Аж урчит внутри. Прелесть.",
+    IGUI_PlayerText_AutopsyInfected2 = "Ну надо же… живой образец, ещё и кусается.",
+    IGUI_PlayerText_AutopsyInfected3 = "Шустрый покойник. Пусть за аренду платит.",
+    IGUI_PlayerText_AutopsyInfected4 = "Ого… чересчур живой для трупа. Если вскочит — я сваливаю.",
+    IGUI_PlayerText_AutopsyInfected5 = "Образец добыт. Мои конечности при мне — уже победа.",
+
+    IGUI_PlayerText_AutopsyTainted1 = "Фу… это похоже на прошлогоднее варенье.",
+    IGUI_PlayerText_AutopsyTainted2 = "Прекрасно… желе вместо крови. В пробирку такое не наберешь.",
+    IGUI_PlayerText_AutopsyTainted3 = "Чёрт возьми. Такое в лаборатории не приняли бы даже в качестве мусора",
+    IGUI_PlayerText_AutopsyTainted4 = "Мда… с душком. Никудышный экземпляр.",
+    IGUI_PlayerText_AutopsyTainted5 = "Сгустки, сгустки и… еще сгустки. Просто прелестно.",
+
+    IGUI_PlayerText_AutopsyNothing1 = "Пусто? Совсем? Тут даже на мазок не хватит.",
+    IGUI_PlayerText_AutopsyNothing2 = "Ни одной полезной капли… поздравляю, чемпион.",
+    IGUI_PlayerText_AutopsyNothing3 = "Сухо. Прямо как моё остроумие после пяти вскрытий.",
+    IGUI_PlayerText_AutopsyNothing4 = "Ноль образцов. Ноль пользы. И терпение уже на нуле.",
+    IGUI_PlayerText_AutopsyNothing5 = "Пусто. Пустая трата времени и надежды.",
+
+    IGUI_PlayerText_MorguePlace1 = "Так… на стол. В этот раз постарайся не упасть.",
+    IGUI_PlayerText_MorguePlace2 = "Поехали. Развлечение ещё то.",
+    IGUI_PlayerText_MorguePlace3 = "Так… размещаем. С любовью.",
+    IGUI_PlayerText_MorguePlace4 = "Доставлен. Вип-персона для некропроцедур.",
+    IGUI_PlayerText_MorguePlace5 = "Ну что ж… превращаем тебя в науку.",
+
+    IGUI_PlayerText_MorgueBodyPartCollected1 = "Боже… чем я вообще занимаюсь?",
+	IGUI_PlayerText_MorgueBodyPartCollected2 = "Честно? Укус зомби звучит привлекательнее этого.",
+	IGUI_PlayerText_MorgueBodyPartCollected3 = "Чуть не вырвало, но я доделал.",
+	IGUI_PlayerText_MorgueBodyPartCollected4 = "Это извращение… но работа есть работа.",
+	IGUI_PlayerText_MorgueBodyPartCollected5 = "Очень надеюсь, что результат оправдает этот кошмар.",
+
+    IGUI_PlayerText_MorgueClean1 = "Надо прибраться. Чтобы глаза не мозолило.",
+    IGUI_PlayerText_MorgueClean2 = "Пахнет хлоркой и разбитыми надеждами. Красота.",
+    IGUI_PlayerText_MorgueClean3 = "Вуаля… Почти прилично.",
+    IGUI_PlayerText_MorgueClean4 = "Гадость… но зато блестит.",
+    IGUI_PlayerText_MorgueClean5 = "Ноль бактерий. Имитация порядка завершена.",
+
+    IGUI_PlayerText_MorgueGetRemains1 = "Ладно… погнали эту биомассу на утиль.",
+    IGUI_PlayerText_MorgueGetRemains2 = "Брр… но кому-то же надо брать на себя ответственность.",
+    IGUI_PlayerText_MorgueGetRemains3 = "Расфасовано. Красота.",
+    IGUI_PlayerText_MorgueGetRemains4 = "Готово. Останки захоронены в мусорном баке. С почестями.",
+    IGUI_PlayerText_MorgueGetRemains5 = "Кошмар… если я к этому привыкну, убейте меня сразу.",
+
+    IGUI_PlayerText_MorgueNoContainer = "Нет контейнера. И куда мне это складывать? В карман?",
+
+    IGUI_PlayerText_MorgueRemoveCorpse1 = "Ладно… в мешок и с глаз долой.",
+    IGUI_PlayerText_MorgueRemoveCorpse2 = "Надо упаковать, пока он личностью не обзавёлся.",
+    IGUI_PlayerText_MorgueRemoveCorpse3 = "Труп утилизирован. Никакой эмоциональной привязанности.",
+    IGUI_PlayerText_MorgueRemoveCorpse4 = "Это не наука. Просто грязная работа.",
+    IGUI_PlayerText_MorgueRemoveCorpse5 = "Хоть стол освободился. Уже прогресс.",
+
+    IGUI_PlayerText_InvalidSample = "Образец? Да это просто мусор.",
+    
+    IGUI_PlayerText_TestPositive  = "Положительный. Инфекция только начинается."
+    IGUI_PlayerText_TestPositive1 = "Ну да… плохие новости, кто бы сомневался.",
+    IGUI_PlayerText_TestPositive2 = "Чудненько… сижу и жду летального исхода.",
+    IGUI_PlayerText_TestPositive3 = "Положительный. Класс. Именно тот диагноз, о котором я мечтал.",
+    IGUI_PlayerText_TestPositive4 = "Положительный. Спасибо, что предупредили до трупных пятен.",
+    IGUI_PlayerText_TestPositive5 = "Научный факт — я труп.",
+    IGUI_PlayerText_TestPositive6 = "Ну что сказать. Цифры не врут. Заражён."
+
+    IGUI_PlayerText_TestNegative1 = "Отрицательно. Это наука или мне просто подфартило?",
+    IGUI_PlayerText_TestNegative2 = "Отрицательно. Обломись, зараза.",
+    IGUI_PlayerText_TestNegative3 = "Отрицательно. ЙЕЕЕЕЕЕС!",
+    IGUI_PlayerText_TestNegative4 = "Отрицательно. Зря испугался.",
+    IGUI_PlayerText_TestNegative5 = "Отрицательно. Кто сказал, что меня легко убить?"
+    
+    IGUI_PlayerText_InfectionRate = "% прогресс заражения.",
+
+    IGUI_ItemCat_Laboratory = "Лаборатория",
+	IGUI_ItemCat_Decorations = "Декорации",
+	IGUI_ItemCat_HumanPart = "Часть человека",
+
+    IGUI_CraftingWindow_ZVirusVaccine42BETA:MuffleFurnace = "Муфельная Печь",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:ChemistrySet = "Химический Стол",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Chromatograph = "Хроматограф",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Spectrometer = "Спектрометр",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Microscope = "Микроскоп",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Centrifuge = "Центрифуга",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Workbench = "Верстак",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Easel = "Мольберт",
+
+    IGUI_PlayerText_AutopsyAlready1 = "Это тело уже исследовали...",
+    IGUI_PlayerText_AutopsyAlready2 = "От этого тела уже ничего не осталось для науки.",
+    IGUI_PlayerText_AutopsyAlready3 = "Это тело уже видело скальпель.",
+    IGUI_PlayerText_AutopsyAlready4 = "Ценные образцы уже забрали.",
+    IGUI_PlayerText_AutopsyAlready5 = "Объект изучен вдоль и поперёк.",
+    IGUI_PlayerText_AutopsyAlready6 = "Ну да, ну да. Конечно я тут что-то откопаю.",
+}

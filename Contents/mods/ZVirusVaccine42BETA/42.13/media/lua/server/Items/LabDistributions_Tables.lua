@@ -14,8 +14,8 @@ LabDistributionsTables.chemicalsTables = {
     SafehouseMedical_Mid = 30,
     SafehouseMedical_Late = 15,
     TestingLab = 50,
-    ArmyStorageMedical = 25,
-    BathroomShelf = 10,
+    ArmyStorageMedical = 10,
+    BathroomShelf = 5,
     DerelictHouseDrugs = 8,
     DoctorTools = 3,
     DrugShackDrugs = 8,
@@ -28,11 +28,11 @@ LabDistributionsTables.chemicalsTables = {
     CrateToolsOld = 10,
     DrugShackTools = 10,
     FireStorageTools = 5,
-    GarageTools = 12,
-    JanitorTools = 20,
+    GarageTools = 8,
+    JanitorTools = 12,
     LoggingFactoryTools = 12,
     PawnShopTools = 2,
-    StoreKitchenCleaning = 20,
+    StoreKitchenCleaning = 10,
     PoliceEvidence = 2,
     UniversityStorageScience = 50,
     ArmyBunkerMedical = 20,
@@ -452,7 +452,6 @@ LabDistributionsTables.restrictedZones = {
         yMin = 6930,
         yMax = 6940,
         z = -1,
-        -- items é preenchido em runtime no LabDistributions.lua usando labVirologybooks
     },
 
     -- Adicionar mais zonas aqui seguindo o formato acima, se necessário

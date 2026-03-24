@@ -1,4 +1,8 @@
 Sandbox_FR = {
+	/*=======================================
+	TRANSLATIONS BY F3niix
+	========================================*/
+    
     Sandbox_ZombieVirusVaccineBETA = "Zombie Virus Vaccine (BETA)",
     Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot = "Activer le butin mondial",
     Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot_tooltip = "Active ou désactive complètement l’apparition des objets du vaccin contre le virus zombie dans le monde.",
@@ -86,4 +90,12 @@ Sandbox_FR = {
     Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot = "Activer le butin dans les sacs des survivants"
     Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot_tooltip = "Active ou désactive l’apparition d’objets dans les sacs des survivants.",
 
+	Sandbox_ZombieVirusVaccineBETA_CollectPartXP = "XP d’Autopsie de Parties du Corps"
+	Sandbox_ZombieVirusVaccineBETA_CollectPartXP_tooltip = "<BHC>Modifier cette option affectera l'équilibrage du jeu. <RGB:1,1,1><LINE> Définit l'XP de base gagnée dans les compétences Boucherie et Premiers Secours."
+
+	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Chance de Base d’Obtenir un Cerveau en Condition Parfaite (%)"
+	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset_tooltip = "<BHC>Modifier cette option affectera l'équilibrage du jeu. <RGB:1,1,1><LINE> Définit la chance de base de collecter un cerveau en condition parfaite."
+
+	Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "Malus Hémophobie"
+	Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff_tooltip = "Définit le malus d’hémophobie appliqué lorsqu’un personnage avec le trait Hémophobe effectue une autopsie.<LINE> Affecte la chance d’obtenir un cerveau en condition parfaite."
 }

@@ -2,6 +2,7 @@
 -- Logica de teste de sangue (SERVER-ONLY)
 
 local BloodTestLogic = {}
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
 function BloodTestLogic.ProcessTest(player, itemType)
     if not player then return end
@@ -28,17 +29,15 @@ function BloodTestLogic.ProcessTest(player, itemType)
         if isInfected then
             local resultItem = inv:AddItem("LabItems.LabTestResultPositive")
             if resultItem then
-                local baseName = resultItem:getDisplayName()
+                local scriptItem = ScriptManager.instance:getItem("LabItems.LabTestResultPositive")
+                local baseName = Translator.getText(scriptItem:getDisplayName())
                 local customName = baseName .. " (" .. tostring(rate) .. "%)"
 
-                local resultMd = resultItem:getModData()
-                resultMd.CustomName = customName
+                resultItem:setName(customName)
+                resultItem:setCustomName(true)
 
-                if resultItem.syncItemModData then
-                    resultItem:syncItemModData()
-                end
-				
-				sendAddItemToContainer(inv, resultItem)
+                sendAddItemToContainer(inv, resultItem)
+                resultItem:syncItemFields()
             end
 
             finalResult = "Positive"
@@ -71,6 +70,9 @@ function BloodTestLogic.ProcessTest(player, itemType)
         triggerEvent("OnLabBloodTestComplete", player, finalResult, rate)
     end
 
+    if LabSandboxOptions.IsDebugMode() then
+        print("BloodTest: " .. finalResult .. (rate and " " .. rate .. "%" or ""))
+    end
     return finalResult
 end
 

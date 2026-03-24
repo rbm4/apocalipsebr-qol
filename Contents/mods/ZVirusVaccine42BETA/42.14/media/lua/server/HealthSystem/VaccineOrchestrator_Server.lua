@@ -26,6 +26,7 @@ local LabBloodAgingLogic = SafeRequire("HealthSystem/LabBloodAgingLogic_Server")
 local LabMorgueLogic = SafeRequire("HealthSystem/LabMorgueLogic_Server")
 local LabAlbuminLogic = SafeRequire("HealthSystem/LabAlbuminLogic_Server")
 local LabWaterPurification = SafeRequire("HealthSystem/LabWaterPurification_Server")
+local LabModRecipes = SafeRequire("HealthSystem/LabModRecipes_Server")
 
 print("[ZVirusVaccine] LOADED MODULES")
 print("[ZVirusVaccine] VaccineLogic: " .. tostring(VaccineLogic ~= nil))
@@ -36,10 +37,12 @@ print("[ZVirusVaccine] LabBloodAgingLogic: " .. tostring(LabBloodAgingLogic ~= n
 print("[ZVirusVaccine] LabMorgueLogic: " .. tostring(LabMorgueLogic ~= nil))
 print("[ZVirusVaccine] LabAlbuminLogic: " .. tostring(LabAlbuminLogic ~= nil))
 print("[ZVirusVaccine] LabWaterPurification: " .. tostring(LabWaterPurification ~= nil))
+print("[ZVirusVaccine] LabModRecipes: " .. tostring(LabModRecipes ~= nil))
 print("[ZVirusVaccine] ========================================")
-print("[ZVirusVaccine] MOD VERSION FOR: B42.14")
+print("[ZVirusVaccine] MOD VERSION FOR: B42.14/B42.15 - MARCH 16, 2026")
 
 local VaccineOrchestrator = {}
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
 local eventsRegistered = false
 
@@ -48,9 +51,7 @@ local function RegisterBloodAgingEvent()
         return 
     end
     
-    local sandbox = SandboxVars.ZombieVirusVaccineBETA
-    
-    if not sandbox then
+    if not SandboxVars.ZombieVirusVaccineBETA then
         Events.OnTick.Add(function()
             Events.OnTick.Remove(RegisterBloodAgingEvent)
             RegisterBloodAgingEvent()
@@ -58,10 +59,7 @@ local function RegisterBloodAgingEvent()
         return
     end
     
-    local enableBloodAging = sandbox.BloodAgingMode
-    enableBloodAging = (enableBloodAging == true)
-    
-    if enableBloodAging and LabBloodAgingLogic and LabBloodAgingLogic.AdjustBloodCondition then
+    if LabSandboxOptions.IsBloodAgingEnabled() and LabBloodAgingLogic and LabBloodAgingLogic.AdjustBloodCondition then
         Events.EveryTenMinutes.Add(LabBloodAgingLogic.AdjustBloodCondition)
         print("[ZVirusVaccine] Blood Aging Event Enabled")
     end
@@ -253,7 +251,6 @@ end
 ----- Events -----
 Events.OnClientCommand.Add(OnClientCommand)
 Events.EveryHours.Add(OnEveryHour)
-
 Events.OnGameStart.Add(RegisterBloodAgingEvent)
 
 if isServer() then

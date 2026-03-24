@@ -1,4 +1,8 @@
 Fluids_FR = {
+	/*=======================================
+	TRANSLATIONS BY F3niix
+	========================================*/
+    
 	/* CONTENEURS */
     Fluid_Container_FlaskLab = "Fiole",
     Fluid_Container_TestTubeLab = "Tube à essai",

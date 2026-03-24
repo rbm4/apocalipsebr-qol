@@ -1,4 +1,6 @@
 -- LabModRecipes_Server.lua
+local LabModRecipes = {}
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
 -- OnCreate Functions
 function Lab_Recipes_ChmCollectInfectedBlood(recipeData, character)
@@ -6,16 +8,16 @@ function Lab_Recipes_ChmCollectInfectedBlood(recipeData, character)
     if not inv then return end
 
     local newTube = inv:AddItem("LabItems.LabTestTube")
+    if not newTube then return end
     local fc = newTube:getFluidContainer()
+    if not fc then return end
 
     fc:Empty()
     fc:addFluid("InfectedBlood", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
+
+    sendAddItemToContainer(inv, newTube)
     if isServer() then
-        sendAddItemToContainer(inv, newTube)
+        newTube:syncItemFields()
     end
 end
 
@@ -24,16 +26,16 @@ function Lab_Recipes_OthClearWithChlorineTablets(recipeData, character)
     if not inv then return end
 
     local newTube = inv:AddItem("LabItems.LabFlask")
+    if not newTube then return end
     local fc = newTube:getFluidContainer()
+    if not fc then return end
 
     fc:Empty()
     fc:addFluid("PurifiedWater", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
+
+    sendAddItemToContainer(inv, newTube)
     if isServer() then
-        sendAddItemToContainer(inv, newTube)
+        newTube:syncItemFields()
     end
 end
 
@@ -47,11 +49,9 @@ function Lab_Recipes_DivideBloodIntoComponents(recipeData, character)
         if fc1 then
             fc1:Empty()
             fc1:addFluid("BloodPlasma", fc1:getCapacity())
-            plasmaFlask:syncItemFields()
-            sendItemStats(plasmaFlask)
-            
+            sendAddItemToContainer(inv, plasmaFlask)
             if isServer() then
-                sendAddItemToContainer(inv, plasmaFlask)
+                plasmaFlask:syncItemFields()
             end
         end
     end
@@ -62,11 +62,9 @@ function Lab_Recipes_DivideBloodIntoComponents(recipeData, character)
         if fc2 then
             fc2:Empty()
             fc2:addFluid("BloodCells", fc2:getCapacity())
-            cellsFlask:syncItemFields()
-            sendItemStats(cellsFlask)
-            
+            sendAddItemToContainer(inv, cellsFlask)
             if isServer() then
-                sendAddItemToContainer(inv, cellsFlask)
+                cellsFlask:syncItemFields()
             end
         end
     end
@@ -77,34 +75,16 @@ function Lab_Recipes_ChmMixFlaskOfSodiumHypochlorite(recipeData, character)
     if not inv then return end
 
     local newTube = inv:AddItem("LabItems.LabFlask")
+    if not newTube then return end
     local fc = newTube:getFluidContainer()
+    if not fc then return end
 
     fc:Empty()
     fc:addFluid("SodiumHypochlorite", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
+
+    sendAddItemToContainer(inv, newTube)
     if isServer() then
-        sendAddItemToContainer(inv, newTube)
-    end
-end
-
-function Lab_Recipes_ChmMixTestTubeOfSodiumHypochlorite(recipeData, character)
-    local inv = character:getInventory()
-    if not inv then return end
-
-    local newTube = inv:AddItem("LabItems.LabTestTube")
-    local fc = newTube:getFluidContainer()
-
-    fc:Empty()
-    fc:addFluid("SodiumHypochlorite", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
-    if isServer() then
-        sendAddItemToContainer(inv, newTube)
+        newTube:syncItemFields()
     end
 end
 
@@ -113,16 +93,16 @@ function Lab_Recipes_ChmMixFlaskOfAmmoniumSulfate(recipeData, character)
     if not inv then return end
 
     local newTube = inv:AddItem("LabItems.LabFlask")
+    if not newTube then return end
     local fc = newTube:getFluidContainer()
+    if not fc then return end
 
     fc:Empty()
     fc:addFluid("AmmoniumSulfate", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
+
+    sendAddItemToContainer(inv, newTube)
     if isServer() then
-        sendAddItemToContainer(inv, newTube)
+        newTube:syncItemFields()
     end
 end
 
@@ -131,16 +111,16 @@ function Lab_Recipes_ChmMixFlaskOfHydrogenPeroxide(recipeData, character)
     if not inv then return end
 
     local newTube = inv:AddItem("LabItems.LabFlask")
+    if not newTube then return end
     local fc = newTube:getFluidContainer()
+    if not fc then return end
 
     fc:Empty()
     fc:addFluid("HydrogenPeroxide", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
+
+    sendAddItemToContainer(inv, newTube)
     if isServer() then
-        sendAddItemToContainer(inv, newTube)
+        newTube:syncItemFields()
     end
 end
 
@@ -149,16 +129,16 @@ function Lab_Recipes_ChmExtractAntibodiesFromLeukocytes(recipeData, character)
     if not inv then return end
 
     local newTube = inv:AddItem("LabItems.LabTestTube")
+    if not newTube then return end
     local fc = newTube:getFluidContainer()
+    if not fc then return end
 
     fc:Empty()
     fc:addFluid("Antibodies", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
+
+    sendAddItemToContainer(inv, newTube)
     if isServer() then
-        sendAddItemToContainer(inv, newTube)
+        newTube:syncItemFields()
     end
 end
 
@@ -167,16 +147,16 @@ function Lab_Recipes_ChmExtractLeukocytesFromBloodCells(recipeData, character)
     if not inv then return end
 
     local newTube = inv:AddItem("LabItems.LabFlask")
+    if not newTube then return end
     local fc = newTube:getFluidContainer()
+    if not fc then return end
 
     fc:Empty()
     fc:addFluid("Leukocytes", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
+
+    sendAddItemToContainer(inv, newTube)
     if isServer() then
-        sendAddItemToContainer(inv, newTube)
+        newTube:syncItemFields()
     end
 end
 
@@ -184,129 +164,87 @@ function Lab_Recipes_ChmExtractBrainFromSkull(recipeData, character)
     local inv = character:getInventory()
     if not inv then return end
 
-    local roll = ZombRand(100)
+    local butchering = character:getPerkLevel(Perks.Butchering)
+    local firstAid   = character:getPerkLevel(Perks.Doctor)
+
+    local skillScore = (butchering * 2) + (firstAid * 2)
+
+    local prof     = character:getDescriptor():getCharacterProfession()
+    local isDoctor = (prof == CharacterProfession.DOCTOR)
+    local isIntern = _G.RLPTraitEffects and character:hasTrait(RLP.CharacterTrait.AUTOPSY_SPECIALIST) or false
+
+    local profBonus = 0
+    if isIntern then
+        profBonus = 30
+    elseif isDoctor then
+        profBonus = 18
+    end
+
+    local hemophobicDebuff = 0
+    if character:hasTrait(CharacterTrait.HEMOPHOBIC) then
+        hemophobicDebuff = -LabSandboxOptions.GetHemophobicDebuff()
+    end
+
+    local SQ = math.max(0, skillScore + profBonus + hemophobicDebuff)
+
+    local SQ_MAX, ceiling
+    if isIntern then
+        SQ_MAX  = 70
+        ceiling = 50
+    elseif isDoctor then
+        SQ_MAX  = 58
+        ceiling = 40
+    else
+        SQ_MAX  = 40
+        ceiling = 30
+    end
+
+    if Perks.Science then
+        local scienceLevel = character:getPerkLevel(Perks.Science)
+        if scienceLevel > 0 then
+            local scienceBonus = math.min(scienceLevel * 0.5, 5)
+            ceiling = ceiling + scienceBonus
+        end
+    end
+
+    local t            = math.min(SQ / SQ_MAX, 1.0)
+    local offset       = LabSandboxOptions.GetBrainHighOffset()
+    local chanceHigh   = offset + (t ^ 1.2) * (ceiling - offset)
+    local remaining    = 100 - chanceHigh
+    local midRatio     = 0.33 + (t ^ 0.8) * (0.57 - 0.33)
+    local chanceMedium = remaining * midRatio
+    local chanceLow    = remaining * (1 - midRatio)
+
+    local roll   = ZombRand(1000) / 10
     local chosen
 
-    if roll < 50 then
-        chosen = "LabItems.HumanBrainLow"
-    elseif roll < 80 then
+    if roll < chanceHigh then
+        chosen = "LabItems.HumanBrainHigh"
+    elseif roll < (chanceHigh + chanceMedium) then
         chosen = "LabItems.HumanBrainMid"
     else
-        chosen = "LabItems.HumanBrainHigh"
+        chosen = "LabItems.HumanBrainLow"
     end
 
     local newItem = inv:AddItem(chosen)
-
-    if isServer() then
+    if newItem then
         sendAddItemToContainer(inv, newItem)
     end
+
+    local baseXp = LabSandboxOptions.GetCollectPartXP()
+
+    local brainXpMultiplier = {
+        ["LabItems.HumanBrainHigh"] = 1.0,
+        ["LabItems.HumanBrainMid"]  = 0.6,
+        ["LabItems.HumanBrainLow"]  = 0.3,
+    }
+
+    local xpMult       = brainXpMultiplier[chosen]
+    local xpButchering = baseXp * xpMult
+    local xpDoctor     = math.floor(xpButchering * 0.5)
+
+    addXp(character, Perks.Butchering, xpButchering)
+    addXp(character, Perks.Doctor,     xpDoctor)
 end
 
-function Lab_Recipes_Lab_Recipes_ChmAddTransferBrainFluidLow(recipeData, character)
-    local inv = character:getInventory()
-    if not inv then return end
-
-    local newTube = inv:AddItem("LabItems.LabTestTube")
-    local fc = newTube:getFluidContainer()
-
-    fc:Empty()
-    fc:addFluid("BrainFluidLow", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
-    if isServer() then
-        sendAddItemToContainer(inv, newTube)
-    end
-end
-
-function Lab_Recipes_Lab_Recipes_ChmAddTransferBrainFluidMid(recipeData, character)
-    local inv = character:getInventory()
-    if not inv then return end
-
-    local newTube = inv:AddItem("LabItems.LabTestTube")
-    local fc = newTube:getFluidContainer()
-
-    fc:Empty()
-    fc:addFluid("BrainFluidMid", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
-    if isServer() then
-        sendAddItemToContainer(inv, newTube)
-    end
-end
-
-function Lab_Recipes_Lab_Recipes_ChmAddTransferBrainFluidHigh(recipeData, character)
-    local inv = character:getInventory()
-    if not inv then return end
-
-    local newTube = inv:AddItem("LabItems.LabTestTube")
-    local fc = newTube:getFluidContainer()
-
-    fc:Empty()
-    fc:addFluid("BrainFluidHigh", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
-    if isServer() then
-        sendAddItemToContainer(inv, newTube)
-    end
-end
-
--- TEMPORARY FUNCTIONS
-function Lab_Recipes_TradeOldItems3(recipeData, character)
-    local inv = character:getInventory()
-    if not inv then return end
-
-    local newTube = inv:AddItem("LabItems.LabFlask")
-    local fc = newTube:getFluidContainer()
-
-    fc:Empty()
-    fc:addFluid("BloodCells", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
-    if isServer() then
-        sendAddItemToContainer(inv, newTube)
-    end
-end
-
-function Lab_Recipes_TradeOldItems4(recipeData, character)
-    local inv = character:getInventory()
-    if not inv then return end
-
-    local newTube = inv:AddItem("LabItems.LabFlask")
-    local fc = newTube:getFluidContainer()
-
-    fc:Empty()
-    fc:addFluid("BloodPlasma", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
-    if isServer() then
-        sendAddItemToContainer(inv, newTube)
-    end
-end
-
-function Lab_Recipes_TradeOldItems2(recipeData, character)
-    local inv = character:getInventory()
-    if not inv then return end
-
-    local newTube = inv:AddItem("LabItems.LabTestTube")
-    local fc = newTube:getFluidContainer()
-
-    fc:Empty()
-    fc:addFluid("TaintedBlood", fc:getCapacity())
-    
-    newTube:syncItemFields()
-    sendItemStats(newTube)
-    
-    if isServer() then
-        sendAddItemToContainer(inv, newTube)
-    end
-end
+return LabModRecipes

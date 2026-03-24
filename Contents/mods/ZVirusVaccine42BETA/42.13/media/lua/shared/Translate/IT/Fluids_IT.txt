@@ -1,4 +1,9 @@
 Fluids_IT = {
+	/*=======================================
+	TRANSLATIONS BY AKAYN
+    Part was done using Claude for missing entries
+	========================================*/
+    
 	/* CONTAINERS */
     Fluid_Container_FlaskLab = "Beuta",
     Fluid_Container_TestTubeLab = "Provetta",

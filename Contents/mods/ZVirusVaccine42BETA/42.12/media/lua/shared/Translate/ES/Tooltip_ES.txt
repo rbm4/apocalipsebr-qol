@@ -1,0 +1,113 @@
+Tooltip_ES = {
+
+	/*----------------------------------------
+	-- EQUIPOS DE LABORATORIO
+	----------------------------------------*/
+
+	Tooltip_LabMicroscope = "Microscopio de mesa usado para analizar células y separar leucocitos de muestras sanguíneas.",
+	Tooltip_LabChromatograph = "Cromatógrafo simple utilizado para extraer anticuerpos y separar compuestos. Requiere una computadora cercana.",
+	Tooltip_LabSpectrometer = "Espectrómetro portátil usado para detectar la presencia del virus zombi en la sangre.",
+	Tooltip_LabChemistrySet = "Mesa de química utilizada para síntesis, mezclas y purificaciones.",
+	Tooltip_LabCentrifuge = "Centrífuga de laboratorio usada para separar sangre en plasma y células.",
+	Tooltip_LabMuffleFurnace = "Horno de alta temperatura usado para fundir vidrio y metales.",
+	Tooltip_LabWorkbench = "Mesa resistente para ensamblaje y mantenimiento de equipos.",
+	Tooltip_LabEasel = "Caballete utilizado para producir pósteres y placas ilustrativas.",
+
+	Tooltip_LabDecorSkeleton = "Modelo anatómico humano utilizado para fines didácticos.",
+	Tooltip_LabDecorVirusModel = "Modelo estilizado de un virus, usado como decoración científica.",
+	Tooltip_LabDecorCaduceus = "Símbolo médico clásico, usado como adorno.",
+	Tooltip_LabDecorWhiteboard = "Pizarra utilizada para anotaciones y fórmulas.",
+	Tooltip_LabPosterPeriodicTable = "Póster manuscrito de la tabla periódica.",
+	Tooltip_LabPosterSexyNurse = "Póster decorativo temático.",
+	Tooltip_LabPosterWashHands = "Póster educativo sobre higiene de manos.",
+	Tooltip_LabPosterBiohazard = "Póster de advertencia de riesgo biológico.",
+	Tooltip_LabPosterHumanBrain = "Póster ilustrativo del cerebro humano.",
+	Tooltip_LabNeonSignPharmacy = "Letrero de neón con símbolo de farmacia.",
+	Tooltip_LabNeonSignPizza = "Letrero de neón de una pizzería.",
+
+	/*----------------------------------------
+	-- MATERIALES Y CONTENCIÓN
+	----------------------------------------*/
+
+	Tooltip_LabSyringe = "Jeringa desechable estéril. Usada para inyecciones y recolección de sangre.",
+	Tooltip_LabSyringeReusable = "Jeringa de vidrio reutilizable. Puede esterilizarse.",
+	Tooltip_LabSyringeReusableUsed = "Jeringa reutilizable usada. Requiere esterilización.",
+	Tooltip_LabSyringePack = "Paquete con 10 jeringas desechables estériles.",
+	Tooltip_LabSyringeUsed = "Jeringa usada. No puede reutilizarse.",
+	Tooltip_LabTestTube = "Tubo de ensayo limpio para muestras biológicas.",
+	Tooltip_LabTestTubeDirty = "Tubo contaminado. Debe esterilizarse.",
+	Tooltip_LabFlask = "Frasco de laboratorio para almacenar líquidos y reactivos.",
+	Tooltip_LabFlaskWater = "Frasco con agua. Útil en reacciones químicas.",
+	Tooltip_LabFlaskDirty = "Frasco contaminado. Requiere esterilización.",
+	Tooltip_LabTestResultNegative = "Resultado de análisis sanguíneo: negativo para infección.",
+	Tooltip_LabTestResultPositive = "Resultado de análisis sanguíneo: positivo para infección.",
+	Tooltip_LabGarbageBagWithRemains = "Restos de cadáver almacenados en una bolsa resistente. Más seguro para desechar.",
+	Tooltip_LabPlasticBagWithRemains = "Restos de investigación biológica guardados en una bolsa plástica.",
+
+	/*----------------------------------------
+	-- MATERIALES CRUDOS
+	----------------------------------------*/
+
+	Tooltip_MatInfectedBlood = "Muestra fresca de sangre infectada por el virus zombi. Altamente inestable.",
+	Tooltip_MatTaintedBlood = "Muestra inutilizable de sangre coagulada.",
+	Tooltip_MatShatteredGlass = "Vidrio triturado. Puede fundirse nuevamente para fabricar recipientes.",
+
+	/*----------------------------------------
+	-- REACTIVOS QUÍMICOS
+	----------------------------------------*/
+
+	Tooltip_ChHydrochloricAcidCan = "Ácido clorhídrico concentrado. Manipular con extremo cuidado.",
+	Tooltip_ChSodiumHydroxideBag = "Hidróxido de sodio — reactivo básico para síntesis química.",
+	Tooltip_ChAmmonia = "Solución de amoníaco. Común en reacciones químicas y limpieza pesada.",
+	Tooltip_ChSulfuricAcidCan = "Ácido sulfúrico altamente corrosivo. Uso especializado.",
+
+	/*----------------------------------------
+	-- COMPUESTOS Y FLUIDOS INTERMEDIOS
+	----------------------------------------*/
+
+	Tooltip_CmpSyringeWithBlood = "Muestra de sangre recolectada con jeringa. Puede analizarse.",
+	Tooltip_CmpSyringeWithTaintedBlood = "Sangre coagulada, inutilizable para investigación.",
+	Tooltip_CmpTestTubeWithInfectedBlood = "Muestra purificada de sangre infectada. Material esencial para investigación.",
+	Tooltip_CmpFlaskWithBloodCells = "Suspensión concentrada de células sanguíneas.",
+	Tooltip_CmpFlaskWithBloodPlasma = "Plasma sanguíneo limpio — base para síntesis y medicamentos.",
+	Tooltip_CmpFlaskWithLeukocytes = "Leucocitos aislados — etapa esencial para obtener anticuerpos.",
+	Tooltip_CmpTestTubeWithAntibodies = "Anticuerpos purificados, listos para usarse en la síntesis de la cura.",
+	Tooltip_CmpFlaskWithSodiumHypochlorite = "Hipoclorito purificado — usado en vacunas y reactivos.",
+	Tooltip_CmpFlaskWithAmmoniumSulfate = "Sulfato de amonio — usado para precipitación biológica.",
+	Tooltip_CmpFlaskWithHydrogenPeroxide = "Peróxido de hidrógeno concentrado.",
+
+	/*----------------------------------------
+	-- MEDICAMENTOS Y TRATAMIENTOS
+	----------------------------------------*/
+
+	Tooltip_CmpAlbuminPills = "Albúmina purificada. Mejora la recuperación y prolonga los efectos de las vacunas.",
+	Tooltip_CmpChlorineTablets = "Tabletas purificadoras de agua.",
+
+	/*----------------------------------------
+	-- VACUNAS Y CURA
+	----------------------------------------*/
+
+	Tooltip_CmpSyringeWithPlainVaccine = "Vacuna simple. Retarda la progresión de la infección. No usar estando sano.",
+	Tooltip_CmpSyringeWithQualityVaccine = "Vacuna de calidad. Retarda la infección por más tiempo y tiene una pequeña posibilidad de cura.",
+	Tooltip_CmpSyringeWithAdvancedVaccine = "Vacuna avanzada. Proporciona fuerte resistencia temporal y una posibilidad moderada de cura.",
+	Tooltip_CmpSyringeWithCure = "CURA COMPLETA. Elimina definitivamente la infección viral.",
+
+	/*----------------------------------------
+	-- LIBROS
+	----------------------------------------*/
+
+	Tooltip_BkLaboratoryEquipment1 = "Guía técnica para la construcción de equipos de laboratorio.",
+	Tooltip_BkLaboratoryEquipment2 = "Manual para fabricar decoraciones científicas.",
+	Tooltip_BkLaboratoryEquipment3 = "Guía completa para el uso del horno de laboratorio.",
+	Tooltip_BkVirologyCourses1 = "Primeras notas del Dr. Hughson sobre anomalías sanguíneas observadas antes del incidente de Knox.<br>Enseña fundamentos de recolección y análisis biológico.",
+	Tooltip_BkVirologyCourses2 = "Notas confidenciales del Dr. Hughson.<br>Enseña metodologías avanzadas para crear vacunas y antivirales.",
+	Tooltip_BkChemistryCourse = "Supuestamente un libro básico de química, pero lleno de notas manuscritas sobre reactivos inestables usados en el laboratorio. No parece algo que debería circular.",
+
+	Tooltip_CmpFlaskWithAntibodies = "Anticuerpos purificados almacenados en un frasco — base para síntesis avanzadas.",
+	Tooltip_LabFlaskFilledWithBleach = "Frasco con lejía producida en laboratorio.",
+	Tooltip_LabFlaskFilledWithDisinfectant = "Frasco con desinfectante preparado en laboratorio.",
+	Tooltip_LabFlaskWithPurifiedWater = "Agua purificada lista para uso en reacciones químicas.",
+	Tooltip_LabMorgueTable = "Mesa de necropsia utilizada para autopsias y separación de restos biológicos.",
+
+
+}

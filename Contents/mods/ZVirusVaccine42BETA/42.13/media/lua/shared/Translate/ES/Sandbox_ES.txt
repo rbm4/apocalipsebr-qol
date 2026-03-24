@@ -1,4 +1,10 @@
 Sandbox_ES = {
+	/*=======================================
+	TRANSLATIONS BY ChatGPT --
+	If the translations are overly generic,
+	please be free to review and send new translations
+	========================================*/
+    
     Sandbox_ZombieVirusVaccineBETA = "Zombie Virus Vaccine (BETA)",
     Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot = "Activar Botín Global",
     Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot_tooltip = "Activa o desactiva por completo la aparición de objetos del Zombie Virus Vaccine en el mundo.",
@@ -85,5 +91,14 @@ Sandbox_ES = {
 
     Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot = "Activar Loot en Mochilas de Supervivientes"
     Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot_tooltip = "Activa o desactiva la aparición de objetos en mochilas de supervivientes."
+
+    Sandbox_ZombieVirusVaccineBETA_CollectPartXP = "XP de Autopsia de Partes del Cuerpo"
+	Sandbox_ZombieVirusVaccineBETA_CollectPartXP_tooltip = "<BHC>Cambiar esta opción afectará el equilibrio del juego. <RGB:1,1,1><LINE> Define la XP base obtenida en las habilidades de Butchering y First Aid."
+
+	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Probabilidad Base de Cerebro en Condiciones Perfectas (%)"
+	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset_tooltip = "<BHC>Cambiar esta opción afectará el equilibrio del juego. <RGB:1,1,1><LINE> Define la probabilidad base de recolectar un cerebro en condiciones perfectas."
+
+	Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "Penalización por Hemofobia"
+	Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff_tooltip = "Define la penalización por hemofobia aplicada cuando un personaje con el rasgo Hemofóbico realiza una autopsia.<LINE> Afecta la probabilidad de obtener un cerebro en condiciones perfectas."
 
 }

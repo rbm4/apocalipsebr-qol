@@ -2,6 +2,7 @@
 -- Funcoes para sincronizacao de sprites de mesas
 
 local LabSpriteSynchHandler = {}
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
 function LabSpriteSynchHandler.MorgueTableSwap(top, bottom, targetStatus)
     if not top or not bottom or not targetStatus then return end

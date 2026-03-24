@@ -86,5 +86,12 @@ Sandbox_PTBR = {
     Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot = "Ativar Loot em Mochilas de Sobreviventes"
     Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot_tooltip = "Ativa ou desativa o spawn de itens em mochila de sobreviventes."
 
-    
+    Sandbox_ZombieVirusVaccineBETA_CollectPartXP = "XP de Autópsia de Partes do Corpo"
+    Sandbox_ZombieVirusVaccineBETA_CollectPartXP_tooltip = "<BHC>Alterar essa opção afetará o balanceamento do jogo. <RGB:1,1,1><LINE> Define a quantidade de XP base recebida nas habilidades de butchering e primeiros socorros"
+
+    Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Chance Base Para Cérebro em Perfeitas Condições (%)"
+    Sandbox_ZombieVirusVaccineBETA_BrainHighOffset_tooltip = "<BHC>Alterar essa opção afetará o balanceamento do jogo. <RGB:1,1,1><LINE> Define a chance base para a coleta de um cérebro em perfeitas condições."
+
+    Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "Debuff Hemofóbico"
+    Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff_tooltip = "Define a penalidade de hemofobia, que é aplicada quando um personagem com a trait Hemofóbico realiza uma autópsia <LINE> Afeta a chance de obter um cérebro em perfeitas condições."
 }

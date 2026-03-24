@@ -3,8 +3,7 @@
 
 local LabAutopsyLogic = {}
 local LabSpriteSynchHandler = require("HealthSystem/LabSpriteSynchHandler_Server")
-
-local _sb = SandboxVars.ZombieVirusVaccineBETA or {}
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
 local function MarkCorpseAsAutopsied(corpseX, corpseY, corpseZ, corpseId)
     if not corpseX or not corpseY or not corpseZ then
@@ -187,10 +186,15 @@ function LabAutopsyLogic.ProcessAutopsy(player, isOnTable, corpseId, topX, topY,
     local inv = player:getInventory()
     local prof = player:getDescriptor():getCharacterProfession()
     local isDoctor = (prof == CharacterProfession.DOCTOR)
+	local scienceLevel = 0
+	
+	if Perks.Science then
+		scienceLevel = player:getPerkLevel(Perks.Science) -- Science, bitch!
+	end
 
     local xp = isOnTable
-        and (_sb.AutopsyTableXP or 30)
-        or  (_sb.AutopsyGroundXP or 15)
+        and LabSandboxOptions.GetAutopsyTableXP()
+        or  LabSandboxOptions.GetAutopsyGroundXP()
 
     local xpMultiplier = 1.0
 
@@ -199,36 +203,72 @@ function LabAutopsyLogic.ProcessAutopsy(player, isOnTable, corpseId, topX, topY,
     end
 
     if isDoctor then
-        xpMultiplier = xpMultiplier * 1.15
+        xpMultiplier = xpMultiplier * 1.10
     end
 
     xp = xp * xpMultiplier
-    addXp(player, Perks.Doctor, xp)
 
-    if isOnTable then
-        local sampleCount = isDoctor and 4 or 3
+    if isOnTable then        local sampleCount = isDoctor and 4 or 3
 
         if _G.RLPTraitEffects then
             sampleCount = _G.RLPTraitEffects.ModifyAutopsySampleCount(player, sampleCount)
         end
+		
+		if scienceLevel > 0 then
+			local extraChance = math.min(scienceLevel * 3, 30)
 
+			if ZombRand(100) < extraChance then
+				sampleCount = sampleCount + 1
+			end
+		end
+
+        -- Chance dinâmica de sangue infectado na mesa
+        -- Base: 50%
+        -- +1% por nível de First Aid (máx +10%)
+        -- +5% se Doctor
+        -- +15% se Estagiário
+        -- -5% se Hemofóbico
+        local firstAidLevel = player:getPerkLevel(Perks.Doctor)
         local infectedChance = 50
-        
+        infectedChance = infectedChance + firstAidLevel  -- +1% por nível
+
+        if isDoctor then
+            infectedChance = infectedChance + 5
+        end
+
+        if player:hasTrait(CharacterTrait.HEMOPHOBIC) then
+            infectedChance = infectedChance - 5
+        end
+
         if _G.RLPTraitEffects then
             infectedChance = _G.RLPTraitEffects.ModifyAutopsyInfectedBloodChance(player, infectedChance)
         end
+        
+		if LabSandboxOptions.IsDebugMode() then -- desn't really necessary
+            print("========== AUTOPSY TABLE DEBUG ==========")
+            print("First Aid Level  :", firstAidLevel)
+            print("Is Doctor        :", isDoctor)
+            print("Is Intern        :", _G.RLPTraitEffects and player:hasTrait(RLP.CharacterTrait.AUTOPSY_SPECIALIST) or false)
+            print("Is Hemophobic    :", player:hasTrait(CharacterTrait.HEMOPHOBIC))
+            print("Infected Chance  :", infectedChance .. "%")
+            print("Tainted Chance   :", (100 - infectedChance) .. "%")
+            print("==========================================")
+        end
 
         local hasInf, hasTnt = false, false
+        local xpPerSample = xp / sampleCount  -- XP base dividida por amostra
 
         for i = 1, sampleCount do
             if ZombRand(100) < infectedChance then
                 local it = inv:AddItem("LabItems.MatInfectedBlood")
                 if it then sendAddItemToContainer(inv, it) end
                 hasInf = true
+                addXp(player, Perks.Doctor, xpPerSample * 1.3)  -- amostra boa = +30%
             else
                 local it = inv:AddItem("LabItems.MatTaintedBlood")
                 if it then sendAddItemToContainer(inv, it) end
                 hasTnt = true
+                addXp(player, Perks.Doctor, xpPerSample * 0.8)  -- amostra ruim = -20%
             end
         end
 
@@ -261,17 +301,123 @@ function LabAutopsyLogic.ProcessAutopsy(player, isOnTable, corpseId, topX, topY,
                 end
             end
         end
-
     else
-        if ZombRand(100) < 40 then
-            local it = inv:AddItem("LabItems.MatInfectedBlood")
-            if it then sendAddItemToContainer(inv, it) end
-            finalResult = "Infected"
-        elseif ZombRand(100) < 60 then
-            local it = inv:AddItem("LabItems.MatTaintedBlood")
-            if it then sendAddItemToContainer(inv, it) end
-            finalResult = "Tainted"
+
+        -- PROBABILIDADE DINÂMICA (CHÃO)
+        local baseInfected = 40
+        local baseTainted  = 36
+        local baseNothing  = 24
+
+        local firstAidLevel = player:getPerkLevel(Perks.Doctor)
+
+		-- Redução por First Aid
+		local skillReduction = 1.2 * firstAidLevel
+
+		-- Science reduz apenas Nothing
+		-- 0.5% por nível (máx 5)
+		local scienceReduction = scienceLevel * 0.5
+		local totalReduction = skillReduction + scienceReduction
+
+        -- Permite trait modificar
+        if _G.RLPTraitEffects then
+			totalReduction = _G.RLPTraitEffects.ModifyGroundAutopsyNothingReduction(player, totalReduction)
+		end
+
+        -- Clamp estrutural
+		if totalReduction > baseNothing then
+			totalReduction = baseNothing
+		end
+
+		-- Separar o que veio de skill e o que veio de science
+		local appliedSkillReduction   = math.min(skillReduction, totalReduction)
+		local appliedScienceReduction = totalReduction - appliedSkillReduction
+
+		-- Distribuição final
+		local finalNothing  = baseNothing - totalReduction
+
+		local finalInfected =
+			baseInfected + (appliedSkillReduction * 0.6) + appliedScienceReduction   -- 100% vai para infected
+
+		local finalTainted =
+			baseTainted + (appliedSkillReduction * 0.4)
+
+        if LabSandboxOptions.IsDebugMode() then
+            local hasSpecialist = _G.RLPTraitEffects and player:hasTrait(RLP.CharacterTrait.AUTOPSY_SPECIALIST) or false
+            print("========== AUTOPSY GROUND DEBUG ==========")
+            print("Chances Base:")
+            print("Infected:", baseInfected)
+            print("Tainted :", baseTainted)
+            print("Nothing :", baseNothing)
+
+            print("Profissao:", prof)
+            print("Trait Specialist:", hasSpecialist)
+            print("Nivel First Aid:", firstAidLevel)
+			print("Science Level:", scienceLevel)
+
+            print("Reducao Base (Skill):", skillReduction)
+            print("Reducao Total Aplicada:", totalReduction)
+
+            print("Probabilidades Finais:")
+            print("Infected:", finalInfected)
+            print("Tainted :", finalTainted)
+            print("Nothing :", finalNothing)
+
+            print("Soma Final:", finalInfected + finalTainted + finalNothing)
         end
+
+        local extraRolls = 1
+
+		if scienceLevel > 0 then
+			local extraChance = math.min(scienceLevel * 3, 30) -- Máx 30% de chance para +1 roll
+			if ZombRand(100) < extraChance then
+				extraRolls = 2
+			end
+		end
+
+		for i = 1, extraRolls do
+			local roll = ZombRand(100)
+			
+			if LabSandboxOptions.IsDebugMode() then
+				print("[AUTOPSY DEBUG] Roll:", roll)
+			end
+
+			if roll < finalInfected then
+				local it = inv:AddItem("LabItems.MatInfectedBlood")
+				if it then sendAddItemToContainer(inv, it) end
+				finalResult = "Infected"
+
+			elseif roll < (finalInfected + finalTainted) then
+				local it = inv:AddItem("LabItems.MatTaintedBlood")
+				if it then sendAddItemToContainer(inv, it) end
+				if finalResult ~= "Infected" then
+					finalResult = "Tainted"
+				end
+			end
+		end
+
+        if LabSandboxOptions.IsDebugMode() then
+            print("[AUTOPSY DEBUG] Final Result:", finalResult)
+            print("------------------------------------------------")
+        end
+    end
+
+    if LabSandboxOptions.IsDebugMode() then
+        print("[AUTOPSY DEBUG] Total XP Calc:", xp)
+    end
+    -- XP dinâmica por qualidade do resultado (chão apenas)
+    -- Na mesa a XP já foi dada por amostra individual no loop acima
+    if not isOnTable then
+        if finalResult == "Tainted" then
+            xp = xp * 0.5
+        elseif finalResult == "Nothing" then
+            xp = xp * 0.2
+        end
+
+        if LabSandboxOptions.IsDebugMode() then
+            print("[AUTOPSY DEBUG] XP Final:", xp, "| Resultado:", finalResult)
+        end
+
+        addXp(player, Perks.Doctor, xp)
     end
 
     if targetCorpse then

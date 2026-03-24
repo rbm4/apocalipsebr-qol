@@ -1,4 +1,10 @@
 Fluids_ES = {
+	/*=======================================
+	TRANSLATIONS BY ChatGPT --
+	If the translations are overly generic,
+	please be free to review and send new translations
+	========================================*/
+    
 	/* CONTENEDORES */
     Fluid_Container_FlaskLab = "Frasco",
     Fluid_Container_TestTubeLab = "Tubo de Ensayo",

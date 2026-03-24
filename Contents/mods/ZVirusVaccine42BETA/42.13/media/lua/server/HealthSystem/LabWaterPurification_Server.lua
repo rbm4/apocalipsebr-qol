@@ -3,15 +3,17 @@
 -- Só testei no microondas, não usei o fogão, mas deve funcionar também.
 
 local LabWaterPurification = {}
+local LabSandboxOptions = require("Util/LabSandboxOptions")
 
 -- CONFIGURAÇÃO
 local MIN_GAME_TEMPERATURE = 1.6  -- Temperatura mínima para purificação
 local PURIFICATION_TIME = 15      -- Minutos de jogo necessários
-local SCAN_RADIUS = 5             -- Raio de busca ao redor do jogador
+local SCAN_RADIUS = 10            -- Raio de busca ao redor do jogador
 
-
--- FUNÇÕES AUXILIARES
+-- FUNÇÕES
 local function isFlaskWithWater(item)
+	-- isso garante que só água dentro do frasco irá se tornar purificada
+	-- melhor evitar interferir com o sistema vanilla do jogo, isolando apenas ao item do mod
     if not item or item:getType() ~= "LabFlask" then 
         return false 
     end
@@ -64,26 +66,22 @@ local function purifyFlask(item)
     end
 end
 
--- Verifica se o container é uma fonte de calor válida
+-- Verifica se o container é uma fonte de calor válida.
 local function isHeatContainer(container)
     if not container or not container.getType then return false end
-
-    local ctype = container:getType()
-    if not ctype then return false end
-
-    ctype = string.lower(ctype)
-
+    local ctype = string.lower(container:getType() or "")
     return
         string.find(ctype, "stove") or
         string.find(ctype, "microwave") or
-        string.find(ctype, "oven")
+        string.find(ctype, "oven") or
+        string.find(ctype, "barbecuepropane") or
+		string.find(ctype, "campfire")
 end
 
 
 -- LÓGICA DE PURIFICAÇÃO
 local function processFlask(item, containerObj)
     if not isFlaskWithWater(item) then
-        -- Limpa estado se não é mais água
         local md = item:getModData()
         if md and md.PurificationEndTime then
             md.PurificationEndTime = nil
@@ -94,7 +92,6 @@ local function processFlask(item, containerObj)
         return
     end
     
-    -- Obtém o ItemContainer do objeto
     local container = containerObj and containerObj.getContainer and containerObj:getContainer()
     if not container then return end
     
@@ -105,8 +102,17 @@ local function processFlask(item, containerObj)
     elseif container.getTemperature then
         temperature = container:getTemperature()
     end
-    
+
+    -- Temperatura sobe acima de MIN_GAME_TEMPERATURE quando ligado, cai para ~1.0 quando apagado
+    if LabSandboxOptions.IsDebugMode() then
+        print("Container:", tostring(container.getType and container:getType() or "?"),
+            "| Temp:", tostring(temperature))
+    end
+
     if not temperature or temperature < MIN_GAME_TEMPERATURE then
+        if LabSandboxOptions.IsDebugMode() then
+            print("-> Temperatura insuficiente, ignorando.")
+        end
         return
     end
     

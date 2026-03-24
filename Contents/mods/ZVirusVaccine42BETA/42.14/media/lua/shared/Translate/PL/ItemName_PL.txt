@@ -1,0 +1,112 @@
+ItemName_PL = {
+	/*=======================================
+	TRANSLATIONS BY Ayako-Chan (Piotrek0909)
+	========================================*/
+    
+    /* EQUIPMENT / LAB DECOR */
+    ItemName_LabItems.LabMicroscope = "Mikroskop",
+    ItemName_LabItems.LabChromatograph = "Chromatograf",
+    ItemName_LabItems.LabSpectrometer = "Spektrometr",
+    ItemName_LabItems.LabChemistrySet = "Stół Chemiczny",
+    ItemName_LabItems.LabCentrifuge = "Wirówka",
+    ItemName_LabItems.LabMuffleFurnace = "Piec Muflowy",
+    ItemName_LabItems.LabWorkbench = "Warsztat",
+    ItemName_LabItems.LabEasel = "Sztaluga",
+    ItemName_LabItems.LabDecorSkeleton = "Szkielet Ozdobny",
+    ItemName_LabItems.LabDecorVirusModel = "Model Wirusa",
+    ItemName_LabItems.LabDecorCaduceus = "Kaduceusz",
+    ItemName_LabItems.LabDecorWhiteboard = "Tablica Suchościeralna",
+    ItemName_LabItems.LabPosterPeriodicTable = "Plakat z Układem Okresowym",
+    ItemName_LabItems.LabPosterSexyNurse = "Plakat z Seksowną Pielęgniarką",
+    ItemName_LabItems.LabPosterWashHands = "Plakat - Myj Ręce",
+    ItemName_LabItems.LabPosterBiohazard = "Plakat z Biohazardem",
+    ItemName_LabItems.LabPosterHumanBrain = "Plakat z Ludzkim Mózgiem",
+    ItemName_LabItems.LabNeonSignPharmacy = "Neonowa Reklama Apteki",
+    ItemName_LabItems.LabNeonSignPizza = "Neonowa Reklama Pizzy",
+    ItemName_LabItems.Mov_Morge1 = "Stół Sekcyjny (Część 1)",
+    ItemName_LabItems.Mov_Morge2 = "Stół Sekcyjny (Część 2)",
+
+    /* SYRINGES / TUBES / FLASKS */
+    ItemName_LabItems.LabSyringe = "Strzykawka",
+    ItemName_LabItems.LabSyringeReusable = "Strzykawka Wielokrotnego Użytku",
+    ItemName_LabItems.LabSyringeReusableUsed = "Strzykawka Wielokrotnego Użytku (Używana)",
+    ItemName_LabItems.LabSyringePack = "Opakowanie Strzykawek",
+    ItemName_LabItems.LabSyringeUsed = "Strzykawka (Używana)",
+    ItemName_LabItems.LabTestTube = "Probówka testowa",
+    ItemName_LabItems.LabTestTubeDirty = "Brudna Probówka testowa",
+    ItemName_LabItems.LabFlask = "Kolba",
+    ItemName_LabItems.LabFlaskDirty = "Brudna Kolba",
+    ItemName_LabItems.CmpSyringeWithBrainFluidLow = "Strzykawka z CSF (Niska Jakość)",
+    ItemName_LabItems.CmpSyringeWithBrainFluidMid = "Strzykawka z CSF (Średnia Jakość)",
+    ItemName_LabItems.CmpSyringeWithBrainFluidHigh = "Strzykawka z CSF (Wysoka Jakość)",
+    ItemName_LabItems.CmpSyringeReusableWithBrainFluidLow = "Strzykawka Wielokrotnego Użytku z CSF (Niska Jakość)",
+    ItemName_LabItems.CmpSyringeReusableWithBrainFluidMid = "Strzykawka Wielokrotnego Użytku z CSF (Średnia Jakość)",
+    ItemName_LabItems.CmpSyringeReusableWithBrainFluidHigh = "Strzykawka Wielokrotnego Użytku z CSF (Wysoka Jakość)",
+
+    /* BIOLOGICAL MATERIALS */
+    ItemName_LabItems.MatInfectedBlood = "Zainfekowana Krew",
+    ItemName_LabItems.MatTaintedBlood = "Skrzepnięta Krew",
+    ItemName_LabItems.MatShatteredGlass = "Potłuczone Szkło",
+
+    /* CHEMICAL PRODUCTS (CH) */
+    ItemName_LabItems.ChHydrochloricAcidCan = "Kwas Chlorowodorowy",
+    ItemName_LabItems.ChSodiumHydroxideBag = "Wodorotlenek Sodu",
+    ItemName_LabItems.ChAmmonia = "Amoniak",
+    ItemName_LabItems.ChSulfuricAcidCan = "Kwas Siarkowy",
+
+    /* COMPONENTS / PROCESSING */
+    ItemName_LabItems.CmpSyringeWithBlood = "Strzykawka z Krwią",
+    ItemName_LabItems.CmpSyringeWithTaintedBlood = "Strzykawka ze Skrzepniętą Krwią",
+    ItemName_LabItems.CmpSyringeReusableWithTaintedBlood = "Strzykawka Wielokrotnego Użytku ze Skrzepniętą Krwią",
+    ItemName_LabItems.CmpSyringeReusableWithBlood = "Strzykawka Wielokrotnego Użytku z Krwią",
+
+    /* VACCINES / CURE */
+    ItemName_LabItems.CmpSyringeWithPlainVaccine = "Podstawowa Szczepionka",
+    ItemName_LabItems.CmpSyringeWithQualityVaccine = "Szczepionka Dobrej Jakości",
+    ItemName_LabItems.CmpSyringeWithAdvancedVaccine = "Zaawansowana Szczepionka",
+    ItemName_LabItems.CmpSyringeWithCure = "Eksperymentalne Lekarstwo",
+    ItemName_LabItems.CmpSyringeReusableWithPlainVaccine = "Podstawowa Szczepionka (Wielok.)",
+    ItemName_LabItems.CmpSyringeReusableWithQualityVaccine = "Szczepionka Dobrej Jakości (Wielok.))",
+    ItemName_LabItems.CmpSyringeReusableWithAdvancedVaccine = "Zaawansowana Szczepionka (Wielok.)",
+    ItemName_LabItems.CmpSyringeReusableWithCure = "Eksperymentalne Lekarstwo (Wielok.)",
+
+    /* PILLS / MEDICATIONS */
+    ItemName_LabItems.CmpAlbuminPills = "Albumina",
+    ItemName_LabItems.CmpChlorineTablets = "Tabletki Chloru",
+
+    /* BOOKS */
+    ItemName_LabBooks.BkLaboratoryEquipment1 = "Sprzęt Laboratoryjny Cz. 1",
+    ItemName_LabBooks.BkLaboratoryEquipment2 = "Sprzęt Laboratoryjny Cz. 2",
+    ItemName_LabBooks.BkLaboratoryEquipment3 = "Sprzęt Laboratoryjny Cz. 3",
+	ItemName_LabBooks.BkVirologyCourses1 = "Książka o Wirusologii z Ręcznymi Notatkami ",
+	ItemName_LabBooks.BkVirologyCourses2 = "Zaawansowana Książka o Wirusologii z Ręcznymi Notatkami",
+	ItemName_LabBooks.BkChemistryCourse = "Wprowadzenie do podstaw chemii",
+    ItemName_LabBooks.LabPaintLightsMag = "DIY: Domowe Lampiony Ozdobne",
+
+    /* OTHERS */
+    ItemName_LabItems.FrnIngotMold = "Forma do Sztabek",
+    ItemName_LabItems.FrnGolgNugget = "Bryłka Złota",
+    ItemName_LabItems.FrnSilverNugget = "Bryłka Srebra",
+    ItemName_LabItems.FrnGolgIngot = "Sztabka Złota",
+    ItemName_LabItems.FrnSilverIngot = "Sztabka Srebra",
+    ItemName_LabItems.LabGarbageBagWithRemains = "Worek na Śmieci ze Szczątkami",
+    ItemName_LabItems.LabPlasticBagWithRemains = "Plastikowy Worek ze Szczątkami",
+    ItemName_LabItems.LabTestResultNegative = "Wynik: Negatywny",
+    ItemName_LabItems.LabTestResultPositive = "Wynik: Pozytywny",
+    ItemName_LabItems.HumanBrainLow = "Zainfekowany Mózg",
+    ItemName_LabItems.HumanBrainMid = "Zainfekowany Mózg",
+    ItemName_LabItems.HumanBrainHigh = "Zainfekowany Mózg",
+    ItemName_LabItems.RottenHumanBrain = "Zgniły Mózg",
+    ItemName_LabItems.BurntHumanBrain = "Spalony Mózg",
+    ItemName_LabItems.LabHumanBoneLarge = "Duże Ludzkie Kości",
+    ItemName_LabItems.LabHumanTeeth = "Ludzkie Zęby",
+    ItemName_LabItems.LabHumanSkullWithBrain = "Ludzka Czaszka",
+    ItemName_LabItems.LabHumanSkull = "Uszkodzona Ludzka Czaszka",
+    ItemName_LabItems.LabHumanSkullPart = "Fragment Ludzkiej Czaszki",
+    ItemName_LabItems.LabHumanSkullFixed = "Pusta Ludzka Czaszka",
+    ItemName_LabItems.LabSmallRandomHumanBones = "Małe Ludzkie Kości",
+    ItemName_LabItems.LabRegularHumanBone = "Średnie Ludzkie Kości",
+    ItemName_LabItems.LabCompensationTicket = "Bilet Kompensacyjny",
+
+    /* WILL BE DISCARDED IN FUTURE UPDATES */
+}

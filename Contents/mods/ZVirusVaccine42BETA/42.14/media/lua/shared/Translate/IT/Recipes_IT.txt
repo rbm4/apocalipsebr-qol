@@ -1,4 +1,9 @@
 Recipes_IT = {
+	/*=======================================
+	TRANSLATIONS BY AKAYN
+    Part was done using Claude for missing entries
+	========================================*/
+    
     // LABORATORY EQUIPMENT
     Recipe_LabAssembleMicroscope = "Costruire Microscopio",
     Recipe_LabWorkbench = "Banco da Lavoro",
@@ -40,18 +45,18 @@ Recipes_IT = {
     Recipe_ChmDivideBloodIntoComponents = "2 - Separare i Componenti del Sangue",
     Recipe_ChmMixFlaskOfAmmoniumSulfate = "3 - Mescolare Solfato di Ammonio",
     Recipe_ChmExtractLeukocytesFromBloodCells = "4 - Estrarre i Leucociti",
-    Recipe_ChmExtractAntibodiesFromLeukocytes = "5 - Estrarre gli Anticorpi",
-    Recipe_ChmExtractBrainFromSkull = "6 - Estrarre il Cervello",
-    Recipe_ChmExtractFluidFromBrain = "6 - Estrarre il Liquido Cerebrospinale",
+    Recipe_ChmExtractAntibodiesFromLeukocytes = "8 - Estrarre gli Anticorpi",
+    Recipe_ChmExtractBrainFromSkull = "5A - Estrarre il Cervello",
+    Recipe_ChmExtractFluidFromBrain = "5B - Estrarre il Liquido Cerebrospinale",
 
     // VACCINES AND CURE
-    Recipe_ChmSynthesizePlainVaccine = "5 - Produrre Vaccino Base",
-    Recipe_ChmSynthesizeQualityVaccine = "7 - Produrre Vaccino di Qualità",
-    Recipe_ChmSynthesizeAdvancedVaccine = "7 - Produrre Vaccino Avanzato",
-    Recipe_ChmSynthesizeCure = "7 - Produrre la Cura",
+    Recipe_ChmSynthesizePlainVaccine = "7A - Produrre Vaccino Base",
+    Recipe_ChmSynthesizeQualityVaccine = "7B - Produrre Vaccino di Qualità",
+    Recipe_ChmSynthesizeAdvancedVaccine = "9A - Produrre Vaccino Avanzato",
+    Recipe_ChmSynthesizeCure = "9B - Produrre la Cura",
 
     // CHEMICAL REAGENTS
-    Recipe_ChmMixFlaskOfSodiumHypochlorite = "Mescolare Ipoclorito di Sodio",
+    Recipe_ChmMixFlaskOfSodiumHypochlorite = "6 - Mescolare Ipoclorito di Sodio",
     Recipe_ChmMixFlaskOfHydrogenPeroxide = "Mescolare Perossido di Idrogeno",
 
     // MEDICATIONS / SUPPLEMENTS
@@ -102,16 +107,6 @@ Recipes_IT = {
     Recipe_OthMakeCottonBalls = "Fare Batuffoli di Cotone",
 	
     /* TEMPORARY RECIPES */
-    Recipe_TradeOldItems1 = "AGGIORNA OGGETTO",
-    Recipe_TradeOldItems2 = "AGGIORNA OGGETTO",
-    Recipe_TradeOldItems3 = "AGGIORNA OGGETTO",
-    Recipe_TradeOldItems4 = "AGGIORNA OGGETTO",
-    Recipe_TradeOldItems5 = "AGGIORNA OGGETTO",
-    Recipe_TradeOldItems6 = "AGGIORNA OGGETTO",
-    Recipe_TradeOldItems7 = "AGGIORNA OGGETTO",
-    Recipe_TradeOldItems8 = "AGGIORNA OGGETTO",
-    Recipe_TradeOldItems9 = "AGGIORNA OGGETTO",
-    Recipe_TradeOldItems10 = "AGGIORNA OGGETTO",
     Recipe_TurnHBoneIntoWP = "Trasformare in Arma",
 
 }

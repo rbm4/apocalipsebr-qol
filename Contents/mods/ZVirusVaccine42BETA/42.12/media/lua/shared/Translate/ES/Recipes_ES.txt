@@ -1,0 +1,102 @@
+Recipes_ES = {
+	// EQUIPOS DE LABORATORIO
+	Recipe_LabAssembleMicroscope = "Crear Microscopio [Workbench]",
+	Recipe_LabAssembleChromatograph = "Crear Cromatógrafo [Workbench]",
+	Recipe_LabAssembleChemistrySet = "Crear Banco de Química [Workbench]",
+	Recipe_LabAssembleSpectrometer = "Crear Espectrómetro [Workbench]",
+	Recipe_LabAssembleCentrifuge = "Crear Centrífuga [Workbench]",
+	Recipe_LabAssembleMuffleFurnace = "Crear Horno de Muffla [Workbench]",
+	Recipe_LabAssembleWorkbench = "Crear Workbench",
+	Recipe_LabAssembleEasel = "Crear Caballete",
+	Recipe_LabTableMorgue1 = "Crear Mesa de Necropsia 1/2 [Workbench]",
+	Recipe_LabTableMorgue2 = "Crear Mesa de Necropsia 2/2 [Workbench]",
+
+	// DECORACIONES Y MODELOS
+	Recipe_DecAssembleSkeleton = "Crear Modelo de Esqueleto [Workbench]",
+	Recipe_DecAssembleVirusModel = "Crear Modelo de Virus [Workbench]",
+	Recipe_DecAssembleCaduceus = "Crear Caduceo [Workbench]",
+	Recipe_DecAssembleWhiteboard = "Crear Pizarra Blanca [Workbench]",
+
+	Recipe_DecPaintPeriodicTablePoster = "Pintar Póster de la Tabla Periódica [Caballete]",
+	Recipe_DecPaintSexyNursePoster = "Pintar Póster de Enfermera [Caballete]",
+	Recipe_DecPaintWashYourHandsPoster = "Pintar Póster 'Lávate las Manos' [Caballete]",
+	Recipe_DecPaintBiohazardPoster = "Pintar Póster de Riesgo Biológico [Caballete]",
+	Recipe_DecPaintHumanBrainPoster = "Pintar Póster del Cerebro Humano [Caballete]",
+	Recipe_DecAssemblePharmacyNeonSign = "Crear Letrero Neón de Farmacia [Workbench]",
+	Recipe_DecAssemblePizzaNeonSign = "Crear Letrero Neón de Pizza [Workbench]",
+
+	// FORJA / VIDRIERÍA
+	Recipe_FrnMakeTestTube = "Crear Tubos de Ensayo (x3) [Horno]",
+	Recipe_FrnMakeFlask = "Crear Frasco [Horno]",
+	Recipe_FrnMakeJar = "Crear Frasco de Conserva [Horno]",
+	Recipe_FrnMakeIngotMold = "Crear Molde de Lingote [Horno]",
+	Recipe_FrnMeltGoldJewelry = "Fundir Joyas de Oro [Horno]",
+	Recipe_FrnMeltSilverJewelry = "Fundir Joyas de Plata [Horno]",
+	Recipe_FrnMakeGolgIngot = "Crear Lingote de Oro [Horno]",
+	Recipe_FrnMakeSilverIngot = "Crear Lingote de Plata [Horno]",
+
+	// PROCESOS BIOLÓGICOS
+	Recipe_ChmTakeBloodForAnalysis = "Recolectar Sangre para Análisis",
+	Recipe_ChmTakeBloodForAnalysis_Reusable = "Recolectar Sangre para Análisis",
+	Recipe_ChmGetBloodTest = "Realizar Prueba de Sangre [Espectrómetro]",
+
+	Recipe_ChmCollectInfectedBlood = "1 - Recolectar Sangre Infectada en Tubo",
+	Recipe_ChmDivideBloodIntoComponents = "2 - Separar Componentes de la Sangre [Centrífuga]",
+	Recipe_ChmExtractLeukocytesFromBloodCells = "4 - Extraer Leucocitos [Microscopio]",
+	Recipe_ChmExtractAntibodiesFromLeukocytes = "5 - Extraer Anticuerpos [Cromatógrafo]",
+
+	// VACUNAS Y CURA
+	Recipe_ChmSynthesizePlainVaccine = "Sintetizar Vacuna Simple [Banco de Química]",
+	Recipe_ChmSynthesizeQualityVaccine = "Sintetizar Vacuna de Calidad [Banco de Química]",
+	Recipe_ChmSynthesizeAdvancedVaccine = "Sintetizar Vacuna Avanzada [Banco de Química]",
+	Recipe_ChmSynthesizeCure = "Sintetizar la Cura [Banco de Química]",
+
+	// REACTIVOS QUÍMICOS
+	Recipe_ChmMixFlaskOfSodiumHypochlorite = "Mezclar Hipoclorito de Sodio [Banco de Química]",
+	Recipe_ChmMixFlaskOfAmmoniumSulfate = "3 - Mezclar Sulfato de Amonio [Banco de Química]",
+	Recipe_ChmMixFlaskOfHydrogenPeroxide = "Mezclar Peróxido de Hidrógeno [Banco de Química]",
+
+	// MEDICAMENTOS / SUPLEMENTOS
+	Recipe_ChmMakeAlbumin = "Producir Albúmina [Banco de Química]",
+	Recipe_ChmMakeChlorineTablets = "Producir Tabletas de Cloro [Banco de Química]",
+	Recipe_ChmMakeBottleOfBleach = "Crear Botella de Lejía [Banco de Química]",
+	Recipe_ChmMakeBottleOfDisinfectant = "Crear Frasco de Desinfectante [Banco de Química]",
+
+	// ESTERILIZACIÓN
+	Recipe_ChmSterilizeTestTube = "Esterilizar Tubo de Ensayo",
+	Recipe_ChmSterilizeTestTubeDisinfectant = "Esterilizar Tubo con Lejía",
+	Recipe_ChmSterilizeFlask = "Esterilizar Frasco",
+	Recipe_ChmSterilizeLabSyringeReusableDisinfectant = "Esterilizar Jeringa con Lejía",
+	Recipe_ChmSterilizeLabSyringeReusable = "Esterilizar Jeringa Reutilizable",
+	Recipe_ChmSterilizeFlaskDisinfectant = "Esterilizar Frasco con Lejía",
+
+	// DESECHO
+	Recipe_ChmPourTaintedBlood = "Desechar Sangre Contaminada",
+	Recipe_ChmLabFlaskPourWaterOut = "Vaciar el Frasco",
+	Recipe_ChmDiscardBloodFromSyringe = "Desechar Material Biológico",
+	Recipe_ChmPourInfectedBlood = "Desechar Sangre Infectada",
+	Recipe_PourAFlaskOut = "Vaciar el Frasco",
+
+	// JERINGAS
+	Recipe_ChmMakeSyringe = "Crear Jeringa Reutilizable",
+
+	Recipe_ChmSynthesizePlainVaccineTwo = "Sintetizar Vacuna Simple (Reus.) [Banco de Química]",
+	Recipe_ChmSynthesizeQualityVaccineTwo = "Sintetizar Vacuna de Calidad (Reus.) [Banco de Química]",
+	Recipe_ChmSynthesizeAdvancedVaccineTwo = "Sintetizar Vacuna Avanzada (Reus.) [Banco de Química]",
+	Recipe_ChmSynthesizeCureTwo = "Sintetizar la Cura (Reus.) [Banco de Química]",
+
+	Recipe_ChmGetBloodTestTwo = "Realizar Prueba de Sangre (Reus.) [Espectrómetro]",
+
+	// OTROS PROCESOS
+	Recipe_OthShatterEmptyBottle = "Romper Botella Vacía",
+	Recipe_OthShatterPerfumeVial = "Romper Frasco de Perfume",
+	Recipe_OthShatterSmashedBottle = "Romper Botella",
+	Recipe_OthShatterCarGlassWindshields = "Romper Parabrisas",
+	Recipe_ChmLabFlaskFillWater = "Llenar Frasco con Agua",
+
+	Recipe_OthUnpackSyringes = "Abrir Caja de Jeringas",
+	Recipe_OthPackSyringes = "Guardar Jeringas en la Caja",
+
+	Recipe_ChmMakeAlbuminPills = "Producir Pastillas de Albúmina [Banco de Química]",
+
+}

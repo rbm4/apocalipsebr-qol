@@ -726,7 +726,7 @@ module damnCraft
         DisplayCategory = VehicleMaintenance,
         Weight  =   1.0,
         ItemType = base:normal,
-        DisplayName =   debug and fallback item dont spawn,
+        DisplayName =   Selecione peca para conserto,
         Icon    =   na,
         VehicleType =   1,
         ChanceToSpawnDamaged = 0,

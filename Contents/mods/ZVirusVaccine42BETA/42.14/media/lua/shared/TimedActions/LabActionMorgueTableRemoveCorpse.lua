@@ -35,13 +35,8 @@ end
 
 function LabActionMorgueTableRemoveCorpse:complete()
     local inv = self.character:getInventory()
-        local hasSack = inv:containsTypeRecurse("Garbagebag")
-                    or inv:containsTypeRecurse("Bag_TrashBag")
-    
-    local plasticList = inv:getItemsFromType("Plasticbag")
-                        or inv:getItemsFromType("Plasticbag_Bags")
-                        or inv:getItemsFromType("Plasticbag_Clothing")
-    local hasTwoPlastics = plasticList and plasticList:size() >= 2
+    local hasSack = LabRecipes_GetFirstEquip(inv, LabConst.SACKS) ~= nil
+    local hasTwoPlastics = LabRecipes_CountItemsFromList(inv, LabConst.PLASTICS) >= 2
     
     -- Envia comando ao servidor
     sendClientCommand(

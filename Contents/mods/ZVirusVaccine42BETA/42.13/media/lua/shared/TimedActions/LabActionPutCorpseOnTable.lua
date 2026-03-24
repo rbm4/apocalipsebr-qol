@@ -16,6 +16,7 @@ end
 
 function LabActionPutCorpseOnTable:update()
     self.character:faceThisObject(self.bottom)
+	self.character:setMetabolicTarget(Metabolics.LightWork)
 end
 
 function LabActionPutCorpseOnTable:start()

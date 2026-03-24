@@ -1,5 +1,10 @@
 Tooltip_IT = {
-	/* LABORATORY EQUIPMENT */
+	/*=======================================
+	TRANSLATIONS BY AKAYN
+    Part was done using Claude for missing entries
+	========================================*/
+
+	/*LABORATORY EQUIPMENT */
 	Tooltip_LabMicroscope = "Microscopio da banco usato per analizzare cellule e separare i leucociti dai campioni di sangue.",
 	Tooltip_LabChromatograph = "Semplice cromatografo usato per estrarre anticorpi e separare composti.<br>Richiede un computer nelle vicinanze.",
 	Tooltip_LabSpectrometer = "Spettrometro portatile usato per rilevare la presenza del virus zombie nel sangue.",
@@ -94,28 +99,12 @@ Tooltip_IT = {
 	/* RECIPES */
 	Tooltip_LabAssembleChromatograph = "Le lampadine verdi possono essere trovate facilmente smontando i Walkie-Talkie.",
 	Tooltip_ChmExtractAntibodiesFromLeukocytes = "Estrae anticorpi dai leucociti tramite cromatografia.<br>Richiede un computer posizionato di lato.",
-
+	Tooltip_ChmExtractFluidFromBrain = "Estrae fluido cerebrospinale da un cervello<br>La qualità del fluido dipende dallo stato del cervello utilizzato.",
+	
 	/* CONTAINERS */
 	Tooltip_item_LabFlask = "Beuta da laboratorio usata per conservare liquidi e reagenti.<br><br>L'acqua può essere raccolta direttamente da un rubinetto:<br>- L'acqua può essere purificata bollendola.<br>- L'acqua può essere purificata usando compresse di cloro.",
 	Tooltip_item_LabTestTube = "Provetta usata per raccogliere campioni biologici.",
 
 	/* WILL BE DISCARDED IN FUTURE UPDATES */
-	Tooltip_BloodTest_Severity_Low = "Bassa (Fase Iniziale)",
-	Tooltip_BloodTest_Severity_Medium = "Media (Fase Intermedia)",
-	Tooltip_BloodTest_Severity_High = "Alta (Fase Avanzata)",
-	Tooltip_LabFlask = "Beuta da laboratorio usata per conservare liquidi e reagenti.",
-	Tooltip_LabFlaskWater = "Beuta contenente acqua. Può essere usata nelle reazioni chimiche.",
-	Tooltip_LabFlaskFilledWithBleach = "Beuta contenente candeggina prodotta in laboratorio.",
-	Tooltip_LabFlaskFilledWithDisinfectant = "Beuta contenente disinfettante preparato in laboratorio.",
-	Tooltip_CmpFlaskWithAntibodies = "Anticorpi purificati conservati in una beuta — base per la sintesi avanzata.",
-	Tooltip_LabFlaskWithPurifiedWater = "Acqua purificata pronta per l'uso nelle reazioni chimiche.",
-	Tooltip_CmpTestTubeWithInfectedBlood = "Campione purificato di sangue infetto. Materiale di ricerca essenziale.",
-	Tooltip_CmpFlaskWithBloodCells = "Sospensione di cellule ematiche concentrate.",
-	Tooltip_CmpFlaskWithBloodPlasma = "Plasma sanguigno pulito — base per sintesi e farmaci.",
-	Tooltip_CmpFlaskWithLeukocytes = "Leucociti isolati — passaggio essenziale per l'estrazione degli anticorpi.",
-	Tooltip_CmpTestTubeWithAntibodies = "Anticorpi purificati pronti per la sintesi della cura.",
-	Tooltip_CmpFlaskWithSodiumHypochlorite = "Ipoclorito purificato — usato in vaccini e reagenti.",
-	Tooltip_CmpFlaskWithAmmoniumSulfate = "Solfato di ammonio — usato per la precipitazione biologica.",
-	Tooltip_CmpFlaskWithHydrogenPeroxide = "Perossido di idrogeno concentrato.",
 	Tooltip_LabNeedUpdate = "QUESTO OGGETTO NON È PIÙ VALIDO.<br>CLICCA CON IL TASTO SINISTRO PER AGGIORNARLO"
 }

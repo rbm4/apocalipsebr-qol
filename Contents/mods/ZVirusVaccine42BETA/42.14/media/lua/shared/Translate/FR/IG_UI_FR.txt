@@ -1,4 +1,7 @@
 IGUI_FR = {
+	/*=======================================
+	TRANSLATIONS BY F3niix
+	========================================*/
     IGUI_CraftCategory_Equipment = "Équipement",
     IGUI_CraftCategory_Decorations = "Décorations",
     IGUI_CraftCategory_Chemistry = "Chimie",
@@ -79,7 +82,6 @@ IGUI_FR = {
     IGUI_PlayerText_TestNegative4 = "Négatif. Juste une frayeur.",
     IGUI_PlayerText_TestNegative5 = "Négatif. Qui a dit que je me laissais tuer facilement ?",
 
-    
     IGUI_PlayerText_InfectionRate = "% de taux de l’infection",
 
     IGUI_ItemCat_Laboratory = "Laboratoire",

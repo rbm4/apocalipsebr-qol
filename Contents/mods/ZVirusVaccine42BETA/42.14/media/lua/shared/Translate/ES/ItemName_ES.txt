@@ -1,4 +1,10 @@
 ItemName_ES = {
+	/*=======================================
+	TRANSLATIONS BY ChatGPT --
+	If the translations are overly generic,
+	please be free to review and send new translations
+	========================================*/
+    
     /* EQUIPOS / DECORACIÓN DE LABORATORIO */
     ItemName_LabItems.LabMicroscope = "Microscopio",
     ItemName_LabItems.LabChromatograph = "Cromatógrafo",

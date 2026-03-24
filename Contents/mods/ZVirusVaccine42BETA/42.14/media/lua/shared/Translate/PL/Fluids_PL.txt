@@ -1,0 +1,26 @@
+Fluids_PL = {
+	/*=======================================
+	TRANSLATIONS BY Ayako-Chan (Piotrek0909)
+	========================================*/
+    
+	/* CONTAINERS */
+    Fluid_Container_FlaskLab = "Kolba",
+    Fluid_Container_TestTubeLab = "Probówka",
+	
+	/* FLUIDS */
+    Fluid_Name_TaintedBlood = "Skrzepnięta Krew",
+    Fluid_Name_InfectedBlood = "Zainfekowana Krew",
+    Fluid_Name_Antibodies = "Przeciwciała",
+    Fluid_Name_Leukocytes = "Leukocyty",
+    Fluid_Name_BloodCells = "Komórki Krwi",
+    Fluid_Name_BloodPlasma = "Osocze",
+    Fluid_Name_AmmoniumSulfate = "Siarczan Amonu",
+    Fluid_Name_HydrogenPeroxide = "Nadtlenek Wodoru",
+    Fluid_Name_SodiumHypochlorite = "Podchloryn Sodu",
+    Fluid_Name_PurifiedWater = "Oczyszczona Woda",
+	Fluid_Name_BrainFluidHigh = "Próbka Płynu Mózgowo-Rdzeniowego Wysokiej Jakości (CSF)",
+	Fluid_Name_BrainFluidMid = "Próbka Płynu Mózgowo-Rdzeniowego Średniej Jakości (CSF)",
+	Fluid_Name_BrainFluidLow = "Próbka Płynu Mózgowo-Rdzeniowego Niskiej Jakości (CSF)",
+	Fluid_Name_HydrochloricAcid = "Kwas Chlorowodorowy",
+	Fluid_Name_SulfuricAcid = "Kwas Siarkowy",
+}

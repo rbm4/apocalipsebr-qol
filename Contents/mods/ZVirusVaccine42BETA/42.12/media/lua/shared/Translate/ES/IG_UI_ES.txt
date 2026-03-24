@@ -1,0 +1,55 @@
+IGUI_ES = {
+	IGUI_CraftCategory_Equipment = "Equipos",
+	IGUI_CraftCategory_Decorations = "Decoraciones",
+	IGUI_CraftCategory_Chemistry = "Química",
+	IGUI_CraftCategory_Other = "Otros",
+
+	IGUI_PlayerText_NeedSpectrometer = "Necesito un espectrómetro para esto.",
+	IGUI_PlayerText_InvalidSample = "Esta muestra no es válida.",
+
+	IGUI_PlayerText_PainFromNeedle1 = "¡Ay! Eso dolió un poco.",
+	IGUI_PlayerText_PainFromNeedle2 = "Ugh… maldita aguja.",
+	IGUI_PlayerText_PainFromNeedle3 = "Aaah… las agujas nunca son agradables.",
+	IGUI_PlayerText_PainFromNeedle4 = "¡Maldición… sentí esa!",
+	IGUI_PlayerText_PainFromNeedle5 = "¡Auch! Podría haber sido más suave…",
+
+	IGUI_PlayerText_AutopsyInfected1 = "Hm… fresquito. Casi puedo oírlo burbujear. Perfecto.",
+	IGUI_PlayerText_AutopsyInfected2 = "Ah, sí… una muestra intentando morderme de vuelta.",
+	IGUI_PlayerText_AutopsyInfected3 = "Esto está tan activo que debería pagar alquiler.",
+	IGUI_PlayerText_AutopsyInfected4 = "Uy… está demasiado vivo para mi gusto. Si salta, yo corro.",
+	IGUI_PlayerText_AutopsyInfected5 = "Muestra obtenida con éxito. ¡Y sin perder un dedo!",
+
+	IGUI_PlayerText_AutopsyTainted1 = "Puaj… esto parece mermelada vencida.",
+	IGUI_PlayerText_AutopsyTainted2 = "Genial… sangre con textura de pudín. Inservible.",
+	IGUI_PlayerText_AutopsyTainted3 = "Maldición. Ni un laboratorio aceptaría esto ni como basura.",
+	IGUI_PlayerText_AutopsyTainted4 = "Hm… sangre demasiado 'vintage'. Cosecha perdida.",
+	IGUI_PlayerText_AutopsyTainted5 = "Coágulos, coágulos y… más coágulos. Qué alegría.",
+
+	IGUI_PlayerText_AutopsyNothing1 = "¿Nada? ¿En serio? Ni para sangrar este cuerpo sirve.",
+	IGUI_PlayerText_AutopsyNothing2 = "Ni una gota útil… felicidades, campeón.",
+	IGUI_PlayerText_AutopsyNothing3 = "Uff… seco como mi sentido del humor.",
+	IGUI_PlayerText_AutopsyNothing4 = "Cero muestra. Cero utilidad. Cero paciencia.",
+	IGUI_PlayerText_AutopsyNothing5 = "Vacío. Solo perdí tiempo y esperanza.",
+
+	IGUI_PlayerText_MorguePlace1 = "Ok… a la mesa. Intenta no caerte esta vez.",
+	IGUI_PlayerText_MorguePlace2 = "Listo. Empieza la diversión… creo.",
+	IGUI_PlayerText_MorguePlace3 = "Bien… acomodado con cariño mórbido.",
+	IGUI_PlayerText_MorguePlace4 = "A la mesa. VIP del mortuorio.",
+	IGUI_PlayerText_MorguePlace5 = "Muy bien… vamos a convertirte en ciencia.",
+
+	IGUI_PlayerText_MorgueClean1 = "Vamos a dejar esto presentable… o menos asqueroso.",
+	IGUI_PlayerText_MorgueClean2 = "Nada como una mesa esterilizada con aroma a desesperación.",
+	IGUI_PlayerText_MorgueClean3 = "Listo… ahora casi parece profesional.",
+	IGUI_PlayerText_MorgueClean4 = "Puaj… pero al menos ahora brilla.",
+	IGUI_PlayerText_MorgueClean5 = "Mesa limpia. Ya puedo fingir que soy organizado.",
+
+	IGUI_PlayerText_MorgueGetRemains1 = "Bien… saquemos esta masa orgánica de aquí.",
+	IGUI_PlayerText_MorgueGetRemains2 = "Puaj… pero alguien tiene que ser el adulto responsable.",
+	IGUI_PlayerText_MorgueGetRemains3 = "Todo empaquetado. Qué romántico.",
+	IGUI_PlayerText_MorgueGetRemains4 = "Listo. Restos removidos con una dignidad dudosa.",
+	IGUI_PlayerText_MorgueGetRemains5 = "Uff… si algún día me acostumbro a esto, enciérrenme.",
+
+	IGUI_PlayerText_MorgueNoContainer = "Sin recipiente. ¿Dónde guardo esto? ¿En el bolsillo?",
+
+
+}

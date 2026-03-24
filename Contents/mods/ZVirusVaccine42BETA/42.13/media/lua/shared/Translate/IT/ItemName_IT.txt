@@ -1,4 +1,9 @@
 ItemName_IT = {
+	/*=======================================
+	TRANSLATIONS BY AKAYN
+    Part was done using Claude for missing entries
+	========================================*/
+    
     /* EQUIPMENT / LAB DECOR */
     ItemName_LabItems.LabMicroscope = "Microscopio",
 	ItemName_LabItems.LabChromatograph = "Cromatografo",
@@ -104,23 +109,6 @@ ItemName_IT = {
     ItemName_LabItems.LabRegularHumanBoneWP = "Osso Umano Medio",
     
     /* WILL BE DISCARDED IN FUTURE UPDATES */
-    ItemName_LabItems.CmpTestTubeWithBloodCells = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpTestTubeWithBloodPlasma = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpTestTubeWithLeukocytes = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpFlaskWithAntibodies = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.LabFlaskWithPurifiedWater  = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpFlaskWithBloodPlasma = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpFlaskWithBloodCells = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpFlaskWithLeukocytes = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpTestTubeWithAntibodies = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.LabFlaskWater = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpFlaskWithSodiumHypochlorite = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpFlaskWithAmmoniumSulfate = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpFlaskWithHydrogenPeroxide = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpTestTubeWithInfectedBlood = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.CmpTestTubeWithTaintedBlood = "AGGIORNA QUESTO OGGETTO",
-    ItemName_LabItems.LabDebugger = "Debugger",
     ItemName_LabItems.LabRegularHumanBone = "Ossa Umane Medie",
     ItemName_LabItems.LabHumanBoneLarge = "Ossa Umane Grandi",
-    ItemName_LabItems.LabCompensationTicket = "Buono di Compensazione",
 }

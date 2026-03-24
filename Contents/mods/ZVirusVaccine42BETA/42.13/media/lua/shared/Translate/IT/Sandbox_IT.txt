@@ -1,4 +1,9 @@
 Sandbox_IT = {
+	/*=======================================
+	TRANSLATIONS BY AKAYN
+    Part was done using Claude for missing entries
+	========================================*/
+    
     Sandbox_ZombieVirusVaccineBETA = "Vaccino Virus Zombie (BETA)",
     Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot = "Abilita Bottino nel Mondo",
     Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot_tooltip = "Abilita o disabilita completamente la comparsa degli oggetti del mod Vaccino Virus Zombie nel mondo.",
@@ -88,4 +93,13 @@ Sandbox_IT = {
 
     Sandbox_ZombieVirusVaccineBETA_DebugMode = "DEBUG"
     Sandbox_ZombieVirusVaccineBETA_DebugMode_tooltip = "<BHC>NON modificare questo. SOLO PER SVILUPPATORI. <RGB:1,1,1><LINE> Stampa moltissime informazioni di debug nella console."
+    
+    Sandbox_ZombieVirusVaccineBETA_CollectPartXP = "XP Autopsia Parti del Corpo"
+	Sandbox_ZombieVirusVaccineBETA_CollectPartXP_tooltip = "<BHC>La modifica di questa opzione influirà sull'equilibrio del gioco. <RGB:1,1,1><LINE> Definisce l'XP base ottenuta nelle abilità di Macellazione e Primo Soccorso."
+
+	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Probabilità Base di Cervello in Condizioni Perfette (%)"
+	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset_tooltip = "<BHC>La modifica di questa opzione influirà sull'equilibrio del gioco. <RGB:1,1,1><LINE> Definisce la probabilità base di raccogliere un cervello in condizioni perfette."
+
+	Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "Penalità Emofobia"
+	Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff_tooltip = "Definisce la penalità per emofobia applicata quando un personaggio con il tratto Emofobico esegue un'autopsia.<LINE> Influisce sulla probabilità di ottenere un cervello in condizioni perfette."
 }
