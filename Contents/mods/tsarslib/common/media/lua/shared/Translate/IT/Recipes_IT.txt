@@ -23,6 +23,15 @@
     Recipe_Cut_ATASpoilerRear2Item = "Smonta alettone posteriore",
     Recipe_Cut_ATAFrontRoofLightItem = "Smonta luce tettuccio anteriore",
 
+    Recipe_Make_ATABullbar1Item = "Costruisci paraurti tubolare",
+    Recipe_Make_ATABullbar2Item = "Costruisci paraurti tubolare pesante",
+    Recipe_Make_ATABullbarPoliceItem1 = "Costruisci paraurti tubolare polizia",
+    Recipe_Make_ATASpoilerFrontItem = "Costruisci alettone anteriore",
+    Recipe_Make_ATASpoilerRear1Item = "Costruisci alettone posteriore",
+    Recipe_Make_ATASpoilerRear2Item = "Costruisci alettone posteriore (largo)",
+    Recipe_Make_ATAFendersWideItem = "Costruisci parafanghi larghi",
+    Recipe_Make_ATASkirtsSideItem = "Costruisci minigonne laterali",
+
 
 /* transport_item.txt */
     Recipe_Make_TransportCounter = "Costruisci bancone portatile",

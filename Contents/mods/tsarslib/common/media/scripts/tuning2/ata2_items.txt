@@ -329,4 +329,188 @@ module ATA2
             item 5 Base.SmallSheetMetal,
         }
     }
+
+
+/* Make Tuning Parts
+█──█─████─█──█─████
+██─█─█──█─█─█──█───
+█─██─████─██───███─
+█──█─█──█─█─█──█───
+█──█─█──█─█──█─████
+*/
+    craftRecipe Make ATABullbar1Item
+    {
+        time = 350,
+        timedAction = BuildLowNoTool,
+        Tags = InHandCraft,
+        needToBeLearn = false,
+        SkillRequired = MetalWelding:3,
+        category = Welding,
+        xpAward = MetalWelding:15,
+        inputs
+        {
+            item 6 [Base.MetalPipe],
+            item 2 [Base.MetalBar],
+            item 3 [Base.BlowTorch] flags[Prop1],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATABullbar1Item,
+        }
+    }
+
+    craftRecipe Make ATABullbar2Item
+    {
+        time = 350,
+        timedAction = BuildLowNoTool,
+        Tags = InHandCraft,
+        needToBeLearn = false,
+        SkillRequired = MetalWelding:4,
+        category = Welding,
+        xpAward = MetalWelding:15,
+        inputs
+        {
+            item 8 [Base.MetalPipe],
+            item 3 [Base.MetalBar],
+            item 4 [Base.BlowTorch] flags[Prop1],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATABullbar2Item,
+        }
+    }
+
+    craftRecipe Make ATABullbarPoliceItem1
+    {
+        time = 350,
+        timedAction = BuildLowNoTool,
+        Tags = InHandCraft,
+        needToBeLearn = false,
+        SkillRequired = MetalWelding:3,
+        category = Welding,
+        xpAward = MetalWelding:15,
+        inputs
+        {
+            item 6 [Base.MetalPipe],
+            item 3 [Base.SheetMetal],
+            item 3 [Base.BlowTorch] flags[Prop1],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATABullbarPoliceItem1,
+        }
+    }
+
+    craftRecipe Make ATASpoilerFrontItem
+    {
+        time = 250,
+        timedAction = BuildLowNoTool,
+        Tags = InHandCraft,
+        needToBeLearn = false,
+        SkillRequired = MetalWelding:2,
+        category = Welding,
+        xpAward = MetalWelding:15,
+        inputs
+        {
+            item 3 [Base.SmallSheetMetal],
+            item 2 [Base.MetalBar],
+            item 2 [Base.BlowTorch] flags[Prop1],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATASpoilerFrontItem,
+        }
+    }
+
+    craftRecipe Make ATASpoilerRear1Item
+    {
+        time = 250,
+        timedAction = BuildLowNoTool,
+        Tags = InHandCraft,
+        needToBeLearn = false,
+        SkillRequired = MetalWelding:2,
+        category = Welding,
+        xpAward = MetalWelding:15,
+        inputs
+        {
+            item 6 [Base.SmallSheetMetal],
+            item 2 [Base.MetalBar],
+            item 3 [Base.BlowTorch] flags[Prop1],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATASpoilerRear1Item,
+        }
+    }
+
+    craftRecipe Make ATASpoilerRear2Item
+    {
+        time = 250,
+        timedAction = BuildLowNoTool,
+        Tags = InHandCraft,
+        needToBeLearn = false,
+        SkillRequired = MetalWelding:2,
+        category = Welding,
+        xpAward = MetalWelding:15,
+        inputs
+        {
+            item 6 [Base.SmallSheetMetal],
+            item 2 [Base.MetalBar],
+            item 3 [Base.BlowTorch] flags[Prop1],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATASpoilerRear2Item,
+        }
+    }
+
+    craftRecipe Make ATAFendersWideItem
+    {
+        time = 300,
+        timedAction = BuildLowNoTool,
+        Tags = InHandCraft,
+        needToBeLearn = false,
+        SkillRequired = MetalWelding:3,
+        category = Welding,
+        xpAward = MetalWelding:15,
+        inputs
+        {
+            item 5 [Base.SmallSheetMetal],
+            item 2 [Base.MetalPipe],
+            item 3 [Base.BlowTorch] flags[Prop1],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATAFendersWideItem,
+        }
+    }
+
+    craftRecipe Make ATASkirtsSideItem
+    {
+        time = 250,
+        timedAction = BuildLowNoTool,
+        Tags = InHandCraft,
+        needToBeLearn = false,
+        SkillRequired = MetalWelding:2,
+        category = Welding,
+        xpAward = MetalWelding:15,
+        inputs
+        {
+            item 4 [Base.SmallSheetMetal],
+            item 2 [Base.MetalPipe],
+            item 2 [Base.BlowTorch] flags[Prop1],
+            item 1 tags[WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 ATA2.ATASkirtsSideItem,
+        }
+    }
 }

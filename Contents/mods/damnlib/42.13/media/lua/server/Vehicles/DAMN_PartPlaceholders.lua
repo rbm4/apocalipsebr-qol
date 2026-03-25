@@ -26,7 +26,9 @@ function DAMN.InstallTest.Default(vehicle, part, chr)
 	if not keyvalues then return false end
 	if part:getInventoryItem() then return false end
 	if not part:getItemType() or part:getItemType():isEmpty() then return false end
-	local typeToItem = VehicleUtils.getItems(chr:getPlayerNum())
+	local typeToItem, tagToItem = VehicleUtils.getItems(chr:getPlayerNum())
+	typeToItem = typeToItem or {}
+	tagToItem = tagToItem or typeToItem.tag or typeToItem.tags or {}
 	if keyvalues.requireInstalled then
 		local split = keyvalues.requireInstalled:split(";")
 		for i,v in ipairs(split) do
@@ -42,7 +44,7 @@ function DAMN.InstallTest.Default(vehicle, part, chr)
 	if not VehicleUtils.testProfession(chr, keyvalues.professions) then return false end
 	if not VehicleUtils.testRecipes(chr, keyvalues.recipes) then return false end
 	if not VehicleUtils.testTraits(chr, keyvalues.traits) then return false end
-	if not VehicleUtils.testItems(chr, keyvalues.items, typeToItem) then return false end
+	if not VehicleUtils.testItems(chr, keyvalues.items, typeToItem, tagToItem) then return false end
 	if VehicleUtils.RequiredKeyNotFound(part, chr) then return false end
 	return true
 end
@@ -53,7 +55,9 @@ function DAMN.UninstallTest.Default(vehicle, part, chr)
 	if not keyvalues then return false end
 	if not part:getInventoryItem() then return false end
 	if not part:getItemType() or part:getItemType():isEmpty() then return false end
-	local typeToItem = VehicleUtils.getItems(chr:getPlayerNum())
+	local typeToItem, tagToItem = VehicleUtils.getItems(chr:getPlayerNum())
+	typeToItem = typeToItem or {}
+	tagToItem = tagToItem or typeToItem.tag or typeToItem.tags or {}
 	if keyvalues.requireUninstalled then
         local split = keyvalues.requireUninstalled:split(";")
         for i,v in ipairs(split) do
@@ -63,7 +67,7 @@ function DAMN.UninstallTest.Default(vehicle, part, chr)
 	if not VehicleUtils.testProfession(chr, keyvalues.professions) then return false end
 	if not VehicleUtils.testRecipes(chr, keyvalues.recipes) then return false end
 	if not VehicleUtils.testTraits(chr, keyvalues.traits) then return false end
-	if not VehicleUtils.testItems(chr, keyvalues.items, typeToItem) then return false end
+	if not VehicleUtils.testItems(chr, keyvalues.items, typeToItem, tagToItem) then return false end
 	if keyvalues.requireEmpty and round(part:getContainerContentAmount(), 3) > 0 then return false end
 	local seatNumber = part:getContainerSeatNumber()
 	local seatOccupied = (seatNumber ~= -1) and vehicle:isSeatOccupied(seatNumber)

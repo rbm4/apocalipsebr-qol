@@ -20,6 +20,15 @@
     Recipe_Cut_ATASpoilerRear1Item = "Разрезать Спойлер",
     Recipe_Cut_ATASpoilerRear2Item = "Разрезать Спойлер",
 
+    Recipe_Make_ATABullbar1Item = "Создать Кенгурятник",
+    Recipe_Make_ATABullbar2Item = "Создать Тяжёлый Кенгурятник",
+    Recipe_Make_ATABullbarPoliceItem1 = "Создать Полицейский Кенгурятник",
+    Recipe_Make_ATASpoilerFrontItem = "Создать Переднюю Губу",
+    Recipe_Make_ATASpoilerRear1Item = "Создать Задний Спойлер",
+    Recipe_Make_ATASpoilerRear2Item = "Создать Задний Спойлер (Широкий)",
+    Recipe_Make_ATAFendersWideItem = "Создать Широкие Арки",
+    Recipe_Make_ATASkirtsSideItem = "Создать Боковые Юбки",
+
 
 /* transport_item.txt */
     Recipe_Make_TransportCounter = "Смастерить портативную тумбочку",

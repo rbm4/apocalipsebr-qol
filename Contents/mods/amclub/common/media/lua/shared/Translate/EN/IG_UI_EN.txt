@@ -1,0 +1,7 @@
+IGUI_EN = {
+	IGUI_VehicleNameAMC_bmw_classic = "BWM R80/7 Classic",
+	IGUI_VehicleNameAMC_bmw_custom = "BWM R80/7 Custom",
+	IGUI_VehicleNameAMC_harley = "Xarley-Davitsan Sportstep '86",
+	IGUI_VehicleNameAMC_quad = "Suvzuki Quadruiner",
+	IGUI_VehicleNameTrailerAMC = "Autotsar Mototrailer-2M",
+}

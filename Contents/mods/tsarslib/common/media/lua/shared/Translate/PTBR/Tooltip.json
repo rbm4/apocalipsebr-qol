@@ -1,6 +1,23 @@
 {
+    "Tooltip_Compact_Appliance": "Pode ser instalado em alguns veículos e reboques",
+    "Tooltip_item_tuning": "Peça para tuning",
+    "Tooltip_item_ATATuningMagUniversal": "Após ler esta edição, você obterá conhecimento básico de tuning. Você aprenderá<br>a criar proteção universal para janelas, estudar os desenhos de diferentes tipos de porta-malas<br>e entender como tornar o para-choque do carro mais letal.",
     "Tooltip_item_BoatMechanic": "Tipo de barco",
-    "Tooltip_BoatDashboard_SpeedValueButton": "Alterar unidades de medida",
-    "Tooltip_Boat_LowBattery": "Nivel de bateria baixo",
-    "Tooltip_item_BoatMag": "Manual instrutivo contendo diagramas e tarefas comuns de manutencao<br>para modelos de barcos populares."
+    "Tooltip_BoatDashboard_SpeedValueButton": "Alterar unidade de medida",
+    "Tooltip_Boat_LowBattery": "Nível de bateria baixo",
+    "Tooltip_item_BoatMag": "Manual instrutivo contendo diagramas e tarefas comuns de manutenção<br>para modelos populares de barcos.",
+    "Tooltip_item_SwimMag": "Revista sobre os métodos mais eficazes de natação. Entrevista com os melhores nadadores do país.<br>Avaliações de sungas, toucas e óculos de natação.",
+    "Tooltip_item_AtTuningMagBus": "Nesta edição você aprenderá como preparar seu ônibus para o apocalipse zumbi,<br>aprenderá a criar proteção para janelas e rodas, entenderá como fazer<br>uma grade eficaz e como fazer um rack de teto espaçoso.",
+    "Tooltip_item_kengur": "Você inventou um novo tipo de para-choque reforçado.<br>Tudo o que resta é estudar seus desenhos mais de perto.",
+    "Tooltip_item_AtTuningMagJeep": "Após ler esta edição, você obterá conhecimento básico de tuning e aprenderá a criar proteção, para-choques, trilhos de teto e porta-malas adicionais para o Jaap Wrungel",
+    "Tooltip_item_ATATuningFordMustang": "Após ler esta edição, você obterá conhecimento básico de tuning e aprenderá a<br>criar proteção, um para-choque reforçado e um rack de teto para o Fjord Mustard",
+    "Tooltip_item_ATATuningChevalierSamara": "Após ler esta edição, você obterá conhecimento básico de tuning e aprenderá a<br>criar proteção, um para-choque reforçado e um rack de teto para o Chevalier Samara",
+    "Tooltip_item_ATADodgeTuningMag": "Após ler esta edição, você obterá conhecimento básico de tuning e aprenderá a<br>criar proteção, para-choques reforçados e racks para o Dadge Steals RT",
+    "Tooltip_item_ATAPetyarbuiltTuningMag": "Após ler esta edição, você obterá conhecimento básico de tuning e aprenderá a<br>criar proteção para o Petyarbuilt 379",
+    "Tooltip_item_ATATuningMagLuton": "Após ler esta edição, você obterá conhecimento básico de tuning e aprenderá a<br>criar proteção para o MolksAgen Luton Van",
+    "Tooltip_item_ATATuningMagDeRumba": "Após ler esta edição, você obterá conhecimento básico de tuning e aprenderá a<br>criar proteção para o DeRumba Van",
+    "Tooltip_item_Boombox": "Boombox estrangeiro. Não capta rádios locais,<br>mas pode tocar fitas cassete. Funciona com pilhas.",
+    "Tooltip_item_Vinyl": "Precisa de eletricidade e caixas de som conectadas para funcionar.",
+    "Tooltip_item_Walkman": "O famoso tocador da Sany.",
+    "Tooltip_item_ATABMWe36TuningMag": "Após ler esta edição, você obterá conhecimento básico de tuning e aprenderá a<br>criar proteção, para-choques reforçados e racks para o Bumer 36E"
 }

@@ -1,4 +1,13 @@
 ﻿Recipe_PTBR = {
+    Recipe_Make_ATABullbar1Item = "Fazer para-choque",
+    Recipe_Make_ATABullbar2Item = "Fazer para-choque reforçado",
+    Recipe_Make_ATABullbarPoliceItem1 = "Fazer para-choque policial",
+    Recipe_Make_ATASpoilerFrontItem = "Fazer spoiler dianteiro",
+    Recipe_Make_ATASpoilerRear1Item = "Fazer spoiler traseiro",
+    Recipe_Make_ATASpoilerRear2Item = "Fazer spoiler traseiro (largo)",
+    Recipe_Make_ATAFendersWideItem = "Fazer para-lamas largos",
+    Recipe_Make_ATASkirtsSideItem = "Fazer saias laterais",
+
     Recipe_Extract_Tire_Tube = "Retirar pneu",
     Recipe_Flatten_Tire_Tube = "Muchar pneu",
     Recipe_Inflate_Tire_Tube = "Inflar pneu",
