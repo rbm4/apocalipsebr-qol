@@ -1,0 +1,28 @@
+module Base
+{
+
+    item AmmoStrap_Bullets
+    {
+        Capacity = 10,
+    }
+
+    item AmmoStrap_Brown_Bullets
+    {
+        Capacity = 10,
+    }
+
+    item AmmoStrap_Bullets_1008
+    {
+        Capacity = 10,
+    }
+
+    item AmmoStrap_Shells
+    {
+        Capacity = 10,
+    }
+
+    item AmmoStrap_Brown_Shells
+    {
+        Capacity = 10,
+    }
+}

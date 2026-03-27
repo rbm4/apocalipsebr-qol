@@ -1,0 +1,1 @@
+Flier.register("Frogtown:FrogFlier")

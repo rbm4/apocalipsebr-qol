@@ -1,0 +1,4 @@
+ContextMenu_CN = {
+	ContextMenu_DogBark = "玩耍",
+
+}

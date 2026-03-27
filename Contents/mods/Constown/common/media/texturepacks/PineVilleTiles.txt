@@ -1,0 +1,16 @@
+version = 0
+settings
+{
+    packFileName = PineVilleTiles.pack
+    outputImageSize = 1024,1024
+    scale50 = false
+    inputImageDirectory
+    {
+        path = ../../../../../Desktop/PineTown/PineVilleTiles
+        imagesAreTilesheets = true
+    }
+    tileDef
+    {
+        path = ../pinevilletiles.tiles
+    }
+}

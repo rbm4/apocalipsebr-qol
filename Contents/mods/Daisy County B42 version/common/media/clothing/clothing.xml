@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- DaisyCounty Outfits -->
+<outfitManager>
+
+<m_MaleOutfits> <m_Name>Daisycounty_Master</m_Name>
+		<m_Guid>db8cccba-e058-4fdf-af27-83fb4de66c4a</m_Guid>
+		<m_Top>false</m_Top>
+		<m_Pants>false</m_Pants>
+		<m_AllowPantsHue>false</m_AllowPantsHue>
+		<m_AllowTopTint>false</m_AllowTopTint>
+		<m_AllowTShirtDecal>false</m_AllowTShirtDecal>
+		<m_items> <!-- 金属护裆 -->
+			<probability>0.99</probability>
+			<itemGUID>307eaf89-6e86-42f7-87f5-dd67ed2e6eba</itemGUID>
+		</m_items>			
+		<m_items> <!-- 金属护颈 -->
+			<probability>0.99</probability>
+			<itemGUID>ce398a80-5b87-4f05-a026-8d559d3151b4</itemGUID>
+		</m_items>
+			<m_items> <!-- 金属胸甲 -->
+			<probability>0.99</probability>
+			<itemGUID>1fef4746-0a85-44e8-8f00-7ddac4865b75</itemGUID>
+		</m_items>			
+		<m_items> <!-- 左手臂锁链护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>8a2480b6-df5e-4b8d-9a12-14058ed1dd26</itemGUID>
+		</m_items>
+		<m_items> <!-- 右手臂锁链护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>b3858baa-bd32-4807-87c6-2c40a1bd82f6</itemGUID>
+		</m_items>
+		<m_items> <!-- 左小腿尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>be0d059f-53af-47f6-b026-c545ce4f5276</itemGUID>
+		</m_items>
+		<m_items> <!-- 右小腿尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>641f0bf3-2544-4f34-9938-c20e6d9a347a</itemGUID>
+		</m_items>
+			<m_items> <!-- 左前臂尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>7ff756bf-68a8-4f09-b1f7-369ffddf4311</itemGUID>
+		</m_items>
+		<m_items> <!-- 右前臂尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>7d668772-f167-405a-9b9f-b15dccb4d132</itemGUID>
+		</m_items>
+			<m_items> <!-- 左大腿尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>830f5f4a-eaa6-4833-a270-865e5189274d</itemGUID>
+		</m_items>
+		<m_items> <!-- 右大腿尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>86eaa4df-d263-4d22-a069-981fa29649a6</itemGUID>
+		</m_items>
+		<m_items> <!-- 防撞头盔尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>79dd4088-685a-435d-86f8-5d0fa7343343</itemGUID> 
+		</m_items>
+		<m_items> <!-- 金属露指护手 -->
+			<probability>0.99</probability>
+			<itemGUID>c3f84799-eda9-4d21-9114-14e43ff6a820</itemGUID>
+		</m_items>
+		<m_items> <!-- 消防员上衣 -->
+			<probability>0.99</probability>
+			<itemGUID>56e0b193-733d-4061-9a73-167f6b253ec7</itemGUID>
+		</m_items>	 	
+		<m_items> <!-- 消防员长裤 -->
+			<probability>0.99</probability>
+			<itemGUID>9996d616-41eb-4674-891a-846849934c43</itemGUID>
+		</m_items>	 
+		<m_items> <!-- 军靴 -->
+			<probability>0.99</probability>
+			<itemGUID>227cb2d5-05a5-44ed-872d-ac4ca16e80bc</itemGUID>
+		</m_items>	 
+		<m_items> <!-- 军包 -->
+			<probability>0.30</probability>
+			<itemGUID>e5e131ff-bc65-4b94-9bc1-b70e8f99e68d</itemGUID>
+		</m_items>	 
+		<m_items> <!-- 浣熊市大包 -->
+			<probability>0.04</probability>
+			<itemGUID>95bb97f6-d308-42b0-8b95-ef66f93b2ee1</itemGUID>
+		</m_items>	
+		<m_items> <!-- 厚袜子 -->
+			<probability>0.90</probability>
+			<itemGUID>6d9f4838-ed93-449a-9603-4b43e630b5b8</itemGUID>
+		</m_items>	 
+		<m_items> <!-- 牛仔衬衫 -->
+			<probability>0.90</probability>
+			<itemGUID>ceead19e-1c55-4d89-8a59-864dd72d0c93</itemGUID>
+		</m_items>	
+		<m_items> <!-- 小天才手表 -->
+			<probability>0.99</probability>
+			<itemGUID>ee67b651-9088-4a68-b7e6-3b289d1627be</itemGUID>
+		</m_items>	
+
+
+</m_MaleOutfits>
+
+
+<m_FemaleOutfits> <m_Name>Daisycounty_FMaster</m_Name>
+		<m_Guid>b1141482-7ae6-402c-99b6-7c6075311379</m_Guid>
+		<m_Top>false</m_Top>
+		<m_Pants>false</m_Pants>
+		<m_AllowPantsHue>false</m_AllowPantsHue>
+		<m_AllowTopTint>false</m_AllowTopTint>
+		<m_AllowTShirtDecal>false</m_AllowTShirtDecal>
+		<m_items> <!-- 金属护裆 -->
+			<probability>0.99</probability>
+			<itemGUID>307eaf89-6e86-42f7-87f5-dd67ed2e6eba</itemGUID>
+		</m_items>			
+		<m_items> <!-- 金属护颈 -->
+			<probability>0.99</probability>
+			<itemGUID>ce398a80-5b87-4f05-a026-8d559d3151b4</itemGUID>
+		</m_items>
+			<m_items> <!-- 金属胸甲 -->
+			<probability>0.99</probability>
+			<itemGUID>1fef4746-0a85-44e8-8f00-7ddac4865b75</itemGUID>
+		</m_items>			
+		<m_items> <!-- 左手臂锁链护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>8a2480b6-df5e-4b8d-9a12-14058ed1dd26</itemGUID>
+		</m_items>
+		<m_items> <!-- 右手臂锁链护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>b3858baa-bd32-4807-87c6-2c40a1bd82f6</itemGUID>
+		</m_items>
+		<m_items> <!-- 左小腿尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>be0d059f-53af-47f6-b026-c545ce4f5276</itemGUID>
+		</m_items>
+		<m_items> <!-- 右小腿尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>641f0bf3-2544-4f34-9938-c20e6d9a347a</itemGUID>
+		</m_items>
+			<m_items> <!-- 左前臂尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>7ff756bf-68a8-4f09-b1f7-369ffddf4311</itemGUID>
+		</m_items>
+		<m_items> <!-- 右前臂尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>7d668772-f167-405a-9b9f-b15dccb4d132</itemGUID>
+		</m_items>
+			<m_items> <!-- 左大腿尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>830f5f4a-eaa6-4833-a270-865e5189274d</itemGUID>
+		</m_items>
+		<m_items> <!-- 右大腿尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>86eaa4df-d263-4d22-a069-981fa29649a6</itemGUID>
+		</m_items>
+		<m_items> <!-- 防撞头盔尖刺护甲 -->
+			<probability>0.99</probability>
+			<itemGUID>79dd4088-685a-435d-86f8-5d0fa7343343</itemGUID> 
+		</m_items>
+		<m_items> <!-- 金属露指护手 -->
+			<probability>0.99</probability>
+			<itemGUID>c3f84799-eda9-4d21-9114-14e43ff6a820</itemGUID>
+		</m_items>
+		<m_items> <!-- 消防员上衣 -->
+			<probability>0.99</probability>
+			<itemGUID>56e0b193-733d-4061-9a73-167f6b253ec7</itemGUID>
+		</m_items>	 	
+		<m_items> <!-- 消防员长裤 -->
+			<probability>0.99</probability>
+			<itemGUID>9996d616-41eb-4674-891a-846849934c43</itemGUID>
+		</m_items>	 
+		<m_items> <!-- 军靴 -->
+			<probability>0.99</probability>
+			<itemGUID>227cb2d5-05a5-44ed-872d-ac4ca16e80bc</itemGUID>
+		</m_items>	 
+		<m_items> <!-- 军包 -->
+			<probability>0.30</probability>
+			<itemGUID>e5e131ff-bc65-4b94-9bc1-b70e8f99e68d</itemGUID>
+		</m_items>	 
+		<m_items> <!-- 浣熊市大包 -->
+			<probability>0.04</probability>
+			<itemGUID>95bb97f6-d308-42b0-8b95-ef66f93b2ee1</itemGUID>
+		</m_items>	
+		<m_items> <!-- 厚袜子 -->
+			<probability>0.90</probability>
+			<itemGUID>6d9f4838-ed93-449a-9603-4b43e630b5b8</itemGUID>
+		</m_items>	 
+		<m_items> <!-- 牛仔衬衫 -->
+			<probability>0.90</probability>
+			<itemGUID>ceead19e-1c55-4d89-8a59-864dd72d0c93</itemGUID>
+		</m_items>	
+		<m_items> <!-- 小天才手表 -->
+			<probability>0.99</probability>
+			<itemGUID>9eb92dc8-2da4-4501-aae3-7d700985b30c</itemGUID>
+		</m_items>	
+
+
+
+</m_FemaleOutfits>
+
+</outfitManager>
+

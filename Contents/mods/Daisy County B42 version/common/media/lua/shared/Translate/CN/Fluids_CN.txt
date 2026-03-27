@@ -1,0 +1,5 @@
+Fluids_CN = {
+	Fluid_Container_SuperMugSpiffo = "超级小浣熊水杯",
+	Fluid_Name_Elixir = "点金水",
+
+}

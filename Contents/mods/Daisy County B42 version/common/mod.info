@@ -1,0 +1,15 @@
+name=Daisy County B42 version
+id=Daisy County B42 version
+description=Daisy County is a well-known commercial town in Knox County, Kentucky, but after the disaster, when the once bustling commercial district has now turned into a hell on earth, you need to be even more careful in it! This version was made for build42 version.
+poster=poster.png
+versionMin=42.0
+pack=daisy
+tiledef=daisy 8412
+pack=diederiks_tile_palooza
+tiledef=diederikv_tile_def 7001
+pack=tkTiles_01
+tiledef=tkTiles_01 830
+pack=DTilesPack
+tiledef=dylanstiles 6985
+pack=en_newburbs
+tiledef=en_newburbs 5520

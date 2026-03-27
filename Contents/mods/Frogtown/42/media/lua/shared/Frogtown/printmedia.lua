@@ -1,0 +1,1 @@
+PrintMediaDefinitions.MiscDetails["Frogtown:FrogFlier"] = { location1 = { { x1 = 2990, y1 = 6908, x2 = 3912, y2 = 7478,}, }, }

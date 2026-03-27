@@ -1,0 +1,11 @@
+name=Zed's Watch Slots
+id=ZWatchSlots
+author=zed_0xff
+url=https://github.com/zed-0xff
+poster=preview.png
+icon=modIcon.png
+description=Wear watches together with forearm armor.
+description=Place this mod AFTER any other custom watches mods.
+
+versionMin=42.13
+incompatible=\ShouldersWatchSlots

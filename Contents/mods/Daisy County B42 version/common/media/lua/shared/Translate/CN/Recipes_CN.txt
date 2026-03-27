@@ -1,0 +1,24 @@
+Recipes_CN = {
+    Recipe_Open_Iridiumegg_Carton = "打开盒装铱星鸡蛋",
+    Recipe_Open_Goldegg_Carton = "打开盒装金星鸡蛋",
+    Recipe_Open_Silveregg_Carton = "打开盒装银星鸡蛋",
+    Recipe_Put_Silveregg_in_Carton = "把银星鸡蛋装盒",
+    Recipe_Put_Goldegg_in_Carton = "把金星鸡蛋装盒",
+    Recipe_Put_Iridiumegg_in_Carton = "把铱星鸡蛋装盒",
+    Recipe_Open_a_pack_of_Electronic_cigarettes = "打开盒装顶针牌电子烟",
+    Recipe_Put_Electronic_cigarettes_in_pack = "把顶针牌电子烟装盒",
+    Recipe_Replacing_the_battery = "换电池",
+    Recipe_Make_arrows = "制作箭矢",
+    Recipe_Make_GalaxySaber = "锻造神兵",
+    Recipe_Make_AssaultRifleofBill2 = "升级比尔的M16",
+    Recipe_Make_AssaultRifleofBill3 = "升级比尔的M16",
+    Recipe_Make_Shotgunofcoach2 = "升级教练的霰弹枪",
+    Recipe_Make_Shotgunofcoach3 = "升级教练的霰弹枪",
+    Recipe_Make_556ClipofBill = "制作比尔的M16弹匣",
+    Recipe_Make_556ClipofBillplus = "升级比尔的M16弹匣",
+    Recipe_Make_556ClipofBillpro = "升级比尔的M16弹匣",
+
+
+
+
+} 

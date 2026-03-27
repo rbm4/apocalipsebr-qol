@@ -1,0 +1,7251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<world version="1.0">
+ <cell x="17" y="36">
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="150" y="295"/>
+     <point x="144" y="295"/>
+     <point x="144" y="292"/>
+     <point x="150" y="292"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="211" y="290"/>
+     <point x="206" y="290"/>
+     <point x="206" y="286"/>
+     <point x="211" y="286"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="223" y="290"/>
+     <point x="223" y="283"/>
+     <point x="212" y="283"/>
+     <point x="212" y="280"/>
+     <point x="206" y="277"/>
+     <point x="206" y="268"/>
+     <point x="224" y="268"/>
+     <point x="226" y="248"/>
+     <point x="206" y="248"/>
+     <point x="206" y="233"/>
+     <point x="226" y="230"/>
+     <point x="229" y="245"/>
+     <point x="241" y="251"/>
+     <point x="242" y="247"/>
+     <point x="246" y="247"/>
+     <point x="248" y="234"/>
+     <point x="250" y="226"/>
+     <point x="259" y="226"/>
+     <point x="260" y="231"/>
+     <point x="266" y="235"/>
+     <point x="269" y="253"/>
+     <point x="278" y="253"/>
+     <point x="278" y="259"/>
+     <point x="267" y="259"/>
+     <point x="267" y="256"/>
+     <point x="264" y="256"/>
+     <point x="264" y="261"/>
+     <point x="280" y="265"/>
+     <point x="280" y="268"/>
+     <point x="276" y="268"/>
+     <point x="278" y="278"/>
+     <point x="269" y="278"/>
+     <point x="268" y="270"/>
+     <point x="259" y="273"/>
+     <point x="259" y="277"/>
+     <point x="254" y="277"/>
+     <point x="254" y="273"/>
+     <point x="250" y="274"/>
+     <point x="249" y="286"/>
+     <point x="245" y="286"/>
+     <point x="242" y="277"/>
+     <point x="239" y="277"/>
+     <point x="239" y="281"/>
+     <point x="233" y="281"/>
+     <point x="230" y="274"/>
+     <point x="230" y="281"/>
+     <point x="224" y="281"/>
+     <point x="230" y="283"/>
+     <point x="230" y="290"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="196" y="115"/>
+     <point x="206" y="116"/>
+     <point x="206" y="126"/>
+     <point x="203" y="128"/>
+     <point x="221" y="128"/>
+     <point x="225" y="140"/>
+     <point x="235" y="142"/>
+     <point x="235" y="146"/>
+     <point x="247" y="148"/>
+     <point x="249" y="162"/>
+     <point x="244" y="162"/>
+     <point x="244" y="167"/>
+     <point x="257" y="167"/>
+     <point x="257" y="174"/>
+     <point x="250" y="176"/>
+     <point x="258" y="176"/>
+     <point x="259" y="182"/>
+     <point x="267" y="182"/>
+     <point x="265" y="192"/>
+     <point x="256" y="192"/>
+     <point x="261" y="194"/>
+     <point x="261" y="200"/>
+     <point x="251" y="200"/>
+     <point x="256" y="201"/>
+     <point x="256" y="211"/>
+     <point x="251" y="211"/>
+     <point x="251" y="203"/>
+     <point x="246" y="203"/>
+     <point x="243" y="186"/>
+     <point x="236" y="186"/>
+     <point x="236" y="179"/>
+     <point x="231" y="179"/>
+     <point x="231" y="174"/>
+     <point x="221" y="174"/>
+     <point x="217" y="177"/>
+     <point x="217" y="180"/>
+     <point x="220" y="180"/>
+     <point x="220" y="184"/>
+     <point x="217" y="184"/>
+     <point x="220" y="190"/>
+     <point x="206" y="190"/>
+     <point x="206" y="193"/>
+     <point x="220" y="192"/>
+     <point x="222" y="206"/>
+     <point x="214" y="211"/>
+     <point x="202" y="212"/>
+     <point x="200" y="205"/>
+     <point x="192" y="201"/>
+     <point x="184" y="201"/>
+     <point x="184" y="207"/>
+     <point x="177" y="204"/>
+     <point x="180" y="240"/>
+     <point x="176" y="240"/>
+     <point x="176" y="233"/>
+     <point x="167" y="233"/>
+     <point x="163" y="245"/>
+     <point x="168" y="245"/>
+     <point x="168" y="252"/>
+     <point x="163" y="252"/>
+     <point x="163" y="255"/>
+     <point x="158" y="257"/>
+     <point x="174" y="258"/>
+     <point x="175" y="266"/>
+     <point x="151" y="268"/>
+     <point x="151" y="273"/>
+     <point x="152" y="270"/>
+     <point x="159" y="270"/>
+     <point x="159" y="275"/>
+     <point x="165" y="275"/>
+     <point x="162" y="286"/>
+     <point x="155" y="286"/>
+     <point x="155" y="290"/>
+     <point x="151" y="290"/>
+     <point x="154" y="277"/>
+     <point x="143" y="277"/>
+     <point x="144" y="266"/>
+     <point x="150" y="266"/>
+     <point x="145" y="264"/>
+     <point x="145" y="255"/>
+     <point x="142" y="255"/>
+     <point x="143" y="238"/>
+     <point x="141" y="242"/>
+     <point x="134" y="242"/>
+     <point x="134" y="236"/>
+     <point x="139" y="236"/>
+     <point x="139" y="224"/>
+     <point x="144" y="224"/>
+     <point x="145" y="218"/>
+     <point x="157" y="217"/>
+     <point x="157" y="223"/>
+     <point x="152" y="227"/>
+     <point x="159" y="228"/>
+     <point x="159" y="224"/>
+     <point x="162" y="224"/>
+     <point x="161" y="213"/>
+     <point x="142" y="217"/>
+     <point x="141" y="207"/>
+     <point x="135" y="209"/>
+     <point x="138" y="209"/>
+     <point x="138" y="216"/>
+     <point x="131" y="216"/>
+     <point x="129" y="203"/>
+     <point x="130" y="200"/>
+     <point x="135" y="200"/>
+     <point x="137" y="188"/>
+     <point x="128" y="185"/>
+     <point x="128" y="171"/>
+     <point x="138" y="171"/>
+     <point x="138" y="161"/>
+     <point x="132" y="161"/>
+     <point x="132" y="155"/>
+     <point x="139" y="152"/>
+     <point x="139" y="140"/>
+     <point x="131" y="140"/>
+     <point x="131" y="134"/>
+     <point x="140" y="134"/>
+     <point x="140" y="137"/>
+     <point x="143" y="137"/>
+     <point x="141" y="120"/>
+     <point x="147" y="119"/>
+     <point x="147" y="112"/>
+     <point x="162" y="111"/>
+     <point x="163" y="108"/>
+     <point x="178" y="108"/>
+     <point x="182" y="113"/>
+     <point x="196" y="113"/>
+    </coordinates>
+    <coordinates>
+     <point x="144" y="206"/>
+     <point x="147" y="206"/>
+     <point x="144" y="204"/>
+    </coordinates>
+    <coordinates>
+     <point x="153" y="171"/>
+     <point x="160" y="172"/>
+     <point x="162" y="166"/>
+     <point x="153" y="170"/>
+    </coordinates>
+    <coordinates>
+     <point x="167" y="210"/>
+     <point x="166" y="213"/>
+     <point x="168" y="210"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="182" y="288"/>
+     <point x="182" y="284"/>
+     <point x="179" y="284"/>
+     <point x="179" y="289"/>
+     <point x="173" y="289"/>
+     <point x="173" y="281"/>
+     <point x="186" y="279"/>
+     <point x="186" y="288"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="288" y="285"/>
+     <point x="282" y="285"/>
+     <point x="282" y="280"/>
+     <point x="288" y="280"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="267" y="283"/>
+     <point x="262" y="283"/>
+     <point x="262" y="279"/>
+     <point x="267" y="279"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="175" y="276"/>
+     <point x="170" y="276"/>
+     <point x="170" y="273"/>
+     <point x="175" y="273"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="293" y="275"/>
+     <point x="288" y="275"/>
+     <point x="288" y="272"/>
+     <point x="293" y="272"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="41" y="274"/>
+     <point x="37" y="274"/>
+     <point x="37" y="270"/>
+     <point x="41" y="270"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="186" y="273"/>
+     <point x="181" y="273"/>
+     <point x="181" y="266"/>
+     <point x="186" y="266"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="51" y="272"/>
+     <point x="50" y="262"/>
+     <point x="54" y="262"/>
+     <point x="54" y="272"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="86" y="270"/>
+     <point x="80" y="270"/>
+     <point x="80" y="266"/>
+     <point x="86" y="266"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="37" y="15"/>
+     <point x="33" y="14"/>
+     <point x="33" y="19"/>
+     <point x="23" y="17"/>
+     <point x="26" y="19"/>
+     <point x="26" y="28"/>
+     <point x="17" y="28"/>
+     <point x="15" y="20"/>
+     <point x="11" y="20"/>
+     <point x="11" y="26"/>
+     <point x="7" y="26"/>
+     <point x="6" y="23"/>
+     <point x="6" y="27"/>
+     <point x="12" y="28"/>
+     <point x="10" y="41"/>
+     <point x="14" y="41"/>
+     <point x="14" y="48"/>
+     <point x="5" y="46"/>
+     <point x="6" y="70"/>
+     <point x="15" y="70"/>
+     <point x="15" y="81"/>
+     <point x="12" y="81"/>
+     <point x="14" y="89"/>
+     <point x="14" y="119"/>
+     <point x="9" y="119"/>
+     <point x="7" y="115"/>
+     <point x="7" y="125"/>
+     <point x="14" y="125"/>
+     <point x="14" y="135"/>
+     <point x="12" y="144"/>
+     <point x="7" y="142"/>
+     <point x="7" y="148"/>
+     <point x="12" y="148"/>
+     <point x="12" y="168"/>
+     <point x="8" y="168"/>
+     <point x="11" y="170"/>
+     <point x="9" y="194"/>
+     <point x="14" y="194"/>
+     <point x="12" y="226"/>
+     <point x="17" y="236"/>
+     <point x="21" y="236"/>
+     <point x="21" y="239"/>
+     <point x="15" y="241"/>
+     <point x="18" y="241"/>
+     <point x="18" y="246"/>
+     <point x="22" y="246"/>
+     <point x="22" y="254"/>
+     <point x="8" y="252"/>
+     <point x="8" y="256"/>
+     <point x="16" y="257"/>
+     <point x="16" y="274"/>
+     <point x="11" y="275"/>
+     <point x="18" y="276"/>
+     <point x="18" y="271"/>
+     <point x="24" y="271"/>
+     <point x="24" y="265"/>
+     <point x="32" y="265"/>
+     <point x="32" y="260"/>
+     <point x="41" y="260"/>
+     <point x="41" y="267"/>
+     <point x="32" y="267"/>
+     <point x="33" y="272"/>
+     <point x="28" y="272"/>
+     <point x="33" y="279"/>
+     <point x="33" y="290"/>
+     <point x="30" y="291"/>
+     <point x="35" y="292"/>
+     <point x="39" y="294"/>
+     <point x="39" y="290"/>
+     <point x="43" y="290"/>
+     <point x="44" y="280"/>
+     <point x="50" y="280"/>
+     <point x="50" y="275"/>
+     <point x="58" y="275"/>
+     <point x="58" y="279"/>
+     <point x="64" y="279"/>
+     <point x="64" y="284"/>
+     <point x="70" y="284"/>
+     <point x="69" y="292"/>
+     <point x="73" y="293"/>
+     <point x="75" y="300"/>
+     <point x="51" y="300"/>
+     <point x="51" y="297"/>
+     <point x="48" y="297"/>
+     <point x="48" y="300"/>
+     <point x="8" y="300"/>
+     <point x="0" y="298"/>
+     <point x="0" y="200"/>
+     <point x="8" y="198"/>
+     <point x="0" y="197"/>
+     <point x="0" y="16"/>
+     <point x="6" y="16"/>
+     <point x="0" y="14"/>
+     <point x="0" y="0"/>
+     <point x="73" y="0"/>
+     <point x="73" y="5"/>
+     <point x="70" y="6"/>
+     <point x="82" y="8"/>
+     <point x="81" y="19"/>
+     <point x="65" y="19"/>
+     <point x="65" y="9"/>
+     <point x="63" y="15"/>
+     <point x="57" y="15"/>
+     <point x="57" y="9"/>
+     <point x="52" y="9"/>
+     <point x="52" y="13"/>
+     <point x="46" y="15"/>
+     <point x="45" y="21"/>
+     <point x="40" y="21"/>
+     <point x="40" y="17"/>
+     <point x="37" y="17"/>
+    </coordinates>
+    <coordinates>
+     <point x="58" y="286"/>
+     <point x="61" y="285"/>
+     <point x="56" y="285"/>
+     <point x="56" y="280"/>
+     <point x="53" y="280"/>
+     <point x="53" y="286"/>
+     <point x="58" y="288"/>
+    </coordinates>
+    <coordinates>
+     <point x="21" y="13"/>
+     <point x="18" y="16"/>
+     <point x="23" y="16"/>
+     <point x="21" y="14"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="75" y="256"/>
+     <point x="80" y="256"/>
+     <point x="80" y="264"/>
+     <point x="75" y="264"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="59" y="264"/>
+     <point x="59" y="257"/>
+     <point x="67" y="257"/>
+     <point x="67" y="264"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="135" y="264"/>
+     <point x="132" y="264"/>
+     <point x="132" y="259"/>
+     <point x="135" y="259"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="100" y="253"/>
+     <point x="108" y="253"/>
+     <point x="108" y="258"/>
+     <point x="100" y="258"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="172" y="247"/>
+     <point x="169" y="247"/>
+     <point x="169" y="241"/>
+     <point x="172" y="241"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="133" y="243"/>
+     <point x="129" y="243"/>
+     <point x="129" y="237"/>
+     <point x="133" y="237"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="195" y="230"/>
+     <point x="195" y="236"/>
+     <point x="188" y="238"/>
+     <point x="188" y="241"/>
+     <point x="182" y="241"/>
+     <point x="182" y="232"/>
+     <point x="188" y="230"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="204" y="221"/>
+     <point x="200" y="221"/>
+     <point x="200" y="215"/>
+     <point x="204" y="215"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="264" y="169"/>
+     <point x="260" y="169"/>
+     <point x="260" y="164"/>
+     <point x="264" y="164"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="251" y="158"/>
+     <point x="251" y="150"/>
+     <point x="264" y="150"/>
+     <point x="264" y="158"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="130" y="158"/>
+     <point x="126" y="158"/>
+     <point x="126" y="152"/>
+     <point x="130" y="152"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="129" y="151"/>
+     <point x="129" y="143"/>
+     <point x="135" y="143"/>
+     <point x="135" y="151"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="232" y="128"/>
+     <point x="218" y="123"/>
+     <point x="217" y="119"/>
+     <point x="213" y="119"/>
+     <point x="213" y="114"/>
+     <point x="201" y="108"/>
+     <point x="201" y="104"/>
+     <point x="194" y="102"/>
+     <point x="194" y="93"/>
+     <point x="210" y="91"/>
+     <point x="211" y="100"/>
+     <point x="216" y="100"/>
+     <point x="216" y="93"/>
+     <point x="225" y="93"/>
+     <point x="223" y="105"/>
+     <point x="233" y="108"/>
+     <point x="239" y="111"/>
+     <point x="239" y="114"/>
+     <point x="254" y="114"/>
+     <point x="254" y="109"/>
+     <point x="261" y="109"/>
+     <point x="267" y="116"/>
+     <point x="275" y="116"/>
+     <point x="275" y="111"/>
+     <point x="286" y="110"/>
+     <point x="287" y="123"/>
+     <point x="283" y="125"/>
+     <point x="287" y="131"/>
+     <point x="291" y="131"/>
+     <point x="291" y="135"/>
+     <point x="280" y="136"/>
+     <point x="280" y="133"/>
+     <point x="273" y="133"/>
+     <point x="269" y="136"/>
+     <point x="260" y="136"/>
+     <point x="257" y="132"/>
+     <point x="232" y="133"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="144" y="118"/>
+     <point x="139" y="118"/>
+     <point x="139" y="112"/>
+     <point x="144" y="112"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="47" y="107"/>
+     <point x="43" y="107"/>
+     <point x="43" y="104"/>
+     <point x="47" y="104"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="298" y="101"/>
+     <point x="298" y="106"/>
+     <point x="291" y="106"/>
+     <point x="290" y="95"/>
+     <point x="296" y="95"/>
+     <point x="296" y="101"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="282" y="102"/>
+     <point x="282" y="90"/>
+     <point x="287" y="90"/>
+     <point x="288" y="102"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="65" y="99"/>
+     <point x="61" y="99"/>
+     <point x="61" y="93"/>
+     <point x="65" y="93"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="27" y="98"/>
+     <point x="20" y="98"/>
+     <point x="20" y="93"/>
+     <point x="27" y="93"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="225" y="33"/>
+     <point x="219" y="45"/>
+     <point x="211" y="43"/>
+     <point x="209" y="38"/>
+     <point x="206" y="40"/>
+     <point x="209" y="41"/>
+     <point x="209" y="47"/>
+     <point x="201" y="47"/>
+     <point x="200" y="57"/>
+     <point x="193" y="57"/>
+     <point x="197" y="58"/>
+     <point x="196" y="73"/>
+     <point x="188" y="73"/>
+     <point x="182" y="65"/>
+     <point x="182" y="81"/>
+     <point x="178" y="81"/>
+     <point x="177" y="87"/>
+     <point x="170" y="86"/>
+     <point x="164" y="83"/>
+     <point x="167" y="98"/>
+     <point x="151" y="94"/>
+     <point x="151" y="87"/>
+     <point x="147" y="87"/>
+     <point x="147" y="79"/>
+     <point x="144" y="79"/>
+     <point x="141" y="72"/>
+     <point x="141" y="63"/>
+     <point x="135" y="63"/>
+     <point x="135" y="56"/>
+     <point x="131" y="56"/>
+     <point x="131" y="50"/>
+     <point x="138" y="50"/>
+     <point x="140" y="44"/>
+     <point x="140" y="39"/>
+     <point x="132" y="39"/>
+     <point x="131" y="26"/>
+     <point x="135" y="26"/>
+     <point x="135" y="15"/>
+     <point x="133" y="9"/>
+     <point x="125" y="6"/>
+     <point x="125" y="0"/>
+     <point x="145" y="0"/>
+     <point x="149" y="5"/>
+     <point x="148" y="0"/>
+     <point x="300" y="0"/>
+     <point x="300" y="66"/>
+     <point x="294" y="66"/>
+     <point x="294" y="54"/>
+     <point x="293" y="59"/>
+     <point x="288" y="59"/>
+     <point x="288" y="51"/>
+     <point x="292" y="50"/>
+     <point x="288" y="50"/>
+     <point x="288" y="39"/>
+     <point x="279" y="34"/>
+     <point x="279" y="24"/>
+     <point x="282" y="24"/>
+     <point x="282" y="21"/>
+     <point x="272" y="20"/>
+     <point x="272" y="15"/>
+     <point x="266" y="15"/>
+     <point x="262" y="9"/>
+     <point x="258" y="9"/>
+     <point x="261" y="17"/>
+     <point x="251" y="16"/>
+     <point x="251" y="9"/>
+     <point x="242" y="11"/>
+     <point x="225" y="17"/>
+     <point x="225" y="26"/>
+     <point x="216" y="26"/>
+     <point x="225" y="28"/>
+    </coordinates>
+    <coordinates>
+     <point x="190" y="47"/>
+     <point x="190" y="41"/>
+     <point x="187" y="41"/>
+     <point x="185" y="51"/>
+     <point x="187" y="47"/>
+    </coordinates>
+    <coordinates>
+     <point x="293" y="36"/>
+     <point x="293" y="33"/>
+     <point x="292" y="36"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="46" y="94"/>
+     <point x="40" y="94"/>
+     <point x="40" y="88"/>
+     <point x="46" y="88"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="145" y="93"/>
+     <point x="141" y="93"/>
+     <point x="141" y="88"/>
+     <point x="145" y="88"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="293" y="89"/>
+     <point x="293" y="93"/>
+     <point x="289" y="93"/>
+     <point x="291" y="76"/>
+     <point x="298" y="76"/>
+     <point x="300" y="80"/>
+     <point x="300" y="89"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="186" y="89"/>
+     <point x="182" y="89"/>
+     <point x="182" y="85"/>
+     <point x="186" y="85"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="46" y="85"/>
+     <point x="42" y="85"/>
+     <point x="42" y="81"/>
+     <point x="46" y="81"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="257" y="67"/>
+     <point x="263" y="67"/>
+     <point x="263" y="76"/>
+     <point x="257" y="76"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="68" y="71"/>
+     <point x="68" y="74"/>
+     <point x="63" y="74"/>
+     <point x="63" y="55"/>
+     <point x="70" y="55"/>
+     <point x="71" y="71"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="87" y="72"/>
+     <point x="81" y="72"/>
+     <point x="81" y="68"/>
+     <point x="87" y="68"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="80" y="50"/>
+     <point x="80" y="53"/>
+     <point x="85" y="53"/>
+     <point x="85" y="60"/>
+     <point x="77" y="60"/>
+     <point x="77" y="67"/>
+     <point x="72" y="67"/>
+     <point x="71" y="47"/>
+     <point x="77" y="47"/>
+     <point x="77" y="42"/>
+     <point x="80" y="42"/>
+     <point x="81" y="28"/>
+     <point x="85" y="28"/>
+     <point x="85" y="32"/>
+     <point x="92" y="35"/>
+     <point x="92" y="38"/>
+     <point x="85" y="41"/>
+     <point x="85" y="50"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="204" y="63"/>
+     <point x="203" y="50"/>
+     <point x="216" y="50"/>
+     <point x="216" y="57"/>
+     <point x="211" y="57"/>
+     <point x="211" y="63"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="272" y="58"/>
+     <point x="267" y="58"/>
+     <point x="267" y="55"/>
+     <point x="272" y="55"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="273" y="38"/>
+     <point x="273" y="29"/>
+     <point x="277" y="29"/>
+     <point x="277" y="38"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="42" y="33"/>
+     <point x="38" y="33"/>
+     <point x="38" y="29"/>
+     <point x="42" y="29"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="72" y="29"/>
+     <point x="66" y="29"/>
+     <point x="66" y="22"/>
+     <point x="72" y="22"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="53" y="29"/>
+     <point x="47" y="29"/>
+     <point x="47" y="24"/>
+     <point x="53" y="24"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="266" y="27"/>
+     <point x="262" y="27"/>
+     <point x="262" y="22"/>
+     <point x="266" y="22"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="271" y="26"/>
+     <point x="268" y="26"/>
+     <point x="268" y="19"/>
+     <point x="271" y="19"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="103" y="18"/>
+     <point x="103" y="12"/>
+     <point x="97" y="12"/>
+     <point x="97" y="1"/>
+     <point x="107" y="1"/>
+     <point x="110" y="18"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="87" y="8"/>
+     <point x="87" y="0"/>
+     <point x="95" y="0"/>
+     <point x="95" y="8"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+ </cell>
+ <cell x="18" y="36">
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="297" y="16"/>
+     <point x="297" y="26"/>
+     <point x="292" y="26"/>
+     <point x="292" y="16"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="water" value="river"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="57" y="282"/>
+     <point x="51" y="283"/>
+     <point x="51" y="287"/>
+     <point x="46" y="287"/>
+     <point x="46" y="283"/>
+     <point x="43" y="283"/>
+     <point x="43" y="291"/>
+     <point x="28" y="291"/>
+     <point x="25" y="287"/>
+     <point x="17" y="289"/>
+     <point x="16" y="282"/>
+     <point x="12" y="282"/>
+     <point x="8" y="276"/>
+     <point x="9" y="254"/>
+     <point x="51" y="254"/>
+     <point x="51" y="257"/>
+     <point x="54" y="257"/>
+     <point x="55" y="250"/>
+     <point x="63" y="250"/>
+     <point x="68" y="260"/>
+     <point x="69" y="256"/>
+     <point x="79" y="256"/>
+     <point x="79" y="262"/>
+     <point x="83" y="260"/>
+     <point x="81" y="250"/>
+     <point x="90" y="250"/>
+     <point x="92" y="255"/>
+     <point x="105" y="255"/>
+     <point x="103" y="267"/>
+     <point x="96" y="267"/>
+     <point x="96" y="263"/>
+     <point x="92" y="261"/>
+     <point x="92" y="267"/>
+     <point x="87" y="270"/>
+     <point x="87" y="273"/>
+     <point x="78" y="273"/>
+     <point x="78" y="268"/>
+     <point x="76" y="273"/>
+     <point x="64" y="272"/>
+     <point x="67" y="273"/>
+     <point x="67" y="282"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="84" y="288"/>
+     <point x="79" y="288"/>
+     <point x="79" y="282"/>
+     <point x="84" y="282"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="270" y="272"/>
+     <point x="270" y="278"/>
+     <point x="265" y="278"/>
+     <point x="266" y="256"/>
+     <point x="271" y="256"/>
+     <point x="271" y="272"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="95" y="273"/>
+     <point x="91" y="273"/>
+     <point x="91" y="269"/>
+     <point x="95" y="269"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="115" y="261"/>
+     <point x="112" y="262"/>
+     <point x="112" y="266"/>
+     <point x="106" y="266"/>
+     <point x="109" y="253"/>
+     <point x="117" y="253"/>
+     <point x="117" y="261"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="293" y="257"/>
+     <point x="288" y="257"/>
+     <point x="288" y="254"/>
+     <point x="293" y="254"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="207" y="256"/>
+     <point x="201" y="256"/>
+     <point x="201" y="248"/>
+     <point x="207" y="248"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="219" y="255"/>
+     <point x="222" y="249"/>
+     <point x="230" y="249"/>
+     <point x="230" y="255"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="253" y="255"/>
+     <point x="253" y="246"/>
+     <point x="262" y="246"/>
+     <point x="262" y="241"/>
+     <point x="266" y="241"/>
+     <point x="265" y="255"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="237" y="254"/>
+     <point x="232" y="254"/>
+     <point x="232" y="248"/>
+     <point x="237" y="248"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="293" y="252"/>
+     <point x="288" y="252"/>
+     <point x="288" y="249"/>
+     <point x="293" y="249"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="261" y="241"/>
+     <point x="257" y="241"/>
+     <point x="257" y="237"/>
+     <point x="261" y="237"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="173" y="195"/>
+     <point x="166" y="195"/>
+     <point x="166" y="188"/>
+     <point x="173" y="188"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="233" y="189"/>
+     <point x="228" y="189"/>
+     <point x="228" y="185"/>
+     <point x="233" y="185"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="284" y="185"/>
+     <point x="285" y="173"/>
+     <point x="291" y="173"/>
+     <point x="291" y="185"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="268" y="179"/>
+     <point x="268" y="183"/>
+     <point x="257" y="183"/>
+     <point x="257" y="180"/>
+     <point x="253" y="180"/>
+     <point x="253" y="173"/>
+     <point x="262" y="174"/>
+     <point x="265" y="169"/>
+     <point x="271" y="169"/>
+     <point x="271" y="179"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="199" y="182"/>
+     <point x="199" y="171"/>
+     <point x="203" y="171"/>
+     <point x="203" y="182"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="224" y="176"/>
+     <point x="232" y="176"/>
+     <point x="232" y="181"/>
+     <point x="224" y="181"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="222" y="181"/>
+     <point x="218" y="181"/>
+     <point x="218" y="177"/>
+     <point x="222" y="177"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="84" y="181"/>
+     <point x="79" y="181"/>
+     <point x="79" y="176"/>
+     <point x="84" y="176"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="61" y="181"/>
+     <point x="58" y="181"/>
+     <point x="58" y="177"/>
+     <point x="61" y="177"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="24" y="181"/>
+     <point x="18" y="181"/>
+     <point x="18" y="175"/>
+     <point x="24" y="175"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="104" y="180"/>
+     <point x="101" y="180"/>
+     <point x="101" y="176"/>
+     <point x="104" y="176"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="72" y="180"/>
+     <point x="68" y="180"/>
+     <point x="68" y="176"/>
+     <point x="72" y="176"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="113" y="180"/>
+     <point x="109" y="180"/>
+     <point x="109" y="176"/>
+     <point x="113" y="176"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="37" y="180"/>
+     <point x="34" y="180"/>
+     <point x="34" y="175"/>
+     <point x="37" y="175"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="233" y="170"/>
+     <point x="240" y="171"/>
+     <point x="240" y="180"/>
+     <point x="233" y="180"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="263" y="169"/>
+     <point x="256" y="169"/>
+     <point x="256" y="166"/>
+     <point x="263" y="166"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="277" y="135"/>
+     <point x="277" y="117"/>
+     <point x="275" y="114"/>
+     <point x="274" y="117"/>
+     <point x="264" y="117"/>
+     <point x="264" y="110"/>
+     <point x="280" y="108"/>
+     <point x="280" y="135"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="277" y="89"/>
+     <point x="286" y="89"/>
+     <point x="286" y="93"/>
+     <point x="287" y="89"/>
+     <point x="300" y="89"/>
+     <point x="300" y="104"/>
+     <point x="271" y="105"/>
+     <point x="271" y="108"/>
+     <point x="265" y="108"/>
+     <point x="265" y="105"/>
+     <point x="247" y="102"/>
+     <point x="240" y="105"/>
+     <point x="239" y="111"/>
+     <point x="233" y="111"/>
+     <point x="231" y="106"/>
+     <point x="222" y="106"/>
+     <point x="208" y="121"/>
+     <point x="203" y="124"/>
+     <point x="203" y="134"/>
+     <point x="199" y="134"/>
+     <point x="200" y="112"/>
+     <point x="220" y="89"/>
+     <point x="229" y="88"/>
+     <point x="232" y="84"/>
+     <point x="265" y="84"/>
+     <point x="265" y="88"/>
+     <point x="277" y="88"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="243" y="117"/>
+     <point x="238" y="117"/>
+     <point x="238" y="113"/>
+     <point x="243" y="113"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="71" y="108"/>
+     <point x="68" y="99"/>
+     <point x="79" y="100"/>
+     <point x="79" y="108"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="53" y="94"/>
+     <point x="59" y="92"/>
+     <point x="60" y="103"/>
+     <point x="49" y="102"/>
+     <point x="49" y="94"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="34" y="102"/>
+     <point x="34" y="95"/>
+     <point x="48" y="91"/>
+     <point x="46" y="102"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="9" y="102"/>
+     <point x="11" y="91"/>
+     <point x="17" y="91"/>
+     <point x="17" y="95"/>
+     <point x="21" y="95"/>
+     <point x="17" y="102"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="6" y="101"/>
+     <point x="0" y="101"/>
+     <point x="0" y="97"/>
+     <point x="6" y="97"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="157" y="101"/>
+     <point x="150" y="101"/>
+     <point x="150" y="97"/>
+     <point x="157" y="97"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="112" y="99"/>
+     <point x="107" y="99"/>
+     <point x="107" y="96"/>
+     <point x="112" y="96"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="92" y="99"/>
+     <point x="88" y="99"/>
+     <point x="88" y="92"/>
+     <point x="92" y="92"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="144" y="88"/>
+     <point x="147" y="88"/>
+     <point x="147" y="95"/>
+     <point x="141" y="95"/>
+     <point x="141" y="91"/>
+     <point x="138" y="91"/>
+     <point x="138" y="87"/>
+     <point x="144" y="87"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="170" y="93"/>
+     <point x="165" y="93"/>
+     <point x="165" y="87"/>
+     <point x="170" y="87"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="99" y="92"/>
+     <point x="94" y="92"/>
+     <point x="94" y="87"/>
+     <point x="99" y="87"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="52" y="81"/>
+     <point x="46" y="81"/>
+     <point x="46" y="74"/>
+     <point x="52" y="74"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="300" y="72"/>
+     <point x="265" y="72"/>
+     <point x="265" y="68"/>
+     <point x="275" y="68"/>
+     <point x="275" y="64"/>
+     <point x="300" y="67"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="164" y="72"/>
+     <point x="160" y="72"/>
+     <point x="160" y="67"/>
+     <point x="164" y="67"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="231" y="65"/>
+     <point x="227" y="65"/>
+     <point x="227" y="59"/>
+     <point x="231" y="59"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="294" y="64"/>
+     <point x="294" y="56"/>
+     <point x="300" y="52"/>
+     <point x="300" y="64"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="238" y="62"/>
+     <point x="238" y="55"/>
+     <point x="247" y="55"/>
+     <point x="247" y="62"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="292" y="44"/>
+     <point x="292" y="41"/>
+     <point x="285" y="41"/>
+     <point x="285" y="32"/>
+     <point x="297" y="34"/>
+     <point x="297" y="30"/>
+     <point x="300" y="30"/>
+     <point x="300" y="44"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="266" y="37"/>
+     <point x="266" y="22"/>
+     <point x="269" y="22"/>
+     <point x="269" y="37"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="282" y="37"/>
+     <point x="278" y="37"/>
+     <point x="278" y="34"/>
+     <point x="282" y="34"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="231" y="35"/>
+     <point x="224" y="35"/>
+     <point x="224" y="32"/>
+     <point x="231" y="32"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="266" y="14"/>
+     <point x="266" y="0"/>
+     <point x="279" y="0"/>
+     <point x="279" y="5"/>
+     <point x="270" y="8"/>
+     <point x="269" y="14"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="297" y="14"/>
+     <point x="293" y="7"/>
+     <point x="281" y="6"/>
+     <point x="281" y="0"/>
+     <point x="300" y="0"/>
+     <point x="300" y="14"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="252" y="7"/>
+     <point x="247" y="6"/>
+     <point x="247" y="10"/>
+     <point x="243" y="10"/>
+     <point x="243" y="0"/>
+     <point x="263" y="0"/>
+     <point x="263" y="7"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="154" y="0"/>
+     <point x="214" y="0"/>
+     <point x="217" y="3"/>
+     <point x="218" y="0"/>
+     <point x="228" y="0"/>
+     <point x="228" y="7"/>
+     <point x="218" y="7"/>
+     <point x="213" y="20"/>
+     <point x="203" y="20"/>
+     <point x="203" y="23"/>
+     <point x="208" y="23"/>
+     <point x="208" y="36"/>
+     <point x="202" y="38"/>
+     <point x="209" y="38"/>
+     <point x="208" y="57"/>
+     <point x="217" y="56"/>
+     <point x="218" y="65"/>
+     <point x="222" y="65"/>
+     <point x="222" y="68"/>
+     <point x="247" y="68"/>
+     <point x="247" y="72"/>
+     <point x="233" y="72"/>
+     <point x="229" y="77"/>
+     <point x="215" y="77"/>
+     <point x="208" y="83"/>
+     <point x="208" y="87"/>
+     <point x="200" y="92"/>
+     <point x="200" y="97"/>
+     <point x="195" y="97"/>
+     <point x="195" y="105"/>
+     <point x="191" y="105"/>
+     <point x="191" y="114"/>
+     <point x="184" y="114"/>
+     <point x="182" y="88"/>
+     <point x="173" y="91"/>
+     <point x="173" y="85"/>
+     <point x="177" y="85"/>
+     <point x="177" y="82"/>
+     <point x="172" y="81"/>
+     <point x="172" y="86"/>
+     <point x="165" y="86"/>
+     <point x="163" y="82"/>
+     <point x="163" y="78"/>
+     <point x="169" y="78"/>
+     <point x="166" y="77"/>
+     <point x="166" y="73"/>
+     <point x="173" y="74"/>
+     <point x="171" y="68"/>
+     <point x="167" y="68"/>
+     <point x="164" y="61"/>
+     <point x="150" y="64"/>
+     <point x="157" y="66"/>
+     <point x="157" y="73"/>
+     <point x="152" y="77"/>
+     <point x="160" y="79"/>
+     <point x="160" y="83"/>
+     <point x="163" y="83"/>
+     <point x="163" y="90"/>
+     <point x="158" y="90"/>
+     <point x="158" y="95"/>
+     <point x="152" y="95"/>
+     <point x="152" y="90"/>
+     <point x="155" y="89"/>
+     <point x="151" y="89"/>
+     <point x="151" y="84"/>
+     <point x="147" y="84"/>
+     <point x="147" y="81"/>
+     <point x="142" y="81"/>
+     <point x="142" y="84"/>
+     <point x="131" y="84"/>
+     <point x="127" y="83"/>
+     <point x="127" y="76"/>
+     <point x="121" y="76"/>
+     <point x="117" y="77"/>
+     <point x="120" y="78"/>
+     <point x="120" y="84"/>
+     <point x="129" y="84"/>
+     <point x="132" y="97"/>
+     <point x="126" y="97"/>
+     <point x="126" y="93"/>
+     <point x="120" y="94"/>
+     <point x="120" y="87"/>
+     <point x="117" y="87"/>
+     <point x="117" y="95"/>
+     <point x="111" y="95"/>
+     <point x="111" y="84"/>
+     <point x="105" y="82"/>
+     <point x="106" y="73"/>
+     <point x="98" y="73"/>
+     <point x="102" y="78"/>
+     <point x="93" y="80"/>
+     <point x="93" y="90"/>
+     <point x="87" y="90"/>
+     <point x="86" y="98"/>
+     <point x="67" y="98"/>
+     <point x="67" y="90"/>
+     <point x="73" y="90"/>
+     <point x="73" y="87"/>
+     <point x="69" y="87"/>
+     <point x="68" y="75"/>
+     <point x="63" y="76"/>
+     <point x="66" y="77"/>
+     <point x="66" y="85"/>
+     <point x="57" y="85"/>
+     <point x="54" y="73"/>
+     <point x="60" y="71"/>
+     <point x="44" y="71"/>
+     <point x="41" y="80"/>
+     <point x="35" y="80"/>
+     <point x="35" y="87"/>
+     <point x="28" y="87"/>
+     <point x="28" y="93"/>
+     <point x="20" y="93"/>
+     <point x="19" y="88"/>
+     <point x="11" y="88"/>
+     <point x="10" y="93"/>
+     <point x="2" y="93"/>
+     <point x="0" y="88"/>
+     <point x="0" y="0"/>
+     <point x="129" y="0"/>
+     <point x="133" y="1"/>
+     <point x="133" y="4"/>
+     <point x="135" y="0"/>
+     <point x="140" y="0"/>
+     <point x="140" y="6"/>
+     <point x="142" y="0"/>
+    </coordinates>
+    <coordinates>
+     <point x="193" y="78"/>
+     <point x="193" y="81"/>
+     <point x="194" y="78"/>
+    </coordinates>
+    <coordinates>
+     <point x="130" y="72"/>
+     <point x="130" y="67"/>
+     <point x="133" y="67"/>
+     <point x="137" y="57"/>
+     <point x="126" y="57"/>
+     <point x="129" y="60"/>
+     <point x="129" y="72"/>
+    </coordinates>
+    <coordinates>
+     <point x="70" y="69"/>
+     <point x="70" y="63"/>
+     <point x="66" y="62"/>
+     <point x="63" y="69"/>
+    </coordinates>
+    <coordinates>
+     <point x="89" y="65"/>
+     <point x="82" y="67"/>
+     <point x="92" y="67"/>
+     <point x="93" y="62"/>
+     <point x="89" y="62"/>
+    </coordinates>
+    <coordinates>
+     <point x="179" y="50"/>
+     <point x="184" y="49"/>
+     <point x="183" y="46"/>
+     <point x="177" y="46"/>
+     <point x="177" y="50"/>
+    </coordinates>
+    <coordinates>
+     <point x="193" y="43"/>
+     <point x="190" y="45"/>
+     <point x="201" y="46"/>
+     <point x="201" y="40"/>
+     <point x="193" y="40"/>
+    </coordinates>
+    <coordinates>
+     <point x="125" y="33"/>
+     <point x="124" y="28"/>
+     <point x="123" y="33"/>
+    </coordinates>
+    <coordinates>
+     <point x="185" y="65"/>
+     <point x="182" y="65"/>
+     <point x="179" y="77"/>
+     <point x="183" y="79"/>
+     <point x="183" y="88"/>
+     <point x="187" y="88"/>
+     <point x="188" y="76"/>
+     <point x="193" y="76"/>
+     <point x="185" y="74"/>
+    </coordinates>
+    <coordinates>
+     <point x="188" y="33"/>
+     <point x="192" y="23"/>
+     <point x="188" y="23"/>
+     <point x="185" y="28"/>
+     <point x="177" y="27"/>
+     <point x="177" y="31"/>
+     <point x="172" y="32"/>
+     <point x="172" y="45"/>
+     <point x="175" y="45"/>
+     <point x="174" y="33"/>
+    </coordinates>
+    <coordinates>
+     <point x="135" y="6"/>
+     <point x="135" y="12"/>
+     <point x="137" y="6"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="232" y="0"/>
+     <point x="239" y="0"/>
+     <point x="239" y="3"/>
+     <point x="232" y="3"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+ </cell>
+ <cell x="19" y="36">
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="291" y="286"/>
+     <point x="291" y="282"/>
+     <point x="285" y="279"/>
+     <point x="285" y="271"/>
+     <point x="294" y="271"/>
+     <point x="294" y="286"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="270" y="280"/>
+     <point x="265" y="284"/>
+     <point x="265" y="268"/>
+     <point x="272" y="268"/>
+     <point x="272" y="280"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="239" y="282"/>
+     <point x="239" y="269"/>
+     <point x="250" y="270"/>
+     <point x="250" y="282"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="191" y="264"/>
+     <point x="194" y="264"/>
+     <point x="195" y="273"/>
+     <point x="199" y="273"/>
+     <point x="199" y="279"/>
+     <point x="191" y="279"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="232" y="276"/>
+     <point x="228" y="276"/>
+     <point x="228" y="272"/>
+     <point x="232" y="272"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="217" y="282"/>
+     <point x="217" y="286"/>
+     <point x="210" y="286"/>
+     <point x="210" y="277"/>
+     <point x="205" y="277"/>
+     <point x="204" y="271"/>
+     <point x="213" y="271"/>
+     <point x="213" y="275"/>
+     <point x="214" y="270"/>
+     <point x="225" y="272"/>
+     <point x="225" y="276"/>
+     <point x="220" y="276"/>
+     <point x="220" y="282"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="252" y="270"/>
+     <point x="262" y="271"/>
+     <point x="262" y="275"/>
+     <point x="252" y="275"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="83" y="270"/>
+     <point x="78" y="270"/>
+     <point x="78" y="266"/>
+     <point x="83" y="266"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="70" y="270"/>
+     <point x="65" y="270"/>
+     <point x="65" y="266"/>
+     <point x="70" y="266"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="144" y="255"/>
+     <point x="145" y="267"/>
+     <point x="141" y="267"/>
+     <point x="141" y="255"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="151" y="246"/>
+     <point x="150" y="249"/>
+     <point x="141" y="249"/>
+     <point x="141" y="238"/>
+     <point x="144" y="238"/>
+     <point x="145" y="234"/>
+     <point x="156" y="234"/>
+     <point x="156" y="246"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="99" y="237"/>
+     <point x="96" y="237"/>
+     <point x="96" y="233"/>
+     <point x="99" y="233"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="218" y="234"/>
+     <point x="212" y="234"/>
+     <point x="212" y="228"/>
+     <point x="218" y="228"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="142" y="230"/>
+     <point x="150" y="228"/>
+     <point x="150" y="233"/>
+     <point x="142" y="233"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="250" y="232"/>
+     <point x="249" y="221"/>
+     <point x="255" y="221"/>
+     <point x="255" y="232"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="99" y="231"/>
+     <point x="96" y="231"/>
+     <point x="96" y="227"/>
+     <point x="99" y="227"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="193" y="230"/>
+     <point x="193" y="221"/>
+     <point x="199" y="221"/>
+     <point x="199" y="230"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="237" y="228"/>
+     <point x="233" y="228"/>
+     <point x="233" y="221"/>
+     <point x="237" y="221"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="283" y="217"/>
+     <point x="283" y="224"/>
+     <point x="266" y="226"/>
+     <point x="271" y="212"/>
+     <point x="277" y="212"/>
+     <point x="279" y="217"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="202" y="226"/>
+     <point x="202" y="220"/>
+     <point x="208" y="217"/>
+     <point x="218" y="217"/>
+     <point x="218" y="226"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="153" y="223"/>
+     <point x="153" y="215"/>
+     <point x="156" y="215"/>
+     <point x="156" y="223"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="218" y="215"/>
+     <point x="213" y="215"/>
+     <point x="213" y="211"/>
+     <point x="218" y="211"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="157" y="213"/>
+     <point x="153" y="213"/>
+     <point x="153" y="207"/>
+     <point x="157" y="207"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="272" y="210"/>
+     <point x="271" y="194"/>
+     <point x="277" y="197"/>
+     <point x="277" y="210"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="221" y="202"/>
+     <point x="221" y="205"/>
+     <point x="215" y="205"/>
+     <point x="215" y="209"/>
+     <point x="207" y="209"/>
+     <point x="207" y="198"/>
+     <point x="212" y="197"/>
+     <point x="212" y="192"/>
+     <point x="224" y="194"/>
+     <point x="224" y="202"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="142" y="208"/>
+     <point x="142" y="199"/>
+     <point x="150" y="199"/>
+     <point x="150" y="208"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="158" y="205"/>
+     <point x="152" y="205"/>
+     <point x="152" y="199"/>
+     <point x="158" y="199"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="169" y="197"/>
+     <point x="169" y="204"/>
+     <point x="160" y="204"/>
+     <point x="160" y="194"/>
+     <point x="153" y="194"/>
+     <point x="153" y="190"/>
+     <point x="160" y="190"/>
+     <point x="160" y="193"/>
+     <point x="168" y="191"/>
+     <point x="168" y="197"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="176" y="200"/>
+     <point x="170" y="200"/>
+     <point x="170" y="194"/>
+     <point x="176" y="194"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="197" y="192"/>
+     <point x="192" y="192"/>
+     <point x="192" y="187"/>
+     <point x="197" y="187"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="190" y="192"/>
+     <point x="183" y="192"/>
+     <point x="183" y="188"/>
+     <point x="190" y="188"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="161" y="185"/>
+     <point x="161" y="188"/>
+     <point x="155" y="188"/>
+     <point x="154" y="171"/>
+     <point x="162" y="171"/>
+     <point x="162" y="185"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="272" y="185"/>
+     <point x="267" y="186"/>
+     <point x="268" y="177"/>
+     <point x="276" y="177"/>
+     <point x="276" y="185"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="217" y="186"/>
+     <point x="208" y="184"/>
+     <point x="208" y="181"/>
+     <point x="217" y="181"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="230" y="181"/>
+     <point x="227" y="181"/>
+     <point x="227" y="177"/>
+     <point x="230" y="177"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="222" y="180"/>
+     <point x="218" y="180"/>
+     <point x="218" y="177"/>
+     <point x="222" y="177"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="171" y="181"/>
+     <point x="171" y="169"/>
+     <point x="177" y="169"/>
+     <point x="177" y="176"/>
+     <point x="181" y="176"/>
+     <point x="181" y="173"/>
+     <point x="192" y="173"/>
+     <point x="192" y="179"/>
+     <point x="181" y="177"/>
+     <point x="181" y="181"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="41" y="173"/>
+     <point x="50" y="173"/>
+     <point x="50" y="178"/>
+     <point x="41" y="178"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="88" y="171"/>
+     <point x="87" y="174"/>
+     <point x="80" y="174"/>
+     <point x="80" y="161"/>
+     <point x="92" y="161"/>
+     <point x="92" y="169"/>
+     <point x="88" y="169"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="65" y="170"/>
+     <point x="57" y="171"/>
+     <point x="59" y="162"/>
+     <point x="68" y="162"/>
+     <point x="68" y="170"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="167" y="160"/>
+     <point x="166" y="156"/>
+     <point x="159" y="154"/>
+     <point x="159" y="149"/>
+     <point x="167" y="151"/>
+     <point x="186" y="145"/>
+     <point x="190" y="137"/>
+     <point x="198" y="137"/>
+     <point x="200" y="132"/>
+     <point x="211" y="127"/>
+     <point x="213" y="121"/>
+     <point x="217" y="121"/>
+     <point x="217" y="117"/>
+     <point x="218" y="113"/>
+     <point x="226" y="113"/>
+     <point x="226" y="123"/>
+     <point x="237" y="135"/>
+     <point x="246" y="131"/>
+     <point x="248" y="116"/>
+     <point x="255" y="116"/>
+     <point x="255" y="120"/>
+     <point x="258" y="120"/>
+     <point x="259" y="134"/>
+     <point x="277" y="132"/>
+     <point x="282" y="125"/>
+     <point x="291" y="126"/>
+     <point x="294" y="126"/>
+     <point x="292" y="137"/>
+     <point x="295" y="137"/>
+     <point x="295" y="143"/>
+     <point x="291" y="143"/>
+     <point x="291" y="138"/>
+     <point x="283" y="139"/>
+     <point x="287" y="141"/>
+     <point x="287" y="150"/>
+     <point x="283" y="154"/>
+     <point x="286" y="155"/>
+     <point x="286" y="162"/>
+     <point x="278" y="162"/>
+     <point x="276" y="157"/>
+     <point x="263" y="156"/>
+     <point x="260" y="159"/>
+     <point x="264" y="159"/>
+     <point x="264" y="168"/>
+     <point x="257" y="168"/>
+     <point x="255" y="158"/>
+     <point x="244" y="159"/>
+     <point x="244" y="150"/>
+     <point x="251" y="146"/>
+     <point x="240" y="146"/>
+     <point x="237" y="152"/>
+     <point x="229" y="152"/>
+     <point x="229" y="144"/>
+     <point x="227" y="150"/>
+     <point x="222" y="150"/>
+     <point x="222" y="146"/>
+     <point x="217" y="144"/>
+     <point x="211" y="144"/>
+     <point x="211" y="149"/>
+     <point x="205" y="150"/>
+     <point x="207" y="165"/>
+     <point x="209" y="156"/>
+     <point x="215" y="156"/>
+     <point x="217" y="166"/>
+     <point x="212" y="166"/>
+     <point x="212" y="175"/>
+     <point x="209" y="175"/>
+     <point x="209" y="178"/>
+     <point x="205" y="178"/>
+     <point x="204" y="169"/>
+     <point x="203" y="174"/>
+     <point x="194" y="174"/>
+     <point x="194" y="171"/>
+     <point x="186" y="168"/>
+     <point x="186" y="163"/>
+     <point x="183" y="163"/>
+     <point x="183" y="166"/>
+     <point x="175" y="166"/>
+     <point x="175" y="159"/>
+     <point x="172" y="160"/>
+     <point x="172" y="167"/>
+     <point x="168" y="167"/>
+     <point x="168" y="171"/>
+     <point x="163" y="171"/>
+     <point x="163" y="167"/>
+     <point x="167" y="167"/>
+    </coordinates>
+    <coordinates>
+     <point x="192" y="162"/>
+     <point x="200" y="163"/>
+     <point x="201" y="159"/>
+     <point x="192" y="161"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="44" y="168"/>
+     <point x="38" y="168"/>
+     <point x="38" y="164"/>
+     <point x="41" y="164"/>
+     <point x="41" y="161"/>
+     <point x="49" y="161"/>
+     <point x="51" y="171"/>
+     <point x="46" y="171"/>
+     <point x="44" y="167"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="76" y="170"/>
+     <point x="71" y="170"/>
+     <point x="71" y="166"/>
+     <point x="76" y="166"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="123" y="169"/>
+     <point x="116" y="169"/>
+     <point x="116" y="163"/>
+     <point x="123" y="163"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="21" y="167"/>
+     <point x="17" y="167"/>
+     <point x="17" y="162"/>
+     <point x="29" y="162"/>
+     <point x="29" y="168"/>
+     <point x="21" y="168"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="99" y="162"/>
+     <point x="110" y="162"/>
+     <point x="110" y="168"/>
+     <point x="99" y="168"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="10" y="167"/>
+     <point x="6" y="167"/>
+     <point x="6" y="162"/>
+     <point x="10" y="162"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="241" y="166"/>
+     <point x="235" y="166"/>
+     <point x="235" y="162"/>
+     <point x="241" y="162"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="162" y="164"/>
+     <point x="158" y="164"/>
+     <point x="158" y="161"/>
+     <point x="162" y="161"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="147" y="163"/>
+     <point x="147" y="155"/>
+     <point x="155" y="155"/>
+     <point x="155" y="163"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="216" y="154"/>
+     <point x="213" y="154"/>
+     <point x="213" y="149"/>
+     <point x="216" y="149"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="45" y="149"/>
+     <point x="55" y="149"/>
+     <point x="55" y="152"/>
+     <point x="45" y="152"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="171" y="115"/>
+     <point x="179" y="116"/>
+     <point x="178" y="131"/>
+     <point x="158" y="134"/>
+     <point x="149" y="132"/>
+     <point x="140" y="119"/>
+     <point x="136" y="118"/>
+     <point x="136" y="108"/>
+     <point x="158" y="108"/>
+     <point x="161" y="113"/>
+     <point x="171" y="113"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="181" y="127"/>
+     <point x="181" y="120"/>
+     <point x="188" y="120"/>
+     <point x="188" y="127"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="187" y="118"/>
+     <point x="182" y="118"/>
+     <point x="182" y="114"/>
+     <point x="187" y="114"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="24" y="84"/>
+     <point x="57" y="84"/>
+     <point x="57" y="88"/>
+     <point x="62" y="89"/>
+     <point x="70" y="85"/>
+     <point x="100" y="87"/>
+     <point x="102" y="98"/>
+     <point x="110" y="96"/>
+     <point x="111" y="101"/>
+     <point x="115" y="101"/>
+     <point x="115" y="112"/>
+     <point x="110" y="112"/>
+     <point x="110" y="117"/>
+     <point x="97" y="117"/>
+     <point x="97" y="105"/>
+     <point x="81" y="106"/>
+     <point x="81" y="103"/>
+     <point x="78" y="103"/>
+     <point x="73" y="106"/>
+     <point x="58" y="108"/>
+     <point x="58" y="102"/>
+     <point x="42" y="98"/>
+     <point x="35" y="100"/>
+     <point x="35" y="106"/>
+     <point x="31" y="106"/>
+     <point x="31" y="109"/>
+     <point x="18" y="109"/>
+     <point x="18" y="100"/>
+     <point x="0" y="101"/>
+     <point x="0" y="83"/>
+     <point x="24" y="85"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="190" y="105"/>
+     <point x="187" y="105"/>
+     <point x="187" y="98"/>
+     <point x="190" y="98"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="251" y="76"/>
+     <point x="258" y="76"/>
+     <point x="258" y="80"/>
+     <point x="251" y="80"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="265" y="78"/>
+     <point x="262" y="78"/>
+     <point x="262" y="74"/>
+     <point x="265" y="74"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="12" y="67"/>
+     <point x="41" y="67"/>
+     <point x="41" y="72"/>
+     <point x="0" y="72"/>
+     <point x="0" y="61"/>
+     <point x="12" y="63"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="25" y="65"/>
+     <point x="25" y="61"/>
+     <point x="30" y="61"/>
+     <point x="30" y="57"/>
+     <point x="36" y="55"/>
+     <point x="36" y="50"/>
+     <point x="42" y="50"/>
+     <point x="42" y="65"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="3" y="50"/>
+     <point x="0" y="50"/>
+     <point x="0" y="47"/>
+     <point x="3" y="47"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="37" y="43"/>
+     <point x="26" y="43"/>
+     <point x="26" y="37"/>
+     <point x="42" y="37"/>
+     <point x="42" y="41"/>
+     <point x="37" y="41"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="23" y="41"/>
+     <point x="18" y="41"/>
+     <point x="18" y="36"/>
+     <point x="23" y="36"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="0" y="38"/>
+     <point x="0" y="32"/>
+     <point x="8" y="32"/>
+     <point x="8" y="38"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="56" y="37"/>
+     <point x="56" y="24"/>
+     <point x="61" y="24"/>
+     <point x="61" y="37"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="61" y="13"/>
+     <point x="61" y="16"/>
+     <point x="54" y="16"/>
+     <point x="53" y="0"/>
+     <point x="64" y="0"/>
+     <point x="64" y="13"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="46" y="11"/>
+     <point x="46" y="15"/>
+     <point x="41" y="15"/>
+     <point x="33" y="0"/>
+     <point x="48" y="0"/>
+     <point x="48" y="11"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="154" y="0"/>
+     <point x="225" y="0"/>
+     <point x="222" y="8"/>
+     <point x="231" y="0"/>
+     <point x="264" y="0"/>
+     <point x="264" y="5"/>
+     <point x="267" y="5"/>
+     <point x="267" y="0"/>
+     <point x="300" y="0"/>
+     <point x="300" y="86"/>
+     <point x="295" y="86"/>
+     <point x="295" y="79"/>
+     <point x="293" y="83"/>
+     <point x="281" y="83"/>
+     <point x="281" y="79"/>
+     <point x="277" y="79"/>
+     <point x="277" y="74"/>
+     <point x="269" y="73"/>
+     <point x="269" y="70"/>
+     <point x="277" y="67"/>
+     <point x="267" y="66"/>
+     <point x="267" y="69"/>
+     <point x="262" y="69"/>
+     <point x="262" y="64"/>
+     <point x="266" y="64"/>
+     <point x="266" y="58"/>
+     <point x="259" y="56"/>
+     <point x="257" y="66"/>
+     <point x="260" y="66"/>
+     <point x="260" y="73"/>
+     <point x="251" y="73"/>
+     <point x="251" y="69"/>
+     <point x="247" y="69"/>
+     <point x="245" y="64"/>
+     <point x="244" y="55"/>
+     <point x="241" y="64"/>
+     <point x="237" y="64"/>
+     <point x="237" y="60"/>
+     <point x="233" y="58"/>
+     <point x="234" y="65"/>
+     <point x="243" y="66"/>
+     <point x="243" y="73"/>
+     <point x="230" y="72"/>
+     <point x="230" y="68"/>
+     <point x="227" y="68"/>
+     <point x="227" y="75"/>
+     <point x="203" y="76"/>
+     <point x="203" y="81"/>
+     <point x="195" y="80"/>
+     <point x="203" y="84"/>
+     <point x="202" y="95"/>
+     <point x="190" y="95"/>
+     <point x="188" y="90"/>
+     <point x="188" y="97"/>
+     <point x="181" y="97"/>
+     <point x="181" y="101"/>
+     <point x="174" y="101"/>
+     <point x="172" y="98"/>
+     <point x="172" y="104"/>
+     <point x="160" y="103"/>
+     <point x="160" y="99"/>
+     <point x="158" y="103"/>
+     <point x="143" y="104"/>
+     <point x="140" y="100"/>
+     <point x="127" y="100"/>
+     <point x="124" y="93"/>
+     <point x="120" y="93"/>
+     <point x="120" y="84"/>
+     <point x="107" y="84"/>
+     <point x="101" y="79"/>
+     <point x="84" y="72"/>
+     <point x="56" y="72"/>
+     <point x="56" y="68"/>
+     <point x="90" y="67"/>
+     <point x="90" y="64"/>
+     <point x="94" y="64"/>
+     <point x="91" y="62"/>
+     <point x="93" y="36"/>
+     <point x="110" y="34"/>
+     <point x="110" y="43"/>
+     <point x="112" y="46"/>
+     <point x="118" y="46"/>
+     <point x="117" y="42"/>
+     <point x="114" y="42"/>
+     <point x="114" y="35"/>
+     <point x="128" y="36"/>
+     <point x="124" y="28"/>
+     <point x="123" y="34"/>
+     <point x="118" y="34"/>
+     <point x="118" y="30"/>
+     <point x="111" y="30"/>
+     <point x="96" y="31"/>
+     <point x="96" y="35"/>
+     <point x="93" y="35"/>
+     <point x="91" y="16"/>
+     <point x="88" y="16"/>
+     <point x="88" y="0"/>
+     <point x="129" y="0"/>
+     <point x="133" y="1"/>
+     <point x="133" y="4"/>
+     <point x="135" y="0"/>
+     <point x="140" y="0"/>
+     <point x="140" y="6"/>
+     <point x="142" y="0"/>
+    </coordinates>
+    <coordinates>
+     <point x="131" y="65"/>
+     <point x="137" y="57"/>
+     <point x="130" y="57"/>
+     <point x="130" y="65"/>
+    </coordinates>
+    <coordinates>
+     <point x="103" y="59"/>
+     <point x="106" y="60"/>
+     <point x="103" y="58"/>
+    </coordinates>
+    <coordinates>
+     <point x="101" y="46"/>
+     <point x="98" y="44"/>
+     <point x="98" y="50"/>
+     <point x="101" y="50"/>
+    </coordinates>
+    <coordinates>
+     <point x="283" y="21"/>
+     <point x="286" y="21"/>
+     <point x="283" y="20"/>
+    </coordinates>
+    <coordinates>
+     <point x="105" y="11"/>
+     <point x="100" y="10"/>
+     <point x="105" y="12"/>
+    </coordinates>
+    <coordinates>
+     <point x="135" y="6"/>
+     <point x="135" y="12"/>
+     <point x="137" y="6"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="2" y="0"/>
+     <point x="17" y="0"/>
+     <point x="17" y="3"/>
+     <point x="2" y="4"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="30" y="4"/>
+     <point x="23" y="4"/>
+     <point x="23" y="0"/>
+     <point x="30" y="0"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="86" y="4"/>
+     <point x="79" y="4"/>
+     <point x="79" y="0"/>
+     <point x="86" y="0"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+ </cell>
+ <cell x="20" y="36">
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="104" y="285"/>
+     <point x="99" y="285"/>
+     <point x="99" y="280"/>
+     <point x="104" y="280"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="20" y="280"/>
+     <point x="20" y="269"/>
+     <point x="27" y="269"/>
+     <point x="27" y="280"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="76" y="269"/>
+     <point x="76" y="275"/>
+     <point x="68" y="276"/>
+     <point x="68" y="279"/>
+     <point x="61" y="279"/>
+     <point x="61" y="269"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="34" y="269"/>
+     <point x="42" y="269"/>
+     <point x="42" y="275"/>
+     <point x="34" y="275"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="107" y="268"/>
+     <point x="100" y="268"/>
+     <point x="100" y="264"/>
+     <point x="107" y="264"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="112" y="260"/>
+     <point x="112" y="251"/>
+     <point x="117" y="251"/>
+     <point x="117" y="260"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="118" y="247"/>
+     <point x="114" y="247"/>
+     <point x="114" y="243"/>
+     <point x="118" y="243"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="104" y="244"/>
+     <point x="99" y="244"/>
+     <point x="99" y="241"/>
+     <point x="104" y="241"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="112" y="242"/>
+     <point x="108" y="242"/>
+     <point x="108" y="237"/>
+     <point x="112" y="237"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="30" y="222"/>
+     <point x="34" y="224"/>
+     <point x="31" y="240"/>
+     <point x="22" y="240"/>
+     <point x="22" y="231"/>
+     <point x="30" y="231"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="89" y="239"/>
+     <point x="89" y="228"/>
+     <point x="95" y="228"/>
+     <point x="95" y="239"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="107" y="227"/>
+     <point x="104" y="227"/>
+     <point x="104" y="222"/>
+     <point x="107" y="222"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="89" y="222"/>
+     <point x="86" y="222"/>
+     <point x="86" y="218"/>
+     <point x="89" y="218"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="29" y="206"/>
+     <point x="26" y="206"/>
+     <point x="26" y="202"/>
+     <point x="32" y="202"/>
+     <point x="33" y="207"/>
+     <point x="38" y="207"/>
+     <point x="38" y="210"/>
+     <point x="29" y="210"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="259" y="139"/>
+     <point x="280" y="136"/>
+     <point x="274" y="129"/>
+     <point x="274" y="116"/>
+     <point x="263" y="118"/>
+     <point x="263" y="115"/>
+     <point x="268" y="115"/>
+     <point x="268" y="109"/>
+     <point x="278" y="111"/>
+     <point x="281" y="103"/>
+     <point x="281" y="96"/>
+     <point x="277" y="96"/>
+     <point x="277" y="82"/>
+     <point x="274" y="82"/>
+     <point x="276" y="60"/>
+     <point x="289" y="59"/>
+     <point x="288" y="70"/>
+     <point x="284" y="70"/>
+     <point x="287" y="74"/>
+     <point x="288" y="79"/>
+     <point x="284" y="86"/>
+     <point x="287" y="97"/>
+     <point x="291" y="97"/>
+     <point x="291" y="107"/>
+     <point x="287" y="107"/>
+     <point x="288" y="122"/>
+     <point x="285" y="124"/>
+     <point x="291" y="129"/>
+     <point x="291" y="141"/>
+     <point x="276" y="144"/>
+     <point x="276" y="147"/>
+     <point x="270" y="148"/>
+     <point x="270" y="155"/>
+     <point x="273" y="155"/>
+     <point x="276" y="149"/>
+     <point x="291" y="150"/>
+     <point x="291" y="160"/>
+     <point x="292" y="172"/>
+     <point x="285" y="175"/>
+     <point x="289" y="191"/>
+     <point x="282" y="193"/>
+     <point x="290" y="193"/>
+     <point x="292" y="205"/>
+     <point x="280" y="206"/>
+     <point x="279" y="200"/>
+     <point x="271" y="196"/>
+     <point x="268" y="186"/>
+     <point x="278" y="187"/>
+     <point x="278" y="183"/>
+     <point x="272" y="183"/>
+     <point x="272" y="166"/>
+     <point x="269" y="166"/>
+     <point x="269" y="158"/>
+     <point x="265" y="158"/>
+     <point x="265" y="154"/>
+     <point x="260" y="152"/>
+     <point x="260" y="148"/>
+     <point x="265" y="148"/>
+     <point x="265" y="145"/>
+     <point x="259" y="145"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="38" y="196"/>
+     <point x="33" y="196"/>
+     <point x="33" y="192"/>
+     <point x="38" y="192"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="269" y="183"/>
+     <point x="264" y="183"/>
+     <point x="264" y="177"/>
+     <point x="269" y="177"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="255" y="173"/>
+     <point x="251" y="173"/>
+     <point x="251" y="168"/>
+     <point x="255" y="168"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="36" y="169"/>
+     <point x="36" y="161"/>
+     <point x="42" y="161"/>
+     <point x="42" y="169"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="45" y="165"/>
+     <point x="45" y="157"/>
+     <point x="50" y="157"/>
+     <point x="50" y="165"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="58" y="165"/>
+     <point x="51" y="165"/>
+     <point x="51" y="158"/>
+     <point x="58" y="158"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="34" y="157"/>
+     <point x="34" y="161"/>
+     <point x="30" y="161"/>
+     <point x="30" y="157"/>
+     <point x="24" y="155"/>
+     <point x="24" y="151"/>
+     <point x="20" y="151"/>
+     <point x="20" y="143"/>
+     <point x="34" y="145"/>
+     <point x="35" y="157"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="233" y="159"/>
+     <point x="218" y="159"/>
+     <point x="218" y="149"/>
+     <point x="233" y="152"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="183" y="153"/>
+     <point x="183" y="149"/>
+     <point x="176" y="148"/>
+     <point x="176" y="137"/>
+     <point x="182" y="137"/>
+     <point x="182" y="143"/>
+     <point x="186" y="143"/>
+     <point x="186" y="153"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="289" y="148"/>
+     <point x="283" y="148"/>
+     <point x="283" y="144"/>
+     <point x="289" y="144"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="35" y="141"/>
+     <point x="30" y="141"/>
+     <point x="30" y="137"/>
+     <point x="35" y="137"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="210" y="133"/>
+     <point x="213" y="133"/>
+     <point x="213" y="129"/>
+     <point x="221" y="129"/>
+     <point x="221" y="138"/>
+     <point x="210" y="138"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="206" y="138"/>
+     <point x="199" y="138"/>
+     <point x="199" y="131"/>
+     <point x="206" y="131"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="38" y="129"/>
+     <point x="32" y="129"/>
+     <point x="32" y="125"/>
+     <point x="38" y="125"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="218" y="113"/>
+     <point x="218" y="122"/>
+     <point x="211" y="122"/>
+     <point x="211" y="111"/>
+     <point x="210" y="108"/>
+     <point x="206" y="108"/>
+     <point x="205" y="97"/>
+     <point x="217" y="98"/>
+     <point x="220" y="113"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="202" y="105"/>
+     <point x="198" y="105"/>
+     <point x="198" y="101"/>
+     <point x="202" y="101"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="298" y="102"/>
+     <point x="300" y="93"/>
+     <point x="300" y="102"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="234" y="102"/>
+     <point x="228" y="102"/>
+     <point x="228" y="98"/>
+     <point x="234" y="98"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="222" y="90"/>
+     <point x="219" y="90"/>
+     <point x="219" y="94"/>
+     <point x="210" y="94"/>
+     <point x="211" y="82"/>
+     <point x="222" y="83"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="226" y="88"/>
+     <point x="238" y="88"/>
+     <point x="238" y="91"/>
+     <point x="226" y="91"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="238" y="81"/>
+     <point x="232" y="81"/>
+     <point x="232" y="76"/>
+     <point x="238" y="76"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="208" y="80"/>
+     <point x="208" y="71"/>
+     <point x="217" y="71"/>
+     <point x="217" y="80"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="217" y="60"/>
+     <point x="217" y="64"/>
+     <point x="212" y="64"/>
+     <point x="210" y="60"/>
+     <point x="209" y="39"/>
+     <point x="216" y="39"/>
+     <point x="218" y="60"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="298" y="60"/>
+     <point x="300" y="52"/>
+     <point x="300" y="60"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="289" y="57"/>
+     <point x="273" y="56"/>
+     <point x="273" y="40"/>
+     <point x="283" y="40"/>
+     <point x="283" y="45"/>
+     <point x="289" y="49"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="255" y="39"/>
+     <point x="263" y="39"/>
+     <point x="263" y="45"/>
+     <point x="255" y="45"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="224" y="31"/>
+     <point x="219" y="31"/>
+     <point x="219" y="28"/>
+     <point x="224" y="28"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="268" y="30"/>
+     <point x="269" y="20"/>
+     <point x="278" y="20"/>
+     <point x="278" y="30"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="154" y="0"/>
+     <point x="154" y="4"/>
+     <point x="148" y="5"/>
+     <point x="152" y="7"/>
+     <point x="152" y="12"/>
+     <point x="147" y="12"/>
+     <point x="153" y="15"/>
+     <point x="153" y="18"/>
+     <point x="154" y="4"/>
+     <point x="157" y="0"/>
+     <point x="225" y="0"/>
+     <point x="225" y="5"/>
+     <point x="221" y="5"/>
+     <point x="221" y="8"/>
+     <point x="231" y="0"/>
+     <point x="264" y="0"/>
+     <point x="264" y="5"/>
+     <point x="267" y="5"/>
+     <point x="267" y="0"/>
+     <point x="291" y="0"/>
+     <point x="290" y="18"/>
+     <point x="266" y="18"/>
+     <point x="258" y="22"/>
+     <point x="256" y="29"/>
+     <point x="249" y="29"/>
+     <point x="249" y="26"/>
+     <point x="245" y="25"/>
+     <point x="225" y="26"/>
+     <point x="223" y="23"/>
+     <point x="217" y="23"/>
+     <point x="217" y="16"/>
+     <point x="221" y="14"/>
+     <point x="214" y="16"/>
+     <point x="216" y="18"/>
+     <point x="216" y="25"/>
+     <point x="203" y="22"/>
+     <point x="201" y="26"/>
+     <point x="194" y="26"/>
+     <point x="194" y="17"/>
+     <point x="198" y="16"/>
+     <point x="193" y="15"/>
+     <point x="192" y="8"/>
+     <point x="189" y="24"/>
+     <point x="175" y="24"/>
+     <point x="173" y="13"/>
+     <point x="172" y="24"/>
+     <point x="162" y="24"/>
+     <point x="162" y="20"/>
+     <point x="156" y="18"/>
+     <point x="155" y="36"/>
+     <point x="148" y="36"/>
+     <point x="147" y="33"/>
+     <point x="141" y="31"/>
+     <point x="141" y="37"/>
+     <point x="149" y="38"/>
+     <point x="147" y="48"/>
+     <point x="150" y="60"/>
+     <point x="146" y="62"/>
+     <point x="153" y="62"/>
+     <point x="153" y="68"/>
+     <point x="149" y="70"/>
+     <point x="154" y="75"/>
+     <point x="160" y="75"/>
+     <point x="160" y="82"/>
+     <point x="163" y="82"/>
+     <point x="162" y="75"/>
+     <point x="173" y="78"/>
+     <point x="173" y="87"/>
+     <point x="170" y="87"/>
+     <point x="160" y="90"/>
+     <point x="164" y="92"/>
+     <point x="164" y="99"/>
+     <point x="158" y="100"/>
+     <point x="168" y="101"/>
+     <point x="168" y="111"/>
+     <point x="173" y="113"/>
+     <point x="173" y="118"/>
+     <point x="177" y="118"/>
+     <point x="177" y="127"/>
+     <point x="176" y="132"/>
+     <point x="173" y="132"/>
+     <point x="170" y="121"/>
+     <point x="164" y="119"/>
+     <point x="165" y="128"/>
+     <point x="159" y="128"/>
+     <point x="159" y="131"/>
+     <point x="167" y="131"/>
+     <point x="168" y="134"/>
+     <point x="168" y="145"/>
+     <point x="164" y="147"/>
+     <point x="164" y="153"/>
+     <point x="157" y="157"/>
+     <point x="155" y="163"/>
+     <point x="149" y="167"/>
+     <point x="140" y="167"/>
+     <point x="143" y="169"/>
+     <point x="143" y="176"/>
+     <point x="137" y="176"/>
+     <point x="137" y="185"/>
+     <point x="131" y="185"/>
+     <point x="131" y="194"/>
+     <point x="126" y="195"/>
+     <point x="120" y="216"/>
+     <point x="106" y="218"/>
+     <point x="106" y="213"/>
+     <point x="103" y="212"/>
+     <point x="101" y="219"/>
+     <point x="101" y="222"/>
+     <point x="95" y="222"/>
+     <point x="95" y="205"/>
+     <point x="101" y="206"/>
+     <point x="101" y="201"/>
+     <point x="90" y="201"/>
+     <point x="91" y="191"/>
+     <point x="89" y="195"/>
+     <point x="85" y="195"/>
+     <point x="85" y="191"/>
+     <point x="78" y="188"/>
+     <point x="78" y="183"/>
+     <point x="72" y="183"/>
+     <point x="72" y="189"/>
+     <point x="75" y="189"/>
+     <point x="79" y="196"/>
+     <point x="83" y="196"/>
+     <point x="83" y="200"/>
+     <point x="69" y="198"/>
+     <point x="69" y="192"/>
+     <point x="64" y="192"/>
+     <point x="64" y="186"/>
+     <point x="59" y="186"/>
+     <point x="59" y="194"/>
+     <point x="51" y="194"/>
+     <point x="49" y="184"/>
+     <point x="58" y="184"/>
+     <point x="55" y="183"/>
+     <point x="57" y="168"/>
+     <point x="66" y="168"/>
+     <point x="69" y="173"/>
+     <point x="85" y="170"/>
+     <point x="85" y="181"/>
+     <point x="89" y="170"/>
+     <point x="95" y="170"/>
+     <point x="95" y="176"/>
+     <point x="105" y="176"/>
+     <point x="105" y="172"/>
+     <point x="95" y="168"/>
+     <point x="95" y="162"/>
+     <point x="91" y="162"/>
+     <point x="91" y="155"/>
+     <point x="87" y="162"/>
+     <point x="92" y="163"/>
+     <point x="92" y="168"/>
+     <point x="74" y="168"/>
+     <point x="73" y="162"/>
+     <point x="61" y="162"/>
+     <point x="61" y="156"/>
+     <point x="44" y="154"/>
+     <point x="42" y="136"/>
+     <point x="46" y="129"/>
+     <point x="42" y="129"/>
+     <point x="42" y="123"/>
+     <point x="23" y="123"/>
+     <point x="23" y="126"/>
+     <point x="29" y="129"/>
+     <point x="28" y="141"/>
+     <point x="11" y="140"/>
+     <point x="10" y="127"/>
+     <point x="1" y="126"/>
+     <point x="1" y="116"/>
+     <point x="8" y="115"/>
+     <point x="8" y="102"/>
+     <point x="13" y="98"/>
+     <point x="6" y="95"/>
+     <point x="5" y="83"/>
+     <point x="2" y="83"/>
+     <point x="0" y="78"/>
+     <point x="0" y="0"/>
+     <point x="129" y="0"/>
+     <point x="133" y="1"/>
+     <point x="133" y="4"/>
+     <point x="135" y="0"/>
+     <point x="140" y="0"/>
+     <point x="140" y="6"/>
+     <point x="142" y="0"/>
+    </coordinates>
+    <coordinates>
+     <point x="86" y="152"/>
+     <point x="86" y="148"/>
+     <point x="83" y="148"/>
+     <point x="83" y="152"/>
+    </coordinates>
+    <coordinates>
+     <point x="63" y="140"/>
+     <point x="65" y="137"/>
+     <point x="61" y="139"/>
+     <point x="63" y="141"/>
+    </coordinates>
+    <coordinates>
+     <point x="106" y="135"/>
+     <point x="107" y="131"/>
+     <point x="105" y="135"/>
+    </coordinates>
+    <coordinates>
+     <point x="75" y="120"/>
+     <point x="73" y="122"/>
+     <point x="75" y="121"/>
+    </coordinates>
+    <coordinates>
+     <point x="142" y="85"/>
+     <point x="135" y="84"/>
+     <point x="142" y="86"/>
+    </coordinates>
+    <coordinates>
+     <point x="91" y="67"/>
+     <point x="93" y="62"/>
+     <point x="89" y="62"/>
+     <point x="91" y="64"/>
+    </coordinates>
+    <coordinates>
+     <point x="130" y="65"/>
+     <point x="137" y="56"/>
+     <point x="130" y="57"/>
+    </coordinates>
+    <coordinates>
+     <point x="130" y="41"/>
+     <point x="132" y="36"/>
+     <point x="129" y="36"/>
+     <point x="129" y="41"/>
+    </coordinates>
+    <coordinates>
+     <point x="125" y="33"/>
+     <point x="124" y="28"/>
+     <point x="123" y="33"/>
+    </coordinates>
+    <coordinates>
+     <point x="159" y="112"/>
+     <point x="160" y="116"/>
+     <point x="159" y="104"/>
+     <point x="158" y="112"/>
+    </coordinates>
+    <coordinates>
+     <point x="135" y="6"/>
+     <point x="135" y="12"/>
+     <point x="137" y="6"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="212" y="163"/>
+     <point x="213" y="173"/>
+     <point x="216" y="175"/>
+     <point x="217" y="168"/>
+     <point x="227" y="168"/>
+     <point x="227" y="174"/>
+     <point x="232" y="174"/>
+     <point x="233" y="188"/>
+     <point x="238" y="185"/>
+     <point x="237" y="191"/>
+     <point x="243" y="191"/>
+     <point x="243" y="198"/>
+     <point x="235" y="200"/>
+     <point x="247" y="200"/>
+     <point x="247" y="215"/>
+     <point x="250" y="215"/>
+     <point x="250" y="209"/>
+     <point x="273" y="211"/>
+     <point x="272" y="229"/>
+     <point x="262" y="230"/>
+     <point x="274" y="229"/>
+     <point x="283" y="229"/>
+     <point x="283" y="232"/>
+     <point x="286" y="232"/>
+     <point x="289" y="269"/>
+     <point x="285" y="271"/>
+     <point x="290" y="271"/>
+     <point x="292" y="276"/>
+     <point x="292" y="300"/>
+     <point x="141" y="300"/>
+     <point x="141" y="295"/>
+     <point x="139" y="300"/>
+     <point x="126" y="300"/>
+     <point x="126" y="294"/>
+     <point x="122" y="294"/>
+     <point x="122" y="300"/>
+     <point x="112" y="300"/>
+     <point x="111" y="288"/>
+     <point x="125" y="284"/>
+     <point x="129" y="279"/>
+     <point x="135" y="281"/>
+     <point x="135" y="271"/>
+     <point x="124" y="271"/>
+     <point x="124" y="266"/>
+     <point x="136" y="263"/>
+     <point x="137" y="256"/>
+     <point x="128" y="257"/>
+     <point x="128" y="262"/>
+     <point x="121" y="261"/>
+     <point x="123" y="240"/>
+     <point x="126" y="240"/>
+     <point x="123" y="238"/>
+     <point x="112" y="234"/>
+     <point x="112" y="228"/>
+     <point x="121" y="229"/>
+     <point x="121" y="220"/>
+     <point x="125" y="216"/>
+     <point x="128" y="200"/>
+     <point x="131" y="200"/>
+     <point x="131" y="196"/>
+     <point x="136" y="196"/>
+     <point x="140" y="178"/>
+     <point x="146" y="178"/>
+     <point x="147" y="169"/>
+     <point x="156" y="169"/>
+     <point x="158" y="159"/>
+     <point x="166" y="158"/>
+     <point x="166" y="153"/>
+     <point x="180" y="153"/>
+     <point x="198" y="156"/>
+     <point x="199" y="165"/>
+     <point x="200" y="161"/>
+     <point x="212" y="161"/>
+    </coordinates>
+    <coordinates>
+     <point x="255" y="225"/>
+     <point x="256" y="222"/>
+     <point x="264" y="221"/>
+     <point x="259" y="220"/>
+     <point x="259" y="213"/>
+     <point x="251" y="215"/>
+     <point x="255" y="217"/>
+    </coordinates>
+    <coordinates>
+     <point x="151" y="273"/>
+     <point x="152" y="283"/>
+     <point x="153" y="273"/>
+    </coordinates>
+    <coordinates>
+     <point x="138" y="251"/>
+     <point x="138" y="254"/>
+     <point x="141" y="254"/>
+     <point x="139" y="251"/>
+    </coordinates>
+    <coordinates>
+     <point x="266" y="249"/>
+     <point x="272" y="251"/>
+     <point x="272" y="246"/>
+     <point x="266" y="246"/>
+    </coordinates>
+    <coordinates>
+     <point x="179" y="249"/>
+     <point x="182" y="249"/>
+     <point x="179" y="248"/>
+    </coordinates>
+    <coordinates>
+     <point x="195" y="207"/>
+     <point x="194" y="199"/>
+     <point x="192" y="207"/>
+    </coordinates>
+    <coordinates>
+     <point x="176" y="163"/>
+     <point x="181" y="163"/>
+     <point x="181" y="167"/>
+     <point x="169" y="166"/>
+     <point x="168" y="169"/>
+     <point x="187" y="169"/>
+     <point x="187" y="166"/>
+     <point x="190" y="166"/>
+     <point x="189" y="160"/>
+     <point x="176" y="160"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+ </cell>
+ <cell x="17" y="37">
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="99" y="274"/>
+     <point x="95" y="274"/>
+     <point x="95" y="269"/>
+     <point x="99" y="269"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="58" y="50"/>
+     <point x="58" y="56"/>
+     <point x="67" y="55"/>
+     <point x="67" y="60"/>
+     <point x="61" y="62"/>
+     <point x="63" y="76"/>
+     <point x="57" y="76"/>
+     <point x="55" y="68"/>
+     <point x="50" y="67"/>
+     <point x="51" y="57"/>
+     <point x="42" y="56"/>
+     <point x="42" y="53"/>
+     <point x="41" y="56"/>
+     <point x="37" y="56"/>
+     <point x="37" y="52"/>
+     <point x="31" y="53"/>
+     <point x="32" y="61"/>
+     <point x="29" y="61"/>
+     <point x="29" y="65"/>
+     <point x="32" y="65"/>
+     <point x="32" y="70"/>
+     <point x="41" y="70"/>
+     <point x="41" y="73"/>
+     <point x="44" y="73"/>
+     <point x="44" y="80"/>
+     <point x="58" y="82"/>
+     <point x="58" y="89"/>
+     <point x="45" y="89"/>
+     <point x="45" y="92"/>
+     <point x="48" y="92"/>
+     <point x="48" y="99"/>
+     <point x="46" y="108"/>
+     <point x="43" y="108"/>
+     <point x="46" y="115"/>
+     <point x="49" y="115"/>
+     <point x="49" y="120"/>
+     <point x="56" y="120"/>
+     <point x="61" y="124"/>
+     <point x="61" y="133"/>
+     <point x="54" y="133"/>
+     <point x="54" y="136"/>
+     <point x="59" y="136"/>
+     <point x="59" y="151"/>
+     <point x="54" y="151"/>
+     <point x="54" y="155"/>
+     <point x="58" y="157"/>
+     <point x="56" y="167"/>
+     <point x="59" y="167"/>
+     <point x="59" y="178"/>
+     <point x="57" y="182"/>
+     <point x="50" y="182"/>
+     <point x="55" y="184"/>
+     <point x="55" y="191"/>
+     <point x="44" y="193"/>
+     <point x="32" y="204"/>
+     <point x="32" y="217"/>
+     <point x="38" y="221"/>
+     <point x="38" y="231"/>
+     <point x="30" y="231"/>
+     <point x="27" y="220"/>
+     <point x="26" y="232"/>
+     <point x="35" y="235"/>
+     <point x="38" y="252"/>
+     <point x="41" y="257"/>
+     <point x="45" y="257"/>
+     <point x="45" y="262"/>
+     <point x="41" y="262"/>
+     <point x="41" y="270"/>
+     <point x="43" y="264"/>
+     <point x="48" y="264"/>
+     <point x="48" y="261"/>
+     <point x="55" y="261"/>
+     <point x="54" y="268"/>
+     <point x="57" y="268"/>
+     <point x="57" y="263"/>
+     <point x="64" y="263"/>
+     <point x="64" y="268"/>
+     <point x="72" y="269"/>
+     <point x="72" y="272"/>
+     <point x="75" y="272"/>
+     <point x="74" y="265"/>
+     <point x="78" y="265"/>
+     <point x="84" y="267"/>
+     <point x="84" y="273"/>
+     <point x="75" y="273"/>
+     <point x="79" y="275"/>
+     <point x="78" y="283"/>
+     <point x="93" y="283"/>
+     <point x="95" y="289"/>
+     <point x="99" y="288"/>
+     <point x="102" y="279"/>
+     <point x="109" y="279"/>
+     <point x="102" y="274"/>
+     <point x="102" y="263"/>
+     <point x="108" y="261"/>
+     <point x="122" y="261"/>
+     <point x="122" y="265"/>
+     <point x="138" y="263"/>
+     <point x="135" y="272"/>
+     <point x="148" y="273"/>
+     <point x="152" y="272"/>
+     <point x="152" y="269"/>
+     <point x="159" y="269"/>
+     <point x="160" y="275"/>
+     <point x="161" y="266"/>
+     <point x="165" y="266"/>
+     <point x="174" y="271"/>
+     <point x="174" y="275"/>
+     <point x="184" y="275"/>
+     <point x="185" y="280"/>
+     <point x="186" y="277"/>
+     <point x="193" y="277"/>
+     <point x="194" y="285"/>
+     <point x="197" y="285"/>
+     <point x="197" y="280"/>
+     <point x="205" y="280"/>
+     <point x="206" y="288"/>
+     <point x="210" y="279"/>
+     <point x="224" y="283"/>
+     <point x="226" y="297"/>
+     <point x="227" y="294"/>
+     <point x="231" y="294"/>
+     <point x="233" y="288"/>
+     <point x="239" y="288"/>
+     <point x="241" y="272"/>
+     <point x="248" y="272"/>
+     <point x="250" y="275"/>
+     <point x="252" y="289"/>
+     <point x="249" y="264"/>
+     <point x="255" y="264"/>
+     <point x="255" y="273"/>
+     <point x="257" y="268"/>
+     <point x="266" y="271"/>
+     <point x="266" y="276"/>
+     <point x="270" y="273"/>
+     <point x="271" y="265"/>
+     <point x="264" y="266"/>
+     <point x="264" y="260"/>
+     <point x="268" y="260"/>
+     <point x="268" y="243"/>
+     <point x="272" y="243"/>
+     <point x="272" y="240"/>
+     <point x="281" y="240"/>
+     <point x="280" y="227"/>
+     <point x="292" y="224"/>
+     <point x="292" y="213"/>
+     <point x="300" y="213"/>
+     <point x="300" y="224"/>
+     <point x="296" y="224"/>
+     <point x="300" y="227"/>
+     <point x="300" y="243"/>
+     <point x="299" y="251"/>
+     <point x="293" y="251"/>
+     <point x="300" y="253"/>
+     <point x="300" y="300"/>
+     <point x="257" y="300"/>
+     <point x="256" y="292"/>
+     <point x="255" y="300"/>
+     <point x="0" y="300"/>
+     <point x="0" y="111"/>
+     <point x="3" y="110"/>
+     <point x="0" y="109"/>
+     <point x="0" y="0"/>
+     <point x="64" y="0"/>
+     <point x="67" y="13"/>
+     <point x="61" y="13"/>
+     <point x="60" y="20"/>
+     <point x="56" y="20"/>
+     <point x="55" y="13"/>
+     <point x="52" y="14"/>
+     <point x="54" y="21"/>
+     <point x="58" y="21"/>
+     <point x="61" y="32"/>
+     <point x="61" y="38"/>
+     <point x="57" y="38"/>
+     <point x="59" y="50"/>
+    </coordinates>
+    <coordinates>
+     <point x="117" y="272"/>
+     <point x="119" y="268"/>
+     <point x="116" y="268"/>
+     <point x="116" y="272"/>
+    </coordinates>
+    <coordinates>
+     <point x="285" y="263"/>
+     <point x="285" y="256"/>
+     <point x="284" y="263"/>
+    </coordinates>
+    <coordinates>
+     <point x="274" y="255"/>
+     <point x="277" y="255"/>
+     <point x="274" y="254"/>
+    </coordinates>
+    <coordinates>
+     <point x="12" y="169"/>
+     <point x="9" y="167"/>
+     <point x="10" y="169"/>
+    </coordinates>
+    <coordinates>
+     <point x="29" y="164"/>
+     <point x="28" y="157"/>
+     <point x="27" y="164"/>
+    </coordinates>
+    <coordinates>
+     <point x="21" y="77"/>
+     <point x="27" y="75"/>
+     <point x="21" y="74"/>
+    </coordinates>
+    <coordinates>
+     <point x="31" y="33"/>
+     <point x="29" y="35"/>
+     <point x="37" y="37"/>
+     <point x="37" y="41"/>
+     <point x="41" y="42"/>
+     <point x="41" y="47"/>
+     <point x="47" y="48"/>
+     <point x="48" y="41"/>
+     <point x="45" y="33"/>
+     <point x="41" y="33"/>
+     <point x="41" y="28"/>
+     <point x="40" y="31"/>
+     <point x="31" y="32"/>
+    </coordinates>
+    <coordinates>
+     <point x="49" y="151"/>
+     <point x="53" y="151"/>
+     <point x="49" y="144"/>
+     <point x="38" y="144"/>
+     <point x="38" y="147"/>
+     <point x="49" y="147"/>
+    </coordinates>
+    <coordinates>
+     <point x="55" y="28"/>
+     <point x="43" y="21"/>
+     <point x="43" y="26"/>
+     <point x="48" y="26"/>
+     <point x="48" y="30"/>
+     <point x="51" y="30"/>
+     <point x="51" y="38"/>
+     <point x="53" y="28"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="51" y="257"/>
+     <point x="51" y="248"/>
+     <point x="59" y="248"/>
+     <point x="59" y="257"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="45" y="251"/>
+     <point x="41" y="251"/>
+     <point x="41" y="247"/>
+     <point x="45" y="247"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="48" y="237"/>
+     <point x="41" y="237"/>
+     <point x="41" y="233"/>
+     <point x="48" y="233"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="43" y="226"/>
+     <point x="40" y="226"/>
+     <point x="40" y="222"/>
+     <point x="43" y="222"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="289" y="219"/>
+     <point x="286" y="219"/>
+     <point x="286" y="215"/>
+     <point x="289" y="215"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="294" y="210"/>
+     <point x="294" y="207"/>
+     <point x="279" y="203"/>
+     <point x="279" y="194"/>
+     <point x="285" y="194"/>
+     <point x="284" y="183"/>
+     <point x="290" y="183"/>
+     <point x="289" y="171"/>
+     <point x="300" y="171"/>
+     <point x="300" y="210"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="170" y="177"/>
+     <point x="170" y="170"/>
+     <point x="176" y="170"/>
+     <point x="176" y="177"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="231" y="174"/>
+     <point x="224" y="174"/>
+     <point x="224" y="171"/>
+     <point x="231" y="171"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="91" y="23"/>
+     <point x="95" y="33"/>
+     <point x="101" y="34"/>
+     <point x="103" y="51"/>
+     <point x="105" y="47"/>
+     <point x="116" y="48"/>
+     <point x="116" y="53"/>
+     <point x="112" y="53"/>
+     <point x="108" y="58"/>
+     <point x="116" y="58"/>
+     <point x="123" y="62"/>
+     <point x="125" y="76"/>
+     <point x="130" y="77"/>
+     <point x="145" y="75"/>
+     <point x="145" y="84"/>
+     <point x="133" y="86"/>
+     <point x="133" y="90"/>
+     <point x="141" y="93"/>
+     <point x="141" y="98"/>
+     <point x="144" y="98"/>
+     <point x="142" y="92"/>
+     <point x="156" y="90"/>
+     <point x="156" y="101"/>
+     <point x="150" y="101"/>
+     <point x="150" y="107"/>
+     <point x="147" y="107"/>
+     <point x="149" y="110"/>
+     <point x="155" y="110"/>
+     <point x="156" y="128"/>
+     <point x="152" y="128"/>
+     <point x="152" y="131"/>
+     <point x="128" y="134"/>
+     <point x="126" y="133"/>
+     <point x="131" y="135"/>
+     <point x="131" y="140"/>
+     <point x="139" y="142"/>
+     <point x="139" y="148"/>
+     <point x="140" y="140"/>
+     <point x="145" y="140"/>
+     <point x="148" y="147"/>
+     <point x="158" y="147"/>
+     <point x="159" y="140"/>
+     <point x="172" y="140"/>
+     <point x="172" y="137"/>
+     <point x="168" y="137"/>
+     <point x="168" y="114"/>
+     <point x="176" y="114"/>
+     <point x="176" y="111"/>
+     <point x="182" y="111"/>
+     <point x="182" y="115"/>
+     <point x="178" y="115"/>
+     <point x="181" y="128"/>
+     <point x="181" y="119"/>
+     <point x="193" y="119"/>
+     <point x="193" y="126"/>
+     <point x="184" y="127"/>
+     <point x="186" y="140"/>
+     <point x="188" y="137"/>
+     <point x="200" y="137"/>
+     <point x="200" y="140"/>
+     <point x="213" y="141"/>
+     <point x="213" y="144"/>
+     <point x="231" y="141"/>
+     <point x="228" y="147"/>
+     <point x="236" y="147"/>
+     <point x="236" y="153"/>
+     <point x="243" y="153"/>
+     <point x="246" y="149"/>
+     <point x="261" y="149"/>
+     <point x="262" y="158"/>
+     <point x="258" y="161"/>
+     <point x="258" y="164"/>
+     <point x="244" y="163"/>
+     <point x="242" y="167"/>
+     <point x="245" y="167"/>
+     <point x="245" y="171"/>
+     <point x="217" y="168"/>
+     <point x="218" y="163"/>
+     <point x="215" y="163"/>
+     <point x="213" y="173"/>
+     <point x="206" y="173"/>
+     <point x="206" y="169"/>
+     <point x="201" y="168"/>
+     <point x="201" y="174"/>
+     <point x="191" y="174"/>
+     <point x="191" y="165"/>
+     <point x="201" y="164"/>
+     <point x="189" y="163"/>
+     <point x="188" y="172"/>
+     <point x="181" y="172"/>
+     <point x="181" y="169"/>
+     <point x="177" y="169"/>
+     <point x="177" y="161"/>
+     <point x="174" y="161"/>
+     <point x="174" y="166"/>
+     <point x="169" y="166"/>
+     <point x="168" y="171"/>
+     <point x="149" y="172"/>
+     <point x="143" y="165"/>
+     <point x="139" y="165"/>
+     <point x="139" y="162"/>
+     <point x="130" y="161"/>
+     <point x="130" y="156"/>
+     <point x="125" y="156"/>
+     <point x="121" y="146"/>
+     <point x="115" y="146"/>
+     <point x="114" y="139"/>
+     <point x="107" y="139"/>
+     <point x="107" y="131"/>
+     <point x="104" y="131"/>
+     <point x="104" y="135"/>
+     <point x="95" y="135"/>
+     <point x="94" y="131"/>
+     <point x="91" y="119"/>
+     <point x="85" y="116"/>
+     <point x="85" y="108"/>
+     <point x="89" y="108"/>
+     <point x="86" y="107"/>
+     <point x="85" y="96"/>
+     <point x="89" y="95"/>
+     <point x="84" y="95"/>
+     <point x="84" y="86"/>
+     <point x="88" y="86"/>
+     <point x="88" y="82"/>
+     <point x="92" y="81"/>
+     <point x="87" y="80"/>
+     <point x="87" y="84"/>
+     <point x="82" y="84"/>
+     <point x="81" y="60"/>
+     <point x="78" y="60"/>
+     <point x="83" y="34"/>
+     <point x="81" y="14"/>
+     <point x="90" y="14"/>
+     <point x="90" y="23"/>
+    </coordinates>
+    <coordinates>
+     <point x="165" y="153"/>
+     <point x="163" y="155"/>
+     <point x="166" y="153"/>
+    </coordinates>
+    <coordinates>
+     <point x="109" y="128"/>
+     <point x="112" y="128"/>
+     <point x="109" y="126"/>
+    </coordinates>
+    <coordinates>
+     <point x="227" y="158"/>
+     <point x="227" y="151"/>
+     <point x="224" y="151"/>
+     <point x="221" y="155"/>
+     <point x="225" y="155"/>
+     <point x="225" y="158"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="68" y="162"/>
+     <point x="64" y="162"/>
+     <point x="64" y="156"/>
+     <point x="68" y="156"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="162" y="129"/>
+     <point x="162" y="134"/>
+     <point x="158" y="134"/>
+     <point x="158" y="122"/>
+     <point x="164" y="122"/>
+     <point x="164" y="129"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="70" y="133"/>
+     <point x="65" y="133"/>
+     <point x="65" y="127"/>
+     <point x="70" y="127"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="197" y="122"/>
+     <point x="194" y="122"/>
+     <point x="194" y="118"/>
+     <point x="197" y="118"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="57" y="119"/>
+     <point x="51" y="119"/>
+     <point x="51" y="113"/>
+     <point x="57" y="113"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="160" y="100"/>
+     <point x="168" y="101"/>
+     <point x="168" y="109"/>
+     <point x="164" y="109"/>
+     <point x="164" y="118"/>
+     <point x="157" y="118"/>
+     <point x="157" y="109"/>
+     <point x="160" y="109"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="64" y="117"/>
+     <point x="58" y="117"/>
+     <point x="58" y="110"/>
+     <point x="64" y="110"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="53" y="100"/>
+     <point x="53" y="93"/>
+     <point x="57" y="93"/>
+     <point x="57" y="100"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="60" y="99"/>
+     <point x="61" y="86"/>
+     <point x="66" y="86"/>
+     <point x="66" y="99"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="183" y="10"/>
+     <point x="188" y="16"/>
+     <point x="189" y="42"/>
+     <point x="196" y="45"/>
+     <point x="196" y="51"/>
+     <point x="202" y="49"/>
+     <point x="202" y="45"/>
+     <point x="234" y="45"/>
+     <point x="240" y="46"/>
+     <point x="240" y="49"/>
+     <point x="248" y="47"/>
+     <point x="249" y="50"/>
+     <point x="250" y="23"/>
+     <point x="255" y="23"/>
+     <point x="255" y="14"/>
+     <point x="258" y="14"/>
+     <point x="258" y="10"/>
+     <point x="265" y="9"/>
+     <point x="266" y="30"/>
+     <point x="269" y="26"/>
+     <point x="281" y="25"/>
+     <point x="280" y="37"/>
+     <point x="284" y="37"/>
+     <point x="284" y="23"/>
+     <point x="293" y="24"/>
+     <point x="294" y="48"/>
+     <point x="288" y="48"/>
+     <point x="286" y="38"/>
+     <point x="286" y="46"/>
+     <point x="283" y="46"/>
+     <point x="282" y="51"/>
+     <point x="277" y="51"/>
+     <point x="275" y="59"/>
+     <point x="268" y="59"/>
+     <point x="268" y="54"/>
+     <point x="267" y="58"/>
+     <point x="261" y="58"/>
+     <point x="259" y="76"/>
+     <point x="266" y="77"/>
+     <point x="266" y="86"/>
+     <point x="213" y="86"/>
+     <point x="213" y="79"/>
+     <point x="220" y="75"/>
+     <point x="204" y="75"/>
+     <point x="202" y="68"/>
+     <point x="191" y="66"/>
+     <point x="191" y="61"/>
+     <point x="195" y="61"/>
+     <point x="195" y="53"/>
+     <point x="186" y="53"/>
+     <point x="165" y="50"/>
+     <point x="165" y="43"/>
+     <point x="158" y="43"/>
+     <point x="157" y="33"/>
+     <point x="149" y="33"/>
+     <point x="147" y="14"/>
+     <point x="154" y="14"/>
+     <point x="156" y="20"/>
+     <point x="156" y="15"/>
+     <point x="161" y="9"/>
+     <point x="173" y="9"/>
+     <point x="173" y="13"/>
+     <point x="174" y="10"/>
+    </coordinates>
+    <coordinates>
+     <point x="266" y="42"/>
+     <point x="270" y="42"/>
+     <point x="266" y="41"/>
+    </coordinates>
+    <coordinates>
+     <point x="161" y="23"/>
+     <point x="157" y="23"/>
+     <point x="161" y="24"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="202" y="77"/>
+     <point x="196" y="77"/>
+     <point x="196" y="70"/>
+     <point x="202" y="70"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="38" y="69"/>
+     <point x="35" y="58"/>
+     <point x="41" y="58"/>
+     <point x="41" y="69"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="68" y="65"/>
+     <point x="63" y="65"/>
+     <point x="63" y="62"/>
+     <point x="68" y="62"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="183" y="61"/>
+     <point x="183" y="55"/>
+     <point x="193" y="55"/>
+     <point x="193" y="61"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="66" y="45"/>
+     <point x="61" y="45"/>
+     <point x="61" y="40"/>
+     <point x="66" y="40"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="275" y="15"/>
+     <point x="270" y="15"/>
+     <point x="270" y="12"/>
+     <point x="275" y="12"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+ </cell>
+ <cell x="18" y="37">
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="107" y="228"/>
+     <point x="104" y="236"/>
+     <point x="114" y="239"/>
+     <point x="118" y="251"/>
+     <point x="120" y="246"/>
+     <point x="130" y="246"/>
+     <point x="132" y="254"/>
+     <point x="140" y="255"/>
+     <point x="140" y="261"/>
+     <point x="129" y="259"/>
+     <point x="129" y="263"/>
+     <point x="140" y="265"/>
+     <point x="143" y="264"/>
+     <point x="143" y="260"/>
+     <point x="150" y="260"/>
+     <point x="149" y="271"/>
+     <point x="142" y="271"/>
+     <point x="145" y="272"/>
+     <point x="152" y="273"/>
+     <point x="152" y="265"/>
+     <point x="157" y="264"/>
+     <point x="157" y="258"/>
+     <point x="163" y="258"/>
+     <point x="165" y="265"/>
+     <point x="166" y="261"/>
+     <point x="172" y="261"/>
+     <point x="177" y="271"/>
+     <point x="177" y="265"/>
+     <point x="191" y="261"/>
+     <point x="194" y="254"/>
+     <point x="201" y="254"/>
+     <point x="201" y="251"/>
+     <point x="194" y="249"/>
+     <point x="193" y="239"/>
+     <point x="204" y="239"/>
+     <point x="204" y="245"/>
+     <point x="211" y="241"/>
+     <point x="211" y="233"/>
+     <point x="200" y="234"/>
+     <point x="200" y="227"/>
+     <point x="189" y="226"/>
+     <point x="189" y="222"/>
+     <point x="214" y="223"/>
+     <point x="215" y="211"/>
+     <point x="219" y="211"/>
+     <point x="218" y="223"/>
+     <point x="223" y="223"/>
+     <point x="225" y="227"/>
+     <point x="229" y="221"/>
+     <point x="220" y="222"/>
+     <point x="220" y="215"/>
+     <point x="227" y="210"/>
+     <point x="227" y="207"/>
+     <point x="242" y="210"/>
+     <point x="245" y="222"/>
+     <point x="252" y="222"/>
+     <point x="252" y="216"/>
+     <point x="258" y="216"/>
+     <point x="259" y="225"/>
+     <point x="255" y="225"/>
+     <point x="255" y="232"/>
+     <point x="256" y="229"/>
+     <point x="263" y="229"/>
+     <point x="267" y="238"/>
+     <point x="268" y="234"/>
+     <point x="274" y="234"/>
+     <point x="274" y="229"/>
+     <point x="284" y="229"/>
+     <point x="286" y="209"/>
+     <point x="290" y="209"/>
+     <point x="290" y="206"/>
+     <point x="296" y="206"/>
+     <point x="296" y="215"/>
+     <point x="300" y="215"/>
+     <point x="300" y="221"/>
+     <point x="296" y="221"/>
+     <point x="300" y="224"/>
+     <point x="300" y="243"/>
+     <point x="299" y="251"/>
+     <point x="295" y="251"/>
+     <point x="300" y="253"/>
+     <point x="300" y="300"/>
+     <point x="0" y="300"/>
+     <point x="0" y="173"/>
+     <point x="8" y="173"/>
+     <point x="10" y="176"/>
+     <point x="24" y="172"/>
+     <point x="26" y="179"/>
+     <point x="27" y="164"/>
+     <point x="35" y="164"/>
+     <point x="35" y="167"/>
+     <point x="41" y="170"/>
+     <point x="41" y="180"/>
+     <point x="44" y="180"/>
+     <point x="44" y="185"/>
+     <point x="40" y="185"/>
+     <point x="40" y="181"/>
+     <point x="38" y="185"/>
+     <point x="47" y="187"/>
+     <point x="48" y="197"/>
+     <point x="57" y="198"/>
+     <point x="58" y="210"/>
+     <point x="59" y="214"/>
+     <point x="64" y="213"/>
+     <point x="61" y="196"/>
+     <point x="62" y="191"/>
+     <point x="67" y="189"/>
+     <point x="67" y="183"/>
+     <point x="73" y="183"/>
+     <point x="74" y="195"/>
+     <point x="83" y="196"/>
+     <point x="83" y="188"/>
+     <point x="92" y="188"/>
+     <point x="92" y="192"/>
+     <point x="93" y="189"/>
+     <point x="103" y="189"/>
+     <point x="104" y="193"/>
+     <point x="117" y="195"/>
+     <point x="117" y="190"/>
+     <point x="105" y="190"/>
+     <point x="105" y="180"/>
+     <point x="104" y="163"/>
+     <point x="106" y="158"/>
+     <point x="113" y="158"/>
+     <point x="118" y="183"/>
+     <point x="123" y="183"/>
+     <point x="123" y="188"/>
+     <point x="126" y="189"/>
+     <point x="128" y="186"/>
+     <point x="138" y="186"/>
+     <point x="138" y="194"/>
+     <point x="134" y="194"/>
+     <point x="134" y="203"/>
+     <point x="127" y="203"/>
+     <point x="127" y="199"/>
+     <point x="124" y="200"/>
+     <point x="120" y="216"/>
+     <point x="115" y="216"/>
+     <point x="111" y="212"/>
+     <point x="109" y="216"/>
+     <point x="113" y="220"/>
+     <point x="113" y="228"/>
+    </coordinates>
+    <coordinates>
+     <point x="123" y="254"/>
+     <point x="127" y="254"/>
+     <point x="123" y="253"/>
+    </coordinates>
+    <coordinates>
+     <point x="106" y="251"/>
+     <point x="105" y="253"/>
+     <point x="107" y="251"/>
+    </coordinates>
+    <coordinates>
+     <point x="229" y="236"/>
+     <point x="217" y="236"/>
+     <point x="217" y="245"/>
+     <point x="220" y="245"/>
+     <point x="220" y="240"/>
+     <point x="228" y="240"/>
+     <point x="230" y="250"/>
+     <point x="230" y="237"/>
+     <point x="234" y="234"/>
+     <point x="229" y="235"/>
+    </coordinates>
+    <coordinates>
+     <point x="83" y="205"/>
+     <point x="83" y="202"/>
+     <point x="79" y="201"/>
+     <point x="80" y="205"/>
+    </coordinates>
+    <coordinates>
+     <point x="248" y="230"/>
+     <point x="246" y="234"/>
+     <point x="252" y="234"/>
+     <point x="248" y="232"/>
+    </coordinates>
+    <coordinates>
+     <point x="112" y="202"/>
+     <point x="102" y="205"/>
+     <point x="109" y="209"/>
+     <point x="112" y="201"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="151" y="252"/>
+     <point x="152" y="257"/>
+     <point x="145" y="257"/>
+     <point x="144" y="248"/>
+     <point x="151" y="248"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="115" y="236"/>
+     <point x="109" y="236"/>
+     <point x="109" y="230"/>
+     <point x="115" y="230"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="264" y="228"/>
+     <point x="261" y="228"/>
+     <point x="261" y="224"/>
+     <point x="264" y="224"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="273" y="220"/>
+     <point x="276" y="211"/>
+     <point x="283" y="211"/>
+     <point x="282" y="220"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="271" y="219"/>
+     <point x="266" y="219"/>
+     <point x="266" y="212"/>
+     <point x="271" y="212"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="204" y="213"/>
+     <point x="191" y="215"/>
+     <point x="191" y="208"/>
+     <point x="204" y="207"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="179" y="213"/>
+     <point x="174" y="213"/>
+     <point x="174" y="207"/>
+     <point x="179" y="207"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="135" y="205"/>
+     <point x="143" y="203"/>
+     <point x="143" y="208"/>
+     <point x="135" y="208"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="51" y="188"/>
+     <point x="59" y="188"/>
+     <point x="59" y="194"/>
+     <point x="51" y="194"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="81" y="192"/>
+     <point x="75" y="192"/>
+     <point x="75" y="186"/>
+     <point x="81" y="186"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="289" y="190"/>
+     <point x="283" y="190"/>
+     <point x="283" y="184"/>
+     <point x="289" y="184"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="67" y="173"/>
+     <point x="75" y="173"/>
+     <point x="75" y="177"/>
+     <point x="67" y="177"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="133" y="167"/>
+     <point x="139" y="169"/>
+     <point x="139" y="176"/>
+     <point x="134" y="176"/>
+     <point x="134" y="172"/>
+     <point x="129" y="171"/>
+     <point x="129" y="166"/>
+     <point x="133" y="166"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="58" y="166"/>
+     <point x="53" y="166"/>
+     <point x="53" y="163"/>
+     <point x="58" y="163"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="294" y="162"/>
+     <point x="290" y="162"/>
+     <point x="290" y="159"/>
+     <point x="294" y="159"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="246" y="147"/>
+     <point x="247" y="158"/>
+     <point x="251" y="158"/>
+     <point x="251" y="162"/>
+     <point x="203" y="161"/>
+     <point x="203" y="155"/>
+     <point x="209" y="153"/>
+     <point x="241" y="151"/>
+     <point x="242" y="133"/>
+     <point x="251" y="138"/>
+     <point x="251" y="143"/>
+     <point x="247" y="143"/>
+     <point x="247" y="147"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="184" y="128"/>
+     <point x="185" y="132"/>
+     <point x="181" y="132"/>
+     <point x="181" y="135"/>
+     <point x="185" y="135"/>
+     <point x="186" y="150"/>
+     <point x="201" y="153"/>
+     <point x="201" y="160"/>
+     <point x="164" y="161"/>
+     <point x="160" y="145"/>
+     <point x="160" y="141"/>
+     <point x="164" y="141"/>
+     <point x="163" y="126"/>
+     <point x="164" y="117"/>
+     <point x="184" y="118"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="30" y="161"/>
+     <point x="30" y="156"/>
+     <point x="40" y="156"/>
+     <point x="40" y="161"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="141" y="158"/>
+     <point x="137" y="158"/>
+     <point x="137" y="153"/>
+     <point x="141" y="153"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="118" y="115"/>
+     <point x="149" y="115"/>
+     <point x="149" y="127"/>
+     <point x="119" y="127"/>
+     <point x="108" y="125"/>
+     <point x="106" y="122"/>
+     <point x="57" y="119"/>
+     <point x="50" y="119"/>
+     <point x="47" y="119"/>
+     <point x="44" y="122"/>
+     <point x="45" y="126"/>
+     <point x="47" y="133"/>
+     <point x="57" y="133"/>
+     <point x="57" y="140"/>
+     <point x="28" y="142"/>
+     <point x="28" y="139"/>
+     <point x="30" y="133"/>
+     <point x="37" y="131"/>
+     <point x="37" y="115"/>
+     <point x="118" y="116"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="130" y="140"/>
+     <point x="60" y="140"/>
+     <point x="60" y="132"/>
+     <point x="96" y="130"/>
+     <point x="100" y="126"/>
+     <point x="130" y="128"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="136" y="139"/>
+     <point x="132" y="140"/>
+     <point x="132" y="136"/>
+     <point x="137" y="129"/>
+     <point x="148" y="129"/>
+     <point x="148" y="139"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="246" y="129"/>
+     <point x="237" y="131"/>
+     <point x="236" y="115"/>
+     <point x="247" y="115"/>
+     <point x="247" y="129"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="52" y="125"/>
+     <point x="52" y="127"/>
+     <point x="50" y="127"/>
+     <point x="50" y="125"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="224" y="79"/>
+     <point x="223" y="69"/>
+     <point x="227" y="69"/>
+     <point x="227" y="79"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="15" y="51"/>
+     <point x="16" y="46"/>
+     <point x="21" y="46"/>
+     <point x="24" y="64"/>
+     <point x="17" y="64"/>
+     <point x="15" y="59"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="264" y="57"/>
+     <point x="261" y="57"/>
+     <point x="261" y="52"/>
+     <point x="264" y="52"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="249" y="57"/>
+     <point x="246" y="57"/>
+     <point x="246" y="52"/>
+     <point x="249" y="52"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="49" y="55"/>
+     <point x="45" y="55"/>
+     <point x="45" y="49"/>
+     <point x="49" y="49"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="89" y="54"/>
+     <point x="85" y="54"/>
+     <point x="85" y="51"/>
+     <point x="89" y="51"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="72" y="54"/>
+     <point x="65" y="54"/>
+     <point x="65" y="51"/>
+     <point x="72" y="51"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="100" y="51"/>
+     <point x="97" y="51"/>
+     <point x="97" y="45"/>
+     <point x="100" y="45"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="14" y="51"/>
+     <point x="11" y="51"/>
+     <point x="11" y="46"/>
+     <point x="14" y="46"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="9" y="51"/>
+     <point x="4" y="51"/>
+     <point x="4" y="44"/>
+     <point x="9" y="44"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="261" y="48"/>
+     <point x="261" y="39"/>
+     <point x="264" y="39"/>
+     <point x="264" y="48"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="246" y="48"/>
+     <point x="246" y="39"/>
+     <point x="249" y="39"/>
+     <point x="249" y="48"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="75" y="46"/>
+     <point x="69" y="46"/>
+     <point x="69" y="38"/>
+     <point x="82" y="38"/>
+     <point x="82" y="46"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="92" y="43"/>
+     <point x="88" y="43"/>
+     <point x="88" y="39"/>
+     <point x="92" y="39"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="11" y="42"/>
+     <point x="4" y="42"/>
+     <point x="4" y="38"/>
+     <point x="11" y="38"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="21" y="39"/>
+     <point x="14" y="39"/>
+     <point x="14" y="36"/>
+     <point x="21" y="36"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="52" y="31"/>
+     <point x="61" y="31"/>
+     <point x="61" y="38"/>
+     <point x="52" y="38"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="44" y="37"/>
+     <point x="44" y="23"/>
+     <point x="48" y="23"/>
+     <point x="48" y="37"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="2" y="32"/>
+     <point x="5" y="32"/>
+     <point x="2" y="30"/>
+     <point x="2" y="20"/>
+     <point x="6" y="20"/>
+     <point x="6" y="30"/>
+     <point x="13" y="30"/>
+     <point x="13" y="36"/>
+     <point x="2" y="36"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="92" y="36"/>
+     <point x="86" y="36"/>
+     <point x="86" y="32"/>
+     <point x="92" y="32"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="83" y="30"/>
+     <point x="83" y="23"/>
+     <point x="90" y="23"/>
+     <point x="90" y="30"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="20" y="29"/>
+     <point x="16" y="29"/>
+     <point x="16" y="24"/>
+     <point x="20" y="24"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="65" y="28"/>
+     <point x="65" y="20"/>
+     <point x="69" y="18"/>
+     <point x="81" y="18"/>
+     <point x="81" y="28"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="37" y="12"/>
+     <point x="37" y="15"/>
+     <point x="28" y="15"/>
+     <point x="28" y="5"/>
+     <point x="40" y="5"/>
+     <point x="40" y="12"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="78" y="14"/>
+     <point x="74" y="14"/>
+     <point x="74" y="10"/>
+     <point x="78" y="10"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="62" y="10"/>
+     <point x="72" y="10"/>
+     <point x="72" y="14"/>
+     <point x="62" y="14"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="80" y="10"/>
+     <point x="89" y="10"/>
+     <point x="89" y="14"/>
+     <point x="80" y="14"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="48" y="121"/>
+     <point x="49" y="121"/>
+     <point x="50" y="120"/>
+     <point x="53" y="121"/>
+     <point x="54" y="120"/>
+     <point x="56" y="120"/>
+     <point x="57" y="119"/>
+     <point x="59" y="119"/>
+     <point x="60" y="120"/>
+     <point x="67" y="120"/>
+     <point x="68" y="119"/>
+     <point x="69" y="119"/>
+     <point x="70" y="120"/>
+     <point x="75" y="120"/>
+     <point x="76" y="121"/>
+     <point x="81" y="121"/>
+     <point x="82" y="120"/>
+     <point x="84" y="120"/>
+     <point x="85" y="121"/>
+     <point x="86" y="121"/>
+     <point x="87" y="122"/>
+     <point x="92" y="122"/>
+     <point x="93" y="121"/>
+     <point x="94" y="121"/>
+     <point x="95" y="120"/>
+     <point x="96" y="120"/>
+     <point x="97" y="121"/>
+     <point x="104" y="121"/>
+     <point x="105" y="122"/>
+     <point x="110" y="122"/>
+     <point x="111" y="123"/>
+     <point x="109" y="125"/>
+     <point x="108" y="125"/>
+     <point x="107" y="126"/>
+     <point x="105" y="126"/>
+     <point x="103" y="126"/>
+     <point x="102" y="127"/>
+     <point x="100" y="127"/>
+     <point x="99" y="128"/>
+     <point x="96" y="128"/>
+     <point x="95" y="129"/>
+     <point x="93" y="129"/>
+     <point x="92" y="130"/>
+     <point x="87" y="130"/>
+     <point x="86" y="131"/>
+     <point x="74" y="131"/>
+     <point x="73" y="130"/>
+     <point x="69" y="130"/>
+     <point x="68" y="131"/>
+     <point x="66" y="131"/>
+     <point x="65" y="132"/>
+     <point x="63" y="132"/>
+     <point x="62" y="131"/>
+     <point x="57" y="131"/>
+     <point x="56" y="132"/>
+     <point x="49" y="132"/>
+     <point x="46" y="129"/>
+     <point x="46" y="123"/>
+    </coordinates>
+    <coordinates>
+     <point x="55" y="124"/>
+     <point x="55" y="125"/>
+    </coordinates>
+    <coordinates>
+     <point x="51" y="128"/>
+     <point x="52" y="128"/>
+     <point x="53" y="127"/>
+     <point x="53" y="126"/>
+     <point x="54" y="125"/>
+     <point x="55" y="126"/>
+     <point x="56" y="125"/>
+     <point x="54" y="123"/>
+     <point x="53" y="124"/>
+     <point x="54" y="125"/>
+     <point x="53" y="126"/>
+     <point x="51" y="124"/>
+     <point x="50" y="125"/>
+     <point x="49" y="126"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="water" value="river"/>
+   </properties>
+  </feature>
+ </cell>
+ <cell x="19" y="37">
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="6" y="183"/>
+     <point x="1" y="183"/>
+     <point x="1" y="178"/>
+     <point x="6" y="178"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="154" y="165"/>
+     <point x="152" y="174"/>
+     <point x="145" y="174"/>
+     <point x="145" y="165"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="175" y="74"/>
+     <point x="174" y="80"/>
+     <point x="183" y="83"/>
+     <point x="183" y="94"/>
+     <point x="170" y="94"/>
+     <point x="170" y="54"/>
+     <point x="178" y="54"/>
+     <point x="179" y="74"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="235" y="79"/>
+     <point x="236" y="93"/>
+     <point x="219" y="94"/>
+     <point x="219" y="85"/>
+     <point x="227" y="81"/>
+     <point x="231" y="65"/>
+     <point x="236" y="65"/>
+     <point x="236" y="79"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="192" y="89"/>
+     <point x="207" y="90"/>
+     <point x="207" y="94"/>
+     <point x="192" y="94"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="135" y="87"/>
+     <point x="135" y="76"/>
+     <point x="140" y="76"/>
+     <point x="140" y="87"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="156" y="85"/>
+     <point x="149" y="85"/>
+     <point x="149" y="82"/>
+     <point x="156" y="82"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="155" y="74"/>
+     <point x="148" y="74"/>
+     <point x="148" y="70"/>
+     <point x="155" y="70"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="141" y="58"/>
+     <point x="141" y="73"/>
+     <point x="137" y="73"/>
+     <point x="136" y="58"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="209" y="71"/>
+     <point x="210" y="62"/>
+     <point x="213" y="62"/>
+     <point x="213" y="71"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="156" y="68"/>
+     <point x="151" y="68"/>
+     <point x="151" y="62"/>
+     <point x="156" y="62"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="205" y="60"/>
+     <point x="202" y="58"/>
+     <point x="205" y="51"/>
+     <point x="219" y="51"/>
+     <point x="219" y="60"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="231" y="51"/>
+     <point x="235" y="51"/>
+     <point x="235" y="59"/>
+     <point x="231" y="59"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="137" y="53"/>
+     <point x="135" y="43"/>
+     <point x="140" y="43"/>
+     <point x="140" y="53"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="154" y="48"/>
+     <point x="147" y="48"/>
+     <point x="147" y="44"/>
+     <point x="154" y="44"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="175" y="32"/>
+     <point x="169" y="32"/>
+     <point x="169" y="25"/>
+     <point x="175" y="25"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="236" y="27"/>
+     <point x="245" y="27"/>
+     <point x="245" y="31"/>
+     <point x="236" y="31"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="131" y="31"/>
+     <point x="128" y="30"/>
+     <point x="128" y="26"/>
+     <point x="137" y="25"/>
+     <point x="146" y="25"/>
+     <point x="146" y="31"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="250" y="26"/>
+     <point x="260" y="26"/>
+     <point x="260" y="31"/>
+     <point x="250" y="31"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="109" y="31"/>
+     <point x="103" y="31"/>
+     <point x="103" y="26"/>
+     <point x="109" y="26"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="157" y="31"/>
+     <point x="150" y="31"/>
+     <point x="150" y="26"/>
+     <point x="157" y="26"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="195" y="30"/>
+     <point x="190" y="30"/>
+     <point x="190" y="23"/>
+     <point x="195" y="23"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="115" y="30"/>
+     <point x="115" y="25"/>
+     <point x="123" y="25"/>
+     <point x="123" y="30"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="126" y="191"/>
+     <point x="127" y="187"/>
+     <point x="139" y="184"/>
+     <point x="140" y="180"/>
+     <point x="158" y="181"/>
+     <point x="156" y="167"/>
+     <point x="160" y="165"/>
+     <point x="167" y="165"/>
+     <point x="167" y="170"/>
+     <point x="177" y="170"/>
+     <point x="177" y="167"/>
+     <point x="170" y="167"/>
+     <point x="170" y="163"/>
+     <point x="162" y="163"/>
+     <point x="162" y="155"/>
+     <point x="171" y="153"/>
+     <point x="172" y="140"/>
+     <point x="185" y="140"/>
+     <point x="185" y="143"/>
+     <point x="189" y="144"/>
+     <point x="190" y="153"/>
+     <point x="195" y="153"/>
+     <point x="195" y="157"/>
+     <point x="198" y="157"/>
+     <point x="202" y="166"/>
+     <point x="208" y="166"/>
+     <point x="208" y="162"/>
+     <point x="212" y="162"/>
+     <point x="212" y="166"/>
+     <point x="213" y="162"/>
+     <point x="246" y="162"/>
+     <point x="247" y="177"/>
+     <point x="253" y="177"/>
+     <point x="248" y="173"/>
+     <point x="248" y="163"/>
+     <point x="300" y="162"/>
+     <point x="300" y="243"/>
+     <point x="299" y="251"/>
+     <point x="295" y="251"/>
+     <point x="300" y="253"/>
+     <point x="300" y="300"/>
+     <point x="0" y="300"/>
+     <point x="0" y="186"/>
+     <point x="10" y="185"/>
+     <point x="10" y="193"/>
+     <point x="21" y="191"/>
+     <point x="21" y="198"/>
+     <point x="43" y="204"/>
+     <point x="43" y="210"/>
+     <point x="40" y="210"/>
+     <point x="42" y="214"/>
+     <point x="43" y="210"/>
+     <point x="49" y="210"/>
+     <point x="46" y="208"/>
+     <point x="46" y="200"/>
+     <point x="54" y="200"/>
+     <point x="54" y="203"/>
+     <point x="57" y="203"/>
+     <point x="57" y="200"/>
+     <point x="61" y="200"/>
+     <point x="62" y="194"/>
+     <point x="70" y="194"/>
+     <point x="72" y="203"/>
+     <point x="72" y="197"/>
+     <point x="87" y="197"/>
+     <point x="87" y="193"/>
+     <point x="101" y="193"/>
+     <point x="101" y="200"/>
+     <point x="96" y="201"/>
+     <point x="109" y="206"/>
+     <point x="113" y="203"/>
+     <point x="108" y="193"/>
+     <point x="120" y="194"/>
+     <point x="117" y="187"/>
+     <point x="126" y="187"/>
+    </coordinates>
+    <coordinates>
+     <point x="126" y="195"/>
+     <point x="121" y="194"/>
+     <point x="126" y="196"/>
+    </coordinates>
+    <coordinates>
+     <point x="106" y="251"/>
+     <point x="105" y="253"/>
+     <point x="107" y="251"/>
+    </coordinates>
+    <coordinates>
+     <point x="29" y="226"/>
+     <point x="29" y="222"/>
+     <point x="34" y="222"/>
+     <point x="33" y="218"/>
+     <point x="28" y="218"/>
+     <point x="28" y="226"/>
+    </coordinates>
+    <coordinates>
+     <point x="195" y="207"/>
+     <point x="194" y="199"/>
+     <point x="192" y="207"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="52" y="198"/>
+     <point x="51" y="186"/>
+     <point x="58" y="186"/>
+     <point x="58" y="198"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="81" y="195"/>
+     <point x="75" y="195"/>
+     <point x="75" y="189"/>
+     <point x="81" y="189"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+ </cell>
+ <cell x="20" y="37">
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="221" y="71"/>
+     <point x="221" y="75"/>
+     <point x="213" y="76"/>
+     <point x="234" y="76"/>
+     <point x="235" y="86"/>
+     <point x="196" y="86"/>
+     <point x="196" y="80"/>
+     <point x="184" y="79"/>
+     <point x="181" y="65"/>
+     <point x="188" y="61"/>
+     <point x="210" y="61"/>
+     <point x="210" y="64"/>
+     <point x="219" y="68"/>
+     <point x="219" y="71"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="277" y="79"/>
+     <point x="277" y="72"/>
+     <point x="282" y="72"/>
+     <point x="282" y="79"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="290" y="75"/>
+     <point x="285" y="75"/>
+     <point x="285" y="69"/>
+     <point x="290" y="69"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="225" y="0"/>
+     <point x="222" y="8"/>
+     <point x="231" y="0"/>
+     <point x="264" y="0"/>
+     <point x="264" y="5"/>
+     <point x="267" y="5"/>
+     <point x="267" y="0"/>
+     <point x="291" y="0"/>
+     <point x="291" y="20"/>
+     <point x="283" y="20"/>
+     <point x="281" y="34"/>
+     <point x="286" y="36"/>
+     <point x="286" y="45"/>
+     <point x="291" y="45"/>
+     <point x="290" y="57"/>
+     <point x="278" y="61"/>
+     <point x="278" y="50"/>
+     <point x="275" y="50"/>
+     <point x="275" y="63"/>
+     <point x="272" y="66"/>
+     <point x="274" y="74"/>
+     <point x="251" y="74"/>
+     <point x="249" y="69"/>
+     <point x="246" y="67"/>
+     <point x="245" y="53"/>
+     <point x="241" y="64"/>
+     <point x="234" y="64"/>
+     <point x="231" y="56"/>
+     <point x="230" y="60"/>
+     <point x="224" y="60"/>
+     <point x="221" y="42"/>
+     <point x="217" y="45"/>
+     <point x="217" y="52"/>
+     <point x="205" y="52"/>
+     <point x="201" y="50"/>
+     <point x="201" y="45"/>
+     <point x="194" y="45"/>
+     <point x="192" y="40"/>
+     <point x="185" y="40"/>
+     <point x="185" y="34"/>
+     <point x="174" y="34"/>
+     <point x="173" y="31"/>
+     <point x="168" y="31"/>
+     <point x="166" y="24"/>
+     <point x="159" y="25"/>
+     <point x="158" y="16"/>
+     <point x="156" y="21"/>
+     <point x="151" y="21"/>
+     <point x="151" y="16"/>
+     <point x="147" y="16"/>
+     <point x="146" y="10"/>
+     <point x="142" y="10"/>
+     <point x="142" y="0"/>
+     <point x="154" y="0"/>
+     <point x="154" y="4"/>
+     <point x="151" y="4"/>
+     <point x="151" y="11"/>
+     <point x="154" y="13"/>
+     <point x="157" y="0"/>
+     <point x="179" y="0"/>
+    </coordinates>
+    <coordinates>
+     <point x="259" y="71"/>
+     <point x="264" y="71"/>
+     <point x="259" y="70"/>
+    </coordinates>
+    <coordinates>
+     <point x="266" y="42"/>
+     <point x="271" y="42"/>
+     <point x="266" y="41"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="291" y="65"/>
+     <point x="285" y="65"/>
+     <point x="285" y="59"/>
+     <point x="291" y="59"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="298" y="59"/>
+     <point x="300" y="52"/>
+     <point x="300" y="59"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="117" y="42"/>
+     <point x="113" y="39"/>
+     <point x="113" y="45"/>
+     <point x="95" y="46"/>
+     <point x="95" y="43"/>
+     <point x="85" y="43"/>
+     <point x="83" y="32"/>
+     <point x="80" y="31"/>
+     <point x="73" y="31"/>
+     <point x="73" y="36"/>
+     <point x="60" y="35"/>
+     <point x="60" y="31"/>
+     <point x="56" y="31"/>
+     <point x="59" y="32"/>
+     <point x="59" y="38"/>
+     <point x="42" y="39"/>
+     <point x="40" y="23"/>
+     <point x="18" y="23"/>
+     <point x="16" y="15"/>
+     <point x="24" y="16"/>
+     <point x="24" y="9"/>
+     <point x="34" y="9"/>
+     <point x="34" y="13"/>
+     <point x="46" y="15"/>
+     <point x="47" y="12"/>
+     <point x="55" y="12"/>
+     <point x="55" y="7"/>
+     <point x="59" y="7"/>
+     <point x="60" y="16"/>
+     <point x="63" y="16"/>
+     <point x="64" y="7"/>
+     <point x="72" y="7"/>
+     <point x="73" y="14"/>
+     <point x="78" y="18"/>
+     <point x="95" y="17"/>
+     <point x="95" y="14"/>
+     <point x="98" y="14"/>
+     <point x="98" y="18"/>
+     <point x="97" y="20"/>
+     <point x="103" y="17"/>
+     <point x="119" y="18"/>
+     <point x="119" y="21"/>
+     <point x="123" y="22"/>
+     <point x="123" y="35"/>
+     <point x="131" y="36"/>
+     <point x="131" y="39"/>
+     <point x="129" y="44"/>
+     <point x="119" y="44"/>
+     <point x="119" y="48"/>
+     <point x="116" y="48"/>
+     <point x="117" y="44"/>
+    </coordinates>
+    <coordinates>
+     <point x="112" y="21"/>
+     <point x="108" y="22"/>
+     <point x="112" y="24"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="288" y="38"/>
+     <point x="288" y="26"/>
+     <point x="292" y="26"/>
+     <point x="292" y="38"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="121" y="5"/>
+     <point x="114" y="5"/>
+     <point x="114" y="0"/>
+     <point x="129" y="0"/>
+     <point x="133" y="1"/>
+     <point x="133" y="7"/>
+     <point x="121" y="6"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="140" y="6"/>
+     <point x="135" y="6"/>
+     <point x="135" y="0"/>
+     <point x="140" y="0"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="79" y="167"/>
+     <point x="75" y="167"/>
+     <point x="76" y="182"/>
+     <point x="78" y="178"/>
+     <point x="82" y="178"/>
+     <point x="80" y="170"/>
+     <point x="88" y="170"/>
+     <point x="81" y="169"/>
+     <point x="81" y="162"/>
+     <point x="95" y="165"/>
+     <point x="95" y="169"/>
+     <point x="99" y="169"/>
+     <point x="105" y="177"/>
+     <point x="105" y="169"/>
+     <point x="97" y="168"/>
+     <point x="97" y="161"/>
+     <point x="100" y="161"/>
+     <point x="98" y="146"/>
+     <point x="101" y="146"/>
+     <point x="101" y="142"/>
+     <point x="104" y="142"/>
+     <point x="104" y="146"/>
+     <point x="111" y="145"/>
+     <point x="113" y="140"/>
+     <point x="132" y="140"/>
+     <point x="132" y="150"/>
+     <point x="119" y="150"/>
+     <point x="118" y="155"/>
+     <point x="111" y="157"/>
+     <point x="116" y="159"/>
+     <point x="116" y="166"/>
+     <point x="120" y="166"/>
+     <point x="120" y="172"/>
+     <point x="130" y="175"/>
+     <point x="130" y="170"/>
+     <point x="124" y="170"/>
+     <point x="124" y="164"/>
+     <point x="120" y="164"/>
+     <point x="120" y="159"/>
+     <point x="125" y="159"/>
+     <point x="125" y="152"/>
+     <point x="134" y="152"/>
+     <point x="134" y="156"/>
+     <point x="136" y="155"/>
+     <point x="134" y="141"/>
+     <point x="138" y="141"/>
+     <point x="140" y="148"/>
+     <point x="140" y="140"/>
+     <point x="145" y="140"/>
+     <point x="148" y="146"/>
+     <point x="149" y="142"/>
+     <point x="155" y="140"/>
+     <point x="206" y="140"/>
+     <point x="213" y="141"/>
+     <point x="213" y="144"/>
+     <point x="239" y="140"/>
+     <point x="300" y="140"/>
+     <point x="300" y="243"/>
+     <point x="299" y="251"/>
+     <point x="295" y="251"/>
+     <point x="300" y="253"/>
+     <point x="300" y="300"/>
+     <point x="0" y="300"/>
+     <point x="0" y="151"/>
+     <point x="6" y="151"/>
+     <point x="6" y="158"/>
+     <point x="12" y="160"/>
+     <point x="12" y="167"/>
+     <point x="9" y="168"/>
+     <point x="25" y="177"/>
+     <point x="30" y="184"/>
+     <point x="31" y="174"/>
+     <point x="27" y="174"/>
+     <point x="27" y="168"/>
+     <point x="45" y="171"/>
+     <point x="44" y="181"/>
+     <point x="37" y="182"/>
+     <point x="37" y="185"/>
+     <point x="41" y="188"/>
+     <point x="41" y="184"/>
+     <point x="53" y="179"/>
+     <point x="49" y="177"/>
+     <point x="49" y="169"/>
+     <point x="59" y="169"/>
+     <point x="59" y="165"/>
+     <point x="62" y="164"/>
+     <point x="79" y="164"/>
+    </coordinates>
+    <coordinates>
+     <point x="94" y="174"/>
+     <point x="94" y="177"/>
+     <point x="96" y="174"/>
+    </coordinates>
+    <coordinates>
+     <point x="106" y="251"/>
+     <point x="105" y="253"/>
+     <point x="107" y="251"/>
+    </coordinates>
+    <coordinates>
+     <point x="195" y="207"/>
+     <point x="194" y="199"/>
+     <point x="192" y="207"/>
+    </coordinates>
+    <coordinates>
+     <point x="80" y="202"/>
+     <point x="80" y="205"/>
+     <point x="83" y="205"/>
+     <point x="83" y="202"/>
+    </coordinates>
+    <coordinates>
+     <point x="151" y="184"/>
+     <point x="153" y="191"/>
+     <point x="151" y="180"/>
+     <point x="150" y="184"/>
+    </coordinates>
+    <coordinates>
+     <point x="111" y="183"/>
+     <point x="111" y="186"/>
+     <point x="114" y="186"/>
+     <point x="114" y="183"/>
+     <point x="127" y="182"/>
+     <point x="128" y="186"/>
+     <point x="128" y="180"/>
+     <point x="117" y="180"/>
+     <point x="117" y="175"/>
+     <point x="113" y="177"/>
+     <point x="113" y="183"/>
+    </coordinates>
+    <coordinates>
+     <point x="177" y="167"/>
+     <point x="168" y="167"/>
+     <point x="177" y="169"/>
+    </coordinates>
+    <coordinates>
+     <point x="127" y="161"/>
+     <point x="131" y="161"/>
+     <point x="127" y="160"/>
+    </coordinates>
+    <coordinates>
+     <point x="288" y="148"/>
+     <point x="284" y="148"/>
+     <point x="288" y="149"/>
+    </coordinates>
+    <coordinates>
+     <point x="68" y="179"/>
+     <point x="67" y="169"/>
+     <point x="60" y="169"/>
+     <point x="60" y="173"/>
+     <point x="65" y="173"/>
+     <point x="65" y="179"/>
+    </coordinates>
+    <coordinates>
+     <point x="227" y="158"/>
+     <point x="227" y="151"/>
+     <point x="224" y="151"/>
+     <point x="221" y="155"/>
+     <point x="225" y="155"/>
+     <point x="225" y="158"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="51" y="163"/>
+     <point x="55" y="163"/>
+     <point x="55" y="167"/>
+     <point x="47" y="166"/>
+     <point x="47" y="162"/>
+     <point x="51" y="162"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="25" y="161"/>
+     <point x="21" y="161"/>
+     <point x="21" y="156"/>
+     <point x="25" y="156"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="84" y="160"/>
+     <point x="80" y="160"/>
+     <point x="80" y="153"/>
+     <point x="84" y="153"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="40" y="160"/>
+     <point x="36" y="160"/>
+     <point x="36" y="156"/>
+     <point x="40" y="156"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="57" y="157"/>
+     <point x="52" y="157"/>
+     <point x="52" y="152"/>
+     <point x="57" y="152"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+  <feature>
+   <geometry type="Polygon">
+    <coordinates>
+     <point x="96" y="155"/>
+     <point x="92" y="155"/>
+     <point x="92" y="151"/>
+     <point x="96" y="151"/>
+    </coordinates>
+   </geometry>
+   <properties>
+    <property name="natural" value="forest"/>
+   </properties>
+  </feature>
+ </cell>
+</world>

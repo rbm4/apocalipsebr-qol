@@ -1,0 +1,8 @@
+name=BobTown
+icon=icon.png
+poster=poster.png
+id=APOC_bonstown
+description=A city where you want to stay!
+pack=PineVilleTiles
+tiledef=pinevilletiles 3763
+worldmap=worldmap.png

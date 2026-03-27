@@ -1,0 +1,97 @@
+module Base
+{
+    sound DogSound1
+    {
+		category = Daisy:effects,
+        clip
+        {
+            file = media/sound/Dogbark1.ogg,
+        }
+    }
+
+    sound DogSound2
+    {
+		category = Daisy:effects,
+        clip
+        {
+            file = media/sound/Dogbark2.ogg,
+        }
+    }
+    sound DogSound3
+    {
+		category = Daisy:effects,
+        clip
+        {
+            file = media/sound/Dogbark3.ogg,
+        }
+    }
+    sound DogSound4
+    {
+		category = Daisy:effects,
+        clip
+        {
+            file = media/sound/Dogbark4.ogg,
+        }
+    }
+    sound DogSound5
+    {
+		category = Daisy:effects,
+        clip
+        {
+            file = media/sound/Dogbark5.ogg,
+        }
+    }
+    sound DogSound6
+    {
+		category = Daisy:effects,
+        clip
+        {
+            file = media/sound/Dogbark6.ogg,
+        }
+    }
+
+
+    sound CatSound1
+    {
+		category = Daisy:effects,
+        clip
+        {
+            file = media/sound/Catmeow1.ogg,
+        }
+    }
+    sound CatSound2
+    {
+		category = Daisy:effects,
+        clip
+        {
+            file = media/sound/Catmeow2.ogg,
+        }
+    }
+    sound CatSound3
+    {
+		category = Daisy:effects,
+        clip
+        {
+            file = media/sound/Catmeow3.ogg,
+        }
+    }
+    sound CatSound4
+    {
+		category = Daisy:effects,
+        clip
+        {
+            file = media/sound/Catmeow4.ogg,
+        }
+    }
+    sound CatSound5
+    {
+		category = Daisy:effects,
+        clip
+        {
+            file = media/sound/Catmeow5.ogg,
+        }
+    }
+
+	
+}
+

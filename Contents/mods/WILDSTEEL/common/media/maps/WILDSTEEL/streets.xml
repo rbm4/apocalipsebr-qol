@@ -1,0 +1,29 @@
+<streets version="1">
+    <street name="Spiffo's Av" width="5">
+        <points>
+            <point x="14402.5" y="5830.0"/>
+            <point x="14698.5" y="5831.0"/>
+        </points>
+    </street>
+    <street name="Blackstone Av" width="5">
+        <points>
+            <point x="14548.5" y="5703.0"/>
+            <point x="14550.0" y="5997.0"/>
+        </points>
+    </street>
+    <street name="Pecado St" width="5">
+        <points>
+            <point x="14485.0" y="5825.0"/>
+            <point x="14485.5" y="5807.0"/>
+            <point x="14512.5" y="5807.0"/>
+            <point x="14513.5" y="5797.0"/>
+            <point x="14545.0" y="5797.0"/>
+        </points>
+    </street>
+    <street name="Comuna Rd" width="5">
+        <points>
+            <point x="14674.5" y="5835.0"/>
+            <point x="14675.0" y="5866.5"/>
+        </points>
+    </street>
+</streets>

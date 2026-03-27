@@ -1,0 +1,355 @@
+<streets version="1">
+<street name="Weinifan Street" width="10">
+<points>
+<point x="9928" y="7308"/>
+<point x="9938" y="7308"/>
+<point x="9938" y="7491"/>
+<point x="9928" y="7491"/>
+</points>
+</street>
+<street name="Little Flower Street" width="10">
+<points>
+<point x="9913" y="7239"/>
+<point x="10023" y="7239"/>
+<point x="10023" y="7247"/>
+<point x="9913" y="7247"/>
+</points>
+</street>
+<street name="Taibei Road" width="10">
+<points>
+<point x="9936" y="7247"/>
+<point x="9944" y="7247"/>
+<point x="9944" y="7288"/>
+<point x="9936" y="7288"/>
+</points>
+</street>
+<street name="Fishing Road" width="10">
+<points>
+<point x="9944" y="7292"/>
+<point x="10023" y="7292"/>
+<point x="10023" y="7302"/>
+<point x="9944" y="7302"/>
+</points>
+</street>
+<street name="Unnamed Road" width="10">
+<points>
+<point x="10023" y="7221"/>
+<point x="10031" y="7221"/>
+<point x="10031" y="7269"/>
+<point x="10023" y="7269"/>
+</points>
+</street>
+<street name="Er Xian Road" width="10">
+<points>
+<point x="10031" y="7269"/>
+<point x="10099" y="7269"/>
+<point x="10099" y="7279"/>
+<point x="10031" y="7279"/>
+</points>
+</street>
+<street name="Cheng Hua Road" width="10">
+<points>
+<point x="10109" y="7269"/>
+<point x="10200" y="7269"/>
+<point x="10200" y="7279"/>
+<point x="10109" y="7279"/>
+</points>
+</street>
+<street name="Kill Mingshi Road" width="10">
+<points>
+<point x="10158" y="7279"/>
+<point x="10166" y="7279"/>
+<point x="10166" y="7342"/>
+<point x="10158" y="7342"/>
+</points>
+</street>
+<street name="Yu Lin Road" width="10">
+<points>
+<point x="10099" y="7235"/>
+<point x="10109" y="7235"/>
+<point x="10109" y="7337"/>
+<point x="10099" y="7337"/>
+</points>
+</street>
+<street name="Daisy Road" width="10">
+<points>
+<point x="10087" y="7225"/>
+<point x="10179" y="7225"/>
+<point x="10179" y="7235"/>
+<point x="10087" y="7235"/>
+</points>
+</street>
+<street name="Daisy Lane" width="10">
+<points>
+<point x="10169" y="7235"/>
+<point x="10179" y="7235"/>
+<point x="10179" y="7269"/>
+<point x="10169" y="7269"/>
+</points>
+</street>
+<street name="Clover Street" width="10">
+<points>
+<point x="10114" y="7342"/>
+<point x="10200" y="7342"/>
+<point x="10200" y="7352"/>
+<point x="10114" y="7352"/>
+</points>
+</street>
+<street name="Maple Street" width="10">
+<points>
+<point x="9978" y="7302"/>
+<point x="9986" y="7302"/>
+<point x="9986" y="7372"/>
+<point x="9978" y="7372"/>
+</points>
+</street>
+<street name="Pine Ridge Road" width="10">
+<points>
+<point x="10013" y="7302"/>
+<point x="10023" y="7302"/>
+<point x="10023" y="7446"/>
+<point x="10013" y="7446"/>
+</points>
+</street>
+<street name="Meadow Way" width="10">
+<points>
+<point x="9986" y="7446"/>
+<point x="10200" y="7446"/>
+<point x="10200" y="7456"/>
+<point x="9986" y="7456"/>
+</points>
+</street>
+<street name="Buttercup Court" width="10">
+<points>
+<point x="10027" y="7482"/>
+<point x="10076" y="7482"/>
+<point x="10076" y="7492"/>
+<point x="10027" y="7492"/>
+</points>
+</street>
+ 
+<street name="Dewdrop Lane" width="10">
+<points>
+<point x="10200" y="7269"/>
+<point x="10236" y="7269"/>
+<point x="10236" y="7279"/>
+<point x="10200" y="7279"/>
+</points>
+</street>
+<street name="Rosemary Way" width="10">
+<points>
+<point x="10207" y="7224"/>
+<point x="10217" y="7224"/>
+<point x="10217" y="7269"/>
+<point x="10207" y="7269"/>
+</points>
+</street>
+<street name="Thistle Lane" width="10">
+<points>
+<point x="10221" y="7210"/>
+<point x="10438" y="7210"/>
+<point x="10438" y="7220"/>
+<point x="10221" y="7220"/>
+</points>
+</street>
+<street name="Violet Street" width="10">
+<points>
+<point x="10428" y="7220"/>
+<point x="10438" y="7220"/>
+<point x="10438" y="7342"/>
+<point x="10428" y="7342"/>
+</points>
+</street>
+<street name="Holly Drive" width="10">
+<points>
+<point x="10239" y="7282"/>
+<point x="10249" y="7282"/>
+<point x="10249" y="7342"/>
+<point x="10239" y="7342"/>
+</points>
+</street>
+<street name="Cedar Avenue" width="10">
+<points>
+<point x="10200" y="7342"/>
+<point x="10464" y="7342"/>
+<point x="10464" y="7352"/>
+<point x="10200" y="7352"/>
+</points>
+</street>
+<street name="Birch Lane" width="10">
+<points>
+<point x="10468" y="7356"/>
+<point x="10478" y="7356"/>
+<point x="10478" y="7446"/>
+<point x="10468" y="7446"/>
+</points>
+</street>
+<street name="Ivy Road" width="10">
+<points>
+<point x="10200" y="7446"/>
+<point x="10500" y="7446"/>
+<point x="10500" y="7456"/>
+<point x="10200" y="7456"/>
+</points>
+</street>
+<street name="Beech Street" width="10">
+<points>
+<point x="10333" y="7352"/>
+<point x="10341" y="7352"/>
+<point x="10341" y="7446"/>
+<point x="10333" y="7446"/>
+</points>
+</street>
+<street name="unknown" width="10">
+<points>
+<point x="10239" y="7352"/>
+<point x="10249" y="7352"/>
+<point x="10249" y="7446"/>
+<point x="10239" y="7446"/>
+</points>
+</street>
+<street name="Fir Drive" width="10">
+<points>
+<point x="10249" y="7393"/>
+<point x="10333" y="7393"/>
+<point x="10333" y="7401"/>
+<point x="10249" y="7401"/>
+</points>
+</street>
+<street name="Jasmine Way" width="10">
+<points>
+<point x="10363" y="7383"/>
+<point x="10373" y="7383"/>
+<point x="10373" y="7446"/>
+<point x="10363" y="7446"/>
+</points>
+</street>
+<street name="Tulip Lane" width="10">
+<points>
+<point x="10419" y="7456"/>
+<point x="10428" y="7456"/>
+<point x="10428" y="7501"/>
+<point x="10419" y="7501"/>
+</points>
+</street>
+ <street name="Orchid Court" width="10">
+<points>
+<point x="9936" y="7500"/>
+<point x="9946" y="7500"/>
+<point x="9946" y="7752"/>
+<point x="9936" y="7752"/>
+</points>
+</street>
+<street name="Magnolia Lane" width="10">
+<points>
+<point x="10027" y="7500"/>
+<point x="10037" y="7500"/>
+<point x="10037" y="7702"/>
+<point x="10027" y="7702"/>
+</points>
+</street>
+<street name="Dogwood Road" width="10">
+<points>
+<point x="9946" y="7546"/>
+<point x="10027" y="7546"/>
+<point x="10027" y="7556"/>
+<point x="9946" y="7556"/>
+</points>
+</street>
+<street name="Peony Way" width="10">
+<points>
+<point x="10044" y="7696"/>
+<point x="10119" y="7696"/>
+<point x="10119" y="7706"/>
+<point x="10044" y="7706"/>
+</points>
+</street>
+<street name="Palm Drive" width="10">
+<points>
+<point x="9946" y="7738"/>
+<point x="10009" y="7738"/>
+<point x="10009" y="7748"/>
+<point x="9946" y="7748"/>
+</points>
+</street>
+<street name="Hazel Road" width="10">
+<points>
+<point x="9998" y="7748"/>
+<point x="10008" y="7748"/>
+<point x="10008" y="7801"/>
+<point x="9998" y="7801"/>
+</points>
+</street>
+ <street name="Aster Lane" width="10">
+<points>
+<point x="10419" y="7501"/>
+<point x="10428" y="7501"/>
+<point x="10428" y="7800"/>
+<point x="10419" y="7800"/>
+</points>
+</street>
+<street name="Zinnia Way" width="10">
+<points>
+<point x="10199" y="7772"/>
+<point x="10419" y="7772"/>
+<point x="10419" y="7781"/>
+<point x="10199" y="7781"/>
+</points>
+</street>
+<street name="Dahlia Court" width="10">
+<points>
+<point x="10275" y="7612"/>
+<point x="10281" y="7612"/>
+<point x="10281" y="7772"/>
+<point x="10275" y="7772"/>
+</points>
+</street>
+<street name="Sunflower Road" width="10">
+<points>
+<point x="10353" y="7557"/>
+<point x="10419" y="7557"/>
+<point x="10419" y="7566"/>
+<point x="10353" y="7566"/>
+</points>
+</street>
+ <street name="Fern Way" width="10">
+<points>
+<point x="9996" y="7803"/>
+<point x="10010" y="7803"/>
+<point x="10010" y="8055"/>
+<point x="9996" y="8055"/>
+</points>
+</street>
+<street name="Pansy Street" width="10">
+<points>
+<point x="9900" y="8055"/>
+<point x="10201" y="8055"/>
+<point x="10201" y="8063"/>
+<point x="9900" y="8063"/>
+</points>
+</street>
+<street name="Sycamore Drive" width="10">
+<points>
+<point x="10130" y="8010"/>
+<point x="10136" y="8010"/>
+<point x="10136" y="8055"/>
+<point x="10130" y="8055"/>
+</points>
+</street>
+<street name="Mingshi Road" width="10">
+<points>
+<point x="10419" y="7800"/>
+<point x="10428" y="7800"/>
+<point x="10428" y="8055"/>
+<point x="10419" y="8055"/>
+</points>
+</street>
+<street name="Lily Lane" width="10">
+<points>
+<point x="10201" y="8055"/>
+<point x="10500" y="8055"/>
+<point x="10500" y="8063"/>
+<point x="10201" y="8063"/>
+</points>
+</street>
+</streets>

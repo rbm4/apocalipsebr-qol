@@ -1,0 +1,13 @@
+{
+  "IGUI_SPESS_Item_SolarPanel_Tooltip": "Panel solar vertical. Genera energia de dia y debe conectarse al controlador.",
+  "IGUI_SPESS_Item_SolarPanelHorizontal_Tooltip": "Panel solar horizontal. Variante compacta para generar energia durante el dia.",
+  "IGUI_SPESS_Item_Aerogenerador_Tooltip": "Aerogenerador. Produce energia variable segun velocidad del viento y clima.",
+  "IGUI_SPESS_Item_TurbinaHidraulica_Tooltip": "Turbina hidraulica. Entrega energia estable si esta colocada en agua valida y conectada al controlador.",
+  "IGUI_SPESS_Item_SolarPanelIndividual_Tooltip": "Repuesto de panel solar. Se usa para reparar paneles danados.",
+  "IGUI_SPESS_Item_WindTurbineMotor_Tooltip": "Motor de repuesto para aerogenerador. Se usa para reparar aerogeneradores danados.",
+  "IGUI_SPESS_Item_TurbineHelice_Tooltip": "Helice de turbina hidraulica. Se usa para reparar turbinas hidraulicas danadas.",
+  "IGUI_SPESS_Item_BatteryTank_Tooltip": "Bateria solar. Almacena excedentes para cubrir consumo cuando falta produccion.",
+  "IGUI_SPESS_Item_WindBattery_Tooltip": "Bateria eolica. Almacena energia de aerogeneradores para uso posterior.",
+  "IGUI_SPESS_Item_EnergyController_Tooltip": "Controlador ERS. Coordina produccion, baterias y energia del edificio.",
+  "IGUI_SPESS_Item_WireTransferEnergy_Tooltip": "Cable de transferencia. Vincula paneles, turbinas y baterias al controlador."
+}
