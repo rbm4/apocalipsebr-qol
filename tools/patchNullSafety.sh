@@ -1,21 +1,39 @@
 #!/bin/bash
 # filepath: patchNullSafety.sh
-# Patches BodyLocationGroup.java and WornItems.java with null-safety guards
-# to prevent NPE infinite loop when zombies die with unregistered body locations.
+# Patches BodyLocationGroup.java, WornItems.java, and SyncClothingPacket.java
+# with null-safety guards and clothing desync fixes via classpath override.
 #
-# Root cause: getLocation() can return null for modded/unregistered clothing slots.
-# In the zombie death chain (Kill → DoZombieInventory → setFromItemVisuals),
-# an NPE prevents isOnKillDone/isOnDeathDone from being set, causing the server
-# to retry die() every tick in an infinite error loop.
+# Null-Safety (BodyLocationGroup + WornItems):
+#   getLocation() can return null for modded/unregistered clothing slots.
+#   In the zombie death chain (Kill → DoZombieInventory → setFromItemVisuals),
+#   an NPE prevents isOnKillDone/isOnDeathDone from being set, causing the server
+#   to retry die() every tick in an infinite error loop.
+#
+# Clothing Desync (SyncClothingPacket):
+#   processServer() echoes the packet back to the SENDING client (passes null to
+#   sendToClients instead of excluding the sender). This self-echo carries stale
+#   clothing state which overwrites items added between the original send and the
+#   echo receipt, causing the "naked player" bug during bandaging/climbing/combat.
+#
+# Strategy: Instead of patching projectzomboid.jar directly, we leverage the
+# classpath order defined in the server's JSON config:
+#   "classpath": ["java/.", "java/projectzomboid.jar"]
+# Since "java/." comes first, .class files placed under /opt/pzserver/java/
+# with the correct package folder structure will be loaded BEFORE those in the JAR.
+# This leaves the original JAR untouched and makes patches easy to add/remove.
 
 set -e
 
-JAR_FILE="/opt/pzserver/java/projectzomboid.jar"
+PZ_DIR="/opt/pzserver"
+JAR_FILE="$PZ_DIR/java/projectzomboid.jar"
+CLASSPATH_DIR="$PZ_DIR/java"
 JAVAC="/usr/lib/jvm/java-25-openjdk-amd64/bin/javac"
-JAR_CMD="/usr/lib/jvm/java-25-openjdk-amd64/bin/jar"
 WORK_DIR="/tmp/pzpatch_nullsafety"
+PATCH_WORN="$CLASSPATH_DIR/zombie/characters/WornItems"
+PATCH_NET="$CLASSPATH_DIR/zombie/network/packets"
 
-echo "=== PZ Null-Safety Patch (BodyLocationGroup + WornItems) ==="
+echo "=== PZ Classpath Override Patch ==="
+echo "=== BodyLocationGroup + WornItems + SyncClothingPacket ==="
 
 # Verify tools exist
 if [ ! -f "$JAVAC" ]; then
@@ -31,12 +49,10 @@ fi
 # Clean and create working directory
 rm -rf "$WORK_DIR"
 mkdir -p "$WORK_DIR/src/zombie/characters/WornItems"
+mkdir -p "$WORK_DIR/src/zombie/network/packets"
 mkdir -p "$WORK_DIR/build"
 
-echo "[1/6] Creating backup..."
-cp -n "$JAR_FILE" "${JAR_FILE}.bak" 2>/dev/null || echo "  Backup already exists, skipping."
-
-echo "[2/6] Writing patched BodyLocationGroup.java..."
+echo "[1/7] Writing patched BodyLocationGroup.java..."
 cat > "$WORK_DIR/src/zombie/characters/WornItems/BodyLocationGroup.java" << 'JAVAEOF'
 package zombie.characters.WornItems;
 
@@ -196,7 +212,7 @@ public class BodyLocationGroup {
 }
 JAVAEOF
 
-echo "[3/6] Writing patched WornItems.java..."
+echo "[2/7] Writing patched WornItems.java..."
 cat > "$WORK_DIR/src/zombie/characters/WornItems/WornItems.java" << 'JAVAEOF'
 package zombie.characters.WornItems;
 
@@ -479,26 +495,359 @@ public final class WornItems {
 }
 JAVAEOF
 
-echo "[4/6] Compiling patched classes..."
+echo "[3/7] Writing patched SyncClothingPacket.java..."
+cat > "$WORK_DIR/src/zombie/network/packets/SyncClothingPacket.java" << 'JAVAEOF'
+package zombie.network.packets;
+
+import java.util.ArrayList;
+import zombie.Lua.LuaEventManager;
+import zombie.characterTextures.BloodBodyPartType;
+import zombie.characters.Capability;
+import zombie.characters.IsoPlayer;
+import zombie.characters.WornItems.WornItem;
+import zombie.characters.animals.IsoAnimal;
+import zombie.core.ImmutableColor;
+import zombie.core.network.ByteBufferReader;
+import zombie.core.network.ByteBufferWriter;
+import zombie.core.raknet.UdpConnection;
+import zombie.core.skinnedmodel.visual.ItemVisual;
+import zombie.debug.DebugLog;
+import zombie.inventory.InventoryItem;
+import zombie.inventory.InventoryItemFactory;
+import zombie.inventory.types.Clothing;
+import zombie.network.GameClient;
+import zombie.network.IConnection;
+import zombie.network.JSONField;
+import zombie.network.PacketSetting;
+import zombie.network.PacketTypes;
+import zombie.network.ServerGUI;
+import zombie.network.fields.character.PlayerID;
+import zombie.scripting.objects.ItemBodyLocation;
+import zombie.scripting.objects.ResourceLocation;
+import zombie.util.Type;
+
+@PacketSetting(ordering = 0, priority = 1, reliability = 2, requiredCapability = Capability.LoginOnServer, handlingType = 3)
+public class SyncClothingPacket implements INetworkPacket {
+    @JSONField
+    private final PlayerID playerId = new PlayerID();
+    @JSONField
+    private final ArrayList<SyncClothingPacket.ItemDescription> items = new ArrayList<>();
+
+    @Override
+    public void setData(Object... values) {
+        if (values.length == 1 && values[0] instanceof IsoPlayer) {
+            this.set((IsoPlayer)values[0]);
+        } else {
+            DebugLog.Multiplayer.warn(this.getClass().getSimpleName() + ".set get invalid arguments");
+        }
+    }
+
+    public void set(IsoPlayer player) {
+        if (player instanceof IsoAnimal) {
+            DebugLog.General.printStackTrace("SyncClothingPacket.set receives IsoAnimal");
+        }
+
+        this.playerId.set(player);
+        this.items.clear();
+        this.playerId.getPlayer().getWornItems().forEach(item -> {
+            // PATCH: skip items with null location to prevent NPE in write()
+            if (item != null && item.getItem() != null && item.getLocation() != null) {
+                this.items.add(new SyncClothingPacket.ItemDescription(item));
+            }
+        });
+    }
+
+    void parseClothing(ByteBufferReader b, int itemId) {
+        IsoPlayer player = this.playerId.getPlayer();
+        if (player != null) {
+            Clothing clothing = Type.tryCastTo(player.getInventory().getItemWithID(itemId), Clothing.class);
+            if (clothing != null) {
+                clothing.removeAllPatches();
+            }
+
+            byte patchesNum = b.getByte();
+
+            for (byte j = 0; j < patchesNum; j++) {
+                byte bloodBodyPartTypeIdx = b.getByte();
+                byte tailorLvl = b.getByte();
+                byte fabricType = b.getByte();
+                boolean hasHole = b.getBoolean();
+                if (clothing != null) {
+                    ItemVisual bloodBodyPartType = clothing.getVisual();
+                    if (bloodBodyPartType instanceof ItemVisual) {
+                        bloodBodyPartType.removeHole(bloodBodyPartTypeIdx);
+                        BloodBodyPartType bloodBodyPartTypex = BloodBodyPartType.FromIndex(bloodBodyPartTypeIdx);
+                        switch (Clothing.ClothingPatchFabricType.fromIndex(fabricType)) {
+                            case null:
+                                break;
+                            case Cotton:
+                                bloodBodyPartType.setBasicPatch(bloodBodyPartTypex);
+                                break;
+                            case Denim:
+                                bloodBodyPartType.setDenimPatch(bloodBodyPartTypex);
+                                break;
+                            case Leather:
+                                bloodBodyPartType.setLeatherPatch(bloodBodyPartTypex);
+                                break;
+                            default:
+                                throw new MatchException(null, null);
+                        }
+                    }
+
+                    clothing.addPatchForSync(bloodBodyPartTypeIdx, tailorLvl, fabricType, hasHole);
+                }
+            }
+        }
+    }
+
+    void writeClothing(ByteBufferWriter b, int itemId) {
+        IsoPlayer player = this.playerId.getPlayer();
+        if (player == null) {
+            b.putByte(0);
+        } else {
+            Clothing clothing = Type.tryCastTo(player.getInventory().getItemWithID(itemId), Clothing.class);
+            if (clothing == null) {
+                b.putByte(0);
+            } else {
+                b.putByte(clothing.getPatchesNumber());
+
+                for (int i = 0; i < BloodBodyPartType.MAX.index(); i++) {
+                    Clothing.ClothingPatch patch = clothing.getPatchType(BloodBodyPartType.FromIndex(i));
+                    if (patch != null) {
+                        b.putByte(i);
+                        b.putByte(patch.tailorLvl);
+                        b.putByte(patch.fabricType);
+                        b.putBoolean(patch.hasHole);
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
+    public void parse(ByteBufferReader b, IConnection connection) {
+        this.playerId.parse(b, connection);
+        IsoPlayer player = this.playerId.getPlayer();
+        if (player != null) {
+            this.items.clear();
+            byte size = b.getByte();
+
+            for (int i = 0; i < size; i++) {
+                SyncClothingPacket.ItemDescription item = new SyncClothingPacket.ItemDescription();
+                item.parse(b, connection);
+                this.items.add(item);
+                this.parseClothing(b, item.itemId);
+            }
+        }
+    }
+
+    @Override
+    public void write(ByteBufferWriter b) {
+        this.playerId.write(b);
+        b.putByte(this.items.size());
+
+        for (SyncClothingPacket.ItemDescription item : this.items) {
+            item.write(b);
+            this.writeClothing(b, item.itemId);
+        }
+    }
+
+    @Override
+    public boolean isConsistent(IConnection connection) {
+        return this.playerId.getPlayer() != null;
+    }
+
+    // PATCH: null-guard on item.location before .equals()
+    private boolean isItemsContains(int itemId, ItemBodyLocation location) {
+        if (location == null) {
+            return false;
+        }
+        for (SyncClothingPacket.ItemDescription item : this.items) {
+            if (item.itemId == itemId && item.location != null && item.location.equals(location)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void process() {
+        if (this.playerId.getPlayer().remote) {
+            this.playerId.getPlayer().getItemVisuals().clear();
+        }
+
+        ArrayList<InventoryItem> itemsForDelete = new ArrayList<>();
+        this.playerId.getPlayer().getWornItems().forEach(itemx -> {
+            if (!this.isItemsContains(itemx.getItem().getID(), itemx.getLocation())) {
+                itemsForDelete.add(itemx.getItem());
+            }
+        });
+
+        for (InventoryItem item : itemsForDelete) {
+            this.playerId.getPlayer().getWornItems().remove(item);
+        }
+
+        for (SyncClothingPacket.ItemDescription item : this.items) {
+            // PATCH: skip items with null location (unresolved body location from registry)
+            if (item.location == null) {
+                continue;
+            }
+            Clothing wornItem = Type.tryCastTo(this.playerId.getPlayer().getWornItems().getItem(item.location), Clothing.class);
+            int wornItemId = wornItem == null ? -1 : wornItem.getID();
+            if (wornItemId != item.itemId) {
+                InventoryItem itemForAdd = this.playerId.getPlayer().getInventory().getItemWithID(item.itemId);
+                if (itemForAdd == null) {
+                    itemForAdd = InventoryItemFactory.CreateItem(item.itemType);
+                }
+
+                if (itemForAdd != null) {
+                    this.playerId.getPlayer().getWornItems().setItem(item.location, itemForAdd);
+                    if (this.playerId.getPlayer().remote) {
+                        itemForAdd.getVisual().setTint(item.tint);
+                        itemForAdd.getVisual().setBaseTexture(item.baseTexture);
+                        itemForAdd.getVisual().setTextureChoice(item.textureChoice);
+                        this.playerId.getPlayer().getItemVisuals().add(itemForAdd.getVisual());
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
+    public void processClient(UdpConnection connection) {
+        if (GameClient.client) {
+            // PATCH: only apply the destructive delete-then-add process() on remote players.
+            // The local player's worn items are authoritative — an echoed packet from the
+            // server carries stale state and would delete items added since the original send.
+            if (this.playerId.getPlayer().remote) {
+                this.process();
+            }
+            this.playerId.getPlayer().onWornItemsChanged();
+        }
+
+        this.playerId.getPlayer().resetModelNextFrame();
+        LuaEventManager.triggerEvent("OnClothingUpdated", this.playerId.getPlayer());
+    }
+
+    @Override
+    public void processServer(PacketTypes.PacketType packetType, UdpConnection connection) {
+        this.process();
+        if (ServerGUI.isCreated()) {
+            this.playerId.getPlayer().resetModelNextFrame();
+        }
+
+        // PATCH: exclude sender from relay. Original code passed null which echoed the
+        // packet back to the sending client, causing stale state to overwrite newer items.
+        // Every other packet (EquipPacket, GameCharacterAttachedItemPacket) correctly
+        // passes the connection to exclude the sender.
+        this.sendToClients(PacketTypes.PacketType.SyncClothing, connection);
+    }
+
+    static class ItemDescription implements INetworkPacket {
+        @JSONField
+        int itemId;
+        @JSONField
+        String itemType;
+        @JSONField
+        ItemBodyLocation location;
+        @JSONField
+        ImmutableColor tint;
+        @JSONField
+        int textureChoice;
+        @JSONField
+        int baseTexture;
+
+        public ItemDescription() {
+        }
+
+        public ItemDescription(WornItem item) {
+            this.itemId = item.getItem().getID();
+            this.itemType = item.getItem().getFullType();
+            this.location = item.getLocation();
+            this.baseTexture = item.getItem().getVisual() == null ? -1 : item.getItem().getVisual().getBaseTexture();
+            this.textureChoice = item.getItem().getVisual() == null ? -1 : item.getItem().getVisual().getTextureChoice();
+            this.tint = item.getItem().getVisual().getTint();
+        }
+
+        @Override
+        public void write(ByteBufferWriter b) {
+            b.putInt(this.itemId);
+            b.putUTF(this.itemType);
+            b.putUTF(this.location.toString());
+            b.putInt(this.textureChoice);
+            b.putInt(this.baseTexture);
+            b.putFloat(this.tint.r);
+            b.putFloat(this.tint.g);
+            b.putFloat(this.tint.b);
+            b.putFloat(this.tint.a);
+        }
+
+        @Override
+        public void parse(ByteBufferReader b, IConnection connection) {
+            this.itemId = b.getInt();
+            this.itemType = b.getUTF();
+            // PATCH: ItemBodyLocation.get() returns null if the location string is not
+            // registered in the registry. Store null and let process() skip it.
+            String locationStr = b.getUTF();
+            this.location = ItemBodyLocation.get(ResourceLocation.of(locationStr));
+            this.textureChoice = b.getInt();
+            this.baseTexture = b.getInt();
+            this.tint = new ImmutableColor(b.getFloat(), b.getFloat(), b.getFloat(), b.getFloat());
+        }
+    }
+}
+JAVAEOF
+
+echo "[4/7] Compiling patched classes..."
 "$JAVAC" -cp "$JAR_FILE" \
   "$WORK_DIR/src/zombie/characters/WornItems/BodyLocationGroup.java" \
   "$WORK_DIR/src/zombie/characters/WornItems/WornItems.java" \
+  "$WORK_DIR/src/zombie/network/packets/SyncClothingPacket.java" \
   -d "$WORK_DIR/build"
 
-echo "[5/6] Injecting patched classes into JAR..."
-cd "$WORK_DIR/build"
-"$JAR_CMD" -uf "$JAR_FILE" \
-  zombie/characters/WornItems/BodyLocationGroup.class \
-  zombie/characters/WornItems/WornItems.class
+echo "[5/7] Deploying classes to classpath override directory..."
+mkdir -p "$PATCH_WORN"
+mkdir -p "$PATCH_NET"
+cp "$WORK_DIR/build/zombie/characters/WornItems/BodyLocationGroup.class" "$PATCH_WORN/"
+cp "$WORK_DIR/build/zombie/characters/WornItems/WornItems.class" "$PATCH_WORN/"
+# SyncClothingPacket compiles to multiple .class files (inner class ItemDescription)
+cp "$WORK_DIR/build/zombie/network/packets/SyncClothingPacket.class" "$PATCH_NET/"
+cp "$WORK_DIR/build/zombie/network/packets/SyncClothingPacket\$ItemDescription.class" "$PATCH_NET/"
 
-echo "[6/6] Verifying..."
-unzip -l "$JAR_FILE" | grep -E "(BodyLocationGroup|WornItems)\.class"
+echo "[6/7] Verifying deployment..."
+echo "  Checking classpath override files:"
+ls -la "$PATCH_WORN/BodyLocationGroup.class"
+ls -la "$PATCH_WORN/WornItems.class"
+ls -la "$PATCH_NET/SyncClothingPacket.class"
+ls -la "$PATCH_NET/SyncClothingPacket\$ItemDescription.class"
 
 echo ""
-echo "=== Null-Safety Patch applied successfully! ==="
-echo "Patched classes:"
-echo "  - BodyLocationGroup.java (isMultiItem, isExclusive, setExclusive, isHideModel, setHideModel, isAltModel, setAltModel, setMultiItem)"
-echo "  - WornItems.java (setItem, indexOf, setFromItemVisuals, save, load)"
+echo "  Checking classpath config has 'java/.' before JAR:"
+grep -A5 '"classpath"' "$PZ_DIR/ProjectZomboid64.json" 2>/dev/null || \
+grep -A5 '"classpath"' "$PZ_DIR/ProjectZomboidServer.json" 2>/dev/null || \
+echo "  WARNING: Could not find server JSON config to verify classpath order."
+
+echo ""
+echo "[7/7] Cleanup..."
+rm -rf "$WORK_DIR"
+
+echo ""
+echo "=== Classpath Override Patch deployed successfully ==="
+echo ""
+echo "How it works:"
+echo "  The server config classpath is: [\"java/.\", \"java/projectzomboid.jar\"]"
+echo "  Since 'java/.' is listed first, the JVM loads .class files from the"
+echo "  filesystem before looking inside the JAR. The original JAR is untouched."
+echo ""
+echo "Patched classes deployed to:"
+echo "  $PATCH_WORN/"
+echo "    - BodyLocationGroup.class (isMultiItem, isExclusive, setExclusive, isHideModel, setHideModel, isAltModel, setAltModel, setMultiItem)"
+echo "    - WornItems.class (setItem, indexOf, setFromItemVisuals, save, load)"
+echo "  $PATCH_NET/"
+echo "    - SyncClothingPacket.class (processServer: exclude sender, processClient: skip local, null-safety guards)"
+echo "    - SyncClothingPacket\$ItemDescription.class (parse: tolerate unresolved locations)"
+echo ""
+echo "To remove all patches:"
+echo "  rm -rf $CLASSPATH_DIR/zombie/"
 echo ""
 echo "Restart the server to apply changes."
-echo "Make sure the patched .jar file has the correct execution permissions."

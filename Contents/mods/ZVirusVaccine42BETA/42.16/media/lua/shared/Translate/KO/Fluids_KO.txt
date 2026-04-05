@@ -1,0 +1,22 @@
+Fluids_KO = {
+	/* CONTAINERS */
+    Fluid_Container_FlaskLab = "플라스크",
+    Fluid_Container_TestTubeLab = "시험관",
+	
+	/* FLUIDS */
+    Fluid_Name_TaintedBlood = "응고혈",
+    Fluid_Name_InfectedBlood = "감염혈",
+    Fluid_Name_Antibodies = "항체",
+    Fluid_Name_Leukocytes = "백혈구",
+    Fluid_Name_BloodCells = "혈구",
+    Fluid_Name_BloodPlasma = "혈장",
+    Fluid_Name_AmmoniumSulfate = "황산암모늄",
+    Fluid_Name_HydrogenPeroxide = "과산화수소",
+    Fluid_Name_SodiumHypochlorite = "차아염소산나트륨",
+    Fluid_Name_PurifiedWater = "정제수",
+	Fluid_Name_BrainFluidHigh = "고품질 뇌척수액 샘플",
+	Fluid_Name_BrainFluidMid = "중품질 뇌척수액 샘플",
+	Fluid_Name_BrainFluidLow = "저품질 뇌척수액 샘플",
+	Fluid_Name_HydrochloricAcid = "염산",
+	Fluid_Name_SulfuricAcid = "황산",
+}

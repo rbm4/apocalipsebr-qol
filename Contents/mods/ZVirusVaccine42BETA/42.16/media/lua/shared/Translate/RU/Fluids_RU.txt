@@ -1,0 +1,22 @@
+Fluids_RU = {
+	/* CONTAINERS */
+    Fluid_Container_FlaskLab = "Колба",
+    Fluid_Container_TestTubeLab = "Пробирка",
+	
+	/* FLUIDS */
+    Fluid_Name_TaintedBlood = "Свёрнутая кровь",
+    Fluid_Name_InfectedBlood = "Заражённая кровь",
+    Fluid_Name_Antibodies = "Антитела",
+    Fluid_Name_Leukocytes = "Лейкоциты",
+    Fluid_Name_BloodCells = "Клетки Крови",
+    Fluid_Name_BloodPlasma = "Плазма",
+    Fluid_Name_AmmoniumSulfate = "Сульфат Аммония",
+    Fluid_Name_HydrogenPeroxide = "Перекись Водорода",
+    Fluid_Name_SodiumHypochlorite = "Гипохлорит Натрия",
+    Fluid_Name_PurifiedWater = "Очищенная Вода",
+	Fluid_Name_BrainFluidHigh = "Высоко-качественный Образец Спинномозговой Жидкости",
+	Fluid_Name_BrainFluidMid = "Средне-качественный Образец Спинномозговой Жидкости",
+	Fluid_Name_BrainFluidLow = "Низко-качественный Образец Спинномозговой Жидкости",
+	Fluid_Name_HydrochloricAcid = "Соляная Кислота",
+	Fluid_Name_SulfuricAcid = "Серная Кислота",
+}

@@ -1,0 +1,67 @@
+module Base
+{
+    craftRecipe TurnHBoneIntoWP
+    {
+        time = 5,
+        category = Weaponry,
+        timedAction = Making,
+        Tags = InHandCraft,
+        NeedToBeLearn = false,
+
+        inputs
+        {
+            item 1 [LabItems.LabRegularHumanBone;LabItems.LabHumanBoneLarge] mode:destroy mappers[BoneToWPMapper] flags[Prop2;InheritCondition],
+        }
+
+        outputs
+        {
+            item 1 mapper:BoneToWPMapper,
+        }
+
+        itemMapper BoneToWPMapper
+        {
+            LabItems.LabRegularHumanBoneWP = LabItems.LabRegularHumanBone,
+            LabItems.LabHumanBoneLargeWP = LabItems.LabHumanBoneLarge,
+            default = LabItems.LabRegularHumanBoneWP,
+        }
+    }
+    /* NOT NEEDED ANYMORE
+    
+        craftRecipe ChmLabFlaskPourWaterOut
+    {
+        time 			= 30,
+        category 		= Chemistry,
+		timedAction 	= PourLiqOut,
+		tags 			= InHandCraft,
+        NeedToBeLearn 	= false,
+
+        inputs
+        {
+            item 1 [LabItems.LabFlask] mode:destroy flags[Prop1],
+            -fluid 0.01 [Water;PurifiedWater],
+        }
+        outputs
+        {
+            item 1 LabItems.LabFlask,
+        }
+    }
+
+    craftRecipe ChmLabTestTubePourWaterOut
+    {
+        time 			= 30,
+        category 		= Chemistry,
+		timedAction 	= PourLiqOut,
+		tags 			= InHandCraft,
+        NeedToBeLearn 	= false,
+
+        inputs
+        {
+            item 1 [LabItems.LabTestTube] mode:destroy flags[Prop1],
+            -fluid 0.01 [Water;PurifiedWater],
+        }
+        outputs
+        {
+            item 1 LabItems.LabTestTube,
+        }
+    }*/
+}

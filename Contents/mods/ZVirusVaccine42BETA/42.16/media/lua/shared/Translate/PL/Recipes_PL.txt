@@ -1,0 +1,104 @@
+Recipes_PL = {
+	/*=======================================
+	TRANSLATIONS BY Ayako-Chan (Piotrek0909)
+	========================================*/
+    
+    // LABORATORY EQUIPMENT
+    Recipe_LabAssembleMicroscope = "Wytwórz Mikroskop",
+    Recipe_LabWorkbench = "Warsztat",
+    Recipe_LabAssembleChromatograph = "Wytwórz Chromatograf",
+    Recipe_LabAssembleChemistrySet = "Wytwórz Stół Chemiczny",
+    Recipe_LabAssembleSpectrometer = "Wytwórz Spektrometr",
+    Recipe_LabAssembleCentrifuge = "Wytwórz Wirówkę",
+    Recipe_LabAssembleMuffleFurnace = "Wytwórz Piec Muflowy",
+    Recipe_LabAssembleWorkbench = "Wytwórz Warsztat",
+    Recipe_LabAssembleEasel = "Wytwórz Sztalugę",
+    Recipe_LabTableMorgue1 = "Wytwórz Stół Sekcyjny",
+
+    // DECORATIONS AND MODELS
+    Recipe_DecAssembleSkeleton = "Wytwórz Model Szkieletu",
+    Recipe_DecAssembleVirusModel = "Wytwórz Model Wirusa",
+    Recipe_DecAssembleCaduceus = "Wytwórz Kaduceusz",
+    Recipe_DecAssembleWhiteboard = "Wytwórz Tablicę Suchościeralną",
+
+    Recipe_DecPaintPeriodicTablePoster = "Namaluj Plakat z Układem Okresowym",
+    Recipe_DecPaintSexyNursePoster = "Namaluj Plakat z Pielęgniarką",
+    Recipe_DecPaintWashYourHandsPoster = "Namaluj Plakat \"Myj Ręce\"",
+    Recipe_DecPaintBiohazardPoster = "Namaluj Plakat z Biohazardem",
+    Recipe_DecPaintHumanBrainPoster = "Namaluj Plakat z Ludzkim Mózgiem",
+    Recipe_DecAssemblePharmacyNeonSign = "Wytwórz Neonową Reklamę Apteki",
+    Recipe_DecAssemblePizzaNeonSign = "Wytwórz Neonową Reklamę Pizzy",
+
+    // FORGE / GLASSWORK
+    Recipe_FrnMakeTestTube = "Wytwórz Probówki (x2)",
+    Recipe_FrnMakeFlask = "Wytwórz Kolbę",
+    Recipe_FrnMakeJar = "Wytwórz Słoik",
+    Recipe_FrnMakeIngotMold = "Wytwórz Formę do Sztabek",
+    Recipe_FrnMeltGoldJewelry = "Przetop Złotą Biżuterię",
+    Recipe_FrnMeltSilverJewelry = "Przetop Srebrną Biżuterię",
+    Recipe_FrnMakeGolgIngot = "Wytwórz Sztabkę Złota",
+    Recipe_FrnMakeSilverIngot = "Wytwórz Sztabkę Srebra",
+
+    // BIOLOGICAL PROCESSES
+    Recipe_ChmCollectInfectedBlood = "1 - Pobierz Zainfekowaną Krew do Probówki",
+    Recipe_ChmDivideBloodIntoComponents = "2 - Rozdziel Składniki Krwi",
+    Recipe_ChmMixFlaskOfAmmoniumSulfate = "3 - Wymieszaj Siarczan Amonu",
+    Recipe_ChmExtractLeukocytesFromBloodCells = "4 - Wyizoluj Leukocyty",
+    Recipe_ChmExtractAntibodiesFromLeukocytes = "8 - Wyizoluj Przeciwciała",
+    Recipe_ChmExtractBrainFromSkull = "5A - Wyjmij Mózg z Czaszki",
+    Recipe_ChmExtractFluidFromBrain = "5B - Pobierz Płyn Mózgowo-Rdzeniowy",
+
+    // VACCINES AND CURE
+    Recipe_ChmSynthesizePlainVaccine = "7A - Wytwórz Podstawową Szczepionkę",
+    Recipe_ChmSynthesizeQualityVaccine = "7B - Wytwórz Szczepionkę Dobrej Jakości",
+    Recipe_ChmSynthesizeAdvancedVaccine = "9A - Wytwórz Zaawansowaną Szczepionkę",
+    Recipe_ChmSynthesizeCure = "9B - Wytwórz Lekarstwo",
+
+    // CHEMICAL REAGENTS
+    Recipe_ChmMixFlaskOfSodiumHypochlorite = "6 - Wymieszaj Podchloryn Sodu",
+    Recipe_ChmMixFlaskOfHydrogenPeroxide = "Wymieszaj Nadtlenek Wodoru",
+
+    // MEDICATIONS / SUPPLEMENTS
+    Recipe_ChmMakeAlbumin = "Wytwórz Albuminę",
+    Recipe_ChmMakeChlorineTablets = "Wytwórz Tabletki Chloru",
+    Recipe_ChmMakeBottleOfBleach = "Wytwórz Butelkę Wybielacza",
+    Recipe_ChmMakeBottleOfDisinfectant = "Wytwórz Butelkę Alkoholu",
+
+    // STERILIZATION
+    Recipe_ChmSterilizeGlasses = "Wysterylizuj Szkło Laboratoryjne",
+    Recipe_ChmSterilizeLabSyringeReusable = "Wysterylizuj Strzykawkę Wielokrotnego Użytku",
+    Recipe_OthClearWithChlorineTablets = "Oczyść Wodę Tabletkami Chloru",
+    Recipe_ChmSterilizeGlassesHW = "Wysterylizuj Gorącą Wodą",
+    Recipe_ChmSterilizeGlassesHWPot = "Wysterylizuj Gorącą Wodą (x5)",
+    Recipe_ChmSterilizeGlassesHWBucket = "Wysterylizuj Gorącą Wodą (x15)",
+    Recipe_ChmSterilizeGlassesHWPot2 = "Wysterylizuj Gorącą Wodą (x5)",
+    Recipe_ChmSterilizeGlassesHWBucket2 = "Wysterylizuj Gorącą Wodą (x15)",
+
+    // DISPOSAL
+    Recipe_ChmDiscardBloodFromSyringe = "Wyrzuć Materiał Biologiczny",
+    Recipe_ChmLabFlaskPourWaterOut = "Opróżnij Kolbę",
+    Recipe_ChmLabTestTubePourWaterOut = "Opróżnij Probówkę",
+
+    // SYRINGES
+    Recipe_ChmMakeSyringe = "Wytwórz Strzykawkę Wielokrotnego Użytku",
+
+    // OTHER PROCESSES
+    Recipe_OthShatterEmptyBottle = "Rozbij Pustą Butelkę",
+    Recipe_OthShatterCarGlassWindshields = "Rozbij Szybę Samochodową",
+    Recipe_OthUnpackSyringes = "Otwórz Pudełko Strzykawek",
+    Recipe_OthPackSyringes = "Zapakuj Strzykawki do Pudełka",
+    Recipe_ChmMakeAlbuminPills = "Wytwórz Tabletki Albuminy",
+    Recipe_FrnMakeAluminum = "Wytwórz Aluminium",
+    Recipe_LabPaintLightGreen = "Pomaluj na Jasnozielony",
+    Recipe_LabPaintLightRed = "Pomaluj na Jasnoczerwony",
+    Recipe_LabPaintLightBlue = "Pomaluj na Jasnoniebieski",
+    Recipe_LabPaintLightYellow = "Pomaluj na Jasnożółty",
+    Recipe_LabPaintLightCyan = "Pomaluj na Jasny Cyjan",
+    Recipe_LabPaintLightOrange = "Pomaluj na Jasnopomarańczowy",
+    Recipe_LabPaintLightPurple = "Pomaluj na Jasnofioletowy",
+    Recipe_LabPaintLightPink = "Pomaluj na Jasnoróżowy",
+    Recipe_OthFixSkull = "Napraw Ludzką czaszkę",
+    Recipe_OthMakeCottonBalls = "Zrób Waciki",
+	
+    /* TEMPORARY RECIPES */
+}

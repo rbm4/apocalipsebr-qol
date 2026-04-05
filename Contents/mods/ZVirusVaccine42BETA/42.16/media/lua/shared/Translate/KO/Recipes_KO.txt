@@ -1,0 +1,107 @@
+Recipes_KO = {
+    // LABORATORY EQUIPMENT
+    Recipe_LabAssembleMicroscope = "현미경 제작",
+    Recipe_LabWorkbench = "작업대",
+    Recipe_LabAssembleChromatograph = "크로마토그래프 제작",
+    Recipe_LabAssembleChemistrySet = "화학 실험대 제작",
+    Recipe_LabAssembleSpectrometer = "분광계 제작",
+    Recipe_LabAssembleCentrifuge = "원심분리기 제작",
+    Recipe_LabAssembleMuffleFurnace = "머플로 제작",
+    Recipe_LabAssembleWorkbench = "작업대 제작",
+    Recipe_LabAssembleEasel = "이젤 제작",
+    Recipe_LabTableMorgue1 = "부검 테이블 제작",
+
+    // DECORATIONS AND MODELS
+    Recipe_DecAssembleSkeleton = "해골 모형 제작",
+    Recipe_DecAssembleVirusModel = "바이러스 모형 제작",
+    Recipe_DecAssembleCaduceus = "카두케우스 제작",
+    Recipe_DecAssembleWhiteboard = "화이트보드 제작",
+
+    Recipe_DecPaintPeriodicTablePoster = "주기율표 포스터 그리기",
+    Recipe_DecPaintSexyNursePoster = "간호사 포스터 그리기",
+    Recipe_DecPaintWashYourHandsPoster = ""손 씻기" 포스터 그리기",
+    Recipe_DecPaintBiohazardPoster = "생물학적 위험 포스터 그리기",
+    Recipe_DecPaintHumanBrainPoster = "인간 두뇌 포스터 그리기",
+    Recipe_DecAssemblePharmacyNeonSign = "약국 네온사인 제작",
+    Recipe_DecAssemblePizzaNeonSign = "피자 네온사인 제작",
+
+    // FORGE / GLASSWORK
+    Recipe_FrnMakeTestTube = "시험관 제작 (x2)",
+    Recipe_FrnMakeFlask = "플라스크 제작",
+    Recipe_FrnMakeJar = "병 제작",
+    Recipe_FrnMakeIngotMold = "잉곳 주형 제작",
+    Recipe_FrnMeltGoldJewelry = "금 장신구 용해",
+    Recipe_FrnMeltSilverJewelry = "은 장신구 용해",
+    Recipe_FrnMakeGolgIngot = "금 잉곳 제작",
+    Recipe_FrnMakeSilverIngot = "은 잉곳 제작",
+
+    // BIOLOGICAL PROCESSES
+    Recipe_ChmCollectInfectedBlood = "1 - 시험관에 감염혈 채취",
+    Recipe_ChmDivideBloodIntoComponents = "2 - 혈액 성분 분리",
+    Recipe_ChmMixFlaskOfAmmoniumSulfate = "3 - 황산암모늄 혼합",
+    Recipe_ChmExtractLeukocytesFromBloodCells = "4 - 백혈구 추출",
+    Recipe_ChmExtractBrainFromSkull = "5A - 뇌 추출",
+    Recipe_ChmExtractFluidFromBrain = "5B - 뇌척수액 추출",
+    Recipe_ChmExtractAntibodiesFromLeukocytes = "8 - 항체 추출",
+
+    // VACCINES AND CURE
+    Recipe_ChmSynthesizePlainVaccine = "7A - 기본 백신 합성",
+    Recipe_ChmSynthesizeQualityVaccine = "7B - 고품질 백신 합성",
+    Recipe_ChmSynthesizeAdvancedVaccine = "9A - 고급 백신 합성",
+    Recipe_ChmSynthesizeCure = "9 - 치료제 합성",
+
+    // CHEMICAL REAGENTS
+    Recipe_ChmMixFlaskOfSodiumHypochlorite = "6 - 차아염소산나트륨 혼합",
+    Recipe_ChmMixFlaskOfHydrogenPeroxide = "과산화수소 혼합",
+
+    // MEDICATIONS / SUPPLEMENTS
+    Recipe_ChmMakeAlbumin = "알부민 생산",
+    Recipe_ChmMakeChlorineTablets = "염소 정제 알약 생산",
+    Recipe_ChmMakeBottleOfBleach = "표백제 병 제작",
+    Recipe_ChmMakeBottleOfDisinfectant = "알코올 병 제작",
+
+    // STERILIZATION
+    Recipe_ChmSterilizeGlasses = "유리 기구 살균",
+    Recipe_ChmSterilizeLabSyringeReusable = "재사용 주사기 살균",
+    Recipe_OthClearWithChlorineTablets = "염소 정제 알약으로 정수",
+    Recipe_ChmSterilizeGlassesHW = "뜨거운 물로 살균",
+    Recipe_ChmSterilizeGlassesHWPot = "뜨거운 물로 살균 (x5)",
+    Recipe_ChmSterilizeGlassesHWBucket = "뜨거운 물로 살균 (x15)",
+    Recipe_ChmSterilizeGlassesHWPot2 = "뜨거운 물로 살균 (x5)",
+    Recipe_ChmSterilizeGlassesHWBucket2 = "뜨거운 물로 살균 (x15)",
+
+    // DISPOSAL
+    Recipe_ChmDiscardBloodFromSyringe = "생물학적 재료 폐기",
+    Recipe_ChmLabFlaskPourWaterOut = "플라스크 비우기",
+    Recipe_ChmLabTestTubePourWaterOut = "시험관 비우기",
+
+    // SYRINGES
+    Recipe_ChmMakeSyringe = "재사용 주사기 제작",
+
+    // WEAPONS
+    Recipe_MakeHBoneClub = "뼈 곤봉 제작",
+    Recipe_MakeHScrapMorningstar = "고철 모닝스타 제작",
+    Recipe_MakeSpikedClub = "가시 곤봉 제작",
+
+    // OTHER PROCESSES
+    Recipe_OthShatterEmptyBottle = "빈 병 깨기",
+    Recipe_OthShatterCarGlassWindshields = "자동차 유리 깨기",
+    Recipe_OthUnpackSyringes = "주사기 박스 열기",
+    Recipe_OthPackSyringes = "주사기 박스에 넣기",
+    Recipe_ChmMakeAlbuminPills = "알부민 알약 생산",
+    Recipe_FrnMakeAluminum = "알루미늄 제작",
+    Recipe_LabPaintLightGreen = "초록 조명 칠하기",
+    Recipe_LabPaintLightRed = "빨간 조명 칠하기",
+    Recipe_LabPaintLightBlue = "파란 조명 칠하기",
+    Recipe_LabPaintLightYellow = "노란 조명 칠하기",
+    Recipe_LabPaintLightCyan = "청록 조명 칠하기",
+    Recipe_LabPaintLightOrange = "주황 조명 칠하기",
+    Recipe_LabPaintLightPurple = "보라 조명 칠하기",
+    Recipe_LabPaintLightPink = "분홍 조명 칠하기",
+    Recipe_OthFixSkull = "인간 두개골 수리",
+    Recipe_OthMakeCottonBalls = "솜뭉치 만들기",
+	
+    /* TEMPORARY RECIPES */
+    Recipe_TurnHBoneIntoWP = "무기로 변환",
+
+}

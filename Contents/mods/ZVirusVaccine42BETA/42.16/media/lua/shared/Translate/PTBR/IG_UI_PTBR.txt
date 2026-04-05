@@ -1,0 +1,102 @@
+IGUI_PTBR = {
+	IGUI_CraftCategory_Equipment = "Equipamentos",
+	IGUI_CraftCategory_Decorations = "Decorações",
+	IGUI_CraftCategory_Chemistry = "Química",
+	IGUI_CraftCategory_Other = "Outros",
+
+	IGUI_PlayerText_NeedSpectrometer = "Eu preciso de um espectrômetro para isso.",
+
+	IGUI_PlayerText_PainFromNeedle1 = "Ai! Isso doeu um pouco",
+	IGUI_PlayerText_PainFromNeedle2 = "Ugh… Agulha maldita."
+	IGUI_PlayerText_PainFromNeedle3 = "Aaah… agulhas nunca são agradáveis.",
+	IGUI_PlayerText_PainFromNeedle4 = "Droga… senti essa!",
+	IGUI_PlayerText_PainFromNeedle5 = "Auch! Podia ter sido mais suave…",
+
+	IGUI_PlayerText_AutopsyInfected1 = "Hm… fresquinho. Quase dá pra ouvir borbulhar. Perfeito.",
+	IGUI_PlayerText_AutopsyInfected2 = "Aí sim… uma amostra querendo me morder de volta.",
+	IGUI_PlayerText_AutopsyInfected3 = "Isso aqui tá tão ativo que devia pagar aluguel.",
+	IGUI_PlayerText_AutopsyInfected4 = "Eita... isso tá vivo demais. Se pular, eu corro.",
+	IGUI_PlayerText_AutopsyInfected5 = "Amostra coletada com sucesso. E sem perder um dedo!",
+
+	IGUI_PlayerText_AutopsyTainted1 = "Eca… isso aqui parece geleia vencida.",
+	IGUI_PlayerText_AutopsyTainted2 = "Ah, ótimo... sangue com textura de pudim. Inútil.",
+	IGUI_PlayerText_AutopsyTainted3 = "Droga. Isso aqui um laboratório não aceitaria nem no lixo.",
+	IGUI_PlayerText_AutopsyTainted4 = "Hum… sangue vintage demais. Safra perdida.",
+	IGUI_PlayerText_AutopsyTainted5 = "Coágulos, coágulos e… coágulos. Que alegria.",
+
+	IGUI_PlayerText_AutopsyNothing1 = "Nada? Sério? Nem pra sangrar esse corpo presta.",
+	IGUI_PlayerText_AutopsyNothing2 = "Nem uma gota útil… parabéns, campeão.",
+	IGUI_PlayerText_AutopsyNothing3 = "Aff… seco igual meu humor.",
+	IGUI_PlayerText_AutopsyNothing4 = "Zero amostra. Zero utilidade. Zero paciência.",
+	IGUI_PlayerText_AutopsyNothing5 = "Vazio. Só perdi tempo e esperança.",
+
+	IGUI_PlayerText_MorguePlace1 = "Ok… pra mesa. Tente não cair dessa vez.",
+	IGUI_PlayerText_MorguePlace2 = "Pronto. Agora começa a diversão… eu acho.",
+	IGUI_PlayerText_MorguePlace3 = "Certo… acomodado com carinho mórbido.",
+	IGUI_PlayerText_MorguePlace4 = "Na mesa. VIP do necrotério.",
+	IGUI_PlayerText_MorguePlace5 = "Tudo bem... vamos transformar você em ciência.",
+
+	IGUI_PlayerText_MorgueBodyPartCollected1 = "Meu Deus... O que estou fazendo da vida?",
+	IGUI_PlayerText_MorgueBodyPartCollected2 = "Talvez seja melhor ser mordido e partir do que isso aqui.",
+	IGUI_PlayerText_MorgueBodyPartCollected3 = "Quase vomitei, mas consegui terminar.",
+	IGUI_PlayerText_MorgueBodyPartCollected4 = "Que parada sinistra… mas ciência é ciência.",
+	IGUI_PlayerText_MorgueBodyPartCollected5 = "Tomara que isso valha a pena no final.",
+
+	IGUI_PlayerText_MorgueRemoveCorpse1 = "Tá… saco preto e fim de história.",
+	IGUI_PlayerText_MorgueRemoveCorpse2 = "Melhor ensacar antes que isso ganhe personalidade.",
+	IGUI_PlayerText_MorgueRemoveCorpse3 = "Cadáver removido. Zero apego emocional.",
+	IGUI_PlayerText_MorgueRemoveCorpse4 = "Não vai render ciência nenhuma. Só trabalho sujo.",
+	IGUI_PlayerText_MorgueRemoveCorpse5 = "Pelo menos agora está oficialmente fora da mesa.",
+
+	IGUI_PlayerText_MorgueClean1 = "Vamos deixar isso apresentável… ou menos nojento.",
+	IGUI_PlayerText_MorgueClean2 = "Nada como uma mesa esterilizada com aroma de desespero.",
+	IGUI_PlayerText_MorgueClean3 = "Pronto… agora parece quase profissional.",
+	IGUI_PlayerText_MorgueClean4 = "Eca… mas pelo menos agora brilha.",
+	IGUI_PlayerText_MorgueClean5 = "Mesa limpa. Já posso fingir ser organizado.",
+
+	IGUI_PlayerText_MorgueGetRemains1 = "Certo… vamos tirar essa massa orgânica daqui.",
+	IGUI_PlayerText_MorgueGetRemains2 = "Eca… mas alguém tem que bancar o adulto responsável.",
+	IGUI_PlayerText_MorgueGetRemains3 = "Tudo embalado. Que romântico.",
+	IGUI_PlayerText_MorgueGetRemains4 = "Pronto. Restos removidos com dignidade duvidosa.",
+	IGUI_PlayerText_MorgueGetRemains5 = "Aff… se eu me acostumar com isso, me internem.",
+
+	IGUI_PlayerText_MorgueNoContainer = "Sem recipiente. Vou guardar onde? No bolso?",
+	IGUI_Lab_TestResult_Positive = "Resultado: Positivo (%1%%)"
+
+	IGUI_PlayerText_InvalidSample  = "Isso aqui não é uma amostra. É um insulto à ciência.",
+
+	IGUI_PlayerText_TestPositive = "Deu positivo. A infecção está só começando."
+	IGUI_PlayerText_TestPositive1 = "É… definitivamente não é uma boa notícia.",
+	IGUI_PlayerText_TestPositive2 = "Maravilha… agora é só esperar cair morto.",
+	IGUI_PlayerText_TestPositive3 = "Positivo. Ótimo. Exatamente o diagnóstico que eu queria.",
+	IGUI_PlayerText_TestPositive4 = "Positivo. Bom saber antes de começar a apodrecer.",
+	IGUI_PlayerText_TestPositive5 = "A ciência confirma: estou ferrado.",
+	IGUI_PlayerText_TestPositive6 = "Então é isso. Nada como fatos. Deu positivo."
+
+	IGUI_PlayerText_TestNegative1 = "Negativo. Milagre científico ou pura sorte?",
+	IGUI_PlayerText_TestNegative2 = "Negativo. Hoje não, maluco.",
+	IGUI_PlayerText_TestNegative3 = "Negativo. IIIIIIIHHH RRRUUUUU.",
+	IGUI_PlayerText_TestNegative4 = "Negativo. Foi só um susto.",
+	IGUI_PlayerText_TestNegative5 = "Negativo. Quem disse que sou fácil de matar?",
+	IGUI_PlayerText_InfectionRate = "% de infecção.",
+
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:MuffleFurnace = "Forja de Laboratório",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:ChemistrySet = "Bancada Química",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Chromatograph = "Cromatógrafo",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Spectrometer = "Espectrômetro",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Microscope = "Microscópio",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Centrifuge = "Centrífuga",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Workbench = "Bancada Técnica",
+	IGUI_CraftingWindow_ZVirusVaccine42BETA:Easel = "Cavalete",
+
+	IGUI_ItemCat_Laboratory = "Laboratório",
+	IGUI_ItemCat_Decorations = "Decorações",
+	IGUI_ItemCat_HumanPart = "Parte Humana",
+	
+	IGUI_PlayerText_AutopsyAlready1 = "Este corpo já foi examinado...",
+	IGUI_PlayerText_AutopsyAlready2 = "Não há mais nada para autopsiar aqui.",
+	IGUI_PlayerText_AutopsyAlready3 = "Alguém já fez a autópsia deste corpo.",
+	IGUI_PlayerText_AutopsyAlready4 = "Já extraíram tudo que havia de útil...",
+	IGUI_PlayerText_AutopsyAlready5 = "Este cadáver já foi completamente examinado.",
+	IGUI_PlayerText_AutopsyAlready6 = "Até parece que vou conseguir alguma coisa fazendo isso.",
+}

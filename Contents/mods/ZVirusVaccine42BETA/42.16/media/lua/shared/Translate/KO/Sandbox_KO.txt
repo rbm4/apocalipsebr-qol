@@ -1,0 +1,160 @@
+Sandbox_KO = {
+    Sandbox_ZombieVirusVaccineBETA = "좀비 바이러스 백신 (BETA)",
+
+    -- LOOT
+    Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot = "월드 루트 활성화",
+    Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot_tooltip = "좀비 바이러스 백신 관련 아이템의 월드 내 스폰을 완전히 활성화하거나 비활성화합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_ExpandChemicalsLoot = "화학 제품 확장",
+    Sandbox_ZombieVirusVaccineBETA_ExpandChemicalsLoot_tooltip = "루트 테이블을 확장하여 추가 화학 제품을 포함시킵니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes = "주사기 (수량)",
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option1 = "비활성화",
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option2 = "낮음",
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option3 = "기본",
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option4 = "높음",
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_tooltip = "월드에 등장하는 모드 주사기의 수량을 설정합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks = "장비 도서 (수량)",
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option1 = "비활성화",
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option2 = "낮음",
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option3 = "기본",
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option4 = "높음",
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_tooltip = "월드에 등장하는 실험실 장비 도서의 수량을 설정합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks = "바이러스학 도서 (수량)",
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option1 = "비활성화",
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option2 = "낮음",
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option3 = "기본",
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option4 = "높음",
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_tooltip = "월드에 등장하는 바이러스학 및 화학 도서의 수량을 설정합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode = "바이러스학 도서 - 스폰 위치",
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_option1 = "스폰 위치 확장",
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_option2 = "특정 위치만",
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_option3 = "흔하게 등장",
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_tooltip = "바이러스학 도서가 특정 위치에서만 스폰될지, 월드 전체에 분산될지 설정합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals = "화학 제품 (수량)",
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option1 = "비활성화",
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option2 = "낮음",
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option3 = "기본",
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option4 = "높음",
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_tooltip = "월드에 등장하는 모드 화학 아이템의 수량을 설정합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_EnableVehicleLoot = "차량 루트 분배 활성화",
+    Sandbox_ZombieVirusVaccineBETA_EnableVehicleLoot_tooltip = "차량 내 아이템 스폰을 활성화하거나 비활성화합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot = "생존자 배낭 루트 분배 활성화",
+    Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot_tooltip = "생존자 배낭 내 아이템 스폰을 활성화하거나 비활성화합니다.",
+
+    -- BLOOD AGING
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingMode = "혈액 노화 활성화",
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingMode_tooltip = "혈액 노화 기능을 활성화하거나 비활성화합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingRadius = "혈액 노화 탐색 반경",
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingRadius_tooltip = "14는 원본 모드의 기본값입니다. 문제가 발생할 경우 이 값을 줄이거나 혈액 노화를 비활성화하세요.",
+
+    -- LIGHTS / GLASS
+    Sandbox_ZombieVirusVaccineBETA_EnableLightPaints = "조명 도색 허용",
+    Sandbox_ZombieVirusVaccineBETA_EnableLightPaints_tooltip = "조명 도색 잡지의 스폰을 활성화하거나 비활성화합니다. 비활성화 시 조명 도색 방법을 배울 수 없습니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_AllowWindowGlass = "깨진 창문 유리 수집 허용",
+    Sandbox_ZombieVirusVaccineBETA_AllowWindowGlass_tooltip = "활성화 시, 플레이어가 깨진 창문에서 유리를 제거할 때마다 깨진 유리 재료를 얻습니다.<LINE><LINE>비활성화 상태에서도 바닥에 있는 깨진 유리는 수집할 수 있습니다.",
+
+    -- AUTOPSY
+    Sandbox_ZombieVirusVaccineBETA_AllowAutopsyOnGround = "지면 부검 허용",
+    Sandbox_ZombieVirusVaccineBETA_AllowAutopsyOnGround_tooltip = "플레이어가 테이블 없이 지면에서 직접 부검을 실시할 수 있도록 허용합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_AutopsySpeed = "부검 속도 (틱 단위)",
+    Sandbox_ZombieVirusVaccineBETA_AutopsySpeed_tooltip = "<BHC>이 설정을 변경하면 게임 밸런스에 영향을 줍니다. <RGB:1,1,1><LINE> 부검을 완료하는 데 필요한 틱 수를 설정합니다. 값이 낮을수록 빠릅니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_TicksDecreasedByPerkLv = "스킬 레벨당 틱 감소량",
+    Sandbox_ZombieVirusVaccineBETA_TicksDecreasedByPerkLv_tooltip = "<BHC>이 설정을 변경하면 게임 밸런스에 영향을 줍니다. <RGB:1,1,1><LINE> 응급처치 스킬 레벨 1당 부검 시간에서 감소되는 틱 수입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus = "영안실 테이블 속도 보너스",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option1 = "없음",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_tooltip = "<BHC>이 설정을 변경하면 게임 밸런스에 영향을 줍니다. <RGB:1,1,1><LINE> 부검 테이블에서 부검 시 적용되는 속도 보너스를 설정합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_AutopsyGroundXP = "지면 부검 경험치",
+    Sandbox_ZombieVirusVaccineBETA_AutopsyGroundXP_tooltip = "<BHC>이 설정을 변경하면 게임 밸런스에 영향을 줍니다. <RGB:1,1,1><LINE> 지면에서 부검 시 획득하는 경험치 량입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_AutopsyTableXP = "영안실 테이블 부검 경험치",
+    Sandbox_ZombieVirusVaccineBETA_AutopsyTableXP_tooltip = "<BHC>이 설정을 변경하면 게임 밸런스에 영향을 줍니다. <RGB:1,1,1><LINE> 테이블에서 부검 시 획득하는 경험치 량입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_CollectPartXP = "신체 부위 부검 경험치",
+    Sandbox_ZombieVirusVaccineBETA_CollectPartXP_tooltip = "<BHC>이 설정을 변경하면 게임 밸런스에 영향을 줍니다. <RGB:1,1,1><LINE> 정육 및 응급처치 스킬에서 획득하는 기본 경험치를 설정합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "최상 상태 뇌 획득 기본 확률 (%)",
+    Sandbox_ZombieVirusVaccineBETA_BrainHighOffset_tooltip = "<BHC>이 설정을 변경하면 게임 밸런스에 영향을 줍니다. <RGB:1,1,1><LINE> 최상 상태의 뇌를 채취할 기본 확률을 설정합니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "혈액 공포증 디버프",
+    Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff_tooltip = "혈액 공포증 특성을 가진 캐릭터가 부검을 실시할 때 적용되는 패널티를 설정합니다.<LINE> 최상 상태 뇌를 획득할 확률에 영향을 줍니다.",
+
+    -- TOOLS DEGRADATION
+    Sandbox_ZombieVirusVaccineBETA_AllowScalpelDegrade = "메스 내구도 감소 허용",
+    Sandbox_ZombieVirusVaccineBETA_AllowScalpelDegrade_tooltip = "활성화 시 메스는 사용할수록 내구도가 감소하여 파손됩니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_AllowSawDegrade = "톱 내구도 감소 허용",
+    Sandbox_ZombieVirusVaccineBETA_AllowSawDegrade_tooltip = "활성화 시 톱은 사용할수록 내구도가 감소하여 파손됩니다.",
+
+    -- DEBUG
+    Sandbox_ZombieVirusVaccineBETA_DebugMode = "디버그",
+    Sandbox_ZombieVirusVaccineBETA_DebugMode_tooltip = "<BHC>변경하지 마세요. 개발자 전용입니다. <RGB:1,1,1><LINE> 콘솔에 방대한 양의 디버그 정보를 출력합니다.",
+
+    -- PLAYER SPEECH (NEW)
+    Sandbox_ZombieVirusVaccineBETA_EnablePlayerSpeech = "캐릭터 발화 활성화",
+    Sandbox_ZombieVirusVaccineBETA_EnablePlayerSpeech_tooltip = "비활성화 시 개별 확률에 상관없이 캐릭터가 실험실 행동 중 아무 말도 하지 않습니다.",
+
+    -- SPEECH CHANCES: BLOOD TEST
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestNegative = "발화 확률: 혈액 검사 음성",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestNegative_tooltip = "혈액 검사에서 음성 결과를 받은 후 캐릭터가 발언할 확률 (%)입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestPositive = "발화 확률: 혈액 검사 양성",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestPositive_tooltip = "혈액 검사에서 양성 결과를 받은 후 캐릭터가 발언할 확률 (%)입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestInvalid = "발화 확률: 혈액 검사 - 유효하지 않은 샘플",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestInvalid_tooltip = "혈액 샘플이 유효하지 않을 때 캐릭터가 발언할 확률 (%)입니다.",
+
+    -- SPEECH CHANCES: BLOOD COLLECTION
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceCollectBlood = "발화 확률: 혈액 채취",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceCollectBlood_tooltip = "혈액 채취 중 주삿바늘의 통증에 캐릭터가 반응할 확률 (%)입니다.",
+
+    -- SPEECH CHANCES: AUTOPSY
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyInfected = "발화 확률: 부검 - 감염",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyInfected_tooltip = "부검한 시체에서 감염 징후가 발견될 때 캐릭터가 발언할 확률 (%)입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyTainted = "발화 확률: 부검 - 오염",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyTainted_tooltip = "부검한 시체가 오염된 것으로 확인될 때 캐릭터가 발언할 확률 (%)입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyNothing = "발화 확률: 부검 - 이상 없음",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyNothing_tooltip = "부검에서 특이사항이 발견되지 않을 때 캐릭터가 발언할 확률 (%)입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyAlready = "발화 확률: 부검 - 이미 부검됨",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyAlready_tooltip = "이미 부검된 시체를 다시 부검하려 할 때 캐릭터가 발언할 확률 (%)입니다.",
+
+    -- SPEECH CHANCES: MORGUE
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpsePlaced = "발화 확률: 영안실 - 시체 배치",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpsePlaced_tooltip = "영안실 테이블에 시체를 올린 후 캐릭터가 발언할 확률 (%)입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueSuccess = "발화 확률: 영안실 - 유해 수집 완료",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueSuccess_tooltip = "영안실에서 유해를 성공적으로 수집한 후 캐릭터가 발언할 확률 (%)입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueNoContainer = "발화 확률: 영안실 - 용기 없음",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueNoContainer_tooltip = "영안실에 사용 가능한 용기가 없을 때 캐릭터가 발언할 확률 (%)입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueTableCleaned = "발화 확률: 영안실 - 테이블 청소",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueTableCleaned_tooltip = "영안실 테이블을 청소한 후 캐릭터가 발언할 확률 (%)입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpseRemoved = "발화 확률: 영안실 - 시체 제거",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpseRemoved_tooltip = "영안실 테이블에서 시체를 제거한 후 캐릭터가 발언할 확률 (%)입니다.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueBodyPartCollected = "발화 확률: 영안실 - 신체 부위 수집",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueBodyPartCollected_tooltip = "영안실 처치 중 신체 부위를 수집한 후 캐릭터가 발언할 확률 (%)입니다.",
+}

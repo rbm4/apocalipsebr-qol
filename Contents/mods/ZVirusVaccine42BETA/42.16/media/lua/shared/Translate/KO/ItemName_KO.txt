@@ -1,0 +1,110 @@
+ItemName_KO = {
+    /* EQUIPMENT / LAB DECOR */
+    ItemName_LabItems.LabMicroscope = "현미경",
+    ItemName_LabItems.LabChromatograph = "크로마토그래프",
+    ItemName_LabItems.LabSpectrometer = "분광계",
+    ItemName_LabItems.LabChemistrySet = "화학 실험대",
+    ItemName_LabItems.LabCentrifuge = "원심분리기",
+    ItemName_LabItems.LabMuffleFurnace = "머플로",
+    ItemName_LabItems.LabWorkbench = "작업대",
+    ItemName_LabItems.LabEasel = "이젤",
+    ItemName_LabItems.LabDecorSkeleton = "장식용 해골",
+    ItemName_LabItems.LabDecorVirusModel = "바이러스 모형",
+    ItemName_LabItems.LabDecorCaduceus = "카두케우스",
+    ItemName_LabItems.LabDecorWhiteboard = "화이트보드",
+    ItemName_LabItems.LabPosterPeriodicTable = "주기율표 포스터",
+    ItemName_LabItems.LabPosterSexyNurse = "섹시 간호사 포스터",
+    ItemName_LabItems.LabPosterWashHands = "손 씻기 포스터",
+    ItemName_LabItems.LabPosterBiohazard = "생물학적 위험 포스터",
+    ItemName_LabItems.LabPosterHumanBrain = "인간 두뇌 포스터",
+    ItemName_LabItems.LabNeonSignPharmacy = "약국 네온사인",
+    ItemName_LabItems.LabNeonSignPizza = "피자 네온사인",
+    ItemName_LabItems.Mov_Morge1 = "영안실 테이블 (파트 1)",
+    ItemName_LabItems.Mov_Morge2 = "영안실 테이블 (파트 2)",
+
+    /* SYRINGES / TUBES / FLASKS */
+    ItemName_LabItems.LabSyringe = "주사기",
+    ItemName_LabItems.LabSyringeReusable = "재사용 주사기",
+    ItemName_LabItems.LabSyringeReusableUsed = "사용된 재사용 주사기",
+    ItemName_LabItems.LabSyringePack = "주사기 팩",
+    ItemName_LabItems.LabSyringeUsed = "사용된 주사기",
+    ItemName_LabItems.LabTestTube = "시험관",
+    ItemName_LabItems.LabTestTubeDirty = "오염된 시험관",
+    ItemName_LabItems.LabFlask = "플라스크",
+    ItemName_LabItems.LabFlaskDirty = "오염된 플라스크",
+    ItemName_LabItems.CmpSyringeWithBrainFluidLow = "뇌척수액 주사기 (저품질)",
+    ItemName_LabItems.CmpSyringeWithBrainFluidMid = "뇌척수액 주사기 (중품질)",
+    ItemName_LabItems.CmpSyringeWithBrainFluidHigh = "뇌척수액 주사기 (고품질)",
+    ItemName_LabItems.CmpSyringeReusableWithBrainFluidLow = "뇌척수액 재사용 주사기 (저품질)",
+    ItemName_LabItems.CmpSyringeReusableWithBrainFluidMid = "뇌척수액 재사용 주사기 (중품질)",
+    ItemName_LabItems.CmpSyringeReusableWithBrainFluidHigh = "뇌척수액 재사용 주사기 (고품질)",
+
+    /* BIOLOGICAL MATERIALS */
+    ItemName_LabItems.MatInfectedBlood = "감염혈",
+    ItemName_LabItems.MatTaintedBlood = "응고혈",
+    ItemName_LabItems.MatShatteredGlass = "깨진 유리",
+
+    /* CHEMICAL PRODUCTS (CH) */
+    ItemName_LabItems.ChHydrochloricAcidCan = "염산",
+    ItemName_LabItems.ChSodiumHydroxideBag = "수산화나트륨",
+    ItemName_LabItems.ChAmmonia = "암모니아",
+    ItemName_LabItems.ChSulfuricAcidCan = "황산",
+
+    /* COMPONENTS / PROCESSING */
+    ItemName_LabItems.CmpSyringeWithBlood = "혈액 주사기",
+    ItemName_LabItems.CmpSyringeWithTaintedBlood = "응고혈 주사기",
+    ItemName_LabItems.CmpSyringeReusableWithTaintedBlood = "응고혈 재사용 주사기",
+    ItemName_LabItems.CmpSyringeReusableWithBlood = "혈액 재사용 주사기",
+
+    /* VACCINES / CURE */
+    ItemName_LabItems.CmpSyringeWithPlainVaccine = "기본 백신",
+    ItemName_LabItems.CmpSyringeWithQualityVaccine = "고품질 백신",
+    ItemName_LabItems.CmpSyringeWithAdvancedVaccine = "고급 백신",
+    ItemName_LabItems.CmpSyringeWithCure = "실험적 치료제",
+    ItemName_LabItems.CmpSyringeReusableWithPlainVaccine = "기본 백신 (재사용)",
+    ItemName_LabItems.CmpSyringeReusableWithQualityVaccine = "고품질 백신 (재사용)",
+    ItemName_LabItems.CmpSyringeReusableWithAdvancedVaccine = "고급 백신 (재사용)",
+    ItemName_LabItems.CmpSyringeReusableWithCure = "실험적 치료제 (재사용)",
+
+    /* PILLS / MEDICATIONS */
+    ItemName_LabItems.CmpAlbuminPills = "알부민",
+    ItemName_LabItems.CmpChlorineTablets = "염소 정제 알약",
+
+    /* BOOKS */
+    ItemName_LabBooks.BkLaboratoryEquipment1 = "실험실 장비 Vol. 1",
+    ItemName_LabBooks.BkLaboratoryEquipment2 = "실험실 장비 Vol. 2",
+    ItemName_LabBooks.BkLaboratoryEquipment3 = "실험실 장비 Vol. 3",
+	ItemName_LabBooks.BkVirologyCourses1 = "손글씨 메모가 적힌 바이러스학 서적",
+	ItemName_LabBooks.BkVirologyCourses2 = "손글씨 메모가 적힌 고급 바이러스학 서적",
+	ItemName_LabBooks.BkChemistryCourse = "기초 화학 입문",
+    ItemName_LabBooks.LabPaintLightsMag = "DIY: 수제 장식 조명",
+
+    /* OTHERS */
+    ItemName_LabItems.FrnIngotMold = "잉곳 주형",
+    ItemName_LabItems.FrnGolgNugget = "금 덩어리",
+    ItemName_LabItems.FrnSilverNugget = "은 덩어리",
+    ItemName_LabItems.FrnGolgIngot = "금 잉곳",
+    ItemName_LabItems.FrnSilverIngot = "은 잉곳",
+    ItemName_LabItems.LabGarbageBagWithRemains = "유해가 담긴 쓰레기봉투",
+    ItemName_LabItems.LabPlasticBagWithRemains = "유해가 담긴 비닐봉지",
+    ItemName_LabItems.LabTestResultNegative = "결과: 음성",
+    ItemName_LabItems.LabTestResultPositive = "결과: 양성",
+    ItemName_LabItems.HumanBrainLow = "감염된 인간의 뇌",
+    ItemName_LabItems.HumanBrainMid = "감염된 인간의 뇌",
+    ItemName_LabItems.HumanBrainHigh = "감염된 인간의 뇌",
+    ItemName_LabItems.RottenHumanBrain = "썩은 인간의 뇌",
+    ItemName_LabItems.BurntHumanBrain = "불탄 인간의 뇌",
+    ItemName_LabItems.LabHumanBoneLargeWP = "대형 인간 뼈",
+    ItemName_LabItems.LabHumanTeeth = "인간 치아",
+    ItemName_LabItems.LabHumanSkullWithBrain = "인간 두개골",
+    ItemName_LabItems.LabHumanSkull = "손상된 인간 두개골",
+    ItemName_LabItems.LabHumanSkullPart = "인간 두개골 파편",
+    ItemName_LabItems.LabHumanSkullFixed = "속이 빈 인간 두개골",
+    ItemName_LabItems.LabSmallRandomHumanBones = "소형 인간 뼈",
+    ItemName_LabItems.LabRegularHumanBoneWP = "중형 인간 뼈",
+
+    /* WILL BE DISCARDED IN FUTURE UPDATES */
+    ItemName_LabItems.LabRegularHumanBone = "중형 인간 뼈",
+    ItemName_LabItems.LabHumanBoneLarge = "대형 인간 뼈",
+
+}

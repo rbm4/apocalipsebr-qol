@@ -1,0 +1,101 @@
+Sandbox_PL = {
+	/*=======================================
+	TRANSLATIONS BY Ayako-Chan (Piotrek0909)
+	========================================*/
+    
+    Sandbox_ZombieVirusVaccineBETA = "Szczepionka na Wirusa Zombie (BETA)",
+    Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot = "Włącz Łupy w Świecie",
+    Sandbox_ZombieVirusVaccineBETA_EnableWorldLoot_tooltip = "Całkowicie włącza lub wyłącza pojawianie się przedmiotów ze Zombie Virus Vaccine items w świecie.",
+
+    Sandbox_ZombieVirusVaccineBETA_ExpandChemicalsLoot = "Expand Chemicals",
+    Sandbox_ZombieVirusVaccineBETA_ExpandChemicalsLoot_tooltip = "Rozszerza listę łupów o dodatkowe produkty chemiczne.",
+
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes = "Strzykawki (ilość)",
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option1 = "Wyłączone",
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option2 = "Mało",
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option3 = "Domyślny",
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_option4 = "Więcej",
+    Sandbox_ZombieVirusVaccineBETA_LootSyringes_tooltip = "Określa, ile strzykawek z moda pojawia się w świecie.",
+
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks = "Książki o Sprzęcie (ilość)",
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option1 = "Wyłączone",
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option2 = "Mało",
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option3 = "Domyślny",
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_option4 = "Więcej",
+    Sandbox_ZombieVirusVaccineBETA_LootEquipmentBooks_tooltip = "Defines how many laboratory equipment books appear in the world.",
+
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks = "Virology Books (amount)",
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option1 = "Wyłączone",
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option2 = "Mało",
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option3 = "Domyślny",
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_option4 = "Więcej",
+    Sandbox_ZombieVirusVaccineBETA_LootVirologyBooks_tooltip = "Określa, ile książek o wirusologii i chemii pojawia się w świecie.",
+
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode = "Książki o Wirusologii - Miejsce Pojawiania Się",
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_option1 = "Rozszerzone lokalizacje",
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_option2 = "Tylko określone miejsca",
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_option3 = "Uczyń je powszechnymi",
+    Sandbox_ZombieVirusVaccineBETA_VirologyBooksSpawnMode_tooltip = "Określa, czy książki o wirusologii pojawiają się tylko w określonych miejscach, czy są rozproszone po całym świecie.",
+
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals = "Produkty Chemiczne (ilość)",
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option1 = "Wyłączone",
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option2 = "Mało",
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option3 = "Domyślny",
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_option4 = "Więcej",
+    Sandbox_ZombieVirusVaccineBETA_LootChemicals_tooltip = ""Określa, ile przedmiotów chemicznych z moda pojawia się w świecie."",
+
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingMode = "Włącz Starzenie się Krwi",
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingMode_tooltip = "Włącza lub wyłącza starzenie się krwi.",
+
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingRadius = "Zasięg Wyszukiwania dla Starzenia Krwi",
+    Sandbox_ZombieVirusVaccineBETA_BloodAgingRadius_tooltip = "14 to domyślna wartość z oryginalnego moda. W przypadku problemów zmniejsz tę wartość lub wyłącz starzenie się krwi.",
+
+    Sandbox_ZombieVirusVaccineBETA_EnableLightPaints = "Pozwól na Malowanie Świateł",
+    Sandbox_ZombieVirusVaccineBETA_EnableLightPaints_tooltip = "Włącza lub wyłącza pojawianie się magazynu o malowaniu świateł. Jeśli wyłączone, gracze nie będą mogli nauczyć się, jak malować światła.",
+
+    Sandbox_ZombieVirusVaccineBETA_AllowAutopsyOnGround = "Pozwól na Autopsję na Ziemi",
+    Sandbox_ZombieVirusVaccineBETA_AllowAutopsyOnGround_tooltip = "Pozwala graczom przeprowadzać autopsje bezpośrednio na ziemi, bez potrzeby używania stołu.",
+
+    Sandbox_ZombieVirusVaccineBETA_AutopsySpeed = "Szybkość Autopsji (w tickach)"
+    Sandbox_ZombieVirusVaccineBETA_AutopsySpeed_tooltip = "<BHC>Zmiana tej opcji wpłynie na balans gry. <RGB:1,1,1>\n\n Określa ile ticków potrzeba do ukończenia autopsji. Niższe wartości = szybciej."
+
+    Sandbox_ZombieVirusVaccineBETA_TicksDecreasedByPerkLv = "Zmniejszenie Ticków za Poziom Umiejętności"
+    Sandbox_ZombieVirusVaccineBETA_TicksDecreasedByPerkLv_tooltip = "<BHC>Zmiana tej opcji wpłynie na balans gry. <RGB:1,1,1>\n\n Określa o ile ticków skraca się czas autopsji za każdy poziom umiejętności Pierwszej Pomocy."
+
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus = "Bonus Szybkości Stołu Sekcyjnego"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option1 = "Bez"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_tooltip = "<BHC>Zmiana tej opcji wpłynie na balans gry. <RGB:1,1,1>\n\n Określa bonus do szybkości podczas przeprowadzania autopsji na stole sekcyjnym."
+
+    Sandbox_ZombieVirusVaccineBETA_AutopsyGroundXP = "Doświadczenie za Autopsję na Ziemi"
+    Sandbox_ZombieVirusVaccineBETA_AutopsyGroundXP_tooltip = "<BHC>Zmiana tej opcji wpłynie na balans gry. <RGB:1,1,1>\n\n Ilość doświadczenia zdobyta podczas przeprowadzania autopsji na ziemi."
+
+    Sandbox_ZombieVirusVaccineBETA_AutopsyTableXP = "Doświadczenie za Autopsję na Stole Sekcyjnym"
+    Sandbox_ZombieVirusVaccineBETA_AutopsyTableXP_tooltip = "<BHC>Zmiana tej opcji wpłynie na balans gry. <RGB:1,1,1>\n\n Ilość doświadczenia zdobyta podczas przeprowadzania autopsji na stole."
+
+    Sandbox_ZombieVirusVaccineBETA_AllowScalpelDegrade = "Pozwól na Degradację Skalpela"
+    Sandbox_ZombieVirusVaccineBETA_AllowScalpelDegrade_tooltip = "Jeśli włączone, skalpele będą się zużywać i psuć podczas użytkowania."
+
+    Sandbox_ZombieVirusVaccineBETA_AllowSawDegrade = "Pozwól na Degradację Piły"
+    Sandbox_ZombieVirusVaccineBETA_AllowSawDegrade_tooltip = "Jeśli włączone, piły będą się zużywać i psuć podczas użytkowania."
+
+    Sandbox_ZombieVirusVaccineBETA_EnableVehicleLoot = "Włącz Dystrybucję w Pojazdach"
+    Sandbox_ZombieVirusVaccineBETA_EnableVehicleLoot_tooltip = "Włącza lub wyłącza pojawianie się przedmiotów w pojazdach."
+
+    Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot = "Włącz Dystrybucję w Plecakach Ocalałych"
+    Sandbox_ZombieVirusVaccineBETA_EnableBagsLoot_tooltip = "Włącza lub wyłącza pojawianie się przedmiotów w plecakach ocalałych."
+
+	Sandbox_ZombieVirusVaccineBETA_CollectPartXP = "PD z Autopsji Części Ciała"
+	Sandbox_ZombieVirusVaccineBETA_CollectPartXP_tooltip = "<BHC>Zmiana tej opcji wpłynie na balans gry. <RGB:1,1,1><LINE> Określa bazową ilość PD zdobywanego w umiejętnościach Rzeźnictwo i Pierwsza Pomoc."
+
+	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Bazowa Szansa na Mózg w Idealnym Stanie (%)"
+	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset_tooltip = "<BHC>Zmiana tej opcji wpłynie na balans gry. <RGB:1,1,1><LINE> Określa bazową szansę na pozyskanie mózgu w idealnym stanie."
+
+	Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "Kara za Hemofobię"
+	Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff_tooltip = "Określa karę za hemofobię stosowaną, gdy postać z cechą Hemofobik wykonuje autopsję.<LINE> Wpływa na szansę uzyskania mózgu w idealnym stanie."
+}
