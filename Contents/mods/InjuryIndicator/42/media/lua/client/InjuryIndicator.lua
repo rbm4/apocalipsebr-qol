@@ -16,12 +16,12 @@ local function InitializeOptions()
 end
 InitializeOptions()
 
-injuredParts = {}
-player = nil
-bodyParts = nil
+local injuredParts = {}
+local player = nil
+local bodyParts = nil
 
-local function OnCreatePlayer()
-	player = getPlayer()
+local function OnCreatePlayer(playerIndex)
+	player = getSpecificPlayer(playerIndex)
 	bodyParts = player:getBodyDamage():getBodyParts()
 end
 

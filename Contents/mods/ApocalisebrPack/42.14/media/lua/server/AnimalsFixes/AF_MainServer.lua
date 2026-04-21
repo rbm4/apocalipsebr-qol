@@ -529,8 +529,9 @@ Commands.ScanAndCleanAll = function(player, args)
         return
     end
 
-    for i = 0, vehicles:size() - 1 do
-        local vehicle = vehicles:get(i)
+        local iter = vehicles:iterator()
+        while iter:hasNext() do
+            local vehicle = iter:next()
         if vehicle then
             vehiclesProcessed = vehiclesProcessed + 1
             local animals = vehicle:getAnimals()

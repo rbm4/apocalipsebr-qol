@@ -1,1 +1,0 @@
-require "customsync_client"

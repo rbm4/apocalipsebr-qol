@@ -140,8 +140,9 @@ function FindVehicleGas(playerObj, playerVehicle)
 	local cell = playerObj:getCell()
 	local vehicleList = cell:getVehicles()
 	--for b,vehicle in pairs(vehicleList) do
-	for index=0, vehicleList:size()-1 do
-		local vehicle = vehicleList:get(index)
+	local iter = vehicleList:iterator()
+	while iter:hasNext() do
+		local vehicle = iter:next()
 		for i=1,vehicle:getPartCount() do
 			local part = vehicle:getPartByIndex(i-1)	
 			if part:isContainer() and part:getContainerContentType() == "Gasoline Storage" and part:getContainerContentAmount() > 0 and vehicle ~= playerVehicle then

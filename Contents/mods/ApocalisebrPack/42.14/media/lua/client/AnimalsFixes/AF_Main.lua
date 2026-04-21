@@ -64,8 +64,9 @@ local function findClosestVehicle(playerNum, context, worldObjects, test)
                     local closestDistance = 6.0
 
                     -- Find the closest vehicle to the clicked position
-                    for i = 0, veh:size() - 1 do
-                        local v = veh:get(i)
+                    local iter = veh:iterator()
+                    while iter:hasNext() do
+                        local v = iter:next()
                         if v then
                             -- Calculate distance from clicked square to vehicle
                             local vx = v:getX()
