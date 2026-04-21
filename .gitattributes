@@ -1,2 +1,2 @@
 *.pack filter=lfs diff=lfs merge=lfs -text
-Contents/mods/PZ\ Mockingbird/common/media/maps/Mockingbird/spawnSelectImagePyramid.zip filter=lfs diff=lfs merge=lfs -text
+**/spawnSelectImagePyramid.zip filter=lfs diff=lfs merge=lfs -text
