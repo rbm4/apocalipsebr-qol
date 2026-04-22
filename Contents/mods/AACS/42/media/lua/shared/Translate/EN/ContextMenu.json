@@ -1,9 +1,0 @@
-{
-  "ContextMenu_AACS_OpenManager": "Animal Adoption",
-  "ContextMenu_AACS_OpenAdminManager": "Animal Adoption (Admin Manager)",
-  "ContextMenu_AACS_AdoptAnimal": "Adopt animal",
-  "ContextMenu_AACS_ManageThisAnimal": "Manage this animal",
-  "ContextMenu_AACS_UnadoptAnimal": "Remove adoption",
-  "ContextMenu_AACS_ClaimInfo": "Owner: %1  |  Code: %2",
-  "ContextMenu_AACS_OwnedBy": "Owner: %1"
-}
