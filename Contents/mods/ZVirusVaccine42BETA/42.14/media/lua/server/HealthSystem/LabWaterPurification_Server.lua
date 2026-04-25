@@ -75,7 +75,8 @@ local function isHeatContainer(container)
         string.find(ctype, "microwave") or
         string.find(ctype, "oven") or
         string.find(ctype, "barbecuepropane") or
-		string.find(ctype, "campfire")
+		string.find(ctype, "campfire") or
+        string.find(ctype, "woodstove")
 end
 
 

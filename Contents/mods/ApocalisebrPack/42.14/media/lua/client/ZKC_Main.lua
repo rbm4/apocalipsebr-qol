@@ -67,11 +67,11 @@ function ZKC_Main.recordKill(player,value)
     end
 end
 
--- Calculate distance between two positions
-local function getDistance(x1, y1, x2, y2)
+-- Calculate squared distance between two positions
+local function getDistanceSquared(x1, y1, x2, y2)
     local dx = x2 - x1
     local dy = y2 - y1
-    return math.sqrt(dx * dx + dy * dy)
+    return dx * dx + dy * dy
 end
 
 -- Check if player moved enough to warrant an update
@@ -83,9 +83,10 @@ local function hasMovedEnough(player)
     local currentX = player:getX()
     local currentY = player:getY()
 
-    local distance = getDistance(ZKC_Main.lastPosition.x, ZKC_Main.lastPosition.y, currentX, currentY)
+    local distanceSq = getDistanceSquared(ZKC_Main.lastPosition.x, ZKC_Main.lastPosition.y, currentX, currentY)
+    local minDistance = ZKC_Config.PlayerData.minimumMovementDistance
 
-    return distance >= ZKC_Config.PlayerData.minimumMovementDistance
+    return distanceSq >= (minDistance * minDistance)
 end
 
 -- Collect comprehensive player data
@@ -162,8 +163,8 @@ function ZKC_Main.sendUpdate(player, reason)
         return
     end
 
-    -- Check movement requirement (skip for kill threshold)
-    if reason ~= "kill_threshold" and not hasMovedEnough(player) then
+    -- Keep timer updates on the one-minute window even if player is stationary.
+    if reason ~= "kill_threshold" and reason ~= "timer" and not hasMovedEnough(player) then
         if ZKC_Config.Storage.debug then
             print("[ZKC] Player hasn't moved enough, skipping update")
         end
@@ -199,13 +200,7 @@ function ZKC_Main.checkPeriodicUpdate()
         return
     end
 
-    -- Check if time threshold reached
-    local currentTime = os.time()
-    local timeSinceLastSend = currentTime - ZKC_Main.lastBatchSendTime
-
-    if timeSinceLastSend >= ZKC_Config.Batch.maxBatchTimeSeconds then
-        ZKC_Main.sendUpdate(player, "timer")
-    end
+    ZKC_Main.sendUpdate(player, "timer")
 end
 
 -- Get player statistics

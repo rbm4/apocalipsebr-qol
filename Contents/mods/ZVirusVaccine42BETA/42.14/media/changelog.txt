@@ -1,3 +1,9 @@
+- Added sandbox option for collecting glass from broken window
+- Added KO translation thanks to Reeul2 and Claude AI (AI was used to review some missing text and keys, since the mentioned user said he used AI himself. Anyone can send a human review of the translation or the translation itself anytime. I can't read KO, so I can't tell if it's overly generic or properly translated)
+- Added incompatibility with zReVaccine to avoid conflicts.
+- Woodstove (antique stove) now also purify water
+- All player speech chances can now be controlled through mod options, this allows players on single/multiplayer to individually set the speech chance according to their desire, even to disable it, since it's purely client side.
+-----------------------------------------------------------------------
 - Added RU translation thanks to Lexxx1on
 - Fixed a problem that was preventing brains from being collected from skulls
 -----------------------------------------------------------------------

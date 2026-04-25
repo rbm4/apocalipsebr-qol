@@ -94,4 +94,56 @@ Sandbox_PTBR = {
 
     Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "Debuff Hemofóbico"
     Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff_tooltip = "Define a penalidade de hemofobia, que é aplicada quando um personagem com a trait Hemofóbico realiza uma autópsia <LINE> Afeta a chance de obter um cérebro em perfeitas condições."
+
+    Sandbox_ZombieVirusVaccineBETA_AllowWindowGlass = "Permitir Coleta de Vidro das Janelas"
+    Sandbox_ZombieVirusVaccineBETA_AllowWindowGlass_tooltip = "Se ativado, toda vez que o jogador remover vidros de uma janela quebrada, será obtido um vidro quebrado (material)<LINE><LINE>Mesmo se estiver desativado, os jogadores ainda podem pegar o vidro quebrado do chão"
+    
+    Sandbox_ZombieVirusVaccineBETA_EnablePlayerSpeech = "Ativar Falas do Personagem",
+    Sandbox_ZombieVirusVaccineBETA_EnablePlayerSpeech_tooltip = "Se desativado, o personagem nunca falará durante ações de laboratório, independentemente das chances individuais.",
+
+    -- Teste Sanguíneo
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestNegative = "Chance de Fala: Teste Sanguíneo Negativo",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestNegative_tooltip = "Porcentagem de chance de o personagem comentar ao receber um resultado negativo no teste sanguíneo.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestPositive = "Chance de Fala: Teste Sanguíneo Positivo",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestPositive_tooltip = "Porcentagem de chance de o personagem comentar ao receber um resultado positivo no teste sanguíneo.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestInvalid = "Chance de Fala: Amostra Inválida",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestInvalid_tooltip = "Porcentagem de chance de o personagem comentar quando a amostra de sangue é inválida.",
+
+    -- Coleta de Sangue
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceCollectBlood = "Chance de Fala: Coleta de Sangue",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceCollectBlood_tooltip = "Porcentagem de chance de o personagem reagir à dor da agulha durante a coleta de sangue.",
+
+    -- Autópsia
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyInfected = "Chance de Fala: Autópsia - Infectado",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyInfected_tooltip = "Porcentagem de chance de o personagem comentar quando o cadáver apresenta sinais de infecção na autópsia.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyTainted = "Chance de Fala: Autópsia - Contaminado",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyTainted_tooltip = "Porcentagem de chance de o personagem comentar quando o cadáver é encontrado contaminado na autópsia.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyNothing = "Chance de Fala: Autópsia - Nada Encontrado",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyNothing_tooltip = "Porcentagem de chance de o personagem comentar quando a autópsia não revela nada incomum.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyAlready = "Chance de Fala: Autópsia - Já Autopsiado",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyAlready_tooltip = "Porcentagem de chance de o personagem comentar ao tentar autopsiar um cadáver que já foi autopsiado.",
+
+    -- Necrotério
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpsePlaced = "Chance de Fala: Necrotério - Cadáver Colocado",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpsePlaced_tooltip = "Porcentagem de chance de o personagem comentar após colocar um cadáver na mesa do necrotério.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueSuccess = "Chance de Fala: Necrotério - Restos Coletados",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueSuccess_tooltip = "Porcentagem de chance de o personagem comentar após coletar restos com sucesso no necrotério.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueNoContainer = "Chance de Fala: Necrotério - Erro",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueNoContainer_tooltip = "Porcentagem de chance de o personagem comentar quando acontece um erro [DEBUG].",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueTableCleaned = "Chance de Fala: Necrotério - Mesa Limpa",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueTableCleaned_tooltip = "Porcentagem de chance de o personagem comentar após limpar a mesa do necrotério.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpseRemoved = "Chance de Fala: Necrotério - Cadáver Removido",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpseRemoved_tooltip = "Porcentagem de chance de o personagem comentar após remover um cadáver da mesa do necrotério.",
+
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueBodyPartCollected = "Chance de Fala: Necrotério - Parte do Corpo Coletada",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueBodyPartCollected_tooltip = "Porcentagem de chance de o personagem comentar após coletar uma parte do corpo durante um procedimento no necrotério.",
 }

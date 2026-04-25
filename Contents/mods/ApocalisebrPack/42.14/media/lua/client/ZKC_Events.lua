@@ -5,9 +5,6 @@ require "ZombieKillCounter/ZKC_Main"
 
 ZKC_Events = ZKC_Events or {}
 
--- Tick counter for throttled updates
-local tickCounter = 0
-
 -- Called when a zombie dies
 -- @param zombie IsoZombie that was killed
 local function onZombieDead(zombie)
@@ -30,19 +27,13 @@ local function onZombieDead(zombie)
     end
 end
 
--- Called every tick (throttled)
-local function onTick()
+-- Called every in-game minute
+local function onEveryOneMinute()
     if not ZKC_Config.enabled then
         return
     end
-    
-    tickCounter = tickCounter + 1
-    
-    -- Only check for periodic updates at configured interval
-    if tickCounter >= ZKC_Config.Performance.updateCheckInterval then
-        tickCounter = 0
-        ZKC_Main.checkPeriodicUpdate()
-    end
+
+    ZKC_Main.checkPeriodicUpdate()
 end
 
 -- Called when game starts
@@ -84,7 +75,7 @@ end
 
 -- Register event handlers
 Events.OnZombieDead.Add(onZombieDead)
-Events.OnTick.Add(onTick)
+Events.EveryOneMinute.Add(onEveryOneMinute)
 Events.OnGameStart.Add(onGameStart)
 Events.OnDisconnect.Add(onDisconnect)
 Events.OnPlayerDeath.Add(onPlayerDeath)

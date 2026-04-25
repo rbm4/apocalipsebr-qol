@@ -38,6 +38,9 @@ local function InitializeCache()
         
         -- RLP
         optionsCache.StartingKit = sandbox.StartingKit ~= false
+
+        -- Shattered Glass
+        optionsCache.AllowWindowGlass = sandbox.AllowWindowGlass ~= false
         
         cacheInitialized = true
     end
@@ -137,6 +140,13 @@ function LabSandboxOptions.IsStartingKitEnabled()
     return optionsCache.StartingKit
 end
 
+-- ==============================
+-- Shattered Glass
+-- ==============================
+function LabSandboxOptions.IsShatteredGlassAllowed()
+    InitializeCache()
+    return optionsCache.AllowWindowGlass
+end
 -- ==============================
 -- RELOAD
 -- ==============================

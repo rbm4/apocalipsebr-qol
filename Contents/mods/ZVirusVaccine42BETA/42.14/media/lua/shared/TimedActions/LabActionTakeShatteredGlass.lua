@@ -10,6 +10,8 @@ require "TimedActions/ISBaseTimedAction"
 
 ISRemoveBrokenGlass = ISBaseTimedAction:derive("ISRemoveBrokenGlass")
 
+local LabSandboxOptions = require("Util/LabSandboxOptions")
+
 function ISRemoveBrokenGlass:isValid()
 	return self.window:getObjectIndex() ~= -1 and self.window:isSmashed() and not self.window:isGlassRemoved()
 end
@@ -57,14 +59,16 @@ function ISRemoveBrokenGlass:complete()
 	end
     
     -- Adicionar item ao inventário
-    local inv = self.character:getInventory()
-    local item = inv:AddItem("LabItems.MatShatteredGlass")
-    
-    if item then
-        sendAddItemToContainer(inv, item)
+    if LabSandboxOptions.IsShatteredGlassAllowed() then
+        local inv = self.character:getInventory()
+        local item = inv:AddItem("LabItems.MatShatteredGlass")
+        
+        if item then
+            sendAddItemToContainer(inv, item)
+        end
+        
+        self.character:playSound("Shatter_B")
     end
-    
-    self.character:playSound("Shatter_B")
     
     return true
 end

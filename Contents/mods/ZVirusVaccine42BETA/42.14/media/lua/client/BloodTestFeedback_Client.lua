@@ -12,15 +12,18 @@ local function ShowBloodTestFeedback(player, result, rate)
     if not player or not result then return end
 
     if result == "InvalidSample" then
+        if not LabModOptions.rollSpeech("speechChanceBloodTestInvalid", 100) then return end
         player:Say(getText("IGUI_PlayerText_InvalidSample"))
 
     elseif result == "Negative" then
+        if not LabModOptions.rollSpeech("speechChanceBloodTestNegative", 100) then return end
         player:Say(getText("IGUI_PlayerText_TestNegative" .. ZombRand(1, 6)))
 
     elseif result == "Positive" then
+        if not LabModOptions.rollSpeech("speechChanceBloodTestPositive", 100) then return end
         if rate and rate > 0 then
-            local mainText = getText("IGUI_PlayerText_TestPositive" .. ZombRand(1, 7)) -- Fala principal
-            local extraText = getText("IGUI_PlayerText_InfectionRate") -- Taxa de infecção
+            local mainText  = getText("IGUI_PlayerText_TestPositive" .. ZombRand(1, 7))
+            local extraText = getText("IGUI_PlayerText_InfectionRate")
             player:Say(mainText .. " " .. tostring(rate) .. extraText)
         else
             player:Say(getText("IGUI_PlayerText_TestPositive"))

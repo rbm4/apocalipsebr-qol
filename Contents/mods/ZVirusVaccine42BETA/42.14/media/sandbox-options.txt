@@ -124,6 +124,15 @@ option ZombieVirusVaccineBETA.EnableLightPaints
     tooltip = ZombieVirusVaccineBETA_EnableLightPaints_tooltip,
 }
 
+option ZombieVirusVaccineBETA.AllowWindowGlass
+{
+    type = boolean,
+    default = true,
+    page = ZombieVirusVaccineBETA,
+    translation = ZombieVirusVaccineBETA_AllowWindowGlass,
+    tooltip = ZombieVirusVaccineBETA_AllowWindowGlass_tooltip,
+}
+
 option ZombieVirusVaccineBETA.AllowAutopsyOnGround
 {
     type = boolean,

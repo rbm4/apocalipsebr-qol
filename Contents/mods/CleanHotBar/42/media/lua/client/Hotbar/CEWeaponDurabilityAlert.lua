@@ -10,6 +10,8 @@ CEWeaponDurabilityAlert.minIconSize = 24
 CEWeaponDurabilityAlert.minLostRatio = 0.02
 CEWeaponDurabilityAlert.exitSpeed = 3.0
 CEWeaponDurabilityAlert.lastWeaponCondition = {}
+CEWeaponDurabilityAlert.updateIntervalMs = 120
+CEWeaponDurabilityAlert._lastUpdateMs = 0
 
 CEDurabilityIcon = ISUIElement:derive("CEDurabilityIcon")
 CEDurabilityIcon.instance = nil
@@ -78,6 +80,12 @@ end
 -- Update
 -- ----------------------------------------- --
 function CEWeaponDurabilityAlert.update()
+    local nowMs = getTimestampMs()
+    if (nowMs - CEWeaponDurabilityAlert._lastUpdateMs) < CEWeaponDurabilityAlert.updateIntervalMs then
+        return
+    end
+    CEWeaponDurabilityAlert._lastUpdateMs = nowMs
+
     local config = CHBConfig.getConfig()
     if not config or not config.showWeaponDurabilityAlert then
         if CEDurabilityIcon.instance and CEDurabilityIcon.instance.item and CEDurabilityIcon.instance.isDisplayed then
@@ -88,7 +96,7 @@ function CEWeaponDurabilityAlert.update()
     end
 
     if CEDurabilityIcon.instance and CEDurabilityIcon.instance.item and CEWeaponDurabilityAlert.hideTimer then
-        if getTimestampMs() >= CEWeaponDurabilityAlert.hideTimer then
+        if nowMs >= CEWeaponDurabilityAlert.hideTimer then
             CEDurabilityIcon.instance:setItem(nil)
             CEWeaponDurabilityAlert.hideTimer = nil
         end

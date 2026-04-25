@@ -4,10 +4,10 @@
 	<m_FemaleModel>media\models_X\Skinned\BackPacks\CrudeLeatherBag_LHand.x</m_FemaleModel>
 	<m_AltMaleModel></m_AltMaleModel>
 	<m_AltFemaleModel></m_AltFemaleModel>
-	<m_GUID>1b1eaec4-8ecd-4af5-b4a0-0a8f961ef57e</m_GUID>
+	<m_GUID>82b22a99-ee6f-4ed4-b248-0645d23201e4</m_GUID>
 	<m_Static>false</m_Static>
 	<m_AllowRandomHue>false</m_AllowRandomHue>
 	<m_AllowRandomTint>false</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
-	<textureChoices>clothes\bag\crudeleatherbag</textureChoices>
+	<textureChoices>clothes\bag\blackcrudeleatherbag</textureChoices>
 </clothingItem>

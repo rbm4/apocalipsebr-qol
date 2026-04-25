@@ -11,26 +11,28 @@ end
 local function ShowMorgueFeedback(player, action)
     if not player or not action then return end
 
-    if ZombRand(100) < 50 then
-        return
-    end
-
     if action == "CorpsePlaced" then
+        if not LabModOptions.rollSpeech("speechChanceMorgueCorpsePlaced", 50) then return end
         player:Say(getText("IGUI_PlayerText_MorguePlace" .. ZombRand(1, 6)))
 
     elseif action == "Success" then
+        if not LabModOptions.rollSpeech("speechChanceMorgueSuccess", 50) then return end
         player:Say(getText("IGUI_PlayerText_MorgueGetRemains" .. ZombRand(1, 6)))
 
     elseif action == "NoContainer" then
+        if not LabModOptions.rollSpeech("speechChanceMorgueNoContainer", 50) then return end
         player:Say(getText("IGUI_PlayerText_MorgueNoContainer"))
 
     elseif action == "TableCleaned" then
+        if not LabModOptions.rollSpeech("speechChanceMorgueTableCleaned", 50) then return end
         player:Say(getText("IGUI_PlayerText_MorgueClean" .. ZombRand(1, 6)))
 
     elseif action == "CorpseRemoved" then
+        if not LabModOptions.rollSpeech("speechChanceMorgueCorpseRemoved", 50) then return end
         player:Say(getText("IGUI_PlayerText_MorgueRemoveCorpse" .. ZombRand(1, 6)))
-    
+
     elseif action == "BodyPartCollected" then
+        if not LabModOptions.rollSpeech("speechChanceMorgueBodyPartCollected", 50) then return end
         player:Say(getText("IGUI_PlayerText_MorgueBodyPartCollected" .. ZombRand(1, 6)))
     end
 end

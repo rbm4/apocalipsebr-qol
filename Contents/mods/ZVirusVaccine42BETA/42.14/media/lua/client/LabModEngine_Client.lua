@@ -21,11 +21,8 @@ local math_min   = math.min
 local tostring   = tostring
 
 ----------------------------------------
--- ModData Seguro
+-- ModData
 ----------------------------------------
-
---- Retorna o modData de um objeto sem lançar erro.
---- Retorna {} se o objeto for nil ou se a chamada falhar.
 local function safeGetModData(obj)
     if not obj then return {} end
     local ok, md = pcall(function() return obj:getModData() end)

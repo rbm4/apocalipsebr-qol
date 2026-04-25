@@ -10,9 +10,9 @@ end
 
 local function ShowCollectBloodFeedback(player)
     if not player then return end
+    if not LabModOptions.rollSpeech("speechChanceCollectBlood", 100) then return end
 
     player:Say(getText("IGUI_PlayerText_PainFromNeedle" .. ZombRand(1, 6)))
-
 end
 
 -- MP
