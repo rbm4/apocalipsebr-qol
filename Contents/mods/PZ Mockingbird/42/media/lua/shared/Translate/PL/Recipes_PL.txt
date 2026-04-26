@@ -1,3 +1,3 @@
 Recipe_PL = {
-	Recipe_Dismantle_Modern_Television = "Zdemontować współczesną telewizję",
+	Recipe_Mockingbird_DismantleModernTelevision = "Zdemontować współczesną telewizję",
 }

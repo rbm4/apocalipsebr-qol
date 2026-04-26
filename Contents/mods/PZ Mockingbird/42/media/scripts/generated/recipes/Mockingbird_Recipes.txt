@@ -1,10 +1,6 @@
-module Mockingbird_Recipes
+module Base
 {
-	imports
-    {
-		Base,
-	}
-    craftRecipe Dismantle Modern Television
+    craftRecipe Mockingbird_DismantleModernTelevision
     {
         timedAction = DismantleElectrical,
         time = 60,
@@ -21,5 +17,5 @@ module Mockingbird_Recipes
         {
             item 1 Base.ElectronicsScrap,
         }
-	}
+    }
 }

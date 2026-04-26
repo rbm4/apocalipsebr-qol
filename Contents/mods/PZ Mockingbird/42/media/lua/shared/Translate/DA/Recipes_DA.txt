@@ -2,5 +2,5 @@ Recipe_DA = {
 	DisplayName_Mockingbird_Map = "Mockingbird kort",
 	DisplayName_Raven_Clock = "ravne ur",
 	DisplayName_Electric_Chair = "Elektrisk stol",
-	Recipe_Dismantle_Modern_Television = "Demonter moderne fjernsyn",
+	Recipe_Mockingbird_DismantleModernTelevision = "Demonter moderne fjernsyn",
 }

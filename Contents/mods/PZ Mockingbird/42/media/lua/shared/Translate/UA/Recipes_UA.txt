@@ -1,3 +1,3 @@
 Recipe_UA = {
-	Recipe_Dismantle_Modern_Television = "Демонтувати сучасне телебачення",
+	Recipe_Mockingbird_DismantleModernTelevision = "Демонтувати сучасне телебачення",
 }

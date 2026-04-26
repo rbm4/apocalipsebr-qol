@@ -1,3 +1,3 @@
 Recipe_CS = {
-	Recipe_Dismantle_Modern_Television = "Demontujte moderní televizi",
+	Recipe_Mockingbird_DismantleModernTelevision = "Demontujte moderní televizi",
 }

@@ -30,15 +30,22 @@ local function splitByDelim(str, delim)
 end
 
 -- ----------------------------------------------------------------
--- Events.OnAlertMessage fires when the server sends a 'servermsg'.
--- The msg argument is a ChatMessage; call :getText() for the string.
+-- Events.OnAddMessage fires synchronously before Java checks
+-- msg:isServerAlert(), so calling setServerAlert(false) here
+-- prevents the red popup from ever appearing.
+-- setShowInChat(false) and setText("") suppress the chat tab entry.
 -- ----------------------------------------------------------------
-local function onAlertMessage(msg, tabId)
+local function onAddMessage(msg, tabId)
     if not msg then return end
 
     local text = msg:getText()
     if type(text) ~= "string" then return end
     if text:sub(1, #ALERT_PREFIX) ~= ALERT_PREFIX then return end
+
+    -- Suppress the message completely: no popup, no visible chat line.
+    msg:setServerAlert(false)
+    msg:setShowInChat(false)
+    msg:setText("")
 
     -- Strip prefix, then split remaining by "##"
     local data  = text:sub(#ALERT_PREFIX + 1)
@@ -46,7 +53,7 @@ local function onAlertMessage(msg, tabId)
 
     -- Expected: [1]=requestId, [2]=username, [3]=x, [4]=y, [5]=w, [6]=h
     if #parts < 6 then
-        print("[SafehouseModuleClient] Malformed relay message: " .. text)
+        print("[SafehouseModuleClient] Malformed relay message (truncated)")
         return
     end
 
@@ -63,32 +70,4 @@ local function onAlertMessage(msg, tabId)
     })
 end
 
--- ----------------------------------------------------------------
--- Events.OnServerCommand fires when the server sends a command.
--- We listen for SafehouseCreated to mirror the new safehouse so
--- the client UI reflects it immediately.
--- ----------------------------------------------------------------
-local function onServerCommand(module, command, args)
-    if module ~= MODULE or command ~= "SafehouseCreated" then return end
-    if not args then return end
-
-    local x        = tonumber(args.x)
-    local y        = tonumber(args.y)
-    local w        = tonumber(args.w)
-    local h        = tonumber(args.h)
-    local username = tostring(args.username or "")
-    local title    = tostring(args.title or username)
-
-    if not x or not y or not w or not h or username == "" then return end
-
-    -- Mirror using the 5-arg form confirmed for B42.13+
-    local sh = SafeHouse.addSafeHouse(x, y, w, h, username)
-    if sh then
-        sh:setTitle(title)
-        print("[SafehouseModuleClient] Mirrored safehouse for "
-            .. username .. " at " .. x .. "," .. y)
-    end
-end
-
-Events.OnAlertMessage.Add(onAlertMessage)
-Events.OnServerCommand.Add(onServerCommand)
+Events.OnAddMessage.Add(onAddMessage)
