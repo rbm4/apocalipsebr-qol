@@ -245,8 +245,8 @@ local function upgradeSafehouse(x, y, w, h, username, requestId)
         if sh ~= target then
             local owner = sh:getOwner() or "?"
             if tostring(owner) ~= tostring(username) then
-                print("[SafehouseModule] UPGRADE: removing overlapping safehouse owned by " .. owner ..
-                          " at " .. sh:getX() .. "," .. sh:getY())
+                print("[SafehouseModule] UPGRADE: removing overlapping safehouse owned by " .. owner .. " at " ..
+                          sh:getX() .. "," .. sh:getY())
                 SafeHouse.removeSafeHouse(sh)
             end
         end
@@ -314,9 +314,9 @@ local function upgradeSafehouse(x, y, w, h, username, requestId)
         }
     end
 
-    print("[SafehouseModule] UPGRADED safehouse for " .. username .. " from " .. oldX .. "," .. oldY ..
-              " " .. oldW .. "x" .. oldH .. " to " .. x .. "," .. y .. " " .. w .. "x" .. h ..
-              " (requestId=" .. tostring(requestId) .. ")")
+    print("[SafehouseModule] UPGRADED safehouse for " .. username .. " from " .. oldX .. "," .. oldY .. " " .. oldW ..
+              "x" .. oldH .. " to " .. x .. "," .. y .. " " .. w .. "x" .. h .. " (requestId=" .. tostring(requestId) ..
+              ")")
     return true
 end
 

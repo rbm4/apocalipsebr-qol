@@ -13,7 +13,6 @@
 -- x, y  = top-left tile coordinate of the safehouse area
 -- w, h  = width and height in tiles
 -- ============================================================
-
 local MODULE = "ApocBR_SafehouseModule"
 local CMD_CLAIM = "CreateSafehouse"
 local CMD_UPGRADE = "UpgradeSafehouse"
@@ -38,14 +37,20 @@ end
 -- setShowInChat(false) and setText("") suppress the chat tab entry.
 -- ----------------------------------------------------------------
 local function onAddMessage(msg, tabId)
-    if not msg then return end
+    if not msg then
+        return
+    end
 
     local text = msg:getText()
-    if type(text) ~= "string" then return end
+    if type(text) ~= "string" then
+        return
+    end
 
     local isClaim = text:sub(1, #ALERT_PREFIX) == ALERT_PREFIX
     local isUpgrade = text:sub(1, #UPGRADE_PREFIX) == UPGRADE_PREFIX
-    if not isClaim and not isUpgrade then return end
+    if not isClaim and not isUpgrade then
+        return
+    end
 
     local targetCommand = isUpgrade and CMD_UPGRADE or CMD_CLAIM
     local prefix = isUpgrade and UPGRADE_PREFIX or ALERT_PREFIX
@@ -56,7 +61,7 @@ local function onAddMessage(msg, tabId)
     msg:setText("")
 
     -- Strip prefix, then split remaining by "##"
-    local data  = text:sub(#prefix + 1)
+    local data = text:sub(#prefix + 1)
     local parts = splitByDelim(data, DELIMITER)
 
     -- Expected: [1]=requestId, [2]=username, [3]=x, [4]=y, [5]=w, [6]=h
@@ -66,15 +71,17 @@ local function onAddMessage(msg, tabId)
     end
 
     local player = getPlayer()
-    if not player then return end
+    if not player then
+        return
+    end
 
     sendClientCommand(player, MODULE, targetCommand, {
         requestId = parts[1],
-        username  = parts[2],
-        x         = tonumber(parts[3]),
-        y         = tonumber(parts[4]),
-        w         = tonumber(parts[5]),
-        h         = tonumber(parts[6]),
+        username = parts[2],
+        x = tonumber(parts[3]),
+        y = tonumber(parts[4]),
+        w = tonumber(parts[5]),
+        h = tonumber(parts[6])
     })
 end
 
@@ -117,8 +124,8 @@ local function findBestSafehouseForUpdate(args)
             local shOwner = tostring(sh:getOwner() or "")
             if owner == "" or shOwner == owner then
                 -- Strong match: exact previous rectangle
-                if oldX and oldY and oldW and oldH and
-                    sh:getX() == oldX and sh:getY() == oldY and sh:getW() == oldW and sh:getH() == oldH then
+                if oldX and oldY and oldW and oldH and sh:getX() == oldX and sh:getY() == oldY and sh:getW() == oldW and
+                    sh:getH() == oldH then
                     return sh
                 end
 
@@ -173,7 +180,9 @@ local function applySafehouseUpdated(args)
     end
 
     if triggerEvent then
-        pcall(function() triggerEvent("OnSafehousesChanged") end)
+        pcall(function()
+            triggerEvent("OnSafehousesChanged")
+        end)
     end
 end
 
