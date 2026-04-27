@@ -1,0 +1,10 @@
+name=The Only Cure
+poster=poster.png
+description=You've been bitten. You have only two choices.
+id=Apoc_TOC
+icon=icon.png
+url=https://github.com/ZioPao/The-Only-Cure
+modversion=2.3.6
+versionMin=42.15
+loadModAfter=\FancyHandwork,\BrutalHandwork,\TwoWeaponsOnBackRework
+incompatible=\BB_FirstAidOverhaul

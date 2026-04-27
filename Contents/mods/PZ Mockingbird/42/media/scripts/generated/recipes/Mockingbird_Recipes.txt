@@ -3,11 +3,11 @@ module Base
     craftRecipe Mockingbird_DismantleModernTelevision
     {
         timedAction = DismantleElectrical,
-        time = 60,
-        OnCreate = DismantleModernTVOnCreate,
-        Tags = AnySurfaceCraft,
-        category = Electrical,
-        xpAward = Electricity:4,
+        time        = 60,
+        OnCreate    = DismantleModernTVOnCreate,
+        Tags        = AnySurfaceCraft,
+        category    = Electrical,
+        xpAward     = Electricity:4,
         inputs
         {
             item 1 [Base.TvPlasmaScreen;Base.TvLCDScreen;Base.TvPlasmaScreen2;Base.TvLCDScreen2] flags[NoBrokenItems] mode:destroy,
