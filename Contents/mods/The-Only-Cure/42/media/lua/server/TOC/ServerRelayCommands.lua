@@ -91,7 +91,9 @@ end
 ---@param args {perkName : string, xp : number}
 function ServerRelayCommands.RelayAddXp(playerObj, args)
     --TOC_DEBUG.print("received Add exp," .. tostring(args.perkName) .. " . " .. tostring(args.xp))
-    addXp(playerObj, Perks[args.perkName], args.xp)
+    local perk = args and args.perkName and Perks[args.perkName] or nil
+    if not perk or not args.xp then return end
+    addXpNoMultiplier(playerObj, perk, args.xp)
 end
 
 --* TRAITS *--

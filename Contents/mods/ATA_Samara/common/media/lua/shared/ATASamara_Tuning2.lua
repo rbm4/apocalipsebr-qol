@@ -1,13 +1,19 @@
 require "ATA2TuningTable"
 
 local function copy(obj, seen)
-  if type(obj) ~= 'table' then return obj end
-  if seen and seen[obj] then return seen[obj] end
-  local s = seen or {}
-  local res = setmetatable({}, getmetatable(obj))
-  s[obj] = res
-  for k, v in pairs(obj) do res[copy(k, s)] = copy(v, s) end
-  return res
+    if type(obj) ~= 'table' then
+        return obj
+    end
+    if seen and seen[obj] then
+        return seen[obj]
+    end
+    local s = seen or {}
+    local res = setmetatable({}, getmetatable(obj))
+    s[obj] = res
+    for k, v in pairs(obj) do
+        res[copy(k, s)] = copy(v, s)
+    end
+    return res
 end
 
 local carRecipe = "ATASamaraRecipes"
@@ -23,39 +29,40 @@ NewCarTuningTable["ATASamara"].parts["ATA2Bullbar"] = {
         name = "IGUI_ATA2_Bullbar",
         category = "Bullbars",
         spawnChance = 20,
+        protection = {"HeadlightLeft", "HeadlightRight", "EngineDoor"},
         install = {
             weight = "auto",
             animation = "ATA_PickLock",
             transmitFirstItemCondition = true,
             use = {
                 ATA2__ATABullbar1Item = 1,
-                Screws=6,
+                Screws = 6
             },
             tools = {
-                primary = "Base.Wrench",
+                primary = "Base.Wrench"
             },
             skills = {
-                Mechanics = 4,
+                Mechanics = 4
             },
             recipes = {"Advanced Mechanics"},
-            time = 30, 
+            time = 30
         },
         uninstall = {
             weight = "auto",
             animation = "ATA_PickLock",
             tools = {
-                primary = "Base.Wrench",
+                primary = "Base.Wrench"
             },
             skills = {
-                Mechanics = 3,
+                Mechanics = 3
             },
             recipes = {"Advanced Mechanics"},
             transmitConditionOnFirstItem = true,
             result = {
                 ATA2__ATABullbar1Item = 1,
-                Screws=3,
+                Screws = 3
             },
-            time = 20,
+            time = 20
         }
     },
     ATABullbar2 = {
@@ -63,39 +70,40 @@ NewCarTuningTable["ATASamara"].parts["ATA2Bullbar"] = {
         name = "IGUI_ATA2_Bullbar_Police",
         category = "Bullbars",
         spawnChance = 10,
+        protection = {"HeadlightLeft", "HeadlightRight", "EngineDoor"},
         install = {
             weight = "auto",
             animation = "ATA_PickLock",
             transmitFirstItemCondition = true,
             use = {
                 ATA2__ATABullbar2Item = 1,
-                Screws=6,
+                Screws = 6
             },
             tools = {
-                primary = "Base.Wrench",
+                primary = "Base.Wrench"
             },
             skills = {
-                Mechanics = 4,
+                Mechanics = 4
             },
             recipes = {"Advanced Mechanics"},
-            time = 30, 
+            time = 30
         },
         uninstall = {
             weight = "auto",
             animation = "ATA_PickLock",
             tools = {
-                primary = "Base.Wrench",
+                primary = "Base.Wrench"
             },
             skills = {
-                Mechanics = 3,
+                Mechanics = 3
             },
             recipes = {"Advanced Mechanics"},
             transmitConditionOnFirstItem = true,
             result = {
                 ATA2__ATABullbar2Item = 1,
-                Screws=3,
+                Screws = 3
             },
-            time = 20,
+            time = 20
         }
     },
     ATABullbar3 = {
@@ -109,35 +117,35 @@ NewCarTuningTable["ATASamara"].parts["ATA2Bullbar"] = {
             use = {
                 MetalPipe = 3,
                 SheetMetal = 6,
-                MetalBar=6,
+                MetalBar = 6,
                 BlowTorch = 10,
-                Screws=6,
+                Screws = 6
             },
             tools = {
                 bodylocation = "Base.WeldingMask",
-                primary = "Base.Wrench",
+                primary = "Base.Wrench"
             },
             skills = {
                 Mechanics = 4,
-                MetalWelding = 6,
+                MetalWelding = 6
             },
             recipes = {"Intermediate Mechanics", carRecipe},
-            time = 60, 
+            time = 60
         },
         uninstall = {
             animation = "ATA_Crowbar_DoorLeft",
             use = {
-                BlowTorch=4,
+                BlowTorch = 4
             },
             tools = {
                 bodylocation = "Base.WeldingMask",
-                both = "Base.Crowbar",
+                both = "Base.Crowbar"
             },
             skills = {
-                MetalWelding = 2,
+                MetalWelding = 2
             },
             result = "auto",
-            time = 30,
+            time = 30
         }
     }
 }
@@ -153,44 +161,46 @@ NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindowFrontLeft"] = {
             use = {
                 SmallSheetMetal = 3,
                 SheetMetal = 2,
-                MetalBar=5,
-                Screws=5,
-                BlowTorch = 10,
+                MetalBar = 5,
+                Screws = 5,
+                BlowTorch = 10
             },
             tools = {
                 bodylocation = "Base.WeldingMask",
-                primary = "Base.Wrench",
+                primary = "Base.Wrench"
             },
             skills = {
-                MetalWelding = 5,
+                MetalWelding = 5
             },
             recipes = {carRecipe},
             requireInstalled = {"WindowFrontLeft"},
-            time = 65,
+            time = 65
         },
         uninstall = {
             animation = "ATA_IdleLeverOpenMid",
             use = {
-                BlowTorch=5,
+                BlowTorch = 5
             },
             tools = {
                 bodylocation = "Base.WeldingMask",
-                both = "Base.Crowbar",
+                both = "Base.Crowbar"
             },
             skills = {
-                MetalWelding = 2,
+                MetalWelding = 2
             },
             result = "auto",
-            time = 40,
+            time = 40
         }
     }
 }
 
-NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindowFrontRight"] = copy(NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindowFrontLeft"])
+NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindowFrontRight"] = copy(
+    NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindowFrontLeft"])
 NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindowFrontRight"].Default.protection = {"WindowFrontRight"}
-NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindowFrontRight"].Default.install.requireInstalled = {"WindowFrontRight"}
-NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindowFrontRight"].Default.uninstall.requireUninstalled = {"ATA2BagOnProtectionWindowFrontRight"}
-
+NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindowFrontRight"].Default.install.requireInstalled =
+    {"WindowFrontRight"}
+NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindowFrontRight"].Default.uninstall.requireUninstalled =
+    {"ATA2BagOnProtectionWindowFrontRight"}
 
 NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindshield"] = {
     Default = {
@@ -203,36 +213,36 @@ NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindshield"] = {
             weight = "auto",
             use = {
                 MetalPipe = 7,
-                SheetMetal=2,
-                Screws=6,
-                BlowTorch = 8,
+                SheetMetal = 2,
+                Screws = 6,
+                BlowTorch = 8
             },
             tools = {
                 bodylocation = "Base.WeldingMask",
-                primary = "Base.Screwdriver",
+                primary = "Base.Screwdriver"
             },
             skills = {
-                MetalWelding = 4,
+                MetalWelding = 4
             },
             recipes = {carRecipe},
             requireInstalled = {"Windshield"},
-            time = 65,
+            time = 65
         },
         uninstall = {
             area = "TireFrontLeft",
             animation = "ATA_Crowbar_DoorLeft",
             use = {
-                BlowTorch=4,
+                BlowTorch = 4
             },
             tools = {
                 bodylocation = "Base.WeldingMask",
-                both = "Base.Crowbar",
+                both = "Base.Crowbar"
             },
             skills = {
-                MetalWelding = 2,
+                MetalWelding = 2
             },
             result = "auto",
-            time = 40,
+            time = 40
         }
     }
 }
@@ -249,26 +259,26 @@ NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWindshieldRear"] = {
             use = {
                 MetalPipe = 8,
                 Screws = 8,
-                BlowTorch = 5,
+                BlowTorch = 5
             },
             tools = {
-                bodylocation = "Base.WeldingMask",
+                bodylocation = "Base.WeldingMask"
             },
             skills = {
-                MetalWelding = 4,
+                MetalWelding = 4
             },
             recipes = {carRecipe},
             requireInstalled = {"WindshieldRear"},
-            time = 65, 
+            time = 65
         },
         uninstall = {
             area = "TireRearRight",
             animation = "ATA_IdleLeverOpenMid",
             tools = {
-                both = "Base.Crowbar",
+                both = "Base.Crowbar"
             },
             result = "auto",
-            time = 65,
+            time = 65
         }
     }
 }
@@ -280,59 +290,54 @@ NewCarTuningTable["ATASamara"].parts["ATA2InteractiveTrunkRoofRack"] = {
         containerCapacity = 120,
         interactiveTrunk = {
             filling = {"ATARoofBag1", "ATARoofBag2", "ATARoofBag3"},
-            items = {
-                {
-                    itemTypes = {"Suitcase"},
-                    modelNameByCount = {"ATARoofCase1", "ATARoofCase1"}
-                },
-                {
-                    itemTypes = {"Cooler"},
-                    modelNameByCount = {"ATACooler"}
-                },
-                {
-                    itemTypes = {"PetrolCan", "EmptyPetrolCan"},
-                    modelNameByCount = {"ATAGasCan1", "ATAGasCan2", "ATAGasCan3"}
-                },
-                {
-                    itemTypes = {"Guitarcase"},
-                    modelNameByCount = {"ATAGuitarCase"}
-                },
-            }
+            items = {{
+                itemTypes = {"Suitcase"},
+                modelNameByCount = {"ATARoofCase1", "ATARoofCase1"}
+            }, {
+                itemTypes = {"Cooler"},
+                modelNameByCount = {"ATACooler"}
+            }, {
+                itemTypes = {"PetrolCan", "EmptyPetrolCan"},
+                modelNameByCount = {"ATAGasCan1", "ATAGasCan2", "ATAGasCan3"}
+            }, {
+                itemTypes = {"Guitarcase"},
+                modelNameByCount = {"ATAGuitarCase"}
+            }}
         },
         install = {
             weight = "auto",
             use = {
                 MetalPipe = 4,
                 SheetMetal = 7,
-                MetalBar=4,
-                Screws=4,
-                BlowTorch = 10,
+                MetalBar = 4,
+                Screws = 4,
+                BlowTorch = 10
             },
             tools = {
                 bodylocation = "Base.WeldingMask",
-                primary = "Base.Screwdriver",
+                primary = "Base.Screwdriver"
             },
             skills = {
                 Mechanics = 3,
-                MetalWelding = 5,
+                MetalWelding = 5
             },
             recipes = {carRecipe},
-            time = 65, 
+            time = 65
         },
         uninstall = {
             animation = "ATA_IdleLeverOpenHigh",
             use = {
-                BlowTorch=4,
+                BlowTorch = 4
             },
             tools = {
                 bodylocation = "Base.WeldingMask",
-                both = "Base.Crowbar",
+                both = "Base.Crowbar"
             },
             skills = {
-                MetalWelding = 2,
+                MetalWelding = 2
             },
             result = "auto",
-            time = 40,
+            time = 40
         }
     }
 }
@@ -347,32 +352,32 @@ NewCarTuningTable["ATASamara"].parts["ATA2VisualSpoilerFront"] = {
             transmitFirstItemCondition = true,
             use = {
                 ATA2__ATASpoilerFrontItem = 1,
-                Screws=4,
+                Screws = 4
             },
             tools = {
-                primary = "Base.Screwdriver",
+                primary = "Base.Screwdriver"
             },
             skills = {
-                Mechanics = 4,
+                Mechanics = 4
             },
             recipes = {"Advanced Mechanics"},
-            time = 20,
+            time = 20
         },
         uninstall = {
             animation = "VehicleWorkOnTire",
             tools = {
-                primary = "Base.Screwdriver",
+                primary = "Base.Screwdriver"
             },
             recipes = {"Advanced Mechanics"},
             transmitConditionOnFirstItem = true,
             skills = {
-                Mechanics = 3,
+                Mechanics = 3
             },
             result = {
-                ATA2__ATASpoilerFrontItem=1,
-                Screws=3,
+                ATA2__ATASpoilerFrontItem = 1,
+                Screws = 3
             },
-            time = 15,
+            time = 15
         }
     }
 }
@@ -386,33 +391,33 @@ NewCarTuningTable["ATASamara"].parts["ATA2VisualSpoilerRear"] = {
             transmitFirstItemCondition = true,
             use = {
                 ATA2__ATASpoilerRear1Item = 1,
-                Screws=4,
+                Screws = 4
             },
             tools = {
-                primary = "Base.Screwdriver",
+                primary = "Base.Screwdriver"
             },
             skills = {
-                Mechanics = 4,
+                Mechanics = 4
             },
             requireInstalled = {"TrunkDoor"},
             recipes = {"Advanced Mechanics"},
-            time = 30,
+            time = 30
         },
         uninstall = {
-            
+
             tools = {
-                primary = "Base.Screwdriver",
+                primary = "Base.Screwdriver"
             },
             skills = {
-                Mechanics = 3,
+                Mechanics = 3
             },
             recipes = {"Advanced Mechanics"},
             transmitConditionOnFirstItem = true,
             result = {
-                ATA2__ATASpoilerRear1Item=1,
-                Screws=3,
+                ATA2__ATASpoilerRear1Item = 1,
+                Screws = 3
             },
-            time = 30,
+            time = 30
         }
     },
     ATASpoilerRear2 = {
@@ -423,33 +428,33 @@ NewCarTuningTable["ATASamara"].parts["ATA2VisualSpoilerRear"] = {
             transmitFirstItemCondition = true,
             use = {
                 ATA2__ATASpoilerRear2Item = 1,
-                Screws=4,
+                Screws = 4
             },
             tools = {
-                primary = "Base.Screwdriver",
+                primary = "Base.Screwdriver"
             },
             requireInstalled = {"TrunkDoor"},
             skills = {
-                Mechanics = 4,
+                Mechanics = 4
             },
             recipes = {"Advanced Mechanics"},
-            time = 30,
+            time = 30
         },
         uninstall = {
-            
+
             tools = {
-                primary = "Base.Screwdriver",
+                primary = "Base.Screwdriver"
             },
             skills = {
-                Mechanics = 3,
+                Mechanics = 3
             },
             recipes = {"Advanced Mechanics"},
             transmitConditionOnFirstItem = true,
             result = {
-                ATA2__ATASpoilerRear2Item=1,
-                Screws=2,
+                ATA2__ATASpoilerRear2Item = 1,
+                Screws = 2
             },
-            time = 30,
+            time = 30
         }
     }
 }
@@ -464,32 +469,32 @@ NewCarTuningTable["ATASamara"].parts["ATA2VisualSkirtsSide"] = {
             transmitFirstItemCondition = true,
             use = {
                 ATA2__ATASkirtsSideItem = 1,
-                Screws=4,
+                Screws = 4
             },
             tools = {
-                primary = "Base.Screwdriver",
+                primary = "Base.Screwdriver"
             },
             skills = {
-                Mechanics = 5,
+                Mechanics = 5
             },
             recipes = {"Advanced Mechanics"},
-            time = 30,
+            time = 30
         },
         uninstall = {
             animation = "VehicleWorkOnTire",
             tools = {
-                primary = "Base.Screwdriver",
+                primary = "Base.Screwdriver"
             },
             recipes = {"Advanced Mechanics"},
             skills = {
-                Mechanics = 4,
+                Mechanics = 4
             },
             transmitConditionOnFirstItem = true,
             result = {
-                ATA2__ATASkirtsSideItem=1,
-                Screws=2,
+                ATA2__ATASkirtsSideItem = 1,
+                Screws = 2
             },
-            time = 30,
+            time = 30
         }
     }
 }
@@ -503,82 +508,83 @@ NewCarTuningTable["ATASamara"].parts["ATA2VisualFendersWide"] = {
             transmitFirstItemCondition = true,
             use = {
                 ATA2__ATAFendersWideItem = 1,
-                BlowTorch = 4,
+                BlowTorch = 4
             },
             tools = {
-                bodylocation = "Base.WeldingMask",
+                bodylocation = "Base.WeldingMask"
             },
             skills = {
                 Mechanics = 4,
-                MetalWelding = 4,
+                MetalWelding = 4
             },
             recipes = {"Advanced Mechanics"},
-            time = 40,
+            time = 40
         },
         uninstall = {
             recipes = {carRecipe},
             use = {
-                BlowTorch = 4,
+                BlowTorch = 4
             },
             tools = {
-                bodylocation = "Base.WeldingMask",
+                bodylocation = "Base.WeldingMask"
             },
             skills = {
-                MetalWelding = 2,
+                MetalWelding = 2
             },
             recipes = {"Advanced Mechanics"},
             result = {
-                UnusableMetal=4,
+                UnusableMetal = 4
             },
-            time = 20,
+            time = 20
         }
     }
 }
 
-NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWheels"] = { -- не забыть сделать особые настройки колес
-    ATAProtection = {
-        removeIfBroken = true,
-        icon = "media/ui/tuning2/wheel_chain.png",
-        category = "Protection", 
-        protectionModel = true, 
-        protection = {"TireFrontLeft", "TireFrontRight", "TireRearLeft", "TireRearRight"}, 
-        install = { 
-            sound = "ATA2InstallWheelChain",
-            use = { 
-                ATAProtectionWheelsChain = 1,
-                BlowTorch = 4,
+NewCarTuningTable["ATASamara"].parts["ATA2ProtectionWheels"] =
+    { -- не забыть сделать особые настройки колес
+        ATAProtection = {
+            removeIfBroken = true,
+            icon = "media/ui/tuning2/wheel_chain.png",
+            category = "Protection",
+            protectionModel = true,
+            protection = {"TireFrontLeft", "TireFrontRight", "TireRearLeft", "TireRearRight"},
+            install = {
+                sound = "ATA2InstallWheelChain",
+                use = {
+                    ATAProtectionWheelsChain = 1,
+                    BlowTorch = 4
+                },
+                tools = {
+                    bodylocation = "Base.WeldingMask",
+                    primary = "Base.Wrench"
+                },
+                skills = {
+                    Mechanics = 2,
+                    MetalWelding = 3
+                },
+                recipes = {"Basic Tuning"},
+                requireInstalled = {"TireFrontLeft", "TireFrontRight", "TireRearLeft", "TireRearRight"},
+                time = 65
             },
-            tools = { 
-                bodylocation = "Base.WeldingMask", 
-                primary = "Base.Wrench",
-            },
-            skills = {
-                Mechanics = 2,
-                MetalWelding = 3,
-            },
-            recipes = {"Basic Tuning"},
-            requireInstalled = {"TireFrontLeft", "TireFrontRight", "TireRearLeft", "TireRearRight"},
-            time = 65, 
-        },
-        uninstall = {
-            sound = "ATA2InstallWheelChain",
-            use = {
-                BlowTorch=4,
-            },
-            tools = {
-                bodylocation = "Base.WeldingMask",
-                both = "Base.Crowbar",
-            },
-            skills = {
-                MetalWelding = 2,
-            },
-            result = {
-                UnusableMetal=2,
-            },
-            time = 40,
+            uninstall = {
+                sound = "ATA2InstallWheelChain",
+                use = {
+                    BlowTorch = 4
+                },
+                tools = {
+                    bodylocation = "Base.WeldingMask",
+                    both = "Base.Crowbar"
+                },
+                skills = {
+                    MetalWelding = 2
+                },
+                result = {
+                    UnusableMetal = 2
+                },
+                time = 40
+            }
         }
     }
-}
 
 NewCarTuningTable["ATASamaraClassic"] = NewCarTuningTable["ATASamara"]
 NewCarTuningTable["ATASamaraPolice"] = NewCarTuningTable["ATASamara"]

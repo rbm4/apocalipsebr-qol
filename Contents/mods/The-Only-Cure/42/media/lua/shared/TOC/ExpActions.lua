@@ -35,12 +35,12 @@ local function IterateTOCXp(action, applyXp)
     end
 end
 
----Adds TOC XP directly via addXp(). Server and SP only.
+---Adds TOC XP directly via addXpNoMultiplier(). Server and SP only.
 ---@param action ISBaseTimedAction
 local function AddTOCXp(action)
     if isClient() then return end
     IterateTOCXp(action, function(character, perkName)
-        addXp(character, Perks[perkName], XP_PER_TICK)
+        addXpNoMultiplier(character, Perks[perkName], XP_PER_TICK)
     end)
 end
 
