@@ -1,1 +1,0 @@
-table.insert(AttachedWeaponDefinitions["axeBack"].weapons, "Perts.OverlookFireAxe")

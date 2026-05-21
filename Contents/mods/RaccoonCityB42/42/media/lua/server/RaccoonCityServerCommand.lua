@@ -33,8 +33,23 @@ function RaccoonCityServerCommand.OnClientCommand(_module, _command, _player, _a
         return
 	elseif _command == "useVaccines" then 
 		RecoveryInfection(_player)
+    elseif _command == "closeBiochemicalDoor" then
+        -- Force-close all open doors on the Biochemical PickupTruck.
+        -- Handles the case where ISCloseVehicleDoor's NetTimedAction fails silently
+        -- on the server (getDuration()=0 with nil part deserialization or stalled
+        -- ISEnterVehicle blocking the action queue from reaching ISCloseVehicleDoor).
+        local vehicle = _player:getVehicle()
+        if not vehicle then return end
+        if vehicle:getScriptName() ~= "Base.Biochemical_PickupTruck" then return end
+        local doorPartIds = { "DoorFrontLeft", "DoorFrontRight", "DoorRearLeft", "DoorRearRight" }
+        for _, partId in ipairs(doorPartIds) do
+            local part = vehicle:getPartById(partId)
+            if part and part:getDoor() and part:getDoor():isOpen() then
+                part:getDoor():setOpen(false)
+                vehicle:transmitPartDoor(part)
+            end
+        end
     end
-	--print("Command " .. _command)
 end
 
 
