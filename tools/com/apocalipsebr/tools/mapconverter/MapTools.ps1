@@ -29,7 +29,13 @@ function Compile-Sources {
         "com\apocalipsebr\tools\mapconverter\ConvertMap.java",
         "com\apocalipsebr\tools\mapconverter\LotpackStrings.java",
         "com\apocalipsebr\tools\mapconverter\LotpackEditor.java",
-        "com\apocalipsebr\tools\mapconverter\VerifyBin.java"
+        "com\apocalipsebr\tools\mapconverter\VerifyBin.java",
+        "com\apocalipsebr\tools\mapconverter\TilesetIndex.java",
+        "com\apocalipsebr\tools\mapconverter\LayerRouter.java",
+        "com\apocalipsebr\tools\mapconverter\LotToTMX.java",
+        "com\apocalipsebr\tools\mapconverter\MapToPZW.java",
+        "com\apocalipsebr\tools\mapconverter\BuildBlankBMP.java",
+        "com\apocalipsebr\tools\mapconverter\MapDecompiler.java"
     )
     & javac -encoding UTF-8 @sources
     if ($LASTEXITCODE -ne 0) {
@@ -102,6 +108,11 @@ function Show-Menu {
     Write-Host ""
     Write-Host "  [C] Apply Patch File" -ForegroundColor White
     Write-Host "      (batch add/remove/set from CSV; optional worldmap.xml sync)" -ForegroundColor DarkGray
+    Write-Host ""
+    Write-Host "  --- Decompiler ---" -ForegroundColor Magenta
+    Write-Host ""
+    Write-Host "  [D] Decompile Map -> TMX + .pzw (open in WorldEd)" -ForegroundColor White
+    Write-Host "      (reverse-engineers compiled lotheader/lotpack into editable project)" -ForegroundColor DarkGray
     Write-Host ""
     Write-Host "  [Q] Quit" -ForegroundColor DarkGray
     Write-Host ""
@@ -238,6 +249,40 @@ do {
                 Write-Host " Worldmap file not found: $worldmapPath - skipping sync" -ForegroundColor Yellow
             }
             Run-Java "LotpackEditor" $javaArgs
+        }
+        "D" {
+            Write-Host "`n=== Decompile Compiled Map -> TMX + .pzw ===" -ForegroundColor Cyan
+            $defaultIn = "Z:\SteamLibrary\steamapps\workshop\content\108600\3502623745\mods\Coryerdon B42\common\media\maps\Coryerdon B42"
+            $defaultOut = "Z:\pzmaps\decompiled\Coryerdon"
+            $defaultTileD = "Z:\pzmaps\B42.Mapping.Tools\TileD"
+            $defaultTpl = "Z:\pzmaps\teste.pzw"
+
+            $inDir = Read-Host "Input map dir [Enter for: $defaultIn]"
+            if ($inDir.Trim() -eq "") { $inDir = $defaultIn }
+            $outDir = Read-Host "Output dir   [Enter for: $defaultOut]"
+            if ($outDir.Trim() -eq "") { $outDir = $defaultOut }
+            $tileD = Read-Host "TileD dir    [Enter for: $defaultTileD]"
+            if ($tileD.Trim() -eq "") { $tileD = $defaultTileD }
+            $tpl = Read-Host "PZW template [Enter for: $defaultTpl]"
+            if ($tpl.Trim() -eq "") { $tpl = $defaultTpl }
+
+            if (!(Test-Path $inDir)) { Write-Host " Input not found." -ForegroundColor Red; break }
+            if (!(Compile-Sources)) { break }
+            Run-Java "MapDecompiler" @($inDir, $outDir, $tileD, $tpl)
+
+            $mapName = ((Split-Path -Leaf $inDir) -replace '[^A-Za-z0-9_-]','_')
+            $pzw = Join-Path $outDir "$mapName.pzw"
+            if (Test-Path $pzw) {
+                $open = Read-Host "`nOpen result in WorldEd now? (y/N)"
+                if ($open.Trim().ToUpper() -eq "Y") {
+                    $editor = "Z:\pzmaps\B42.Mapping.Tools\WorldEd\PZWorldEd.exe"
+                    if (Test-Path $editor) {
+                        Start-Process $editor -ArgumentList "`"$pzw`""
+                    } else {
+                        Write-Host " WorldEd not found at $editor" -ForegroundColor Yellow
+                    }
+                }
+            }
         }
         "Q" {
             Write-Host "`nBye!" -ForegroundColor Cyan

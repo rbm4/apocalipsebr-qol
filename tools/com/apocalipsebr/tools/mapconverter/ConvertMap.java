@@ -225,12 +225,16 @@ public class ConvertMap {
     // ========================== LotHeader Load/Save ==========================
 
     static LotHeaderData loadLotHeader(File file, int cellX, int cellY) throws IOException {
-        LotHeaderData hdr = new LotHeaderData(cellX, cellY, false);
+        // Detect format from magic: LOTH magic => B42 (pot=true, 256 cell), no magic => B41 (pot=false, 300 cell).
+        boolean hasMagic;
+        try (RandomAccessFile probe = new RandomAccessFile(file, "r")) {
+            byte[] m = new byte[4];
+            probe.read(m, 0, 4);
+            hasMagic = Arrays.equals(m, LOTH_MAGIC);
+        }
+        LotHeaderData hdr = new LotHeaderData(cellX, cellY, hasMagic);
         try (RandomAccessFile raf = new RandomAccessFile(file, "r")) {
-            byte[] magic = new byte[4];
-            raf.read(magic, 0, 4);
-            boolean hasMagic = Arrays.equals(magic, LOTH_MAGIC);
-            if (!hasMagic) raf.seek(0);
+            if (hasMagic) raf.seek(4); // skip LOTH
 
             hdr.version = readIntLE(raf);
             if (hdr.version < 0 || hdr.version > 1)
@@ -1659,6 +1663,15 @@ public class ConvertMap {
             return;
         }
 
+        if (args.length >= 3 && "--decompile".equals(args[0])) {
+            // Decompile B41/B42 lotheader+lotpack back into editable WorldEd/TMX project.
+            // Optional positional args after the first two: [tileDPath] [pzwTemplate]
+            String[] sub = new String[args.length - 1];
+            System.arraycopy(args, 1, sub, 0, args.length - 1);
+            MapDecompiler.main(sub);
+            return;
+        }
+
         if (args.length < 2) {
             System.out.println("Usage:");
             System.out.println("  java ConvertMap <inputDir> <outputDir>");
@@ -1667,6 +1680,9 @@ public class ConvertMap {
             System.out.println("  java ConvertMap --gen-bin <mapDir>");
             System.out.println("    Generate worldmap.xml.bin from existing worldmap.xml.");
             System.out.println("    (Bypasses buggy game XML parser)");
+            System.out.println();
+            System.out.println("  java ConvertMap --decompile <inputMapDir> <outputDir> [tileDPath] [pzwTemplate]");
+            System.out.println("    Decompile compiled map back into a WorldEd-openable TMX/PZW project.");
             System.exit(1);
         }
 
