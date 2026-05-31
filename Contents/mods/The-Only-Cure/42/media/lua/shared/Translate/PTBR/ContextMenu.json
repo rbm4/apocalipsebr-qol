@@ -1,0 +1,23 @@
+{
+    "ContextMenu_Amputate": "Amputar",
+    "ContextMenu_Amputate_Bandage": "Amputar e enfaixar",
+    "ContextMenu_Amputate_Stitch": "Amputar e suturar",
+    "ContextMenu_Amputate_Stitch_Bandage": "Amputar, suturar e enfaixar",
+    "ContextMenu_Cauterize": "Cauterizar",
+    "ContextMenu_Limb_Hand_L": "Mão Esquerda",
+    "ContextMenu_Limb_ForeArm_L": "Antebraço Esquerdo",
+    "ContextMenu_Limb_UpperArm_L": "Braço Esquerdo",
+    "ContextMenu_Limb_Hand_R": "Mão Direita",
+    "ContextMenu_Limb_ForeArm_R": "Antebraço Direito",
+    "ContextMenu_Limb_UpperArm_R": "Braço Direito",
+    "ContextMenu_InstallProstRight": "Instalar prótese no braço direito",
+    "ContextMenu_InstallProstLeft": "Instalar prótese no braço esquerdo",
+    "ContextMenu_PutTourniquetArmLeft": "Colocar torniquete no braço esquerdo",
+    "ContextMenu_PutTourniquetLegL": "Colocar torniquete na perna esquerda",
+    "ContextMenu_PutTourniquetArmRight": "Colocar torniquete no braço direito",
+    "ContextMenu_PutTourniquetLegR": "Colocar torniquete na perna direita",
+    "ContextMenu_CleanWound": "Limpar Ferida",
+    "ContextMenu_Admin_TOC": "TOC",
+    "ContextMenu_Admin_ResetTOC": "Resetar Amputações",
+    "ContextMenu_Admin_ForceAmputation": "Forçar Amputação"
+}

@@ -1,0 +1,17 @@
+{
+    "IGUI_Yes": "Sim",
+    "IGUI_No": "Não",
+    "IGUI_perks_Amputations": "Amputações",
+    "IGUI_perks_Side_R": "Lado Direito",
+    "IGUI_perks_Side_L": "Lado Esquerdo",
+    "IGUI_perks_Prosthesis": "Familiaridade com Próteses",
+    "IGUI_ItemCat_Prosthesis": "Prótese",
+    "IGUI_ItemCat_Surgery": "Cirurgia",
+    "IGUI_ItemCat_Amputation": "Amputação",
+    "IGUI_HealthPanel_Cicatrization": "Cicatrização",
+    "IGUI_HealthPanel_Cicatrized": "Cicatrizado",
+    "IGUI_HealthPanel_Cauterized": "Cauterizado",
+    "IGUI_HealthPanel_WoundDirtyness": "Sujeira da Ferida",
+    "IGUI_HealthPanel_ProstEquipped": "Prótese Equipada",
+    "IGUI_Confirmation_Amputate": " <CENTRE> Você realmente deseja amputar esse membro?"
+}
