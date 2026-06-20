@@ -1,10 +1,23 @@
 package com.apocalipsebr.tools.mapconverter;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.zip.Deflater;
 
 import com.apocalipsebr.tools.mapconverter.ConvertMap.BuildingDef;
@@ -149,7 +162,7 @@ public class LotToTMX {
                 new FileOutputStream(outFile), StandardCharsets.UTF_8))) {
 
             w.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-            w.write("<map version=\"1.0\" orientation=\"isometric\" width=\"" + cellDim +
+            w.write("<map version=\"1.0\" orientation=\"levelisometric\" width=\"" + cellDim +
                     "\" height=\"" + cellDim +
                     "\" tilewidth=\"64\" tileheight=\"32\">\n");
 

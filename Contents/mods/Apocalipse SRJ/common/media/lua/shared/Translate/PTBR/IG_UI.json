@@ -31,7 +31,7 @@
     "IGUI_FullJournal_ChargesRemaining": "Leituras gratuitas restantes: %1/%2",
     "IGUI_FullJournal_ChargesExhausted": "Leituras gratuitas esgotadas. O XP será consumido ao ler.",
     "IGUI_FullJournal_ChargesWarning": "Diário Encantado possui leituras gratuitas limitadas.",
-    "IGUI_FullJournal_ConfirmCharge": "Ler irá consumir uma carga. (%1/%2 restantes)\nUma carga só é gasta se experiência for realmente ganha.\nReler ao interromper a leitura não consome uma nova carga.\nContinuar?",
+    "IGUI_FullJournal_ConfirmCharge": "Ler irá consumir uma carga. (%1/%2 restantes)<br>Uma carga só é gasta se experiência for realmente ganha.<br>Reler ao interromper a leitura não consome uma nova carga.<br>Continuar?",
     "IGUI_FullJournal_ChargeInfo": "Uma carga só é consumida quando experiência é ganha, ao ser lido completamente ou ao ser lido e morrer.",
     "IGUI_Rename_Warning": "Renomeie este diário para desativar este alerta."
 }

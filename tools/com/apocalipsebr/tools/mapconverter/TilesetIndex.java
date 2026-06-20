@@ -1,8 +1,15 @@
 package com.apocalipsebr.tools.mapconverter;
 
-import java.io.*;
-import java.nio.file.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import com.apocalipsebr.tools.mapconverter.TilesetIndex.TileRef;
+import com.apocalipsebr.tools.mapconverter.TilesetIndex.TilesetMeta;
 
 /**
  * Parses TileD's Tilesets.txt and builds a lookup table:

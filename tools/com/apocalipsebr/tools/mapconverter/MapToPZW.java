@@ -1,9 +1,16 @@
 package com.apocalipsebr.tools.mapconverter;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
-import java.util.*;
+import java.nio.file.Files;
+import java.util.List;
+
+import com.apocalipsebr.tools.mapconverter.MapToPZW.CellRef;
 
 /**
  * Writes a WorldEd .pzw world file referencing the cell TMX files produced by LotToTMX.

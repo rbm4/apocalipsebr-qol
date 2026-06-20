@@ -13,3 +13,13 @@
 -- If a future mod needs server-wide animation state shared with clients, use
 -- sendClientCommand / sendServerCommand (module 'autotsaranim') instead of
 -- GlobalModData, to avoid the network cost of transmitting the entire table.
+
+-- Legacy compatibility: keep an empty "tsaranimations" table alive so that clients
+-- still running old tsarslib (workshop item 2392709985) get a valid response instead
+-- of triggering "received request for non-existing table" log spam on every poll.
+-- The table is intentionally empty; nothing in this pack reads from it.
+Events.OnInitGlobalModData.Add(function()
+    if not ModData.exists("tsaranimations") then
+        ModData.create("tsaranimations")
+    end
+end)

@@ -1,11 +1,39 @@
 package com.apocalipsebr.tools.mapconverter;
 
-import java.io.*;
-import java.nio.*;
+import java.io.BufferedOutputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
-import java.util.*;
-import java.util.regex.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import com.apocalipsebr.tools.mapconverter.ConvertMap.BuildingDef;
+import com.apocalipsebr.tools.mapconverter.ConvertMap.ChunkDataCell;
+import com.apocalipsebr.tools.mapconverter.ConvertMap.LotHeaderData;
+import com.apocalipsebr.tools.mapconverter.ConvertMap.LotPackData;
+import com.apocalipsebr.tools.mapconverter.ConvertMap.MetaObject;
+import com.apocalipsebr.tools.mapconverter.ConvertMap.RoomDef;
+import com.apocalipsebr.tools.mapconverter.ConvertMap.RoomRect;
+import com.apocalipsebr.tools.mapconverter.ConvertMap.WMCell;
+import com.apocalipsebr.tools.mapconverter.ConvertMap.WMFeature;
 
 /**
  * Standalone Project Zomboid B41→B42 map converter.

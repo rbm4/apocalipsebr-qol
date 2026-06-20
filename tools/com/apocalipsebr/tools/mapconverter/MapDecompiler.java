@@ -1,10 +1,15 @@
 package com.apocalipsebr.tools.mapconverter;
 
 import java.awt.Color;
-import java.io.*;
-import java.nio.file.*;
-import java.util.*;
-import java.util.regex.*;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.apocalipsebr.tools.mapconverter.ConvertMap.LotHeaderData;
 import com.apocalipsebr.tools.mapconverter.ConvertMap.LotPackData;
