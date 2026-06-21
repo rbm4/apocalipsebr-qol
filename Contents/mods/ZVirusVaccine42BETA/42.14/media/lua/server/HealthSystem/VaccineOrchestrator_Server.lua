@@ -25,7 +25,6 @@ local LabCollectBloodLogic = SafeRequire("HealthSystem/LabCollectBloodLogic_Serv
 local LabBloodAgingLogic = SafeRequire("HealthSystem/LabBloodAgingLogic_Server")
 local LabMorgueLogic = SafeRequire("HealthSystem/LabMorgueLogic_Server")
 local LabAlbuminLogic = SafeRequire("HealthSystem/LabAlbuminLogic_Server")
-local LabWaterPurification = SafeRequire("HealthSystem/LabWaterPurification_Server")
 local LabModRecipes = SafeRequire("HealthSystem/LabModRecipes_Server")
 
 print("[ZVirusVaccine] LOADED MODULES")
@@ -36,7 +35,7 @@ print("[ZVirusVaccine] LabCollectBloodLogic: " .. tostring(LabCollectBloodLogic 
 print("[ZVirusVaccine] LabBloodAgingLogic: " .. tostring(LabBloodAgingLogic ~= nil))
 print("[ZVirusVaccine] LabMorgueLogic: " .. tostring(LabMorgueLogic ~= nil))
 print("[ZVirusVaccine] LabAlbuminLogic: " .. tostring(LabAlbuminLogic ~= nil))
-print("[ZVirusVaccine] LabWaterPurification: " .. tostring(LabWaterPurification ~= nil))
+print("[ZVirusVaccine] LabWaterPurification: DISABLED")
 print("[ZVirusVaccine] LabModRecipes: " .. tostring(LabModRecipes ~= nil))
 print("[ZVirusVaccine] ========================================")
 print("[ZVirusVaccine] MOD VERSION FOR: B42.14/B42.15 - MARCH 16, 2026")
