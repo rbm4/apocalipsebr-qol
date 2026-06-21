@@ -4,6 +4,7 @@
 require "ZombieKillCounter/ZKC_Config"
 
 ZKC_ServerHandler = ZKC_ServerHandler or {}
+ZKC_ServerHandler.pendingPayloads = ZKC_ServerHandler.pendingPayloads or {}
 
 -- Logging helper
 local function log(message)
@@ -12,33 +13,41 @@ local function log(message)
     end
 end
 
--- Write kill data to server file
--- @param jsonPayload string JSON data to write
-local function writeToFile(jsonPayload)
-    local success, error = pcall(function()
-        local filename = ZKC_Config.Storage.filename
-        log("Writing kill data to server file: " .. filename)
-        
-        -- Open file in append mode
+-- Flush all queued JSONL entries with one open/write/close cycle.
+-- Entries stay queued when opening, writing, or closing the file fails.
+function ZKC_ServerHandler.flushPendingPayloads()
+    local pendingPayloads = ZKC_ServerHandler.pendingPayloads
+    local payloadCount = #pendingPayloads
+    if payloadCount == 0 then
+        return true
+    end
+
+    local filename = ZKC_Config.Storage.filename
+    local success, written, errorMessage = pcall(function()
         local writer = getFileWriter(filename, true, true)
         if not writer then
-            log("ERROR: Failed to open file for writing: " .. filename)
-            return false
+            return false, "Failed to open file for writing: " .. filename
         end
-        
-        -- Write JSON line (newline-delimited JSON format)
-        writer:write(jsonPayload .. "\n")
+
+        for i = 1, payloadCount do
+            writer:write(pendingPayloads[i])
+            writer:write("\n")
+        end
         writer:close()
-        
-        log("Kill data written successfully to server!")
         return true
     end)
-    
+
     if not success then
-        log("Error writing kill data to server: " .. tostring(error))
+        log("Error flushing " .. payloadCount .. " queued entries: " .. tostring(written))
         return false
     end
-    
+    if not written then
+        log("ERROR: " .. tostring(errorMessage))
+        return false
+    end
+
+    ZKC_ServerHandler.pendingPayloads = {}
+    log("Flushed " .. payloadCount .. " queued entries to " .. filename)
     return true
 end
 
@@ -63,13 +72,14 @@ local function OnClientCommand(module, command, player, args)
         
         log("Received kill data from player: " .. (player and player:getUsername() or "Unknown"))
         
-        -- Write to server file
-        writeToFile(jsonPayload)
+        table.insert(ZKC_ServerHandler.pendingPayloads, jsonPayload)
     end
 end
 
--- Register the command handler
+-- Client commands only queue data. The server performs a single disk append
+-- for the whole batch at the next in-game minute.
 Events.OnClientCommand.Add(OnClientCommand)
+Events.EveryOneMinute.Add(ZKC_ServerHandler.flushPendingPayloads)
 
 log("Server handler initialized and listening for client commands")
 
