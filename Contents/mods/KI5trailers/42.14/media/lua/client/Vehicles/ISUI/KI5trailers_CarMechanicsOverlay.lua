@@ -50,6 +50,7 @@ DAMN.MechOverlay:addParts({
 --
 DAMN.MechOverlay:addParts({
     ["Base.TrailerKI5cargoLarge"] = "TrailerKI5cargoLarge_",
+    ["Base.TrailerKI5cargoLargeNemesis"] = "TrailerKI5cargoLarge_",
     ["Base.TrailerKI5livestock"] = "TrailerKI5cargoLarge_",
 }, {
     SuspensionFrontLeft = {img="suspension_front_left", x=13,y=188,x2=55,y2=225},

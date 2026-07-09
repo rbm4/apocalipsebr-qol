@@ -34,5 +34,6 @@ VehicleDistributions.M101A3 = {
 }
 
 distributionTable["92amgeneralM998"] = { Normal = VehicleDistributions.M998; }
+distributionTable["92amgeneralUB001"] = { Normal = VehicleDistributions.M998; }
 distributionTable["92amgeneralM998Burnt"] = { Normal = VehicleDistributions.M998; }
 distributionTable["TrailerM101A3cargo"] = { Normal = VehicleDistributions.M101A3; }

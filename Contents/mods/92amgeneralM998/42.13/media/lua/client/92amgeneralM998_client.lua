@@ -8,3 +8,4 @@ DAMN = DAMN or {};
 M998 = M998 or {};
 
 DAMN.EnterAnimations:registerVehicleScript("Base.92amgeneralM998", "basic");
+DAMN.EnterAnimations:registerVehicleScript("Base.92amgeneralUB001", "basic");

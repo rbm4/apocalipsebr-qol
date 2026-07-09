@@ -4,6 +4,7 @@ require "DAMN_MechOverlay";
 --
 DAMN.MechOverlay:addParts({
     ["Base.92amgeneralM998"] = "92amgeneralM998_",
+    ["Base.92amgeneralUB001"] = "92amgeneralM998_",
 }, {
     Battery = {img="battery", x=225,y=225,x2=270,y2=260},
     --

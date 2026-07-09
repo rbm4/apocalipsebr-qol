@@ -60,5 +60,6 @@ distributionTable["TrailerKI5utilityLarge"] = { Normal = VehicleDistributions.KI
 distributionTable["TrailerKI5utilityMedium"] = { Normal = VehicleDistributions.KI5TRStandard; }
 distributionTable["TrailerKI5utilitySmall"] = { Normal = VehicleDistributions.KI5TRStandard; }
 distributionTable["TrailerKI5cargoLarge"] = { Normal = VehicleDistributions.KI5TRCStandard; }
+distributionTable["TrailerKI5cargoLargeNemesis"] = { Normal = VehicleDistributions.KI5TRCStandard; }
 distributionTable["TrailerKI5cargoMedium"] = { Normal = VehicleDistributions.KI5TRCStandard; }
 distributionTable["TrailerKI5cargoSmall"] = { Normal = VehicleDistributions.KI5TRCStandard; }

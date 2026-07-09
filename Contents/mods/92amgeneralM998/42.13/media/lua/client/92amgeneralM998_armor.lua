@@ -134,3 +134,4 @@ function M998.activeArmor(player, vehicle)
 end
 
 DAMN.Armor:add("Base.92amgeneralM998", M998.activeArmor);
+DAMN.Armor:add("Base.92amgeneralUB001", M998.activeArmor);

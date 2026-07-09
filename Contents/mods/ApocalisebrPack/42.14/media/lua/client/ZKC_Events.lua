@@ -74,11 +74,11 @@ local function onPlayerDeath(player)
 end
 
 -- Register event handlers
-Events.OnZombieDead.Add(onZombieDead)
-Events.EveryOneMinute.Add(onEveryOneMinute)
-Events.OnGameStart.Add(onGameStart)
-Events.OnDisconnect.Add(onDisconnect)
-Events.OnPlayerDeath.Add(onPlayerDeath)
+-- Events.OnZombieDead.Add(onZombieDead)
+-- Events.EveryOneMinute.Add(onEveryOneMinute)
+-- Events.OnGameStart.Add(onGameStart)
+-- Events.OnDisconnect.Add(onDisconnect)
+-- Events.OnPlayerDeath.Add(onPlayerDeath)
 
 print("[ZKC] Event handlers registered")
 

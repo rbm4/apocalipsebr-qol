@@ -44,7 +44,7 @@ module Base
 		shadowOffset = -0.0618 0.3477,
 		engineForce = 8300,
 		maxSpeed = 110f,
-		engineLoudness = 90,
+		engineLoudness = 160,
 		engineQuality = 99,
 		brakingForce = 90,
 		stoppingMovementForce = 2.0f,
@@ -57,8 +57,8 @@ module Base
 		maxSuspensionTravelCm = 10,
 		suspensionRestLength = 0.2,
 		wheelFriction = 1.9f,
-		frontEndHealth = 150,
-		rearEndHealth = 150,
+		frontEndDurability = 150,
+		rearEndDurability = 150,
 		seats = 4,
 
 		wheel FrontLeft
