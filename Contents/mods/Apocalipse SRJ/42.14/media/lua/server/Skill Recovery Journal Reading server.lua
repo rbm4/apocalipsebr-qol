@@ -11,7 +11,7 @@ local function SRJ_OnClientCommand(module, command, player, args)
         if player and args and args.perkID and args.amount then
             local perk = Perks[args.perkID]
             if perk then
-                addXpNoMultiplier(player, perk, args.amount)
+                addXpNoMultiplier(player, perk, args.amount+1)
             end
         end
     end

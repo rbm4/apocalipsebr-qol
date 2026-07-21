@@ -1,0 +1,20 @@
+{
+    "Sandbox_RaccoonCity": "Raccoon City",
+    "Sandbox_ResidentEvilBackpackCapacity": "Capacidade da Mochila Resident Evil",
+    "Sandbox_ResidentEvilBackpackCapacity_tooltip": "A capacidade é afetada pelos traços Organizado e Desorganizado.",
+    "Sandbox_ResidentEvilBackpackWeightReduction": "Redução de Peso da Mochila Resident Evil",
+    "Sandbox_ResidentEvilSuspendersCapacity": "Capacidade dos Suspensórios Resident Evil",
+    "Sandbox_ResidentEvilSuspendersCapacity_tooltip": "A capacidade é afetada pelos traços Organizado e Desorganizado.",
+    "Sandbox_ResidentEvilSuspendersWeightReduction": "Redução de Peso dos Suspensórios Resident Evil",
+    "Sandbox_RaccoonCityDivider0": "________________________________________",
+    "Sandbox_DisablePoliceMusic": "Desativar música da polícia",
+    "Sandbox_DisableVaccines": "Desativar Vacinas Bioquímicas",
+    "Sandbox_DisableDaBaoJian": "Desativar Da Bao Jian",
+    "Sandbox_DisableBenelli": "Desativar Benelli M4 Super 90",
+    "Sandbox_DisableQiBao": "Desativar Qi Bao Wang Sheng Da Di",
+    "Sandbox_DisableSamuraiEdge": "Desativar Samurai Edge (inclui Adaptador)",
+    "Sandbox_DisableResidentEvilRightClickMenu": "Desativar menu de contexto Resident Evil",
+    "Sandbox_DisableAdapterSuppressor": "Desativar Supressor do Adaptador",
+    "Sandbox_RaccoonCityDivider1": "________________________________________",
+    "Sandbox_ResidentEvilBuildAddBuildingCraft": "Adicionar construções Resident Evil ao BuildingCraft (desativa o menu de contexto)."
+}
