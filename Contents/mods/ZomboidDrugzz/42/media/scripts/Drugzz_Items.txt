@@ -1,0 +1,440 @@
+module ZDrugzz
+{
+    imports
+    {
+        Base
+    }
+
+    item CannabisSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzCannabisSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_CannabisSeeds,
+    }
+
+    item CannabisHarvest
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.15,
+        Icon = DrugzzCannabisHarvest,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 2,
+        DaysTotallyRotten = 5,
+        Tooltip = Tooltip_Drugzz_CannabisHarvest,
+    }
+
+    item CannabisBudFresh
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.05,
+        Icon = DrugzzCannabisFresh,
+        HungerChange = -1,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        Tooltip = Tooltip_Drugzz_CannabisBudFresh,
+    }
+
+    item CannabisBudDried
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzCannabisDried,
+        Tooltip = Tooltip_Drugzz_CannabisBudDried,
+    }
+
+    item GroundCannabis
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.03,
+        Icon = DrugzzGroundCannabis,
+        Tooltip = Tooltip_Drugzz_GroundCannabis,
+    }
+
+    item Joint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0.0,
+        StressChange = -10,
+        Tags = base:useall;base:smokable,
+        Eattime = 460,
+        InverseCoughProbability = 12,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_Joint,
+    }
+
+    item Blunt
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.02,
+        Icon = DrugzzBlunt,
+        StaticModel = Cigar_Lit,
+        WorldStaticModel = Cigar,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0.0,
+        StressChange = -18,
+        Tags = base:useall;base:smokable,
+        Eattime = 720,
+        InverseCoughProbability = 9,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_Blunt,
+    }
+
+    item WeedBrownie
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.12,
+        Icon = DrugzzBrownie,
+        HungerChange = -8,
+        UnhappyChange = -8,
+        Calories = 220,
+        Carbohydrates = 35,
+        Lipids = 9,
+        Proteins = 3,
+        OnEat = Drugzz.OnConsume,
+        CustomEatSound = EatingCrispy,
+        Tooltip = Tooltip_Drugzz_WeedBrownie,
+    }
+
+    item MushroomSporePrint
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzSporePrint,
+        Tooltip = Tooltip_Drugzz_MushroomSporePrint,
+    }
+
+    item MushroomGrowKit
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.7,
+        Icon = DrugzzMushroomKit,
+        StaticModel = Drugzz_MushroomGrowKit,
+        WorldStaticModel = Drugzz_MushroomGrowKit,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 16,
+        DaysTotallyRotten = 24,
+        Tooltip = Tooltip_Drugzz_MushroomGrowKit,
+    }
+
+    item MagicMushroomFresh
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.03,
+        Icon = DrugzzMushroomFresh,
+        HungerChange = -1,
+        UnhappyChange = 4,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        OnEat = Drugzz.OnConsume,
+        Tooltip = Tooltip_Drugzz_MagicMushroomFresh,
+    }
+
+    item MagicMushroomDried
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.02,
+        Icon = DrugzzMushroomDried,
+        HungerChange = -1,
+        UnhappyChange = 6,
+        OnEat = Drugzz.OnConsume,
+        Tooltip = Tooltip_Drugzz_MagicMushroomDried,
+    }
+
+    item LSDTab
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.001,
+        Icon = DrugzzLSD,
+        HungerChange = 0,
+        OnEat = Drugzz.OnConsume,
+        Tooltip = Tooltip_Drugzz_LSDTab,
+    }
+
+    item CocaSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.02,
+        Icon = DrugzzCocaSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_CocaSeeds,
+    }
+
+    item CocaNursery
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 1.0,
+        Icon = DrugzzCocaNursery,
+        StaticModel = Drugzz_CocaNursery,
+        WorldStaticModel = Drugzz_CocaNursery,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 23,
+        DaysTotallyRotten = 30,
+        Tooltip = Tooltip_Drugzz_CocaNursery,
+    }
+
+    item CocaLeaves
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.05,
+        Icon = DrugzzCocaLeaves,
+        HungerChange = -1,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 7,
+        DaysTotallyRotten = 12,
+        Tooltip = Tooltip_Drugzz_CocaLeaves,
+    }
+
+    item CocaPaste
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.15,
+        Icon = DrugzzCocaPaste,
+        Tooltip = Tooltip_Drugzz_CocaPaste,
+    }
+
+    item EmptyBaggie
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.005,
+        Icon = DrugzzBaggieEmpty,
+    }
+
+    item CocaineBaggie
+    {
+        ItemType = base:drainable,
+        DisplayCategory = Drugzz,
+        Weight = 0.03,
+        UseDelta = 0.25,
+        OnEat = Drugzz.OnConsume,
+        CustomContextMenu = Sniff,
+        EatType = Sniff,
+        ReplaceOnDeplete = ZDrugzz.EmptyBaggie,
+        Icon = DrugzzCocaine,
+        Tags = base:consumable,
+        Tooltip = Tooltip_Drugzz_CocaineBaggie,
+    }
+
+    item CrackRock
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzCrack,
+        Tooltip = Tooltip_Drugzz_CrackRock,
+    }
+
+    item GlassPipe
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.08,
+        Icon = DrugzzGlassPipe,
+        StaticModel = Drugzz_GlassPipe,
+        WorldStaticModel = Drugzz_GlassPipe,
+        Tooltip = Tooltip_Drugzz_GlassPipe,
+    }
+
+    item CrackPipe
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.09,
+        Icon = DrugzzCrackPipe,
+        StaticModel = Drugzz_CrackPipe,
+        WorldStaticModel = Drugzz_CrackPipe,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Pipe,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 360,
+        InverseCoughProbability = 4,
+        InverseCoughProbabilitySmoker = 2,
+        ReplaceOnUse = ZDrugzz.GlassPipe,
+        Tooltip = Tooltip_Drugzz_CrackPipe,
+    }
+
+    item ChemicalPrecursor
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.2,
+        Icon = DrugzzPrecursor,
+        StaticModel = Drugzz_ChemicalPrecursor,
+        WorldStaticModel = Drugzz_ChemicalPrecursor,
+        Tooltip = Tooltip_Drugzz_ChemicalPrecursor,
+    }
+
+    item LabSolvent
+    {
+        ItemType = base:drainable,
+        DisplayCategory = Drugzz,
+        Weight = 0.5,
+        UseDelta = 0.1,
+        Icon = DrugzzSolvent,
+        StaticModel = Drugzz_LabSolvent,
+        WorldStaticModel = Drugzz_LabSolvent,
+        Tooltip = Tooltip_Drugzz_LabSolvent,
+    }
+
+    item MDMAPowder
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzMDMAPowder,
+        Tooltip = Tooltip_Drugzz_MDMAPowder,
+    }
+
+    item MethBaggie
+    {
+        ItemType = base:drainable,
+        DisplayCategory = Drugzz,
+        Weight = 0.03,
+        UseDelta = 0.25,
+        OnEat = Drugzz.OnConsume,
+        CustomContextMenu = Sniff,
+        EatType = Sniff,
+        ReplaceOnDeplete = ZDrugzz.EmptyBaggie,
+        Icon = DrugzzMeth,
+        Tags = base:consumable,
+        Tooltip = Tooltip_Drugzz_MethBaggie,
+    }
+
+    item MethPipe
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.09,
+        Icon = DrugzzMethPipe,
+        StaticModel = Drugzz_MethPipe,
+        WorldStaticModel = Drugzz_MethPipe,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Pipe,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 420,
+        InverseCoughProbability = 5,
+        InverseCoughProbabilitySmoker = 2,
+        ReplaceOnUse = ZDrugzz.GlassPipe,
+        Tooltip = Tooltip_Drugzz_MethPipe,
+    }
+
+    item EmptyCapsules
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzCapsules,
+    }
+
+    item MollyCapsule
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.005,
+        Icon = DrugzzMolly,
+        HungerChange = 0,
+        CustomContextMenu = Take,
+        OnEat = Drugzz.OnConsume,
+        Tooltip = Tooltip_Drugzz_MollyCapsule,
+    }
+
+    item EcstasyTablet
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.005,
+        Icon = DrugzzEcstasy,
+        HungerChange = 0,
+        CustomContextMenu = Take,
+        OnEat = Drugzz.OnConsume,
+        Tooltip = Tooltip_Drugzz_EcstasyTablet,
+    }
+
+    item AdderallBottle
+    {
+        ItemType = base:drainable,
+        DisplayCategory = Drugzz,
+        Weight = 0.12,
+        UseDelta = 0.1,
+        CustomContextMenu = Take,
+        OnEat = Drugzz.OnConsume,
+        Icon = DrugzzAdderall,
+        Tags = base:consumable,
+        Tooltip = Tooltip_Drugzz_AdderallBottle,
+    }
+
+    item GrowersHandbook
+    {
+        ItemType = base:literature,
+        DisplayCategory = Literature,
+        Weight = 0.4,
+        Icon = DrugzzGrowGuide,
+        BoredomChange = -20,
+        StressChange = -10,
+        LearnedRecipes = Drugzz_TrimCannabis;Drugzz_DryCannabis;Drugzz_GrindCannabis;Drugzz_RollJoint;Drugzz_RollBlunt;Drugzz_BakeWeedBrownie;Drugzz_PrepareMushroomKit;Drugzz_HarvestMushroomKit;Drugzz_DryMushrooms;Drugzz_PrepareCocaNursery;Drugzz_HarvestCocaNursery,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+        Tags = base:magazine,
+    }
+
+    item StreetChemistryReport
+    {
+        ItemType = base:literature,
+        DisplayCategory = Literature,
+        Weight = 0.4,
+        Icon = DrugzzChemGuide,
+        BoredomChange = -15,
+        StressChange = -5,
+        LearnedRecipes = Drugzz_ExtractCocaPaste;Drugzz_RefineCocaine;Drugzz_CookCrack;Drugzz_LoadCrackPipe;Drugzz_PrepareLSD;Drugzz_PrepareMDMA;Drugzz_FillMollyCapsules;Drugzz_PressEcstasy;Drugzz_PrepareMeth;Drugzz_LoadMethPipe;Drugzz_PressAdderall,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+        Tags = base:magazine,
+    }
+}

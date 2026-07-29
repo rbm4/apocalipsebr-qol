@@ -1,0 +1,1166 @@
+module ZDrugzz
+{
+    imports
+    {
+        Base
+    }
+
+    craftRecipe Drugzz_CureSourDiesel
+    {
+        timedAction = Making,
+        time = 95,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        SkillRequired = Farming:2,
+        xpAward = Farming:6,
+        inputs
+        {
+            item 1 [ZDrugzz.SourDieselHarvest],
+            item 1 [Base.BakingTray;Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 3 ZDrugzz.SourDieselBudDried,
+        }
+    }
+
+    craftRecipe Drugzz_RollSourDieselJoint
+    {
+        timedAction = Making,
+        time = 45,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.SourDieselBudDried],
+            item 1 [Base.CigaretteRollingPapers],
+            item 1 [Base.MortarPestle;Base.CeramicMortarandPestle] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.SourDieselJoint,
+        }
+    }
+
+    craftRecipe Drugzz_CureDurbanPoison
+    {
+        timedAction = Making,
+        time = 95,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        SkillRequired = Farming:2,
+        xpAward = Farming:6,
+        inputs
+        {
+            item 1 [ZDrugzz.DurbanPoisonHarvest],
+            item 1 [Base.BakingTray;Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 3 ZDrugzz.DurbanPoisonBudDried,
+        }
+    }
+
+    craftRecipe Drugzz_RollDurbanPoisonJoint
+    {
+        timedAction = Making,
+        time = 45,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.DurbanPoisonBudDried],
+            item 1 [Base.CigaretteRollingPapers],
+            item 1 [Base.MortarPestle;Base.CeramicMortarandPestle] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.DurbanPoisonJoint,
+        }
+    }
+
+    craftRecipe Drugzz_CureJackHerer
+    {
+        timedAction = Making,
+        time = 95,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        SkillRequired = Farming:2,
+        xpAward = Farming:6,
+        inputs
+        {
+            item 1 [ZDrugzz.JackHererHarvest],
+            item 1 [Base.BakingTray;Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 3 ZDrugzz.JackHererBudDried,
+        }
+    }
+
+    craftRecipe Drugzz_RollJackHererJoint
+    {
+        timedAction = Making,
+        time = 45,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.JackHererBudDried],
+            item 1 [Base.CigaretteRollingPapers],
+            item 1 [Base.MortarPestle;Base.CeramicMortarandPestle] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.JackHererJoint,
+        }
+    }
+
+    craftRecipe Drugzz_CureNorthernLights
+    {
+        timedAction = Making,
+        time = 105,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        SkillRequired = Farming:2,
+        xpAward = Farming:6,
+        inputs
+        {
+            item 1 [ZDrugzz.NorthernLightsHarvest],
+            item 1 [Base.BakingTray;Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 3 ZDrugzz.NorthernLightsBudDried,
+        }
+    }
+
+    craftRecipe Drugzz_RollNorthernLightsJoint
+    {
+        timedAction = Making,
+        time = 45,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.NorthernLightsBudDried],
+            item 1 [Base.CigaretteRollingPapers],
+            item 1 [Base.MortarPestle;Base.CeramicMortarandPestle] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.NorthernLightsJoint,
+        }
+    }
+
+    craftRecipe Drugzz_CureGranddaddyPurple
+    {
+        timedAction = Making,
+        time = 110,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        SkillRequired = Farming:2,
+        xpAward = Farming:6,
+        inputs
+        {
+            item 1 [ZDrugzz.GranddaddyPurpleHarvest],
+            item 1 [Base.BakingTray;Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 3 ZDrugzz.GranddaddyPurpleBudDried,
+        }
+    }
+
+    craftRecipe Drugzz_RollGranddaddyPurpleJoint
+    {
+        timedAction = Making,
+        time = 45,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.GranddaddyPurpleBudDried],
+            item 1 [Base.CigaretteRollingPapers],
+            item 1 [Base.MortarPestle;Base.CeramicMortarandPestle] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.GranddaddyPurpleJoint,
+        }
+    }
+
+    craftRecipe Drugzz_CureBubbaKush
+    {
+        timedAction = Making,
+        time = 105,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        SkillRequired = Farming:2,
+        xpAward = Farming:6,
+        inputs
+        {
+            item 1 [ZDrugzz.BubbaKushHarvest],
+            item 1 [Base.BakingTray;Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 3 ZDrugzz.BubbaKushBudDried,
+        }
+    }
+
+    craftRecipe Drugzz_RollBubbaKushJoint
+    {
+        timedAction = Making,
+        time = 45,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.BubbaKushBudDried],
+            item 1 [Base.CigaretteRollingPapers],
+            item 1 [Base.MortarPestle;Base.CeramicMortarandPestle] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.BubbaKushJoint,
+        }
+    }
+
+    craftRecipe Drugzz_CureOGKush
+    {
+        timedAction = Making,
+        time = 100,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        SkillRequired = Farming:2,
+        xpAward = Farming:6,
+        inputs
+        {
+            item 1 [ZDrugzz.OGKushHarvest],
+            item 1 [Base.BakingTray;Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 3 ZDrugzz.OGKushBudDried,
+        }
+    }
+
+    craftRecipe Drugzz_RollOGKushJoint
+    {
+        timedAction = Making,
+        time = 45,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.OGKushBudDried],
+            item 1 [Base.CigaretteRollingPapers],
+            item 1 [Base.MortarPestle;Base.CeramicMortarandPestle] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.OGKushJoint,
+        }
+    }
+
+    craftRecipe Drugzz_CureWhiteWidow
+    {
+        timedAction = Making,
+        time = 100,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        SkillRequired = Farming:2,
+        xpAward = Farming:6,
+        inputs
+        {
+            item 1 [ZDrugzz.WhiteWidowHarvest],
+            item 1 [Base.BakingTray;Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 3 ZDrugzz.WhiteWidowBudDried,
+        }
+    }
+
+    craftRecipe Drugzz_RollWhiteWidowJoint
+    {
+        timedAction = Making,
+        time = 45,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.WhiteWidowBudDried],
+            item 1 [Base.CigaretteRollingPapers],
+            item 1 [Base.MortarPestle;Base.CeramicMortarandPestle] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.WhiteWidowJoint,
+        }
+    }
+
+    craftRecipe Drugzz_CureBlueDream
+    {
+        timedAction = Making,
+        time = 100,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        SkillRequired = Farming:2,
+        xpAward = Farming:6,
+        inputs
+        {
+            item 1 [ZDrugzz.BlueDreamHarvest],
+            item 1 [Base.BakingTray;Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 3 ZDrugzz.BlueDreamBudDried,
+        }
+    }
+
+    craftRecipe Drugzz_RollBlueDreamJoint
+    {
+        timedAction = Making,
+        time = 45,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.BlueDreamBudDried],
+            item 1 [Base.CigaretteRollingPapers],
+            item 1 [Base.MortarPestle;Base.CeramicMortarandPestle] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.BlueDreamJoint,
+        }
+    }
+
+    craftRecipe Drugzz_CureGSC
+    {
+        timedAction = Making,
+        time = 105,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        SkillRequired = Farming:2,
+        xpAward = Farming:6,
+        inputs
+        {
+            item 1 [ZDrugzz.GSCHarvest],
+            item 1 [Base.BakingTray;Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 3 ZDrugzz.GSCBudDried,
+        }
+    }
+
+    craftRecipe Drugzz_RollGSCJoint
+    {
+        timedAction = Making,
+        time = 45,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.GSCBudDried],
+            item 1 [Base.CigaretteRollingPapers],
+            item 1 [Base.MortarPestle;Base.CeramicMortarandPestle] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.GSCJoint,
+        }
+    }
+
+    craftRecipe Drugzz_PackSativaBong
+    {
+        timedAction = Making,
+        time = 35,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.GlassBong],
+            item 1 [ZDrugzz.SourDieselBudDried;ZDrugzz.DurbanPoisonBudDried;ZDrugzz.JackHererBudDried],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.PackedBongSativa,
+        }
+    }
+
+    craftRecipe Drugzz_PackIndicaBong
+    {
+        timedAction = Making,
+        time = 35,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.GlassBong],
+            item 1 [ZDrugzz.NorthernLightsBudDried;ZDrugzz.GranddaddyPurpleBudDried;ZDrugzz.BubbaKushBudDried],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.PackedBongIndica,
+        }
+    }
+
+    craftRecipe Drugzz_PackHybridBong
+    {
+        timedAction = Making,
+        time = 35,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        inputs
+        {
+            item 1 [ZDrugzz.GlassBong],
+            item 1 [ZDrugzz.OGKushBudDried;ZDrugzz.WhiteWidowBudDried;ZDrugzz.BlueDreamBudDried;ZDrugzz.GSCBudDried;ZDrugzz.CannabisBudDried],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.PackedBongHybrid,
+        }
+    }
+
+    craftRecipe Drugzz_CraftGlassBong
+    {
+        timedAction = Making,
+        time = 110,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:1,
+        xpAward = MetalWelding:6,
+        inputs
+        {
+            item 1 [Base.EmptyJar;Base.JarCrafted],
+            item 1 [Base.MetalPipe],
+            item 1 [Base.DuctTape],
+            item 1 [Base.Wrench] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.GlassBong,
+        }
+    }
+
+    craftRecipe Drugzz_CraftDabRig
+    {
+        timedAction = Making,
+        time = 130,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:2,
+        xpAward = MetalWelding:8,
+        inputs
+        {
+            item 1 [Base.EmptyJar;Base.JarCrafted],
+            item 1 [Base.MetalPipe],
+            item 1 [Base.Aluminum],
+            item 1 [Base.DuctTape],
+            item 1 [Base.Wrench] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.DabRig,
+        }
+    }
+
+    craftRecipe Drugzz_CraftPortableDabTorch
+    {
+        timedAction = Making,
+        time = 100,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:1,
+        xpAward = MetalWelding:5,
+        inputs
+        {
+            item 1 [Base.Propane_Refill],
+            item 1 [Base.LighterBBQ],
+            item 1 [Base.SmallSheetMetal;Base.Aluminum],
+            item 1 [Base.DuctTape],
+            item 1 [Base.Screwdriver] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.PortableDabTorch,
+        }
+    }
+
+    craftRecipe Drugzz_RefillPortableDabTorch
+    {
+        timedAction = Making,
+        time = 55,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [ZDrugzz.EmptyPortableDabTorch],
+            item 1 [Base.Propane_Refill;Base.PropaneTank],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.PortableDabTorch,
+        }
+    }
+
+    craftRecipe Drugzz_CraftElectronicDabRig
+    {
+        timedAction = Making,
+        time = 150,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Electricity:3;MetalWelding:1,
+        xpAward = Electricity:12;MetalWelding:5,
+        inputs
+        {
+            item 1 [Base.EmptyJar;Base.JarCrafted],
+            item 3 [Base.ElectronicsScrap],
+            item 1 [Base.Aluminum],
+            item 1 [Base.ElectricWire],
+            item 1 [Base.DuctTape],
+            item 1 [Base.Screwdriver] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.ElectronicDabRig,
+        }
+    }
+
+    craftRecipe Drugzz_CraftERigBattery
+    {
+        timedAction = Making,
+        time = 90,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Electricity:2,
+        xpAward = Electricity:8,
+        inputs
+        {
+            item 1 [Base.Battery],
+            item 1 [Base.ElectronicsScrap],
+            item 1 [Base.ElectricWire],
+            item 1 [Base.Screwdriver] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.ERigBattery,
+        }
+    }
+
+    craftRecipe Drugzz_RechargeERigBattery
+    {
+        timedAction = Making,
+        time = 55,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Electricity:1,
+        xpAward = Electricity:3,
+        inputs
+        {
+            item 1 [ZDrugzz.EmptyERigBattery],
+            item 1 [Base.Battery],
+            item 1 [Base.Screwdriver] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.ERigBattery,
+        }
+    }
+
+    craftRecipe Drugzz_CraftDabTool
+    {
+        timedAction = Making,
+        time = 45,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [Base.Aluminum],
+            item 1 [Base.Screwdriver] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 2 ZDrugzz.DabTool,
+        }
+    }
+
+    craftRecipe Drugzz_CraftExtractionTube
+    {
+        timedAction = Making,
+        time = 90,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:1,
+        xpAward = MetalWelding:5,
+        inputs
+        {
+            item 1 [Base.MetalPipe],
+            item 1 [Base.EmptyJar;Base.JarCrafted],
+            item 1 [Base.DuctTape],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.ExtractionTube,
+        }
+    }
+
+    craftRecipe Drugzz_CraftRosinPress
+    {
+        timedAction = Making,
+        time = 180,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:3,
+        xpAward = MetalWelding:14,
+        inputs
+        {
+            item 4 [Base.ScrapMetal],
+            item 2 [Base.MetalPipe],
+            item 1 [Base.Screws],
+            item 4 [Base.WeldingRods],
+            item 1 [Base.BlowTorch] mode:keep flags[MayDegradeLight],
+            item 1 [Base.Wrench] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.RosinPress,
+        }
+    }
+
+    craftRecipe Drugzz_CraftDistillationKit
+    {
+        timedAction = Making,
+        time = 150,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:2;Cooking:3,
+        xpAward = MetalWelding:8;Cooking:6,
+        inputs
+        {
+            item 1 [Base.Saucepan;Base.SaucepanCopper],
+            item 1 [Base.MetalPipe],
+            item 1 [Base.EmptyJar;Base.JarCrafted],
+            item 1 [Base.DuctTape],
+            item 1 [Base.Wrench] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.DistillationKit,
+        }
+    }
+
+    craftRecipe Drugzz_CraftVapeBattery
+    {
+        timedAction = Making,
+        time = 100,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Electricity:2,
+        xpAward = Electricity:8,
+        inputs
+        {
+            item 1 [Base.Battery],
+            item 2 [Base.ElectronicsScrap],
+            item 1 [Base.ElectricWire],
+            item 1 [Base.Screwdriver] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.VapeBattery,
+        }
+    }
+
+    craftRecipe Drugzz_CraftEmptyTHCCarts
+    {
+        timedAction = Making,
+        time = 80,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Electricity:2,
+        xpAward = Electricity:6,
+        inputs
+        {
+            item 1 [Base.Aluminum],
+            item 1 [Base.ElectronicsScrap],
+            item 1 [Base.ElectricWire],
+            item 1 [Base.Screwdriver] mode:keep flags[MayDegradeLight],
+        }
+        outputs
+        {
+            item 3 ZDrugzz.EmptyTHCCartridge,
+        }
+    }
+
+    craftRecipe Drugzz_CollectKief
+    {
+        timedAction = Making,
+        time = 90,
+        Tags = AnySurfaceCraft;CanBeDoneInDark,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:2,
+        xpAward = Cooking:5,
+        inputs
+        {
+            item 4 [ZDrugzz.CannabisBudDried;ZDrugzz.SourDieselBudDried;ZDrugzz.DurbanPoisonBudDried;ZDrugzz.JackHererBudDried;ZDrugzz.NorthernLightsBudDried;ZDrugzz.GranddaddyPurpleBudDried;ZDrugzz.BubbaKushBudDried;ZDrugzz.OGKushBudDried;ZDrugzz.WhiteWidowBudDried;ZDrugzz.BlueDreamBudDried;ZDrugzz.GSCBudDried],
+            item 1 [Base.MortarPestle;Base.CeramicMortarandPestle] mode:keep,
+        }
+        outputs
+        {
+            item 2 ZDrugzz.Kief,
+        }
+    }
+
+    craftRecipe Drugzz_PressHash
+    {
+        timedAction = Making,
+        time = 110,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:3,
+        xpAward = Cooking:7,
+        inputs
+        {
+            item 3 [ZDrugzz.Kief],
+            item 1 [ZDrugzz.RosinPress] mode:keep,
+            item 1 [Base.SheetPaper2],
+        }
+        outputs
+        {
+            item 2 ZDrugzz.Hash,
+        }
+    }
+
+    craftRecipe Drugzz_RollKiefJoint
+    {
+        timedAction = Making,
+        time = 50,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [ZDrugzz.Kief],
+            item 1 [Base.CigaretteRollingPapers],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.KiefJoint,
+        }
+    }
+
+    craftRecipe Drugzz_RollHashJoint
+    {
+        timedAction = Making,
+        time = 55,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [ZDrugzz.Hash],
+            item 1 [Base.CigaretteRollingPapers],
+        }
+        outputs
+        {
+            item 1 ZDrugzz.HashJoint,
+        }
+    }
+
+    craftRecipe Drugzz_PressRosin
+    {
+        timedAction = Making,
+        time = 130,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:4,
+        xpAward = Cooking:10,
+        inputs
+        {
+            item 4 [ZDrugzz.CannabisBudDried;ZDrugzz.SourDieselBudDried;ZDrugzz.DurbanPoisonBudDried;ZDrugzz.JackHererBudDried;ZDrugzz.NorthernLightsBudDried;ZDrugzz.GranddaddyPurpleBudDried;ZDrugzz.BubbaKushBudDried;ZDrugzz.OGKushBudDried;ZDrugzz.WhiteWidowBudDried;ZDrugzz.BlueDreamBudDried;ZDrugzz.GSCBudDried],
+            item 1 [ZDrugzz.RosinPress] mode:keep,
+            item 1 [Base.SheetPaper2],
+        }
+        outputs
+        {
+            item 2 ZDrugzz.Rosin,
+        }
+    }
+
+    craftRecipe Drugzz_ExtractShatter
+    {
+        timedAction = MixingBowl,
+        time = 170,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Doctor:3;Cooking:4,
+        xpAward = Doctor:8;Cooking:10,
+        inputs
+        {
+            item 5 [ZDrugzz.CannabisBudDried;ZDrugzz.SourDieselBudDried;ZDrugzz.DurbanPoisonBudDried;ZDrugzz.JackHererBudDried;ZDrugzz.NorthernLightsBudDried;ZDrugzz.GranddaddyPurpleBudDried;ZDrugzz.BubbaKushBudDried;ZDrugzz.OGKushBudDried;ZDrugzz.WhiteWidowBudDried;ZDrugzz.BlueDreamBudDried;ZDrugzz.GSCBudDried],
+            item 3 [ZDrugzz.FoodGradeSolvent],
+            item 1 [ZDrugzz.ExtractionTube] mode:keep,
+            item 1 [Base.EmptyJar;Base.JarCrafted],
+        }
+        outputs
+        {
+            item 2 ZDrugzz.Shatter,
+        }
+    }
+
+    craftRecipe Drugzz_ExtractLiveResin
+    {
+        timedAction = MixingBowl,
+        time = 185,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Doctor:4;Cooking:4,
+        xpAward = Doctor:10;Cooking:10,
+        inputs
+        {
+            item 4 [ZDrugzz.CannabisHarvest;ZDrugzz.SourDieselHarvest;ZDrugzz.DurbanPoisonHarvest;ZDrugzz.JackHererHarvest;ZDrugzz.NorthernLightsHarvest;ZDrugzz.GranddaddyPurpleHarvest;ZDrugzz.BubbaKushHarvest;ZDrugzz.OGKushHarvest;ZDrugzz.WhiteWidowHarvest;ZDrugzz.BlueDreamHarvest;ZDrugzz.GSCHarvest],
+            item 4 [ZDrugzz.FoodGradeSolvent],
+            item 1 [ZDrugzz.ExtractionTube] mode:keep,
+            item 1 [Base.EmptyJar;Base.JarCrafted],
+        }
+        outputs
+        {
+            item 2 ZDrugzz.LiveResin,
+        }
+    }
+
+    craftRecipe Drugzz_RefineDistillate
+    {
+        timedAction = MixingBowl,
+        time = 200,
+        Tags = AnySurfaceCraft;Cooking,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Doctor:5;Cooking:5,
+        xpAward = Doctor:12;Cooking:12,
+        inputs
+        {
+            item 2 [ZDrugzz.Rosin;ZDrugzz.Shatter;ZDrugzz.LiveResin],
+            item 2 [ZDrugzz.FoodGradeSolvent],
+            item 1 [ZDrugzz.DistillationKit] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.DistillateSyringe,
+        }
+    }
+
+    craftRecipe Drugzz_LoadRosinDab
+    {
+        timedAction = Making,
+        time = 35,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [ZDrugzz.DabRig],
+            item 1 [ZDrugzz.Rosin],
+            item 1 [ZDrugzz.PortableDabTorch;Base.BlowTorch],
+            item 1 [ZDrugzz.DabTool] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.LoadedDabRigRosin,
+        }
+    }
+
+    craftRecipe Drugzz_LoadShatterDab
+    {
+        timedAction = Making,
+        time = 35,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [ZDrugzz.DabRig],
+            item 1 [ZDrugzz.Shatter],
+            item 1 [ZDrugzz.PortableDabTorch;Base.BlowTorch],
+            item 1 [ZDrugzz.DabTool] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.LoadedDabRigShatter,
+        }
+    }
+
+    craftRecipe Drugzz_LoadLiveResinDab
+    {
+        timedAction = Making,
+        time = 35,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [ZDrugzz.DabRig],
+            item 1 [ZDrugzz.LiveResin],
+            item 1 [ZDrugzz.PortableDabTorch;Base.BlowTorch],
+            item 1 [ZDrugzz.DabTool] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.LoadedDabRigLiveResin,
+        }
+    }
+
+    craftRecipe Drugzz_LoadDistillateDab
+    {
+        timedAction = Making,
+        time = 35,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [ZDrugzz.DabRig],
+            item 1 [ZDrugzz.DistillateSyringe],
+            item 1 [ZDrugzz.PortableDabTorch;Base.BlowTorch],
+            item 1 [ZDrugzz.DabTool] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.LoadedDabRigDistillate,
+        }
+    }
+
+    craftRecipe Drugzz_LoadRosinERig
+    {
+        timedAction = Making,
+        time = 30,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [ZDrugzz.ElectronicDabRig],
+            item 1 [ZDrugzz.Rosin],
+            item 1 [ZDrugzz.ERigBattery],
+            item 1 [ZDrugzz.DabTool] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.ElectronicDabRigRosin,
+        }
+    }
+
+    craftRecipe Drugzz_LoadShatterERig
+    {
+        timedAction = Making,
+        time = 30,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [ZDrugzz.ElectronicDabRig],
+            item 1 [ZDrugzz.Shatter],
+            item 1 [ZDrugzz.ERigBattery],
+            item 1 [ZDrugzz.DabTool] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.ElectronicDabRigShatter,
+        }
+    }
+
+    craftRecipe Drugzz_LoadLiveResinERig
+    {
+        timedAction = Making,
+        time = 30,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [ZDrugzz.ElectronicDabRig],
+            item 1 [ZDrugzz.LiveResin],
+            item 1 [ZDrugzz.ERigBattery],
+            item 1 [ZDrugzz.DabTool] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.ElectronicDabRigLiveResin,
+        }
+    }
+
+    craftRecipe Drugzz_LoadDistillateERig
+    {
+        timedAction = Making,
+        time = 30,
+        Tags = InHandCraft;CanBeDoneInDark,
+        category = Drugs,
+        NeedToBeLearn = true,
+        inputs
+        {
+            item 1 [ZDrugzz.ElectronicDabRig],
+            item 1 [ZDrugzz.DistillateSyringe],
+            item 1 [ZDrugzz.ERigBattery],
+            item 1 [ZDrugzz.DabTool] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.ElectronicDabRigDistillate,
+        }
+    }
+
+    craftRecipe Drugzz_FillTHCCartridge
+    {
+        timedAction = Making,
+        time = 55,
+        Tags = AnySurfaceCraft,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Electricity:1,
+        xpAward = Electricity:4,
+        inputs
+        {
+            item 1 [ZDrugzz.EmptyTHCCartridge],
+            item 2 [ZDrugzz.DistillateSyringe],
+            item 1 [ZDrugzz.DabTool] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.THCCartridge,
+        }
+    }
+
+    craftRecipe Drugzz_MakeCannabutter
+    {
+        timedAction = MixingBowl,
+        time = 145,
+        Tags = AnySurfaceCraft;Cooking,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:3,
+        xpAward = Cooking:10,
+        inputs
+        {
+            item 3 [ZDrugzz.CannabisBudDried;ZDrugzz.SourDieselBudDried;ZDrugzz.DurbanPoisonBudDried;ZDrugzz.JackHererBudDried;ZDrugzz.NorthernLightsBudDried;ZDrugzz.GranddaddyPurpleBudDried;ZDrugzz.BubbaKushBudDried;ZDrugzz.OGKushBudDried;ZDrugzz.WhiteWidowBudDried;ZDrugzz.BlueDreamBudDried;ZDrugzz.GSCBudDried],
+            item 1 [Base.Butter],
+            item 1 [Base.Saucepan;Base.SaucepanCopper] mode:keep,
+            item 1 tags[Base:MixingUtensil] mode:keep,
+        }
+        outputs
+        {
+            item 2 ZDrugzz.Cannabutter,
+        }
+    }
+
+    craftRecipe Drugzz_MakeCannabisOil
+    {
+        timedAction = MixingBowl,
+        time = 145,
+        Tags = AnySurfaceCraft;Cooking,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:3,
+        xpAward = Cooking:10,
+        inputs
+        {
+            item 3 [ZDrugzz.CannabisBudDried;ZDrugzz.SourDieselBudDried;ZDrugzz.DurbanPoisonBudDried;ZDrugzz.JackHererBudDried;ZDrugzz.NorthernLightsBudDried;ZDrugzz.GranddaddyPurpleBudDried;ZDrugzz.BubbaKushBudDried;ZDrugzz.OGKushBudDried;ZDrugzz.WhiteWidowBudDried;ZDrugzz.BlueDreamBudDried;ZDrugzz.GSCBudDried],
+            item 1 [Base.OilOlive],
+            item 1 [Base.Saucepan;Base.SaucepanCopper] mode:keep,
+            item 1 tags[Base:MixingUtensil] mode:keep,
+        }
+        outputs
+        {
+            item 1 ZDrugzz.CannabisOil,
+        }
+    }
+
+    craftRecipe Drugzz_BakeSpaceCookies
+    {
+        timedAction = MixingBowl,
+        time = 120,
+        Tags = AnySurfaceCraft;Cooking,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:4,
+        xpAward = Cooking:12,
+        inputs
+        {
+            item 1 [ZDrugzz.Cannabutter],
+            item 1 [Base.Sugar],
+            item 1 [Base.Chocolate;Base.ChocolateChips],
+            item 1 [Base.BakingTray;Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 4 ZDrugzz.SpaceCookie,
+        }
+    }
+
+    craftRecipe Drugzz_BakeCannabutterBrownies
+    {
+        timedAction = MixingBowl,
+        time = 125,
+        Tags = AnySurfaceCraft;Cooking,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:4,
+        xpAward = Cooking:12,
+        inputs
+        {
+            item 1 [ZDrugzz.Cannabutter],
+            item 1 [Base.Chocolate;Base.ChocolateChips],
+            item 1 [Base.Sugar],
+            item 1 [Base.BakingPan] mode:keep,
+        }
+        outputs
+        {
+            item 4 ZDrugzz.WeedBrownie,
+        }
+    }
+
+    craftRecipe Drugzz_MakeCannabisGummies
+    {
+        timedAction = MixingBowl,
+        time = 100,
+        Tags = AnySurfaceCraft;Cooking,
+        category = Drugs,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:4,
+        xpAward = Cooking:10,
+        inputs
+        {
+            item 1 [ZDrugzz.CannabisOil],
+            item 1 [Base.Sugar],
+            item 1 [Base.Honey],
+            item 1 [Base.Saucepan;Base.SaucepanCopper] mode:keep,
+            item 1 tags[Base:MixingUtensil] mode:keep,
+        }
+        outputs
+        {
+            item 6 ZDrugzz.CannabisGummies,
+        }
+    }
+}

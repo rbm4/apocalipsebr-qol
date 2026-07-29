@@ -1,0 +1,85 @@
+VERSION = 1,
+
+option ZomboidDrugzz.LootMultiplier = {
+    type = double,
+    min = 0.0,
+    max = 10.0,
+    default = 1.0,
+    page = ZomboidDrugzz_Main,
+    translation = ZomboidDrugzz_LootMultiplier,
+}
+
+option ZomboidDrugzz.ZombieLootMultiplier = {
+    type = double,
+    min = 0.0,
+    max = 10.0,
+    default = 1.0,
+    page = ZomboidDrugzz_Main,
+    translation = ZomboidDrugzz_ZombieLootMultiplier,
+}
+
+option ZomboidDrugzz.EffectStrength = {
+    type = double,
+    min = 0.25,
+    max = 2.0,
+    default = 1.0,
+    page = ZomboidDrugzz_Main,
+    translation = ZomboidDrugzz_EffectStrength,
+}
+
+option ZomboidDrugzz.OverdoseSeverity = {
+    type = double,
+    min = 0.0,
+    max = 2.0,
+    default = 1.0,
+    page = ZomboidDrugzz_Main,
+    translation = ZomboidDrugzz_OverdoseSeverity,
+}
+
+option ZomboidDrugzz.SideEffectSeverity = {
+    type = double,
+    min = 0.0,
+    max = 2.0,
+    default = 1.0,
+    page = ZomboidDrugzz_Main,
+    translation = ZomboidDrugzz_SideEffectSeverity,
+}
+
+option ZomboidDrugzz.EnableDependence = {
+    type = boolean,
+    default = true,
+    page = ZomboidDrugzz_Main,
+    translation = ZomboidDrugzz_EnableDependence,
+}
+
+option ZomboidDrugzz.EnableTraitStarterItems = {
+    type = boolean,
+    default = true,
+    page = ZomboidDrugzz_Main,
+    translation = ZomboidDrugzz_EnableTraitStarterItems,
+}
+
+option ZomboidDrugzz.EnableEffectMoodles = {
+    type = boolean,
+    default = true,
+    page = ZomboidDrugzz_Main,
+    translation = ZomboidDrugzz_EnableEffectMoodles,
+}
+
+option ZomboidDrugzz.MushroomGrowDays = {
+    type = integer,
+    min = 2,
+    max = 14,
+    default = 5,
+    page = ZomboidDrugzz_Growing,
+    translation = ZomboidDrugzz_MushroomGrowDays,
+}
+
+option ZomboidDrugzz.CocaGrowDays = {
+    type = integer,
+    min = 3,
+    max = 21,
+    default = 8,
+    page = ZomboidDrugzz_Growing,
+    translation = ZomboidDrugzz_CocaGrowDays,
+}

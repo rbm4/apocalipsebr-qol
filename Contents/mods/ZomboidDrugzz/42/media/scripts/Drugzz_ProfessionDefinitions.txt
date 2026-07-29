@@ -1,0 +1,12 @@
+module ZomboidDrugzz
+{
+    character_profession_definition zdrugzz:drugdealer
+    {
+        CharacterProfession = zdrugzz:drugdealer,
+        Cost = -6,
+        UIName = UI_prof_Drugzz_DrugDealer,
+        UIDescription = UI_prof_Drugzz_DrugDealerDesc,
+        IconPathName = prof_drugdealer,
+        XPBoosts = Sneak=2;Lightfoot=1;Farming=1;Cooking=1;Doctor=1,
+    }
+}

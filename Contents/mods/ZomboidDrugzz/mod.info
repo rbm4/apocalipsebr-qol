@@ -1,0 +1,8 @@
+name=Knox Cannabis & Contraband
+id=ZomboidDrugzz
+author=.exe
+description=Version 2.5.2: release maintenance, connected equipment assemblies, reliable B42 loot, placeable lab props, and full mechanics validation for Build 42.19.
+poster=poster.png
+icon=icon.png
+versionMin=42.18
+versionMax=42.19

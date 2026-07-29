@@ -1,0 +1,14 @@
+{
+    "ContextMenu_Drugzz":  "Cannabis e Contrabando",
+    "ContextMenu_Drugzz_QuickPrepare":  "Preparo rapido",
+    "ContextMenu_Drugzz_Smoke":  "Fumar %1",
+    "ContextMenu_Drugzz_Sniff":  "Cheirar %1",
+    "ContextMenu_Drugzz_Take":  "Tomar %1",
+    "ContextMenu_Drugzz_Dab":  "Usar dab de %1",
+    "ContextMenu_Drugzz_Vape":  "Vaporizar %1",
+    "ContextMenu_Drugzz_Eat":  "Comer %1",
+    "ContextMenu_Drugzz_Use":  "Usar %1",
+    "ContextMenu_Drugzz_Empty":  "Este item esta vazio.",
+    "ContextMenu_Drugzz_Requires":  "Requer: %1",
+    "ContextMenu_Drugzz_MissingUseRequirement":  "Requer a fonte de ignicao, bateria ou dispositivo de apoio adequado."
+}

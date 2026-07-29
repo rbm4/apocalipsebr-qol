@@ -1,0 +1,20 @@
+{
+    "UI_trait_Drugzz_Stoner": "Stoner",
+    "UI_trait_Drugzz_StonerDesc": "A long-term cannabis habit. Starts with two joints and a lighter and knows how to grind flower and roll joints or blunts. Cannabis causes less panic, but you begin tolerant and dependent; withdrawal brings irritability, low mood, poor rest, and anxiety.",
+    "UI_trait_Drugzz_CannabisConnoisseur": "Cannabis Connoisseur",
+    "UI_trait_Drugzz_CannabisConnoisseurDesc": "Experienced with cannabis cultivation and dosing. Starts with the advanced manual and three classic seed varieties. Cannabis side effects and tolerance growth are reduced, while useful effects last slightly longer.",
+    "UI_trait_Drugzz_Psychonaut": "Experienced Psychonaut",
+    "UI_trait_Drugzz_PsychonautDesc": "Experienced with mushrooms and LSD. Starts with one of each. Bad trips and nausea are less likely, but psychedelic effects last longer.",
+    "UI_trait_Drugzz_CocaineDependent": "Cocaine Dependent",
+    "UI_trait_Drugzz_CocaineDependentDesc": "Starts with a cocaine baggie and high stimulant tolerance. Short-lived energy comes with appetite loss, cottonmouth, panic, heart strain, a hard crash, and strong withdrawal.",
+    "UI_trait_Drugzz_CrackDependent": "Crack Dependent",
+    "UI_trait_Drugzz_CrackDependentDesc": "Starts with a pipe, two rocks, and a lighter and already knows how to load a crack pipe. The rush is immediate, but dependence is severe; coughing, panic, overdose, exhaustion, depression, and cravings follow.",
+    "UI_trait_Drugzz_MethDependent": "Meth Dependent",
+    "UI_trait_Drugzz_MethDependentDesc": "Starts with meth, a pipe, and a lighter and already knows how to load a meth pipe. Long energy and alertness are offset by overheating, tremors, paranoia-like panic, dehydration, sleep debt, severe withdrawal, and high overdose risk.",
+    "UI_trait_Drugzz_ClubRegular": "Club Regular",
+    "UI_trait_Drugzz_ClubRegularDesc": "Starts with molly, ecstasy, and water. Mood and energy rise quickly, but dehydration, overheating, nausea, jaw pain, tolerance, fatigue, and a low comedown are familiar.",
+    "UI_trait_Drugzz_PrescriptionDependent": "Prescription Stimulant Dependent",
+    "UI_trait_Drugzz_PrescriptionDependentDesc": "Starts with Adderall and an established tolerance. Focus and energy improve temporarily, followed by appetite loss, anxiety, cottonmouth, poor rest, fatigue, and withdrawal.",
+    "UI_prof_Drugzz_DrugDealer": "Drug Dealer",
+    "UI_prof_Drugzz_DrugDealerDesc": "A discreet survivor with street contacts, contraband knowledge, and experience moving unseen. Starts with all three master guides, a small mixed stash, baggies, seeds, and a lighter."
+}

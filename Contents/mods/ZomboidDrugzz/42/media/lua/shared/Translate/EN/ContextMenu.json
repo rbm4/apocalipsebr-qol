@@ -1,0 +1,14 @@
+{
+    "ContextMenu_Drugzz": "Cannabis & Contraband",
+    "ContextMenu_Drugzz_QuickPrepare": "Quick Prepare",
+    "ContextMenu_Drugzz_Smoke": "Smoke %1",
+    "ContextMenu_Drugzz_Sniff": "Sniff %1",
+    "ContextMenu_Drugzz_Take": "Take %1",
+    "ContextMenu_Drugzz_Dab": "Dab %1",
+    "ContextMenu_Drugzz_Vape": "Vape %1",
+    "ContextMenu_Drugzz_Eat": "Eat %1",
+    "ContextMenu_Drugzz_Use": "Use %1",
+    "ContextMenu_Drugzz_Empty": "This item is empty.",
+    "ContextMenu_Drugzz_Requires": "Requires: %1",
+    "ContextMenu_Drugzz_MissingUseRequirement": "Requires the appropriate ignition source, battery, or supporting device."
+}

@@ -1,0 +1,20 @@
+{
+    "UI_trait_Drugzz_Stoner":  "Maconheiro",
+    "UI_trait_Drugzz_StonerDesc":  "Um habito prolongado de cannabis. Comeca com dois baseados e um isqueiro, e sabe moer flor e enrolar baseados ou blunts. Cannabis causa menos pAnico, mas vocA comeAa tolerante e dependente; abstinAncia traz irritabilidade, humor baixo, descanso ruim e ansiedade.",
+    "UI_trait_Drugzz_CannabisConnoisseur":  "Conhecedor de Cannabis",
+    "UI_trait_Drugzz_CannabisConnoisseurDesc":  "Experiente com cultivo e dosagem de cannabis. Comeca com o manual avanAado e trAs variedades clAssicas de sementes. Efeitos colaterais e crescimento de tolerAncia da cannabis sAo reduzidos, enquanto efeitos Ateis duram um pouco mais.",
+    "UI_trait_Drugzz_Psychonaut":  "Psiconauta Experiente",
+    "UI_trait_Drugzz_PsychonautDesc":  "Experiente com cogumelos e LSD. Comeca com um de cada. Viagens ruins e nAusea sAo menos provAveis, mas efeitos psicodAlicos duram mais.",
+    "UI_trait_Drugzz_CocaineDependent":  "Dependente de CocaAna",
+    "UI_trait_Drugzz_CocaineDependentDesc":  "Comeca com um saquinho de cocaAna e alta tolerAncia a estimulantes. Energia breve vem com perda de apetite, boca seca, pAnico, tensAo cardAaca, uma queda pesada e abstinAncia forte.",
+    "UI_trait_Drugzz_CrackDependent":  "Dependente de Crack",
+    "UI_trait_Drugzz_CrackDependentDesc":  "Comeca com um cachimbo, duas pedras e um isqueiro, e jA sabe carregar um cachimbo de crack. A onda A imediata, mas a dependAncia A severa; tosse, pAnico, overdose, exaustAo, depressAo e fissura vAm depois.",
+    "UI_trait_Drugzz_MethDependent":  "Dependente de Metanfetamina",
+    "UI_trait_Drugzz_MethDependentDesc":  "Comeca com metanfetamina, um cachimbo e um isqueiro, e jA sabe carregar um cachimbo de metanfetamina. Energia longa e alerta sAo compensados por superaquecimento, tremores, pAnico parecido com paranoia, desidrataAAo, dAvida de sono, abstinAncia severa e alto risco de overdose.",
+    "UI_trait_Drugzz_ClubRegular":  "Frequentador de Balada",
+    "UI_trait_Drugzz_ClubRegularDesc":  "Comeca com molly, ecstasy e Agua. Humor e energia sobem rApido, mas desidrataAAo, superaquecimento, nAusea, dor na mandAbula, tolerAncia, fadiga e uma queda pesada jA sAo familiares.",
+    "UI_trait_Drugzz_PrescriptionDependent":  "Dependente de Estimulantes Prescritos",
+    "UI_trait_Drugzz_PrescriptionDependentDesc":  "Comeca com Adderall e uma tolerAncia estabelecida. Foco e energia melhoram temporariamente, seguidos por perda de apetite, ansiedade, boca seca, descanso ruim, fadiga e abstinAncia.",
+    "UI_prof_Drugzz_DrugDealer":  "Traficante",
+    "UI_prof_Drugzz_DrugDealerDesc":  "Um sobrevivente discreto com contatos de rua, conhecimento de contrabando e experiAncia em se mover sem ser visto. Comeca com os trAs guias mestres, um pequeno estoque misto, saquinhos, sementes e um isqueiro."
+}

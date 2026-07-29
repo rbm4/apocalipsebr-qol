@@ -1,0 +1,771 @@
+module ZDrugzz
+{
+    model Drugzz_MushroomGrowKit
+    {
+        mesh = WorldItems/Drugzz/jar,
+        texture = WorldItems/Drugzz/MushroomGrowKit,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_CocaNursery
+    {
+        mesh = WorldItems/Drugzz/tray,
+        texture = WorldItems/Drugzz/CocaNursery,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_GlassPipe
+    {
+        mesh = WorldItems/Drugzz/pipe,
+        texture = WorldItems/Drugzz/GlassPipe,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0068 0.0922 0.0166,
+            rotate = -95.7753 5.3524 0.0,
+            scale = 0.72,
+        }
+    }
+
+    model Drugzz_CrackPipe
+    {
+        mesh = WorldItems/Drugzz/pipe,
+        texture = WorldItems/Drugzz/CrackPipe,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0068 0.0922 0.0166,
+            rotate = -95.7753 5.3524 0.0,
+            scale = 0.72,
+        }
+    }
+
+    model Drugzz_ChemicalPrecursor
+    {
+        mesh = WorldItems/Drugzz/solvent,
+        texture = WorldItems/Drugzz/ChemicalPrecursor,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_LabSolvent
+    {
+        mesh = WorldItems/Drugzz/solvent,
+        texture = WorldItems/Drugzz/LabSolvent,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_MethPipe
+    {
+        mesh = WorldItems/Drugzz/pipe,
+        texture = WorldItems/Drugzz/MethPipe,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0068 0.0922 0.0166,
+            rotate = -95.7753 5.3524 0.0,
+            scale = 0.72,
+        }
+    }
+
+    model Drugzz_GlassBong
+    {
+        mesh = WorldItems/Drugzz/bong,
+        texture = WorldItems/Drugzz/GlassBong,
+        scale = 0.85,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_PackedBongSativa
+    {
+        mesh = WorldItems/Drugzz/bong,
+        texture = WorldItems/Drugzz/PackedBongSativa,
+        scale = 0.85,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_PackedBongIndica
+    {
+        mesh = WorldItems/Drugzz/bong,
+        texture = WorldItems/Drugzz/PackedBongIndica,
+        scale = 0.85,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_PackedBongHybrid
+    {
+        mesh = WorldItems/Drugzz/bong,
+        texture = WorldItems/Drugzz/PackedBongHybrid,
+        scale = 0.85,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_DabRig
+    {
+        mesh = WorldItems/Drugzz/dab_rig,
+        texture = WorldItems/Drugzz/DabRig,
+        scale = 0.88,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_PortableDabTorch
+    {
+        mesh = WorldItems/Drugzz/torch,
+        texture = WorldItems/Drugzz/PortableDabTorch,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_EmptyPortableDabTorch
+    {
+        mesh = WorldItems/Drugzz/torch,
+        texture = WorldItems/Drugzz/EmptyPortableDabTorch,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_ElectronicDabRig
+    {
+        mesh = WorldItems/Drugzz/erig,
+        texture = WorldItems/Drugzz/ElectronicDabRig,
+        scale = 0.72,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_ERigBattery
+    {
+        mesh = WorldItems/Drugzz/battery,
+        texture = WorldItems/Drugzz/ERigBattery,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_EmptyERigBattery
+    {
+        mesh = WorldItems/Drugzz/battery,
+        texture = WorldItems/Drugzz/EmptyERigBattery,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_DabTool
+    {
+        mesh = WorldItems/Drugzz/dab_tool,
+        texture = WorldItems/Drugzz/DabTool,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_RosinPress
+    {
+        mesh = WorldItems/Drugzz/press,
+        texture = WorldItems/Drugzz/RosinPress,
+        scale = 0.85,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_ExtractionTube
+    {
+        mesh = WorldItems/Drugzz/tube,
+        texture = WorldItems/Drugzz/ExtractionTube,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_DistillationKit
+    {
+        mesh = WorldItems/Drugzz/distill,
+        texture = WorldItems/Drugzz/DistillationKit,
+        scale = 0.85,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_FoodGradeSolvent
+    {
+        mesh = WorldItems/Drugzz/solvent,
+        texture = WorldItems/Drugzz/FoodGradeSolvent,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_DistillateSyringe
+    {
+        mesh = WorldItems/Drugzz/syringe,
+        texture = WorldItems/Drugzz/DistillateSyringe,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.04 0.005,
+            rotate = 0.0 20.0 90.0,
+        }
+    }
+
+    model Drugzz_LoadedDabRigRosin
+    {
+        mesh = WorldItems/Drugzz/dab_rig,
+        texture = WorldItems/Drugzz/LoadedDabRigRosin,
+        scale = 0.88,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_LoadedDabRigShatter
+    {
+        mesh = WorldItems/Drugzz/dab_rig,
+        texture = WorldItems/Drugzz/LoadedDabRigShatter,
+        scale = 0.88,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_LoadedDabRigLiveResin
+    {
+        mesh = WorldItems/Drugzz/dab_rig,
+        texture = WorldItems/Drugzz/LoadedDabRigLiveResin,
+        scale = 0.88,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_LoadedDabRigDistillate
+    {
+        mesh = WorldItems/Drugzz/dab_rig,
+        texture = WorldItems/Drugzz/LoadedDabRigDistillate,
+        scale = 0.88,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_ElectronicDabRigRosin
+    {
+        mesh = WorldItems/Drugzz/erig,
+        texture = WorldItems/Drugzz/ElectronicDabRigRosin,
+        scale = 0.72,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_ElectronicDabRigShatter
+    {
+        mesh = WorldItems/Drugzz/erig,
+        texture = WorldItems/Drugzz/ElectronicDabRigShatter,
+        scale = 0.72,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_ElectronicDabRigLiveResin
+    {
+        mesh = WorldItems/Drugzz/erig,
+        texture = WorldItems/Drugzz/ElectronicDabRigLiveResin,
+        scale = 0.72,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_ElectronicDabRigDistillate
+    {
+        mesh = WorldItems/Drugzz/erig,
+        texture = WorldItems/Drugzz/ElectronicDabRigDistillate,
+        scale = 0.72,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0169 0.0412 -0.0369,
+            rotate = 170.7252 46.9881 -167.2955,
+            scale = 0.792,
+        }
+    }
+
+    model Drugzz_VapeBattery
+    {
+        mesh = WorldItems/Drugzz/vape,
+        texture = WorldItems/Drugzz/VapeBattery,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.05 0.005,
+            rotate = 0.0 20.0 90.5,
+            scale = 0.65,
+        }
+    }
+
+    model Drugzz_EmptyTHCCartridge
+    {
+        mesh = WorldItems/Drugzz/cartridge,
+        texture = WorldItems/Drugzz/EmptyTHCCartridge,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.05 0.005,
+            rotate = 0.0 20.0 90.5,
+            scale = 0.65,
+        }
+    }
+
+    model Drugzz_THCCartridge
+    {
+        mesh = WorldItems/Drugzz/cartridge,
+        texture = WorldItems/Drugzz/THCCartridge,
+        scale = 1.0,
+        attachment world
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = 0.0 0.0 0.0,
+            rotate = 0.0 0.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = 0.0 -0.05 0.005,
+            rotate = 0.0 20.0 90.5,
+            scale = 0.65,
+        }
+    }
+
+}

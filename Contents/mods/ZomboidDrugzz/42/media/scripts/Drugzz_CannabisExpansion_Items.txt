@@ -1,0 +1,1193 @@
+module ZDrugzz
+{
+    imports
+    {
+        Base
+    }
+
+    item SourDieselSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzSourDieselSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_SourDieselSeeds,
+    }
+
+    item SourDieselHarvest
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.15,
+        Icon = DrugzzSourDieselHarvest,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        Tooltip = Tooltip_Drugzz_SourDieselHarvest,
+    }
+
+    item SourDieselBudDried
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzSourDieselBud,
+        Tooltip = Tooltip_Drugzz_SourDieselBud,
+    }
+
+    item SourDieselJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzSourDieselJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 460,
+        InverseCoughProbability = 12,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_SourDieselJoint,
+    }
+
+    item DurbanPoisonSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzDurbanPoisonSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_DurbanPoisonSeeds,
+    }
+
+    item DurbanPoisonHarvest
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.15,
+        Icon = DrugzzDurbanPoisonHarvest,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        Tooltip = Tooltip_Drugzz_DurbanPoisonHarvest,
+    }
+
+    item DurbanPoisonBudDried
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzDurbanPoisonBud,
+        Tooltip = Tooltip_Drugzz_DurbanPoisonBud,
+    }
+
+    item DurbanPoisonJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzDurbanPoisonJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 460,
+        InverseCoughProbability = 12,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_DurbanPoisonJoint,
+    }
+
+    item JackHererSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzJackHererSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_JackHererSeeds,
+    }
+
+    item JackHererHarvest
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.15,
+        Icon = DrugzzJackHererHarvest,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        Tooltip = Tooltip_Drugzz_JackHererHarvest,
+    }
+
+    item JackHererBudDried
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzJackHererBud,
+        Tooltip = Tooltip_Drugzz_JackHererBud,
+    }
+
+    item JackHererJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzJackHererJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 460,
+        InverseCoughProbability = 12,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_JackHererJoint,
+    }
+
+    item NorthernLightsSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzNorthernLightsSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_NorthernLightsSeeds,
+    }
+
+    item NorthernLightsHarvest
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.15,
+        Icon = DrugzzNorthernLightsHarvest,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        Tooltip = Tooltip_Drugzz_NorthernLightsHarvest,
+    }
+
+    item NorthernLightsBudDried
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzNorthernLightsBud,
+        Tooltip = Tooltip_Drugzz_NorthernLightsBud,
+    }
+
+    item NorthernLightsJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzNorthernLightsJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 460,
+        InverseCoughProbability = 12,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_NorthernLightsJoint,
+    }
+
+    item GranddaddyPurpleSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzGranddaddyPurpleSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_GranddaddyPurpleSeeds,
+    }
+
+    item GranddaddyPurpleHarvest
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.15,
+        Icon = DrugzzGranddaddyPurpleHarvest,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        Tooltip = Tooltip_Drugzz_GranddaddyPurpleHarvest,
+    }
+
+    item GranddaddyPurpleBudDried
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzGranddaddyPurpleBud,
+        Tooltip = Tooltip_Drugzz_GranddaddyPurpleBud,
+    }
+
+    item GranddaddyPurpleJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzGranddaddyPurpleJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 460,
+        InverseCoughProbability = 12,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_GranddaddyPurpleJoint,
+    }
+
+    item BubbaKushSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzBubbaKushSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_BubbaKushSeeds,
+    }
+
+    item BubbaKushHarvest
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.15,
+        Icon = DrugzzBubbaKushHarvest,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        Tooltip = Tooltip_Drugzz_BubbaKushHarvest,
+    }
+
+    item BubbaKushBudDried
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzBubbaKushBud,
+        Tooltip = Tooltip_Drugzz_BubbaKushBud,
+    }
+
+    item BubbaKushJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzBubbaKushJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 460,
+        InverseCoughProbability = 12,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_BubbaKushJoint,
+    }
+
+    item OGKushSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzOGKushSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_OGKushSeeds,
+    }
+
+    item OGKushHarvest
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.15,
+        Icon = DrugzzOGKushHarvest,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        Tooltip = Tooltip_Drugzz_OGKushHarvest,
+    }
+
+    item OGKushBudDried
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzOGKushBud,
+        Tooltip = Tooltip_Drugzz_OGKushBud,
+    }
+
+    item OGKushJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzOGKushJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 460,
+        InverseCoughProbability = 12,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_OGKushJoint,
+    }
+
+    item WhiteWidowSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzWhiteWidowSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_WhiteWidowSeeds,
+    }
+
+    item WhiteWidowHarvest
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.15,
+        Icon = DrugzzWhiteWidowHarvest,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        Tooltip = Tooltip_Drugzz_WhiteWidowHarvest,
+    }
+
+    item WhiteWidowBudDried
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzWhiteWidowBud,
+        Tooltip = Tooltip_Drugzz_WhiteWidowBud,
+    }
+
+    item WhiteWidowJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzWhiteWidowJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 460,
+        InverseCoughProbability = 12,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_WhiteWidowJoint,
+    }
+
+    item BlueDreamSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzBlueDreamSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_BlueDreamSeeds,
+    }
+
+    item BlueDreamHarvest
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.15,
+        Icon = DrugzzBlueDreamHarvest,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        Tooltip = Tooltip_Drugzz_BlueDreamHarvest,
+    }
+
+    item BlueDreamBudDried
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzBlueDreamBud,
+        Tooltip = Tooltip_Drugzz_BlueDreamBud,
+    }
+
+    item BlueDreamJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzBlueDreamJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 460,
+        InverseCoughProbability = 12,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_BlueDreamJoint,
+    }
+
+    item GSCSeeds
+    {
+        ItemType = base:normal,
+        DisplayCategory = Gardening,
+        Weight = 0.01,
+        Icon = DrugzzGSCSeeds,
+        Tags = base:isseed,
+        Tooltip = Tooltip_Drugzz_GSCSeeds,
+    }
+
+    item GSCHarvest
+    {
+        ItemType = base:food,
+        DisplayCategory = Gardening,
+        Weight = 0.15,
+        Icon = DrugzzGSCHarvest,
+        HungerChange = 0,
+        CantEat = true,
+        CantBeFrozen = true,
+        DaysFresh = 3,
+        DaysTotallyRotten = 7,
+        Tooltip = Tooltip_Drugzz_GSCHarvest,
+    }
+
+    item GSCBudDried
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzGSCBud,
+        Tooltip = Tooltip_Drugzz_GSCBud,
+    }
+
+    item GSCJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzGSCJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 460,
+        InverseCoughProbability = 12,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_GSCJoint,
+    }
+
+    item GlassBong
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.45,
+        Icon = DrugzzBong,
+        StaticModel = Drugzz_GlassBong,
+        WorldStaticModel = Drugzz_GlassBong,
+        Tooltip = Tooltip_Drugzz_GlassBong,
+    }
+
+    item PackedBongSativa
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.47,
+        Icon = DrugzzBongSativa,
+        StaticModel = Drugzz_PackedBongSativa,
+        WorldStaticModel = Drugzz_PackedBongSativa,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = DrugzzBong,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 420,
+        InverseCoughProbability = 6,
+        InverseCoughProbabilitySmoker = 3,
+        ReplaceOnUse = ZDrugzz.GlassBong,
+        Tooltip = Tooltip_Drugzz_PackedBongSativa,
+    }
+
+    item PackedBongIndica
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.47,
+        Icon = DrugzzBongIndica,
+        StaticModel = Drugzz_PackedBongIndica,
+        WorldStaticModel = Drugzz_PackedBongIndica,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = DrugzzBong,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 420,
+        InverseCoughProbability = 6,
+        InverseCoughProbabilitySmoker = 3,
+        ReplaceOnUse = ZDrugzz.GlassBong,
+        Tooltip = Tooltip_Drugzz_PackedBongIndica,
+    }
+
+    item PackedBongHybrid
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.47,
+        Icon = DrugzzBongHybrid,
+        StaticModel = Drugzz_PackedBongHybrid,
+        WorldStaticModel = Drugzz_PackedBongHybrid,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = DrugzzBong,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 420,
+        InverseCoughProbability = 6,
+        InverseCoughProbabilitySmoker = 3,
+        ReplaceOnUse = ZDrugzz.GlassBong,
+        Tooltip = Tooltip_Drugzz_PackedBongHybrid,
+    }
+
+    item DabRig
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.5,
+        Icon = DrugzzDabRig,
+        StaticModel = Drugzz_DabRig,
+        WorldStaticModel = Drugzz_DabRig,
+        Tooltip = Tooltip_Drugzz_DabRig,
+    }
+
+    item PortableDabTorch
+    {
+        ItemType = base:drainable,
+        DisplayCategory = Tool,
+        Weight = 0.45,
+        WeightEmpty = 0.25,
+        UseDelta = 0.1,
+        UseWhileEquipped = false,
+        KeepOnDeplete = false,
+        ReplaceOnDeplete = ZDrugzz.EmptyPortableDabTorch,
+        Icon = DrugzzDabTorch,
+        StaticModel = Drugzz_PortableDabTorch,
+        WorldStaticModel = Drugzz_PortableDabTorch,
+        Tooltip = Tooltip_Drugzz_PortableDabTorch,
+    }
+
+    item EmptyPortableDabTorch
+    {
+        ItemType = base:normal,
+        DisplayCategory = Tool,
+        Weight = 0.25,
+        Icon = DrugzzDabTorchEmpty,
+        StaticModel = Drugzz_EmptyPortableDabTorch,
+        WorldStaticModel = Drugzz_EmptyPortableDabTorch,
+        Tooltip = Tooltip_Drugzz_EmptyPortableDabTorch,
+    }
+
+    item ElectronicDabRig
+    {
+        ItemType = base:normal,
+        DisplayCategory = Electronics,
+        Weight = 0.65,
+        Icon = DrugzzERig,
+        StaticModel = Drugzz_ElectronicDabRig,
+        WorldStaticModel = Drugzz_ElectronicDabRig,
+        Tooltip = Tooltip_Drugzz_ElectronicDabRig,
+    }
+
+    item ERigBattery
+    {
+        ItemType = base:drainable,
+        DisplayCategory = Electronics,
+        Weight = 0.12,
+        WeightEmpty = 0.08,
+        UseDelta = 0.1,
+        UseWhileEquipped = false,
+        ReplaceOnDeplete = ZDrugzz.EmptyERigBattery,
+        Icon = DrugzzERigBattery,
+        StaticModel = Drugzz_ERigBattery,
+        WorldStaticModel = Drugzz_ERigBattery,
+        Tooltip = Tooltip_Drugzz_ERigBattery,
+    }
+
+    item EmptyERigBattery
+    {
+        ItemType = base:normal,
+        DisplayCategory = Electronics,
+        Weight = 0.08,
+        Icon = DrugzzERigBatteryEmpty,
+        StaticModel = Drugzz_EmptyERigBattery,
+        WorldStaticModel = Drugzz_EmptyERigBattery,
+        Tooltip = Tooltip_Drugzz_EmptyERigBattery,
+    }
+
+    item DabTool
+    {
+        ItemType = base:normal,
+        DisplayCategory = Tool,
+        Weight = 0.05,
+        Icon = DrugzzDabTool,
+        StaticModel = Drugzz_DabTool,
+        WorldStaticModel = Drugzz_DabTool,
+        Tooltip = Tooltip_Drugzz_DabTool,
+    }
+
+    item RosinPress
+    {
+        ItemType = base:normal,
+        DisplayCategory = Tool,
+        Weight = 3.0,
+        Icon = DrugzzRosinPress,
+        StaticModel = Drugzz_RosinPress,
+        WorldStaticModel = Drugzz_RosinPress,
+        Tooltip = Tooltip_Drugzz_RosinPress,
+    }
+
+    item ExtractionTube
+    {
+        ItemType = base:normal,
+        DisplayCategory = Tool,
+        Weight = 0.8,
+        Icon = DrugzzExtractionTube,
+        StaticModel = Drugzz_ExtractionTube,
+        WorldStaticModel = Drugzz_ExtractionTube,
+        Tooltip = Tooltip_Drugzz_ExtractionTube,
+    }
+
+    item DistillationKit
+    {
+        ItemType = base:normal,
+        DisplayCategory = Tool,
+        Weight = 2.0,
+        Icon = DrugzzDistillationKit,
+        StaticModel = Drugzz_DistillationKit,
+        WorldStaticModel = Drugzz_DistillationKit,
+        Tooltip = Tooltip_Drugzz_DistillationKit,
+    }
+
+    item FoodGradeSolvent
+    {
+        ItemType = base:drainable,
+        DisplayCategory = Drugzz,
+        Weight = 0.5,
+        UseDelta = 0.1,
+        Icon = DrugzzFoodGradeSolvent,
+        StaticModel = Drugzz_FoodGradeSolvent,
+        WorldStaticModel = Drugzz_FoodGradeSolvent,
+        Tooltip = Tooltip_Drugzz_FoodGradeSolvent,
+    }
+
+    item Kief
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.03,
+        Icon = DrugzzKief,
+        Tooltip = Tooltip_Drugzz_Kief,
+    }
+
+    item Hash
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        Icon = DrugzzHash,
+        Tooltip = Tooltip_Drugzz_Hash,
+    }
+
+    item KiefJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.01,
+        Icon = DrugzzKiefJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 500,
+        InverseCoughProbability = 9,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_KiefJoint,
+    }
+
+    item HashJoint
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.015,
+        Icon = DrugzzHashJoint,
+        StaticModel = CigaretteRolled_Lit,
+        WorldStaticModel = CigaretteRolled,
+        CantBeFrozen = true,
+        CustomContextMenu = Smoke,
+        EatType = Cigarettes,
+        OnEat = Drugzz.OnConsume,
+        RequireInHandOrInventory = Base.CandleLit/Base.Matches/Base.Matchbox/Base.LighterDisposable/Base.Lighter/Base.LighterBBQ/Base.Lighter_Battery,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 540,
+        InverseCoughProbability = 8,
+        InverseCoughProbabilitySmoker = 3,
+        Tooltip = Tooltip_Drugzz_HashJoint,
+    }
+
+    item Rosin
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.03,
+        Icon = DrugzzRosin,
+        Tooltip = Tooltip_Drugzz_Rosin,
+    }
+
+    item Shatter
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.03,
+        Icon = DrugzzShatter,
+        Tooltip = Tooltip_Drugzz_Shatter,
+    }
+
+    item LiveResin
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.03,
+        Icon = DrugzzLiveResin,
+        Tooltip = Tooltip_Drugzz_LiveResin,
+    }
+
+    item DistillateSyringe
+    {
+        ItemType = base:drainable,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        UseDelta = 0.25,
+        Icon = DrugzzDistillate,
+        StaticModel = Drugzz_DistillateSyringe,
+        WorldStaticModel = Drugzz_DistillateSyringe,
+        Tooltip = Tooltip_Drugzz_DistillateSyringe,
+    }
+
+    item LoadedDabRigRosin
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.52,
+        Icon = DrugzzDabRigRosin,
+        StaticModel = Drugzz_LoadedDabRigRosin,
+        WorldStaticModel = Drugzz_LoadedDabRigRosin,
+        CantBeFrozen = true,
+        CustomContextMenu = Dab,
+        EatType = DrugzzDabRig,
+        OnEat = Drugzz.OnConsume,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 380,
+        InverseCoughProbability = 5,
+        InverseCoughProbabilitySmoker = 3,
+        ReplaceOnUse = ZDrugzz.DabRig,
+        Tooltip = Tooltip_Drugzz_LoadedDabRigRosin,
+    }
+
+    item LoadedDabRigShatter
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.52,
+        Icon = DrugzzDabRigShatter,
+        StaticModel = Drugzz_LoadedDabRigShatter,
+        WorldStaticModel = Drugzz_LoadedDabRigShatter,
+        CantBeFrozen = true,
+        CustomContextMenu = Dab,
+        EatType = DrugzzDabRig,
+        OnEat = Drugzz.OnConsume,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 380,
+        InverseCoughProbability = 4,
+        InverseCoughProbabilitySmoker = 2,
+        ReplaceOnUse = ZDrugzz.DabRig,
+        Tooltip = Tooltip_Drugzz_LoadedDabRigShatter,
+    }
+
+    item LoadedDabRigLiveResin
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.52,
+        Icon = DrugzzDabRigLiveResin,
+        StaticModel = Drugzz_LoadedDabRigLiveResin,
+        WorldStaticModel = Drugzz_LoadedDabRigLiveResin,
+        CantBeFrozen = true,
+        CustomContextMenu = Dab,
+        EatType = DrugzzDabRig,
+        OnEat = Drugzz.OnConsume,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 380,
+        InverseCoughProbability = 5,
+        InverseCoughProbabilitySmoker = 3,
+        ReplaceOnUse = ZDrugzz.DabRig,
+        Tooltip = Tooltip_Drugzz_LoadedDabRigLiveResin,
+    }
+
+    item LoadedDabRigDistillate
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.52,
+        Icon = DrugzzDabRigDistillate,
+        StaticModel = Drugzz_LoadedDabRigDistillate,
+        WorldStaticModel = Drugzz_LoadedDabRigDistillate,
+        CantBeFrozen = true,
+        CustomContextMenu = Dab,
+        EatType = DrugzzDabRig,
+        OnEat = Drugzz.OnConsume,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 380,
+        InverseCoughProbability = 4,
+        InverseCoughProbabilitySmoker = 2,
+        ReplaceOnUse = ZDrugzz.DabRig,
+        Tooltip = Tooltip_Drugzz_LoadedDabRigDistillate,
+    }
+
+    item ElectronicDabRigRosin
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.67,
+        Icon = DrugzzERigRosin,
+        StaticModel = Drugzz_ElectronicDabRigRosin,
+        WorldStaticModel = Drugzz_ElectronicDabRigRosin,
+        CantBeFrozen = true,
+        CustomContextMenu = Dab,
+        EatType = DrugzzERig,
+        OnEat = Drugzz.OnConsume,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 300,
+        InverseCoughProbability = 10,
+        InverseCoughProbabilitySmoker = 5,
+        ReplaceOnUse = ZDrugzz.ElectronicDabRig,
+        Tooltip = Tooltip_Drugzz_ElectronicDabRigRosin,
+    }
+
+    item ElectronicDabRigShatter
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.67,
+        Icon = DrugzzERigShatter,
+        StaticModel = Drugzz_ElectronicDabRigShatter,
+        WorldStaticModel = Drugzz_ElectronicDabRigShatter,
+        CantBeFrozen = true,
+        CustomContextMenu = Dab,
+        EatType = DrugzzERig,
+        OnEat = Drugzz.OnConsume,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 300,
+        InverseCoughProbability = 8,
+        InverseCoughProbabilitySmoker = 4,
+        ReplaceOnUse = ZDrugzz.ElectronicDabRig,
+        Tooltip = Tooltip_Drugzz_ElectronicDabRigShatter,
+    }
+
+    item ElectronicDabRigLiveResin
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.67,
+        Icon = DrugzzERigLiveResin,
+        StaticModel = Drugzz_ElectronicDabRigLiveResin,
+        WorldStaticModel = Drugzz_ElectronicDabRigLiveResin,
+        CantBeFrozen = true,
+        CustomContextMenu = Dab,
+        EatType = DrugzzERig,
+        OnEat = Drugzz.OnConsume,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 300,
+        InverseCoughProbability = 9,
+        InverseCoughProbabilitySmoker = 5,
+        ReplaceOnUse = ZDrugzz.ElectronicDabRig,
+        Tooltip = Tooltip_Drugzz_ElectronicDabRigLiveResin,
+    }
+
+    item ElectronicDabRigDistillate
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.67,
+        Icon = DrugzzERigDistillate,
+        StaticModel = Drugzz_ElectronicDabRigDistillate,
+        WorldStaticModel = Drugzz_ElectronicDabRigDistillate,
+        CantBeFrozen = true,
+        CustomContextMenu = Dab,
+        EatType = DrugzzERig,
+        OnEat = Drugzz.OnConsume,
+        HungerChange = 0,
+        Tags = base:useall;base:smokable,
+        Eattime = 300,
+        InverseCoughProbability = 8,
+        InverseCoughProbabilitySmoker = 4,
+        ReplaceOnUse = ZDrugzz.ElectronicDabRig,
+        Tooltip = Tooltip_Drugzz_ElectronicDabRigDistillate,
+    }
+
+    item VapeBattery
+    {
+        ItemType = base:normal,
+        DisplayCategory = Electronics,
+        Weight = 0.08,
+        Icon = DrugzzVapeBattery,
+        StaticModel = Drugzz_VapeBattery,
+        WorldStaticModel = Drugzz_VapeBattery,
+        Tooltip = Tooltip_Drugzz_VapeBattery,
+    }
+
+    item EmptyTHCCartridge
+    {
+        ItemType = base:normal,
+        DisplayCategory = Drugzz,
+        Weight = 0.02,
+        Icon = DrugzzEmptyCart,
+        StaticModel = Drugzz_EmptyTHCCartridge,
+        WorldStaticModel = Drugzz_EmptyTHCCartridge,
+        Tooltip = Tooltip_Drugzz_EmptyTHCCartridge,
+    }
+
+    item THCCartridge
+    {
+        ItemType = base:drainable,
+        DisplayCategory = Drugzz,
+        Weight = 0.04,
+        UseDelta = 0.125,
+        UseWhileEquipped = false,
+        Icon = DrugzzTHCCart,
+        StaticModel = Drugzz_VapeBattery,
+        WorldStaticModel = Drugzz_THCCartridge,
+        Tags = base:consumable;base:smokable,
+        EatType = DrugzzVape,
+        OnEat = Drugzz.OnConsume,
+        Eattime = 300,
+        RequireInHandOrInventory = ZDrugzz.VapeBattery,
+        CustomContextMenu = Vape,
+        ReplaceOnDeplete = ZDrugzz.EmptyTHCCartridge,
+        Tooltip = Tooltip_Drugzz_THCCartridge,
+    }
+
+    item Cannabutter
+    {
+        ItemType = base:normal,
+        DisplayCategory = Food,
+        Weight = 0.2,
+        Icon = DrugzzCannabutter,
+        Tooltip = Tooltip_Drugzz_Cannabutter,
+    }
+
+    item CannabisOil
+    {
+        ItemType = base:drainable,
+        DisplayCategory = Food,
+        Weight = 0.3,
+        UseDelta = 0.25,
+        Icon = DrugzzCannabisOil,
+        Tooltip = Tooltip_Drugzz_CannabisOil,
+    }
+
+    item SpaceCookie
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.08,
+        Icon = DrugzzSpaceCookie,
+        HungerChange = -6,
+        UnhappyChange = -6,
+        Calories = 170,
+        Carbohydrates = 25,
+        Lipids = 8,
+        Proteins = 2,
+        OnEat = Drugzz.OnConsume,
+        CustomEatSound = EatingCrispy,
+        Tooltip = Tooltip_Drugzz_SpaceCookie,
+    }
+
+    item CannabisGummies
+    {
+        ItemType = base:food,
+        DisplayCategory = Drugzz,
+        Weight = 0.03,
+        Icon = DrugzzGummies,
+        HungerChange = -1,
+        UnhappyChange = -3,
+        Calories = 35,
+        Carbohydrates = 9,
+        OnEat = Drugzz.OnConsume,
+        CustomEatSound = EatingCrispy,
+        Tooltip = Tooltip_Drugzz_CannabisGummies,
+    }
+
+    item CultivatorsAlmanac
+    {
+        ItemType = base:literature,
+        DisplayCategory = Literature,
+        Weight = 0.45,
+        Icon = DrugzzCultivatorAlmanac,
+        BoredomChange = -22,
+        StressChange = -8,
+        LearnedRecipes = Drugzz_TrimCannabis;Drugzz_DryCannabis;Drugzz_GrindCannabis;Drugzz_RollJoint;Drugzz_RollBlunt;Drugzz_CureSourDiesel;Drugzz_RollSourDieselJoint;Drugzz_CureDurbanPoison;Drugzz_RollDurbanPoisonJoint;Drugzz_CureJackHerer;Drugzz_RollJackHererJoint;Drugzz_CureNorthernLights;Drugzz_RollNorthernLightsJoint;Drugzz_CureGranddaddyPurple;Drugzz_RollGranddaddyPurpleJoint;Drugzz_CureBubbaKush;Drugzz_RollBubbaKushJoint;Drugzz_CureOGKush;Drugzz_RollOGKushJoint;Drugzz_CureWhiteWidow;Drugzz_RollWhiteWidowJoint;Drugzz_CureBlueDream;Drugzz_RollBlueDreamJoint;Drugzz_CureGSC;Drugzz_RollGSCJoint;Drugzz_PackSativaBong;Drugzz_PackIndicaBong;Drugzz_PackHybridBong,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+        Tags = base:magazine,
+    }
+
+    item CannabisKitchenCookbook
+    {
+        ItemType = base:literature,
+        DisplayCategory = Literature,
+        Weight = 0.4,
+        Icon = DrugzzCannabisCookbook,
+        BoredomChange = -25,
+        StressChange = -10,
+        LearnedRecipes = Drugzz_BakeWeedBrownie;Drugzz_MakeCannabutter;Drugzz_MakeCannabisOil;Drugzz_BakeCannabutterBrownies;Drugzz_BakeSpaceCookies;Drugzz_MakeCannabisGummies,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+        Tags = base:magazine,
+    }
+
+    item ConcentrateExtractionManual
+    {
+        ItemType = base:literature,
+        DisplayCategory = Literature,
+        Weight = 0.5,
+        Icon = DrugzzConcentrateManual,
+        BoredomChange = -18,
+        StressChange = -6,
+        LearnedRecipes = Drugzz_CraftExtractionTube;Drugzz_CraftRosinPress;Drugzz_CraftDistillationKit;Drugzz_CollectKief;Drugzz_PressHash;Drugzz_RollKiefJoint;Drugzz_RollHashJoint;Drugzz_PressRosin;Drugzz_ExtractShatter;Drugzz_ExtractLiveResin;Drugzz_RefineDistillate,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+        Tags = base:magazine,
+    }
+
+    item RigServiceManual
+    {
+        ItemType = base:literature,
+        DisplayCategory = Literature,
+        Weight = 0.5,
+        Icon = DrugzzRigServiceManual,
+        BoredomChange = -16,
+        StressChange = -5,
+        LearnedRecipes = Drugzz_CraftGlassBong;Drugzz_CraftDabRig;Drugzz_CraftPortableDabTorch;Drugzz_RefillPortableDabTorch;Drugzz_CraftElectronicDabRig;Drugzz_CraftERigBattery;Drugzz_RechargeERigBattery;Drugzz_CraftDabTool;Drugzz_CraftVapeBattery;Drugzz_CraftEmptyTHCCarts;Drugzz_LoadRosinDab;Drugzz_LoadShatterDab;Drugzz_LoadLiveResinDab;Drugzz_LoadDistillateDab;Drugzz_LoadRosinERig;Drugzz_LoadShatterERig;Drugzz_LoadLiveResinERig;Drugzz_LoadDistillateERig;Drugzz_FillTHCCartridge,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+        Tags = base:magazine,
+    }
+
+    item ControlledBotanicalsNotes
+    {
+        ItemType = base:literature,
+        DisplayCategory = Literature,
+        Weight = 0.35,
+        Icon = DrugzzBotanicalNotes,
+        BoredomChange = -20,
+        StressChange = -5,
+        LearnedRecipes = Drugzz_PrepareMushroomKit;Drugzz_HarvestMushroomKit;Drugzz_DryMushrooms;Drugzz_PrepareCocaNursery;Drugzz_HarvestCocaNursery,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+        Tags = base:magazine,
+    }
+
+    item CannabisCultureManual
+    {
+        ItemType = base:literature,
+        DisplayCategory = Literature,
+        Weight = 0.5,
+        Icon = DrugzzCannabisManual,
+        BoredomChange = -25,
+        StressChange = -10,
+        LearnedRecipes = Drugzz_CraftGlassBong;Drugzz_CraftDabRig;Drugzz_CraftPortableDabTorch;Drugzz_RefillPortableDabTorch;Drugzz_CraftElectronicDabRig;Drugzz_CraftERigBattery;Drugzz_RechargeERigBattery;Drugzz_CraftDabTool;Drugzz_CraftExtractionTube;Drugzz_CraftRosinPress;Drugzz_CraftDistillationKit;Drugzz_CraftVapeBattery;Drugzz_CraftEmptyTHCCarts;Drugzz_CollectKief;Drugzz_PressHash;Drugzz_RollKiefJoint;Drugzz_RollHashJoint;Drugzz_PressRosin;Drugzz_ExtractShatter;Drugzz_ExtractLiveResin;Drugzz_RefineDistillate;Drugzz_LoadRosinDab;Drugzz_LoadShatterDab;Drugzz_LoadLiveResinDab;Drugzz_LoadDistillateDab;Drugzz_LoadRosinERig;Drugzz_LoadShatterERig;Drugzz_LoadLiveResinERig;Drugzz_LoadDistillateERig;Drugzz_FillTHCCartridge;Drugzz_MakeCannabutter;Drugzz_MakeCannabisOil;Drugzz_BakeCannabutterBrownies;Drugzz_BakeSpaceCookies;Drugzz_MakeCannabisGummies,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+        Tags = base:magazine,
+    }
+}

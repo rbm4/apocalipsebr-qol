@@ -460,6 +460,6 @@ end
 -- Event Registration
 -----------------------------------------------------------
 
--- Events.EveryHour.Add(onPeriodicCheck)
+Events.EveryHours.Add(onPeriodicCheck)
 
 log("MM_MainServer module loaded — checking '" .. MIGRATION_FILENAME .. "' every minute")

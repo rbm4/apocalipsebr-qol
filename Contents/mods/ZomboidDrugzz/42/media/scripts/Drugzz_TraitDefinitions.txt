@@ -1,0 +1,82 @@
+module ZomboidDrugzz
+{
+    character_trait_definition zdrugzz:stoner
+    {
+        CharacterTrait = zdrugzz:stoner,
+        UIName = UI_trait_Drugzz_Stoner,
+        Cost = -4,
+        UIDescription = UI_trait_Drugzz_StonerDesc,
+        IsProfessionTrait = false,
+        DisabledInMultiplayer = false,
+    }
+
+    character_trait_definition zdrugzz:cannabisconnoisseur
+    {
+        CharacterTrait = zdrugzz:cannabisconnoisseur,
+        UIName = UI_trait_Drugzz_CannabisConnoisseur,
+        Cost = 4,
+        UIDescription = UI_trait_Drugzz_CannabisConnoisseurDesc,
+        IsProfessionTrait = false,
+        DisabledInMultiplayer = false,
+    }
+
+    character_trait_definition zdrugzz:psychonaut
+    {
+        CharacterTrait = zdrugzz:psychonaut,
+        UIName = UI_trait_Drugzz_Psychonaut,
+        Cost = 2,
+        UIDescription = UI_trait_Drugzz_PsychonautDesc,
+        IsProfessionTrait = false,
+        DisabledInMultiplayer = false,
+    }
+
+    character_trait_definition zdrugzz:cocainedependent
+    {
+        CharacterTrait = zdrugzz:cocainedependent,
+        UIName = UI_trait_Drugzz_CocaineDependent,
+        Cost = -8,
+        UIDescription = UI_trait_Drugzz_CocaineDependentDesc,
+        IsProfessionTrait = false,
+        DisabledInMultiplayer = false,
+    }
+
+    character_trait_definition zdrugzz:crackdependent
+    {
+        CharacterTrait = zdrugzz:crackdependent,
+        UIName = UI_trait_Drugzz_CrackDependent,
+        Cost = -10,
+        UIDescription = UI_trait_Drugzz_CrackDependentDesc,
+        IsProfessionTrait = false,
+        DisabledInMultiplayer = false,
+    }
+
+    character_trait_definition zdrugzz:methdependent
+    {
+        CharacterTrait = zdrugzz:methdependent,
+        UIName = UI_trait_Drugzz_MethDependent,
+        Cost = -12,
+        UIDescription = UI_trait_Drugzz_MethDependentDesc,
+        IsProfessionTrait = false,
+        DisabledInMultiplayer = false,
+    }
+
+    character_trait_definition zdrugzz:clubregular
+    {
+        CharacterTrait = zdrugzz:clubregular,
+        UIName = UI_trait_Drugzz_ClubRegular,
+        Cost = -5,
+        UIDescription = UI_trait_Drugzz_ClubRegularDesc,
+        IsProfessionTrait = false,
+        DisabledInMultiplayer = false,
+    }
+
+    character_trait_definition zdrugzz:prescriptiondependent
+    {
+        CharacterTrait = zdrugzz:prescriptiondependent,
+        UIName = UI_trait_Drugzz_PrescriptionDependent,
+        Cost = -5,
+        UIDescription = UI_trait_Drugzz_PrescriptionDependentDesc,
+        IsProfessionTrait = false,
+        DisabledInMultiplayer = false,
+    }
+}
