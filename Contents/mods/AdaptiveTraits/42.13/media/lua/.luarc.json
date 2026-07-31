@@ -1,0 +1,21 @@
+{
+    "Lua.diagnostics.globals": [
+        "CharacterStat",
+        "CharacterTrait",
+        "CharacterTraitDefinition",
+        "Events",
+        "HaloTextHelper",
+        "ISTimedActionQueue",
+        "SandboxVars",
+        "getGameTime",
+        "getPlayer",
+        "getSandboxOptions",
+        "getTimestamp",
+        "instanceof",
+        "isClient",
+        "isServer",
+        "sendClientCommand",
+        "sendServerCommand",
+        "transformIntoKahluaTable"
+    ]
+}

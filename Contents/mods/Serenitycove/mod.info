@@ -1,7 +1,0 @@
-name=SerenityCove_Alpha
-id=serenitycove
-description=texthere
-poster=poster.png
-
-
-require=melos_tiles_for_miles_pack,PertsPartyTiles,UnofficialMappersCommunityTilePack,simonMDsTiles

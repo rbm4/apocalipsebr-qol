@@ -1,3 +1,0 @@
-RecipesEN {
-    Recipe_MakeImprovisedSuppressor = "Make Improvised Suppressor",
-}

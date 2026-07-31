@@ -1,0 +1,16 @@
+{
+  "PZCrossbows.Crossbow": "Грубий арбалет",
+  "PZCrossbows.ImprovedCrossBow": "Покращений арбалет",
+  "PZCrossbows.CompoundCrossBow": "Блочний арбалет",
+  "PZCrossbows.HandCrossBow": "Ручний арбалет",
+  "PZCrossbows.BrokenBolt": "Дерев'яний болт (зламаний)",
+  "PZCrossbows.WoodBoltShaft": "Древко дерев'яного болта",
+  "PZCrossbows.WoodBolt": "Дерев'яний болт",
+  "PZCrossbows.WoodBoltBox": "Коробка дерев'яних болтів",
+  "PZCrossbows.BrokenShortBolt": "Короткий дерев'яний болт (зламаний)",
+  "PZCrossbows.ShortWoodBoltShaft": "Древко короткого дерев'яного болта",
+  "PZCrossbows.ShortWoodBolt": "Короткий дерев'яний болт",
+  "PZCrossbows.ShortWoodBoltBox": "Коробка коротких дерев'яних болтів",
+  "PZCrossbows.StoneBoltHead": "Кам'яний наконечник болта",
+  "PZCrossbows.BoltQuiver": "Сагайдак для болтів"
+}

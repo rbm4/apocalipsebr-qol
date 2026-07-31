@@ -1,0 +1,21 @@
+{
+  "Sandbox_PZCrossbows": "PZ Crossbows",
+  "Sandbox_PZCrossbows_LootSpawnMult": "Overall Loot Spawn Multiplier",
+  "Sandbox_PZCrossbows_LootSpawnMult_tooltip": "Multiplies all PZ Crossbows container loot and foraging spawns, including crossbows, bolt quivers, bolts and bolt parts. This combines with each crossbow's individual multiplier.",
+  "Sandbox_PZCrossbows_CrudeCrossbowSpawnMult": "Crude Crossbow Spawn Multiplier",
+  "Sandbox_PZCrossbows_CrudeCrossbowSpawnMult_tooltip": "Multiplies how often crude crossbows spawn in container loot and foraging.",
+  "Sandbox_PZCrossbows_ImprovedCrossbowSpawnMult": "Improved Crossbow Spawn Multiplier",
+  "Sandbox_PZCrossbows_ImprovedCrossbowSpawnMult_tooltip": "Multiplies how often improved crossbows spawn in container loot and foraging.",
+  "Sandbox_PZCrossbows_CompoundCrossbowSpawnMult": "Compound Crossbow Spawn Multiplier",
+  "Sandbox_PZCrossbows_CompoundCrossbowSpawnMult_tooltip": "Multiplies how often compound crossbows and full-size bolts spawn in container loot and foraging.",
+  "Sandbox_PZCrossbows_HandCrossbowSpawnMult": "Hand Crossbow Spawn Multiplier",
+  "Sandbox_PZCrossbows_HandCrossbowSpawnMult_tooltip": "Multiplies how often hand crossbows and short bolts spawn in container loot and foraging.",
+  "Sandbox_PZCrossbows_BoltWBaseBreakChance": "Wood Bolt Recovery Chance",
+  "Sandbox_PZCrossbows_BoltWBaseBreakChance_tooltip": "Base chance that a lodged wood bolt is recovered intact instead of broken.",
+  "Sandbox_PZCrossbows_BoltWBreakChanceScaling": "Wood Bolt Recovery Bonus per Maintenance Level",
+  "Sandbox_PZCrossbows_BoltWBreakChanceScaling_tooltip": "Extra intact recovery chance added for each Maintenance level.",
+  "Sandbox_PZCrossbows_BoltSWBaseBreakChance": "Short Wood Bolt Recovery Chance",
+  "Sandbox_PZCrossbows_BoltSWBaseBreakChance_tooltip": "Base chance that a lodged short wood bolt is recovered intact instead of broken.",
+  "Sandbox_PZCrossbows_BoltSWBreakChanceScaling": "Short Wood Bolt Recovery Bonus per Maintenance Level",
+  "Sandbox_PZCrossbows_BoltSWBreakChanceScaling_tooltip": "Extra intact recovery chance added for each Maintenance level."
+}

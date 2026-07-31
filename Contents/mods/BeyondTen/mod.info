@@ -1,0 +1,9 @@
+name=Beyond Ten - Level 15 Skills
+id=BeyondTen
+author=Patryk
+description=Extend trainable skills to level 15 with mastery XP, a native-looking 15-slot Skills panel, and continued bonuses. This root package is the Build 41 implementation.
+poster=poster.png
+tags=Build 41;Balance;Multiplayer
+versionMin=41.78
+versionMax=41.78
+version=1.1.1

@@ -1,0 +1,16 @@
+{
+  "PZC_CarveWoodBoltShafts": "Вирізати древка дерев'яних болтів",
+  "PZC_CarveShortWoodBoltShafts": "Вирізати древка коротких дерев'яних болтів",
+  "PZC_MakeStoneBoltHeads": "Зробити кам'яні наконечники болтів",
+  "PZC_AssembleWoodBolts": "Зібрати дерев'яні болти для арбалета",
+  "PZC_AssembleShortWoodBolts": "Зібрати короткі дерев'яні болти для арбалета",
+  "PZC_CraftCrudeCrossbow": "Зробити грубий арбалет",
+  "PZC_CraftHandCrossbow": "Зробити ручний арбалет",
+  "PZC_CraftImprovedCrossbow": "Зробити покращений арбалет",
+  "PZC_CraftCompoundCrossbow": "Зробити блочний арбалет",
+  "PZC_OpenWoodBoltBox": "Відкрити коробку дерев'яних болтів",
+  "PZC_OpenShortWoodBoltBox": "Відкрити коробку коротких дерев'яних болтів",
+  "PZC_PlaceWoodBoltsInBox": "Скласти дерев'яні болти в коробку",
+  "PZC_PlaceShortWoodBoltsInBox": "Скласти короткі дерев'яні болти в коробку",
+  "PZC_SewBoltQuiver": "Зшити сагайдак для болтів"
+}

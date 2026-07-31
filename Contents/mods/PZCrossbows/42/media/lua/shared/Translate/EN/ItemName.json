@@ -1,0 +1,16 @@
+{
+  "PZCrossbows.Crossbow": "Crude Crossbow",
+  "PZCrossbows.ImprovedCrossBow": "Improved Crossbow",
+  "PZCrossbows.CompoundCrossBow": "Compound Crossbow",
+  "PZCrossbows.HandCrossBow": "Hand Crossbow",
+  "PZCrossbows.BrokenBolt": "Wood Bolt (Broken)",
+  "PZCrossbows.WoodBoltShaft": "Wood Bolt Shaft",
+  "PZCrossbows.WoodBolt": "Wood Bolt",
+  "PZCrossbows.WoodBoltBox": "Box of Wood Bolts",
+  "PZCrossbows.BrokenShortBolt": "Short Wood Bolt (Broken)",
+  "PZCrossbows.ShortWoodBoltShaft": "Short Wood Bolt Shaft",
+  "PZCrossbows.ShortWoodBolt": "Short Wood Bolt",
+  "PZCrossbows.ShortWoodBoltBox": "Box of Short Wood Bolts",
+  "PZCrossbows.StoneBoltHead": "Stone Bolt Head",
+  "PZCrossbows.BoltQuiver": "Bolt Quiver"
+}

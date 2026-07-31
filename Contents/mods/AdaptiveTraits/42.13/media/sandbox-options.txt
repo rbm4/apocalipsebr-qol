@@ -1,0 +1,635 @@
+VERSION = 1,
+
+option AdaptiveTraits.AdrenalineJunkie_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_AdrenalineJunkieCanGain,
+}
+
+option AdaptiveTraits.AdrenalineJunkie_GainKills
+{
+    type = integer,
+    min = 1,
+    max = 100000,
+    default = 20000,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_AdrenalineJunkieGainKills,
+}
+
+option AdaptiveTraits.Agoraphobic_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_AgoraphobicCanLose,
+}
+
+option AdaptiveTraits.Agoraphobic_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 168,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_AgoraphobicLoseHours,
+}
+
+option AdaptiveTraits.AllThumbs_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_AllThumbsCanLose,
+}
+
+option AdaptiveTraits.AllThumbs_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 168,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_AllThumbsLoseHours,
+}
+
+option AdaptiveTraits.Axeman_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_AxemanCanGain,
+}
+
+option AdaptiveTraits.Axeman_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 336,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_AxemanGainHours,
+}
+
+option AdaptiveTraits.Brave_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_BraveCanGain,
+}
+
+option AdaptiveTraits.Brave_GainKills
+{
+    type = integer,
+    min = 1,
+    max = 100000,
+    default = 20000,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_BraveGainKills,
+}
+
+option AdaptiveTraits.CatEyes_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_CatEyesCanGain,
+}
+
+option AdaptiveTraits.CatEyes_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 336,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_CatEyesGainHours,
+}
+
+option AdaptiveTraits.Claustrophobic_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_ClaustrophobicCanLose,
+}
+
+option AdaptiveTraits.Claustrophobic_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 168,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_ClaustrophobicLoseHours,
+}
+
+option AdaptiveTraits.Clumsy_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_ClumsyCanLose,
+}
+
+option AdaptiveTraits.Clumsy_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 336,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_ClumsyLoseHours,
+}
+
+option AdaptiveTraits.Conspicuous_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_ConspicuousCanLose,
+}
+
+option AdaptiveTraits.Conspicuous_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 336,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_ConspicuousLoseHours,
+}
+
+option AdaptiveTraits.Cowardly_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_CowardlyCanLose,
+}
+
+option AdaptiveTraits.Cowardly_LoseKills
+{
+    type = integer,
+    min = 1,
+    max = 100000,
+    default = 20000,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_CowardlyLoseKills,
+}
+
+option AdaptiveTraits.Desensitized_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_DesensitizedCanGain,
+}
+
+option AdaptiveTraits.Desensitized_GainKills
+{
+    type = integer,
+    min = 1,
+    max = 100000,
+    default = 20000,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_DesensitizedGainKills,
+}
+
+option AdaptiveTraits.Dextrous_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_DextrousCanGain,
+}
+
+option AdaptiveTraits.Dextrous_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 2920,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_DextrousGainHours,
+}
+
+option AdaptiveTraits.Disorganized_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_DisorganizedCanLose,
+}
+
+option AdaptiveTraits.Disorganized_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 336,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_DisorganizedLoseHours,
+}
+
+option AdaptiveTraits.FearOfBlood_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_FearOfBloodCanLose,
+}
+
+option AdaptiveTraits.FearOfBlood_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 1344,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_FearOfBloodLoseHours,
+}
+
+option AdaptiveTraits.FastHealer_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_FastHealerCanGain,
+}
+
+option AdaptiveTraits.FastHealer_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 672,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_FastHealerGainHours,
+}
+
+option AdaptiveTraits.FastReader_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_FastReaderCanGain,
+}
+
+option AdaptiveTraits.FastReader_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 672,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_FastReaderGainHours,
+}
+
+option AdaptiveTraits.Graceful_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_GracefulCanGain,
+}
+
+option AdaptiveTraits.Graceful_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 336,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_GracefulGainHours,
+}
+
+option AdaptiveTraits.HighThirst_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_HighThirstCanGain,
+}
+
+option AdaptiveTraits.HighThirst_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_HighThirstCanLose,
+}
+
+option AdaptiveTraits.HighThirst_LoseCarbs
+{
+    type = integer,
+    min = -500,
+    max = 1000,
+    default = 200,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_HighThirstLoseCarbs,
+}
+
+option AdaptiveTraits.HighThirst_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 168,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_HighThirstLoseHours,
+}
+
+option AdaptiveTraits.HighThirst_GainCarbs
+{
+    type = integer,
+    min = -500,
+    max = 1000,
+    default = 300,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_HighThirstGainCarbs,
+}
+
+option AdaptiveTraits.HighThirst_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 168,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_HighThirstGainHours,
+}
+
+option AdaptiveTraits.Hiker_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_HikerCanGain,
+}
+
+option AdaptiveTraits.Hiker_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 1460,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_HikerGainHours,
+}
+
+option AdaptiveTraits.Inconspicuous_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_InconspicuousCanGain,
+}
+
+option AdaptiveTraits.Inconspicuous_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 672,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_InconspicuousGainHours,
+}
+
+option AdaptiveTraits.LowThirst_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_LowThirstCanGain,
+}
+
+option AdaptiveTraits.LowThirst_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_LowThirstCanLose,
+}
+
+option AdaptiveTraits.LowThirst_LoseCarbs
+{
+    type = integer,
+    min = -500,
+    max = 1000,
+    default = 100,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_LowThirstLoseCarbs,
+}
+
+option AdaptiveTraits.LowThirst_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 168,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_LowThirstLoseHours,
+}
+
+option AdaptiveTraits.LowThirst_GainCarbs
+{
+    type = integer,
+    min = -500,
+    max = 1000,
+    default = -50,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_LowThirstGainCarbs,
+}
+
+option AdaptiveTraits.LowThirst_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 168,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_LowThirstGainHours,
+}
+
+option AdaptiveTraits.MotionSensitive_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_MotionSensitiveCanLose,
+}
+
+option AdaptiveTraits.MotionSensitive_LoseHours
+{
+    type = integer,
+    min = 0,
+    max = 10000,
+    default = 672,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_MotionSensitiveLoseHours,
+}
+
+option AdaptiveTraits.NightOwl_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_NightOwlCanGain,
+}
+
+option AdaptiveTraits.NightOwl_GainHours
+{
+    type = integer,
+    min = 0,
+    max = 10000,
+    default = 1344,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_NightOwlGainHours,
+}
+
+option AdaptiveTraits.Organized_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_OrganizedCanGain,
+}
+
+option AdaptiveTraits.Organized_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 1460,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_OrganizedGainHours,
+}
+
+option AdaptiveTraits.Outdoorsy_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_OutdoorsyCanGain,
+}
+
+option AdaptiveTraits.Outdoorsy_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 2920,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_OutdoorsyGainHours,
+}
+
+option AdaptiveTraits.Runner_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_RunnerCanGain,
+}
+
+option AdaptiveTraits.Runner_GainHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 1460,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_RunnerGainHours,
+}
+
+option AdaptiveTraits.SlowHealer_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_SlowHealerCanLose,
+}
+
+option AdaptiveTraits.SlowHealer_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 168,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_SlowHealerLoseHours,
+}
+
+option AdaptiveTraits.SlowReader_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_SlowReaderCanLose,
+}
+
+option AdaptiveTraits.SlowReader_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 336,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_SlowReaderLoseHours,
+}
+
+option AdaptiveTraits.Smoker_CanGain
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_SmokerCanGain,
+}
+
+option AdaptiveTraits.Smoker_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_SmokerCanLose,
+}
+
+option AdaptiveTraits.Smoker_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 336,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_SmokerLoseHours,
+}
+
+option AdaptiveTraits.Smoker_GainCount
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 12,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_SmokerGainCount,
+}
+
+option AdaptiveTraits.SundayDriver_CanLose
+{
+    type = boolean,
+    default = true,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_SundayDriverCanLose,
+}
+
+option AdaptiveTraits.SundayDriver_LoseHours
+{
+    type = integer,
+    min = 1,
+    max = 10000,
+    default = 672,
+    page = AdaptiveTraits,
+    translation = AdaptiveTraits_SundayDriverLoseHours,
+}

@@ -1,0 +1,83 @@
+VERSION = 1,
+
+option PZCrossbows.LootSpawnMult {
+    page = PZCrossbows,
+    translation = PZCrossbows_LootSpawnMult,
+    type = double,
+    min = 0.0,
+    max = 1000.0,
+    default = 1.0,
+}
+
+option PZCrossbows.CrudeCrossbowSpawnMult {
+    page = PZCrossbows,
+    translation = PZCrossbows_CrudeCrossbowSpawnMult,
+    type = double,
+    min = 0.0,
+    max = 1000.0,
+    default = 1.0,
+}
+
+option PZCrossbows.ImprovedCrossbowSpawnMult {
+    page = PZCrossbows,
+    translation = PZCrossbows_ImprovedCrossbowSpawnMult,
+    type = double,
+    min = 0.0,
+    max = 1000.0,
+    default = 1.0,
+}
+
+option PZCrossbows.CompoundCrossbowSpawnMult {
+    page = PZCrossbows,
+    translation = PZCrossbows_CompoundCrossbowSpawnMult,
+    type = double,
+    min = 0.0,
+    max = 1000.0,
+    default = 1.0,
+}
+
+option PZCrossbows.HandCrossbowSpawnMult {
+    page = PZCrossbows,
+    translation = PZCrossbows_HandCrossbowSpawnMult,
+    type = double,
+    min = 0.0,
+    max = 1000.0,
+    default = 1.0,
+}
+
+option PZCrossbows.BoltWBaseBreakChance {
+    page = PZCrossbows,
+    translation = PZCrossbows_BoltWBaseBreakChance,
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 40,
+}
+
+option PZCrossbows.BoltWBreakChanceScaling {
+    page = PZCrossbows,
+    translation = PZCrossbows_BoltWBreakChanceScaling,
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 3,
+}
+
+option PZCrossbows.BoltSWBaseBreakChance {
+    page = PZCrossbows,
+    translation = PZCrossbows_BoltSWBaseBreakChance,
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 50,
+}
+
+option PZCrossbows.BoltSWBreakChanceScaling {
+    page = PZCrossbows,
+    translation = PZCrossbows_BoltSWBreakChanceScaling,
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 3,
+}
+

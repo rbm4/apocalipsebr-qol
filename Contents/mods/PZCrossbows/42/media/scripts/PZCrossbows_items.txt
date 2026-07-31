@@ -1,0 +1,137 @@
+module PZCrossbows
+{
+	imports
+	{
+		Base,
+	}
+	
+	item WoodBoltShaft
+	{
+		Weight = 0.05,
+		ItemType = base:normal,
+		DisplayCategory = Material,
+		Icon = WoodBoltShaft,
+		DisplayName = Wood Bolt Shaft,
+		WorldStaticModel = WoodBolt,
+		Tags = base:isfirefuel,
+	}
+	item BrokenBolt
+	{
+		Weight = 0.06,
+		ItemType = base:normal,
+		DisplayCategory = Ammo,
+		Icon = BrokenWoodBolt,
+		DisplayName = Wood Bolt (Broken),
+		metalvalue = 1,
+		WorldStaticModel = WoodBoltBroken,
+		Tags = base:isfirefuel,
+	}
+	
+	item WoodBolt
+	{
+		Weight = 0.08,
+		ItemType = base:normal,
+		DisplayCategory = Ammo,
+		Icon = WoodBolt,
+		DisplayName = Wood Bolt,
+		metalvalue = 1,
+		WorldStaticModel = WoodBolt,
+		Tags = base:isfirefuel,
+	}
+
+	item WoodBoltBox
+	{
+		Weight = 0.7,
+		ItemType = base:normal,
+		DisplayCategory = Ammo,
+		Icon = WoodBoltBox,
+		DisplayName = Box of Wood Bolts,
+		metalvalue = 1,
+		WorldStaticModel = WoodBoltBox,
+		DoubleClickRecipe = PZC_OpenWoodBoltBox,
+		Tags = base:isfirefuel,
+	}
+
+	item BrokenShortBolt
+	{
+		Weight = 0.03,
+		ItemType = base:normal,
+		DisplayCategory = Ammo,
+		Icon = ShortBrokenWoodBolt,
+		DisplayName = Short Wood Bolt (Broken),
+		metalvalue = 1,
+		WorldStaticModel = WoodBoltBroken,
+		Tags = base:isfirefuel,
+	}
+	
+	item ShortWoodBoltShaft
+	{
+		Weight = 0.03,
+		ItemType = base:normal,
+		DisplayCategory = Material,
+		Icon = ShortWoodBoltShaft,
+		DisplayName = Short Wood Bolt Shaft,
+		metalvalue = 1,
+		WorldStaticModel = ShortWoodBolt,
+		Tags = base:isfirefuel,
+	}
+	
+	item ShortWoodBolt
+	{
+		Weight = 0.05,
+		ItemType = base:normal,
+		DisplayCategory = Ammo,
+		Icon = ShortWoodBolt,
+		DisplayName = Short Wood Bolt,
+		metalvalue = 1,
+		WorldStaticModel = ShortWoodBolt,
+		Tags = base:isfirefuel,
+	}
+
+	item ShortWoodBoltBox
+	{
+		Weight = 0.4,
+		ItemType = base:normal,
+		DisplayCategory = Ammo,
+		Icon = ShortWoodBoltBox,
+		DisplayName = Box of Short Wood Bolts,
+		metalvalue = 1,
+		WorldStaticModel = ShortWoodBoltBox,
+		DoubleClickRecipe = PZC_OpenShortWoodBoltBox,
+		Tags = base:isfirefuel,
+	}
+
+	item StoneBoltHead
+	{
+		DisplayName = Crossbow Bolt Head,
+		DisplayCategory = Material,
+		ItemType = base:normal,
+		Weight = 0.1,
+		Icon = StoneBoltHead,
+		StaticModel = ChippedStone,
+		WorldStaticModel = ChippedStone,
+	}
+
+	item BoltQuiver
+	{
+		DisplayName = Bolt Quiver,
+		DisplayCategory = Bag,
+		ItemType = base:container,
+		Weight = 0.5,
+		Icon = BoltQuiver,
+		ClothingItem = BoltQuiver,
+		WorldStaticModel = BoltQuiverWorld,
+		Tooltip = Tooltip_PZC_BoltQuiver,
+		BodyLocation = base:ammostrap,
+		CanBeEquipped = base:ammostrap,
+		CanHaveHoles = false,
+		Capacity = 1,
+		WeightReduction = 85,
+		RunSpeedModifier = 0.98,
+		CloseSound = CloseShellsBandolier,
+		OpenSound = OpenShellsBandolier,
+		PutInSound = StoreItemShellsBandolier,
+		Tags = base:bagsfillexception;base:hasmetal,
+		AcceptItemFunction = AcceptItemFunction.PZC_BoltQuiver,
+	}
+}
