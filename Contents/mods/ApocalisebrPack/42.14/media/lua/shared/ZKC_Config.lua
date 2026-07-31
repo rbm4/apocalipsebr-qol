@@ -7,7 +7,7 @@ ZKC_Config = ZKC_Config or {}
 ZKC_Config.Storage = {
     -- Filename for data export (will be in Zomboid's root directory)
     -- Your external API should read and clear this file periodically
-    filename = "ZKC_PlayerData.jsonl",
+    filename = "ZKC_PlayerData.txt",
     
     -- Enable/disable debug logging
     debug = false,

@@ -1,7 +1,0 @@
-name=Crossroads-Checkpoint
-id=Crossroads-Checkpoint
-require=\UnofficialMappersCommunityTilePack,\melos_tiles_for_miles_pack,\simonMDsTiles,\PertsPartyTiles
-loadModAfter=\UnofficialMappersCommunityTilePack,\melos_tiles_for_miles_pack,\simonMDsTiles,\PertsPartyTiles
-description=texthere
-poster=poster.png
-

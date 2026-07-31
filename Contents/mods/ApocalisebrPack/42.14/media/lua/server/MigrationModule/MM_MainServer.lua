@@ -37,7 +37,7 @@ require "MigrationModule/MM_FileHandler"
 -- Constants
 -----------------------------------------------------------
 
-local MIGRATION_FILENAME = "VehicleMigration.jsonl"
+local MIGRATION_FILENAME = "VehicleMigration.txt"
 local DEFAULT_Z          = 0
 local DEFAULT_DIR        = IsoDirections.S
 
@@ -460,6 +460,6 @@ end
 -- Event Registration
 -----------------------------------------------------------
 
-Events.EveryHours.Add(onPeriodicCheck)
+Events.EveryOneMinute.Add(onPeriodicCheck)
 
 log("MM_MainServer module loaded — checking '" .. MIGRATION_FILENAME .. "' every minute")
