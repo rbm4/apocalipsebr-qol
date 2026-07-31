@@ -14,8 +14,8 @@ $ErrorActionPreference = "Stop"
 # ── Paths ──
 $toolsDir    = Split-Path -Parent $MyInvocation.MyCommand.Path | Split-Path -Parent | Split-Path -Parent | Split-Path -Parent | Split-Path -Parent
 $repoRoot    = Split-Path -Parent $toolsDir
-$mapDir      = "Z:\SteamLibrary\steamapps\workshop\content\108600\3038984853\mods\BridgeToCoryerdon\media\maps\BridgeToCoryerdon"
-$backupDir   = "Z:\SteamLibrary\steamapps\workshop\content\108600\3038984853\mods\BridgeToCoryerdon\media\maps\BridgeToCoryerdon"
+$mapDir      = "C:\Users\ricar\Zomboid\Workshop\apocbr\Contents\mods\Taylorsville_bridge_to_Coryerdon\media\maps\Taylorsville_bridge_to_Coryerdon"
+$backupDir   = "Z:\SteamLibrary\steamapps\workshop\content\108600\3137753538\mods\Taylorsville_bridge_to_Coryerdon\media\maps\Taylorsville_bridge_to_Coryerdon"
 $csvFile     = Join-Path $PSScriptRoot "tile_replacements.csv"
 $srcDir      = Join-Path $toolsDir "com\apocalipsebr\tools\mapconverter"
 $pkg         = "com.apocalipsebr.tools.mapconverter"
