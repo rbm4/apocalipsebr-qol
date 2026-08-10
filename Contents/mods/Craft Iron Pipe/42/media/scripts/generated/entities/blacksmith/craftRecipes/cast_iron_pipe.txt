@@ -1,0 +1,21 @@
+module Base
+{
+    craftRecipe CastMetalPipe
+    {
+        time = 200,
+        category = Blacksmithing,
+        Tags = Furnace,
+        
+        inputs
+        {
+            item 4 [Base.CeramicCrucible_Iron;Base.CeramicCrucibleSmall_Iron],
+            item 1 tags[base:crudetongs;base:tongs] mode:keep flags[MayDegradeLight],
+            item 4 tags[base:charcoal],
+            item 1 [Base.ClayBarMold;Base.IronBarMold;Base.SteelBarMold] mode:keep,
+        }
+        outputs
+        {
+            item 1 Base.MetalPipe,
+        }
+    }
+}

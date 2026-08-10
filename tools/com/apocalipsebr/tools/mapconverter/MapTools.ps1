@@ -35,7 +35,8 @@ function Compile-Sources {
         "com\apocalipsebr\tools\mapconverter\LotToTMX.java",
         "com\apocalipsebr\tools\mapconverter\MapToPZW.java",
         "com\apocalipsebr\tools\mapconverter\BuildBlankBMP.java",
-        "com\apocalipsebr\tools\mapconverter\MapDecompiler.java"
+        "com\apocalipsebr\tools\mapconverter\MapDecompiler.java",
+        "com\apocalipsebr\tools\mapconverter\ZombieDensityTool.java"
     )
     & javac -encoding UTF-8 @sources
     if ($LASTEXITCODE -ne 0) {
@@ -113,6 +114,9 @@ function Show-Menu {
     Write-Host ""
     Write-Host "  [D] Decompile Map -> TMX + .pzw (open in WorldEd)" -ForegroundColor White
     Write-Host "      (reverse-engineers compiled lotheader/lotpack into editable project)" -ForegroundColor DarkGray
+    Write-Host ""
+    Write-Host "  [E] Scan / Patch Zombie Density" -ForegroundColor White
+    Write-Host "      (reads or rewrites baked .lotheader zombie intensity bytes)" -ForegroundColor DarkGray
     Write-Host ""
     Write-Host "  [Q] Quit" -ForegroundColor DarkGray
     Write-Host ""
@@ -265,10 +269,12 @@ do {
             if ($tileD.Trim() -eq "") { $tileD = $defaultTileD }
             $tpl = Read-Host "PZW template [Enter for: $defaultTpl]"
             if ($tpl.Trim() -eq "") { $tpl = $defaultTpl }
+            $roomMode = Read-Host "RoomDefs mode [Enter for: generateLots/native]"
+            if ($roomMode.Trim() -eq "") { $roomMode = "generateLots" }
 
             if (!(Test-Path $inDir)) { Write-Host " Input not found." -ForegroundColor Red; break }
             if (!(Compile-Sources)) { break }
-            Run-Java "MapDecompiler" @($inDir, $outDir, $tileD, $tpl)
+            Run-Java "MapDecompiler" @($inDir, $outDir, $tileD, $tpl, $roomMode)
 
             $mapName = ((Split-Path -Leaf $inDir) -replace '[^A-Za-z0-9_-]','_')
             $pzw = Join-Path $outDir "$mapName.pzw"
@@ -282,6 +288,45 @@ do {
                         Write-Host " WorldEd not found at $editor" -ForegroundColor Yellow
                     }
                 }
+            }
+        }
+        "E" {
+            Write-Host "`n=== Scan / Patch Zombie Density ===" -ForegroundColor Cyan
+            $targetDir = Read-Host "Map dir [Enter for: $mapDir]"
+            if ($targetDir.Trim() -eq "") { $targetDir = $mapDir }
+            if (!(Test-Path $targetDir)) { Write-Host " Map dir not found." -ForegroundColor Red; break }
+            Write-Host "  Modes: scan, zero, cap, scale" -ForegroundColor DarkGray
+            $mode = Read-Host "Mode [Enter for: scan]"
+            if ($mode.Trim() -eq "") { $mode = "scan" }
+            $mode = $mode.Trim().ToLower()
+            if (!(Compile-Sources)) { break }
+            if ($mode -eq "scan") {
+                Run-Java "ZombieDensityTool" @("--scan", $targetDir)
+            } elseif ($mode -eq "zero") {
+                $outDir = Read-Host "Output copy dir (Enter to patch in-place with .bak backups)"
+                if ($outDir.Trim() -eq "") {
+                    Run-Java "ZombieDensityTool" @("--zero", $targetDir)
+                } else {
+                    Run-Java "ZombieDensityTool" @("--zero", $targetDir, $outDir)
+                }
+            } elseif ($mode -eq "cap") {
+                $cap = Read-Host "Max density byte 0..255"
+                $outDir = Read-Host "Output copy dir (Enter to patch in-place with .bak backups)"
+                if ($outDir.Trim() -eq "") {
+                    Run-Java "ZombieDensityTool" @("--cap", $targetDir, $cap)
+                } else {
+                    Run-Java "ZombieDensityTool" @("--cap", $targetDir, $cap, $outDir)
+                }
+            } elseif ($mode -eq "scale") {
+                $factor = Read-Host "Scale factor, e.g. 0.25"
+                $outDir = Read-Host "Output copy dir (Enter to patch in-place with .bak backups)"
+                if ($outDir.Trim() -eq "") {
+                    Run-Java "ZombieDensityTool" @("--scale", $targetDir, $factor)
+                } else {
+                    Run-Java "ZombieDensityTool" @("--scale", $targetDir, $factor, $outDir)
+                }
+            } else {
+                Write-Host " Unknown mode: $mode" -ForegroundColor Red
             }
         }
         "Q" {

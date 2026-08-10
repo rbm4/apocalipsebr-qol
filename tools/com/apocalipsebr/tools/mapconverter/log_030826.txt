@@ -1,0 +1,12 @@
+2026-08-03 19:58:36.940 [INFO] Preferences - Loading : C:/Users/ricar/Zomboid/Workshop/apocbr/tools/com/apocalipsebr/tools/mapconverter/settings.ini
+2026-08-03 19:58:36.941 [INFO] Preferences - Creating new settings file: C:/Users/ricar/Zomboid/Workshop/apocbr/tools/com/apocalipsebr/tools/mapconverter/settings.ini
+2026-08-03 19:58:37.662 [INFO] MainWindow - Loading : C:/Users/ricar/Zomboid/Workshop/apocbr/tools/com/apocalipsebr/tools/mapconverter/settings.ini
+2026-08-03 19:58:37.864 [DEBUG] Directory does not exist: "C:/Users/ricar/Zomboid/Workshop/apocbr/tools/com/apocalipsebr/tools/mapconverter/theme"
+2026-08-03 20:00:05.881 [DEBUG] Saving TilesDirectory from PreferencesDialog: "Z:/pzmaps/B42.Mapping.Tools/Tiles"
+2026-08-03 20:00:05.881 [DEBUG] Saving TileZedPath from PreferencesDialog: "Z:/pzmaps/B42.Mapping.Tools/TileD"
+2026-08-03 20:00:05.881 [INFO] Preferences - Saving TilesDirectory: Z:/pzmaps/B42.Mapping.Tools/Tiles
+2026-08-03 20:00:05.886 [INFO] Preferences - Saving TileZedPath: Z:/pzmaps/B42.Mapping.Tools/TileD
+2026-08-03 20:00:05.899 [DEBUG] Le fichier de thème n'existe pas : "C:/Users/ricar/Zomboid/Workshop/apocbr/tools/com/apocalipsebr/tools/mapconverter/theme/"
+2026-08-03 20:00:05.901 [DEBUG] TilesDirectory updated after PreferencesDialog: "Z:/pzmaps/B42.Mapping.Tools/Tiles"
+2026-08-03 20:00:05.901 [ERROR] tilemetainfomgr - The Tilesets.txt file doesn't exist.
+2026-08-03 20:00:07.781 [CRITICAL] TileMetaInfoMgr - Critical Error: The Tilesets.txt file doesn't exist. (while reading Tilesets.txt)

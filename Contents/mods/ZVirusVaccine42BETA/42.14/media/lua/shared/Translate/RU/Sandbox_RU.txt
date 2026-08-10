@@ -60,12 +60,12 @@ Sandbox_RU = {
 
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus = "Стол для вскрытия бонус к скорости"
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option1 = "Нету"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%%"
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_tooltip = "<BHC>Изменение этого параметра повлияет на баланс игры. <RGB:1,1,1><LINE> Определяет бонус к скорости вскрытия на столе для вскрытия."
 
     Sandbox_ZombieVirusVaccineBETA_AutopsyGroundXP = "Вскрытие на земле XP"
@@ -92,7 +92,7 @@ Sandbox_RU = {
     Sandbox_ZombieVirusVaccineBETA_CollectPartXP = "Вскрытие, конечности XP"
 	Sandbox_ZombieVirusVaccineBETA_CollectPartXP_tooltip = "<BHC>Изменение этого параметра повлияет на баланс игры. <RGB:1,1,1><LINE> Определяет кол-во опыта получаемого в навыки Разделка и Первая помощь."
 
-	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Базовый шанс для Мозга в Идеальном состоянии (%)"
+	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Базовый шанс для Мозга в Идеальном состоянии (%%)"
 	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset_tooltip = "<BHC>Изменение этого параметра повлияет на баланс игры. <RGB:1,1,1><LINE> Определяет базовый шанс добычи мозга в идеальном состоянии."
 
 	Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "Гемофобия Дебафф"

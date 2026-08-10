@@ -260,6 +260,57 @@ function BT.GetNativeCapXP(perkOrId)
     return perk and (tonumber(perk:getTotalXpForLevel(BT.NATIVE_MAX_LEVEL)) or 0) or 0
 end
 
+function BT.GetVirtualXP(character, perkOrId)
+    local perk = BT.ResolvePerk(perkOrId)
+    if not character or not perk then return 0 end
+    local nativeXP = 0
+    local xp = character:getXp()
+    if xp then nativeXP = tonumber(xp:getXP(perk)) or 0 end
+    return nativeXP + BT.GetStoredXP(character, perk)
+end
+
+function BT.AddRecoveredXP(character, perkOrId, amount)
+    local perk = BT.ResolvePerk(perkOrId)
+    amount = tonumber(amount)
+    if not character or not perk or not BT.IsTrainablePerk(perk) or not BT.IsFinite(amount) then
+        return 0, 0, 0, 0, 0
+    end
+    amount = math.max(0, amount)
+    if amount <= 0 then
+        local level = BT.GetEffectiveLevel(character, perk)
+        return 0, 0, 0, level, level
+    end
+
+    if type(BT._recoveredXPHandler) == "function" then
+        return BT._recoveredXPHandler(character, perk, amount)
+    end
+
+    local oldLevel = BT.GetEffectiveLevel(character, perk)
+    local nativeApplied = 0
+    local xp = character:getXp()
+    if xp and BT.GetNativeLevel(character, perk) < BT.NATIVE_MAX_LEVEL then
+        local currentXP = tonumber(xp:getXP(perk)) or 0
+        local capXP = BT.GetNativeCapXP(perk)
+        nativeApplied = BT.Clamp(amount, 0, math.max(0, capXP - currentXP))
+        if nativeApplied > 0 then
+            if type(addXpNoMultiplier) == "function" then
+                addXpNoMultiplier(character, perk, nativeApplied)
+            else
+                xp:AddXP(perk, nativeApplied, true, false, false)
+            end
+        end
+    end
+
+    local masteryApplied = 0
+    local remainder = amount - nativeApplied
+    if remainder > 0 and BT.GetNativeLevel(character, perk) >= BT.NATIVE_MAX_LEVEL then
+        masteryApplied = BT.AddStoredXP(character, perk, remainder)
+    end
+
+    local newLevel = BT.GetEffectiveLevel(character, perk)
+    return nativeApplied + masteryApplied, nativeApplied, masteryApplied, oldLevel, newLevel
+end
+
 function BT.RegisterBonusProvider(perkOrId, provider)
     local perk = BT.ResolvePerk(perkOrId)
     if not perk or type(provider) ~= "function" then return false end

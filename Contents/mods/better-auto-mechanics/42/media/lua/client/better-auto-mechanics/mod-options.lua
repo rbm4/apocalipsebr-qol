@@ -17,9 +17,9 @@ BAM_Options_MinSuccessChance = modOptions:addSlider(
 
 -- Add a more detailed description below the option
 local desc = getText("UI_BAM_options_desc.min_success_chance_1") .. " <LINE> " ..
-       "  - 0% -> " .. getText("UI_BAM_options_desc.min_success_chance_2") .. " <LINE> " ..
-       "  - 30% -> " .. getText("UI_BAM_options_desc.min_success_chance_3") .. " <LINE> " ..
-       "  - 100% -> " .. getText("UI_BAM_options_desc.min_success_chance_4")
+       "  - 0%% -> " .. getText("UI_BAM_options_desc.min_success_chance_2") .. " <LINE> " ..
+       "  - 30%% -> " .. getText("UI_BAM_options_desc.min_success_chance_3") .. " <LINE> " ..
+       "  - 100%% -> " .. getText("UI_BAM_options_desc.min_success_chance_4")
 modOptions:addDescription(desc)
 
 

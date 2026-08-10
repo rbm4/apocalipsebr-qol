@@ -141,12 +141,19 @@ function WriteSkillRecoveryJournal:update()
 		local totalStoredXP = 1
 
 		if bOwner and storedJournalXP and self.gainedSkills then
+			local BT = SRJ.getBeyondTen()
+			local legacyBeyondTenXP = JMD["BeyondTenXP"]
 			for perkID,xp in pairs(self.gainedSkills) do
 				if xp > 0 then
 					totalRecoverableXP = totalRecoverableXP + xp
 
 					storedJournalXP[perkID] = storedJournalXP[perkID] or 0
-					if xp > storedJournalXP[perkID] then
+					local perk = Perks[perkID]
+					local storedTotalXP = storedJournalXP[perkID]
+					if SRJ.isBeyondTenPerkValid(BT, perk) and legacyBeyondTenXP then
+						storedTotalXP = storedTotalXP + (tonumber(legacyBeyondTenXP[perkID]) or 0)
+					end
+					if xp > storedTotalXP then
 
 						local perkLevelPlusOne = self.character:getPerkLevel(Perks[perkID])+1
 
@@ -168,16 +175,20 @@ function WriteSkillRecoveryJournal:update()
 								table.insert(changesBeingMade, skill_name)
 							end
 
-							local resultingXp = math.min(xp, storedJournalXP[perkID]+xpRate)
-							--print("TESTING: "..perkID.." recoverable:"..xp.." gained:"..storedJournalXP[perkID].." +"..xpRate)
-							storedJournalXP[perkID] = resultingXp
+							local resultingXp = math.min(xp, storedTotalXP+xpRate)
+							--print("TESTING: "..perkID.." recoverable:"..xp.." gained:"..storedTotalXP.." +"..xpRate)
+							storedJournalXP[perkID] = storedJournalXP[perkID] + (resultingXp - storedTotalXP)
 
 							-- store amount as already red in player data, so it cant be gained again
 							readXp[perkID] = math.max(resultingXp,(readXp[perkID] or 0))
 						end
 					end
 				end
-				totalStoredXP = totalStoredXP + (storedJournalXP[perkID] or 0)
+				local storedTotalXP = storedJournalXP[perkID] or 0
+				if legacyBeyondTenXP and SRJ.isBeyondTenPerkValid(BT, Perks[perkID]) then
+					storedTotalXP = storedTotalXP + (tonumber(legacyBeyondTenXP[perkID]) or 0)
+				end
+				totalStoredXP = totalStoredXP + storedTotalXP
 			end
 		end
 
@@ -301,6 +312,14 @@ function WriteSkillRecoveryJournal:new(character, item, writingTool) --time, rec
 	o.oldJournalTotalXP = 0
 	for perkID, xp in pairs(JMD["gainedXP"]) do
 		o.oldJournalTotalXP = o.oldJournalTotalXP + xp
+	end
+	if JMD["BeyondTenXP"] then
+		local BT = SRJ.getBeyondTen()
+		for perkID, xp in pairs(JMD["BeyondTenXP"]) do
+			if SRJ.isBeyondTenPerkValid(BT, Perks[perkID]) then
+				o.oldJournalTotalXP = o.oldJournalTotalXP + (tonumber(xp) or 0)
+			end
+		end
 	end
 	o.willWrite = true
 	local sayText

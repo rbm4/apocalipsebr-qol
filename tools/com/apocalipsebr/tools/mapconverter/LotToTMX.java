@@ -1,26 +1,20 @@
 package com.apocalipsebr.tools.mapconverter;
 
 import java.io.BufferedWriter;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.zip.Deflater;
 
-import com.apocalipsebr.tools.mapconverter.ConvertMap.BuildingDef;
 import com.apocalipsebr.tools.mapconverter.ConvertMap.LotHeaderData;
 import com.apocalipsebr.tools.mapconverter.ConvertMap.LotPackData;
 import com.apocalipsebr.tools.mapconverter.ConvertMap.MetaObject;
@@ -36,12 +30,20 @@ import com.apocalipsebr.tools.mapconverter.ConvertMap.RoomRect;
  */
 public class LotToTMX {
 
-    /** How many overlay slots per role we allow before dropping (e.g. FloorOverlay4). */
-    private static final int MAX_OVERLAY_SLOTS = 4;
+    /** How many native FloorOverlay slots we allow before dropping. Vanilla B42 reaches FloorOverlay14. */
+    private static final int MAX_OVERLAY_SLOTS = 16;
 
     /** Tile sprite native size in tileset (1x): 64×128 — PZ convention. */
     private static final int SPRITE_W = 64;
     private static final int SPRITE_H = 128;
+
+    /** How to encode room/building objects for the next consumer. */
+    public enum RoomObjectMode {
+        /** Native B42 WorldEd/GenerateLots RoomDefs use pixel rectangles and TBX-like type paths. */
+        GENERATE_LOTS,
+        /** Alias for native B42 editor-visible RoomDefs. */
+        EDITOR
+    }
 
     /** Reference into a tileset for emitting <tileset> elements. */
     private static class TilesetSlot {
@@ -57,13 +59,13 @@ public class LotToTMX {
     private static class LayerKey {
         final int    level;
         final String role;
-        final int    slot; // 0 = base, 1 = "2", 2 = "3", ...
+        final int    slot; // For FloorOverlay: 0 = base, 1 = "1", 2 = "2", ...
 
         LayerKey(int level, String role, int slot) {
             this.level = level; this.role = role; this.slot = slot;
         }
         String name() {
-            return level + "_" + role + (slot == 0 ? "" : String.valueOf(slot + 1));
+            return role + (slot == 0 ? "" : String.valueOf(slot));
         }
         @Override public boolean equals(Object o) {
             if (!(o instanceof LayerKey)) return false;
@@ -88,6 +90,13 @@ public class LotToTMX {
     public static String decompileCell(LotHeaderData hdr, LotPackData pack,
                                        TilesetIndex idx, File outFile,
                                        String tilePathPrefix) throws IOException {
+        return decompileCell(hdr, pack, idx, outFile, tilePathPrefix, RoomObjectMode.GENERATE_LOTS);
+    }
+
+    public static String decompileCell(LotHeaderData hdr, LotPackData pack,
+                                       TilesetIndex idx, File outFile,
+                                       String tilePathPrefix,
+                                       RoomObjectMode roomObjectMode) throws IOException {
         final int cellDim = hdr.cellDim;
         final int minZ = hdr.minLevelNotEmpty;
         final int maxZ = hdr.maxLevelNotEmpty;
@@ -132,24 +141,19 @@ public class LotToTMX {
                         }
                         int gid = ts.firstGid + ref.localId;
 
-                        // Route to a layer; if base slot is taken, climb to slot 2..N
+                        // Native B42 WorldEd uses only Floor, Vegetation, and FloorOverlay* layers.
                         LayerRouter.Role role = LayerRouter.routeOf(spriteName);
-                        String roleStr = role.suffix;
                         boolean placed = false;
-                        for (int slot = 0; slot < MAX_OVERLAY_SLOTS; slot++) {
-                            LayerKey key = new LayerKey(z, roleStr, slot);
-                            int[] grid = layerGrids.get(key);
-                            if (grid == null) {
-                                grid = new int[cellDim * cellDim];
-                                layerGrids.put(key, grid);
-                            }
-                            int idxFlat = y * cellDim + x;
-                            if (grid[idxFlat] == 0) {
-                                grid[idxFlat] = gid;
-                                placed = true;
-                                placedTiles++;
-                                break;
-                            }
+                        if (role == LayerRouter.Role.FLOOR) {
+                            placed = tryPlace(layerGrids, new LayerKey(z, "Floor", 0), cellDim, x, y, gid);
+                        } else if (role == LayerRouter.Role.VEGETATION) {
+                            placed = tryPlace(layerGrids, new LayerKey(z, "Vegetation", 0), cellDim, x, y, gid);
+                        }
+                        if (!placed) {
+                            placed = tryPlaceOverlay(layerGrids, z, cellDim, x, y, gid);
+                        }
+                        if (placed) {
+                            placedTiles++;
                         }
                         if (!placed) droppedTiles++;
                     }
@@ -162,33 +166,16 @@ public class LotToTMX {
                 new FileOutputStream(outFile), StandardCharsets.UTF_8))) {
 
             w.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-            w.write("<map version=\"1.0\" orientation=\"levelisometric\" width=\"" + cellDim +
+            w.write("<map version=\"2.0\" orientation=\"levelisometric\" width=\"" + cellDim +
                     "\" height=\"" + cellDim +
                     "\" tilewidth=\"64\" tileheight=\"32\">\n");
-
-            // Map-level properties: zombie density bytes
-            w.write(" <properties>\n");
-            for (int cy = 0; cy < hdr.chunksPerCell; cy++) {
-                for (int cx = 0; cx < hdr.chunksPerCell; cx++) {
-                    int v = hdr.zombieDensity[cx + cy * hdr.chunksPerCell] & 0xFF;
-                    if (v != 0) {
-                        w.write("  <property name=\"ZombieDensity_" + cx + "_" + cy +
-                                "\" value=\"" + v + "\"/>\n");
-                    }
-                }
-            }
-            w.write("  <property name=\"CellX\" value=\"" + hdr.cellX + "\"/>\n");
-            w.write("  <property name=\"CellY\" value=\"" + hdr.cellY + "\"/>\n");
-            w.write(" </properties>\n");
 
             // Tilesets in encounter order
             for (TilesetSlot ts : tilesetSlots.values()) {
                 int imgW = ts.meta.cols * SPRITE_W;
                 int imgH = ts.meta.rows * SPRITE_H;
-                w.write(" <tileset firstgid=\"" + ts.firstGid + "\" name=\"" + ts.meta.name +
-                        "\" tilewidth=\"" + SPRITE_W + "\" tileheight=\"" + SPRITE_H +
-                        "\" tilecount=\"" + ts.meta.tileCount() +
-                        "\" columns=\"" + ts.meta.cols + "\">\n");
+                w.write(" <tileset firstgid=\"" + ts.firstGid + "\" name=\"" + xmlAttr(ts.meta.name) +
+                        "\" tilewidth=\"" + SPRITE_W + "\" tileheight=\"" + SPRITE_H + "\">\n");
                 w.write("  <image source=\"" + xmlAttr(tilePathPrefix + ts.meta.name + ".png") +
                         "\" width=\"" + imgW + "\" height=\"" + imgH + "\"/>\n");
                 w.write(" </tileset>\n");
@@ -199,10 +186,10 @@ public class LotToTMX {
                 int[] grid = e.getValue();
                 if (allZero(grid)) continue;
                 LayerKey k = e.getKey();
-                w.write(" <layer name=\"" + k.name() + "\" width=\"" + cellDim +
+                w.write(" <layer name=\"" + k.name() + "\" level=\"" + k.level + "\" width=\"" + cellDim +
                         "\" height=\"" + cellDim + "\">\n");
-                w.write("  <data encoding=\"base64\" compression=\"zlib\">\n   ");
-                w.write(encodeLayerData(grid));
+                w.write("  <data encoding=\"csv\">\n");
+                writeCsvLayerData(w, grid, cellDim);
                 w.write("\n  </data>\n");
                 w.write(" </layer>\n");
             }
@@ -215,53 +202,25 @@ public class LotToTMX {
                 }
                 if (roomsAtLevel.isEmpty()) continue;
 
-                w.write(" <objectgroup name=\"" + z + "_RoomDefs\" color=\"#aa0000\">\n");
+                w.write(" <objectgroup name=\"RoomDefs\" level=\"" + z +
+                        "\" width=\"" + cellDim + "\" height=\"" + cellDim + "\">\n");
                 for (RoomDef rd : roomsAtLevel) {
                     for (int ri = 0; ri < rd.rects.size(); ri++) {
                         RoomRect rect = rd.rects.get(ri);
                         // Rects in loadLotHeader are stored as absolute world coords; convert to cell-relative
                         int relX = rect.x - hdr.getMinSquareX();
                         int relY = rect.y - hdr.getMinSquareY();
+                        int clipX1 = Math.max(0, relX);
+                        int clipY1 = Math.max(0, relY);
+                        int clipX2 = Math.min(cellDim, relX + rect.w);
+                        int clipY2 = Math.min(cellDim, relY + rect.h);
+                        if (clipX1 >= clipX2 || clipY1 >= clipY2) continue;
+                        int[] objRect = toObjectRect(clipX1, clipY1, clipX2 - clipX1, clipY2 - clipY1, roomObjectMode);
+                        String typePath = roomTypePath(hdr, z, rd.name, clipX1, clipY1, ri);
                         w.write("  <object name=\"" + xmlAttr(rd.name) +
-                                "\" type=\"room\" x=\"" + relX + "\" y=\"" + relY +
-                                "\" width=\"" + rect.w + "\" height=\"" + rect.h + "\">\n");
-                        w.write("   <properties>\n");
-                        w.write("    <property name=\"RoomID\" value=\"" + rd.id + "\"/>\n");
-                        w.write("    <property name=\"RoomName\" value=\"" + xmlAttr(rd.name) + "\"/>\n");
-                        w.write("    <property name=\"RoomLevel\" value=\"" + rd.level + "\"/>\n");
-                        if (ri == 0 && !rd.objects.isEmpty()) {
-                            w.write("    <property name=\"MetaObjectCount\" value=\"" + rd.objects.size() + "\"/>\n");
-                            int oi = 0;
-                            for (MetaObject mo : rd.objects) {
-                                w.write("    <property name=\"MetaObject_" + oi + "\" value=\"" +
-                                        mo.type + "," + mo.x + "," + mo.y + "\"/>\n");
-                                oi++;
-                            }
-                        }
-                        w.write("   </properties>\n");
-                        w.write("  </object>\n");
+                                "\" type=\"" + xmlAttr(typePath) + "\" x=\"" + objRect[0] + "\" y=\"" + objRect[1] +
+                                "\" width=\"" + objRect[2] + "\" height=\"" + objRect[3] + "\"/>\n");
                     }
-                }
-                w.write(" </objectgroup>\n");
-            }
-
-            // Buildings object group (level 0 holds the building summary)
-            if (!hdr.buildings.isEmpty()) {
-                w.write(" <objectgroup name=\"0_Buildings\" color=\"#ffaa00\" visible=\"0\">\n");
-                int bi = 0;
-                for (BuildingDef bd : hdr.buildings) {
-                    int relX = bd.x  - hdr.getMinSquareX();
-                    int relY = bd.y  - hdr.getMinSquareY();
-                    int relW = bd.x2 - bd.x;
-                    int relH = bd.y2 - bd.y;
-                    w.write("  <object name=\"building_" + bi + "\" type=\"building\" x=\"" + relX +
-                            "\" y=\"" + relY + "\" width=\"" + relW + "\" height=\"" + relH + "\">\n");
-                    w.write("   <properties>\n");
-                    w.write("    <property name=\"BuildingID\" value=\"" + bd.id + "\"/>\n");
-                    w.write("    <property name=\"RoomCount\" value=\"" + bd.rooms.size() + "\"/>\n");
-                    w.write("   </properties>\n");
-                    w.write("  </object>\n");
-                    bi++;
                 }
                 w.write(" </objectgroup>\n");
             }
@@ -277,6 +236,7 @@ public class LotToTMX {
                .append(" rooms=").append(hdr.roomList.size())
                .append(" buildings=").append(hdr.buildings.size())
                .append(" tilesets=").append(tilesetSlots.size())
+               .append(" roomMode=").append(roomObjectMode)
                .append(" zRange=").append(minZ).append("..").append(maxZ);
         if (!unknown.isEmpty()) {
             summary.append("\n  unknown sprite samples: ");
@@ -291,27 +251,57 @@ public class LotToTMX {
 
     // ============ helpers ============
 
+    private static boolean tryPlaceOverlay(Map<LayerKey, int[]> layerGrids, int level,
+                                           int cellDim, int x, int y, int gid) {
+        for (int slot = 0; slot < MAX_OVERLAY_SLOTS; slot++) {
+            if (tryPlace(layerGrids, new LayerKey(level, "FloorOverlay", slot), cellDim, x, y, gid)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean tryPlace(Map<LayerKey, int[]> layerGrids, LayerKey key,
+                                    int cellDim, int x, int y, int gid) {
+        int[] grid = layerGrids.get(key);
+        if (grid == null) {
+            grid = new int[cellDim * cellDim];
+            layerGrids.put(key, grid);
+        }
+        int idxFlat = y * cellDim + x;
+        if (grid[idxFlat] != 0) return false;
+        grid[idxFlat] = gid;
+        return true;
+    }
+
     private static boolean allZero(int[] g) {
         for (int v : g) if (v != 0) return false;
         return true;
     }
 
-    /** Encode an int[] grid (gids) as little-endian, zlib-compress, then base64. */
-    private static String encodeLayerData(int[] grid) throws IOException {
-        ByteBuffer bb = ByteBuffer.allocate(grid.length * 4).order(ByteOrder.LITTLE_ENDIAN);
-        for (int v : grid) bb.putInt(v);
-
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        Deflater def = new Deflater(Deflater.BEST_COMPRESSION);
-        def.setInput(bb.array());
-        def.finish();
-        byte[] buf = new byte[8192];
-        while (!def.finished()) {
-            int n = def.deflate(buf);
-            baos.write(buf, 0, n);
+    /** Write editor-native CSV layer data in row-major order. */
+    private static void writeCsvLayerData(Writer w, int[] grid, int width) throws IOException {
+        for (int i = 0; i < grid.length; i++) {
+            if (i > 0) w.write(',');
+            w.write(Integer.toString(grid[i]));
+            if ((i + 1) % width == 0) w.write('\n');
         }
-        def.end();
-        return Base64.getEncoder().encodeToString(baos.toByteArray());
+    }
+
+    private static int[] toObjectRect(int x, int y, int w, int h, RoomObjectMode mode) {
+        return new int[] { x * 64, y * 32, w * 64, h * 32 };
+    }
+
+    private static String roomTypePath(LotHeaderData hdr, int level, String roomName, int tileX, int tileY, int index) {
+        return ".\\tbx\\" + hdr.cellX + "_" + hdr.cellY + "\\" +
+                hdr.cellX + "_" + hdr.cellY + "_" + level + "_" +
+                safePathPart(roomName) + "_" + tileX + "_" + tileY + "_" + index + ".tbx";
+    }
+
+    private static String safePathPart(String s) {
+        if (s == null || s.isEmpty()) return "room";
+        String out = s.replaceAll("[^A-Za-z0-9_-]+", "_");
+        return out.isEmpty() ? "room" : out;
     }
 
     private static String xmlAttr(String s) {

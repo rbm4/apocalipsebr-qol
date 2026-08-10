@@ -60,12 +60,12 @@ Sandbox_PTBR = {
 
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus = "Bônus de Velocidade da Mesa"
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option1 = "Nenhum"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%%"
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_tooltip = "<BHC>Alterar essa opção afetará o balanceamento do jogo. <RGB:1,1,1><LINE> Define o bônus de velocidade ao realizar autópsia em uma mesa de necropsia."
 
     Sandbox_ZombieVirusVaccineBETA_AutopsyGroundXP = "XP de Autópsia no Chão"
@@ -89,7 +89,7 @@ Sandbox_PTBR = {
     Sandbox_ZombieVirusVaccineBETA_CollectPartXP = "XP de Autópsia de Partes do Corpo"
     Sandbox_ZombieVirusVaccineBETA_CollectPartXP_tooltip = "<BHC>Alterar essa opção afetará o balanceamento do jogo. <RGB:1,1,1><LINE> Define a quantidade de XP base recebida nas habilidades de butchering e primeiros socorros"
 
-    Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Chance Base Para Cérebro em Perfeitas Condições (%)"
+    Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Chance Base Para Cérebro em Perfeitas Condições (%%)"
     Sandbox_ZombieVirusVaccineBETA_BrainHighOffset_tooltip = "<BHC>Alterar essa opção afetará o balanceamento do jogo. <RGB:1,1,1><LINE> Define a chance base para a coleta de um cérebro em perfeitas condições."
 
     Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "Debuff Hemofóbico"

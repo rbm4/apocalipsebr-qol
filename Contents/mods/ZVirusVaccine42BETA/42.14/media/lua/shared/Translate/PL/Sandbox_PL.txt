@@ -64,12 +64,12 @@ Sandbox_PL = {
 
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus = "Bonus Szybkości Stołu Sekcyjnego"
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option1 = "Bez"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%%"
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_tooltip = "<BHC>Zmiana tej opcji wpłynie na balans gry. <RGB:1,1,1>\n\n Określa bonus do szybkości podczas przeprowadzania autopsji na stole sekcyjnym."
 
     Sandbox_ZombieVirusVaccineBETA_AutopsyGroundXP = "Doświadczenie za Autopsję na Ziemi"
@@ -93,7 +93,7 @@ Sandbox_PL = {
 	Sandbox_ZombieVirusVaccineBETA_CollectPartXP = "PD z Autopsji Części Ciała"
 	Sandbox_ZombieVirusVaccineBETA_CollectPartXP_tooltip = "<BHC>Zmiana tej opcji wpłynie na balans gry. <RGB:1,1,1><LINE> Określa bazową ilość PD zdobywanego w umiejętnościach Rzeźnictwo i Pierwsza Pomoc."
 
-	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Bazowa Szansa na Mózg w Idealnym Stanie (%)"
+	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Bazowa Szansa na Mózg w Idealnym Stanie (%%)"
 	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset_tooltip = "<BHC>Zmiana tej opcji wpłynie na balans gry. <RGB:1,1,1><LINE> Określa bazową szansę na pozyskanie mózgu w idealnym stanie."
 
 	Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "Kara za Hemofobię"

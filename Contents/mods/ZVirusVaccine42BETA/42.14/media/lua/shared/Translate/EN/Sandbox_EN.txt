@@ -60,12 +60,12 @@ Sandbox_EN = {
 
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus = "Morgue Table Speed Bonus"
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option1 = "None"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%"
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%%"
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%%"
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_tooltip = "<BHC>Changing this option will affect game balance. <RGB:1,1,1><LINE> Defines the speed bonus when performing an autopsy on an autopsy table."
 
     Sandbox_ZombieVirusVaccineBETA_AutopsyGroundXP = "Ground Autopsy XP"
@@ -92,7 +92,7 @@ Sandbox_EN = {
     Sandbox_ZombieVirusVaccineBETA_CollectPartXP = "Body Part Autopsy XP"
 	Sandbox_ZombieVirusVaccineBETA_CollectPartXP_tooltip = "<BHC>Changing this option will affect game balance. <RGB:1,1,1><LINE> Defines the base XP gained in Butchering and First Aid skills."
 
-	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Base Chance for Perfect Condition Brain (%)"
+	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "Base Chance for Perfect Condition Brain (%%)"
 	Sandbox_ZombieVirusVaccineBETA_BrainHighOffset_tooltip = "<BHC>Changing this option will affect game balance. <RGB:1,1,1><LINE> Defines the base chance of collecting a brain in perfect condition."
 
 	Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "Hemophobic Debuff"

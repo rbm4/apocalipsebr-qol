@@ -74,12 +74,12 @@ Sandbox_KO = {
 
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus = "영안실 테이블 속도 보너스",
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option1 = "없음",
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%",
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%",
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%",
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%",
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%",
-    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option2 = "10%%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option3 = "20%%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option4 = "30%%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option5 = "40%%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option6 = "50%%",
+    Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_option7 = "60%%",
     Sandbox_ZombieVirusVaccineBETA_TableSpeedBonus_tooltip = "<BHC>이 설정을 변경하면 게임 밸런스에 영향을 줍니다. <RGB:1,1,1><LINE> 부검 테이블에서 부검 시 적용되는 속도 보너스를 설정합니다.",
 
     Sandbox_ZombieVirusVaccineBETA_AutopsyGroundXP = "지면 부검 경험치",
@@ -91,7 +91,7 @@ Sandbox_KO = {
     Sandbox_ZombieVirusVaccineBETA_CollectPartXP = "신체 부위 부검 경험치",
     Sandbox_ZombieVirusVaccineBETA_CollectPartXP_tooltip = "<BHC>이 설정을 변경하면 게임 밸런스에 영향을 줍니다. <RGB:1,1,1><LINE> 정육 및 응급처치 스킬에서 획득하는 기본 경험치를 설정합니다.",
 
-    Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "최상 상태 뇌 획득 기본 확률 (%)",
+    Sandbox_ZombieVirusVaccineBETA_BrainHighOffset = "최상 상태 뇌 획득 기본 확률 (%%)",
     Sandbox_ZombieVirusVaccineBETA_BrainHighOffset_tooltip = "<BHC>이 설정을 변경하면 게임 밸런스에 영향을 줍니다. <RGB:1,1,1><LINE> 최상 상태의 뇌를 채취할 기본 확률을 설정합니다.",
 
     Sandbox_ZombieVirusVaccineBETA_HemophobicDebuff = "혈액 공포증 디버프",
@@ -114,47 +114,47 @@ Sandbox_KO = {
 
     -- SPEECH CHANCES: BLOOD TEST
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestNegative = "발화 확률: 혈액 검사 음성",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestNegative_tooltip = "혈액 검사에서 음성 결과를 받은 후 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestNegative_tooltip = "혈액 검사에서 음성 결과를 받은 후 캐릭터가 발언할 확률 (%%)입니다.",
 
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestPositive = "발화 확률: 혈액 검사 양성",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestPositive_tooltip = "혈액 검사에서 양성 결과를 받은 후 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestPositive_tooltip = "혈액 검사에서 양성 결과를 받은 후 캐릭터가 발언할 확률 (%%)입니다.",
 
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestInvalid = "발화 확률: 혈액 검사 - 유효하지 않은 샘플",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestInvalid_tooltip = "혈액 샘플이 유효하지 않을 때 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceBloodTestInvalid_tooltip = "혈액 샘플이 유효하지 않을 때 캐릭터가 발언할 확률 (%%)입니다.",
 
     -- SPEECH CHANCES: BLOOD COLLECTION
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceCollectBlood = "발화 확률: 혈액 채취",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceCollectBlood_tooltip = "혈액 채취 중 주삿바늘의 통증에 캐릭터가 반응할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceCollectBlood_tooltip = "혈액 채취 중 주삿바늘의 통증에 캐릭터가 반응할 확률 (%%)입니다.",
 
     -- SPEECH CHANCES: AUTOPSY
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyInfected = "발화 확률: 부검 - 감염",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyInfected_tooltip = "부검한 시체에서 감염 징후가 발견될 때 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyInfected_tooltip = "부검한 시체에서 감염 징후가 발견될 때 캐릭터가 발언할 확률 (%%)입니다.",
 
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyTainted = "발화 확률: 부검 - 오염",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyTainted_tooltip = "부검한 시체가 오염된 것으로 확인될 때 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyTainted_tooltip = "부검한 시체가 오염된 것으로 확인될 때 캐릭터가 발언할 확률 (%%)입니다.",
 
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyNothing = "발화 확률: 부검 - 이상 없음",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyNothing_tooltip = "부검에서 특이사항이 발견되지 않을 때 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyNothing_tooltip = "부검에서 특이사항이 발견되지 않을 때 캐릭터가 발언할 확률 (%%)입니다.",
 
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyAlready = "발화 확률: 부검 - 이미 부검됨",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyAlready_tooltip = "이미 부검된 시체를 다시 부검하려 할 때 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceAutopsyAlready_tooltip = "이미 부검된 시체를 다시 부검하려 할 때 캐릭터가 발언할 확률 (%%)입니다.",
 
     -- SPEECH CHANCES: MORGUE
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpsePlaced = "발화 확률: 영안실 - 시체 배치",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpsePlaced_tooltip = "영안실 테이블에 시체를 올린 후 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpsePlaced_tooltip = "영안실 테이블에 시체를 올린 후 캐릭터가 발언할 확률 (%%)입니다.",
 
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueSuccess = "발화 확률: 영안실 - 유해 수집 완료",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueSuccess_tooltip = "영안실에서 유해를 성공적으로 수집한 후 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueSuccess_tooltip = "영안실에서 유해를 성공적으로 수집한 후 캐릭터가 발언할 확률 (%%)입니다.",
 
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueNoContainer = "발화 확률: 영안실 - 용기 없음",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueNoContainer_tooltip = "영안실에 사용 가능한 용기가 없을 때 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueNoContainer_tooltip = "영안실에 사용 가능한 용기가 없을 때 캐릭터가 발언할 확률 (%%)입니다.",
 
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueTableCleaned = "발화 확률: 영안실 - 테이블 청소",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueTableCleaned_tooltip = "영안실 테이블을 청소한 후 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueTableCleaned_tooltip = "영안실 테이블을 청소한 후 캐릭터가 발언할 확률 (%%)입니다.",
 
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpseRemoved = "발화 확률: 영안실 - 시체 제거",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpseRemoved_tooltip = "영안실 테이블에서 시체를 제거한 후 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueCorpseRemoved_tooltip = "영안실 테이블에서 시체를 제거한 후 캐릭터가 발언할 확률 (%%)입니다.",
 
     Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueBodyPartCollected = "발화 확률: 영안실 - 신체 부위 수집",
-    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueBodyPartCollected_tooltip = "영안실 처치 중 신체 부위를 수집한 후 캐릭터가 발언할 확률 (%)입니다.",
+    Sandbox_ZombieVirusVaccineBETA_SpeechChanceMorgueBodyPartCollected_tooltip = "영안실 처치 중 신체 부위를 수집한 후 캐릭터가 발언할 확률 (%%)입니다.",
 }

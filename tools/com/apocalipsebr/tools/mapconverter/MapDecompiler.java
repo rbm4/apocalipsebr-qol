@@ -19,7 +19,11 @@ import com.apocalipsebr.tools.mapconverter.ConvertMap.LotPackData;
  *
  * Usage:
  *   java com.apocalipsebr.tools.mapconverter.MapDecompiler \
- *       <inputMapDir> <outputDir> [tileDPath] [pzwTemplate]
+ *       <inputMapDir> <outputDir> [tileDPath] [pzwTemplate] [roomMode]
+ *
+ * roomMode:
+ *   generateLots  Room/building objects use tile coords for GenerateLots.
+ *   editor        Room/building objects use pixel-scaled coords for WorldEd viewing.
  *
  * Steps:
  *   1. Discover cell coords from CX_CY.lotheader files.
@@ -35,7 +39,8 @@ public class MapDecompiler {
 
     public static void main(String[] args) throws Exception {
         if (args.length < 2) {
-            System.out.println("Usage: MapDecompiler <inputMapDir> <outputDir> [tileDPath] [pzwTemplate]");
+            System.out.println("Usage: MapDecompiler <inputMapDir> <outputDir> [tileDPath] [pzwTemplate] [roomMode]");
+            System.out.println("  roomMode: generateLots (default) or editor");
             System.exit(1);
         }
         File inputDir   = new File(args[0]);
@@ -45,11 +50,17 @@ public class MapDecompiler {
         // Default to the EMPTY teste.pzw, not untitled.pzw — the latter is a saved
         // Recife project whose <bmp>/<cell> entries would otherwise leak through.
         File pzwTemplate = (args.length >= 4) ? new File(args[3]) : new File("z:\\pzmaps\\teste.pzw");
+        LotToTMX.RoomObjectMode roomObjectMode = parseRoomObjectMode(args.length >= 5 ? args[4] : "generateLots");
 
-        decompile(inputDir, outputDir, tileDPath, pzwTemplate);
+        decompile(inputDir, outputDir, tileDPath, pzwTemplate, roomObjectMode);
     }
 
     public static void decompile(File inputDir, File outputDir, File tileDPath, File pzwTemplate) throws IOException {
+        decompile(inputDir, outputDir, tileDPath, pzwTemplate, LotToTMX.RoomObjectMode.GENERATE_LOTS);
+    }
+
+    public static void decompile(File inputDir, File outputDir, File tileDPath, File pzwTemplate,
+                                 LotToTMX.RoomObjectMode roomObjectMode) throws IOException {
         if (!inputDir.isDirectory()) throw new IOException("Input not a directory: " + inputDir);
         outputDir.mkdirs();
         File cellsDir = new File(outputDir, "cells");
@@ -81,7 +92,7 @@ public class MapDecompiler {
         System.out.println("      " + cells.size() + " cells; world bounds X=" + minCX + ".." + maxCX
                 + " Y=" + minCY + ".." + maxCY + " (size " + worldW + "x" + worldH + ")");
 
-        System.out.println("[3/5] Emitting per-cell TMX files");
+        System.out.println("[3/5] Emitting per-cell TMX files (roomMode=" + roomObjectMode + ")");
         // Per-cell TMX should reference tiles at "../../<TileDPath>/Tiles/2x/X.png"
         // We use an absolute path so the editor finds it regardless of project location.
         String tilePathPrefix = tileDPath.toPath().resolve("Tiles").resolve("2x").toString().replace('\\', '/') + "/";
@@ -102,7 +113,7 @@ public class MapDecompiler {
                     continue;
                 }
                 LotPackData pack = ConvertMap.loadLotPack(packFile, hdr);
-                String summary = LotToTMX.decompileCell(hdr, pack, idx, tmxFile, tilePathPrefix);
+                String summary = LotToTMX.decompileCell(hdr, pack, idx, tmxFile, tilePathPrefix, roomObjectMode);
                 ok++;
                 report.append(summary).append('\n');
                 cellRefs.add(new MapToPZW.CellRef(cx - minCX, cy - minCY, "cells/" + cx + "_" + cy + ".tmx"));
@@ -116,7 +127,12 @@ public class MapDecompiler {
         System.out.println("[4/5] Writing world .pzw");
         String mapName = inputDir.getName().replaceAll("[^A-Za-z0-9_-]", "_");
         File pzwOut = new File(outputDir, mapName + ".pzw");
-        MapToPZW.write(pzwTemplate, pzwOut, worldW, worldH, cellRefs);
+        MapToPZW.write(pzwTemplate, pzwOut, worldW, worldH, cellRefs,
+                inputDir.getAbsolutePath().replace('\\', '/'),
+                mapName + "_ZombieSpawnMap.bmp",
+                new File(tileDPath, "..").getCanonicalPath().replace('\\', '/'),
+                fileExists(inputDir, "spawnpoints.lua") ? "spawnpoints.lua" : "",
+                fileExists(inputDir, "objects.lua") ? "objects.lua" : "");
         System.out.println("      " + pzwOut);
 
         System.out.println("[5/5] Copying ancillary files and emitting placeholders");
@@ -137,6 +153,7 @@ public class MapDecompiler {
             int pxH = worldH * 256;
             BuildBlankBMP.writeBlankBmp(new File(outputDir, mapName + ".bmp"), pxW, pxH, Color.WHITE);
             BuildBlankBMP.writeBlankBmp(new File(outputDir, mapName + "_veg.bmp"), pxW, pxH, Color.WHITE);
+            BuildBlankBMP.writeBlankBmp(new File(outputDir, mapName + "_ZombieSpawnMap.bmp"), pxW, pxH, Color.BLACK);
             System.out.println("      blank BMPs " + pxW + "x" + pxH);
         } catch (Exception e) {
             System.out.println("      BMP placeholder generation failed: " + e.getMessage());
@@ -150,6 +167,16 @@ public class MapDecompiler {
         System.out.println("=== Done. Open in WorldEd: " + pzwOut.getAbsolutePath() + " ===");
     }
 
+    private static LotToTMX.RoomObjectMode parseRoomObjectMode(String value) {
+        if (value == null) return LotToTMX.RoomObjectMode.GENERATE_LOTS;
+        String v = value.trim().toLowerCase();
+        if (v.equals("editor") || v.equals("worlded")) return LotToTMX.RoomObjectMode.EDITOR;
+        if (v.equals("generatelots") || v.equals("generate-lots") || v.equals("lots") || v.equals("compile")) {
+            return LotToTMX.RoomObjectMode.GENERATE_LOTS;
+        }
+        throw new IllegalArgumentException("Unknown roomMode '" + value + "'; expected generateLots or editor");
+    }
+
     private static void copyIfExists(File srcDir, File dstDir, String name) {
         File src = new File(srcDir, name);
         if (!src.isFile()) return;
@@ -159,5 +186,9 @@ public class MapDecompiler {
         } catch (IOException e) {
             System.out.println("      [warn] copy " + name + " failed: " + e.getMessage());
         }
+    }
+
+    private static boolean fileExists(File dir, String name) {
+        return new File(dir, name).isFile();
     }
 }

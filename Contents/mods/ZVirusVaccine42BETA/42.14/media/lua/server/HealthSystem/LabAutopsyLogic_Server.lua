@@ -5,6 +5,26 @@ local LabAutopsyLogic = {}
 local LabSpriteSynchHandler = require("HealthSystem/LabSpriteSynchHandler_Server")
 local LabSandboxOptions = require("Util/LabSandboxOptions")
 
+local function ApplyRLPTraitModifier(methodName, fallbackValue, ...)
+    local effects = _G.RLPTraitEffects
+    local modifier = effects and effects[methodName]
+
+    if type(modifier) == "function" then
+        return modifier(...)
+    end
+
+    return fallbackValue
+end
+
+local function HasRLPAutopsySpecialist(player)
+    return player
+        and RLP
+        and RLP.CharacterTrait
+        and RLP.CharacterTrait.AUTOPSY_SPECIALIST
+        and player:hasTrait(RLP.CharacterTrait.AUTOPSY_SPECIALIST)
+        or false
+end
+
 local function MarkCorpseAsAutopsied(corpseX, corpseY, corpseZ, corpseId)
     if not corpseX or not corpseY or not corpseZ then
         return false
@@ -198,9 +218,7 @@ function LabAutopsyLogic.ProcessAutopsy(player, isOnTable, corpseId, topX, topY,
 
     local xpMultiplier = 1.0
 
-    if _G.RLPTraitEffects then
-        xpMultiplier = _G.RLPTraitEffects.ModifyAutopsyXPMultiplier(player, xpMultiplier)
-    end
+    xpMultiplier = ApplyRLPTraitModifier("ModifyAutopsyXPMultiplier", xpMultiplier, player, xpMultiplier)
 
     if isDoctor then
         xpMultiplier = xpMultiplier * 1.10
@@ -210,9 +228,7 @@ function LabAutopsyLogic.ProcessAutopsy(player, isOnTable, corpseId, topX, topY,
 
     if isOnTable then        local sampleCount = isDoctor and 4 or 3
 
-        if _G.RLPTraitEffects then
-            sampleCount = _G.RLPTraitEffects.ModifyAutopsySampleCount(player, sampleCount)
-        end
+        sampleCount = ApplyRLPTraitModifier("ModifyAutopsySampleCount", sampleCount, player, sampleCount)
 		
 		if scienceLevel > 0 then
 			local extraChance = math.min(scienceLevel * 3, 30)
@@ -235,15 +251,13 @@ function LabAutopsyLogic.ProcessAutopsy(player, isOnTable, corpseId, topX, topY,
             infectedChance = infectedChance - 15
         end
 
-        if _G.RLPTraitEffects then
-            infectedChance = _G.RLPTraitEffects.ModifyAutopsyInfectedBloodChance(player, infectedChance)
-        end
+        infectedChance = ApplyRLPTraitModifier("ModifyAutopsyInfectedBloodChance", infectedChance, player, infectedChance)
 
 		if LabSandboxOptions.IsDebugMode() then
             print("========== AUTOPSY TABLE DEBUG ==========")
             print("First Aid Level  :", firstAidLevel)
             print("Is Doctor        :", isDoctor)
-            print("Is Intern        :", _G.RLPTraitEffects and player:hasTrait(RLP.CharacterTrait.AUTOPSY_SPECIALIST) or false)
+            print("Is Intern        :", HasRLPAutopsySpecialist(player))
             print("Is Hemophobic    :", player:hasTrait(CharacterTrait.HEMOPHOBIC))
             print("Infected Chance  :", infectedChance .. "%")
             print("Tainted Chance   :", (100 - infectedChance) .. "%")
@@ -313,9 +327,7 @@ function LabAutopsyLogic.ProcessAutopsy(player, isOnTable, corpseId, topX, topY,
 		local totalReduction = skillReduction + scienceReduction
 
         -- Permite trait modificar
-        if _G.RLPTraitEffects then
-			totalReduction = _G.RLPTraitEffects.ModifyGroundAutopsyNothingReduction(player, totalReduction)
-		end
+        totalReduction = ApplyRLPTraitModifier("ModifyGroundAutopsyNothingReduction", totalReduction, player, totalReduction)
 
         -- Clamp estrutural
 		if totalReduction > baseNothing then
@@ -336,7 +348,7 @@ function LabAutopsyLogic.ProcessAutopsy(player, isOnTable, corpseId, topX, topY,
 			baseTainted + (appliedSkillReduction * 0.4)
 
         if LabSandboxOptions.IsDebugMode() then
-            local hasSpecialist = _G.RLPTraitEffects and player:hasTrait(RLP.CharacterTrait.AUTOPSY_SPECIALIST) or false
+            local hasSpecialist = HasRLPAutopsySpecialist(player)
             print("========== AUTOPSY GROUND DEBUG ==========")
             print("Chances Base:")
             print("Infected:", baseInfected)

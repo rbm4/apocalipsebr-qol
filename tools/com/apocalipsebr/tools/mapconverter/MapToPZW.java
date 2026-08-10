@@ -31,6 +31,13 @@ public class MapToPZW {
 
     public static void write(File templatePzw, File outFile, int worldW, int worldH,
                              List<CellRef> cells) throws IOException {
+        write(templatePzw, outFile, worldW, worldH, cells, "", "", "", "", "");
+    }
+
+    public static void write(File templatePzw, File outFile, int worldW, int worldH,
+                             List<CellRef> cells, String exportDir, String zombieSpawnMap,
+                             String tileDefFolder, String spawnPointsFile,
+                             String worldObjectsFile) throws IOException {
         String tpl;
         if (templatePzw != null && templatePzw.isFile()) {
             tpl = new String(Files.readAllBytes(templatePzw.toPath()), StandardCharsets.UTF_8);
@@ -55,11 +62,11 @@ public class MapToPZW {
         tpl = tpl.replaceAll("(<rulesfile\\s+path=)\"[^\"]*\"", "$1\"\"");
         tpl = tpl.replaceAll("(<blendsfile\\s+path=)\"[^\"]*\"", "$1\"\"");
         tpl = tpl.replaceAll("(<mapbasefile\\s+path=)\"[^\"]*\"", "$1\"\"");
-        tpl = tpl.replaceAll("(<exportdir\\s+path=)\"[^\"]*\"", "$1\"\"");
-        tpl = tpl.replaceAll("(<ZombieSpawnMap\\s+path=)\"[^\"]*\"", "$1\"\"");
-        tpl = tpl.replaceAll("(<TileDefFolder\\s+path=)\"[^\"]*\"", "$1\"\"");
-        tpl = tpl.replaceAll("(<spawnPointsFile\\s+path=)\"[^\"]*\"", "$1\"\"");
-        tpl = tpl.replaceAll("(<worldObjectsFile\\s+path=)\"[^\"]*\"", "$1\"\"");
+        tpl = tpl.replaceAll("(<exportdir\\s+path=)\"[^\"]*\"", "$1\"" + xmlAttr(exportDir) + "\"");
+        tpl = tpl.replaceAll("(<ZombieSpawnMap\\s+path=)\"[^\"]*\"", "$1\"" + xmlAttr(zombieSpawnMap) + "\"");
+        tpl = tpl.replaceAll("(<TileDefFolder\\s+path=)\"[^\"]*\"", "$1\"" + xmlAttr(tileDefFolder) + "\"");
+        tpl = tpl.replaceAll("(<spawnPointsFile\\s+path=)\"[^\"]*\"", "$1\"" + xmlAttr(spawnPointsFile) + "\"");
+        tpl = tpl.replaceAll("(<worldObjectsFile\\s+path=)\"[^\"]*\"", "$1\"" + xmlAttr(worldObjectsFile) + "\"");
         tpl = tpl.replaceAll("(<roomTonesFile\\s+path=)\"[^\"]*\"", "$1\"\"");
         tpl = tpl.replaceAll("(<buildingsImage\\s+path=)\"[^\"]*\"", "$1\"\"");
         // Reset assign-maps-to-world to false (template might have it true)

@@ -233,7 +233,14 @@ function ReadSkillRecoveryJournal:update()
 			end
 
 			-- apply read xp
-			local XpStoredInJournal = JMD["gainedXP"]
+			local BT = SRJ.getBeyondTen()
+			local legacyBeyondTenXP = JMD["BeyondTenXP"]
+			local XpStoredInJournal = JMD["gainedXP"] or {}
+			if legacyBeyondTenXP then
+				for skill,_xp in pairs(legacyBeyondTenXP) do
+					XpStoredInJournal[skill] = XpStoredInJournal[skill] or 0
+				end
+			end
 			local greatestXp = 0
 
 			local validSkills = {}
@@ -248,7 +255,11 @@ function ReadSkillRecoveryJournal:update()
 							if skill=="NONE" or skill=="MAX" then
 								XpStoredInJournal[skill] = nil
 							else
-								if xp > greatestXp then greatestXp = xp end
+								local journalXP = xp
+								if SRJ.isBeyondTenPerkValid(BT, perk) and legacyBeyondTenXP then
+									journalXP = journalXP + (legacyBeyondTenXP[skill] or 0)
+								end
+								if journalXP > greatestXp then greatestXp = journalXP end
 							end
 						end
 					end
@@ -263,26 +274,38 @@ function ReadSkillRecoveryJournal:update()
 				local oneTimeUse = (SandboxVars.SkillRecoveryJournal.RecoveryJournalUsed == true) or (self.chargesExhausted == true)
 
 				for skill,xp in pairs(XpStoredInJournal) do
-					totalRecoverableXP = totalRecoverableXP + xp
-					if Perks[skill] and validSkills[skill] then
+					local perk = Perks[skill]
+					local isBeyondTenSkill = SRJ.isBeyondTenPerkValid(BT, perk)
+					local journalXP = xp
+					if isBeyondTenSkill and legacyBeyondTenXP then
+						journalXP = journalXP + (legacyBeyondTenXP[skill] or 0)
+					end
+					totalRecoverableXP = totalRecoverableXP + journalXP
+					if perk and validSkills[skill] then
 
 						readXP[skill] = readXP[skill] or 0
 						local currentlyReadXP = readXP[skill]
+						if isBeyondTenSkill and readXP.BeyondTen and readXP.BeyondTen[skill] then
+							currentlyReadXP = math.max(currentlyReadXP, readXP.BeyondTen[skill])
+						end
 						totalRedXP = totalRedXP + currentlyReadXP
-						local journalXP = xp
 
 						if oneTimeUse and jmdUsedXP[skill] and jmdUsedXP[skill] then
 							if jmdUsedXP[skill] >= currentlyReadXP then bJournalUsedUp = true end
 							currentlyReadXP = math.max(currentlyReadXP, jmdUsedXP[skill])
+						end
+						if oneTimeUse and isBeyondTenSkill and JMD.beyondTenRecoveryJournalXpLog and JMD.beyondTenRecoveryJournalXpLog[skill] then
+							if JMD.beyondTenRecoveryJournalXpLog[skill] >= currentlyReadXP then bJournalUsedUp = true end
+							currentlyReadXP = math.max(currentlyReadXP, JMD.beyondTenRecoveryJournalXpLog[skill])
 						end
 
 						if currentlyReadXP < journalXP then
 
 							local differential = SRJ.getMaxXPDifferential(skill)
 
-							local perkLevelPlusOne = player:getPerkLevel(Perks[skill])+1
+							local perkLevelPlusOne = player:getPerkLevel(perk)+1
 							local perPerkXpRate = round(((xpRate*math.sqrt(perkLevelPlusOne))*1000)/1000 * readTimeMulti / differential, 2)
-							if perkLevelPlusOne == 11 then perPerkXpRate=false end
+							if perkLevelPlusOne == 11 and not isBeyondTenSkill then perPerkXpRate=false end
 
 							if skill=="Fitness" then
 								local cannotGain, message = SRJ.checkFitnessCanAddXp(player)
@@ -299,16 +322,30 @@ function ReadSkillRecoveryJournal:update()
 								if currentlyReadXP+perPerkXpRate > journalXP then perPerkXpRate = math.max(journalXP-currentlyReadXP, 0.001) end
 
 								-- store amount already red in player data
-								readXP[skill] = readXP[skill]+perPerkXpRate
+								local resultingReadXP = currentlyReadXP+perPerkXpRate
+								readXP[skill] = resultingReadXP
 								-- and in journal for decay
-								jmdUsedXP[skill] = (jmdUsedXP[skill] or 0)+perPerkXpRate
+								jmdUsedXP[skill] = resultingReadXP
+								if isBeyondTenSkill then
+									readXP.BeyondTen = readXP.BeyondTen or {}
+									readXP.BeyondTen[skill] = resultingReadXP
+									JMD.beyondTenRecoveryJournalXpLog = JMD.beyondTenRecoveryJournalXpLog or {}
+									JMD.beyondTenRecoveryJournalXpLog[skill] = resultingReadXP
+								end
 
                                 -- request server to grant XP (42.14+ server-authoritative)
-                                local addedXP = SRJ.xpHandler.reBoostXP(player,Perks[skill],perPerkXpRate)
-                                sendClientCommand(player, "SkillRecoveryJournal", "addXp", {
-                                    perkID = skill,
-                                    amount = addedXP
-                                })
+                                local addedXP = SRJ.xpHandler.reBoostXP(player,perk,perPerkXpRate)
+								if isBeyondTenSkill then
+									sendClientCommand(player, "SkillRecoveryJournal", "addBeyondTenXp", {
+										perkID = skill,
+										amount = addedXP
+									})
+								else
+									sendClientCommand(player, "SkillRecoveryJournal", "addXp", {
+										perkID = skill,
+										amount = addedXP
+									})
+								end
 
 								self.xpWasAwarded = true
 								changesMade = true

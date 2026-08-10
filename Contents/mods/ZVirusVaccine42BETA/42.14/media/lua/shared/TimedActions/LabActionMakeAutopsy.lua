@@ -141,7 +141,7 @@ function LabActionMakeAutopsy:getDuration()
     end
     
     -- Mod RLP
-    if _G.RLPTraitEffects then
+    if _G.RLPTraitEffects and type(_G.RLPTraitEffects.ModifyAutopsyDuration) == "function" then
         time = _G.RLPTraitEffects.ModifyAutopsyDuration(self.character, time)
     end
 

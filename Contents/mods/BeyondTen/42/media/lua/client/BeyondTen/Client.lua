@@ -63,6 +63,39 @@ local function addMasteryXP(player, perk, amount)
     return applied
 end
 
+local function addRecoveredXP(player, perk, amount)
+    if isClient() or not player or not perk or player:isDead() then return 0, 0, 0, 0, 0 end
+    if not BT.IsTrainablePerk(perk) then return 0, 0, 0, 0, 0 end
+
+    amount = tonumber(amount)
+    if not BT.IsFinite(amount) then amount = 0 end
+    amount = math.max(0, amount)
+
+    local oldLevel = BT.GetEffectiveLevel(player, perk)
+    local nativeApplied = 0
+    if amount > 0 and BT.GetNativeLevel(player, perk) < BT.NATIVE_MAX_LEVEL then
+        local xp = player:getXp()
+        local currentXP = tonumber(xp:getXP(perk)) or 0
+        local missingXP = math.max(0, BT.GetNativeCapXP(perk) - currentXP)
+        nativeApplied = BT.Clamp(amount, 0, missingXP)
+        if nativeApplied > 0 then
+            addXpNoMultiplier(player, perk, nativeApplied)
+            Client.ScanPlayer(player, false)
+        end
+    end
+
+    local masteryApplied = 0
+    local remainder = amount - nativeApplied
+    if remainder > 0 and BT.GetNativeLevel(player, perk) >= BT.NATIVE_MAX_LEVEL then
+        masteryApplied = addMasteryXP(player, perk, remainder)
+    end
+
+    local newLevel = BT.GetEffectiveLevel(player, perk)
+    return nativeApplied + masteryApplied, nativeApplied, masteryApplied, oldLevel, newLevel
+end
+
+BT._recoveredXPHandler = addRecoveredXP
+
 local function applyNativeOverflow(player, perk, amount)
     -- Reapply the unabsorbed negative award from the true level-10 boundary.
     -- This preserves cap-minus-X XP when mastery is exhausted instead of

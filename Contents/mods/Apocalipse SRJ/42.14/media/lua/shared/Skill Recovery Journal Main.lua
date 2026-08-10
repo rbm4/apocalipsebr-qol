@@ -5,6 +5,29 @@ SRJ.xpPatched = false
 SRJ.xpHandler = require "Skill Recovery Journal XP"
 SRJ.modDataHandler = require "Skill Recovery Journal ModData"
 
+function SRJ.getBeyondTen()
+	if BeyondTen then return BeyondTen end
+	pcall(require, "BeyondTen/Shared")
+	return BeyondTen
+end
+
+function SRJ.isBeyondTenPerkValid(BT, perk)
+	return BT and perk and type(BT.IsTrainablePerk) == "function" and BT.IsTrainablePerk(perk)
+end
+
+function SRJ.getBeyondTenStoredXP(player, perk)
+	local BT = SRJ.getBeyondTen()
+	if not SRJ.isBeyondTenPerkValid(BT, perk) then return 0 end
+	if type(BT.GetStoredXP) == "function" then
+		return tonumber(BT.GetStoredXP(player, perk)) or 0
+	end
+	if type(BT.ExportXP) == "function" then
+		local values = BT.ExportXP(player)
+		return values and (tonumber(values[perk:getId()]) or 0) or 0
+	end
+	return 0
+end
+
 --- Check if an item is the full (100%) recovery journal
 ---@param item InventoryItem
 ---@return boolean
@@ -158,7 +181,11 @@ function SRJ.calculateGainedSkill(player, perk, passiveSkillsInit, startingLevel
 	end
 
 	if perk and perk:getParent():getId()~="None" then
+		local BT = SRJ.getBeyondTen()
 		local perkXP = player:getXp():getXP(perk)
+		if SRJ.isBeyondTenPerkValid(BT, perk) and type(BT.GetVirtualXP) == "function" then
+			perkXP = BT.GetVirtualXP(player, perk)
+		end
 		if perkXP > 0 then
 			local perkID = perk:getId()
 			--if getDebug() then print("perkXP: ",perkID," = ",perkXP) end
@@ -212,6 +239,40 @@ function SRJ.calculateAllGainedSkills(player, isFullJournal)
 		local gained = SRJ.calculateGainedSkill(player, perk, passiveSkillsInit, startingLevels, deductibleXP, isFullJournal)
 		if gained then
 			--if getDebug() then print("calculateAllGainedSkills gained " .. gained) end
+			gainedXP = gainedXP or {}
+			gainedXP[perk:getId()] = gained
+		end
+	end
+
+	return gainedXP
+end
+
+
+function SRJ.calculateGainedBeyondTenSkill(player, perk, isFullJournal)
+	local BT = SRJ.getBeyondTen()
+	if not SRJ.isBeyondTenPerkValid(BT, perk) then return false end
+	if player:getPerkLevel(perk) < (BT.NATIVE_MAX_LEVEL or 10) then return false end
+
+	local storedXP = SRJ.getBeyondTenStoredXP(player, perk)
+	if storedXP <= 0 then return false end
+
+	local sandboxOptionRecover, recoveryPercentage = SRJ.bSkillValid(perk, isFullJournal)
+	if not sandboxOptionRecover then return false end
+
+	local recoverableXP = SRJ.xpHandler.unBoostXP(player, perk, storedXP)
+	local gainedXP = recoverableXP * recoveryPercentage
+	return gainedXP > 0 and gainedXP or false
+end
+
+
+function SRJ.calculateAllGainedBeyondTenSkills(player, isFullJournal)
+	local BT = SRJ.getBeyondTen()
+	if not BT or type(BT.GetTrainablePerks) ~= "function" then return nil end
+
+	local gainedXP
+	for _, perk in ipairs(BT.GetTrainablePerks()) do
+		local gained = SRJ.calculateGainedBeyondTenSkill(player, perk, isFullJournal)
+		if gained then
 			gainedXP = gainedXP or {}
 			gainedXP[perk:getId()] = gained
 		end

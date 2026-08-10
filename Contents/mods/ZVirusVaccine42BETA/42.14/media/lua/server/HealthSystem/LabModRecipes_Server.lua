@@ -171,7 +171,7 @@ function Lab_Recipes_ChmExtractBrainFromSkull(recipeData, character)
 
     local prof     = character:getDescriptor():getCharacterProfession()
     local isDoctor = (prof == CharacterProfession.DOCTOR)
-    local isIntern = _G.RLPTraitEffects and character:hasTrait(RLP.CharacterTrait.AUTOPSY_SPECIALIST) or false
+    local isIntern = RLP and RLP.CharacterTrait and RLP.CharacterTrait.AUTOPSY_SPECIALIST and character:hasTrait(RLP.CharacterTrait.AUTOPSY_SPECIALIST) or false
 
     local profBonus = 0
     if isIntern then
