@@ -2,6 +2,9 @@
 --Modified by GanydeBielovzki with permission for batch use for the Frockin' Splendor franchise and spin-offs.
 --To copy, further modify or otherwise use this code the original creator and the modifier must be credited.
 
+if TOC_BODY_LOCATIONS_LOADED then return end
+TOC_BODY_LOCATIONS_LOADED = true
+
 local function copyBodyLocationProperties(oldGroup, oldLocID, newGroup)
 	for k = 0, oldGroup:size()-1 do
 		local otherLocID = oldGroup:getLocationByIndex(k):getId()
@@ -51,9 +54,13 @@ local function addBodyLocationsAt(groupName, locationList)
 					local refLocID = type(locDef.reference) ~= "string" and locDef.reference or 
 								   ResourceLocation.of(locDef.reference)
 
+					if not newLocID then
+						print("[TOC][BodyLocations] Missing item body location registration for " .. tostring(locDef.name))
+					end
+
 					local isTargetGroupAndLoc = refLocID == oldLocID
 
-					if isTargetGroupAndLoc and locDef.before then
+					if isTargetGroupAndLoc and locDef.before and newLocID then
 						results[locDef.name] = newGroup:getOrCreateLocation(newLocID)
 					end
 				end
@@ -71,9 +78,13 @@ local function addBodyLocationsAt(groupName, locationList)
 					local refLocID = type(locDef.reference) ~= "string" and locDef.reference or 
 								   ResourceLocation.of(locDef.reference)
 
+					if not newLocID then
+						print("[TOC][BodyLocations] Missing item body location registration for " .. tostring(locDef.name))
+					end
+
 					local isTargetGroupAndLoc = refLocID == oldLocID
 
-					if isTargetGroupAndLoc and not locDef.before then
+					if isTargetGroupAndLoc and not locDef.before and newLocID then
 						results[locDef.name] = newGroup:getOrCreateLocation(newLocID)
 					end
 				end
@@ -91,6 +102,15 @@ local function addBodyLocationsAt(groupName, locationList)
 	return results
 end
 
+local function setSingleItemLocation(results, name)
+	local location = results[name]
+	if location then
+		location:setMultiItem(false)
+	else
+		print("[TOC][BodyLocations] Failed to add Human body location " .. tostring(name))
+	end
+end
+
 local results = addBodyLocationsAt("Human", {
     {name = "toc:Arm_L", reference = ItemBodyLocation.FULL_TOP, before = false},
     {name = "toc:Arm_R", reference = ItemBodyLocation.FULL_TOP, before = false},
@@ -101,9 +121,9 @@ local results = addBodyLocationsAt("Human", {
 })
 
 
-results['toc:Arm_L']:setMultiItem(false)
-results['toc:Arm_R']:setMultiItem(false)
-results['toc:ArmProst_L']:setMultiItem(false)
-results['toc:ArmProst_R']:setMultiItem(false)
-results['toc:ArmAccessory_L']:setMultiItem(false)
-results['toc:ArmAccessory_R']:setMultiItem(false)
+setSingleItemLocation(results, 'toc:Arm_L')
+setSingleItemLocation(results, 'toc:Arm_R')
+setSingleItemLocation(results, 'toc:ArmProst_L')
+setSingleItemLocation(results, 'toc:ArmProst_R')
+setSingleItemLocation(results, 'toc:ArmAccessory_L')
+setSingleItemLocation(results, 'toc:ArmAccessory_R')

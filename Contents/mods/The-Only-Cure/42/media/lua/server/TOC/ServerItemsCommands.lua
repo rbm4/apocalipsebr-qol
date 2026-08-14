@@ -25,6 +25,11 @@ function ServerItemsCommands.DeleteAllOldAmputationItems(_, args)
     ItemsController.Player.DeleteAllOldAmputationItems(patientPl)
 end
 
+function ServerItemsCommands.RestoreAmputationItems(_, args)
+    local patientPl = CommonMethods.GetPatientForServer(args.patientNum)
+    ItemsController.Player.RestoreAmputationItems(patientPl)
+end
+
 function ServerItemsCommands.OverrideAmputationItemVisuals(_, args)
     local patientPl = CommonMethods.GetPatientForServer(args.patientNum)
     local limbName = args.limbName

@@ -1,0 +1,7 @@
+Sandbox_JP = {
+	Sandbox_EnginePartsCrafting = "EngineParts",
+	Sandbox_EnginePartsOutputWeld = "エンジン部品(予備)を作る (金属加工)",
+	Sandbox_EnginePartsOutputMech = "エンジン部品(予備)を作る (車両整備)",
+	Sandbox_EnginePartsOutputElec = "エンジン部品(予備)を作る (電気工学)",
+	Sandbox_EnginePartsOutputSmit = "エンジン部品(予備)を鍛造する"
+}

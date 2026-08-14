@@ -1,0 +1,7 @@
+{
+	"Sandbox_EnginePartsCrafting": "EngineParts",
+	"Sandbox_EnginePartsOutputWeld": "Crea parti di ricambio del motore (Lavorazione metalli)",
+	"Sandbox_EnginePartsOutputMech": "Crea parti di ricambio del motore (Meccanica)",
+	"Sandbox_EnginePartsOutputElec": "Crea parti di ricambio del motore (Elettrica)",
+	"Sandbox_EnginePartsOutputSmit": "Forgia parti di ricambio del motore"
+}

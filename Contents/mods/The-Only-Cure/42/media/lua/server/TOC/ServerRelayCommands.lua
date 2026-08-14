@@ -2,6 +2,7 @@ require ("TOC/Debug")
 local CommandsData = require("TOC/CommandsData")
 local CommonMethods = require("TOC/CommonMethods")
 local StaticData = require("TOC/StaticData")
+local BeyondTenCompat = require("TOC/BeyondTenCompat")
 --------------------------------------------
 
 local ServerRelayCommands = {}
@@ -91,9 +92,13 @@ end
 ---@param args {perkName : string, xp : number}
 function ServerRelayCommands.RelayAddXp(playerObj, args)
     --TOC_DEBUG.print("received Add exp," .. tostring(args.perkName) .. " . " .. tostring(args.xp))
-    local perk = args and args.perkName and Perks[args.perkName] or nil
-    if not perk or not args.xp then return end
-    addXpNoMultiplier(playerObj, perk, args.xp)
+    if not args or not BeyondTenCompat.IsTOCPerk(args.perkName) then return end
+
+    local xp = tonumber(args.xp)
+    if not xp or xp <= 0 then return end
+    if xp > 0.05 and playerObj:isAccessLevel("None") then return end
+
+    BeyondTenCompat.AddXP(playerObj, args.perkName, xp)
 end
 
 --* TRAITS *--
@@ -166,10 +171,34 @@ end
 function ServerRelayCommands.RelaySetProsthesisEquipped(playerObj, args)
     if not args or not args.itemFullType then return end
 
-    local item = instanceItem(args.itemFullType)
-    if not item then return end
-
     local ProsthesisHandler = require("TOC/Handlers/ProsthesisHandler")
+    local item
+    if args.itemId then
+        item = playerObj:getInventory():getItemById(args.itemId)
+        if not item then
+            TOC_DEBUG.print("Rejected prosthesis state relay: item id " .. tostring(args.itemId) .. " not found for " .. tostring(playerObj:getUsername()))
+            return
+        end
+
+        if item:getFullType() ~= args.itemFullType then
+            TOC_DEBUG.print("Rejected prosthesis state relay: item type mismatch, expected " .. tostring(args.itemFullType) .. " got " .. tostring(item:getFullType()))
+            return
+        end
+
+        if not ProsthesisHandler.CheckIfProst(item) then
+            TOC_DEBUG.print("Rejected prosthesis state relay: item is not a prosthesis " .. tostring(item:getFullType()))
+            return
+        end
+
+        if args.isEquipping == true and not playerObj:isEquippedClothing(item) then
+            TOC_DEBUG.print("Rejected prosthesis equip relay: item is not equipped " .. tostring(item:getFullType()))
+            return
+        end
+    else
+        TOC_DEBUG.print("Rejected prosthesis state relay: missing itemId for " .. tostring(args.itemFullType))
+        return
+    end
+
     ProsthesisHandler.SearchAndSetupProsthesis(playerObj, item, args.isEquipping == true)
 end
 

@@ -1,0 +1,6 @@
+Sandbox_PTBR = {
+	Sandbox_DAMN_Options = "damnlib | Opções",
+	Sandbox_DAMN_AllowVanillaVehicleDismantling = "Ativar reciclagem de peças de veículos vanilla",
+    Sandbox_DAMN_AllowVanillaWorldItemDismantling = "Ativar reciclagem de janelas e espelhos de casas",
+    Sandbox_DAMN_Spawns = "KI5 | Predefinições de spawn",
+}

@@ -1,0 +1,4 @@
+Fluids_PTBR = {
+    Fluid_Container_MilitaryGasCan = "Galão de Gasolina Militar",
+    Fluid_Container_MilitaryWaterCan = "Galão de Água Militar",
+}

@@ -1,0 +1,7 @@
+Sandbox_PTBR = {
+	Sandbox_EnginePartsCrafting = "EngineParts",
+	Sandbox_EnginePartsOutputWeld = "Criar Peças de Reposição (Metalurgia)",
+	Sandbox_EnginePartsOutputMech = "Criar Peças de Reposição (Mecânica)",
+	Sandbox_EnginePartsOutputElec = "Criar Peças de Reposição (Elétrica)",
+	Sandbox_EnginePartsOutputSmit = "Forjar Peças de Reposição"
+}

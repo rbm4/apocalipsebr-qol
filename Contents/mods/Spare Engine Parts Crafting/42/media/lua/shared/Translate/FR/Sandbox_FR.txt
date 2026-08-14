@@ -1,0 +1,7 @@
+Sandbox_FR = {
+	Sandbox_EnginePartsCrafting = "EngineParts",
+	Sandbox_EnginePartsOutputWeld = "Fabriquer des pièces de rechange moteur (Travail des métaux)",
+	Sandbox_EnginePartsOutputMech = "Fabriquer des pièces de rechange moteur (Mécanique)",
+	Sandbox_EnginePartsOutputElec = "Fabriquer des pièces de rechange moteur (Électricité)",
+	Sandbox_EnginePartsOutputSmit = "Forger des pièces de rechange moteur"
+}

@@ -1,0 +1,10 @@
+author=ShiSan 十叁
+name=BuildingCraft - Estate 39
+id=BuildingCraftEstate39
+versionMin=42.00
+require=\BuildingCraft,\Estate 39
+description=Unlocks Estate 39's special building materials in your menu.
+icon=icon.png
+poster=poster.png
+pack=robinFix
+tiledef=robinFix 2631

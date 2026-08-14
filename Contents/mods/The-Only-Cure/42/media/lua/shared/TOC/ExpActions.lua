@@ -1,6 +1,7 @@
 local DataController = require("TOC/Controllers/DataController")
 local CachedDataHandler = require("TOC/Handlers/CachedDataHandler")
 local CommonMethods = require("TOC/CommonMethods")
+local BeyondTenCompat = require("TOC/BeyondTenCompat")
 
 local XP_PER_TICK = 0.01
 
@@ -23,11 +24,11 @@ local function IterateTOCXp(action, applyXp)
     for limbName, _ in pairs(amputatedLimbs) do
         if dcInst:getIsCut(limbName) and dcInst:getIsVisible(limbName) then
             local perkName = "Side_" .. CommonMethods.GetSide(limbName)
-            if character:getPerkLevel(Perks[perkName]) < 10 then
+            if BeyondTenCompat.GetEffectiveLevel(character, perkName) < BeyondTenCompat.GetMaxLevel() then
                 --TOC_DEBUG.print("IterateTOCXp | " .. perkName)
                 applyXp(character, perkName)
             end
-            if dcInst:getIsProstEquipped(limbName) and character:getPerkLevel(Perks["ProstFamiliarity"]) < 10 then
+            if dcInst:getIsProstEquipped(limbName) and BeyondTenCompat.GetEffectiveLevel(character, "ProstFamiliarity") < BeyondTenCompat.GetMaxLevel() then
                 --TOC_DEBUG.print("IterateTOCXp | ProstFamiliarity")
                 applyXp(character, "ProstFamiliarity")
             end
@@ -35,24 +36,29 @@ local function IterateTOCXp(action, applyXp)
     end
 end
 
----Adds TOC XP directly via addXpNoMultiplier(). Server and SP only.
+---Adds TOC XP directly. Server and SP only.
 ---@param action ISBaseTimedAction
 local function AddTOCXp(action)
     if isClient() then return end
     IterateTOCXp(action, function(character, perkName)
-        addXpNoMultiplier(character, Perks[perkName], XP_PER_TICK)
+        BeyondTenCompat.AddXP(character, perkName, XP_PER_TICK)
     end)
 end
 
 ---Wraps an action class's update() to inject TOC XP each tick.
 ---Safely skips if the class is nil (e.g. not loaded on this side).
 ---@param actionClass table
-local function WrapUpdate(actionClass)
-    if not actionClass then return end
+---@param addXpFunc fun(action: ISBaseTimedAction)|nil
+local function WrapUpdate(actionClass, addXpFunc)
+    if not actionClass or type(actionClass.update) ~= "function" then return end
     local og = actionClass.update
     function actionClass:update()
         og(self)
-        AddTOCXp(self)
+        if addXpFunc then
+            addXpFunc(self)
+        else
+            AddTOCXp(self)
+        end
     end
 end
 
@@ -67,6 +73,7 @@ WrapUpdate(ISUpgradeWeapon)
 WrapUpdate(ISRemoveWeaponUpgrade)
 
 --* Building / demolition
+WrapUpdate(ISBuildAction)
 WrapUpdate(ISBarricadeAction)
 WrapUpdate(ISUnbarricadeAction)
 WrapUpdate(ISChopTreeAction)
@@ -77,13 +84,17 @@ WrapUpdate(ISDestroyStuffAction)
 WrapUpdate(ISCraftAction)
 
 --* Medical
+WrapUpdate(ISMedicalCheckAction)
 WrapUpdate(ISApplyBandage)
 WrapUpdate(ISCleanBandage)
 WrapUpdate(ISDisinfect)
 WrapUpdate(ISRemoveBullet)
+WrapUpdate(ISRemoveGlass)
+WrapUpdate(ISRemoveBrokenGlass)
 WrapUpdate(ISSplint)
 WrapUpdate(ISStitch)
 WrapUpdate(ISCleanBurn)
+WrapUpdate(ISPlantainCataplasm)
 WrapUpdate(ISRemovePatch)
 
 --* Item handling
@@ -91,4 +102,4 @@ WrapUpdate(ISPickUpGroundCoverItem)
 WrapUpdate(ISPickAxeGroundCoverItem)
 WrapUpdate(ISGrabItemAction)        -- client-only class, WrapUpdate handles nil safely
 
-return { IterateTOCXp = IterateTOCXp, WrapUpdate = WrapUpdate }
+return { IterateTOCXp = IterateTOCXp, WrapUpdate = WrapUpdate, AddTOCXp = AddTOCXp, XP_PER_TICK = XP_PER_TICK }

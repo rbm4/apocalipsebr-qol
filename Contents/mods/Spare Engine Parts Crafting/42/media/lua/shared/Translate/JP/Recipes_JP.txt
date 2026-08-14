@@ -1,0 +1,6 @@
+Recipes_JP = {
+	MakeEnginePartsWeld = "エンジン部品(予備)を作る (金属加工)",
+	MakeEnginePartsMech = "エンジン部品(予備)を作る (車両整備)",
+	MakeEnginePartsElec = "エンジン部品(予備)を作る (電気工学)",
+	MakeEnginePartsSmit = "エンジン部品(予備)を鍛造する"
+}

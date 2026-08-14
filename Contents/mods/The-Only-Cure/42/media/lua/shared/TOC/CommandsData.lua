@@ -48,7 +48,7 @@ CommandsData.server = {
         RelayApplyTraitAmputation = "RelayApplyTraitAmputation",         ---@alias relayApplyTraitAmputationParams {limbName : string}
 
         RelayTriggerBleed = "RelayTriggerBleed",                         ---@alias relayTriggerBleedParams {patientNum : number, limbName : string, bleedingTime : number}
-        RelaySetProsthesisEquipped = "RelaySetProsthesisEquipped",        ---@alias relaySetProsthesisEquippedParams {itemFullType : string, isEquipping : boolean}
+        RelaySetProsthesisEquipped = "RelaySetProsthesisEquipped",        ---@alias relaySetProsthesisEquippedParams {itemFullType : string, itemId : integer, isEquipping : boolean}
 
         --* ADMIN ONLY *--
         RelayExecuteInitialization = "RelayExecuteInitialization",       ---@alias relayExecuteInitializationParams {patientNum : number}

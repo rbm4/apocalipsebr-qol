@@ -1,0 +1,7 @@
+Sandbox_EN = {
+	Sandbox_EnginePartsCrafting = "EngineParts",
+	Sandbox_EnginePartsOutputWeld = "Make Spare Engine Parts (Welding)",
+	Sandbox_EnginePartsOutputMech = "Make Spare Engine Parts (Mechanics)",
+	Sandbox_EnginePartsOutputElec = "Make Spare Engine Parts (Electrical)",
+	Sandbox_EnginePartsOutputSmit = "Forge Spare Engine Parts"
+}

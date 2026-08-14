@@ -1,0 +1,8 @@
+author=ShiSan 十叁
+name=BuildingCraft - RaccoonCity
+id=BuildingCraftRaccoonCity
+versionMin=42.00
+require=\BuildingCraft,\RaccoonCityB42
+description=Unlocks RaccoonCity's special building materials in your menu.
+icon=icon.png
+poster=poster.png

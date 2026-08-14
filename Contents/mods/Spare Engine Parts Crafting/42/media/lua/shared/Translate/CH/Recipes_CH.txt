@@ -1,0 +1,6 @@
+Recipes_CH = {
+	MakeEnginePartsWeld = "製作備用引擎零件 (金工)",
+	MakeEnginePartsMech = "製作備用引擎零件 (機工)",
+	MakeEnginePartsElec = "製作備用引擎零件 (電工)",
+	MakeEnginePartsSmit = "鍛造備用引擎零件"
+}

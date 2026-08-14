@@ -128,7 +128,14 @@ end
 ---@param itemName string
 function AmputationHandler.WearAmputationItem(player, itemName)
     local clothingItem = player:getInventory():FindAndReturn(itemName)
+    if not clothingItem then
+        TOC_DEBUG.print("Cannot wear missing amputation item " .. tostring(itemName))
+        return false
+    end
+
     player:setWornItem(clothingItem:getBodyLocation(), clothingItem)
+    player:resetModelNextFrame()
+    return true
 end
 
 ---Used to heal an area that has been cut previously. There's an exception for bites, those are managed differently

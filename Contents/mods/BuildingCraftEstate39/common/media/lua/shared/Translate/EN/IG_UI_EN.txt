@@ -1,0 +1,5 @@
+IGUI_EN = {
+	IGUI_Building_Estate39Floor = "Estate39 Floor",
+	IGUI_Building_Estate39Roof = "Estate39 Roof",
+	IGUI_Building_Estate39InclinedWall = "Estate39 InclinedWall",
+}

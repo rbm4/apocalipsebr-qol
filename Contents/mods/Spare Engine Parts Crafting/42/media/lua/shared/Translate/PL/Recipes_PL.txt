@@ -1,0 +1,6 @@
+Recipes_PL = {
+	MakeEnginePartsWeld = "Zrobić części silnikowe (Spawanie)",
+	MakeEnginePartsMech = "Zrobić części silnikowe (Naprawa pojazdów)",
+	MakeEnginePartsElec = "Zrobić części silnikowe (Elektryka)",
+	MakeEnginePartsSmit = "Wykuć części silnikowe"
+}

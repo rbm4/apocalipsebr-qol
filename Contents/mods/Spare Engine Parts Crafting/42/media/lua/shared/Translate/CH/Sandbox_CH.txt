@@ -1,0 +1,7 @@
+Sandbox_CH = {
+	Sandbox_EnginePartsCrafting = "EngineParts",
+	Sandbox_EnginePartsOutputWeld = "製作備用引擎零件 (金工)",
+	Sandbox_EnginePartsOutputMech = "製作備用引擎零件 (機工)",
+	Sandbox_EnginePartsOutputElec = "製作備用引擎零件 (電工)",
+	Sandbox_EnginePartsOutputSmit = "鍛造備用引擎零件"
+}

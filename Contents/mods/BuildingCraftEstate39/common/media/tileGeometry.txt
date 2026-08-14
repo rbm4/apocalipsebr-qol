@@ -1,0 +1,173 @@
+tileGeometry
+{
+    VERSION = 2,
+
+    tileset
+    {
+        name = robin_wallspecial01,
+
+        /* robin_wallspecial01_0 */
+        tile
+        {
+            xy = 0x0,
+
+            box
+            {
+                translate = -4756x0x0,
+                rotate = 0x0x0,
+                min = -244x0x-5000,
+                max = 244x24495x5000,
+            }
+        }
+
+        /* robin_wallspecial01_1 */
+        tile
+        {
+            xy = 1x0,
+
+            box
+            {
+                translate = 0x0x-4776,
+                rotate = 0x0x0,
+                min = -5000x0x-224,
+                max = 5000x24495x224,
+            }
+        }
+
+        /* robin_wallspecial01_2 */
+        tile
+        {
+            xy = 2x0,
+
+            box
+            {
+                translate = -4826x0x0,
+                rotate = 0x0x0,
+                min = -174x0x-5000,
+                max = 174x24495x5000,
+            }
+
+            box
+            {
+                translate = 0x0x-4801,
+                rotate = 0x0x0,
+                min = -5000x0x-199,
+                max = 5000x24495x199,
+            }
+        }
+
+        /* robin_wallspecial01_24 */
+        tile
+        {
+            xy = 0x3,
+
+            polygon
+            {
+                translate = 0x0x0,
+                rotate = 2700000x0x0,
+                plane = XZ,
+                points = -5000x-5000 5000x-5000 5000x5000 -5000x5000,
+            }
+
+            properties
+            {
+                Translucent = true,
+            }
+        }
+
+        /* robin_wallspecial01_25 */
+        tile
+        {
+            xy = 1x3,
+
+            polygon
+            {
+                translate = 0x0x0,
+                rotate = 2700000x0x0,
+                plane = XZ,
+                points = -5000x-5000 5000x-5000 5000x5000 -5000x5000,
+            }
+
+            properties
+            {
+                Translucent = true,
+            }
+        }
+
+        /* robin_wallspecial01_26 */
+        tile
+        {
+            xy = 2x3,
+
+            polygon
+            {
+                translate = 0x0x0,
+                rotate = 2700000x0x0,
+                plane = XZ,
+                points = -5000x-5000 5000x-5000 5000x5000 -5000x5000,
+            }
+
+            properties
+            {
+                Translucent = true,
+            }
+        }
+
+        /* robin_wallspecial01_27 */
+        tile
+        {
+            xy = 3x3,
+
+            polygon
+            {
+                translate = 0x0x0,
+                rotate = 2700000x0x0,
+                plane = XZ,
+                points = -5000x-5000 5000x-5000 5000x5000 -5000x5000,
+            }
+
+            properties
+            {
+                Translucent = true,
+            }
+        }
+
+        /* robin_wallspecial01_28 */
+        tile
+        {
+            xy = 4x3,
+
+            polygon
+            {
+                translate = 0x0x0,
+                rotate = 2700000x0x0,
+                plane = XZ,
+                points = -5000x-5000 5000x-5000 5000x5000 -5000x5000,
+            }
+
+            properties
+            {
+                Translucent = true,
+            }
+        }
+
+        /* robin_wallspecial01_29 */
+        tile
+        {
+            xy = 5x3,
+
+            polygon
+            {
+                translate = 0x0x0,
+                rotate = 2700000x0x0,
+                plane = XZ,
+                points = -5000x-5000 5000x-5000 5000x5000 -5000x5000,
+            }
+
+            properties
+            {
+                Translucent = true,
+            }
+        }
+    }
+}

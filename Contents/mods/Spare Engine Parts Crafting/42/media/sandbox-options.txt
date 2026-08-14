@@ -1,0 +1,21 @@
+VERSION = 1,
+
+option SpareEnginePartsCrafting.EnginePartsOutputWeld = {
+	page = EnginePartsCrafting, translation = EnginePartsOutputWeld,
+	type = integer, min = 1, max = 40, default = 20,
+}
+
+option SpareEnginePartsCrafting.EnginePartsOutputMech = {
+	page = EnginePartsCrafting, translation = EnginePartsOutputMech,
+	type = integer, min = 1, max = 40, default = 20,
+}
+
+option SpareEnginePartsCrafting.EnginePartsOutputElec = {
+	page = EnginePartsCrafting, translation = EnginePartsOutputElec,
+	type = integer, min = 1, max = 40, default = 20,
+}
+
+option SpareEnginePartsCrafting.EnginePartsOutputSmit = {
+	page = EnginePartsCrafting, translation = EnginePartsOutputSmit,
+	type = integer, min = 1, max = 40, default = 20,
+}

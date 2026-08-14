@@ -1,0 +1,7 @@
+Sandbox_KO = {
+	Sandbox_EnginePartsCrafting = "EngineParts",
+	Sandbox_EnginePartsOutputWeld = "예비 엔진 부품 만들기 (금속용접)",
+	Sandbox_EnginePartsOutputMech = "예비 엔진 부품 만들기 (차량정비)",
+	Sandbox_EnginePartsOutputElec = "예비 엔진 부품 만들기 (전기공학)",
+	Sandbox_EnginePartsOutputSmit = "예비 엔진 부품 단조하기"
+}

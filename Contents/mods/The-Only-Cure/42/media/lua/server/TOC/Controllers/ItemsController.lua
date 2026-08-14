@@ -113,14 +113,58 @@ function ItemsController.Player.SpawnAmputationItem(playerObj, limbName)
     ---@cast clothingItem InventoryItem
     clothingItem:getVisual():setTextureChoice(texId) -- it counts from 0, so we have to subtract 1
     sendAddItemToContainer(playerObj:getInventory(), clothingItem)
+    local AmputationHandler = require("TOC/Handlers/AmputationHandler")
+    AmputationHandler.WearAmputationItem(playerObj, itemName)
 
     if isServer() then
         --sendServerCommand works only in MP
         sendServerCommand(playerObj, CommandsData.modules.TOC_RELAY, CommandsData.client.Relay.ReceiveWearAmputation, {itemName = itemName, texId = texId})
     else
-        local AmputationHandler = require("TOC/Handlers/AmputationHandler")
-        AmputationHandler.WearAmputationItem(playerObj, itemName)
+        playerObj:resetModelNextFrame()
     end
+end
+
+---Ensures saved visible amputations have their visual clothing item equipped after login/init.
+---@param playerObj IsoPlayer
+function ItemsController.Player.RestoreAmputationItems(playerObj)
+    if not playerObj then return end
+
+    local DataController = require("TOC/Controllers/DataController")
+    local dcInst = DataController.GetInstance(playerObj:getUsername())
+    if not dcInst or not dcInst:getIsDataReady() then
+        TOC_DEBUG.print("RestoreAmputationItems skipped: DataController not ready for " .. tostring(playerObj:getUsername()))
+        return
+    end
+
+    for i = 1, #StaticData.LIMBS_STR do
+        local limbName = StaticData.LIMBS_STR[i]
+        if dcInst:getIsCut(limbName) and dcInst:getIsVisible(limbName) then
+            local itemName = StaticData.AMPUTATION_CLOTHING_ITEM_BASE .. limbName
+            local clothingItem = playerObj:getInventory():FindAndReturn(itemName)
+
+            if not clothingItem then
+                TOC_DEBUG.print("Restoring missing amputation item " .. tostring(itemName))
+                clothingItem = playerObj:getInventory():AddItem(itemName)
+                sendAddItemToContainer(playerObj:getInventory(), clothingItem)
+            else
+                TOC_DEBUG.print("Restoring existing amputation item " .. tostring(itemName))
+            end
+
+            if clothingItem then
+                local texId = ItemsController.Player.GetAmputationTexturesIndex(playerObj, dcInst:getIsCicatrized(limbName))
+                clothingItem:getVisual():setTextureChoice(texId)
+
+                local AmputationHandler = require("TOC/Handlers/AmputationHandler")
+                AmputationHandler.WearAmputationItem(playerObj, itemName)
+
+                if isServer() then
+                    sendServerCommand(playerObj, CommandsData.modules.TOC_RELAY, CommandsData.client.Relay.ReceiveWearAmputation, {itemName = itemName, texId = texId})
+                end
+            end
+        end
+    end
+
+    playerObj:resetModelNextFrame()
 end
 
 ---Drop worn items and unequip hands for the amputated limb, called server-side after amputation or prosthesis unequip

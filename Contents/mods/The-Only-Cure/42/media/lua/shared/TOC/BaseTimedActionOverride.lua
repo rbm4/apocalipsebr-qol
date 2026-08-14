@@ -2,6 +2,7 @@ local DataController = require("TOC/Controllers/DataController")
 local CachedDataHandler = require("TOC/Handlers/CachedDataHandler")
 local CommonMethods = require("TOC/CommonMethods")
 local StaticData = require("TOC/StaticData")
+local BeyondTenCompat = require("TOC/BeyondTenCompat")
 
 
 --* Time to perform actions overrides
@@ -25,27 +26,28 @@ function ISBaseTimedAction:adjustMaxTime(maxTime)
         --TOC_DEBUG.print("Overriding adjustMaxTime")
         for k, _ in pairs(amputatedLimbs) do
             local limbName = k
-            local perkAmp = Perks["Side_" .. CommonMethods.GetSide(limbName)]
-            local perkLevel = self.character:getPerkLevel(perkAmp)
+            if dcInst:getIsCut(limbName) and dcInst:getIsVisible(limbName) then
+                local perkName = "Side_" .. CommonMethods.GetSide(limbName)
+                local perkLevel = BeyondTenCompat.GetEffectiveLevel(self.character, perkName)
 
-            if dcInst:getIsProstEquipped(limbName) then
-                local perkProst = Perks["ProstFamiliarity"]
-                perkLevel = perkLevel + self.character:getPerkLevel(perkProst)
+                if dcInst:getIsProstEquipped(limbName) then
+                    perkLevel = perkLevel + BeyondTenCompat.GetEffectiveLevel(self.character, "ProstFamiliarity")
+                end
+
+                local perkLevelScaled
+                if perkLevel ~= 0 then perkLevelScaled = perkLevel / 10 else perkLevelScaled = 0 end
+                --TOC_DEBUG.print("Perk Level: " .. tostring(perkLevel))
+                --TOC_DEBUG.print("OG time: " .. tostring(time))
+
+                -- Modified Time shouldn't EVER be lower compared to the og one.
+                local modifiedTime = time * (StaticData.LIMBS_TIME_MULTIPLIER_IND_NUM[limbName] - perkLevelScaled)
+
+                if modifiedTime >= time then
+                    time = modifiedTime
+                end
+
+                --TOC_DEBUG.print("Modified time: " .. tostring(time))
             end
-
-            local perkLevelScaled
-            if perkLevel ~= 0 then perkLevelScaled = perkLevel / 10 else perkLevelScaled = 0 end
-            --TOC_DEBUG.print("Perk Level: " .. tostring(perkLevel))
-            --TOC_DEBUG.print("OG time: " .. tostring(time))
-
-            -- Modified Time shouldn't EVER be lower compared to the og one.
-            local modifiedTime = time * (StaticData.LIMBS_TIME_MULTIPLIER_IND_NUM[limbName] - perkLevelScaled)
-
-            if modifiedTime >= time then
-                time = modifiedTime
-            end
-
-            --TOC_DEBUG.print("Modified time: " .. tostring(time))
         end
 
     end

@@ -1,0 +1,6 @@
+Recipes_IT = {
+	MakeEnginePartsWeld = "Crea parti di ricambio del motore (Lavorazione metalli)",
+	MakeEnginePartsMech = "Crea parti di ricambio del motore (Meccanica)",
+	MakeEnginePartsElec = "Crea parti di ricambio del motore (Elettrica)",
+	MakeEnginePartsSmit = "Forgia parti di ricambio del motore"
+}

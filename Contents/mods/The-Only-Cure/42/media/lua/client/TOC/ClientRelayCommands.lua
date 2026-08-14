@@ -58,6 +58,11 @@ end
 --* WEAR AMPUTATION ITEM *--
 function ClientRelayCommands.ReceiveWearAmputation(args)
     TOC_DEBUG.print("Received wear amputation, item " .. tostring(args.itemName))
+    local item = getPlayer():getInventory():FindAndReturn(args.itemName)
+    if item and args.texId then
+        item:getVisual():setTextureChoice(args.texId)
+    end
+
     AmputationHandler.WearAmputationItem(getPlayer(), args.itemName)
 end
 

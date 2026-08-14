@@ -1,0 +1,7 @@
+Sandbox_RU = {
+	Sandbox_EnginePartsCrafting = "EngineParts",
+	Sandbox_EnginePartsOutputWeld = "Сделать запчасти двигателя (Газосварка)",
+	Sandbox_EnginePartsOutputMech = "Сделать запчасти двигателя (Автомеханика)",
+	Sandbox_EnginePartsOutputElec = "Сделать запчасти двигателя (Электроника)",
+	Sandbox_EnginePartsOutputSmit = "Выковать запчасти двигателя"
+}

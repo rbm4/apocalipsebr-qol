@@ -40,11 +40,25 @@ function LocalPlayerController.InitializePlayer(isForced)
     DataController.WhenReady(username, function(_dcInst)
         LocalPlayerController.ToggleUpdateAmputations()
         LocalPlayerController.ManageTraits()
+        LocalPlayerController.RestoreAmputationItems()
     end)
 
     -- Since isForced is used to reset an existing player data, we're gonna clean their ISHealthPanel table too
     if isForced then
         sendClientCommand(CommandsData.modules.TOC_ITEMS, "DeleteAllOldAmputationItems", {patientNum = playerObj:getOnlineID()})
+    end
+end
+
+function LocalPlayerController.RestoreAmputationItems()
+    local playerObj = getPlayer()
+    if not playerObj then return end
+
+    TOC_DEBUG.print("Requesting amputation visual restore for " .. tostring(playerObj:getUsername()))
+    if isClient() then
+        sendClientCommand(CommandsData.modules.TOC_ITEMS, "RestoreAmputationItems", {patientNum = playerObj:getOnlineID()})
+    else
+        local ItemsController = require("TOC/Controllers/ItemsController")
+        ItemsController.Player.RestoreAmputationItems(playerObj)
     end
 end
 

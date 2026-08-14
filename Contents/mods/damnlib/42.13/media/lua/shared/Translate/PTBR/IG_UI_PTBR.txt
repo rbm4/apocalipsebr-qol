@@ -1,0 +1,80 @@
+IG_UI_PTBR = {
+    IGUI_VehiclePartWindowBackLeft = "Janela Traseira Esquerda",
+	IGUI_VehiclePartWindowBackRight = "Janela Traseira Direita",
+    IGUI_VehiclePartWindowMiddleLeft = "Janela Central Esquerda",
+	IGUI_VehiclePartWindowMiddleRight = "Janela Central Direita",
+    
+    IGUI_VehiclePartSeatFrontMiddle = "Banco Dianteiro Central",
+    IGUI_VehiclePartSeatMiddleMiddle = "Banco Central do Meio",
+    IGUI_VehiclePartSeatRearMiddle = "Banco Traseiro Central",
+    IGUI_VehiclePartSeatBackLeft = "Banco Traseiro Esquerdo",
+    IGUI_VehiclePartSeatBackMiddle = "Banco Traseiro Central",
+    IGUI_VehiclePartSeatBackRight = "Banco Traseiro Direito",
+
+    IGUI_VehiclePartDAMNSpareTire = "Estepe",
+    IGUI_VehiclePartDAMNSpareTire2 = "Estepe",
+	IGUI_VehiclePartDAMNSpareTireRoof = "Estepe no Teto",
+    IGUI_VehiclePartDAMNSpareTireRoof2 = "Estepe no Teto",
+	IGUI_VehiclePartDAMNSpareTireTrunk = "Estepe no Porta-malas",
+    IGUI_VehiclePartDAMNSpareTireBed = "Estepe na Caçamba",
+    IGUI_VehiclePartDAMNSpareTireFront = "Estepe Dianteiro",
+
+	IGUI_VehiclePartDAMNSideSteps = "Estribos Laterais",
+	IGUI_VehiclePartDAMNSunRoof = "Teto Solar",
+    IGUI_VehiclePartDAMNRoofLights = "Luzes de Teto",
+    IGUI_VehiclePartDAMNTent = "Barraca",
+    IGUI_VehiclePartDAMNMudflaps = "Para-barros",
+	IGUI_VehiclePartDAMNSnorkel = "Snorkel",
+    IGUI_VehiclePartDAMNSpoiler = "Aerofólio",
+    IGUI_VehiclePartDAMNSpoilerRoof = "Aerofólio de Teto",
+    IGUI_VehiclePartDAMNBarrier = "Barreira da Cabine",
+    IGUI_VehiclePartDAMNTruckBedCover = "Capota de Caçamba",
+    IGUI_VehiclePartDAMNSunVisor = "Quebra-sol"
+    IGUI_VehiclePartDAMNSideskirts = "Saias Laterais",
+    IGUI_VehiclePartDAMNSearchlight = "Holofote",
+
+	IGUI_VehiclePartDAMNTrunk = "Armazenamento do Porta-malas",
+	IGUI_VehiclePartDAMNRoofrack = "Armazenamento no Bagageiro de Teto",
+    IGUI_VehiclePartDAMNGunrack = "Suporte de Armas",
+    IGUI_VehiclePartDAMNStretcher = "Maca",
+
+    IGUI_VehiclePartDAMNBumperFront = "Para-choque Dianteiro",
+	IGUI_VehiclePartDAMNBumperRear = "Para-choque Traseiro",
+
+	IGUI_VehiclePartDAMNWindshieldArmor = "Blindagem do Para-brisa",
+	IGUI_VehiclePartDAMNWindshieldRearArmor = "Blindagem do Para-brisa Traseiro",
+	IGUI_VehiclePartDAMNFrontLeftArmor = "Blindagem da Janela Dianteira Esquerda",
+	IGUI_VehiclePartDAMNFrontRightArmor = "Blindagem da Janela Dianteira Direita",
+	IGUI_VehiclePartDAMNRearLeftArmor = "Blindagem da Janela Traseira Esquerda",
+	IGUI_VehiclePartDAMNRearRightArmor = "Blindagem da Janela Traseira Direita",
+	IGUI_VehiclePartDAMNMiddleLeftArmor = "Blindagem da Janela Central Esquerda",
+	IGUI_VehiclePartDAMNMiddleRightArmor = "Blindagem da Janela Central Direita",
+    IGUI_VehiclePartDAMNBackLeftArmor = "Blindagem da Janela de Fundo Esquerda",
+	IGUI_VehiclePartDAMNBackRightArmor = "Blindagem da Janela de Fundo Direita",
+
+    IGUI_VehiclePartDAMNGasCanOne = "Galão de Gasolina",
+    IGUI_VehiclePartDAMNGasCanTwo = "Galão de Gasolina",
+    IGUI_VehiclePartDAMNGasCanThree = "Galão de Gasolina",
+    IGUI_VehiclePartDAMNGasCanFour = "Galão de Gasolina",
+    IGUI_VehiclePartDAMNGenerator = "Gerador",
+
+    IGUI_VehiclePartDAMNPropaneTankOne = "Botijão de Propano",
+    IGUI_VehiclePartDAMNPropaneTankTwo = "Botijão de Propano",
+    IGUI_VehiclePartDAMNPropaneTankThree = "Botijão de Propano",
+
+    IGUI_VehiclePartDAMNFenderFrontLeft = "Para-lama Dianteiro Esquerdo",
+	IGUI_VehiclePartDAMNFenderFrontRight = "Para-lama Dianteiro Direito",
+	IGUI_VehiclePartDAMNFenderRearLeft = "Para-lama Traseiro Esquerdo",
+	IGUI_VehiclePartDAMNFenderRearRight = "Para-lama Traseiro Direito",
+
+    IGUI_VehiclePartToolboxLidRight = "Tampa Direita da Caixa de Ferramentas",
+    IGUI_VehiclePartToolboxLidLeft = "Tampa Esquerda da Caixa de Ferramentas",
+
+    IGUI_VehiclePartGM85Roofrack = "Bagageiro de Teto",
+    IGUI_VehiclePartGM85VinylRoof = "Cobertura de Vinil do Teto",
+
+    IGUI_DL_InstallPartsFirst= "Você precisa instalar %1 peça(s) primeiro:",
+    IGUI_DL_UninstallPartsFirst = "Você precisa remover %1 peça(s) primeiro:",
+    IGUI_DL_GasCanInstallHint = "Este é um local conveniente para guardar seus galões de gasolina, não uma extensão do tanque de combustível.",
+    IGUI_DL_GeneratorInstallHint = "Este é um local conveniente para guardar seu gerador. Nenhuma energia será fornecida ao redor do veículo.",
+}

@@ -1,0 +1,6 @@
+Recipes_RU = {
+	MakeEnginePartsWeld = "Сделать запчасти двигателя (Газосварка)",
+	MakeEnginePartsMech = "Сделать запчасти двигателя (Автомеханика)",
+	MakeEnginePartsElec = "Сделать запчасти двигателя (Электроника)",
+	MakeEnginePartsSmit = "Выковать запчасти двигателя"
+}
