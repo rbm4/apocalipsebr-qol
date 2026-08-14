@@ -176,8 +176,8 @@ end
 
 function BasementPoliceCarSpawns.LoadGridsquareAdd()
 	--print('BasementPoliceCarSpawns.LoadGridsquareAdd')
-	Events.LoadGridsquare.Add(BasementPoliceCarSpawns.SpawnsPoliceCar)
+	-- Events.LoadGridsquare.Add(BasementPoliceCarSpawns.SpawnsPoliceCar)
 end 
 
 
-Events.OnInitGlobalModData.Add(BasementPoliceCarSpawns.LoadGridsquareAdd)
+-- Events.OnInitGlobalModData.Add(BasementPoliceCarSpawns.LoadGridsquareAdd)

@@ -8,11 +8,45 @@ local BT = BeyondTen
 local Server = BeyondTenServer
 
 Server._players = Server._players or setmetatable({}, { __mode = "k" })
+Server._tick = Server._tick or 0
+Server._onlinePlayers = Server._onlinePlayers or {}
+Server._playerCursor = Server._playerCursor or 1
+Server._lastPlayerRefreshTick = Server._lastPlayerRefreshTick or 0
 Server.STORE_KEY = "BeyondTen_ServerMastery_v1"
 Server.MAX_UNKNOWN_XP = 1000000000
+Server.PLAYER_UPDATE_STRIDE = 10
+Server.PLAYER_UPDATES_PER_TICK = 2
+Server.PLAYER_CACHE_REFRESH_TICKS = 60
+Server.SCAN_INTERVAL_TICKS = 600
+Server.MIRROR_PUBLISH_INTERVAL_TICKS = 300
+
+local perkCostCache = {}
 
 local function clampPerkXP(perk, value)
     return BT.Clamp(value, 0, BT.GetTotalMasteryCost(perk, BT.MAX_LEVEL))
+end
+
+local function getCostCache(perk)
+    if not perk then return nil end
+    local id = perk:getId()
+    local cached = perkCostCache[id]
+    if cached and cached.perk == perk then return cached end
+
+    local costs = {}
+    local total = 0
+    for level = 11, BT.MAX_LEVEL do
+        local cost = BT.GetMasteryCost(perk, level)
+        costs[level] = cost
+        total = total + cost
+    end
+    cached = { perk = perk, costs = costs, maximum = total }
+    perkCostCache[id] = cached
+    return cached
+end
+
+local function clampPerkXPFast(perk, value)
+    local cached = getCostCache(perk)
+    return BT.Clamp(value, 0, cached and cached.maximum or BT.GetTotalMasteryCost(perk, BT.MAX_LEVEL))
 end
 
 local function loadMirrorXP(player)
@@ -120,7 +154,55 @@ local function loadCanonicalXP(player)
     return values, storeKey, record
 end
 
-local function publishCanonicalXP(player, state)
+local function invalidatePerkCache(state, id)
+    if not state then return end
+    if state.masteryCache then state.masteryCache[id] = nil end
+    if state.rankBundle then state.rankBundle = nil end
+end
+
+local function markBonusDirty(player, perk)
+    if type(BT.MarkBonusDirty) == "function" then BT.MarkBonusDirty(player, perk) end
+end
+
+local function markMirrorDirty(state, id)
+    if not state then return end
+    state.mirrorDirty = true
+    if id then
+        if type(state.mirrorDirtyPerks) ~= "table" then state.mirrorDirtyPerks = {} end
+        state.mirrorDirtyPerks[id] = true
+    end
+end
+
+local function publishOneMirrorPerk(mirror, state, id)
+    local value = state.canonicalXP[id]
+    if value == nil then
+        mirror[id] = nil
+        return
+    end
+
+    local perk = BT.ResolvePerk(id)
+    if type(id) == "string" and BT.IsFinite(value) then
+        if perk and BT.IsTrainablePerk(perk) then
+            value = clampPerkXPFast(perk, value)
+        else
+            value = BT.Clamp(value, 0, Server.MAX_UNKNOWN_XP)
+        end
+        state.canonicalXP[id] = value
+        local record = mirror[id]
+        if type(record) ~= "table" then
+            record = {}
+            mirror[id] = record
+        end
+        record.xp = value
+    else
+        state.canonicalXP[id] = nil
+        mirror[id] = nil
+    end
+end
+
+local function publishCanonicalXP(player, state, force)
+    if not force and not state.mirrorDirty then return end
+
     local data = BT.GetData(player, true)
     local mirror = data.perks
     if type(mirror) ~= "table" then
@@ -128,29 +210,21 @@ local function publishCanonicalXP(player, state)
         data.perks = mirror
     end
 
-    for id, _record in pairs(mirror) do
-        if state.canonicalXP[id] == nil then mirror[id] = nil end
-    end
-    for id, value in pairs(state.canonicalXP) do
-        local perk = BT.ResolvePerk(id)
-        if type(id) == "string" and BT.IsFinite(value) then
-            if perk and BT.IsTrainablePerk(perk) then
-                value = clampPerkXP(perk, value)
-            else
-                value = BT.Clamp(value, 0, Server.MAX_UNKNOWN_XP)
-            end
-            state.canonicalXP[id] = value
-            local record = mirror[id]
-            if type(record) ~= "table" then
-                record = {}
-                mirror[id] = record
-            end
-            record.xp = value
-        else
-            state.canonicalXP[id] = nil
-            mirror[id] = nil
+    if force then
+        for id, _record in pairs(mirror) do
+            if state.canonicalXP[id] == nil then mirror[id] = nil end
+        end
+        for id, _value in pairs(state.canonicalXP) do
+            publishOneMirrorPerk(mirror, state, id)
+        end
+    else
+        for id, _dirty in pairs(state.mirrorDirtyPerks or {}) do
+            publishOneMirrorPerk(mirror, state, id)
         end
     end
+    state.mirrorDirty = false
+    state.mirrorDirtyPerks = {}
+    state.mirrorPublishTimer = 0
 end
 
 local function getState(player)
@@ -164,11 +238,16 @@ local function getState(player)
             storeKey = storeKey,
             storeRecord = storeRecord,
             scanTimer = 0,
+            mirrorPublishTimer = 0,
+            mirrorDirty = true,
+            mirrorDirtyPerks = {},
+            masteryCache = {},
             initialized = false,
             restoreAfterSave = false,
+            lastUpdateTick = Server._tick or 0,
         }
         Server._players[player] = state
-        publishCanonicalXP(player, state)
+        publishCanonicalXP(player, state, true)
     end
     return state
 end
@@ -178,7 +257,7 @@ local function readCanonicalXP(player, perk)
     if player:isDead() then return 0 end
     local state = getState(player)
     local id = perk:getId()
-    local value = clampPerkXP(perk, state.canonicalXP[id] or 0)
+    local value = clampPerkXPFast(perk, state.canonicalXP[id] or 0)
     state.canonicalXP[id] = value
     return value
 end
@@ -187,8 +266,11 @@ local function writeCanonicalXP(player, perk, value)
     if not player or not perk then return end
     if player:isDead() then return end
     local state = getState(player)
-    state.canonicalXP[perk:getId()] = clampPerkXP(perk, value)
-    publishCanonicalXP(player, state)
+    local id = perk:getId()
+    state.canonicalXP[id] = clampPerkXPFast(perk, value)
+    invalidatePerkCache(state, id)
+    markBonusDirty(player, perk)
+    markMirrorDirty(state, id)
 end
 
 local function exportCanonicalXP(player)
@@ -204,8 +286,11 @@ local function clearCanonicalXP(player)
     if not player then return end
     if player:isDead() then return end
     local state = getState(player)
-    for id, _value in pairs(state.canonicalXP) do state.canonicalXP[id] = nil end
-    publishCanonicalXP(player, state)
+    for id, _value in pairs(state.canonicalXP) do
+        state.canonicalXP[id] = nil
+        invalidatePerkCache(state, id)
+        markMirrorDirty(state, id)
+    end
 end
 
 -- All shared mastery APIs (including bonus providers) read a server-authoritative
@@ -216,6 +301,62 @@ BT._storedXPWriter = writeCanonicalXP
 BT._storedXPExporter = exportCanonicalXP
 BT._storedXPClearer = clearCanonicalXP
 
+local function getCachedMasteryState(player, perk)
+    if not player or not perk or player:isDead() then return BT.NATIVE_MAX_LEVEL, 0, 0 end
+    local state = getState(player)
+    local id = perk:getId()
+    local nativeLevel = BT.GetNativeLevel(player, perk)
+    if nativeLevel < BT.NATIVE_MAX_LEVEL then return nil end
+
+    local stored = clampPerkXPFast(perk, state.canonicalXP[id] or 0)
+    local cached = state.masteryCache[id]
+    if cached and cached.nativeLevel == nativeLevel and math.abs((cached.stored or 0) - stored) < 0.0001 then
+        return cached.level, cached.remaining, cached.cost
+    end
+
+    local remaining = stored
+    local level = BT.NATIVE_MAX_LEVEL
+    local costs = getCostCache(perk).costs
+    local nextCost = 0
+    for targetLevel = 11, BT.MAX_LEVEL do
+        local cost = costs[targetLevel] or BT.GetMasteryCost(perk, targetLevel)
+        nextCost = cost
+        if remaining + 0.0001 < cost then break end
+        remaining = remaining - cost
+        level = targetLevel
+        nextCost = 0
+    end
+
+    cached = {
+        nativeLevel = nativeLevel,
+        stored = stored,
+        level = level,
+        remaining = remaining,
+        cost = nextCost,
+        ranks = math.max(0, level - BT.NATIVE_MAX_LEVEL),
+    }
+    state.masteryCache[id] = cached
+    state.canonicalXP[id] = stored
+    return cached.level, cached.remaining, cached.cost
+end
+
+local function readEffectiveLevel(player, perk)
+    local nativeLevel = BT.GetNativeLevel(player, perk)
+    if nativeLevel < BT.NATIVE_MAX_LEVEL then return nativeLevel end
+    local level = getCachedMasteryState(player, perk)
+    return level
+end
+
+local function readMasteryRanks(player, perk)
+    if BT.GetNativeLevel(player, perk) < BT.NATIVE_MAX_LEVEL then return 0 end
+    local level = getCachedMasteryState(player, perk)
+    return math.max(0, (level or 0) - BT.NATIVE_MAX_LEVEL)
+end
+
+BT._masteryStateReader = getCachedMasteryState
+BT._effectiveLevelReader = readEffectiveLevel
+BT._masteryRanksReader = readMasteryRanks
+
 local function setRawXP(player, perk, level)
     if player and perk then player:getXp():setXPToLevel(perk, level) end
 end
@@ -225,6 +366,8 @@ local function activatePerk(player, perk, state)
     local id = perk:getId()
     BT.GetPerkRecord(player, perk, true)
     state.active[id] = { perk = perk, baseline = BT.GetReservoirXP(perk) }
+    invalidatePerkCache(state, id)
+    markBonusDirty(player, perk)
     setRawXP(player, perk, BT.RESERVOIR_LEVEL)
     return true
 end
@@ -236,12 +379,32 @@ local function sendFullSync(player)
     })
 end
 
-local function sendPerkSync(player, perk)
+local function sendPerkSync(player, perk, xp)
     sendServerCommand(player, BT.MODULE, "SyncPerk", {
         player = player:getOnlineID(),
         perk = perk:getId(),
-        xp = BT.GetStoredXP(player, perk),
+        xp = xp ~= nil and xp or BT.GetStoredXP(player, perk),
     })
+end
+
+local function addStoredXPFast(player, perk, state, amount)
+    if not player or not perk or not state then return 0, 0 end
+    amount = tonumber(amount)
+    if not BT.IsFinite(amount) then return 0, state.canonicalXP[perk:getId()] or 0 end
+
+    local id = perk:getId()
+    local before = clampPerkXPFast(perk, state.canonicalXP[id] or 0)
+    local after = clampPerkXPFast(perk, before + amount)
+    local applied = after - before
+    if math.abs(applied) > 0.0001 then
+        state.canonicalXP[id] = after
+        invalidatePerkCache(state, id)
+        markBonusDirty(player, perk)
+        markMirrorDirty(state, id)
+    else
+        state.canonicalXP[id] = after
+    end
+    return applied, after
 end
 
 local function addRecoveredXP(player, perk, amount)
@@ -268,8 +431,9 @@ local function addRecoveredXP(player, perk, amount)
     local masteryApplied = 0
     local remainder = amount - nativeApplied
     if remainder > 0 and BT.GetNativeLevel(player, perk) >= BT.NATIVE_MAX_LEVEL then
-        masteryApplied = BT.AddStoredXP(player, perk, remainder)
-        if masteryApplied ~= 0 then sendPerkSync(player, perk) end
+        local state = getState(player)
+        masteryApplied = addStoredXPFast(player, perk, state, remainder)
+        if masteryApplied ~= 0 then sendPerkSync(player, perk, state.canonicalXP[perk:getId()]) end
     end
 
     local newLevel = BT.GetEffectiveLevel(player, perk)
@@ -288,8 +452,8 @@ local function applyNativeOverflow(player, perk, amount)
 end
 
 local function captureMasteryDelta(player, perk, state, id, amount)
-    local applied = BT.AddStoredXP(player, perk, amount)
-    if applied ~= 0 then sendPerkSync(player, perk) end
+    local applied, stored = addStoredXPFast(player, perk, state, amount)
+    if applied ~= 0 then sendPerkSync(player, perk, stored) end
 
     local overflow = (tonumber(amount) or 0) - applied
     if overflow < -0.0001 then
@@ -349,19 +513,26 @@ local function resetReservoirs(player, state)
     end
 end
 
-function Server.OnPlayerUpdate(player)
+function Server.OnPlayerUpdate(player, elapsedTicks)
     if not player or player:isDead() then return end
     local state = getState(player)
-    -- ObjectModDataPacket can replace a player's whole ModData table. Restore
-    -- the server mirror every tick; gameplay reads never depend on that mirror.
-    publishCanonicalXP(player, state)
+    elapsedTicks = math.max(1, tonumber(elapsedTicks) or 1)
+    -- ObjectModDataPacket can replace a player's whole ModData table. Keep a
+    -- bounded periodic repair, but avoid rewriting the mirror for every player
+    -- on every server tick; gameplay reads use the authoritative server store.
+    state.mirrorPublishTimer = (state.mirrorPublishTimer or 0) + elapsedTicks
+    if state.mirrorDirty or state.mirrorPublishTimer >= Server.MIRROR_PUBLISH_INTERVAL_TICKS then
+        publishCanonicalXP(player, state, state.mirrorPublishTimer >= Server.MIRROR_PUBLISH_INTERVAL_TICKS)
+    end
+
     if not state.initialized then Server.ScanPlayer(player, false) end
     resetReservoirs(player, state)
-    state.scanTimer = state.scanTimer + 1
-    if state.scanTimer >= 60 then
+    state.scanTimer = state.scanTimer + elapsedTicks
+    if state.scanTimer >= Server.SCAN_INTERVAL_TICKS then
         state.scanTimer = 0
         Server.ScanPlayer(player, false)
     end
+    state.lastUpdateTick = Server._tick or 0
 end
 
 function Server.OnPlayerDeath(player)
@@ -386,11 +557,39 @@ function Server.OnCharacterDeath(character)
     end
 end
 
-function Server.OnTick()
+local function refreshOnlinePlayers()
     local players = getOnlinePlayers()
-    if not players then return end
-    for index = 0, players:size() - 1 do
-        Server.OnPlayerUpdate(players:get(index))
+    local cached = {}
+    if players then
+        for index = 0, players:size() - 1 do
+            local player = players:get(index)
+            if player and not player:isDead() then cached[#cached + 1] = player end
+        end
+    end
+    Server._onlinePlayers = cached
+    if Server._playerCursor > #cached then Server._playerCursor = 1 end
+    Server._lastPlayerRefreshTick = Server._tick or 0
+end
+
+function Server.OnTick()
+    Server._tick = (Server._tick or 0) + 1
+    if Server._tick - (Server._lastPlayerRefreshTick or 0) >= Server.PLAYER_CACHE_REFRESH_TICKS then
+        refreshOnlinePlayers()
+    end
+
+    local players = Server._onlinePlayers
+    if not players or #players == 0 then return end
+
+    local budget = math.max(1, tonumber(Server.PLAYER_UPDATES_PER_TICK) or 1)
+    for _slot = 1, math.min(budget, #players) do
+        if Server._playerCursor > #players then Server._playerCursor = 1 end
+        local player = players[Server._playerCursor]
+        Server._playerCursor = Server._playerCursor + 1
+        if player and not player:isDead() then
+            local state = Server._players[player]
+            local lastTick = state and state.lastUpdateTick or (Server._tick - Server.PLAYER_CACHE_REFRESH_TICKS)
+            Server.OnPlayerUpdate(player, Server._tick - lastTick)
+        end
     end
 end
 
@@ -416,7 +615,7 @@ function Server.OnClientCommand(module, command, player, args)
     if module ~= BT.MODULE or not player then return end
     if command ~= "RequestSync" then return end
     if player:isDead() then return end
-    publishCanonicalXP(player, getState(player))
+    publishCanonicalXP(player, getState(player), true)
     Server.ScanPlayer(player, true)
     sendFullSync(player)
 end
@@ -427,7 +626,7 @@ function Server.OnSave()
     -- not promise perfectly uninstall-clean raw XP for every shutdown path.
     for player, state in pairs(Server._players) do
         if player then
-            publishCanonicalXP(player, state)
+            publishCanonicalXP(player, state, true)
             for _, active in pairs(state.active) do
                 if active.perk and BT.GetNativeLevel(player, active.perk) >= BT.NATIVE_MAX_LEVEL then
                     setRawXP(player, active.perk, BT.NATIVE_MAX_LEVEL)
@@ -469,14 +668,22 @@ end
 
 local function onServerStarted()
     Server._players = setmetatable({}, { __mode = "k" })
+    Server._onlinePlayers = {}
+    Server._playerCursor = 1
+    Server._lastPlayerRefreshTick = 0
+    perkCostCache = {}
     BT.RefreshPerkCatalog(true)
     installPassiveProtection()
+    refreshOnlinePlayers()
 end
 
 local function onInitGlobalModData()
     -- GlobalModData.init() replaces every loaded table. Drop any pre-init
     -- references defensively; the next player tick binds to the loaded store.
     Server._players = setmetatable({}, { __mode = "k" })
+    Server._onlinePlayers = {}
+    Server._playerCursor = 1
+    Server._lastPlayerRefreshTick = -Server.PLAYER_CACHE_REFRESH_TICKS
 end
 
 if not Server._eventsInstalled then

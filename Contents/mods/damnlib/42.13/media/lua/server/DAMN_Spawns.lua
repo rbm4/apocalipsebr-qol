@@ -423,8 +423,8 @@ end
 
 -- events
 
-Events.OnInitGlobalModData.Add(function() -- need global moddata to remember spawns
-    Events.LoadGridsquare.Add(function(square)
-        DAMN.Spawns:checkSquare(square);
-    end);
-end)
+-- Events.OnInitGlobalModData.Add(function() -- need global moddata to remember spawns
+--     Events.LoadGridsquare.Add(function(square)
+--         DAMN.Spawns:checkSquare(square);
+--     end);
+-- end)

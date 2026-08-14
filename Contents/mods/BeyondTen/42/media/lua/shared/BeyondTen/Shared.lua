@@ -183,6 +183,11 @@ function BT.GetMasteryState(character, perkOrId)
     local perk = BT.ResolvePerk(perkOrId)
     if not character or not perk then return BT.NATIVE_MAX_LEVEL, 0, 0 end
 
+    if type(BT._masteryStateReader) == "function" then
+        local level, remaining, cost = BT._masteryStateReader(character, perk)
+        if level ~= nil then return level, remaining or 0, cost or 0 end
+    end
+
     local remaining = BT.GetStoredXP(character, perk)
     local level = BT.NATIVE_MAX_LEVEL
     for targetLevel = 11, BT.MAX_LEVEL do
@@ -197,12 +202,23 @@ end
 function BT.GetEffectiveLevel(character, perkOrId)
     local perk = BT.ResolvePerk(perkOrId)
     if not character or not perk then return 0 end
+
+    if type(BT._effectiveLevelReader) == "function" then
+        local level = BT._effectiveLevelReader(character, perk)
+        if level ~= nil then return level end
+    end
+
     local nativeLevel = BT.GetNativeLevel(character, perk)
     if nativeLevel < BT.NATIVE_MAX_LEVEL then return nativeLevel end
     return BT.GetMasteryState(character, perk)
 end
 
 function BT.GetMasteryRanks(character, perkOrId)
+    local perk = BT.ResolvePerk(perkOrId)
+    if character and perk and type(BT._masteryRanksReader) == "function" then
+        local ranks = BT._masteryRanksReader(character, perk)
+        if ranks ~= nil then return math.max(0, ranks) end
+    end
     return math.max(0, BT.GetEffectiveLevel(character, perkOrId) - BT.NATIVE_MAX_LEVEL)
 end
 

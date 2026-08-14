@@ -8,6 +8,9 @@ local BT = BeyondTen
 local Server = BeyondTenServer
 
 Server._players = Server._players or setmetatable({}, { __mode = "k" })
+Server._tick = Server._tick or 0
+Server.PLAYER_UPDATE_STRIDE = 10
+Server.SCAN_INTERVAL_TICKS = 600
 
 local function getState(player)
     local state = Server._players[player]
@@ -70,8 +73,8 @@ function Server.OnPlayerUpdate(player)
     if not player then return end
     local state = getState(player)
     resetReservoirs(player, state)
-    state.scanTimer = state.scanTimer + 1
-    if state.scanTimer >= 60 then
+    state.scanTimer = state.scanTimer + Server.PLAYER_UPDATE_STRIDE
+    if state.scanTimer >= Server.SCAN_INTERVAL_TICKS then
         state.scanTimer = 0
         Server.ScanPlayer(player, false)
     end
@@ -80,8 +83,14 @@ end
 function Server.OnTick()
     local players = getOnlinePlayers()
     if not players then return end
+    Server._tick = (Server._tick or 0) + 1
+    local stride = math.max(1, tonumber(Server.PLAYER_UPDATE_STRIDE) or 1)
     for index = 0, players:size() - 1 do
-        Server.OnPlayerUpdate(players:get(index))
+        local player = players:get(index)
+        local onlineID = player and tonumber(player:getOnlineID()) or index
+        if ((Server._tick + onlineID) % stride) == 0 then
+            Server.OnPlayerUpdate(player)
+        end
     end
 end
 

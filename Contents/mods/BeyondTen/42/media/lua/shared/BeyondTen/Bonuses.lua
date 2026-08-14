@@ -10,6 +10,19 @@ BT._maintenanceTrackersB42 = BT._maintenanceTrackersB42 or setmetatable({}, { __
 BT._scaledWeaponsB42 = BT._scaledWeaponsB42 or setmetatable({}, { __mode = "k" })
 
 local maintenanceGeneration = 0
+local bonusTick = 0
+local serverPlayerCursor = 1
+local serverPlayerCache = {}
+local lastServerPlayerRefreshTick = 0
+
+local SERVER_PLAYERS_PER_TICK = 2
+local SERVER_PLAYER_REFRESH_TICKS = 60
+local CARRY_REPAIR_TICKS = 300
+local ENDURANCE_INTERVAL_TICKS = 5
+local ENDURANCE_RANK_CACHE_TICKS = 60
+local MAINTENANCE_CLEANUP_TICKS = 10
+local MAINTENANCE_POLL_TICKS = 30
+local TIMED_ACTION_SPEED_PER_RANK = 0.05
 
 local EXACT_ACTION_PERKS = {
     ISAddItemInRecipe = Perks.Cooking,
@@ -133,7 +146,7 @@ local function installTimedActionBonus()
         local perk = BT.ResolveActionPerk(action)
         local ranks = perk and BT.GetMasteryRanks(action.character, perk) or 0
         if ranks <= 0 then return adjusted end
-        return math.max(1, adjusted * (1 - 0.025 * ranks))
+        return math.max(1, adjusted * (1 - TIMED_ACTION_SPEED_PER_RANK * ranks))
     end
     ISBaseTimedAction.adjustMaxTime = BT._timedActionBonusWrapperB42
 end
@@ -303,6 +316,11 @@ local function restoreScaledWeapons()
     end
 end
 
+local function hasScaledWeapons()
+    for _weapon, _original in pairs(BT._scaledWeaponsB42) do return true end
+    return false
+end
+
 local function maintenanceCondition(weapon)
     return math.max(0, math.floor(tonumber(weapon:getCondition()) or 0))
 end
@@ -437,6 +455,13 @@ end
 local function updateCarryCapacity(player, state)
     local ranks = BT.GetMasteryRanks(player, Perks.Strength)
     if isServer() then
+        local current = tonumber(player:getMaxWeight()) or 0
+        local repairDue = state.lastCarryValue == nil
+            or state.lastStrengthRanks ~= ranks
+            or math.abs(current - (state.lastCarryValue or current)) > 0.0001
+            or bonusTick >= (state.nextCarryRepairTick or 0)
+        if not repairDue then return end
+
         -- B42 PlayerDamage packets carry maxWeight in both directions. Always
         -- rebuild the authoritative vanilla value on the server before adding
         -- mastery, so an echoed/stale mastered value can never become a base.
@@ -447,6 +472,8 @@ local function updateCarryCapacity(player, state)
         if base ~= desired then player:setMaxWeight(desired) end
         state.lastCarryBase = base
         state.lastCarryValue = desired
+        state.lastStrengthRanks = ranks
+        state.nextCarryRepairTick = bonusTick + CARRY_REPAIR_TICKS
         return
     end
 
@@ -472,6 +499,12 @@ end
 local function updateEndurance(player, state)
     local stats = player:getStats()
     if not stats then return end
+
+    if isServer() then
+        if bonusTick - (state.lastEnduranceTick or 0) < ENDURANCE_INTERVAL_TICKS then return end
+        state.lastEnduranceTick = bonusTick
+    end
+
     local current = BT.Clamp(stats:get(CharacterStat.ENDURANCE), 0, 1)
     local previous = state.lastEndurance
     if previous == nil then
@@ -505,6 +538,41 @@ local function updateEndurance(player, state)
     state.lastEndurance = current
 end
 
+local function playerHasEnduranceRanks(player, state)
+    if isServer() and state.nextEnduranceRankCheckTick and bonusTick < state.nextEnduranceRankCheckTick then
+        return state.hasEnduranceRanks == true
+    end
+
+    local hasRanks = BT.GetMasteryRanks(player, Perks.Fitness) > 0
+        or BT.GetMasteryRanks(player, Perks.Sprinting) > 0
+        or BT.GetMasteryRanks(player, Perks.Nimble) > 0
+        or BT.GetMasteryRanks(player, Perks.Sneak) > 0
+        or BT.GetMasteryRanks(player, Perks.Lightfoot) > 0
+
+    if isServer() then
+        state.hasEnduranceRanks = hasRanks
+        state.nextEnduranceRankCheckTick = bonusTick + ENDURANCE_RANK_CACHE_TICKS
+    end
+    return hasRanks
+end
+
+function BT.MarkBonusDirty(player, perkOrId)
+    if not player then return end
+    local state = BT._bonusPlayersB42[player]
+    if not state then return end
+
+    local perk = BT.ResolvePerk(perkOrId)
+    if perk == Perks.Strength then
+        state.nextCarryRepairTick = 0
+        state.lastStrengthRanks = nil
+    elseif perk == Perks.Fitness or perk == Perks.Sprinting or perk == Perks.Nimble
+        or perk == Perks.Sneak or perk == Perks.Lightfoot then
+        state.nextEnduranceRankCheckTick = 0
+    elseif perk == Perks.Maintenance then
+        state.pollHeldMaintenanceOnce = true
+    end
+end
+
 local function updatePlayerBonuses(player, generation)
     if not player or player:isDead() then return end
     local state = BT._bonusPlayersB42[player]
@@ -515,24 +583,49 @@ local function updatePlayerBonuses(player, generation)
     if not isClient() then
         updateCarryCapacity(player, state)
     end
-    if isServer() then updateMaintenanceProtection(player, generation) end
+    if isServer() and (state.pollHeldMaintenanceOnce or bonusTick >= (state.nextMaintenancePollTick or 0)) then
+        updateMaintenanceProtection(player, generation)
+        state.pollHeldMaintenanceOnce = false
+        state.nextMaintenancePollTick = bonusTick + MAINTENANCE_POLL_TICKS
+    end
     -- PlayerStatsPacket is server-to-client in B42. Applying the delta-based
     -- endurance adapter again on an MP client would compound a server bonus
     -- whenever a stats packet arrives. SP and the server are authoritative.
-    if not isClient() then updateEndurance(player, state) end
+    if not isClient() and playerHasEnduranceRanks(player, state) then updateEndurance(player, state) end
+end
+
+local function refreshServerPlayerCache()
+    local players = getOnlinePlayers()
+    local cached = {}
+    if players then
+        for index = 0, players:size() - 1 do
+            local player = players:get(index)
+            if player and not player:isDead() then cached[#cached + 1] = player end
+        end
+    end
+    serverPlayerCache = cached
+    if serverPlayerCursor > #serverPlayerCache then serverPlayerCursor = 1 end
+    lastServerPlayerRefreshTick = bonusTick
 end
 
 local function updatePlayers()
     maintenanceGeneration = maintenanceGeneration + 1
     local generation = maintenanceGeneration
     if isServer() then
-        local players = getOnlinePlayers()
-        if not players then
-            processUnseenMaintenanceTrackers(generation)
-            return
+        if bonusTick - lastServerPlayerRefreshTick >= SERVER_PLAYER_REFRESH_TICKS then
+            refreshServerPlayerCache()
         end
-        for index = 0, players:size() - 1 do updatePlayerBonuses(players:get(index), generation) end
-        processUnseenMaintenanceTrackers(generation)
+
+        local count = #serverPlayerCache
+        for _slot = 1, math.min(SERVER_PLAYERS_PER_TICK, count) do
+            if serverPlayerCursor > count then serverPlayerCursor = 1 end
+            updatePlayerBonuses(serverPlayerCache[serverPlayerCursor], generation)
+            serverPlayerCursor = serverPlayerCursor + 1
+        end
+
+        if bonusTick % MAINTENANCE_CLEANUP_TICKS == 0 then
+            processUnseenMaintenanceTrackers(generation)
+        end
         return
     end
     for playerIndex = 0, getNumActivePlayers() - 1 do
@@ -542,7 +635,8 @@ local function updatePlayers()
 end
 
 local function onTick()
-    restoreScaledWeapons()
+    bonusTick = bonusTick + 1
+    if not isServer() or hasScaledWeapons() then restoreScaledWeapons() end
     updatePlayers()
 end
 
@@ -553,8 +647,13 @@ local function resetBonusRuntime()
     BT._maintenanceTrackersB42 = setmetatable({}, { __mode = "k" })
     BT._scaledWeaponsB42 = setmetatable({}, { __mode = "k" })
     maintenanceGeneration = 0
+    bonusTick = 0
+    serverPlayerCursor = 1
+    serverPlayerCache = {}
+    lastServerPlayerRefreshTick = 0
     installTimedActionBonus()
     installReloadingBonus()
+    if isServer() then refreshServerPlayerCache() end
 end
 
 installTimedActionBonus()
