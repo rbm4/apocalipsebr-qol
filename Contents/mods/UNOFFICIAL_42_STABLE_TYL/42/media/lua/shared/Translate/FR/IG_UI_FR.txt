@@ -1,0 +1,3 @@
+IGUI_FR = {
+    IGUI_ContainerTitle_Trash = "Ordure",
+    IGUI_ContainerTitle_TrashPaper = "Papiers dispersées"}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>aim_default</m_Name>
+	<m_Priority>4</m_Priority>
+	<m_AnimName>Bob_IdleDriving</m_AnimName>
+	<m_BlendTime>0.30</m_BlendTime>
+	<m_SpeedScale>IdleSpeed</m_SpeedScale>
+	<m_maxTorsoTwist>70.00</m_maxTorsoTwist>
+	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
+</animNode>

@@ -1,0 +1,81 @@
+{
+    "Sandbox_TYL": "10 Years Later - Tweaked",
+
+    "Sandbox_TYL_ReadPlease": "Read Please",
+    "Sandbox_TYL_ReadPlease_tooltip": "10 Years Later - Tweaked changes newly generated areas by adding environmental decay, vegetation, debris, damaged structures, abandoned vehicles, and animals. Higher percentages generally make the world more heavily affected. Set an option to 0 to disable that particular feature.",
+
+    "Sandbox_TYL_storiesPercentage": "Story Decay Percentage",
+    "Sandbox_TYL_storiesPercentage_tooltip": "Controls how frequently additional story-related decay is generated. Higher values make these events more common. 0 disables this feature.",
+
+    "Sandbox_TYL_Divider_Nature": "--- Nature & Vegetation ---",
+    "Sandbox_TYL_Divider_Nature_tooltip": "Cosmetic section divider. Does nothing.",
+
+    "Sandbox_TYL_treePercentage": "Tree Percentage",
+    "Sandbox_TYL_treePercentage_tooltip": "Controls how frequently trees are added to suitable natural ground. Higher values create a more heavily overgrown environment. 0 prevents this mod from adding trees to natural ground.",
+
+    "Sandbox_TYL_treePercentageOnRoad": "Tree Percentage (Roads)",
+    "Sandbox_TYL_treePercentageOnRoad_tooltip": "Controls how frequently trees grow directly on roads and paved surfaces. Higher values make roads increasingly overgrown. 0 prevents trees from being added to roads.",
+
+    "Sandbox_TYL_vinePercentage": "Vine Percentage",
+    "Sandbox_TYL_vinePercentage_tooltip": "Controls how frequently ivy, vines, and climbing vegetation appear on suitable walls and fences. Higher values make abandoned buildings appear more heavily overgrown. 0 disables additional vine growth.",
+
+    "Sandbox_TYL_grassPercentage": "Grass Percentage",
+    "Sandbox_TYL_grassPercentage_tooltip": "Controls how frequently vanilla grass is added to natural ground. Higher values create more widespread grass growth. 0 prevents this mod from adding vanilla grass.",
+
+    "Sandbox_TYL_grassPercentageOnRoad": "Grass Percentage (Roads)",
+    "Sandbox_TYL_grassPercentageOnRoad_tooltip": "Controls how frequently grass grows through roads and paved surfaces. Higher values make abandoned roads appear more overgrown. 0 prevents additional grass from appearing on roads.",
+
+    "Sandbox_TYL_floorleavesPercentage": "Floor Leaves Percentage",
+    "Sandbox_TYL_floorleavesPercentage_tooltip": "Controls how frequently fallen leaves appear on natural ground. Higher values create thicker layers of leaf litter. 0 disables additional floor leaves.",
+
+    "Sandbox_TYL_floorleavesPercentageOnRoad": "Floor Leaves Percentage (Roads)",
+    "Sandbox_TYL_floorleavesPercentageOnRoad_tooltip": "Controls how frequently fallen leaves appear on roads and paved surfaces. Higher values make streets look increasingly neglected and covered with organic debris. 0 disables additional leaves on roads.",
+
+    "Sandbox_TYL_customGrassPercentage": "Custom Grass Percentage",
+    "Sandbox_TYL_customGrassPercentage_tooltip": "Controls how frequently custom grass and natural ground debris such as leaves, twigs, stones, and other vegetation details are added. Higher values create a more heavily reclaimed environment. 0 disables these custom additions.",
+
+    "Sandbox_TYL_customGrassPercentageOnRoad": "Custom Grass Percentage (Roads)",
+    "Sandbox_TYL_customGrassPercentageOnRoad_tooltip": "Controls how frequently custom grass and natural debris appear on roads and paved surfaces. Higher values make abandoned roads look increasingly reclaimed by nature. 0 disables these additions on roads.",
+
+    "Sandbox_TYL_bushesPercentage": "Bush Percentage",
+    "Sandbox_TYL_bushesPercentage_tooltip": "Controls how frequently bushes, shrubs, hedges, and similar vegetation appear on suitable natural ground. Higher values create denser vegetation around abandoned areas. 0 disables additional bushes.",
+
+    "Sandbox_TYL_bushesPercentageOnRoad": "Bush Percentage (Roads)",
+    "Sandbox_TYL_bushesPercentageOnRoad_tooltip": "Controls how frequently bushes and similar vegetation appear on roads and paved surfaces. Higher values make roads become increasingly overgrown. 0 prevents bushes from being added to roads.",
+
+    "Sandbox_TYL_Divider_UrbanDecay": "--- Urban Decay ---",
+    "Sandbox_TYL_Divider_UrbanDecay_tooltip": "Cosmetic section divider. Does nothing.",
+
+    "Sandbox_TYL_roadCrackOverlayPercentage": "Road Crack Percentage",
+    "Sandbox_TYL_roadCrackOverlayPercentage_tooltip": "Controls how frequently cracked and damaged overlays appear on road tiles. Higher values make roads look older and less maintained. 0 disables additional road crack overlays.",
+
+    "Sandbox_TYL_dirtCrackOverlayPercentage": "Dirt Crack Percentage",
+    "Sandbox_TYL_dirtCrackOverlayPercentage_tooltip": "Controls how frequently cracked and weathered overlays appear on suitable dirt and natural ground tiles. Higher values make natural surfaces appear more degraded. 0 disables additional dirt crack overlays.",
+
+    "Sandbox_TYL_trashPercentage": "Exterior Trash Percentage",
+    "Sandbox_TYL_trashPercentage_tooltip": "Controls how frequently decorative, non-lootable trash appears outdoors. Higher values create a messier and more abandoned environment. 0 disables additional exterior trash.",
+
+    "Sandbox_TYL_trashPercentageInterior": "Interior Trash Percentage",
+    "Sandbox_TYL_trashPercentageInterior_tooltip": "Controls how frequently decorative, non-lootable trash appears inside buildings. Higher values make abandoned interiors look dirtier and more neglected. 0 disables additional interior trash.",
+
+    "Sandbox_TYL_barricadePercentage": "Barricade Percentage",
+    "Sandbox_TYL_barricadePercentage_tooltip": "Controls how frequently suitable windows and exterior doors receive barricades. Higher values result in more barricaded buildings. 0 disables barricades added by this mod.",
+
+    "Sandbox_TYL_wallPercentage": "Wall Damage Percentage",
+    "Sandbox_TYL_wallPercentage_tooltip": "Controls how frequently suitable exterior walls are replaced with damaged or degraded variants. Higher values create more visibly deteriorated buildings. 0 disables wall damage.",
+
+    "Sandbox_TYL_roofPercentage": "Roof Damage Percentage",
+    "Sandbox_TYL_roofPercentage_tooltip": "Controls how frequently suitable roofs are damaged or destroyed. Higher values create more heavily deteriorated buildings. 0 disables roof damage.",
+
+    "Sandbox_TYL_fencePercentage": "Fence Damage Percentage",
+    "Sandbox_TYL_fencePercentage_tooltip": "Controls how frequently fences are damaged, bent, or destroyed. Higher values cause more widespread fence deterioration. 0 disables fence damage.",
+
+    "Sandbox_TYL_Divider_VehiclesAnimals": "--- Vehicles & Animals ---",
+    "Sandbox_TYL_Divider_VehiclesAnimals_tooltip": "Cosmetic section divider. Does nothing.",
+
+    "Sandbox_TYL_vehiclePercentage": "Vehicle Percentage",
+    "Sandbox_TYL_vehiclePercentage_tooltip": "Controls how frequently abandoned vehicles are added by the mod. Higher values result in more abandoned vehicles appearing in suitable locations. This setting uses a 0-5 scale. 0 disables additional vehicle spawning.",
+
+    "Sandbox_TYL_animalsPercentage": "Animal Percentage",
+    "Sandbox_TYL_animalsPercentage_tooltip": "Controls how frequently animals are spawned by the mod. Higher values result in more animals appearing in suitable areas. This setting uses a 0-5 scale. 0 disables additional animal spawning."
+}

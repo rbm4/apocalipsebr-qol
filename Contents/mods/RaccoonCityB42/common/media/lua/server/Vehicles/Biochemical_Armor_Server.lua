@@ -2,164 +2,169 @@
     Biochemical_Armor_Server.lua
     Server-side armor protection for the Biochemical_PickupTruck.
 
-    Replaces the old client-side OnPlayerUpdate approach that broke in B42.18 because
-    VehiclePart:setCondition() called from a client-side shared script no longer syncs
-    to the server. All condition changes now happen on the server via the vehicle part
-    update callback (lua { update = ... }), which is the authoritative B42 pattern.
+    VehiclePart:setCondition() from client Lua is not authoritative in B42 MP,
+    so all protection work happens on the server. The bumper part declares the
+    parts it protects through table Biochemical_Armor in the vehicle script.
 
-    The Biochemical_BumperPart declares which parts it protects through the script-side
-    "table Biochemical_Armor { part1 = ..., part2 = ..., ... }" block. On each server
-    update tick (every game minute), we:
-      1. Lazy-init a saved baseline condition for each protected part (first run only).
-      2. Heal any protected part whose condition fell below its baseline back to that
-         baseline, and drain the armor bumper by 1 per healed part.
-      3. Apply the same baseline-restore logic to TruckBed (was a broken sendClientCommand
-         hack before) so that the structural bed of the truck is also protected.
+    Baselines are seeded when the vehicle spawns and when the armor is installed.
+    When a protected part falls below its saved baseline, the server restores it
+    to that exact baseline and drains bumper condition by the protected damage
+    absorbed. This keeps a hood that was 100 before impact returning to 100,
+    while avoiding free upgrades for parts that were already damaged at install.
 ]]--
 
 Biochemical_Armor = Biochemical_Armor or {}
 
--- Key used to store the per-part saved-condition baseline in modData.
 local SAVED_COND_KEY = "biochem:savedCond"
+local ARMOR_DRAIN_CARRY_KEY = "biochem:armorDrainCarry"
 
--- Number of protected slots declared in the Biochemical_Armor script table.
 local PART_SLOT_COUNT = 18
 
--- Real-time interval (game-time ms) between fast-path tick checks.
--- Protection fires at most once per this interval for player-occupied vehicles,
--- in addition to the normal once-per-game-minute lua { update } callback.
-local TICK_INTERVAL_MS = 1000
+-- Default armor drain per point of protected damage when the script table does
+-- not provide Biochemical_ArmorRate.Biochemical_Bumper.
+local DEFAULT_ARMOR_DRAIN_RATE = 0.04
+
+-- Game-time milliseconds. This runs much faster than the normal vehicle-part
+-- update callback, which only fires once per in-game minute.
+local TICK_INTERVAL_MS = 250
 local _lastTickTime = 0
 
--- Saves the current condition of a VehiclePart as its protection baseline.
-local function saveBaseline(vehicle, part)
-    part:getModData()[SAVED_COND_KEY] = part:getCondition()
+local function clampCondition(value)
+    return math.max(0, math.min(100, math.floor((tonumber(value) or 0) + 0.5)))
+end
+
+local function getArmorDrainRate(armorPart)
+    local armorTable = armorPart:getTable("Biochemical_Armor")
+    local rateTable = armorTable and armorTable["Biochemical_ArmorRate"]
+    local rate = rateTable and rateTable["Biochemical_Bumper"]
+    return tonumber(rate) or DEFAULT_ARMOR_DRAIN_RATE
+end
+
+local function saveBaseline(vehicle, part, condition)
+    part:getModData()[SAVED_COND_KEY] = clampCondition(condition or part:getCondition())
     vehicle:transmitPartModData(part)
 end
 
--- Restore a protected part to its saved baseline and drain the armor part by 1.
--- Returns true if armor was drained (caller should check armor reached 0).
-local function absorbDamage(vehicle, armorPart, protectedPart, savedCond)
-    protectedPart:setCondition(savedCond)
-    vehicle:transmitPartCondition(protectedPart)
-
-    local newArmorCond = math.max(0, armorPart:getCondition() - 1)
-    armorPart:setCondition(newArmorCond)
-    vehicle:transmitPartCondition(armorPart)
-
-    return newArmorCond <= 0
+local function ensureBaseline(vehicle, part)
+    local md = part:getModData()
+    local savedCond = md[SAVED_COND_KEY]
+    if savedCond == nil then
+        savedCond = part:getCondition()
+        saveBaseline(vehicle, part, savedCond)
+    elseif part:getCondition() > savedCond then
+        savedCond = part:getCondition()
+        saveBaseline(vehicle, part, savedCond)
+    end
+    return clampCondition(savedCond)
 end
 
--- -----------------------------------------------------------------------
--- applyProtection  (internal)
--- Core protection loop shared by the minute-update callback and the
--- fast-path OnTick handler.  Safe to call at any frequency: the bumper
--- only drains when a protected part's condition has actually dropped below
--- its saved baseline; once restored, subsequent calls are no-ops.
--- -----------------------------------------------------------------------
-local function applyProtection(vehicle, part)
-    if part:getCondition() <= 0 then return end
-
-    local armorTable = part:getTable("Biochemical_Armor")
+local function seedProtectedBaselines(vehicle, armorPart)
+    local armorTable = armorPart:getTable("Biochemical_Armor")
     if not armorTable then return end
 
     for i = 1, PART_SLOT_COUNT do
         local partId = armorTable["part" .. i]
         if partId then
-            local pp = vehicle:getPartById(partId)
-            if pp then
-                local md = pp:getModData()
-
-                -- Lazy-init baseline on first update (handles parts that existed
-                -- before this code was deployed onto a live save).
-                if not md[SAVED_COND_KEY] then
-                    saveBaseline(vehicle, pp)
-                end
-
-                local savedCond = md[SAVED_COND_KEY]
-                if pp:getCondition() < savedCond then
-                    local armorExhausted = absorbDamage(vehicle, part, pp, savedCond)
-                    if armorExhausted then return end
-                end
+            local protectedPart = vehicle:getPartById(partId)
+            if protectedPart then
+                saveBaseline(vehicle, protectedPart)
             end
         end
     end
 
-    -- TruckBed protection: the structural bed of the Biochemical truck is treated
-    -- as part of its armored chassis — keep it at its saved condition.
     local truckBed = vehicle:getPartById("TruckBed")
     if truckBed then
-        local md = truckBed:getModData()
-        if not md[SAVED_COND_KEY] then
-            saveBaseline(vehicle, truckBed)
+        saveBaseline(vehicle, truckBed)
+    end
+end
+
+local function drainArmor(vehicle, armorPart, damageDelta)
+    local armorMd = armorPart:getModData()
+    local drainCarry = (tonumber(armorMd[ARMOR_DRAIN_CARRY_KEY]) or 0)
+        + (damageDelta * getArmorDrainRate(armorPart))
+    local drainWhole = math.floor(drainCarry)
+
+    armorMd[ARMOR_DRAIN_CARRY_KEY] = drainCarry - drainWhole
+    vehicle:transmitPartModData(armorPart)
+
+    if drainWhole <= 0 then
+        return false
+    end
+
+    local newArmorCond = math.max(0, armorPart:getCondition() - drainWhole)
+    armorPart:setCondition(newArmorCond)
+    vehicle:transmitPartCondition(armorPart)
+    return newArmorCond <= 0
+end
+
+local function restoreProtectedPart(vehicle, armorPart, protectedPart, savedCond)
+    local damageDelta = savedCond - protectedPart:getCondition()
+    if damageDelta <= 0 then
+        return false
+    end
+
+    protectedPart:setCondition(savedCond)
+    vehicle:transmitPartCondition(protectedPart)
+
+    return drainArmor(vehicle, armorPart, damageDelta)
+end
+
+local function applyProtection(vehicle, armorPart)
+    if armorPart:getCondition() <= 0 then return end
+
+    local armorTable = armorPart:getTable("Biochemical_Armor")
+    if not armorTable then return end
+
+    for i = 1, PART_SLOT_COUNT do
+        local partId = armorTable["part" .. i]
+        if partId then
+            local protectedPart = vehicle:getPartById(partId)
+            if protectedPart then
+                local savedCond = ensureBaseline(vehicle, protectedPart)
+                local armorExhausted = restoreProtectedPart(vehicle, armorPart, protectedPart, savedCond)
+                if armorExhausted then return end
+            end
         end
-        local savedCond = md[SAVED_COND_KEY]
+    end
+
+    -- The truck bed is treated as structural armor. It restores to its saved
+    -- baseline, but does not consume bumper condition.
+    local truckBed = vehicle:getPartById("TruckBed")
+    if truckBed then
+        local savedCond = ensureBaseline(vehicle, truckBed)
         if truckBed:getCondition() < savedCond then
-            -- TruckBed restoration does NOT drain armor (it's structural, not absorbed).
             truckBed:setCondition(savedCond)
             vehicle:transmitPartCondition(truckBed)
         end
     end
 end
 
--- -----------------------------------------------------------------------
--- Biochemical_Armor.Create
--- Called server-side when the vehicle is first spawned (create callback).
--- Seeds the protection baseline for all parts immediately so that the very
--- first Update tick has a valid reference rather than a lazy-init value.
--- -----------------------------------------------------------------------
 function Biochemical_Armor.Create(vehicle, part)
     Vehicles.Create.Default(vehicle, part)
-
-    local armorTable = part:getTable("Biochemical_Armor")
-    if not armorTable then return end
-
-    for i = 1, PART_SLOT_COUNT do
-        local partId = armorTable["part" .. i]
-        if partId then
-            local pp = vehicle:getPartById(partId)
-            if pp then saveBaseline(vehicle, pp) end
-        end
-    end
-
-    -- Also seed TruckBed baseline on creation.
-    local truckBed = vehicle:getPartById("TruckBed")
-    if truckBed then saveBaseline(vehicle, truckBed) end
+    seedProtectedBaselines(vehicle, part)
 end
 
--- -----------------------------------------------------------------------
--- Biochemical_Armor.Update
--- Called server-side every game minute for the installed Biochemical_BumperPart.
--- Serves as the fallback guarantee that protection is applied even for
--- vehicles that no player is actively riding in.
--- -----------------------------------------------------------------------
+function Biochemical_Armor.InstallComplete(vehicle, part)
+    seedProtectedBaselines(vehicle, part)
+end
+
 function Biochemical_Armor.Update(vehicle, part, elapsedMinutes)
-    local item = part:getInventoryItem()
-    if not item then return end
+    if not part:getInventoryItem() then return end
     applyProtection(vehicle, part)
 end
 
--- -----------------------------------------------------------------------
--- Fast-path OnTick handler
--- Fires every TICK_INTERVAL_MS game-milliseconds for each online player's
--- current vehicle.  This ensures that zombie hits are absorbed within ~1
--- game-second rather than waiting up to a full game minute, making the
--- bumper feel like it provides real-time protection.
---
--- Draining is safe at this frequency: absorbDamage only fires when
--- pp:getCondition() < savedCond — once a part is restored to its baseline,
--- subsequent ticks are no-ops until new damage arrives.
--- -----------------------------------------------------------------------
 local function onServerTick()
     local now = Calendar.getInstance():getTimeInMillis()
     if now - _lastTickTime < TICK_INTERVAL_MS then return end
     _lastTickTime = now
 
+    local processed = {}
     local playerList = getOnlinePlayers()
     for i = 0, playerList:size() - 1 do
         local player = playerList:get(i)
         local vehicle = player:getVehicle()
-        if vehicle then
+        if vehicle and not processed[vehicle] then
+            processed[vehicle] = true
             local bumperPart = vehicle:getPartById("Biochemical_BumperPart")
             if bumperPart and bumperPart:getInventoryItem() then
                 applyProtection(vehicle, bumperPart)

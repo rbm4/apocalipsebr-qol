@@ -1,0 +1,55 @@
+module Base
+{
+    /* Railroader sound declarations (Task 1.E).
+       Loose .ogg files under 42/media/sound/Railroader/, played by name from
+       RR_Sound.lua via a world free-emitter per loco. B42 loads loose files via
+       clip { file = media/sound/... } (verified: GameSoundClip.file; vanilla
+       sounds_zombie_voice_tutorial.txt). loop = true => the clip loops; code sets
+       per-handle volume/pitch each tick. distanceMax is the audible radius in tiles.
+       Engine layer = idle + run1..4 crossfaded by throttle notch (all loop). */
+
+    /* --- prime mover (EMD 567) --- */
+    /* Engine-start mechanic: the driver cranks a COLD engine (hold W). EngineCrank
+       is the looped starter-motor sound while cranking; StartFail is the failed
+       catch / dead-battery click. EngineStart is the catch ("vroom"). */
+    sound RR_EngineCrank { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_engine_crank.ogg, distanceMax = 60, } }
+    sound RR_StartFail   { category = Vehicle, clip { file = media/sound/Railroader/rr_start_fail.ogg, distanceMax = 50, } }
+    sound RR_EngineStart { category = Vehicle, clip { file = media/sound/Railroader/rr_engine_start.ogg, distanceMax = 80, } }
+    /* EnginePrime: the electric FUEL PRIME pump hum (a real EMD hums ~100-120 Hz while
+       priming, before the starter turns). Asset is cut and ready; not wired into the
+       start mechanic yet -- play it as a loop if a prime phase is added before cranking. */
+    sound RR_EnginePrime { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_engine_prime.ogg, distanceMax = 50, } }
+    sound RR_EngineIdle  { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_engine_idle.ogg, distanceMax = 70, } }
+    sound RR_EngineRun1  { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_engine_run1.ogg, distanceMax = 75, } }
+    sound RR_EngineRun2  { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_engine_run2.ogg, distanceMax = 80, } }
+    sound RR_EngineRun3  { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_engine_run3.ogg, distanceMax = 85, } }
+    sound RR_EngineRun4  { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_engine_run4.ogg, distanceMax = 95, } }
+    sound RR_EngineStop  { category = Vehicle, clip { file = media/sound/Railroader/rr_engine_stop.ogg, distanceMax = 80, } }
+
+    /* --- wheels / rail --- */
+    /* SwitchThrow: the points slamming over when a hand switch is thrown. One-shot,
+       played from ISRRThrowSwitch:perform (the moment the lever goes over), so an
+       interrupted throw stays silent -- the clank IS the confirmation. Short range:
+       a switch stand is heard from a few tiles, not across the yard. */
+    sound RR_SwitchThrow { category = Vehicle, clip { file = media/sound/Railroader/rr_track_switching.ogg, distanceMax = 30, } }
+    sound RR_WheelRoll   { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_wheel_roll.ogg, distanceMax = 55, } }
+    sound RR_Clack1      { category = Vehicle, clip { file = media/sound/Railroader/rr_clack_1.ogg, distanceMax = 55, } }
+    sound RR_Clack2      { category = Vehicle, clip { file = media/sound/Railroader/rr_clack_2.ogg, distanceMax = 55, } }
+    sound RR_Clack3      { category = Vehicle, clip { file = media/sound/Railroader/rr_clack_3.ogg, distanceMax = 55, } }
+    sound RR_Clack4      { category = Vehicle, clip { file = media/sound/Railroader/rr_clack_4.ogg, distanceMax = 55, } }
+
+    /* --- horn (3-part: attack -> sustained loop -> release, so a long press
+       holds a continuous horn) / bell --- */
+    sound RR_HornStart   { category = Vehicle, clip { file = media/sound/Railroader/rr_horn_start.ogg, distanceMax = 400, } }
+    sound RR_HornLoop    { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_horn_loop.ogg, distanceMax = 400, } }
+    sound RR_HornStop    { category = Vehicle, clip { file = media/sound/Railroader/rr_horn_stop.ogg, distanceMax = 400, } }
+    sound RR_Bell        { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_bell.ogg, distanceMax = 90, } }
+
+    /* --- brakes --- */
+    sound RR_BrakeApply  { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_brake_apply.ogg, distanceMax = 45, } }
+    sound RR_BrakeSqueal { category = Vehicle, loop = true, clip { file = media/sound/Railroader/rr_brake_squeal.ogg, distanceMax = 45, } }
+    sound RR_BrakeRelease{ category = Vehicle, clip { file = media/sound/Railroader/rr_brake_release.ogg, distanceMax = 45, } }
+
+    /* --- air compressor --- */
+    sound RR_Compressor  { category = Vehicle, clip { file = media/sound/Railroader/rr_compressor.ogg, distanceMax = 40, } }
+}

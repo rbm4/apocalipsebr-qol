@@ -1,0 +1,4 @@
+name=Vehicle Aim Roof Fix
+id=CarRoofFix
+description=Keeps your character seated while aiming a weapon inside any vehicle, instead of standing up and clipping through the roof. Works on vanilla and modded vehicles.
+poster=poster.png

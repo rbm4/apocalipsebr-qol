@@ -1,0 +1,46 @@
+module Base
+{
+    /***********************************************************************
+     * Railroader -- RR_EngineerNotebook, "the engineer's notebook".
+     *
+     * The in-lore manual. A character who took the RAILROADER PROFESSION starts
+     * the game carrying his own pocket notebook: eight pages of crib-sheet notes,
+     * one fact per line, ordered by what the survivor needs first -- where the 800
+     * stands and how to board it, cranking it, moving and stopping it, reading the
+     * control stand, signals and lights, fuel and battery, switches and impacts,
+     * derailment and the cab. See shared/Railroader/RR_Manual.lua.
+     *
+     * WHY THIS SHAPE (verified in the B42 decompile + vanilla Lua):
+     *   * CanBeWrite = true is the whole mechanism. It makes the item a written
+     *     notebook: Literature.addPage(i, text) fills a page from Lua, the pages
+     *     (customPages) are serialized by Literature.save/load like any handwritten
+     *     journal, and ISInventoryPaneContextMenu offers "Read/Write ... note",
+     *     which opens the vanilla ISUIWriteJournal. No custom UI, no art.
+     *   * PageToWrite is the page count the journal UI pages through when the
+     *     notebook is EDITABLE (ISUIWriteJournal:new gets it as numberOfPages).
+     *     It MUST be >= the number of pages we prefill, or the later pages are
+     *     unreachable. 16 = our 8 + eight blanks, so the survivor can go on
+     *     keeping the notebook himself (he needs a pen; that is vanilla's gate).
+     *   * We deliberately do NOT setLockedBy(): the notebook is HIS, and a man
+     *     writing in his own notebook should not be locked out of it.
+     *   * A page is capped at 15 lines by the journal UI and 15*80 chars by the
+     *     text box; RR_Manual.MAX_LINES/MAX_COLS keep the authored text inside
+     *     that, and the unit tests check every EN and RU page against it.
+     *
+     * Icon/models are the vanilla notebook's (Icon = Notebook resolves to the
+     * vanilla Item_Notebook texture) -- a mod item may reference them, so the
+     * easter egg still needs no art of its own.
+     ***********************************************************************/
+    item RR_EngineerNotebook
+    {
+        DisplayCategory = Literature,
+        ItemType = base:literature,
+        Weight = 0.3,
+        Icon = Notebook,
+        CanBeWrite = true,
+        PageToWrite = 16,
+        StaticModel = EmptyNotebook,
+        WorldStaticModel = EmptyNotebook,
+        ReadType = newspaper,
+    }
+}

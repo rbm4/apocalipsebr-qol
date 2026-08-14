@@ -161,6 +161,18 @@ function ServerRelayCommands.RelayTriggerBleed(playerObj, args)
     end
 end
 
+---@param playerObj IsoPlayer
+---@param args relaySetProsthesisEquippedParams
+function ServerRelayCommands.RelaySetProsthesisEquipped(playerObj, args)
+    if not args or not args.itemFullType then return end
+
+    local item = instanceItem(args.itemFullType)
+    if not item then return end
+
+    local ProsthesisHandler = require("TOC/Handlers/ProsthesisHandler")
+    ProsthesisHandler.SearchAndSetupProsthesis(playerObj, item, args.isEquipping == true)
+end
+
 function ServerRelayCommands.DeleteAllOldAmputationItems(_, args)
     local patientPl = CommonMethods.GetPatientForServer(args.patientNum)
     local ItemsController = require("TOC/Controllers/ItemsController")

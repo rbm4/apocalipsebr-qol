@@ -1,0 +1,10 @@
+name=[Stable B42] 10 Years Later [Unofficial]
+id=TYL_B42_STABLE_UNOFFICIAL
+description=A B42 Stable adaptation and continuation inspired by Dane’s original work. I deeply respect and admire Dan and the work he put into creating the original mod, which has become an essential part of how my girlfriend and we can't play without it (remembered the time we didn't play unstable immediately because 10 years later  wasn't updated to B42 yet).
+This version was made specifically for Build 42 Stable, preserving the spirit of the original procedural world erosion overhaul while expanding and adapting it for the newer build. It includes dynamic vegetation, nature reclamation, road debris, large/JUMBO trees, and properly damaged and destroyed fences to make the world feel progressively abandoned and reclaimed by nature.
+This project is made with great respect for Dane’s 10 Years Later Mod and is intended as a tribute and continuation of the ideas that made the original mod so enjoyable for us. If he wishes to take down this mod, I would happily do so.
+poster=poster.png
+icon=logo_mini.png
+pzversion=42
+versionMin=42.20.0
+modversion=1.0.0

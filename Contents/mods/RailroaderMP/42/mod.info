@@ -1,0 +1,8 @@
+name=RailroaderMP
+id=RailroaderMP
+author=Codex (Deepseek v4 flash - 0731)
+description=Community-made multiplayer edition of Railroader (Build 42.20) - server-authoritative locomotive, one driver seat + 5 passenger seats, synced switches, crew fuel & repair. Original mod by SlavaPo: https://steamcommunity.com/sharedfiles/filedetails/?id=3774360904. Proof-of-concept build: bug fixes are best-effort, not guaranteed; the original author may take all code at any time.
+poster=poster.png
+poster=screen_depot.png
+modversion=1.0.5
+url=https://steamcommunity.com/sharedfiles/filedetails/?id=3774360904

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animNode x_extends="aim_default.xml">
+	<m_Name>aim_rifle</m_Name>
+	<m_AnimName>Bob_IdleDriving</m_AnimName>
+	<m_Conditions x_name="eb47c257-2cf2-4cb0-86ec-7f311b54ba44">
+		<m_Name>Weapon</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>firearm</m_Value>
+	</m_Conditions>
+</animNode>

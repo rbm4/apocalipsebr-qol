@@ -1,0 +1,1 @@
+require("Definitions/ContainerButtonIcons");ContainerButtonIcons=ContainerButtonIcons or {} ;local v0={};v0.Trash=getTexture("media/textures/Trash.png");v0.TrashPaper=getTexture("media/textures/TrashPaper.png");ContainerButtonIcons.Trash=v0.Trash;ContainerButtonIcons.TrashPaper=v0.TrashPaper;

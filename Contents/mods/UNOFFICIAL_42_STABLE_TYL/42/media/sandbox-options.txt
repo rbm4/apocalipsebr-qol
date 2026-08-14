@@ -1,0 +1,253 @@
+VERSION = 1,
+
+option TYL.ReadPlease
+{
+    type = boolean,
+    default = false,
+    page = TYL,
+    translation = TYL_ReadPlease,
+}
+
+option TYL.storiesPercentage
+{
+    type = integer,
+    min = 0,
+    max = 5,
+    default = 1,
+    page = TYL,
+    translation = TYL_storiesPercentage,
+}
+
+option TYL.Divider_Nature
+{
+    type = boolean,
+    default = false,
+    page = TYL,
+    translation = TYL_Divider_Nature,
+}
+
+option TYL.treePercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 1,
+    page = TYL,
+    translation = TYL_treePercentage,
+}
+
+option TYL.treePercentageOnRoad
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = TYL,
+    translation = TYL_treePercentageOnRoad,
+}
+
+option TYL.vinePercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 80,
+    page = TYL,
+    translation = TYL_vinePercentage,
+}
+
+option TYL.grassPercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 50,
+    page = TYL,
+    translation = TYL_grassPercentage,
+}
+
+option TYL.grassPercentageOnRoad
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 50,
+    page = TYL,
+    translation = TYL_grassPercentageOnRoad,
+}
+
+option TYL.floorleavesPercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 10,
+    page = TYL,
+    translation = TYL_floorleavesPercentage,
+}
+
+option TYL.floorleavesPercentageOnRoad
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 10,
+    page = TYL,
+    translation = TYL_floorleavesPercentageOnRoad,
+}
+
+option TYL.customGrassPercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = TYL,
+    translation = TYL_customGrassPercentage,
+}
+
+option TYL.customGrassPercentageOnRoad
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = TYL,
+    translation = TYL_customGrassPercentageOnRoad,
+}
+
+option TYL.bushesPercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 10,
+    page = TYL,
+    translation = TYL_bushesPercentage,
+}
+
+option TYL.bushesPercentageOnRoad
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 1,
+    page = TYL,
+    translation = TYL_bushesPercentageOnRoad,
+}
+
+option TYL.Divider_UrbanDecay
+{
+    type = boolean,
+    default = false,
+    page = TYL,
+    translation = TYL_Divider_UrbanDecay,
+}
+
+option TYL.roadCrackOverlayPercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 25,
+    page = TYL,
+    translation = TYL_roadCrackOverlayPercentage,
+}
+
+option TYL.dirtCrackOverlayPercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 25,
+    page = TYL,
+    translation = TYL_dirtCrackOverlayPercentage,
+}
+
+option TYL.trashPercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 10,
+    page = TYL,
+    translation = TYL_trashPercentage,
+}
+
+option TYL.trashPercentageInterior
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 25,
+    page = TYL,
+    translation = TYL_trashPercentageInterior,
+}
+
+option TYL.barricadePercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 60,
+    page = TYL,
+    translation = TYL_barricadePercentage,
+}
+
+option TYL.wallPercentage
+{
+    type = integer,
+    min = 0,
+    max = 80,
+    default = 0,
+    page = TYL,
+    translation = TYL_wallPercentage,
+}
+
+option TYL.roofPercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 0,
+    page = TYL,
+    translation = TYL_roofPercentage,
+}
+
+option TYL.fencePercentage
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 50,
+    page = TYL,
+    translation = TYL_fencePercentage,
+}
+
+option TYL.Divider_VehiclesAnimals
+{
+    type = boolean,
+    default = false,
+    page = TYL,
+    translation = TYL_Divider_VehiclesAnimals,
+}
+
+option TYL.vehiclePercentage
+{
+    type = integer,
+    min = 0,
+    max = 5,
+    default = 1,
+    page = TYL,
+    translation = TYL_vehiclePercentage,
+}
+
+option TYL.animalsPercentage
+{
+    type = integer,
+    min = 0,
+    max = 5,
+    default = 5,
+    page = TYL,
+    translation = TYL_animalsPercentage,
+}

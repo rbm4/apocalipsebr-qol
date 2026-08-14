@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animNode x_extends="aim_default.xml">
+	<m_Name>aim_2handed</m_Name>
+	<m_AnimName>Bob_IdleDriving</m_AnimName>
+	<m_Conditions x_name="f96393fb-d54f-4d01-b15a-e1be4e09a443">
+		<m_Name>Weapon</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>2handed</m_Value>
+	</m_Conditions>
+</animNode>

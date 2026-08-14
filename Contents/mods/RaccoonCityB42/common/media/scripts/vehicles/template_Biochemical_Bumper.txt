@@ -33,7 +33,7 @@ module Base
                 
                 Biochemical_ArmorRate
                 {
-                    Biochemical_Bumper = 0.08,
+                    Biochemical_Bumper = 0.04,
                 }
             }
             
@@ -65,6 +65,7 @@ module Base
                 time = 1500,
                 skills = Mechanics:6,
                 test = Vehicles.InstallTest.Default,
+                complete = Biochemical_Armor.InstallComplete,
             }
             
             table uninstall

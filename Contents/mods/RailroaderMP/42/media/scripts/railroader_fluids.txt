@@ -1,0 +1,75 @@
+module Base
+{
+    /***********************************************************************
+     * Railroader -- a modded fluid: Diesel.  (Task 1.L prototype)
+     *
+     * B42 supports modded fluids first-class: any `fluid` block whose name is
+     * not a vanilla FluidType becomes FluidType.Modded, keyed by this string
+     * name, and persists by that name through save/reload (verified in the
+     * decompile: FluidDefinitionScript.Load / FluidInstance.save).
+     *
+     * Diesel is its OWN fuel, separate from vanilla Petrol -- vanilla generators
+     * and cars burn Petrol and are untouched by this. Mirrors the vanilla Petrol
+     * definition (Fuel/Hazardous/Industrial, deadly to drink) but with an EMPTY
+     * blend whitelist, so diesel mixes only with diesel -- you cannot pour petrol
+     * into a diesel can (contaminated fuel would be a bug, not a feature).
+     ***********************************************************************/
+    fluid Diesel
+    {
+        ColorReference = DarkGoldenrod,
+        DisplayName = Fluid_Name_Diesel,
+        Categories
+        {
+            Fuel,
+            Hazardous,
+            Industrial,
+        }
+        Poison
+        {
+            maxEffect = Deadly,
+            minAmount = 1.0,
+            diluteRatio = 0.0,
+        }
+        BlendWhiteList
+        {
+            whitelist = true,
+            categories
+            {
+            }
+        }
+    }
+
+    /***********************************************************************
+     * RR_DieselCan -- a 20 L jerry can of diesel. Structure copied verbatim from
+     * the vanilla PetrolCan (generated/items/normal.txt) -- the confirmed-loadable
+     * FluidContainer item shape -- changing only the fluid, capacity and name.
+     * Reuses the vanilla GasCan model/icon (prototype art).
+     *
+     * Capacity 20.0 == 20 litres (getAmount() is in litres). Keep this in sync with
+     * RR_DieselFluid.CAN_CAPACITY_L. Starts full (Fluids{ Diesel:1.0 }).
+     *
+     * NOTE: not in any loot/distribution table yet -- spawn it for testing with the
+     * admin item list or `getPlayer():getInventory():AddItem("Base.RR_DieselCan")`.
+     ***********************************************************************/
+    item RR_DieselCan
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight = 1.6,
+        ItemType = base:normal,
+        Icon = Petrol,
+        StaticModel = GasCan,
+        ReplaceInSecondHand = Bag_GasCan_LHand holdingbagleft,
+        ReplaceInPrimaryHand = Bag_GasCan_RHand holdingbagright,
+        WorldStaticModel = GasCan_Ground,
+        Tags = base:petrol,
+        component FluidContainer
+        {
+            ContainerName = GasCan,
+            Capacity = 20.0,
+            Fluids
+            {
+                fluid = Diesel:1.0,
+            }
+        }
+    }
+}

@@ -2,6 +2,7 @@ local CommonMethods = require("TOC/CommonMethods")
 local StaticData = require("TOC/StaticData")
 local DataController = require("TOC/Controllers/DataController")
 local CachedDataHandler = require("TOC/Handlers/CachedDataHandler")
+local CommandsData = require("TOC/CommandsData")
 
 local OverridenMethodsArchive = require("TOC/OverridenMethodsArchive")
 -------------------------
@@ -24,7 +25,7 @@ function ProsthesisHandler.CheckIfProst(item)
         return false
     end
     --TOC_DEBUG.print("CheckIfProst")
-    return item:getBodyLocation():toString():contains(bodylocArmProstBaseline)
+    return string.contains(tostring(item:getBodyLocation()):lower(), bodylocArmProstBaseline)
 end
 
 ---Get the grouping for the prosthesis
@@ -36,7 +37,7 @@ function ProsthesisHandler.GetGroup(item)
 
     local bodyLocation = item:getBodyLocation()
     local position
-    if bodyLocation:toString():contains(bodylocArmProstBaseline) then
+    if string.contains(tostring(bodyLocation):lower(), bodylocArmProstBaseline) then
         position = "Top_"
     else
         TOC_DEBUG.print("Something is wrong, no position in this item")
@@ -50,13 +51,17 @@ end
 
 ---Check if a prosthesis is equippable. It depends whether the player has a cut limb or not on that specific side. There's an exception for Upper arm, obviously
 ---@param fullType string
+---@param character IsoPlayer?
 ---@return boolean
-function ProsthesisHandler.CheckIfEquippable(fullType)
+function ProsthesisHandler.CheckIfEquippable(fullType, character)
     --TOC_DEBUG.print("Current item is a prosthesis")
     local side = CommonMethods.GetSide(fullType)
     --TOC_DEBUG.print("Checking side: " .. tostring(side))
 
-    local highestAmputatedLimbs = CachedDataHandler.GetHighestAmputatedLimbs(getPlayer():getUsername())
+    character = character or getPlayer()
+    if not character then return false end
+
+    local highestAmputatedLimbs = CachedDataHandler.GetHighestAmputatedLimbs(character:getUsername())
 
     --TOC_DEBUG.print("highestAmputatedLimbs")
     --TOC_DEBUG.printTable(highestAmputatedLimbs)
@@ -92,13 +97,31 @@ function ProsthesisHandler.SearchAndSetupProsthesis(character, item, isEquipping
     return true
 end
 
-function ProsthesisHandler.Validate(item, isEquippable)
+---@param character IsoPlayer
+---@param item InventoryItem?
+---@param isEquipping boolean
+---@return boolean
+function ProsthesisHandler.ApplyEquipState(character, item, isEquipping)
+    if not ProsthesisHandler.CheckIfProst(item) then return false end
+
+    if isClient() then
+        sendClientCommand(CommandsData.modules.TOC_RELAY, CommandsData.server.Relay.RelaySetProsthesisEquipped, {
+            itemFullType = item:getFullType(),
+            isEquipping = isEquipping
+        })
+        return true
+    end
+
+    return ProsthesisHandler.SearchAndSetupProsthesis(character, item, isEquipping)
+end
+
+function ProsthesisHandler.Validate(item, isEquippable, character)
     local isProst = ProsthesisHandler.CheckIfProst(item)
     if not isProst then return isEquippable end
 
     local fullType = item:getFullType() -- use fulltype for side
     if isEquippable then
-        isEquippable = ProsthesisHandler.CheckIfEquippable(fullType)
+        isEquippable = ProsthesisHandler.CheckIfEquippable(fullType, character)
     else
         TOC_DEBUG.print("Should say cant equip")
         getPlayer():Say(getText("UI_Say_CantEquip"))        -- FIX not working
@@ -118,7 +141,7 @@ local og_ISWearClothing_isValid = ISWearClothing.isValid
 function ISWearClothing:isValid()
     --TOC_DEBUG.print("ISWearClothing override")
     local isEquippable = og_ISWearClothing_isValid(self)
-    return ProsthesisHandler.Validate(self.item, isEquippable)
+    return ProsthesisHandler.Validate(self.item, isEquippable, self.character)
 end
 
 local og_ISWearClothing_complete = ISWearClothing.complete
@@ -126,7 +149,7 @@ local og_ISWearClothing_complete = ISWearClothing.complete
 function ISWearClothing:complete()
     local result = og_ISWearClothing_complete(self)
     if result then
-        ProsthesisHandler.SearchAndSetupProsthesis(self.character, self.item, true)
+        ProsthesisHandler.ApplyEquipState(self.character, self.item, true)
     end
     return result
 end
@@ -139,26 +162,33 @@ function ISClothingExtraAction:isValid()
     local isEquippable = og_ISClothingExtraAction_isValid(self)
     -- self.extra is a string, not the item
     local testItem = instanceItem(self.extra)
-    return ProsthesisHandler.Validate(testItem, isEquippable)
+    return ProsthesisHandler.Validate(testItem, isEquippable, self.character)
 end
 
 local og_ISClothingExtraAction_complete = OverridenMethodsArchive.Save("ISClothingExtraAction_complete", ISClothingExtraAction.complete)
 ---@diagnostic disable-next-line: duplicate-set-field
 function ISClothingExtraAction:complete()
     local extraItem = instanceItem(self.extra)
-    --TOC_DEBUG.print("ISClothingExtraAction_complete 1")
-    ProsthesisHandler.SearchAndSetupProsthesis(self.character, extraItem, true)
-    --TOC_DEBUG.print("ISClothingExtraAction_complete 2")
+    local result = og_ISClothingExtraAction_complete(self)
+    if result then
+        ProsthesisHandler.ApplyEquipState(self.character, extraItem, true)
+    end
 
-    return og_ISClothingExtraAction_complete(self)
+    return result
 end
 
 local og_ISUnequipAction_complete = ISUnequipAction.complete
 ---@diagnostic disable-next-line: duplicate-set-field
 function ISUnequipAction:complete()
+    if self.item == nil then
+        TOC_DEBUG.print("Skipping ISUnequipAction.complete for nil item")
+        return false
+    end
 
-    local isProst = ProsthesisHandler.SearchAndSetupProsthesis(self.character, self.item, false)
     local result = og_ISUnequipAction_complete(self)
+    if not result then return result end
+
+    local isProst = ProsthesisHandler.ApplyEquipState(self.character, self.item, false)
 
     if isProst then
         -- we need to fetch the limbname associated to the prosthesis

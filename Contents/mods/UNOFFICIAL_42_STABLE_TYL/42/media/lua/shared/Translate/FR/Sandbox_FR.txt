@@ -1,0 +1,68 @@
+Sandbox_FR = {
+    Sandbox_TYL = "10 Years Later",
+    Sandbox_TYL_ReadPlease = "À LIRE SVP (Survolez avec le curseur)",
+    Sandbox_TYL_ReadPlease_tooltip = "Évitez de tout régler à 100 %, cela peut impacter les performances.<LINE><LINE> Une fois la zone chargée, les impacts sur les performances <LINE> seront réduits",
+
+    Sandbox_TYL_vinePercentage = "Végétation sur les murs",
+    Sandbox_TYL_vinePercentage_tooltip = "(%), 0 = Désactivé",
+
+    Sandbox_TYL_treePercentageOnRoad = "Arbres sur la route",
+    Sandbox_TYL_treePercentageOnRoad_tooltip = "(%), 0 = Désactivé",
+
+    Sandbox_TYL_treePercentage = "Arbres",
+    Sandbox_TYL_treePercentage_tooltip = "(%), 0 = Désactivé <LINE><LINE> Les arbres apparaissent sauf sur la route <LINE>",
+
+    Sandbox_TYL_roadCrackOverlayPercentage = "Surcouche de route détruite",
+    Sandbox_TYL_roadCrackOverlayPercentage_tooltip = "(%), 0 = Désactivé",
+
+    Sandbox_TYL_dirtCrackOverlayPercentage = "Surcouche de terre",
+    Sandbox_TYL_dirtCrackOverlayPercentage_tooltip = "(%), 0 = Désactivé",
+
+    Sandbox_TYL_bushesPercentage = "Buissons",
+    Sandbox_TYL_bushesPercentage_tooltip = "(%), 0 = Désactivé",
+
+    Sandbox_TYL_bushesPercentageOnRoad = "Buissons sur la route",
+    Sandbox_TYL_bushesPercentageOnRoad_tooltip = "(%), 0 = Désactivé",
+
+    Sandbox_TYL_grassPercentage = "Herbe",
+    Sandbox_TYL_grassPercentage_tooltip = "(%), 0 = Désactivé",
+
+    Sandbox_TYL_grassPercentageOnRoad = "Herbe sur la route",
+    Sandbox_TYL_grassPercentageOnRoad_tooltip = "(%), 0 = Désactivé",
+
+    Sandbox_TYL_floorleavesPercentage = "floorleaves",
+    Sandbox_TYL_floorleavesPercentage_tooltip = "(%), 0 = Disable <LINE><LINE> floorleaves appear except on the road <LINE>",
+    Sandbox_TYL_floorleavesPercentageOnRoad = "floorleaves on road",
+    Sandbox_TYL_floorleavesPercentageOnRoad_tooltip = "(%), 0 = Disable",
+
+
+    Sandbox_TYL_customGrassPercentage = "Végétation personnalisées 10YL",
+    Sandbox_TYL_customGrassPercentage_tooltip = "(%), 0 = Désactivé <LINE><LINE> Textures d'herbes personnalisées <LINE> pour 10 Years Later <LINE>",
+
+    Sandbox_TYL_customGrassPercentageOnRoad = "Végétation personnalisées 10YL sur la route",
+    Sandbox_TYL_customGrassPercentageOnRoad_tooltip = "(%), 0 = Désactivé <LINE><LINE> Textures d'herbes personnalisées <LINE> pour 10 Years Later <LINE>",
+
+    Sandbox_TYL_wallPercentage = "Murs endommagés",
+    Sandbox_TYL_wallPercentage_tooltip = "(%), 0 = Désactivé <LINE><LINE> Les murs peuvent être remplacés par des murs brûlés ou endommagés <LINE>",
+
+    Sandbox_TYL_barricadePercentage = "Barricades",
+    Sandbox_TYL_barricadePercentage_tooltip = "(%), 0 = Désactivé <LINE><LINE> Les fenêtres et les portes peuvent être barricadées. <LINE>",
+
+    Sandbox_TYL_trashPercentage = "Détritus",
+    Sandbox_TYL_trashPercentage_tooltip = "(%), 0 = Désactivé <LINE><LINE> Les débris apparaissent là où vous pouvez trouver du loot. <LINE>",
+
+    Sandbox_TYL_roofPercentage = "Toits détruits",
+    Sandbox_TYL_roofPercentage_tooltip = "(%), 0 = Désactivé",
+
+    Sandbox_TYL_vehiclePercentage = "Véhicules",
+    Sandbox_TYL_vehiclePercentage_tooltip = "0 = Désactivé | 1 = très rare | 5 = fréquent <LINE><LINE> Fait apparaître plus de véhicules sur les routes <LINE>",
+
+    Sandbox_TYL_storiesPercentage = "Événements scénarisés",
+    Sandbox_TYL_storiesPercentage_tooltip = "0 = Désactivé | 1 = très rare | 5 = fréquent <LINE><LINE> Apparitions aléatoires d’histoires comme : tente de camping, chasseur…<LINE>",
+
+    Sandbox_TYL_fencePercentage = "Clôtures détruites",
+    Sandbox_TYL_fencePercentage_tooltip = "(%), 0 = Désactivé",
+
+    Sandbox_TYL_animalsPercentage = "Animaux",
+    Sandbox_TYL_animalsPercentage_tooltip = "0 = Désactivé | 1 = très rare | 5 = fréquent <LINE><LINE> Ajoute davantage de points d’apparition d’animaux <LINE>",
+}

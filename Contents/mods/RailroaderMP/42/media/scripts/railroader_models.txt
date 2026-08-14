@@ -1,0 +1,65 @@
+module Base
+{
+    /* Railroader placeholder visual (Task 1.A-art).
+       A SKINNED (static=false) model — the animal render path goes through the
+       skinned AnimatedModel pipeline, so a static/rigid model draws BLANK
+       (skinningData is null; proven in-game, see docs/ENGINE_NOTES.md). This
+       points at a self-contained skinned mesh that YOU export from Blender:
+         - mesh:    42/media/models_X/Railroader/RR_LocoTest.fbx  (a cube rigged
+                    to ONE bone named Bip01, whole mesh weighted 1.0 to it).
+         - texture: 42/media/textures/RR_LocoTest.png
+    The cow animset requests Cow_* clips, so bind the official CowAndBull
+    animation mesh. Our single-bone model remains visually rigid.
+
+       Scale math (see ModelScript.java): rendered = scale * coreScale(1.5).
+       undoCoreScale multiplies `scale` by 2/3, cancelling the 1.5 -> the box
+       renders at the size you authored in Blender (1 Blender meter ~= 1 tile).
+       Start at scale=1.0; expect 1-2 tuning passes on size/orientation. */
+    /* shader = rr_loco (42/media/shaders/rr_loco.vert + .frag), NOT vanilla animalEffect.
+       The vertex stage is a faithful copy of animalEffect.vert; the FRAGMENT stage adds the
+       one thing PZ will not give a non-vehicle model -- SELF-ILLUMINATION. The twin
+       headlight lenses are painted onto the loco's own texture in key magenta, and
+       rr_loco.frag renders any magenta texel full-bright, ignoring the world lighting. That
+       is the only way to have a headlight that is actually bright at night: animalEffect
+       hard-clamps a lit model to its own albedo, and the vehicle emissive path
+       (TextureLights) is a VehicleModelInstance field we cannot reach.
+       WHICH lenses are lit is chosen by swapping the texture from Lua (RR_LightsRender):
+       RR_LocoTest (off) / RR_LocoTest_dim (one beam) / RR_LocoTest_bright (both). */
+    model RR_LocoTest
+    {
+        mesh          = Railroader/RR_LocoTest,
+        texture       = RR_LocoTest,
+        shader        = rr_loco,
+        static        = false,
+        scale         = 0.01,
+        undoCoreScale = true,
+        cullFace      = NONE,
+    }
+
+    /* Collider segment model. Deliberately static=true: on the animal render path
+       a static/rigid model draws BLANK (skinningData is null; see above + ENGINE_
+       NOTES). We WANT that -- the collider segments (rr_collider) must be invisible
+       but still collide (collision uses width, not the model). This is admin/debug-
+       proof (unlike setInvisible, which the debug player still renders).
+       IMPORTANT: uses its OWN mesh FILE (RR_ColliderSeg.fbx), NOT the loco mesh.
+       MeshAssetManager caches a ModelMesh by PATH regardless of the static flag, so
+       pointing this static model at RR_LocoTest loaded the SHARED loco mesh without
+       skinning -> the visible loco went blank too. A separate file = separate cache
+       entry = no interference. (It never renders; it just needs to exist.)
+       Since v1.0.1 that file is a MINIMAL CUBE (18 KB). It used to be a byte-identical
+       copy of the 2.49 MB loco mesh -- 2.47 MB shipped to every subscriber to draw
+       nothing at all. Structure is deliberately unchanged (FBX 7400, one mesh, one
+       material, one bone named Bip01), so the importer builds the same node graph.
+       DO NOT "dedupe" this back onto RR_LocoTest: identical CONTENT was never the
+       point, a distinct PATH is. */
+    model RR_ColliderBlank
+    {
+        mesh          = Railroader/RR_ColliderSeg,
+        texture       = RR_LocoTest,
+        shader        = animalEffect,
+        static        = true,
+        scale         = 0.01,
+        undoCoreScale = true,
+        cullFace      = NONE,
+    }
+}
