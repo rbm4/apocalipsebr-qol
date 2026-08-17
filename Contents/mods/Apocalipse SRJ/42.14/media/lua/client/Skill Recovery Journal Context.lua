@@ -48,11 +48,16 @@ end
 function contextSRJ.readItems(items, player)
 	items = ISInventoryPane.getActualItems(items)
 	for i,item in ipairs(items) do
+		local JMD = SRJ.modDataHandler.getItemModData(item)
+		if SRJ.isLegacyJournalData(JMD) then
+			player:Say(getText("IGUI_PlayerText_LegacyJournalNeedsRewrite"), 0.55, 0.55, 0.55, UIFont.Dialogue, 0, "default")
+			return
+		end
+
 		-- Check if this is a full journal that would consume a new charge
 		if SRJ.isFullRecoveryJournal(item) then
 			local maxCharges = SandboxVars.SkillRecoveryJournal.FullJournalCharges or 3
 			if maxCharges > 0 then
-				local JMD = SRJ.modDataHandler.getItemModData(item)
 				local readerKey = tostring(player:getSteamID())
 				local pMD = SRJ.modDataHandler.getPlayerModData(player)
 				local itemID = item:getID()

@@ -5,6 +5,57 @@ SRJ.xpPatched = false
 SRJ.xpHandler = require "Skill Recovery Journal XP"
 SRJ.modDataHandler = require "Skill Recovery Journal ModData"
 
+SRJ.LEGACY_JOURNAL_DATA_VERSION = 0
+SRJ.JOURNAL_DATA_VERSION = 1
+
+function SRJ.toNumber(value)
+	if value == nil then return nil end
+	if type(value) == "number" then return value end
+	return tonumber(tostring(value))
+end
+
+function SRJ.ensureJournalDataVersion(journalModData)
+	if not journalModData then return SRJ.LEGACY_JOURNAL_DATA_VERSION end
+	local version = SRJ.toNumber(journalModData["version"])
+	if version == nil then
+		version = SRJ.LEGACY_JOURNAL_DATA_VERSION
+		journalModData["version"] = version
+	end
+	return version
+end
+
+function SRJ.isCurrentJournalDataVersion(journalModData)
+	return SRJ.ensureJournalDataVersion(journalModData) >= SRJ.JOURNAL_DATA_VERSION
+end
+
+function SRJ.hasJournalRecoveryPayload(journalModData)
+	return journalModData and (
+		journalModData["author"] or
+		journalModData["gainedXP"] or
+		journalModData["BeyondTenXP"] or
+		journalModData["learnedRecipes"] or
+		journalModData["kills"] or
+		journalModData["pModData"]
+	)
+end
+
+function SRJ.isLegacyJournalData(journalModData)
+	return SRJ.hasJournalRecoveryPayload(journalModData) and (not SRJ.isCurrentJournalDataVersion(journalModData))
+end
+
+function SRJ.resetJournalRecoveryDataForCurrentVersion(journalModData)
+	if not journalModData then return end
+	journalModData["version"] = SRJ.JOURNAL_DATA_VERSION
+	journalModData["gainedXP"] = {}
+	journalModData["BeyondTenXP"] = nil
+	journalModData["learnedRecipes"] = {}
+	journalModData["kills"] = nil
+	journalModData["pModData"] = nil
+	journalModData["recoveryJournalXpLog"] = nil
+	journalModData["beyondTenRecoveryJournalXpLog"] = nil
+	return journalModData
+end
+
 function SRJ.getBeyondTen()
 	if BeyondTen then return BeyondTen end
 	pcall(require, "BeyondTen/Shared")
@@ -19,13 +70,57 @@ function SRJ.getBeyondTenStoredXP(player, perk)
 	local BT = SRJ.getBeyondTen()
 	if not SRJ.isBeyondTenPerkValid(BT, perk) then return 0 end
 	if type(BT.GetStoredXP) == "function" then
-		return tonumber(BT.GetStoredXP(player, perk)) or 0
+		return SRJ.toNumber(BT.GetStoredXP(player, perk)) or 0
 	end
 	if type(BT.ExportXP) == "function" then
 		local values = BT.ExportXP(player)
-		return values and (tonumber(values[perk:getId()]) or 0) or 0
+		return values and (SRJ.toNumber(values[perk:getId()]) or 0) or 0
 	end
 	return 0
+end
+
+function SRJ.getEffectivePerkXP(player, perk)
+	local perkXP = player:getXp():getXP(perk)
+	local BT = SRJ.getBeyondTen()
+	if not SRJ.isBeyondTenPerkValid(BT, perk) then return perkXP end
+
+	local nativeMaxLevel = BT.NATIVE_MAX_LEVEL or 10
+	if player:getPerkLevel(perk) >= nativeMaxLevel then
+		local nativeCapXP = perk:getTotalXpForLevel(nativeMaxLevel)
+		if type(BT.GetNativeCapXP) == "function" then
+			nativeCapXP = BT.GetNativeCapXP(perk)
+		end
+		return nativeCapXP + SRJ.getBeyondTenStoredXP(player, perk)
+	end
+
+	if type(BT.GetVirtualXP) == "function" then
+		return BT.GetVirtualXP(player, perk)
+	end
+	return perkXP
+end
+
+function SRJ.mergeLegacyBeyondTenXP(journalModData)
+	if not journalModData or type(journalModData["BeyondTenXP"]) ~= "table" then return journalModData and journalModData["gainedXP"] end
+
+	local BT = SRJ.getBeyondTen()
+	if not BT then return journalModData["gainedXP"] end
+
+	local gainedXP = journalModData["gainedXP"] or {}
+	local migrated = false
+	for perkID,xp in pairs(journalModData["BeyondTenXP"]) do
+		local perk = Perks[perkID]
+		local legacyXP = SRJ.toNumber(xp) or 0
+		if legacyXP > 0 and SRJ.isBeyondTenPerkValid(BT, perk) then
+			gainedXP[perkID] = (SRJ.toNumber(gainedXP[perkID]) or 0) + legacyXP
+			migrated = true
+		end
+	end
+
+	if migrated then
+		journalModData["gainedXP"] = gainedXP
+		journalModData["BeyondTenXP"] = nil
+	end
+	return journalModData["gainedXP"]
 end
 
 --- Check if an item is the full (100%) recovery journal
@@ -181,11 +276,7 @@ function SRJ.calculateGainedSkill(player, perk, passiveSkillsInit, startingLevel
 	end
 
 	if perk and perk:getParent():getId()~="None" then
-		local BT = SRJ.getBeyondTen()
-		local perkXP = player:getXp():getXP(perk)
-		if SRJ.isBeyondTenPerkValid(BT, perk) and type(BT.GetVirtualXP) == "function" then
-			perkXP = BT.GetVirtualXP(player, perk)
-		end
+		local perkXP = SRJ.getEffectivePerkXP(player, perk)
 		if perkXP > 0 then
 			local perkID = perk:getId()
 			--if getDebug() then print("perkXP: ",perkID," = ",perkXP) end
@@ -209,11 +300,6 @@ function SRJ.calculateGainedSkill(player, perk, passiveSkillsInit, startingLevel
 
 			if recoverableXP > 0 then
 
-				--local deductBonusXP = SandboxVars.SkillRecoveryJournal.RecoverProfessionAndTraitsBonuses ~= true
-				--if deductBonusXP then
-				recoverableXP = SRJ.xpHandler.unBoostXP(player,perk,recoverableXP)
-				--if getDebug() then print(" recoverableXP-unboosted: ",recoverableXP) end
-				--end
 				local gainedXP = recoverableXP * recoveryPercentage
 				--if getDebug() then print(" FINAL: ", gainedXP) end
 				return gainedXP
@@ -259,8 +345,7 @@ function SRJ.calculateGainedBeyondTenSkill(player, perk, isFullJournal)
 	local sandboxOptionRecover, recoveryPercentage = SRJ.bSkillValid(perk, isFullJournal)
 	if not sandboxOptionRecover then return false end
 
-	local recoverableXP = SRJ.xpHandler.unBoostXP(player, perk, storedXP)
-	local gainedXP = recoverableXP * recoveryPercentage
+	local gainedXP = storedXP * recoveryPercentage
 	return gainedXP > 0 and gainedXP or false
 end
 
@@ -293,32 +378,6 @@ function SRJ.getGainedRecipes(player)
 		gainedRecipes[recipeID] = true
 		
 		--if getDebug() then print("Adding known recipe " .. tostring(recipeID)) end
-	end
-
-	---@type SurvivorDesc
-	local playerDesc = player:getDescriptor()
-
-	-- remove freebies granted by profession
-	local playerProfessionID = playerDesc:getCharacterProfession()
-	local profDef = CharacterProfessionDefinition.getCharacterProfessionDefinition(playerProfessionID)
-	local profFreeRecipes = profDef:getGrantedRecipes() 
-	for i=0, profFreeRecipes:size()-1 do
-		local profRecipe = profFreeRecipes:get(i)
-		gainedRecipes[profRecipe] = nil
-		--if getDebug() then print("Removing gained prof recipe " .. tostring(profRecipe)) end
-	end
-
-	-- remove freebies granted by trait
-	local playerTraits = player:getCharacterTraits()
-	for i=0, playerTraits:getKnownTraits():size()-1 do
-		local traitTrait = playerTraits:getKnownTraits():get(i)
-		local traitDef = CharacterTraitDefinition.getCharacterTraitDefinition(traitTrait)
-		local traitRecipes = traitDef:getGrantedRecipes()
-		for ii=0, traitRecipes:size()-1 do
-			local traitRecipe = traitRecipes:get(ii)
-			gainedRecipes[traitRecipe] = nil
-			--if getDebug() then print("Removing gained trait recipe " .. tostring(traitRecipe)) end
-		end
 	end
 
 	--- return iterable list

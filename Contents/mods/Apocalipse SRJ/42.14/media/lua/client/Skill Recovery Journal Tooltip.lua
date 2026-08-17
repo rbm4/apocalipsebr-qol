@@ -7,9 +7,15 @@ local function SRJ_generateTooltip(JMD, player, isFullJournal)
 
 	if not JMD or not JMD["author"] then return blankJournalTooltip end
 
+	if SRJ.isLegacyJournalData(JMD) then
+		local usernameInsert = JMD["username"] and " ("..JMD["username"]..")" or ""
+		local tooltipStart = getText("IGUI_Tooltip_Start").." "..JMD["author"]..usernameInsert..getText("IGUI_Tooltip_End")
+		return tooltipStart, getText("IGUI_PlayerText_LegacyJournalNeedsRewrite").."\n"
+	end
+
+	SRJ.mergeLegacyBeyondTenXP(JMD)
 	local storedJournalXP = JMD["gainedXP"]
-	local storedBeyondTenXP = JMD["BeyondTenXP"]
-	if not storedJournalXP and not storedBeyondTenXP then return blankJournalTooltip end
+	if not storedJournalXP then return blankJournalTooltip end
 
 	local warning --= {}
 
@@ -54,15 +60,7 @@ local function SRJ_generateTooltip(JMD, player, isFullJournal)
 
 	local skillsRecord = ""
 
-	local multipliers = SRJ.xpHandler.getOrStoreXPMultipliers(player)
 	local BT = SRJ.getBeyondTen()
-	if storedBeyondTenXP then
-		storedJournalXP = storedJournalXP or {}
-		for perkID,_xp in pairs(storedBeyondTenXP) do
-			storedJournalXP[perkID] = storedJournalXP[perkID] or 0
-		end
-	end
-
 
 	for perkID,xp in pairs(storedJournalXP or {}) do
 		local perk = Perks[perkID]
@@ -72,9 +70,6 @@ local function SRJ_generateTooltip(JMD, player, isFullJournal)
 			if show then
 				local isBeyondTenSkill = SRJ.isBeyondTenPerkValid(BT, perk)
 				local totalJournalXP = xp
-				if isBeyondTenSkill and storedBeyondTenXP then
-					totalJournalXP = totalJournalXP + (storedBeyondTenXP[perkID] or 0)
-				end
 				local journalXP = totalJournalXP
 				local jmdUsedXP = JMD.recoveryJournalXpLog
 				if effectiveOneTimeUse then
@@ -86,12 +81,11 @@ local function SRJ_generateTooltip(JMD, player, isFullJournal)
 				end
 
 				local perkName = perk:getName()
-				local multi = multipliers[perkID] or 1
-				local availableXP = round(((journalXP)*multi), 2)
+				local availableXP = round(journalXP, 2)
 
 				skillsRecord = skillsRecord..perkName.." ("..availableXP
 				if effectiveOneTimeUse then
-					local totalXP = round(((totalJournalXP)*multi), 2)
+					local totalXP = round(totalJournalXP, 2)
 					skillsRecord = skillsRecord.."/"..totalXP
 				end
 				skillsRecord = skillsRecord.." xp)\n"

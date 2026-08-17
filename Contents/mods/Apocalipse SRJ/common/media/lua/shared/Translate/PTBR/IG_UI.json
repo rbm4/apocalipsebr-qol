@@ -33,5 +33,6 @@
     "IGUI_FullJournal_ChargesWarning": "Diário Encantado possui leituras gratuitas limitadas.",
     "IGUI_FullJournal_ConfirmCharge": "Ler irá consumir uma carga. (%1/%2 restantes)<br>Uma carga só é gasta se experiência for realmente ganha.<br>Reler ao interromper a leitura não consome uma nova carga.<br>Continuar?",
     "IGUI_FullJournal_ChargeInfo": "Uma carga só é consumida quando experiência é ganha, ao ser lido completamente ou ao ser lido e morrer.",
+    "IGUI_PlayerText_LegacyJournalNeedsRewrite": "Este diário usa um formato antigo de XP. Escreva nele novamente antes de ler.",
     "IGUI_Rename_Warning": "Renomeie este diário para desativar este alerta."
 }

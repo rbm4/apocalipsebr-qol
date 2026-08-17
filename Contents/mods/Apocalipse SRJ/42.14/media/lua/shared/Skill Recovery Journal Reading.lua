@@ -11,6 +11,11 @@ function ReadSkillRecoveryJournal:isValid()
 		HaloTextHelper.addBadText(self.character, getText("ContextMenu_TooDark"));
 		return false
 	end
+	local JMD = SRJ.modDataHandler.getItemModData(self.item)
+	if SRJ.isLegacyJournalData(JMD) then
+		HaloTextHelper.addBadText(self.character, getText("IGUI_PlayerText_LegacyJournalNeedsRewrite"))
+		return false
+	end
 	local vehicle = self.character:getVehicle()
 	if vehicle and vehicle:isDriver(self.character) then return not vehicle:isEngineRunning() or vehicle:getSpeed2D() == 0 end
 	return self.character:getInventory():contains(self.item)
@@ -185,6 +190,10 @@ function ReadSkillRecoveryJournal:update()
 			delayedStop = true
 			sayText = getText("IGUI_PlayerText_NothingWritten")
 
+		elseif SRJ.isLegacyJournalData(JMD) then
+			delayedStop = true
+			sayText = getText("IGUI_PlayerText_LegacyJournalNeedsRewrite")
+
 		elseif self.character:hasTrait(CharacterTrait.ILLITERATE) then
 			delayedStop = true
 			sayText = getText("IGUI_PlayerText_IGUI_PlayerText_Illiterate"..ZombRand(2)+1)-- 0,1 + 1
@@ -218,12 +227,13 @@ function ReadSkillRecoveryJournal:update()
 				changesMade = true
 
 				if self.recipeIntervals > 5 then
-					local recipeChunk = math.min(#self.learnedRecipes, math.floor(1.09^math.sqrt(#self.learnedRecipes))) * readTimeMulti
+					local recipeChunk = math.floor(math.floor(1.09^math.sqrt(#self.learnedRecipes)) * readTimeMulti)
+					recipeChunk = math.max(1, math.min(#self.learnedRecipes, recipeChunk))
 					local properPlural = getText("IGUI_Tooltip_Recipe")
 					if recipeChunk>1 then properPlural = getText("IGUI_Tooltip_Recipes") end
 					table.insert(changesBeingMade, recipeChunk.." "..properPlural)
 
-					for i=0, recipeChunk do
+					for i=1, recipeChunk do
 						local recipeID = self.learnedRecipes[#self.learnedRecipes]
 						if recipeID then player:learnRecipe(recipeID) end
 						table.remove(self.learnedRecipes,#self.learnedRecipes)
@@ -234,13 +244,8 @@ function ReadSkillRecoveryJournal:update()
 
 			-- apply read xp
 			local BT = SRJ.getBeyondTen()
-			local legacyBeyondTenXP = JMD["BeyondTenXP"]
+			SRJ.mergeLegacyBeyondTenXP(JMD)
 			local XpStoredInJournal = JMD["gainedXP"] or {}
-			if legacyBeyondTenXP then
-				for skill,_xp in pairs(legacyBeyondTenXP) do
-					XpStoredInJournal[skill] = XpStoredInJournal[skill] or 0
-				end
-			end
 			local greatestXp = 0
 
 			local validSkills = {}
@@ -256,9 +261,6 @@ function ReadSkillRecoveryJournal:update()
 								XpStoredInJournal[skill] = nil
 							else
 								local journalXP = xp
-								if SRJ.isBeyondTenPerkValid(BT, perk) and legacyBeyondTenXP then
-									journalXP = journalXP + (legacyBeyondTenXP[skill] or 0)
-								end
 								if journalXP > greatestXp then greatestXp = journalXP end
 							end
 						end
@@ -277,9 +279,6 @@ function ReadSkillRecoveryJournal:update()
 					local perk = Perks[skill]
 					local isBeyondTenSkill = SRJ.isBeyondTenPerkValid(BT, perk)
 					local journalXP = xp
-					if isBeyondTenSkill and legacyBeyondTenXP then
-						journalXP = journalXP + (legacyBeyondTenXP[skill] or 0)
-					end
 					totalRecoverableXP = totalRecoverableXP + journalXP
 					if perk and validSkills[skill] then
 
@@ -333,8 +332,8 @@ function ReadSkillRecoveryJournal:update()
 									JMD.beyondTenRecoveryJournalXpLog[skill] = resultingReadXP
 								end
 
-                                -- request server to grant XP (42.14+ server-authoritative)
-                                local addedXP = SRJ.xpHandler.reBoostXP(player,perk,perPerkXpRate)
+                                -- request server to grant absolute XP (42.14+ server-authoritative)
+                                local addedXP = perPerkXpRate
 								if isBeyondTenSkill then
 									sendClientCommand(player, "SkillRecoveryJournal", "addBeyondTenXp", {
 										perkID = skill,
@@ -498,7 +497,7 @@ function ReadSkillRecoveryJournal:new(character, item)
 	end
 
 	local JMD = SRJ.modDataHandler.getItemModData(item)
-	if JMD then
+	if JMD and SRJ.isCurrentJournalDataVersion(JMD) then
 		if SandboxVars.SkillRecoveryJournal.RecoverRecipes == true then
 			local learnedRecipes = JMD["learnedRecipes"]
 			if learnedRecipes then

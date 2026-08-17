@@ -108,6 +108,10 @@ function WriteSkillRecoveryJournal:update()
 		local bOwner = true
 		if pSteamID ~= 0 and journalID and journalID["steamID"] and (journalID["steamID"] ~= pSteamID) then bOwner = false end
 		if pUsername and journalID and journalID["username"] and (journalID["username"] ~= pUsername) then bOwner = false end
+		if bOwner and not SRJ.isCurrentJournalDataVersion(JMD) then
+			SRJ.resetJournalRecoveryDataForCurrentVersion(JMD)
+			self.changesMade = true
+		end
 
 		local transcribeTimeMulti = SandboxVars.SkillRecoveryJournal.TranscribeSpeed or 1
 
@@ -117,7 +121,8 @@ function WriteSkillRecoveryJournal:update()
 			self.changesMade = true
 
 			if self.recipeIntervals > 5 then
-				local recipeChunk = math.min(#self.gainedRecipes, math.floor(1.09^math.sqrt(#self.gainedRecipes))) * transcribeTimeMulti
+				local recipeChunk = math.floor(math.floor(1.09^math.sqrt(#self.gainedRecipes)) * transcribeTimeMulti)
+				recipeChunk = math.max(1, math.min(#self.gainedRecipes, recipeChunk))
 
 				local properPlural = getText("IGUI_Tooltip_Recipe")
 				if recipeChunk>1 then
@@ -125,9 +130,9 @@ function WriteSkillRecoveryJournal:update()
 				end
 				table.insert(changesBeingMade, recipeChunk.." "..properPlural)
 
-				for i=0, recipeChunk do
+				for i=1, recipeChunk do
 					local recipeID = self.gainedRecipes[#self.gainedRecipes]
-					JMD["learnedRecipes"][recipeID] = true
+					if recipeID then JMD["learnedRecipes"][recipeID] = true end
 					table.remove(self.gainedRecipes,#self.gainedRecipes)
 				end
 				self.recipeIntervals = 0
@@ -135,24 +140,21 @@ function WriteSkillRecoveryJournal:update()
 		end
 
 		-- write gained xp
+		if SRJ.isCurrentJournalDataVersion(JMD) then
+			SRJ.mergeLegacyBeyondTenXP(JMD)
+		end
 		local storedJournalXP = JMD["gainedXP"]
 		local readXp = SRJ.modDataHandler.getReadXP(self.character)
 		local totalRecoverableXP = 1
 		local totalStoredXP = 1
 
 		if bOwner and storedJournalXP and self.gainedSkills then
-			local BT = SRJ.getBeyondTen()
-			local legacyBeyondTenXP = JMD["BeyondTenXP"]
 			for perkID,xp in pairs(self.gainedSkills) do
 				if xp > 0 then
 					totalRecoverableXP = totalRecoverableXP + xp
 
 					storedJournalXP[perkID] = storedJournalXP[perkID] or 0
-					local perk = Perks[perkID]
 					local storedTotalXP = storedJournalXP[perkID]
-					if SRJ.isBeyondTenPerkValid(BT, perk) and legacyBeyondTenXP then
-						storedTotalXP = storedTotalXP + (tonumber(legacyBeyondTenXP[perkID]) or 0)
-					end
 					if xp > storedTotalXP then
 
 						local perkLevelPlusOne = self.character:getPerkLevel(Perks[perkID])+1
@@ -185,9 +187,6 @@ function WriteSkillRecoveryJournal:update()
 					end
 				end
 				local storedTotalXP = storedJournalXP[perkID] or 0
-				if legacyBeyondTenXP and SRJ.isBeyondTenPerkValid(BT, Perks[perkID]) then
-					storedTotalXP = storedTotalXP + (tonumber(legacyBeyondTenXP[perkID]) or 0)
-				end
 				totalStoredXP = totalStoredXP + storedTotalXP
 			end
 		end
@@ -286,6 +285,7 @@ function WriteSkillRecoveryJournal:new(character, item, writingTool) --time, rec
 	o.writingTool = writingTool
 
 	local JMD = SRJ.modDataHandler.getItemModData(o.item)
+	local convertLegacyJournal = not SRJ.isCurrentJournalDataVersion(JMD)
 
 	o.writingToolSound = "PenWriteSounds"
 	if character:getInventory():contains("Pencil") then
@@ -294,7 +294,7 @@ function WriteSkillRecoveryJournal:new(character, item, writingTool) --time, rec
 
 	JMD["gainedXP"] = JMD["gainedXP"] or {}
 	JMD["learnedRecipes"] = JMD["learnedRecipes"] or {}
-	local learnedRecipes = JMD["learnedRecipes"]
+	local learnedRecipes = (convertLegacyJournal and {}) or JMD["learnedRecipes"]
 	local gainedRecipes = SRJ.getGainedRecipes(character)
 	o.gainedRecipes = {}
 	if SandboxVars.SkillRecoveryJournal.RecoverRecipes == true then
@@ -310,18 +310,14 @@ function WriteSkillRecoveryJournal:new(character, item, writingTool) --time, rec
 	o.isFullJournal = SRJ.isFullRecoveryJournal(item)
 	o.gainedSkills = SRJ.calculateAllGainedSkills(character, o.isFullJournal) or false
 	o.oldJournalTotalXP = 0
-	for perkID, xp in pairs(JMD["gainedXP"]) do
-		o.oldJournalTotalXP = o.oldJournalTotalXP + xp
-	end
-	if JMD["BeyondTenXP"] then
-		local BT = SRJ.getBeyondTen()
-		for perkID, xp in pairs(JMD["BeyondTenXP"]) do
-			if SRJ.isBeyondTenPerkValid(BT, Perks[perkID]) then
-				o.oldJournalTotalXP = o.oldJournalTotalXP + (tonumber(xp) or 0)
-			end
+	if not convertLegacyJournal then
+		SRJ.mergeLegacyBeyondTenXP(JMD)
+		for perkID, xp in pairs(JMD["gainedXP"]) do
+			o.oldJournalTotalXP = o.oldJournalTotalXP + xp
 		end
 	end
 	o.willWrite = true
+	o.convertLegacyJournal = convertLegacyJournal
 	local sayText
 
 	--if getDebug() then print("gainedSkills: "..tostring(#o.gainedSkills)) end
@@ -369,7 +365,15 @@ function WriteSkillRecoveryJournal:new(character, item, writingTool) --time, rec
 	end
 
 	if sayText then character:Say(sayText) end
-	if o.willWrite then JMD["author"] = character:getFullName() end
+	if o.willWrite then
+		if o.convertLegacyJournal then
+			SRJ.resetJournalRecoveryDataForCurrentVersion(JMD)
+			o.changesWereMade = true
+		else
+			JMD["version"] = SRJ.JOURNAL_DATA_VERSION
+		end
+		JMD["author"] = character:getFullName()
+	end
 
 	o.writeTimer = 0
 	o.stopOnWalk = false

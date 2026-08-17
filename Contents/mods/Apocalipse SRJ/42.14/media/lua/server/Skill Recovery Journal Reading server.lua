@@ -6,8 +6,21 @@
 
 local SRJ = require "Skill Recovery Journal Main"
 
+local function toNumber(value)
+    if value == nil then return nil end
+    if type(value) == "number" then return value end
+    if type(value) == "string" then return tonumber(value) end
+
+    local stringValue = tostring(value)
+    if stringValue and stringValue ~= "" and stringValue ~= "nil" then
+        return tonumber(stringValue)
+    end
+
+    return nil
+end
+
 local function isFinite(value)
-    value = tonumber(value)
+    value = toNumber(value)
     return value ~= nil and value == value and value ~= math.huge and value ~= -math.huge
 end
 
@@ -26,10 +39,11 @@ local function SRJ_OnClientCommand(module, command, player, args)
     if module ~= "SkillRecoveryJournal" then return end
 
     if command == "addXp" then
-        if player and args and args.perkID and args.amount then
+        if player and args and args.perkID and isFinite(args.amount) then
             local perk = Perks[args.perkID]
-            if perk then
-                addXpNoMultiplier(player, perk, args.amount+1)
+            local amount = math.max(0, toNumber(args.amount) or 0)
+            if perk and amount > 0 then
+                addXpNoMultiplier(player, perk, amount)
             end
         end
     elseif command == "addBeyondTenXp" then
@@ -40,7 +54,7 @@ local function SRJ_OnClientCommand(module, command, player, args)
         local perk = Perks[args.perkID]
         if not SRJ.isBeyondTenPerkValid(BT, perk) then return end
 
-        local amount = math.max(0, tonumber(args.amount) or 0)
+        local amount = math.max(0, toNumber(args.amount) or 0)
         if amount <= 0 then return end
 
         if type(BT.AddRecoveredXP) == "function" then
