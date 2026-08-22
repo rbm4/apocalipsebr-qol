@@ -11,11 +11,6 @@ module Base
         Capacity = 15,
     }
 
-    item AmmoStrap_Bullets_1008
-    {
-        Capacity = 15,
-    }
-
     item AmmoStrap_Shells
     {
         Capacity = 15,

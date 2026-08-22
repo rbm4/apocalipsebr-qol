@@ -1582,13 +1582,13 @@ local function command(module, name, player, args)
     broadcastStates()
 end
 
-Events.OnClientCommand.Add(command)
-Events.OnTick.Add(onFrame)
-Events.OnServerStarted.Add(function()
-    loadSwitches()
-    reacquire()
-    if Collision and Collision.sweepOrphanWalls then Collision.sweepOrphanWalls() end
-end)
+-- Events.OnClientCommand.Add(command)
+-- Events.OnTick.Add(onFrame)
+-- Events.OnServerStarted.Add(function()
+--     loadSwitches()
+--     reacquire()
+--     if Collision and Collision.sweepOrphanWalls then Collision.sweepOrphanWalls() end
+-- end)
 
 --------------------------------------------------------------------------
 -- Server-console recovery/diagnostics (testing aid; the server console is
