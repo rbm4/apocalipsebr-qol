@@ -907,11 +907,19 @@ local function SVU_ATAPetyarbuilt_TuningTable()
 			addPartsFromVehicleScript = "",
 			parts = {}
 		}
+		NewCarTuningTable["ATAPetyarbuiltJoker"] = {
+			addPartsFromVehicleScript = "",
+			parts = {}
+		}
 		NewCarTuningTable["ATAPetyarbuiltSleeperLong"] = {
 			addPartsFromVehicleScript = "",
 			parts = {}
 		}
 		NewCarTuningTable["TrailerTSMega"] = {
+			addPartsFromVehicleScript = "",
+			parts = {}
+		}
+		NewCarTuningTable["TrailerTSMegaJoker"] = {
 			addPartsFromVehicleScript = "",
 			parts = {}
 		}
@@ -939,6 +947,7 @@ local function SVU_ATAPetyarbuilt_TuningTable()
 		NewCarTuningTable["TrailerTSMega"].parts["ATA2ProtectionWheels"] = copy(ATAPetyarbuiltTuningTable["TemplateVehicle"].parts["ATA2ProtectionWheels"])
 		NewCarTuningTable["TrailerTSMega"].parts["ATA2ProtectionWheels"].ATAProtection.protection = {"TireFrontLeft", "TireFrontRight", "TireRearLeft", "TireRearRight"}
 		NewCarTuningTable["TrailerTSMega"].parts["ATA2ProtectionWheels"].ATAProtection.install.requireInstalled = {"TireFrontLeft", "TireFrontRight", "TireRearLeft", "TireRearRight"}
+		NewCarTuningTable["TrailerTSMegaJoker"].parts["ATA2ProtectionWheels"] = copy(NewCarTuningTable["TrailerTSMega"].parts["ATA2ProtectionWheels"])
 		NewCarTuningTable["TrailerTSMegaAnimal"].parts["ATA2ProtectionWheels"] = {}	
 		NewCarTuningTable["TrailerTSMegaAnimal"].parts["ATA2ProtectionWheels"] = copy(NewCarTuningTable["TrailerTSMega"].parts["ATA2ProtectionWheels"])	
 
@@ -948,6 +957,7 @@ local function SVU_ATAPetyarbuilt_TuningTable()
 		NewCarTuningTable["TrailerTSMega"].parts["ATA2ProtectionDoorsRear"].Heavy = copy(ATAPetyarbuiltTuningTable["TemplateVehicle"].parts["ATA2ProtectionDoorsRear"].Heavy)
 		NewCarTuningTable["TrailerTSMega"].parts["ATA2ProtectionDoorsRear"].Heavy.category = "protectionMods"
 		NewCarTuningTable["TrailerTSMega"].parts["ATA2ProtectionDoorsRear"].Heavy.install.requireInstalled = {"DoorRear"}
+		NewCarTuningTable["TrailerTSMegaJoker"].parts["ATA2ProtectionDoorsRear"] = copy(NewCarTuningTable["TrailerTSMega"].parts["ATA2ProtectionDoorsRear"])
 
 		NewCarTuningTable["ATAPetyarbuilt"].parts["ATA2ProtectionSideLeft"] = {
 			Default = {
@@ -1181,9 +1191,10 @@ local function SVU_ATAPetyarbuilt_TuningTable()
 		}
 
 		NewCarTuningTable["ATAPetyarbuiltSleeper"] = NewCarTuningTable["ATAPetyarbuilt"]
+		NewCarTuningTable["ATAPetyarbuiltJoker"] = NewCarTuningTable["ATAPetyarbuilt"]
 		NewCarTuningTable["ATAPetyarbuiltSleeperLong"] = NewCarTuningTable["ATAPetyarbuilt"]
 
 		ATA2Tuning_AddNewCars(NewCarTuningTable)
 	end
 end
-Events.OnInitGlobalModData.Add(SVU_ATAPetyarbuilt_TuningTable) 
+Events.OnInitGlobalModData.Add(SVU_ATAPetyarbuilt_TuningTable)

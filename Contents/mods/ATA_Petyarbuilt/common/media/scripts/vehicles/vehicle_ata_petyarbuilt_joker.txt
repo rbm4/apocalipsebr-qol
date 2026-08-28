@@ -1,0 +1,138 @@
+module Base
+{
+	vehicle ATAPetyarbuiltJoker
+	{
+		template = ATAPetyarbuiltSleep,
+
+        extents = 3.3538 0.2462 11.0154,
+        physicsChassisShape = 3.3538 0.1538 11.0154,
+		centerOfMassOffset = 0.0000 0.2391 0.2923,
+		shadowExtents = 3.8154 12.1538,
+		shadowOffset = 0.0000 -0.2000,
+
+		model
+		{
+			file = Vehicle_ATAPetyarbuilt_short,
+			scale = 0.6500,
+			offset = 0.0000 1.0769 0.0000,
+		}
+
+		skin
+		{
+			texture = Vehicles/ATA_Petyarbuilt_base_joker,
+		}
+
+        textureMask = Vehicles/ATA_Petyarbuilt_mask,
+        textureLights = Vehicles/ATA_Petyarbuilt_light,
+        textureDamage1Shell = Vehicles/ATA_Petyarbuilt_damage1,
+        textureDamage2Shell = Vehicles/ATA_Petyarbuilt_damage2,
+        textureDamage1Overlay = Vehicles/ATA_Petyarbuilt_blood,
+        textureDamage2Overlay = Vehicles/ATA_Petyarbuilt_blood,
+        textureRust = Vehicles/ATA_Petyarbuilt_rust,
+
+        mechanicType = 2,
+        offRoadEfficiency = 1.2,
+        engineRepairLevel = 5,
+        playerDamageProtection = 1.4,
+
+        mass = 950,
+        engineForce = 6800,
+        engineQuality = 100,
+        engineLoudness = 130,
+        maxSpeed = 95,
+
+        engineRPMType = van,
+
+        brakingForce = 155,
+        stoppingMovementForce = 2.75f,
+
+        rollInfluence = 0.3f,
+        steeringIncrement = 0.02,
+        steeringClamp = 0.3f,
+
+        suspensionStiffness = 66,
+
+		suspensionCompression = 4.83,
+		suspensionDamping = 3.88,
+
+		maxSuspensionTravelCm = 45,
+		suspensionRestLength = 1.95f,
+
+        wheelFriction = 1.35f,
+
+        frontEndHealth = 1500,
+        rearEndHealth = 1000,
+        seats = 4,
+
+		wheel RearLeft
+		{
+			front = false,
+			offset = 0.0000 -1.4154 -2.4308,
+			radius = 0.75f,
+			width = 0.2f,
+		}
+
+		wheel RearRight
+		{
+			front = false,
+			offset = 0.0000 -1.4154 -4.2462,
+			radius = 0.75f,
+			width = 0.2f,
+		}
+
+		part Fridge*
+		{
+			container
+			{
+				capacity = 75,
+				test = CommonTemplates.ContainerAccess.ContainerByName,
+			}
+		}
+
+		part GasTank
+		{
+			container
+			{
+				capacity = 390,
+				test = Vehicles.ContainerAccess.GasTank,
+				contentType = Gasoline,
+				conditionAffectsCapacity = true,
+			}
+		}
+
+		physics box
+		{
+			offset = 0.0000 1.0490 3.2923,
+			extents = 3.0308 1.2923 4.3231,
+			rotate = 0.0000 0.0000 0.0000,
+		}
+
+		physics box
+		{
+			offset = 0.0000 0.2428 -2.1231,
+			extents = 3.5077 0.3385 6.0923,
+			rotate = 0.0000 0.0000 0.0000,
+		}
+
+		attachment trailerfront
+		{
+			offset = 0.0000 -1.4615 6.0000,
+			rotate = 0.0000 0.0000 0.0000,
+			zoffset = 1.0000,
+		}
+
+		attachment trailerTruck
+		{
+			offset = 0.0000 -0.4846 -3.3385,
+			rotate = 0.0000 0.0000 0.0000,
+			zoffset = -1.0000,
+		}
+
+		attachment trailer
+		{
+			offset = 0.0000 -0.9538 -5.3385,
+			rotate = 0.0000 0.0000 0.0000,
+			zoffset = -1.0000,
+		}
+	}
+}

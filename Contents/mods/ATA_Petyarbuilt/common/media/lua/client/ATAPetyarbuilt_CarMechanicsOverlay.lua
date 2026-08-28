@@ -3,7 +3,9 @@ require 'Vehicles/ISUI/TSL_ISCarMechanicsOverlay'
 ISCarMechanicsOverlay.CarList["Base.ATAPetyarbuilt"] = {imgPrefix = "atapetyarbuilt_", x=0,y=0};
 ISCarMechanicsOverlay.CarList["Base.ATAPetyarbuiltSleeper"] = {imgPrefix = "atapetyarbuiltsleeper_", x=0,y=0};
 ISCarMechanicsOverlay.CarList["Base.ATAPetyarbuiltSleeperLong"] = {imgPrefix = "atapetyarbuiltsleeper_", x=0,y=0};
+ISCarMechanicsOverlay.CarList["Base.ATAPetyarbuiltJoker"] = {imgPrefix = "atapetyarbuiltsleeper_", x=0,y=0};
 ISCarMechanicsOverlay.CarList["Base.TrailerTSMega"] = {imgPrefix = "atsmega_", x=0,y=0};
+ISCarMechanicsOverlay.CarList["Base.TrailerTSMegaJoker"] = {imgPrefix = "atsmega_", x=0,y=0};
 
 ISCarMechanicsOverlay.PartList["HeadlightLeft"].vehicles["atapetyarbuilt_"] = {x=60,y=115,x2=90,y2=125};
 ISCarMechanicsOverlay.PartList["HeadlightLeft"].vehicles["atapetyarbuiltsleeper_"] = {x=60,y=115,x2=90,y2=125};

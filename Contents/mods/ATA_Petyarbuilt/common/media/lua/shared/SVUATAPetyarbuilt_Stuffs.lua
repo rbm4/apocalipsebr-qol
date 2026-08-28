@@ -31,5 +31,7 @@ end
 SetArmor("ATAPetyarbuilt","SVU_Armor_ATAPetyarbuilt");
 SetArmor("ATAPetyarbuiltSleeper","SVU_Armor_ATAPetyarbuilt");
 SetArmor("ATAPetyarbuiltSleeperLong","SVU_Armor_ATAPetyarbuilt");
+SetArmor("ATAPetyarbuiltJoker","SVU_Armor_ATAPetyarbuilt");
 SetArmor("TrailerTSMega","SVU_Armor_TrailerTSMega");
+SetArmor("TrailerTSMegaJoker","SVU_Armor_TrailerTSMega");
 SetArmor("TrailerTSMegaAnimal","SVU_Armor_TrailerTSMega");

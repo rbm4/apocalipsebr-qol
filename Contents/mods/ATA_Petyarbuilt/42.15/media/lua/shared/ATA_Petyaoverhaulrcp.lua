@@ -33,10 +33,12 @@ if REALISTICCARPHYSICS_ENABLED then
 	--Petyarbuilt
 	carData.vehicleValues["Base.ATAPetyarbuilt"] = {horsePower = 235, weight = 6152, cargo = 25, engineSound = "EnginePetya_new"}
 	carData.vehicleValues["Base.ATAPetyarbuiltSleeper"] = {horsePower = 250, weight = 8631, cargo = 30, engineSound = "EnginePetya_new"}
+	carData.vehicleValues["Base.ATAPetyarbuiltJoker"] = {horsePower = 420, weight = 8631, cargo = 75, engineSound = "EnginePetya_new"}
 	carData.vehicleValues["Base.ATAPetyarbuiltSleeperLong"] = {horsePower = 270, weight = 9215, cargo = 35, engineSound = "EnginePetya_new"}
 
 
 	-- Trailers
 	carData.vehicleValues["Base.TrailerTSMega"] = {weight = 3140, cargo = 1500}
+	carData.vehicleValues["Base.TrailerTSMegaJoker"] = {weight = 3140, cargo = 1500}
 	carData.vehicleValues["Base.TrailerTSMegaAnimal"] = {weight = 3140, cargo = 900}
 end
