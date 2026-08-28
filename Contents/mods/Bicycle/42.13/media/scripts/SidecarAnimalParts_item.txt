@@ -1,0 +1,366 @@
+module Bicycle
+{
+    imports {
+        Base
+    }
+    item ChickInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_ChickInSidecar,
+        PartType = SidecarChick,
+    }
+    item ChickenBrownInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_ChickenBrownInSidecar,
+        PartType = SidecarChicken,
+    }
+    item ChickenWhiteInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_ChickenWhiteInSidecar,
+        PartType = SidecarChicken,
+    }
+    item CockerelBrownInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_CockerelBrownInSidecar,
+        PartType = SidecarChicken,
+    }
+    item CockerelWhiteInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_CockerelWhiteInSidecar,
+        PartType = SidecarChicken,
+    }
+    item RaccoonInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_RaccoonInSidecar,
+        PartType = SidecarRaccoon,
+    }
+    item RaccoonKitInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_RaccoonKitInSidecar,
+        PartType = SidecarRaccoonKit,
+    }
+    item LambBrownInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_LambBrownInSidecar,
+        PartType = SidecarLamb,
+    }
+    item LambWhiteInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_LambWhiteInSidecar,
+        PartType = SidecarLamb,
+    }
+    item PigletPinkInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_PigletPinkInSidecar,
+        PartType = SidecarPiglet,
+    }
+    item PigletBlackInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_PigletBlackInSidecar,
+        PartType = SidecarPiglet,
+    }
+    item HorseAmericanQuarterPalominoInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAmericanQuarterPalominoInSidecar,
+        PartType = SidecarHorse,
+    }
+    item HorseAmericanQuarterBlueRoanInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAmericanQuarterBlueRoanInSidecar,
+        PartType = SidecarHorse,
+    }
+    item HorseAmericanPaintTobianoInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAmericanPaintTobianoInSidecar,
+        PartType = SidecarHorse,
+    }
+    item HorseAmericanPaintOveroInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAmericanPaintOveroInSidecar,
+        PartType = SidecarHorse,
+    }
+    item HorseAppaloosaGrullaBlanketInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAppaloosaGrullaBlanketInSidecar,
+        PartType = SidecarHorse,
+    }
+    item HorseAppaloosaLeopardInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAppaloosaLeopardInSidecar,
+        PartType = SidecarHorse,
+    }
+    item HorseThoroughbredBayInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseThoroughbredBayInSidecar,
+        PartType = SidecarHorse,
+    }
+    item HorseThoroughbredFleaBittenGreyInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseThoroughbredFleaBittenGreyInSidecar,
+        PartType = SidecarHorse,
+    }
+    item HorseAmericanQuarterPalominoFoalInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAmericanQuarterPalominoInSidecar,
+        PartType = SidecarHorseFoal,
+    }
+    item HorseAmericanQuarterBlueRoanFoalInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAmericanQuarterBlueRoanInSidecar,
+        PartType = SidecarHorseFoal,
+    }
+    item HorseAmericanPaintTobianoFoalInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAmericanPaintTobianoInSidecar,
+        PartType = SidecarHorseFoal,
+    }
+    item HorseAmericanPaintOveroFoalInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAmericanPaintOveroInSidecar,
+        PartType = SidecarHorseFoal,
+    }
+    item HorseAppaloosaGrullaBlanketFoalInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAppaloosaGrullaBlanketInSidecar,
+        PartType = SidecarHorseFoal,
+    }
+    item HorseAppaloosaLeopardFoalInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseAppaloosaLeopardInSidecar,
+        PartType = SidecarHorseFoal,
+    }
+    item HorseThoroughbredBayFoalInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseThoroughbredBayInSidecar,
+        PartType = SidecarHorseFoal,
+    }
+    item HorseThoroughbredFleaBittenGreyFoalInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_HorseThoroughbredFleaBittenGreyInSidecar,
+        PartType = SidecarHorseFoal,
+    }
+    item RabbitSwampInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_RabbitSwampInSidecar,
+        PartType = SidecarRabbit,
+    }
+    item RabbitAppalachianInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_RabbitAppalachianInSidecar,
+        PartType = SidecarRabbit,
+    }
+    item RabbitCottontailInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_RabbitCottontailInSidecar,
+        PartType = SidecarRabbit,
+    }
+    item RabbitKittenSwampInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_RabbitKittenSwampInSidecar,
+        PartType = SidecarRabbitKitten,
+    }
+    item RabbitKittenAppalachianInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_RabbitKittenAppalachianInSidecar,
+        PartType = SidecarRabbitKitten,
+    }
+    item RabbitKittenCottontailInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_RabbitKittenCottontailInSidecar,
+        PartType = SidecarRabbitKitten,
+    }
+    item TurkeyPoultInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_TurkeyPoultInSidecar,
+        PartType = SidecarTurkeyPoult,
+    }
+    item TurkeyHenInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_TurkeyHenInSidecar,
+        PartType = SidecarTurkey,
+    }
+    item TurkeyGobblerInSidecar
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Bicycle2WoodenCrateIcon,
+        Weight = 0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_TurkeyGobblerInSidecar,
+        PartType = SidecarTurkey,
+    }
+}

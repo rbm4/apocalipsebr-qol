@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>climbFenceEnd_bicycle</m_Name>
+	<m_Priority>4</m_Priority>
+	<m_AnimName>Bob_VaultOver_End</m_AnimName>
+	<m_Looped>false</m_Looped>
+	<m_BlendTime>5.00</m_BlendTime>
+	<m_SpeedScale>5.00</m_SpeedScale>
+	<m_ConditionPriority>10</m_ConditionPriority>
+	<m_Conditions x_name="e40a5dd9-45d8-4adf-b594-dcd7f3888a58">
+		<m_Name>ClimbFenceStarted</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="83a86f42-9886-4cb0-b12a-ae46b7ccce4c">
+		<m_Name>ClimbFenceOutcome</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>success</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="4531ea7a-03c5-4278-9003-0ba0f33142a0">
+		<m_Name>ClimbFenceFinished</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>false</m_Value>
+	</m_Conditions>
+	<m_Events x_name="314b5eed-290f-41db-bbe5-a8f50c3f2f93">
+		<m_EventName>SetVariable</m_EventName>
+		<m_TimePc>0.7</m_TimePc>
+		<m_ParameterValue>ClimbFenceFinished=true</m_ParameterValue>
+	</m_Events>
+	<m_Conditions>
+        <m_Name>BicycleActive</m_Name>
+        <m_Type>BOOL</m_Type>
+        <m_Value>true</m_Value>
+    </m_Conditions>
+	<m_Transitions>
+		<m_Target>climbFenceStart</m_Target>
+		<m_blendInTime>0.01</m_blendInTime>
+	</m_Transitions>
+</animNode>

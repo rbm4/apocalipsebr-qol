@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>EatFromPacket_Sitting_bicycle</m_Name>
+	<m_BlendTime>0.35</m_BlendTime>
+	<m_SpeedScale>0.80</m_SpeedScale>
+	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
+	<m_ConditionPriority>30</m_ConditionPriority>
+	<m_Conditions>
+		<m_Name>BicycleActive</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="910d281e-9360-40d1-9dbe-6376a8ed570d">
+		<m_Name>PerformingAction</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>eat</m_Value>
+	</m_Conditions>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_L_Clavicle</boneName>
+		<weight>1.00</weight>
+		<includeDescendants>true</includeDescendants>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_R_Clavicle</boneName>
+		<weight>0.00</weight>
+		<includeDescendants>true</includeDescendants>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_Prop2</boneName>
+		<weight>1.0</weight>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_Prop1</boneName>
+		<weight>0</weight>
+	</m_SubStateBoneWeights>
+	<m_AnimName>Bob_IdleSittingEating_Box</m_AnimName>
+	<m_Conditions x_name="71c57d0b-3f91-42d0-b9c7-aa459ce80618">
+		<m_Name>FoodType</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>eatbox</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="44eb457d-81eb-498a-832c-0221ef81445b">
+		<m_Name>SitGroundAnim</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>Idle</m_Value>
+	</m_Conditions>
+</animNode>

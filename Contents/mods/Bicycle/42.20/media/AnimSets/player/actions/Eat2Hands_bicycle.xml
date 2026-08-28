@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>Eat2Hands_bicycle</m_Name>
+	<m_BlendTime>0.35</m_BlendTime>
+	<m_SpeedScale>0.80</m_SpeedScale>
+	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
+	<m_ConditionPriority>30</m_ConditionPriority>
+	<m_Conditions>
+		<m_Name>BicycleActive</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="910d281e-9360-40d1-9dbe-6376a8ed570d">
+		<m_Name>PerformingAction</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>eat</m_Value>
+	</m_Conditions>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_L_Clavicle</boneName>
+		<weight>1.00</weight>
+		<includeDescendants>true</includeDescendants>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_R_Clavicle</boneName>
+		<weight>0.00</weight>
+		<includeDescendants>true</includeDescendants>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_Prop2</boneName>
+		<weight>1.0</weight>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_Prop1</boneName>
+		<weight>0</weight>
+	</m_SubStateBoneWeights>
+	<m_AnimName>Bob_IdleEating2Hand</m_AnimName>
+	<m_Conditions x_name="a1f01163-4ab6-4a3d-8b93-781b8a0e433e">
+		<m_Name>FoodType</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>2hand</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="045cb85e-7b73-494c-9513-feb94ac2f3eb">
+		<m_Type>OR</m_Type>
+	</m_Conditions>
+	<m_Conditions x_name="ed1e0dc0-704a-4a18-bd7b-86ec8c56ab6a">
+		<m_Name>FoodType</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>2handforced</m_Value>
+	</m_Conditions>
+</animNode>

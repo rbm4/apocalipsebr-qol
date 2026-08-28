@@ -1,0 +1,114 @@
+VERSION = 1,
+
+option Bicycle.SpawnRate
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 30,
+    page = Bicycle,
+    translation = Bicycle_SpawnRate,
+}
+
+option Bicycle.SidecarSpawnRate
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 30,
+    page = Bicycle,
+    translation = Bicycle_SidecarSpawnRate,
+}
+
+option Bicycle.WalkSpeedMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 2.2,
+    max = 5,
+    page = Bicycle,
+    translation = Bicycle_WalkSpeedMultiplier,
+    tooltip = Bicycle_WalkSpeedMultiplier_tooltip,
+}
+
+option Bicycle.RunSpeedMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 3.1,
+    max = 5,
+    page = Bicycle,
+    translation = Bicycle_RunSpeedMultiplier,
+    tooltip = Bicycle_RunSpeedMultiplier_tooltip,
+}
+
+option Bicycle.ImmersiveMode
+{
+    type = boolean,
+    default = true,
+    page = Bicycle,
+    translation = Bicycle_ImmersiveMode,
+    tooltip = Bicycle_ImmersiveMode_tooltip,
+}
+
+option Bicycle.LoadPenaltyEnabled
+{
+    type = boolean,
+    default = true,
+    page = Bicycle,
+    translation = Bicycle_LoadPenaltyEnabled,
+    tooltip = Bicycle_LoadPenaltyEnabled_tooltip,
+}
+
+option Bicycle.MaxTurnPenalty
+{
+    type = integer,
+    min = 0,
+    max = 75,
+    default = 50,
+    page = Bicycle,
+    translation = Bicycle_MaxTurnPenalty,
+    tooltip = Bicycle_MaxTurnPenalty_tooltip,
+}
+
+option Bicycle.MaxSpeedPenalty
+{
+    type = integer,
+    min = 0,
+    max = 75,
+    default = 35,
+    page = Bicycle,
+    translation = Bicycle_MaxSpeedPenalty,
+    tooltip = Bicycle_MaxSpeedPenalty_tooltip,
+}
+
+option Bicycle.ZombieSlowdownEnabled
+{
+    type = boolean,
+    default = true,
+    page = Bicycle,
+    translation = Bicycle_ZombieSlowdownEnabled,
+    tooltip = Bicycle_ZombieSlowdownEnabled_tooltip,
+}
+
+option Bicycle.ZombieSlowdownStrength
+{
+    type = integer,
+    min = 0,
+    max = 150,
+    default = 100,
+    page = Bicycle,
+    translation = Bicycle_ZombieSlowdownStrength,
+    tooltip = Bicycle_ZombieSlowdownStrength_tooltip,
+}
+
+option Bicycle.ZombieContactSensitivity
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 30,
+    page = Bicycle,
+    translation = Bicycle_ZombieContactSensitivity,
+    tooltip = Bicycle_ZombieContactSensitivity_tooltip,
+}

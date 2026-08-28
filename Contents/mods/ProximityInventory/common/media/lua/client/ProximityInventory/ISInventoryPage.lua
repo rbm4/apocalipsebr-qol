@@ -213,6 +213,9 @@ local function registerCleanUIHandlers()
 end
 
 local function registerVanillaHook()
+  if ISLootWindowContainerControls._ProximityInventoryHooked then return end
+  ISLootWindowContainerControls._ProximityInventoryHooked = true
+
   local old_arrange = ISLootWindowContainerControls.arrange
   function ISLootWindowContainerControls:arrange()
     old_arrange(self)
@@ -270,9 +273,7 @@ end
 
 -- Defer registration so all mods have loaded before we decide
 Events.OnGameStart.Add(function()
-  if ISLootWindowFloorControlHandler and ISLootWindowContainerControls and ISLootWindowContainerControls.AddFloorHandler then
-    registerCleanUIHandlers()
-  else
+  if ISLootWindowContainerControls and ISLootWindowContainerControls.arrange then
     registerVanillaHook()
   end
 end)

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>TakePills_bicycle</m_Name>
+	<m_AnimName>Bob_IdleTakePills</m_AnimName>
+	<m_Looped>false</m_Looped>
+	<m_BlendTime>0.20</m_BlendTime>
+	<m_SpeedScale>0.90</m_SpeedScale>
+	<m_ConditionPriority>30</m_ConditionPriority>
+	<m_Conditions>
+		<m_Name>BicycleActive</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="4804767a-6944-4ca5-94ef-281f8061cb16">
+		<m_Name>PerformingAction</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>TakePills</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="e67e6814-e45b-4983-9e3d-aa95440e5f1d">
+		<m_Name>sneaking</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>false</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="e6eaaad2-7eef-4aa9-93b1-342f4f078ed8">
+		<m_Name>nearWallCrouching</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>false</m_Value>
+	</m_Conditions>
+	<m_Events x_name="0979e26a-2f2c-4810-bb24-c965bd6cc71c">
+		<m_EventName>PlaySound</m_EventName>
+		<m_TimePc>0.07</m_TimePc>
+		<m_ParameterValue>FirstAidTakePills</m_ParameterValue>
+	</m_Events>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_L_Clavicle</boneName>
+        <weight>1.00</weight>
+        <includeDescendants>true</includeDescendants>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_R_Clavicle</boneName>
+		<weight>0.00</weight>
+        <includeDescendants>true</includeDescendants>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_Prop2</boneName>
+        <weight>1.0</weight>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_Prop1</boneName>
+		<weight>0</weight>
+	</m_SubStateBoneWeights>
+</animNode>

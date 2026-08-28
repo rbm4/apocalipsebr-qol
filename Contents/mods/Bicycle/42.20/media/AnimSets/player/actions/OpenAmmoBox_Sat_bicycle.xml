@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>OpenAmmoBox_Sat</m_Name>
+	<m_AnimName>Bob_IdleOpenAmmoBox</m_AnimName>
+	<m_Looped>false</m_Looped>
+	<m_BlendTime>0.10</m_BlendTime>
+	<m_BlendOutTime>0.20</m_BlendOutTime>
+	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
+	<m_ConditionPriority>30</m_ConditionPriority>
+	<m_Conditions>
+		<m_Name>BicycleActive</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="a5c74de4-96a3-4d8d-bba8-ed901e0125e3">
+		<m_Name>PerformingAction</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>OpenAmmoBox</m_Value>
+	</m_Conditions>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_L_Clavicle</boneName>
+		<weight>1.00</weight>
+		<includeDescendants>true</includeDescendants>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_R_Clavicle</boneName>
+		<weight>0.00</weight>
+		<includeDescendants>true</includeDescendants>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_Prop2</boneName>
+		<weight>1.0</weight>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_Prop1</boneName>
+		<weight>0</weight>
+	</m_SubStateBoneWeights>
+	<m_Conditions x_name="e2513b33-41ee-45ac-84af-efd25d33cd89">
+		<m_Name>sitonground</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="eadf58f6-5bab-4a02-af83-af96d5621965">
+		<m_Type>OR</m_Type>
+	</m_Conditions>
+	<m_Conditions x_name="07765062-42a3-4205-a1cb-f5ba034fe0ec">
+		<m_Name>sittingonfurniture</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="929b6f58-d9d0-4fdc-b6f2-1aecde8fac68">
+		<m_Name>PerformingAction</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>OpenAmmoBox</m_Value>
+	</m_Conditions>
+</animNode>

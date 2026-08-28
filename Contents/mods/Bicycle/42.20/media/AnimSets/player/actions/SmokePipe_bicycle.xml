@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>SmokePipe_bicycle</m_Name>
+	<m_BlendTime>0.35</m_BlendTime>
+	<m_SpeedScale>0.80</m_SpeedScale>
+	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
+	<m_ConditionPriority>30</m_ConditionPriority>
+	<m_Conditions>
+		<m_Name>BicycleActive</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="910d281e-9360-40d1-9dbe-6376a8ed570d">
+		<m_Name>PerformingAction</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>eat</m_Value>
+	</m_Conditions>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_L_Clavicle</boneName>
+		<weight>1.00</weight>
+		<includeDescendants>true</includeDescendants>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_R_Clavicle</boneName>
+		<weight>0.00</weight>
+		<includeDescendants>true</includeDescendants>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_Prop2</boneName>
+		<weight>1.0</weight>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Bip01_Prop1</boneName>
+		<weight>0</weight>
+	</m_SubStateBoneWeights>
+	<m_AnimName>Bob_IdleSmoke_Pipe</m_AnimName>
+	<m_Conditions x_name="c8959ae9-c9e4-4541-a697-b4443eb10563">
+		<m_Name>FoodType</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_Value>pipe</m_Value>
+	</m_Conditions>
+	<m_Events x_name="f6d45174-e992-40d1-8c5c-4e0d1df790c0">
+		<m_EventName>PlaySound</m_EventName>
+		<m_TimePc>0.15</m_TimePc>
+		<m_ParameterValue>Smoke</m_ParameterValue>
+	</m_Events>
+	<m_Events x_name="b9dfbba3-2464-4097-86f0-3885ca3cdab0">
+		<m_EventName>PlayerVoiceSound</m_EventName>
+		<m_TimePc>0</m_TimePc>
+		<m_ParameterValue>Smoke</m_ParameterValue>
+	</m_Events>
+</animNode>

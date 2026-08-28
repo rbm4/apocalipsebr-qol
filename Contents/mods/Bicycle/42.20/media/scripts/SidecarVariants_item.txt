@@ -1,0 +1,66 @@
+module Bicycle
+{
+    imports {
+        Base
+    }
+    item Bicycle_SidecarRed
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = BicycleSidecarRedIcon,
+        Weight = 3.0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_SidecarRedModel,
+        PartType = Sidecar,
+    }
+    item Bicycle_SidecarSpiffo
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = BicycleSidecarSpiffoIcon,
+        Weight = 3.0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_SidecarSpiffoModel,
+        PartType = Sidecar,
+    }
+    item Bicycle_SidecarWhite
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = BicycleSidecarWhiteIcon,
+        Weight = 3.0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_SidecarWhiteModel,
+        PartType = Sidecar,
+    }
+    item Bicycle_SidecarPink
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = BicycleSidecarPinkIcon,
+        Weight = 3.0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_SidecarPinkModel,
+        PartType = Sidecar,
+    }
+    item Bicycle_SidecarBlack
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = BicycleSidecarBlackIcon,
+        Weight = 3.0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_SidecarBlackModel,
+        PartType = Sidecar,
+    }
+    item Bicycle_SidecarBlue
+    {
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = BicycleSidecarBlueIcon,
+        Weight = 3.0,
+        MountOn = Bicycle;Bicycle_RedStreet,
+        WorldStaticModel = Bicycle_SidecarBlueModel,
+        PartType = Sidecar,
+    }
+}

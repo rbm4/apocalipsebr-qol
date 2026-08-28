@@ -40,8 +40,22 @@ local function clamp(v, lo, hi)
     return v
 end
 
+local function markChanged(option)
+    if option and option.gameOptions and option.gameOptions.onChange then
+        option.gameOptions:onChange(option)
+    end
+end
+
 local function makeGO(name, control)
-    local o = { name = name, control = control }
+    safeRequire("OptionScreens/GameOption")
+
+    local o
+    if GameOption and GameOption.new and control then
+        o = GameOption:new(name, control)
+    else
+        o = { name = name, control = control }
+    end
+
     function o:storeCurrentValue() end
     function o:restoreOriginalValue() end
     function o:resetLua() MainOptions.instance.resetLua = true end
@@ -50,32 +64,32 @@ local function makeGO(name, control)
     if control and control.isCombobox then
         control.target = o
         control.onChange = function(box)
-            o.gameOptions:onChange(o)
+            markChanged(o)
             if o.onChange then o:onChange(box) end
         end
     elseif control and control.isTickBox then
         control.changeOptionTarget = o
         control.changeOptionMethod = function(target, index, selected)
-            o.gameOptions:onChange(o)
+            markChanged(o)
             if o.onChange then o:onChange(index, selected) end
         end
     elseif control and control.isSlider then
         control.target = o
         control.targetFunc = function(target, volume)
-            o.gameOptions:onChange(o)
+            markChanged(o)
             if o.onChange then o:onChange(control, volume) end
         end
     end
     if control and control.Type == "ISTextEntryBox" then
         control.onTextChange = function()
-            o.gameOptions:onChange(o)
+            markChanged(o)
             if o.onChange then o:onChange(control:getInternalText()) end
         end
     end
     if control and control.Type == "ISSliderPanel" then
         control.target = o
         control.onValueChange = function(target, val)
-            o.gameOptions:onChange(o)
+            markChanged(o)
             if o.onChange then o:onChange(val) end
         end
     end

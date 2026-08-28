@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>bumpFall_bicycle</m_Name>
+	<m_AnimName>Bob_Bicycle_CrashBump_New</m_AnimName>
+	<m_Looped>false</m_Looped>
+	<m_BlendTime>0.05</m_BlendTime>
+	<m_EarlyTransitionOut>true</m_EarlyTransitionOut>
+	<m_SpeedScale>1.0</m_SpeedScale>
+    <m_ConditionPriority>10</m_ConditionPriority>
+	<m_Conditions>
+        <m_Name>BicycleActive</m_Name>
+        <m_Type>BOOL</m_Type>
+        <m_Value>true</m_Value>
+    </m_Conditions>
+	<m_Conditions x_name="df3e2421-32fa-412f-b473-e5e6ae36fbf9">
+		<m_Name>BumpDone</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="bbab61be-0160-455a-949f-896026c2eb3b">
+		<m_Name>BumpFall</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Events x_name="e5583a75-fb17-4d81-a3e2-f59706a55069">
+		<m_EventName>FallOnFront</m_EventName>
+		<m_TimePc>0.5</m_TimePc>
+		<m_ParameterValue>true</m_ParameterValue>
+	</m_Events>
+	<m_Events x_name="e7d08a4f-22b0-46ab-813f-e0033476f117">
+		<m_EventName>SetVariable</m_EventName>
+		<m_Time>End</m_Time>
+		<m_ParameterValue>BumpFallAnimFinished=true</m_ParameterValue>
+	</m_Events>
+	<m_Events x_name="f1c6d77a-4c83-443f-a849-e37ac7bb8f13">
+		<m_EventName>PlaySound</m_EventName>
+		<m_TimePc>0.23</m_TimePc>
+		<m_ParameterValue>FallLight</m_ParameterValue>
+	</m_Events>
+	<m_Events x_name="26484019-df32-410d-8ae6-fe7022253ae8">
+		<m_EventName>PlayerVoiceSound</m_EventName>
+		<m_Time>Start</m_Time>
+		<m_ParameterValue>PainFromFallLow</m_ParameterValue>
+	</m_Events>
+</animNode>

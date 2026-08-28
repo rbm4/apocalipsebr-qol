@@ -36,6 +36,131 @@ function CHBConfig.serializeTable(val, name, skipnewlines, depth)
     return tmp
 end
 
+function CHBConfig.deserializeTable(content)
+    local pos = 1
+
+    local function skipWhitespace()
+        while true do
+            local char = string.sub(content, pos, pos)
+            if char == "" or not string.match(char, "%s") then
+                break
+            end
+            pos = pos + 1
+        end
+    end
+
+    local function parseIdentifier()
+        skipWhitespace()
+        local word = string.match(string.sub(content, pos), "^[A-Za-z_][A-Za-z0-9_]*")
+        if not word then return nil end
+        pos = pos + #word
+        return word
+    end
+
+    local parseValue
+
+    local function parseString()
+        skipWhitespace()
+        if string.sub(content, pos, pos) ~= "\"" then return nil end
+        pos = pos + 1
+
+        local value = ""
+        while pos <= #content do
+            local char = string.sub(content, pos, pos)
+            if char == "\"" then
+                pos = pos + 1
+                return value
+            end
+            if char == "\\" then
+                local nextChar = string.sub(content, pos + 1, pos + 1)
+                if nextChar == "n" then
+                    value = value .. "\n"
+                elseif nextChar == "r" then
+                    value = value .. "\r"
+                elseif nextChar == "t" then
+                    value = value .. "\t"
+                elseif nextChar ~= "" then
+                    value = value .. nextChar
+                end
+                pos = pos + 2
+            else
+                value = value .. char
+                pos = pos + 1
+            end
+        end
+
+        return nil
+    end
+
+    local function parseTable()
+        skipWhitespace()
+        if string.sub(content, pos, pos) ~= "{" then return nil end
+        pos = pos + 1
+
+        local result = {}
+        while true do
+            skipWhitespace()
+            local char = string.sub(content, pos, pos)
+            if char == "}" then
+                pos = pos + 1
+                return result
+            end
+            if char == "" then return nil end
+
+            local key = parseIdentifier()
+            if not key then return nil end
+
+            skipWhitespace()
+            if string.sub(content, pos, pos) ~= "=" then return nil end
+            pos = pos + 1
+
+            result[key] = parseValue()
+            if result[key] == nil then return nil end
+
+            skipWhitespace()
+            char = string.sub(content, pos, pos)
+            if char == "," then
+                pos = pos + 1
+            elseif char ~= "}" then
+                return nil
+            end
+        end
+    end
+
+    function parseValue()
+        skipWhitespace()
+
+        local char = string.sub(content, pos, pos)
+        if char == "{" then
+            return parseTable()
+        end
+        if char == "\"" then
+            return parseString()
+        end
+
+        local word = parseIdentifier()
+        if word == "true" then return true end
+        if word == "false" then return false end
+        if word ~= nil then return nil end
+
+        local numberText = string.match(string.sub(content, pos), "^[%-]?%d+%.?%d*")
+        if numberText then
+            pos = pos + #numberText
+            return tonumber(numberText)
+        end
+
+        return nil
+    end
+
+    skipWhitespace()
+    local word = parseIdentifier()
+    if word ~= "return" then
+        return nil
+    end
+
+    return parseValue()
+end
+
 function CHBConfig.saveConfig(config)
     local file = getFileWriter("CleanHotbarConfig.lua", true, false)
     if file == nil then return nil end
@@ -65,15 +190,14 @@ function CHBConfig.loadConfig()
     
     if content == "" then return nil end
     
-    local fn, errorMsg = loadstring(content)
-    if fn then
-        local config = fn()
+    local config = CHBConfig.deserializeTable(content)
+    if type(config) == "table" then
         CHBConfig.configCache = config
         return config
-    else
-        print("CleanHotbar: Error loading config - " .. tostring(errorMsg))
-        return nil
     end
+
+    print("CleanHotbar: Error loading config - invalid config format")
+    return nil
 end
 
 -- ----------------------------------------- --

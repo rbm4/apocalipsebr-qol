@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>wall_bicycle</m_Name>
+	<m_AnimName>Bob_Bicycle_CrashWall</m_AnimName>
+	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
+	<m_Looped>false</m_Looped>
+	<m_SpeedScale>1.12</m_SpeedScale>
+	<m_BlendTime>0.20</m_BlendTime>
+	<m_Conditions>
+		<m_Name>CollideType</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_StringValue>wall</m_StringValue>
+	</m_Conditions>
+    <m_Conditions>
+        <m_Name>BicycleActive</m_Name>
+        <m_Type>BOOL</m_Type>
+        <m_Value>true</m_Value>
+    </m_Conditions>
+	<m_Events>
+		<m_EventName>PlayCollideSound</m_EventName>
+		<m_Time>Start</m_Time>
+		<m_ParameterValue>TripOverObstacle</m_ParameterValue>
+	</m_Events>
+	<m_Events>
+		<m_EventName>PlayerVoiceSound</m_EventName>
+		<m_Time>Start</m_Time>
+		<m_ParameterValue>PainFromRunIntoWall</m_ParameterValue>
+	</m_Events>
+	<m_Events>
+		<m_EventName>PlaySound</m_EventName>
+		<m_TimePc>0.53</m_TimePc>
+		<m_ParameterValue>BodyHitGround</m_ParameterValue>
+	</m_Events>
+</animNode>

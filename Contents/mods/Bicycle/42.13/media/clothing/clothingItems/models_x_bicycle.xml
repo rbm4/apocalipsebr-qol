@@ -1,0 +1,10 @@
+<clothingItem>
+	<m_MaleModel>media\models_x\Bicycle_Item.fbx</m_MaleModel>
+	<m_FemaleModel>media\models_x\Bicycle_Item.fbx</m_FemaleModel>
+	<m_GUID>sfbicycle0-spec-0000-000000000001</m_GUID>
+	<m_Static>true</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone>Bip01_Prop2</m_AttachBone>
+	<textureChoices>models_x_texture\Bicycle_texture</textureChoices>
+</clothingItem>

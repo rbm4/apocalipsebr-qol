@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>climbFenceStart_bicycle</m_Name>
+	<m_Priority>4</m_Priority>
+	<m_AnimName>Bob_VaultOver_Start</m_AnimName>
+	<m_BlendTime>5.00</m_BlendTime>
+	<m_BlendInTime>5.00</m_BlendInTime>
+	<m_SpeedScale>0.1</m_SpeedScale>
+	<m_Looped>false</m_Looped>
+	<m_ConditionPriority>10</m_ConditionPriority>
+	<m_Conditions x_name="af8d87e3-d237-45b2-bd45-bedfafc972b9">
+		<m_Name>ClimbFenceStarted</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>false</m_Value>
+	</m_Conditions>
+	<m_Events x_name="b4742470-b339-47ee-a6b8-e790907e500c">
+		<m_EventName>SetVariable</m_EventName>
+		<m_Time>End</m_Time>
+		<m_ParameterValue>ClimbFenceStarted=true</m_ParameterValue>
+	</m_Events>
+	<m_Conditions>
+        <m_Name>BicycleActive</m_Name>
+        <m_Type>BOOL</m_Type>
+        <m_Value>true</m_Value>
+    </m_Conditions>
+</animNode>

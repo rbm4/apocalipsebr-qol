@@ -1,0 +1,11 @@
+VERSION = 1,
+
+option Bicycle.SpawnRate
+{
+    type = integer,
+    min = 0,
+    max = 100,
+    default = 30,
+    page = Bicycle,
+    translation = Bicycle_SpawnRate,
+}

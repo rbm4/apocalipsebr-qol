@@ -1,0 +1,48 @@
+module Base
+{
+
+    craftRecipe MakeWoodenBicycleCrate
+	{
+        timedAction = Making,
+		Time = 120,
+        tags = AnySurfaceCraft;Carpentry,
+		category = Carpentry,
+		xpAward = Woodwork:10,
+        SkillRequired = Woodwork:1,
+		inputs
+		{
+			item 1 tags[Hammer] mode:keep flags[MayDegradeLight],
+			item 1 tags[Saw;SmallSaw;CrudeSaw] mode:keep flags[MayDegradeLight;Prop1],
+			item 2 [Base.Plank] flags[Prop2],
+			item 1 [Base.Nails],
+		}
+		outputs
+		{
+			item 1 Bicycle.Bicycle_Crate,
+		}
+	}
+
+    // craftRecipe MakeBicycleSidecar
+	// {
+    //     timedAction = Making,
+	// 	Time = 240,
+    //     tags = AnySurfaceCraft;MetalWelding,
+	// 	category = Welding,
+	// 	xpAward = MetalWelding:25,
+    //     SkillRequired = MetalWelding:4,
+    //     NeedToBeLearn = true,
+	// 	inputs
+	// 	{
+	// 		item 1 tags[BlowTorch] mode:keep flags[MayDegradeLight;Prop1],
+	// 		item 1 tags[WeldingMask] mode:keep,
+	// 		item 4 [Base.SheetMetal] flags[Prop2],
+	// 		item 2 [Base.MetalBar],
+	// 		item 1 [Bicycle.Bicycle_StreetWheelFrontItem/Bicycle.Bicycle_OffroadWheelFrontItem],
+	// 	}
+	// 	outputs
+	// 	{
+	// 		item 1 Bicycle.Bicycle_Sidecar,
+	// 	}
+	// }
+
+}
