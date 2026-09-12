@@ -1,0 +1,171 @@
+module CS2Firearms
+{
+    item AR15_Mag_30_Attachment
+    {
+        MountOn = CS2Firearms.M4A4;CS2Firearms.MP5SD;CS2Firearms.UMP45;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SG552;CS2Firearms.Galil;CS2Firearms.M4A1,
+        StaticModel = CS2Firearms.AR15_Mag_30,
+        WorldStaticModel = CS2Firearms.AR15_Mag_30,
+        
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item 556Mag_100_Attachment
+    {
+        MountOn = CS2Firearms.M249,
+        StaticModel = CS2Firearms.556Mag_100,
+        WorldStaticModel = CS2Firearms.556Mag_100,
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item 556Mag_150_Attachment
+    {
+        MountOn = CS2Firearms.Negev,
+        StaticModel = CS2Firearms.556Mag_150,
+        WorldStaticModel = CS2Firearms.556Mag_150,
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item Galil_Mag_30_Attachment
+    {
+        MountOn = CS2Firearms.Galil,
+        StaticModel = CS2Firearms.Galil_Mag_30,
+        WorldStaticModel = CS2Firearms.Galil_Mag_30,
+        
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item AR10_Mag_20_Attachment
+    {
+        MountOn = CS2Firearms.M4A4;CS2Firearms.MP5SD;CS2Firearms.UMP45;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SG552;CS2Firearms.Galil;CS2Firearms.M4A1,
+        StaticModel = CS2Firearms.AR10_Mag_20,
+        WorldStaticModel = CS2Firearms.AR10_Mag_20,
+        
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item SMG_9_Mag_30_Attachment
+    {
+        MountOn = CS2Firearms.MP5SD,
+        StaticModel = CS2Firearms.SMG_9_Mag_30,
+        WorldStaticModel = CS2Firearms.SMG_9_Mag_30,
+        
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item SMG_45_Mag_30_Attachment
+    {
+        MountOn = CS2Firearms.UMP45,
+        StaticModel = CS2Firearms.SMG_45_Mag_30,
+        WorldStaticModel = CS2Firearms.SMG_45_Mag_30,
+        
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item Bizon_Mag_64_Attachment
+    {
+        MountOn = CS2Firearms.Bizon,
+        StaticModel = CS2Firearms.Bizon_Mag_64,
+        WorldStaticModel = CS2Firearms.Bizon_Mag_64,
+        
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item MAG7_Mag_5_Attachment
+    {
+        MountOn = CS2Firearms.MAG7,
+        StaticModel = CS2Firearms.MAG7_Mag_5,
+        WorldStaticModel = CS2Firearms.MAG7_Mag_5,
+        
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item P90_Mag_50_Attachment
+    {
+        MountOn = CS2Firearms.P90,
+        StaticModel = CS2Firearms.P90_Mag_50,
+        WorldStaticModel = CS2Firearms.P90_Mag_50,
+        
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item TEC9_Mag_18_Attachment
+    {
+        MountOn = CS2Firearms.TEC9,
+        StaticModel = CS2Firearms.TEC9_Mag_18,
+        WorldStaticModel = CS2Firearms.TEC9_Mag_18,
+        
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item AK_Mag_30_Attachment
+    {
+        MountOn = CS2Firearms.AK47,
+        StaticModel = CS2Firearms.AK_Mag_30,
+        WorldStaticModel = CS2Firearms.AK_Mag_30,
+        
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+
+    item Sniper_Mag_10_Attachment
+    {
+        MountOn = CS2Firearms.AWP;CS2Firearms.SSG69,
+        StaticModel = CS2Firearms.Sniper_Mag_10,
+        WorldStaticModel = CS2Firearms.Sniper_Mag_10,
+        
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Type = WeaponPart,
+        PartType = Clip,
+        DisplayName = Mag Attachment Model,
+    }
+}

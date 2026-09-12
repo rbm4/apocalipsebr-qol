@@ -1,0 +1,91 @@
+module IAmBruceLeeNow
+{
+    sound IABLN_WhooshLight
+    {
+        category = Player,
+        is3D = true,
+        maxInstancesPerEmitter = 3,
+        clip { file = media/sound/IAmBruceLeeNow/woosh3.ogg, distanceMin = 1, distanceMax = 12, reverbMaxRange = 10, reverbFactor = 0, }
+        clip { file = media/sound/IAmBruceLeeNow/woosh5.ogg, distanceMin = 1, distanceMax = 12, reverbMaxRange = 10, reverbFactor = 0, }
+        clip { file = media/sound/IAmBruceLeeNow/woosh6.ogg, distanceMin = 1, distanceMax = 12, reverbMaxRange = 10, reverbFactor = 0, }
+    }
+
+    sound IABLN_WhooshHeavy
+    {
+        category = Player,
+        is3D = true,
+        maxInstancesPerEmitter = 3,
+        clip { file = media/sound/IAmBruceLeeNow/woosh1.ogg, distanceMin = 1, distanceMax = 12, reverbMaxRange = 10, reverbFactor = 0, }
+        clip { file = media/sound/IAmBruceLeeNow/woosh2.ogg, distanceMin = 1, distanceMax = 12, reverbMaxRange = 10, reverbFactor = 0, }
+        clip { file = media/sound/IAmBruceLeeNow/woosh4.ogg, distanceMin = 1, distanceMax = 12, reverbMaxRange = 10, reverbFactor = 0, }
+    }
+
+    sound IABLN_SmackImpact
+    {
+        category = Player,
+        is3D = true,
+        maxInstancesPerEmitter = 6,
+        clip { file = media/sound/IAmBruceLeeNow/smack1.ogg, distanceMin = 1, distanceMax = 15, reverbMaxRange = 12, reverbFactor = 0, }
+        clip { file = media/sound/IAmBruceLeeNow/smack2.ogg, distanceMin = 1, distanceMax = 15, reverbMaxRange = 12, reverbFactor = 0, }
+        clip { file = media/sound/IAmBruceLeeNow/smack3.ogg, distanceMin = 1, distanceMax = 15, reverbMaxRange = 12, reverbFactor = 0, }
+        clip { file = media/sound/IAmBruceLeeNow/smack4.ogg, distanceMin = 1, distanceMax = 15, reverbMaxRange = 12, reverbFactor = 0, }
+    }
+
+    sound IABLN_KickImpact
+    {
+        category = Player,
+        is3D = true,
+        maxInstancesPerEmitter = 6,
+        clip { file = media/sound/IAmBruceLeeNow/kick1.ogg, distanceMin = 1, distanceMax = 18, reverbMaxRange = 14, reverbFactor = 0, }
+        clip { file = media/sound/IAmBruceLeeNow/kick2.ogg, distanceMin = 1, distanceMax = 18, reverbMaxRange = 14, reverbFactor = 0, }
+        clip { file = media/sound/IAmBruceLeeNow/kick3.ogg, distanceMin = 1, distanceMax = 18, reverbMaxRange = 14, reverbFactor = 0, }
+    }
+
+    sound IABLN_SmackImpact1
+    {
+        category = Player, is3D = true, maxInstancesPerEmitter = 6,
+        clip { file = media/sound/IAmBruceLeeNow/smack1.ogg, distanceMin = 1, distanceMax = 15, reverbMaxRange = 12, reverbFactor = 0, }
+    }
+    sound IABLN_SmackImpact2
+    {
+        category = Player, is3D = true, maxInstancesPerEmitter = 6,
+        clip { file = media/sound/IAmBruceLeeNow/smack2.ogg, distanceMin = 1, distanceMax = 15, reverbMaxRange = 12, reverbFactor = 0, }
+    }
+    sound IABLN_SmackImpact3
+    {
+        category = Player, is3D = true, maxInstancesPerEmitter = 6,
+        clip { file = media/sound/IAmBruceLeeNow/smack3.ogg, distanceMin = 1, distanceMax = 15, reverbMaxRange = 12, reverbFactor = 0, }
+    }
+    sound IABLN_SmackImpact4
+    {
+        category = Player, is3D = true, maxInstancesPerEmitter = 6,
+        clip { file = media/sound/IAmBruceLeeNow/smack4.ogg, distanceMin = 1, distanceMax = 15, reverbMaxRange = 12, reverbFactor = 0, }
+    }
+    sound IABLN_KickImpact1
+    {
+        category = Player, is3D = true, maxInstancesPerEmitter = 6,
+        clip { file = media/sound/IAmBruceLeeNow/kick1.ogg, distanceMin = 1, distanceMax = 18, reverbMaxRange = 14, reverbFactor = 0, }
+    }
+    sound IABLN_KickImpact2
+    {
+        category = Player, is3D = true, maxInstancesPerEmitter = 6,
+        clip { file = media/sound/IAmBruceLeeNow/kick2.ogg, distanceMin = 1, distanceMax = 18, reverbMaxRange = 14, reverbFactor = 0, }
+    }
+    sound IABLN_KickImpact3
+    {
+        category = Player, is3D = true, maxInstancesPerEmitter = 6,
+        clip { file = media/sound/IAmBruceLeeNow/kick3.ogg, distanceMin = 1, distanceMax = 18, reverbMaxRange = 14, reverbFactor = 0, }
+    }
+    sound IABLN_SilentImpact
+    {
+        category = Player, is3D = true, maxInstancesPerEmitter = 6,
+        clip { file = media/sound/IAmBruceLeeNow/silent_impact.ogg, distanceMin = 1, distanceMax = 1, reverbMaxRange = 1, reverbFactor = 0, }
+    }
+    sound IABLN_Waayaaaa
+    {
+        category = Player,
+        is3D = true,
+        maxInstancesPerEmitter = 1,
+        clip { file = media/sound/IAmBruceLeeNow/waayaaaa.ogg, distanceMin = 1, distanceMax = 25, reverbMaxRange = 18, reverbFactor = 0, }
+    }
+}

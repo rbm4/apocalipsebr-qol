@@ -1,0 +1,235 @@
+{
+    "Sandbox_MissingSkillBooks": "Additional Skill Books",
+
+    "Sandbox_MissingSkillBooks_RunningEnabled": "Enable Running Skill Books",
+    "Sandbox_MissingSkillBooks_RunningEnabled_tooltip": "Controls whether Running skill books are added to world loot tables.",
+
+    "Sandbox_MissingSkillBooks_RunningSpawnMultiplier": "Running Book Spawn Rate",
+    "Sandbox_MissingSkillBooks_RunningSpawnMultiplier_tooltip": "Multiplies the default spawn chances of all Running skill books. 1.0 uses the default values.",
+
+    "Sandbox_MissingSkillBooks_RunningXP1": "Running Vol. 1 XP Multiplier",
+    "Sandbox_MissingSkillBooks_RunningXP1_tooltip": "XP multiplier provided by Running Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_RunningXP2": "Running Vol. 2 XP Multiplier",
+    "Sandbox_MissingSkillBooks_RunningXP2_tooltip": "XP multiplier provided by Running Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_RunningXP3": "Running Vol. 3 XP Multiplier",
+    "Sandbox_MissingSkillBooks_RunningXP3_tooltip": "XP multiplier provided by Running Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_RunningXP4": "Running Vol. 4 XP Multiplier",
+    "Sandbox_MissingSkillBooks_RunningXP4_tooltip": "XP multiplier provided by Running Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_RunningXP5": "Running Vol. 5 XP Multiplier",
+    "Sandbox_MissingSkillBooks_RunningXP5_tooltip": "XP multiplier provided by Running Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_FitnessEnabled": "Enable Fitness Skill Books",
+    "Sandbox_MissingSkillBooks_FitnessEnabled_tooltip": "Controls whether Fitness skill books are added to world loot tables.",
+
+    "Sandbox_MissingSkillBooks_FitnessSpawnMultiplier": "Fitness Book Spawn Rate",
+    "Sandbox_MissingSkillBooks_FitnessSpawnMultiplier_tooltip": "Multiplies the default spawn chances of all Fitness skill books. 1.0 uses the default values.",
+
+    "Sandbox_MissingSkillBooks_FitnessXP1": "Fitness Vol. 1 XP Multiplier",
+    "Sandbox_MissingSkillBooks_FitnessXP1_tooltip": "XP multiplier provided by Fitness Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_FitnessXP2": "Fitness Vol. 2 XP Multiplier",
+    "Sandbox_MissingSkillBooks_FitnessXP2_tooltip": "XP multiplier provided by Fitness Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_FitnessXP3": "Fitness Vol. 3 XP Multiplier",
+    "Sandbox_MissingSkillBooks_FitnessXP3_tooltip": "XP multiplier provided by Fitness Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_FitnessXP4": "Fitness Vol. 4 XP Multiplier",
+    "Sandbox_MissingSkillBooks_FitnessXP4_tooltip": "XP multiplier provided by Fitness Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_FitnessXP5": "Fitness Vol. 5 XP Multiplier",
+    "Sandbox_MissingSkillBooks_FitnessXP5_tooltip": "XP multiplier provided by Fitness Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_StrengthEnabled": "Enable Strength Skill Books",
+    "Sandbox_MissingSkillBooks_StrengthEnabled_tooltip": "Controls whether Strength skill books are added to world loot tables.",
+
+    "Sandbox_MissingSkillBooks_StrengthSpawnMultiplier": "Strength Book Spawn Rate",
+    "Sandbox_MissingSkillBooks_StrengthSpawnMultiplier_tooltip": "Multiplies the default spawn chances of all Strength skill books. 1.0 uses the default values.",
+
+    "Sandbox_MissingSkillBooks_StrengthXP1": "Strength Vol. 1 XP Multiplier",
+    "Sandbox_MissingSkillBooks_StrengthXP1_tooltip": "XP multiplier provided by Strength Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_StrengthXP2": "Strength Vol. 2 XP Multiplier",
+    "Sandbox_MissingSkillBooks_StrengthXP2_tooltip": "XP multiplier provided by Strength Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_StrengthXP3": "Strength Vol. 3 XP Multiplier",
+    "Sandbox_MissingSkillBooks_StrengthXP3_tooltip": "XP multiplier provided by Strength Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_StrengthXP4": "Strength Vol. 4 XP Multiplier",
+    "Sandbox_MissingSkillBooks_StrengthXP4_tooltip": "XP multiplier provided by Strength Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_StrengthXP5": "Strength Vol. 5 XP Multiplier",
+    "Sandbox_MissingSkillBooks_StrengthXP5_tooltip": "XP multiplier provided by Strength Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_LightfootedEnabled": "Enable Lightfooted Skill Books",
+    "Sandbox_MissingSkillBooks_LightfootedEnabled_tooltip": "Controls whether Lightfooted skill books are added to world loot tables.",
+
+    "Sandbox_MissingSkillBooks_LightfootedSpawnMultiplier": "Lightfooted Book Spawn Rate",
+    "Sandbox_MissingSkillBooks_LightfootedSpawnMultiplier_tooltip": "Multiplies the default spawn chances of all Lightfooted skill books. 1.0 uses the default values.",
+
+    "Sandbox_MissingSkillBooks_LightfootedXP1": "Lightfooted Vol. 1 XP Multiplier",
+    "Sandbox_MissingSkillBooks_LightfootedXP1_tooltip": "XP multiplier provided by Lightfooted Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_LightfootedXP2": "Lightfooted Vol. 2 XP Multiplier",
+    "Sandbox_MissingSkillBooks_LightfootedXP2_tooltip": "XP multiplier provided by Lightfooted Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_LightfootedXP3": "Lightfooted Vol. 3 XP Multiplier",
+    "Sandbox_MissingSkillBooks_LightfootedXP3_tooltip": "XP multiplier provided by Lightfooted Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_LightfootedXP4": "Lightfooted Vol. 4 XP Multiplier",
+    "Sandbox_MissingSkillBooks_LightfootedXP4_tooltip": "XP multiplier provided by Lightfooted Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_LightfootedXP5": "Lightfooted Vol. 5 XP Multiplier",
+    "Sandbox_MissingSkillBooks_LightfootedXP5_tooltip": "XP multiplier provided by Lightfooted Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_NimbleEnabled": "Enable Nimble Skill Books",
+    "Sandbox_MissingSkillBooks_NimbleEnabled_tooltip": "Controls whether Nimble skill books are added to world loot tables.",
+
+    "Sandbox_MissingSkillBooks_NimbleSpawnMultiplier": "Nimble Book Spawn Rate",
+    "Sandbox_MissingSkillBooks_NimbleSpawnMultiplier_tooltip": "Multiplies the default spawn chances of all Nimble skill books. 1.0 uses the default values.",
+
+    "Sandbox_MissingSkillBooks_NimbleXP1": "Nimble Vol. 1 XP Multiplier",
+    "Sandbox_MissingSkillBooks_NimbleXP1_tooltip": "XP multiplier provided by Nimble Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_NimbleXP2": "Nimble Vol. 2 XP Multiplier",
+    "Sandbox_MissingSkillBooks_NimbleXP2_tooltip": "XP multiplier provided by Nimble Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_NimbleXP3": "Nimble Vol. 3 XP Multiplier",
+    "Sandbox_MissingSkillBooks_NimbleXP3_tooltip": "XP multiplier provided by Nimble Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_NimbleXP4": "Nimble Vol. 4 XP Multiplier",
+    "Sandbox_MissingSkillBooks_NimbleXP4_tooltip": "XP multiplier provided by Nimble Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_NimbleXP5": "Nimble Vol. 5 XP Multiplier",
+    "Sandbox_MissingSkillBooks_NimbleXP5_tooltip": "XP multiplier provided by Nimble Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_SneakingEnabled": "Enable Sneaking Skill Books",
+    "Sandbox_MissingSkillBooks_SneakingEnabled_tooltip": "Controls whether Sneaking skill books are added to world loot tables.",
+
+    "Sandbox_MissingSkillBooks_SneakingSpawnMultiplier": "Sneaking Book Spawn Rate",
+    "Sandbox_MissingSkillBooks_SneakingSpawnMultiplier_tooltip": "Multiplies the default spawn chances of all Sneaking skill books. 1.0 uses the default values.",
+
+    "Sandbox_MissingSkillBooks_SneakingXP1": "Sneaking Vol. 1 XP Multiplier",
+    "Sandbox_MissingSkillBooks_SneakingXP1_tooltip": "XP multiplier provided by Sneaking Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_SneakingXP2": "Sneaking Vol. 2 XP Multiplier",
+    "Sandbox_MissingSkillBooks_SneakingXP2_tooltip": "XP multiplier provided by Sneaking Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_SneakingXP3": "Sneaking Vol. 3 XP Multiplier",
+    "Sandbox_MissingSkillBooks_SneakingXP3_tooltip": "XP multiplier provided by Sneaking Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_SneakingXP4": "Sneaking Vol. 4 XP Multiplier",
+    "Sandbox_MissingSkillBooks_SneakingXP4_tooltip": "XP multiplier provided by Sneaking Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_SneakingXP5": "Sneaking Vol. 5 XP Multiplier",
+    "Sandbox_MissingSkillBooks_SneakingXP5_tooltip": "XP multiplier provided by Sneaking Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_AxeEnabled": "Enable Axe Skill Books",
+    "Sandbox_MissingSkillBooks_AxeEnabled_tooltip": "Controls whether Axe skill books are added to world loot tables.",
+
+    "Sandbox_MissingSkillBooks_AxeSpawnMultiplier": "Axe Book Spawn Rate",
+    "Sandbox_MissingSkillBooks_AxeSpawnMultiplier_tooltip": "Multiplies the default spawn chances of all Axe skill books. 1.0 uses the default values.",
+
+    "Sandbox_MissingSkillBooks_AxeXP1": "Axe Vol. 1 XP Multiplier",
+    "Sandbox_MissingSkillBooks_AxeXP1_tooltip": "XP multiplier provided by Axe Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_AxeXP2": "Axe Vol. 2 XP Multiplier",
+    "Sandbox_MissingSkillBooks_AxeXP2_tooltip": "XP multiplier provided by Axe Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_AxeXP3": "Axe Vol. 3 XP Multiplier",
+    "Sandbox_MissingSkillBooks_AxeXP3_tooltip": "XP multiplier provided by Axe Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_AxeXP4": "Axe Vol. 4 XP Multiplier",
+    "Sandbox_MissingSkillBooks_AxeXP4_tooltip": "XP multiplier provided by Axe Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_AxeXP5": "Axe Vol. 5 XP Multiplier",
+    "Sandbox_MissingSkillBooks_AxeXP5_tooltip": "XP multiplier provided by Axe Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_LongBluntEnabled": "Enable Long Blunt Skill Books",
+    "Sandbox_MissingSkillBooks_LongBluntEnabled_tooltip": "Controls whether Long Blunt skill books are added to world loot tables.",
+
+    "Sandbox_MissingSkillBooks_LongBluntSpawnMultiplier": "Long Blunt Book Spawn Rate",
+    "Sandbox_MissingSkillBooks_LongBluntSpawnMultiplier_tooltip": "Multiplies the default spawn chances of all Long Blunt skill books. 1.0 uses the default values.",
+
+    "Sandbox_MissingSkillBooks_LongBluntXP1": "Long Blunt Vol. 1 XP Multiplier",
+    "Sandbox_MissingSkillBooks_LongBluntXP1_tooltip": "XP multiplier provided by Long Blunt Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_LongBluntXP2": "Long Blunt Vol. 2 XP Multiplier",
+    "Sandbox_MissingSkillBooks_LongBluntXP2_tooltip": "XP multiplier provided by Long Blunt Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_LongBluntXP3": "Long Blunt Vol. 3 XP Multiplier",
+    "Sandbox_MissingSkillBooks_LongBluntXP3_tooltip": "XP multiplier provided by Long Blunt Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_LongBluntXP4": "Long Blunt Vol. 4 XP Multiplier",
+    "Sandbox_MissingSkillBooks_LongBluntXP4_tooltip": "XP multiplier provided by Long Blunt Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_LongBluntXP5": "Long Blunt Vol. 5 XP Multiplier",
+    "Sandbox_MissingSkillBooks_LongBluntXP5_tooltip": "XP multiplier provided by Long Blunt Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntEnabled": "Enable Short Blunt Skill Books",
+    "Sandbox_MissingSkillBooks_ShortBluntEnabled_tooltip": "Controls whether Short Blunt skill books are added to world loot tables.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntSpawnMultiplier": "Short Blunt Book Spawn Rate",
+    "Sandbox_MissingSkillBooks_ShortBluntSpawnMultiplier_tooltip": "Multiplies the default spawn chances of all Short Blunt skill books. 1.0 uses the default values.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntXP1": "Short Blunt Vol. 1 XP Multiplier",
+    "Sandbox_MissingSkillBooks_ShortBluntXP1_tooltip": "XP multiplier provided by Short Blunt Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntXP2": "Short Blunt Vol. 2 XP Multiplier",
+    "Sandbox_MissingSkillBooks_ShortBluntXP2_tooltip": "XP multiplier provided by Short Blunt Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntXP3": "Short Blunt Vol. 3 XP Multiplier",
+    "Sandbox_MissingSkillBooks_ShortBluntXP3_tooltip": "XP multiplier provided by Short Blunt Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntXP4": "Short Blunt Vol. 4 XP Multiplier",
+    "Sandbox_MissingSkillBooks_ShortBluntXP4_tooltip": "XP multiplier provided by Short Blunt Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntXP5": "Short Blunt Vol. 5 XP Multiplier",
+    "Sandbox_MissingSkillBooks_ShortBluntXP5_tooltip": "XP multiplier provided by Short Blunt Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeEnabled": "Enable Short Blade Skill Books",
+    "Sandbox_MissingSkillBooks_ShortBladeEnabled_tooltip": "Controls whether Short Blade skill books are added to world loot tables.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeSpawnMultiplier": "Short Blade Book Spawn Rate",
+    "Sandbox_MissingSkillBooks_ShortBladeSpawnMultiplier_tooltip": "Multiplies the default spawn chances of all Short Blade skill books. 1.0 uses the default values.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeXP1": "Short Blade Vol. 1 XP Multiplier",
+    "Sandbox_MissingSkillBooks_ShortBladeXP1_tooltip": "XP multiplier provided by Short Blade Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeXP2": "Short Blade Vol. 2 XP Multiplier",
+    "Sandbox_MissingSkillBooks_ShortBladeXP2_tooltip": "XP multiplier provided by Short Blade Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeXP3": "Short Blade Vol. 3 XP Multiplier",
+    "Sandbox_MissingSkillBooks_ShortBladeXP3_tooltip": "XP multiplier provided by Short Blade Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeXP4": "Short Blade Vol. 4 XP Multiplier",
+    "Sandbox_MissingSkillBooks_ShortBladeXP4_tooltip": "XP multiplier provided by Short Blade Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeXP5": "Short Blade Vol. 5 XP Multiplier",
+    "Sandbox_MissingSkillBooks_ShortBladeXP5_tooltip": "XP multiplier provided by Short Blade Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_SpearEnabled": "Enable Spear Skill Books",
+    "Sandbox_MissingSkillBooks_SpearEnabled_tooltip": "Controls whether Spear skill books are added to world loot tables.",
+
+    "Sandbox_MissingSkillBooks_SpearSpawnMultiplier": "Spear Book Spawn Rate",
+    "Sandbox_MissingSkillBooks_SpearSpawnMultiplier_tooltip": "Multiplies the default spawn chances of all Spear skill books. 1.0 uses the default values.",
+
+    "Sandbox_MissingSkillBooks_SpearXP1": "Spear Vol. 1 XP Multiplier",
+    "Sandbox_MissingSkillBooks_SpearXP1_tooltip": "XP multiplier provided by Spear Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_SpearXP2": "Spear Vol. 2 XP Multiplier",
+    "Sandbox_MissingSkillBooks_SpearXP2_tooltip": "XP multiplier provided by Spear Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_SpearXP3": "Spear Vol. 3 XP Multiplier",
+    "Sandbox_MissingSkillBooks_SpearXP3_tooltip": "XP multiplier provided by Spear Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_SpearXP4": "Spear Vol. 4 XP Multiplier",
+    "Sandbox_MissingSkillBooks_SpearXP4_tooltip": "XP multiplier provided by Spear Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_SpearXP5": "Spear Vol. 5 XP Multiplier",
+    "Sandbox_MissingSkillBooks_SpearXP5_tooltip": "XP multiplier provided by Spear Vol. 5."
+    
+}

@@ -18,7 +18,17 @@ local labCleanFluids = {
 }
 
 function LabActionEmptyFluid:isValid()
-    return self.item ~= nil
+    if not self.item then return false end
+
+    local inv = self.character and self.character:getInventory()
+    if inv then
+        local currentItem = inv:getItemById(self.item:getID())
+        if currentItem then
+            self.item = currentItem
+        end
+    end
+
+    return self.item:getContainer() ~= nil
 end
 
 function LabActionEmptyFluid:waitToStart()
@@ -49,6 +59,14 @@ function LabActionEmptyFluid:perform()
 end
 
 function LabActionEmptyFluid:complete()
+    local playerInv = self.character and self.character:getInventory()
+    if playerInv then
+        local currentItem = playerInv:getItemById(self.item:getID())
+        if currentItem then
+            self.item = currentItem
+        end
+    end
+
     local inv = self.item:getContainer()
     if not inv then return true end
 
@@ -56,6 +74,10 @@ function LabActionEmptyFluid:complete()
     local isClean = labCleanFluids[self.fluidType] or false
 
     if dirtyVariant and not isClean then
+        if playerInv and inv ~= playerInv then
+            return true
+        end
+
         inv:Remove(self.item)
         sendRemoveItemFromContainer(inv, self.item)
 

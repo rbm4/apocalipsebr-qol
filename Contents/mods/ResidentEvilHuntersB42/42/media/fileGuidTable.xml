@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fileGuidTable>
+    <files>
+        <path>media/clothing/clothingItems/HunterBetaBody.xml</path>
+        <guid>6d8f8878-ffcc-49dd-bf88-cb18ec9f92f1</guid>
+    </files>
+    <files>
+        <path>media/clothing/clothingItems/HunterAlphaBody.xml</path>
+        <guid>1f2b7fa6-4d78-45d2-b70b-72cc147af401</guid>
+    </files>
+    <files>
+        <path>media/clothing/clothingItems/HunterGammaBody.xml</path>
+        <guid>87f3bf6e-0f99-4b39-8db2-5af5b7f62491</guid>
+    </files>
+</fileGuidTable>

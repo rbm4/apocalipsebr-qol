@@ -1,0 +1,156 @@
+module CS2Firearms
+{
+	model AR15_Mag_30
+	{
+		mesh = Weapons/Parts/AR15_Mag_30,
+		texture = Weapons/Parts/Flat_555555,
+	}
+	model AR15_Mag_30_Attachment
+    {
+        mesh = Weapons/Parts/AR15_Mag_30,
+        texture = Weapons/Parts/Flat_555555,
+    }
+	
+	model 556Mag_100
+	{
+		mesh = Weapons/Parts/556Mag_100,
+		texture = Weapons/Parts/556Mag_100,
+	}
+
+	model 556Mag_100_Attachment
+    {
+        mesh = Weapons/Parts/556Mag_100,
+        texture = Weapons/Parts/556Mag_100,
+    }
+
+	model 556Mag_150
+	{
+		mesh = Weapons/Parts/556Mag_150,
+		texture = Weapons/Parts/556Mag_150,
+	}
+
+	model 556Mag_150_Attachment
+    {
+        mesh = Weapons/Parts/556Mag_150,
+        texture = Weapons/Parts/556Mag_150,
+    }
+
+	model Galil_Mag_30
+	{
+		mesh = Weapons/Parts/Galil_Mag_30,
+		texture = Weapons/Parts/Flat_373737,
+	}
+	model Galil_Mag_30_Attachment
+    {
+        mesh = Weapons/Parts/Galil_Mag_30,
+        texture = Weapons/Parts/Flat_373737,
+    }
+
+	model AR10_Mag_20
+	{
+		mesh = Weapons/Parts/AR10_Mag_20,
+		texture = Weapons/Parts/Flat_373737,
+	}
+
+	model AR10_Mag_20_Attachment
+    {
+        mesh = Weapons/Parts/AR10_Mag_20,
+        texture = Weapons/Parts/Flat_373737,
+    }
+
+	model SMG_9_Mag_30
+	{
+		mesh = Weapons/Parts/SMG_9_Mag_30,
+		texture = Weapons/Parts/Flat_373737,
+	}
+
+	model SMG_9_Mag_30_Attachment
+    {
+        mesh = Weapons/Parts/SMG_9_Mag_30,
+        texture = Weapons/Parts/Flat_373737,
+    }
+
+	model SMG_45_Mag_30
+	{
+		mesh = Weapons/Parts/SMG_45_Mag_30,
+		texture = Weapons/Parts/Flat_373737,
+	}
+
+	model SMG_45_Mag_30_Attachment
+    {
+        mesh = Weapons/Parts/SMG_45_Mag_30,
+        texture = Weapons/Parts/Flat_373737,
+    }
+
+	model Bizon_Mag_64
+	{
+		mesh = Weapons/Parts/Bizon_Mag_64,
+		texture = Weapons/Parts/Flat_373737,
+	}
+
+	model Bizon_Mag_64_Attachment
+    {
+        mesh = Weapons/Parts/Bizon_Mag_64,
+        texture = Weapons/Parts/Flat_373737,
+    }
+	
+	model MAG7_Mag_5
+	{
+		mesh = Weapons/Parts/MAG7_Mag_5,
+		texture = Weapons/Parts/Flat_555555,
+	}
+
+	model MAG7_Mag_5_Attachment
+    {
+        mesh = Weapons/Parts/MAG7_Mag_5,
+        texture = Weapons/Parts/Flat_555555,
+    }
+
+	model P90_Mag_50
+	{
+		mesh = Weapons/Parts/P90_Mag_50,
+		texture = Weapons/Parts/Flat_555555,
+	}
+
+	model P90_Mag_50_Attachment
+    {
+        mesh = Weapons/Parts/P90_Mag_50,
+        texture = Weapons/Parts/Flat_555555,
+    }
+
+	model TEC9_Mag_18
+	{
+		mesh = Weapons/Parts/TEC9_Mag_18,
+		texture = Weapons/Parts/Flat_555555,
+	}
+
+	model TEC9_Mag_18_Attachment
+    {
+        mesh = Weapons/Parts/TEC9_Mag_18,
+        texture = Weapons/Parts/Flat_555555,
+    }
+
+	model AK_Mag_30
+	{
+		mesh = Weapons/Parts/AK_Mag_30,
+		texture = Weapons/Parts/Flat_373737,
+	}
+
+	model AK_Mag_30_Attachment
+    {
+        mesh = Weapons/Parts/AK_Mag_30,
+        texture = Weapons/Parts/Flat_373737,
+    }
+
+	model Sniper_Mag_10
+	{
+		mesh = Weapons/Parts/Sniper_Mag_10,
+		texture = Weapons/Parts/Flat_373737,
+	}
+
+	model Sniper_Mag_10_Attachment
+    {
+        mesh = Weapons/Parts/Sniper_Mag_10,
+        texture = Weapons/Parts/Flat_373737,
+    }
+}

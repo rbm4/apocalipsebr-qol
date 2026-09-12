@@ -1,0 +1,191 @@
+module CS2Firearms
+{
+	model Anpeq_2_Laser
+	{
+		mesh = Weapons/Parts/Anpeq_2_Laser,
+		texture = Weapons/Parts/Anpeq_2_Laser,
+
+		attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+
+    model Anpeq_15_Laser
+	{
+		mesh = Weapons/Parts/Anpeq_15_Laser,
+		texture = Weapons/Parts/Anpeq_15_Laser,
+
+		attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+
+    model SunfireTacticalLight
+	{
+		mesh = Weapons/Parts/SunfireTacticalLight,
+		texture = Weapons/Parts/SunfireTacticalLight,
+
+		attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+
+	model Hawke_10x
+	{
+		mesh = Weapons/Parts/Hawke_10x,
+		texture = Weapons/Parts/Hawke_10x,
+
+		attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+
+	model Vortex_8x
+	{
+		mesh = Weapons/Parts/Vortex_8x,
+		texture = Weapons/Parts/Vortex_8x,
+
+		attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+
+	model SB_2_8x
+	{
+		mesh = Weapons/Parts/SB_2_8x,
+		texture = Weapons/Parts/Flat_373737,
+
+		attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+
+    model ACOG_4x
+	{
+		mesh = Weapons/Parts/ACOG_4x,
+		texture = Weapons/Parts/ACOG_4x,
+
+		attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+
+	model EOTECH_2x
+    {
+        mesh = Weapons/Parts/EOTECH_2x,
+        texture = Weapons/Parts/Flat_373737,
+
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+
+    model Micro_2x
+    {
+        mesh = Weapons/Parts/Micro_2x,
+        texture = Weapons/Parts/Flat_373737,
+
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+
+    model Razor_1x
+    {
+        mesh = Weapons/Parts/Razor_1x,
+        texture = Weapons/Parts/Flat_373737,
+
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+
+	model Bipod
+	{
+		mesh = Weapons/Parts/Bipod,
+		texture = Weapons/Parts/Flat_373737,
+
+		attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+
+	model TacticalGrip
+	{
+		mesh = Weapons/Parts/TacticalGrip,
+		texture = Weapons/Parts/Flat_373737,
+
+		attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+    
+	model AngularGrip
+    {
+        mesh = Weapons/Parts/AngularGrip,
+        texture = Weapons/Parts/Flat_373737,
+
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model SupressorBulk
+	{
+		mesh = Weapons/Parts/SupressorBulk,
+		texture = Weapons/Parts/Flat_373737,
+
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+	model SupressorSlim
+	{
+		mesh = Weapons/Parts/SupressorSlim,
+		texture = Weapons/Parts/Flat_373737,
+
+		attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+    model SupressorOsprey
+	{
+		mesh = Weapons/Parts/SupressorOsprey,
+		texture = Weapons/Parts/Flat_373737,
+
+		attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+	}
+}

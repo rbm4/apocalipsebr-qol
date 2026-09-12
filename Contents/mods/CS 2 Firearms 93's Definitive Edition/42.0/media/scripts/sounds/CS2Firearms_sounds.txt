@@ -1,0 +1,14 @@
+module CS2Firearms
+{
+    sound Supressed
+	{
+		category = Item,
+		maxInstancesPerEmitter = 2,
+		clip
+		{
+			file = media/sound/Supressed.ogg,
+			distanceMax = 10,
+			volume = 0.6,
+		}
+	}
+}

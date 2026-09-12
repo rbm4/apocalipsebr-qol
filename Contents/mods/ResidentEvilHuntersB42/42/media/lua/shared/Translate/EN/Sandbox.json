@@ -1,0 +1,17 @@
+{
+  "Sandbox_ResidentEvilHunters": "Resident Evil Hunters",
+
+  "Sandbox_ResidentEvilHunters_EnableHunterAlpha": "Enable Hunter Alpha",
+  "Sandbox_ResidentEvilHunters_EnableHunterAlpha_tooltip": "Allow Hunter Alpha packs to spawn.",
+  "Sandbox_ResidentEvilHunters_HunterAlphaSpawnRate": "Hunter Alpha Spawn Rate (%%)",
+  "Sandbox_ResidentEvilHunters_HunterAlphaSpawnRate_tooltip": "Chance for a newly created normal zombie to trigger a Hunter Alpha pack. Default: 1%%.",
+
+  "Sandbox_ResidentEvilHunters_EnableHunterBeta": "Enable Hunter Beta",
+  "Sandbox_ResidentEvilHunters_EnableHunterBeta_tooltip": "Allow Hunter Beta packs to spawn.",
+  "Sandbox_ResidentEvilHunters_HunterBetaSpawnRate": "Hunter Beta Spawn Rate (%%)",
+  "Sandbox_ResidentEvilHunters_HunterBetaSpawnRate_tooltip": "Chance for a newly created normal zombie to trigger a Hunter Beta pack. Default: 1%%.",
+  "Sandbox_ResidentEvilHunters_EnableHunterGamma": "Enable Hunter Gamma",
+  "Sandbox_ResidentEvilHunters_EnableHunterGamma_tooltip": "Allow Hunter Gamma packs to spawn.",
+  "Sandbox_ResidentEvilHunters_HunterGammaSpawnRate": "Hunter Gamma Spawn Rate (%%)",
+  "Sandbox_ResidentEvilHunters_HunterGammaSpawnRate_tooltip": "Chance for a newly created normal zombie to trigger a Hunter Gamma pack. Default: 1%%."
+}

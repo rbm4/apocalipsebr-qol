@@ -1,0 +1,235 @@
+{
+    "Sandbox_MissingSkillBooks": "Livros de Habilidades Adicionais",
+
+    "Sandbox_MissingSkillBooks_RunningEnabled": "Ativar Livros de Corrida",
+    "Sandbox_MissingSkillBooks_RunningEnabled_tooltip": "Controla se os livros da habilidade Corrida serão adicionados às tabelas de saque do mundo.",
+
+    "Sandbox_MissingSkillBooks_RunningSpawnMultiplier": "Taxa de Aparição dos Livros de Corrida",
+    "Sandbox_MissingSkillBooks_RunningSpawnMultiplier_tooltip": "Multiplica as chances padrão de aparição de todos os livros de Corrida. 1.0 usa os valores padrão.",
+
+    "Sandbox_MissingSkillBooks_RunningXP1": "Multiplicador de XP de Corrida Vol. 1",
+    "Sandbox_MissingSkillBooks_RunningXP1_tooltip": "Multiplicador de XP fornecido por Corrida Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_RunningXP2": "Multiplicador de XP de Corrida Vol. 2",
+    "Sandbox_MissingSkillBooks_RunningXP2_tooltip": "Multiplicador de XP fornecido por Corrida Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_RunningXP3": "Multiplicador de XP de Corrida Vol. 3",
+    "Sandbox_MissingSkillBooks_RunningXP3_tooltip": "Multiplicador de XP fornecido por Corrida Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_RunningXP4": "Multiplicador de XP de Corrida Vol. 4",
+    "Sandbox_MissingSkillBooks_RunningXP4_tooltip": "Multiplicador de XP fornecido por Corrida Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_RunningXP5": "Multiplicador de XP de Corrida Vol. 5",
+    "Sandbox_MissingSkillBooks_RunningXP5_tooltip": "Multiplicador de XP fornecido por Corrida Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_FitnessEnabled": "Ativar Livros de Condicionamento Físico",
+    "Sandbox_MissingSkillBooks_FitnessEnabled_tooltip": "Controla se os livros da habilidade Condicionamento Físico serão adicionados às tabelas de saque do mundo.",
+
+    "Sandbox_MissingSkillBooks_FitnessSpawnMultiplier": "Taxa de Aparição dos Livros de Condicionamento Físico",
+    "Sandbox_MissingSkillBooks_FitnessSpawnMultiplier_tooltip": "Multiplica as chances padrão de aparição de todos os livros de Condicionamento Físico. 1.0 usa os valores padrão.",
+
+    "Sandbox_MissingSkillBooks_FitnessXP1": "Multiplicador de XP de Condicionamento Físico Vol. 1",
+    "Sandbox_MissingSkillBooks_FitnessXP1_tooltip": "Multiplicador de XP fornecido por Condicionamento Físico Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_FitnessXP2": "Multiplicador de XP de Condicionamento Físico Vol. 2",
+    "Sandbox_MissingSkillBooks_FitnessXP2_tooltip": "Multiplicador de XP fornecido por Condicionamento Físico Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_FitnessXP3": "Multiplicador de XP de Condicionamento Físico Vol. 3",
+    "Sandbox_MissingSkillBooks_FitnessXP3_tooltip": "Multiplicador de XP fornecido por Condicionamento Físico Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_FitnessXP4": "Multiplicador de XP de Condicionamento Físico Vol. 4",
+    "Sandbox_MissingSkillBooks_FitnessXP4_tooltip": "Multiplicador de XP fornecido por Condicionamento Físico Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_FitnessXP5": "Multiplicador de XP de Condicionamento Físico Vol. 5",
+    "Sandbox_MissingSkillBooks_FitnessXP5_tooltip": "Multiplicador de XP fornecido por Condicionamento Físico Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_StrengthEnabled": "Ativar Livros de Força",
+    "Sandbox_MissingSkillBooks_StrengthEnabled_tooltip": "Controla se os livros da habilidade Força serão adicionados às tabelas de saque do mundo.",
+
+    "Sandbox_MissingSkillBooks_StrengthSpawnMultiplier": "Taxa de Aparição dos Livros de Força",
+    "Sandbox_MissingSkillBooks_StrengthSpawnMultiplier_tooltip": "Multiplica as chances padrão de aparição de todos os livros de Força. 1.0 usa os valores padrão.",
+
+    "Sandbox_MissingSkillBooks_StrengthXP1": "Multiplicador de XP de Força Vol. 1",
+    "Sandbox_MissingSkillBooks_StrengthXP1_tooltip": "Multiplicador de XP fornecido por Força Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_StrengthXP2": "Multiplicador de XP de Força Vol. 2",
+    "Sandbox_MissingSkillBooks_StrengthXP2_tooltip": "Multiplicador de XP fornecido por Força Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_StrengthXP3": "Multiplicador de XP de Força Vol. 3",
+    "Sandbox_MissingSkillBooks_StrengthXP3_tooltip": "Multiplicador de XP fornecido por Força Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_StrengthXP4": "Multiplicador de XP de Força Vol. 4",
+    "Sandbox_MissingSkillBooks_StrengthXP4_tooltip": "Multiplicador de XP fornecido por Força Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_StrengthXP5": "Multiplicador de XP de Força Vol. 5",
+    "Sandbox_MissingSkillBooks_StrengthXP5_tooltip": "Multiplicador de XP fornecido por Força Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_LightfootedEnabled": "Ativar Livros de Passos Leves",
+    "Sandbox_MissingSkillBooks_LightfootedEnabled_tooltip": "Controla se os livros da habilidade Passos Leves serão adicionados às tabelas de saque do mundo.",
+
+    "Sandbox_MissingSkillBooks_LightfootedSpawnMultiplier": "Taxa de Aparição dos Livros de Passos Leves",
+    "Sandbox_MissingSkillBooks_LightfootedSpawnMultiplier_tooltip": "Multiplica as chances padrão de aparição de todos os livros de Passos Leves. 1.0 usa os valores padrão.",
+
+    "Sandbox_MissingSkillBooks_LightfootedXP1": "Multiplicador de XP de Passos Leves Vol. 1",
+    "Sandbox_MissingSkillBooks_LightfootedXP1_tooltip": "Multiplicador de XP fornecido por Passos Leves Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_LightfootedXP2": "Multiplicador de XP de Passos Leves Vol. 2",
+    "Sandbox_MissingSkillBooks_LightfootedXP2_tooltip": "Multiplicador de XP fornecido por Passos Leves Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_LightfootedXP3": "Multiplicador de XP de Passos Leves Vol. 3",
+    "Sandbox_MissingSkillBooks_LightfootedXP3_tooltip": "Multiplicador de XP fornecido por Passos Leves Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_LightfootedXP4": "Multiplicador de XP de Passos Leves Vol. 4",
+    "Sandbox_MissingSkillBooks_LightfootedXP4_tooltip": "Multiplicador de XP fornecido por Passos Leves Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_LightfootedXP5": "Multiplicador de XP de Passos Leves Vol. 5",
+    "Sandbox_MissingSkillBooks_LightfootedXP5_tooltip": "Multiplicador de XP fornecido por Passos Leves Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_NimbleEnabled": "Ativar Livros de Agilidade",
+    "Sandbox_MissingSkillBooks_NimbleEnabled_tooltip": "Controla se os livros da habilidade Agilidade serão adicionados às tabelas de saque do mundo.",
+
+    "Sandbox_MissingSkillBooks_NimbleSpawnMultiplier": "Taxa de Aparição dos Livros de Agilidade",
+    "Sandbox_MissingSkillBooks_NimbleSpawnMultiplier_tooltip": "Multiplica as chances padrão de aparição de todos os livros de Agilidade. 1.0 usa os valores padrão.",
+
+    "Sandbox_MissingSkillBooks_NimbleXP1": "Multiplicador de XP de Agilidade Vol. 1",
+    "Sandbox_MissingSkillBooks_NimbleXP1_tooltip": "Multiplicador de XP fornecido por Agilidade Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_NimbleXP2": "Multiplicador de XP de Agilidade Vol. 2",
+    "Sandbox_MissingSkillBooks_NimbleXP2_tooltip": "Multiplicador de XP fornecido por Agilidade Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_NimbleXP3": "Multiplicador de XP de Agilidade Vol. 3",
+    "Sandbox_MissingSkillBooks_NimbleXP3_tooltip": "Multiplicador de XP fornecido por Agilidade Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_NimbleXP4": "Multiplicador de XP de Agilidade Vol. 4",
+    "Sandbox_MissingSkillBooks_NimbleXP4_tooltip": "Multiplicador de XP fornecido por Agilidade Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_NimbleXP5": "Multiplicador de XP de Agilidade Vol. 5",
+    "Sandbox_MissingSkillBooks_NimbleXP5_tooltip": "Multiplicador de XP fornecido por Agilidade Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_SneakingEnabled": "Ativar Livros de Furtividade",
+    "Sandbox_MissingSkillBooks_SneakingEnabled_tooltip": "Controla se os livros da habilidade Furtividade serão adicionados às tabelas de saque do mundo.",
+
+    "Sandbox_MissingSkillBooks_SneakingSpawnMultiplier": "Taxa de Aparição dos Livros de Furtividade",
+    "Sandbox_MissingSkillBooks_SneakingSpawnMultiplier_tooltip": "Multiplica as chances padrão de aparição de todos os livros de Furtividade. 1.0 usa os valores padrão.",
+
+    "Sandbox_MissingSkillBooks_SneakingXP1": "Multiplicador de XP de Furtividade Vol. 1",
+    "Sandbox_MissingSkillBooks_SneakingXP1_tooltip": "Multiplicador de XP fornecido por Furtividade Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_SneakingXP2": "Multiplicador de XP de Furtividade Vol. 2",
+    "Sandbox_MissingSkillBooks_SneakingXP2_tooltip": "Multiplicador de XP fornecido por Furtividade Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_SneakingXP3": "Multiplicador de XP de Furtividade Vol. 3",
+    "Sandbox_MissingSkillBooks_SneakingXP3_tooltip": "Multiplicador de XP fornecido por Furtividade Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_SneakingXP4": "Multiplicador de XP de Furtividade Vol. 4",
+    "Sandbox_MissingSkillBooks_SneakingXP4_tooltip": "Multiplicador de XP fornecido por Furtividade Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_SneakingXP5": "Multiplicador de XP de Furtividade Vol. 5",
+    "Sandbox_MissingSkillBooks_SneakingXP5_tooltip": "Multiplicador de XP fornecido por Furtividade Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_AxeEnabled": "Ativar Livros de Machado",
+    "Sandbox_MissingSkillBooks_AxeEnabled_tooltip": "Controla se os livros da habilidade Machado serão adicionados às tabelas de saque do mundo.",
+
+    "Sandbox_MissingSkillBooks_AxeSpawnMultiplier": "Taxa de Aparição dos Livros de Machado",
+    "Sandbox_MissingSkillBooks_AxeSpawnMultiplier_tooltip": "Multiplica as chances padrão de aparição de todos os livros de Machado. 1.0 usa os valores padrão.",
+
+    "Sandbox_MissingSkillBooks_AxeXP1": "Multiplicador de XP de Machado Vol. 1",
+    "Sandbox_MissingSkillBooks_AxeXP1_tooltip": "Multiplicador de XP fornecido por Machado Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_AxeXP2": "Multiplicador de XP de Machado Vol. 2",
+    "Sandbox_MissingSkillBooks_AxeXP2_tooltip": "Multiplicador de XP fornecido por Machado Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_AxeXP3": "Multiplicador de XP de Machado Vol. 3",
+    "Sandbox_MissingSkillBooks_AxeXP3_tooltip": "Multiplicador de XP fornecido por Machado Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_AxeXP4": "Multiplicador de XP de Machado Vol. 4",
+    "Sandbox_MissingSkillBooks_AxeXP4_tooltip": "Multiplicador de XP fornecido por Machado Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_AxeXP5": "Multiplicador de XP de Machado Vol. 5",
+    "Sandbox_MissingSkillBooks_AxeXP5_tooltip": "Multiplicador de XP fornecido por Machado Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_LongBluntEnabled": "Ativar Livros de Contundente Longo",
+    "Sandbox_MissingSkillBooks_LongBluntEnabled_tooltip": "Controla se os livros da habilidade Contundente Longo serão adicionados às tabelas de saque do mundo.",
+
+    "Sandbox_MissingSkillBooks_LongBluntSpawnMultiplier": "Taxa de Aparição dos Livros de Contundente Longo",
+    "Sandbox_MissingSkillBooks_LongBluntSpawnMultiplier_tooltip": "Multiplica as chances padrão de aparição de todos os livros de Contundente Longo. 1.0 usa os valores padrão.",
+
+    "Sandbox_MissingSkillBooks_LongBluntXP1": "Multiplicador de XP de Contundente Longo Vol. 1",
+    "Sandbox_MissingSkillBooks_LongBluntXP1_tooltip": "Multiplicador de XP fornecido por Contundente Longo Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_LongBluntXP2": "Multiplicador de XP de Contundente Longo Vol. 2",
+    "Sandbox_MissingSkillBooks_LongBluntXP2_tooltip": "Multiplicador de XP fornecido por Contundente Longo Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_LongBluntXP3": "Multiplicador de XP de Contundente Longo Vol. 3",
+    "Sandbox_MissingSkillBooks_LongBluntXP3_tooltip": "Multiplicador de XP fornecido por Contundente Longo Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_LongBluntXP4": "Multiplicador de XP de Contundente Longo Vol. 4",
+    "Sandbox_MissingSkillBooks_LongBluntXP4_tooltip": "Multiplicador de XP fornecido por Contundente Longo Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_LongBluntXP5": "Multiplicador de XP de Contundente Longo Vol. 5",
+    "Sandbox_MissingSkillBooks_LongBluntXP5_tooltip": "Multiplicador de XP fornecido por Contundente Longo Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntEnabled": "Ativar Livros de Contundente Curto",
+    "Sandbox_MissingSkillBooks_ShortBluntEnabled_tooltip": "Controla se os livros da habilidade Contundente Curto serão adicionados às tabelas de saque do mundo.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntSpawnMultiplier": "Taxa de Aparição dos Livros de Contundente Curto",
+    "Sandbox_MissingSkillBooks_ShortBluntSpawnMultiplier_tooltip": "Multiplica as chances padrão de aparição de todos os livros de Contundente Curto. 1.0 usa os valores padrão.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntXP1": "Multiplicador de XP de Contundente Curto Vol. 1",
+    "Sandbox_MissingSkillBooks_ShortBluntXP1_tooltip": "Multiplicador de XP fornecido por Contundente Curto Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntXP2": "Multiplicador de XP de Contundente Curto Vol. 2",
+    "Sandbox_MissingSkillBooks_ShortBluntXP2_tooltip": "Multiplicador de XP fornecido por Contundente Curto Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntXP3": "Multiplicador de XP de Contundente Curto Vol. 3",
+    "Sandbox_MissingSkillBooks_ShortBluntXP3_tooltip": "Multiplicador de XP fornecido por Contundente Curto Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntXP4": "Multiplicador de XP de Contundente Curto Vol. 4",
+    "Sandbox_MissingSkillBooks_ShortBluntXP4_tooltip": "Multiplicador de XP fornecido por Contundente Curto Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_ShortBluntXP5": "Multiplicador de XP de Contundente Curto Vol. 5",
+    "Sandbox_MissingSkillBooks_ShortBluntXP5_tooltip": "Multiplicador de XP fornecido por Contundente Curto Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeEnabled": "Ativar Livros de Lâmina Curta",
+    "Sandbox_MissingSkillBooks_ShortBladeEnabled_tooltip": "Controla se os livros da habilidade Lâmina Curta serão adicionados às tabelas de saque do mundo.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeSpawnMultiplier": "Taxa de Aparição dos Livros de Lâmina Curta",
+    "Sandbox_MissingSkillBooks_ShortBladeSpawnMultiplier_tooltip": "Multiplica as chances padrão de aparição de todos os livros de Lâmina Curta. 1.0 usa os valores padrão.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeXP1": "Multiplicador de XP de Lâmina Curta Vol. 1",
+    "Sandbox_MissingSkillBooks_ShortBladeXP1_tooltip": "Multiplicador de XP fornecido por Lâmina Curta Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeXP2": "Multiplicador de XP de Lâmina Curta Vol. 2",
+    "Sandbox_MissingSkillBooks_ShortBladeXP2_tooltip": "Multiplicador de XP fornecido por Lâmina Curta Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeXP3": "Multiplicador de XP de Lâmina Curta Vol. 3",
+    "Sandbox_MissingSkillBooks_ShortBladeXP3_tooltip": "Multiplicador de XP fornecido por Lâmina Curta Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeXP4": "Multiplicador de XP de Lâmina Curta Vol. 4",
+    "Sandbox_MissingSkillBooks_ShortBladeXP4_tooltip": "Multiplicador de XP fornecido por Lâmina Curta Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_ShortBladeXP5": "Multiplicador de XP de Lâmina Curta Vol. 5",
+    "Sandbox_MissingSkillBooks_ShortBladeXP5_tooltip": "Multiplicador de XP fornecido por Lâmina Curta Vol. 5.",
+
+    "Sandbox_MissingSkillBooks_SpearEnabled": "Ativar Livros de Lança",
+    "Sandbox_MissingSkillBooks_SpearEnabled_tooltip": "Controla se os livros da habilidade Lança serão adicionados às tabelas de saque do mundo.",
+
+    "Sandbox_MissingSkillBooks_SpearSpawnMultiplier": "Taxa de Aparição dos Livros de Lança",
+    "Sandbox_MissingSkillBooks_SpearSpawnMultiplier_tooltip": "Multiplica as chances padrão de aparição de todos os livros de Lança. 1.0 usa os valores padrão.",
+
+    "Sandbox_MissingSkillBooks_SpearXP1": "Multiplicador de XP de Lança Vol. 1",
+    "Sandbox_MissingSkillBooks_SpearXP1_tooltip": "Multiplicador de XP fornecido por Lança Vol. 1.",
+
+    "Sandbox_MissingSkillBooks_SpearXP2": "Multiplicador de XP de Lança Vol. 2",
+    "Sandbox_MissingSkillBooks_SpearXP2_tooltip": "Multiplicador de XP fornecido por Lança Vol. 2.",
+
+    "Sandbox_MissingSkillBooks_SpearXP3": "Multiplicador de XP de Lança Vol. 3",
+    "Sandbox_MissingSkillBooks_SpearXP3_tooltip": "Multiplicador de XP fornecido por Lança Vol. 3.",
+
+    "Sandbox_MissingSkillBooks_SpearXP4": "Multiplicador de XP de Lança Vol. 4",
+    "Sandbox_MissingSkillBooks_SpearXP4_tooltip": "Multiplicador de XP fornecido por Lança Vol. 4.",
+
+    "Sandbox_MissingSkillBooks_SpearXP5": "Multiplicador de XP de Lança Vol. 5",
+    "Sandbox_MissingSkillBooks_SpearXP5_tooltip": "Multiplicador de XP fornecido por Lança Vol. 5."
+    
+}

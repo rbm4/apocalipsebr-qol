@@ -1,0 +1,13 @@
+module IAmBruceLeeNow
+{
+    timedAction IABLNForgeHandwraps
+    {
+        metabolics = HeavyDomestic,
+        actionAnim = HammerSmashSurface,
+        sound = SmashMetalHit,
+        soundTime = animation_event,
+        muscleStrainFactor = 0.0133,
+        muscleStrainSkill = Strength,
+        muscleStrainParts = Hand_R;ForeArm_R;UpperArm_R,
+    }
+}

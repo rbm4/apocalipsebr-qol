@@ -1,0 +1,9 @@
+{
+    "Sandbox_IAmBruceLeeNow": "I Am Bruce Lee Now",
+    "Sandbox_IAmBruceLeeNow_CraftableHandwraps": "Craftable Martial Arts Handwraps",
+    "Sandbox_IAmBruceLeeNow_CraftableHandwraps_tooltip": "When enabled, survivors who have read Kung Fu Magazine can craft Bruce Lee Handwraps. Disabled by default. Guaranteed police-station handwraps are unaffected.",
+    "Sandbox_IAmBruceLeeNow_MartialArtsMuscleStrain": "Martial Arts Muscle Strain (%%)",
+    "Sandbox_IAmBruceLeeNow_MartialArtsMuscleStrain_tooltip": "Controls muscle strain from martial-arts combinations. 0%% disables it, 100%% uses the mod's standard rate, 200%% doubles it, and 300%% triples it. The game's Muscle Strain Factor still applies.",
+    "Sandbox_IAmBruceLeeNow_MartialArtsXpMultiplier": "Martial Arts XP Multiplier",
+    "Sandbox_IAmBruceLeeNow_MartialArtsXpMultiplier_tooltip": "Multiplies Martial Arts XP earned from successful strikes."
+}

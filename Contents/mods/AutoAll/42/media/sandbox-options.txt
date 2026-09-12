@@ -1,0 +1,109 @@
+VERSION = 1,
+
+/*
+    Auto All - server overrides for each automation.
+
+    THESE ARE TRI-STATE INTEGERS, NOT BOOLEANS, AND THAT IS DELIBERATE.
+
+        -1  the server does not care - the player's own setting decides
+         0  force off for everyone on this server
+         1  force on for everyone on this server
+
+    They were booleans at first, and that was a real bug. A boolean cannot
+    tell "the server has not expressed an opinion" apart from "the server
+    turned it off", so on a save that predates these options the value
+    read back as false and silently switched modules off for players who
+    had never touched them. It was reported as "the options just
+    disappear" and as "works in a new world, not in my old save", and a
+    client log showed six modules off while ModOptions.ini said all ten
+    were on.
+
+    -1 is the default, so a server that never opens this page changes
+    nothing, and a value that is neither 0 nor 1 is ignored rather than
+    obeyed. See AA.enabled in AutoAll_Core.lua, which also writes a line
+    to console.txt whenever one of these actually vetoes something.
+*/
+
+option AutoAll.EnableCook
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableCook,
+}
+
+option AutoAll.EnableRead
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableRead,
+}
+
+option AutoAll.EnableClean
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableClean,
+}
+
+option AutoAll.EnableSterilize
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableSterilize,
+}
+
+option AutoAll.EnableRip
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableRip,
+}
+
+option AutoAll.EnableRepair
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableRepair,
+}
+
+option AutoAll.EnableTailoring
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableTailoring,
+}
+
+option AutoAll.EnableMechanics
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableMechanics,
+}
+
+option AutoAll.EnableReload
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableReload,
+}
+
+option AutoAll.EnableDismantle
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableDismantle,
+}
+
+option AutoAll.EnableVHS
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableVHS,
+}
+
+option AutoAll.EnableMedicine
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableMedicine,
+}
+
+option AutoAll.EnableExercise
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableExercise,
+}
+
+option AutoAll.EnableOpen
+{
+    type = integer, default = -1, min = -1, max = 1,
+    page = AutoAll, translation = AutoAll_EnableOpen,
+}

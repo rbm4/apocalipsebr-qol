@@ -1,0 +1,1573 @@
+module CS2Firearms
+{
+	model M4A4
+    {
+        mesh = Weapons/Firearm/M4A4,
+        texture = Weapons/Firearm/M4A4,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3868 0.0291,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0508 0.0681,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.0947 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.2023 0.0182,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.3006 0.0335,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0243 0.1836 0.0331,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0264 0.1847 0.0334,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model M249
+    {
+        mesh = Weapons/Firearm/M249,
+        texture = Weapons/Firearm/M249,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4887 0.0440,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = 0.0000 0.0590 0.0855,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.1028 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.4359 0.0450,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0010 0.2302 0.0743,
+            rotate = 0.0000 88.6921 0.0000,
+        }
+    }
+	model Glock18
+    {
+        mesh = Weapons/Firearm/Glock18,
+        texture = Weapons/Firearm/Glock18,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.1884 -0.0246,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 -0.0051 -0.0387,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1355 -0.0228,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = 0.0005 0.0832 0.0057,
+            rotate = -180.0000 90.0000 180.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0003 0.0713 -0.0027,
+            rotate = 0.0000 -90.0000 0.0000,
+            scale = 0.7325,
+        }
+    }
+	model Negev
+    {
+        mesh = Weapons/Firearm/Negev,
+        texture = Weapons/Firearm/Negev,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4077 0.0385,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = 0.0000 0.0180 0.0698,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.1049 0.0006,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.3340 0.0408,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0010 0.1967 0.0576,
+            rotate = 0.0000 90.0000 0.0000,
+        }
+    }
+	model M4A1
+    {
+        mesh = Weapons/Firearm/M4A1,
+        texture = Weapons/Firearm/M4A1,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4557 0.0324,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0518 0.0888,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.0957 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.1964 0.0150,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = -0.0013 0.3712 0.0330,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0243 0.2082 0.0331,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0264 0.2073 0.0324,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model Galil
+    {
+        mesh = Weapons/Firearm/Galil,
+        texture = Weapons/Firearm/Galil,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4103 0.0247,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0515 0.0678,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.1095 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.2119 0.0116,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.3509 0.0247,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0243 0.2060 0.0242,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0264 0.2042 0.0232,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model XM1014
+    {
+        mesh = Weapons/Firearm/XM1014,
+        texture = Weapons/Firearm/XM1014,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.5349 0.0291,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0841 0.0592,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.0947 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.2285 -0.0023,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.4758 0.0298,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0187 0.3463 0.0093,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0139 0.3876 0.0079,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model Nova
+    {
+        mesh = Weapons/Firearm/Nova,
+        texture = Weapons/Firearm/Nova,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3868 0.0291,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.1142 0.0541,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.0947 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.2333 -0.0033,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.4672 0.0291,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0197 0.2924 0.0085,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0194 0.2900 0.0081,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model SG553
+    {
+        mesh = Weapons/Firearm/SG553,
+        texture = Weapons/Firearm/SG553,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4451 0.0291,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0496 0.0682,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.0940 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.2226 0.0055,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.3856 0.0289,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0207 0.2376 0.0314,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0221 0.2459 0.0315,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model SCAR20
+    {
+        mesh = Weapons/Firearm/SCAR20,
+        texture = Weapons/Firearm/SCAR20,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.5204 0.0307,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0433 0.0761,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.0951 0.0032,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.2048 0.0144,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.4596 0.0319,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0220 0.2514 0.0317,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0215 0.2932 0.0321,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model G3SG1
+    {
+        mesh = Weapons/Firearm/G3SG1,
+        texture = Weapons/Firearm/G3SG1,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.5353 0.0327,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.1110 0.0021,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.2282 0.0212,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.4448 0.0347,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0213 0.2783 0.0348,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0215 0.3145 0.0345,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model AUG
+    {
+        mesh = Weapons/Firearm/AUG,
+        texture = Weapons/Firearm/AUG,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3578 0.0456,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0186 0.0834,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 -0.0508 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.3087 0.0460,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0019 0.1398 0.0763,
+            rotate = 0.0000 89.3565 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = -0.0155 0.1264 0.0540,
+            rotate = 180.0000 -34.5428 180.0000,
+        }
+    }
+	model FAMAS
+    {
+        mesh = Weapons/Firearm/FAMAS,
+        texture = Weapons/Firearm/FAMAS,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3578 0.0456,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0471 0.0991,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 -0.0700 -0.0027,
+            rotate = 3.7005 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.2761 0.0293,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0019 0.1536 0.0008,
+            rotate = 0.0000 89.3565 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0182 0.1264 0.0279,
+            rotate = 0.0000 -0.3544 0.0000,
+        }
+    }
+	model MP5SD
+    {
+        mesh = Weapons/Firearm/MP5SD,
+        texture = Weapons/Firearm/MP5SD,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3603 0.0364,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0604 0.0675,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.1179 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.1922 0.0198,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0237 0.2030 0.0350,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0225 0.1817 0.0355,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model UMP45
+    {
+        mesh = Weapons/Firearm/UMP45,
+        texture = Weapons/Firearm/UMP45,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3231 0.0324,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0610 0.0783,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.1307 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.1920 0.0191,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.2471 0.0313,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0219 0.1657 0.0316,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0240 0.1717 0.0312,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model USP
+    {
+        mesh = Weapons/Firearm/USP,
+        texture = Weapons/Firearm/USP,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.1944 -0.0250,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0131 -0.0387,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1322 -0.0266,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = 0.0005 0.0920 -0.0012,
+            rotate = -180.0000 90.0000 180.0000,
+            scale = 0.6150,
+        }
+
+        attachment Light
+        {
+            offset = 0.0007 0.0843 -0.0031,
+            rotate = 0.0000 -90.0000 0.0000,
+            scale = 0.5000,
+        }
+    }
+	model Beretta
+    {
+        mesh = Weapons/Firearm/Beretta,
+        texture = Weapons/Firearm/Beretta,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.1884 -0.0246,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0153 -0.0413,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1460 -0.0273,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = 0.0005 0.0832 0.0057,
+            rotate = -180.0000 90.0000 180.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0016 0.0693 -0.0007,
+            rotate = 0.0000 -90.0000 0.0000,
+            scale = 0.5000,
+        }
+    }
+	model R8Revolver
+    {
+        mesh = Weapons/Firearm/R8Revolver,
+        texture = Weapons/Firearm/R8Revolver,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.2122 -0.0314,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0478 -0.0601,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1727 -0.0318,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0010 0.1376 -0.0116,
+            rotate = -180.0000 90.0000 180.0000,
+            scale = 0.5450,
+        }
+
+        attachment Light
+        {
+            offset = 0.0005 0.1212 -0.0134,
+            rotate = 0.0000 -90.0000 0.0000,
+            scale = 0.6725,
+        }
+    }
+	model P2000
+    {
+        mesh = Weapons/Firearm/P2000,
+        texture = Weapons/Firearm/P2000,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.1944 -0.0230,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0131 -0.0371,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1210 -0.0246,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = 0.0005 0.0851 0.0021,
+            rotate = -180.0000 90.0000 180.0000,
+            scale = 0.6150,
+        }
+
+        attachment Light
+        {
+            offset = 0.0007 0.0698 -0.0021,
+            rotate = 0.0000 -90.0000 0.0000,
+            scale = 0.7850,
+        }
+    }
+	model P250
+    {
+        mesh = Weapons/Firearm/P250,
+        texture = Weapons/Firearm/P250,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.1944 -0.0238,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0184 -0.0387,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1266 -0.0244,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0006 0.0878 0.0010,
+            rotate = -180.0000 90.0000 180.0000,
+            scale = 0.6150,
+        }
+
+        attachment Light
+        {
+            offset = 0.0007 0.0739 -0.0042,
+            rotate = 0.0000 -90.0000 0.0000,
+            scale = 0.6425,
+        }
+    }
+	model Bizon
+    {
+        mesh = Weapons/Firearm/Bizon,
+        texture = Weapons/Firearm/Bizon,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4205 0.0308,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0617 0.0734,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.1261 0.0043,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.3019 0.0313,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0201 0.2083 0.0316,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0176 0.2211 0.0311,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model MAC10
+    {
+        mesh = Weapons/Firearm/MAC10,
+        texture = Weapons/Firearm/MAC10,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.2186 -0.0218,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Clip
+        {
+            offset = -0.0001 0.0250 0.0147,
+            rotate = -168.6157 -0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0107 -0.0567,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1294 -0.0219,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = 0.0227 0.0545 -0.0202,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment Light
+        {
+            offset = -0.0241 0.0541 -0.0198,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model MAG7
+    {
+        mesh = Weapons/Firearm/MAG7,
+        texture = Weapons/Parts/Flat_555555,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3460 0.0350,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0222 0.0676,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.0214 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.2023 0.0182,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.2926 0.0360,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0011 0.1326 0.0577,
+            rotate = 0.0000 89.8123 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0237 0.1588 0.0356,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model SawedOff
+    {
+        mesh = Weapons/Firearm/SawedOff,
+        texture = Weapons/Firearm/SawedOff,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4001 0.0240,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0706 0.0535,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.0947 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.2285 -0.0023,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.3345 0.0288,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0197 0.2254 0.0093,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0139 0.2409 0.0079,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model P90
+    {
+        mesh = Weapons/Firearm/P90,
+        texture = Weapons/Firearm/P90,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.2186 -0.0169,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Clip
+        {
+            offset = -0.0001 -0.0001 -0.0259,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0401 -0.0781,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1462 -0.0166,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = 0.0208 0.0668 -0.0123,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment Light
+        {
+            offset = -0.0223 0.0637 -0.0133,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model MP9
+    {
+        mesh = Weapons/Firearm/MP9,
+        texture = Weapons/Firearm/MP9,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.2186 -0.0218,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Clip
+        {
+            offset = -0.0001 0.0212 0.0074,
+            rotate = -168.6157 -0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0107 -0.0563,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1475 -0.0221,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = 0.0227 0.0545 -0.0202,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment Light
+        {
+            offset = -0.0241 0.0541 -0.0198,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model MP7
+    {
+        mesh = Weapons/Firearm/MP7,
+        texture = Weapons/Firearm/MP7,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.2348 -0.0121,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Clip
+        {
+            offset = -0.0001 0.0209 0.0115,
+            rotate = -173.1896 -0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0196 -0.0551,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1651 -0.0127,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = 0.0227 0.0545 -0.0202,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment Light
+        {
+            offset = -0.0241 0.0541 -0.0198,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model CZ75
+    {
+        mesh = Weapons/Firearm/CZ75,
+        texture = Weapons/Firearm/CZ75,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.2270 -0.0269,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0166 -0.0388,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1409 -0.0257,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+    }
+	model TEC9
+    {
+        mesh = Weapons/Firearm/TEC9,
+        texture = Weapons/Firearm/TEC9,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.0844 0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.2473 -0.0268,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0364 -0.0582,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1823 -0.0313,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+    }
+	model FiveSeven
+    {
+        mesh = Weapons/Firearm/FiveSeven,
+        texture = Weapons/Firearm/FiveSeven,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.1884 -0.0246,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0010 -0.0387,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1379 -0.0238,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0016 0.0903 0.0007,
+            rotate = -180.0000 90.0000 180.0000,
+            scale = 0.6750,
+        }
+
+        attachment Light
+        {
+            offset = 0.0007 0.0797 -0.0060,
+            rotate = 0.0000 -90.0000 0.0000,
+            scale = 0.6754,
+        }
+    }
+	model AK47
+    {
+        mesh = Weapons/Firearm/AK47,
+        texture = Weapons/Firearm/AK47,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4876 0.0259,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0447 0.0664,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.1084 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Grip
+        {
+            offset = 0.0000 0.2277 0.0133,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.4410 0.0277,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0197 0.2308 0.0235,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0208 0.2339 0.0235,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model DesertEagle
+    {
+        mesh = Weapons/Firearm/DesertEagle,
+        texture = Weapons/Firearm/DesertEagle,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.2070 -0.0246,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Scope
+        {
+            offset = -0.0001 0.0126 -0.0520,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.1658 -0.0235,
+            rotate = 180.0000 -0.0000 180.0000,
+        }
+
+        attachment Laser
+        {
+            offset = 0.0001 0.1150 0.0021,
+            rotate = -180.0000 90.0000 180.0000,
+            scale = 0.7800,
+        }
+
+        attachment Light
+        {
+            offset = 0.0016 0.0971 0.0005,
+            rotate = 0.0000 -90.0000 0.0000,
+            scale = 0.8350,
+        }
+    }
+	model SSG08
+    {
+        mesh = Weapons/Firearm/SSG08,
+        texture = Weapons/Firearm/SSG08,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.6215 0.0370,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.5010 0.0365,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0204 0.3120 0.0282,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0225 0.2118 0.0309,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model AWP
+    {
+        mesh = Weapons/Firearm/AWP,
+        texture = Weapons/Firearm/AWP,
+
+        attachment world
+        {
+            offset = -0.0230 -0.0000 -0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.6874 0.0398,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment Clip
+        {
+            offset = 0.0000 0.1033 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Canon
+        {
+            offset = 0.0000 0.5680 0.0381,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Laser
+        {
+            offset = -0.0200 0.2450 0.0242,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Light
+        {
+            offset = 0.0199 0.2608 0.0263,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+}

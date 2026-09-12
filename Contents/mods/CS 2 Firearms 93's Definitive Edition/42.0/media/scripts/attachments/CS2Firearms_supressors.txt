@@ -1,0 +1,60 @@
+module CS2Firearms
+{
+    item SupressorBulk
+    {
+        DisplayName = Supressor Bulk,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.P90;CS2Firearms.MAG7;CS2Firearms.SawedOff;CS2Firearms.USP;CS2Firearms.P250;CS2Firearms.P2000;CS2Firearms.Beretta;CS2Firearms.R8Revolver;CS2Firearms.Bizon;CS2Firearms.MAC10;CS2Firearms.UMP45;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SCAR20;CS2Firearms.G3SG1;CS2Firearms.SG552;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.M249;CS2Firearms.Negev;CS2Firearms.Glock18;CS2Firearms.XM1014;CS2Firearms.Nova;CS2Firearms.MP7;CS2Firearms.TMP;CS2Firearms.CZ75;CS2Firearms.TEC9;CS2Firearms.FiveSeven;CS2Firearms.AK47;CS2Firearms.DesertEagle;Base.AssaultRifle;Base.Pistol3;Base.AssaultRifle2;Base.Pistol2;Base.Pistol;Base.Revolver_Long;Base.Revolver;Base.Revolver_Short;Base.DoubleBarrelShotgun;Base.Shotgun;Base.JS3T_Shotgun;Base.DoubleBarrelShotgunSawnoff;Base.ShotgunSawnoff;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine;CS2Firearms.AWP;CS2Firearms.SSG69,
+        Weight = 0.3,
+        WeightModifier = 0.2,
+        MaxRangeModifier = 5,
+        HitChanceModifier = 10,
+        WorldStaticModel = SupressorBulk,
+        Tooltip = "sound radius = -90%,
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = ShotgunChoke,
+        PartType = Canon,
+        MetalValue = 12.0,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+
+    item SupressorSlim
+    {
+        DisplayName = Supressor Slim,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.P90;CS2Firearms.USP;CS2Firearms.P250;CS2Firearms.P2000;CS2Firearms.Beretta;CS2Firearms.R8Revolver;CS2Firearms.Bizon;CS2Firearms.MAC10;CS2Firearms.UMP45;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SCAR20;CS2Firearms.G3SG1;CS2Firearms.SG552;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.M249;CS2Firearms.Negev;CS2Firearms.Glock18;CS2Firearms.MP7;CS2Firearms.TMP;CS2Firearms.CZ75;CS2Firearms.TEC9;CS2Firearms.FiveSeven;Base.AssaultRifle;Base.AssaultRifle2;Base.Pistol2;Base.Pistol;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine;CS2Firearms.AWP;CS2Firearms.SSG69,
+        Weight = 0.1,
+        WeightModifier = 0.1,
+        AimingTimeModifier = -5,
+        WorldStaticModel = SupressorSlim,
+        Tooltip = "sound radius = -90%,
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = ShotgunChoke,
+        PartType = Canon,
+        MetalValue = 12.0,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+
+    item SupressorOsprey
+    {
+        DisplayName = Supressor Osprey,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.P90;CS2Firearms.MAG7;CS2Firearms.SawedOff;CS2Firearms.USP;CS2Firearms.P250;CS2Firearms.P2000;CS2Firearms.Beretta;CS2Firearms.R8Revolver;CS2Firearms.Bizon;CS2Firearms.MAC10;CS2Firearms.UMP45;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SCAR20;CS2Firearms.G3SG1;CS2Firearms.SG552;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.M249;CS2Firearms.Negev;CS2Firearms.Glock18;CS2Firearms.XM1014;CS2Firearms.Nova;CS2Firearms.MP7;CS2Firearms.TMP;CS2Firearms.CZ75;CS2Firearms.TEC9;CS2Firearms.FiveSeven;CS2Firearms.DesertEagle;Base.AssaultRifle;Base.Pistol3;Base.AssaultRifle2;Base.Pistol2;Base.Pistol;Base.Revolver_Long;Base.Revolver;Base.Revolver_Short;Base.DoubleBarrelShotgun;Base.Shotgun;Base.JS3T_Shotgun;Base.DoubleBarrelShotgunSawnoff;Base.ShotgunSawnoff;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine;CS2Firearms.AWP;CS2Firearms.SSG69,
+        Weight = 0.3,
+        WeightModifier = 0.2,
+        MaxRangeModifier = 5,
+        WorldStaticModel = SupressorOsprey,
+        Tooltip = "sound radius = -90%, max range = +5",
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = ShotgunChoke,
+        PartType = Canon,
+        MetalValue = 12.0,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+}

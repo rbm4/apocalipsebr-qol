@@ -1,0 +1,26 @@
+module Base
+{
+	sound SilencedShot
+	{
+		category = Item,
+		maxInstancesPerEmitter = 2,
+		clip
+		{
+			file = media/sound/SilencedShot.ogg,
+			distanceMax = 10,
+			volume = 0.6,
+		}
+	}
+
+	sound SilencedShot_LowCaliber,
+	{
+		category = Item,
+		maxInstancesPerEmitter = 2,
+		clip
+		{
+			file = media/sound/SilencedShot_LowCaliber.ogg,
+			distanceMax = 10,
+			volume = 0.6,
+		}
+	}
+}

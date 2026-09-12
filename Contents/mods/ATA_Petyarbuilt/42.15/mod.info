@@ -6,6 +6,6 @@ author=Beathoven
 versionMin=42.15
 modversion=1.9
 description=Now with Animal Trailer!
-require=\TSAR_APOC,\StandardizedVehicleUpgrades3V
+require=\TSAR_APOC,\StandardizedVehicleUpgrades3V,\VehicleClaimSystem
 description=
 url=

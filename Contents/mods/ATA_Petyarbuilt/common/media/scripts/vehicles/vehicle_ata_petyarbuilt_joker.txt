@@ -36,7 +36,7 @@ module Base
         playerDamageProtection = 1.4,
 
         mass = 950,
-        engineForce = 6800,
+        engineForce = 7600,
         engineQuality = 100,
         engineLoudness = 130,
         maxSpeed = 95,

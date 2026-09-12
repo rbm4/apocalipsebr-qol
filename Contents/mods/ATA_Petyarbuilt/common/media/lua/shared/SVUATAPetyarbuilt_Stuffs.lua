@@ -35,3 +35,5 @@ SetArmor("ATAPetyarbuiltJoker","SVU_Armor_ATAPetyarbuilt");
 SetArmor("TrailerTSMega","SVU_Armor_TrailerTSMega");
 SetArmor("TrailerTSMegaJoker","SVU_Armor_TrailerTSMega");
 SetArmor("TrailerTSMegaAnimal","SVU_Armor_TrailerTSMega");
+
+SetHornSound("ATAPetyarbuiltJoker","ATAVehicleHornTruck");

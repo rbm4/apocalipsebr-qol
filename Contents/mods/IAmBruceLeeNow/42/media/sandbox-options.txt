@@ -1,0 +1,30 @@
+VERSION = 1,
+
+option IAmBruceLeeNow.CraftableHandwraps
+{
+    type = boolean,
+    default = false,
+    page = IAmBruceLeeNow,
+    translation = IAmBruceLeeNow_CraftableHandwraps,
+}
+
+option IAmBruceLeeNow.MartialArtsMuscleStrain
+{
+    type = integer,
+    min = 0,
+    max = 300,
+    default = 100,
+    page = IAmBruceLeeNow,
+    translation = IAmBruceLeeNow_MartialArtsMuscleStrain,
+}
+
+option MultiplierConfig.MartialArts
+{
+    type = double,
+    min = 0.0,
+    max = 1000.0,
+    step = 0.01,
+    default = 1.0,
+    page = IAmBruceLeeNow,
+    translation = IAmBruceLeeNow_MartialArtsXpMultiplier,
+}

@@ -1,0 +1,289 @@
+module CS2Firearms
+{
+    item AR15_Mag_30
+    {
+        DisplayName = AR 5.56 Magazine,
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Weight = 0.2,
+        Icon = m16clip,
+        AmmoType = base:bullets_556,
+        CanStack = false,
+        GunType = Base.AssaultRifle,
+        MaxAmmo = 30,
+        StaticModel = CS2Firearms.AR15_Mag_30,
+        WorldStaticModel = CS2Firearms.AR15_Mag_30,
+        Tags = base:hasmetal;base:riflemagazine,
+    }
+
+    item 556Mag_150
+    {
+        DisplayName = Negev Ammo Pouch,
+        MaxAmmo = 150,
+        StaticModel = CS2Firearms.556Mag_150,
+        WorldStaticModel = CS2Firearms.556Mag_150,
+        Weight = 0.4,
+        AmmoType = base:bullets_556,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = m16clip,
+        CanStack = false,
+        GunType = Base.AssaultRifle,
+        Tags = base:hasmetal;base:riflemagazine,
+    }
+
+    item 556Mag_100
+    {
+        DisplayName = M249 Ammo Box,
+        MaxAmmo = 100,
+        StaticModel = CS2Firearms.556Mag_100,
+        WorldStaticModel = CS2Firearms.556Mag_100,
+        Weight = 0.4,
+        AmmoType = base:bullets_556,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = m16clip,
+        CanStack = false,
+        GunType = Base.AssaultRifle,
+        Tags = base:hasmetal;base:riflemagazine,
+    }
+
+    item 9mm_Mag_20
+    {
+        DisplayName = Glock 18 Mag,
+        MaxAmmo = 20,
+        StaticModel = GunMagazine,
+        WorldStaticModel = Gun_Pistol_Magazine,
+        Weight = 0.2,
+        AmmoType = base:bullets_9mm,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = BerettaClip,
+        CanStack = false,
+        GunType = Base.Pistol,
+        Tags = base:hasmetal;base:pistolmagazine,
+    }
+
+    item Galil_Mag_30
+    {
+        DisplayName = Galil 5.56 Magazine,
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Weight = 0.2,
+        Icon = m16clip,
+        AmmoType = base:bullets_556,
+        CanStack = false,
+        GunType = Base.AssaultRifle,
+        MaxAmmo = 30,
+        StaticModel = CS2Firearms.Galil_Mag_30,
+        WorldStaticModel = CS2Firearms.Galil_Mag_30,
+        Tags = base:hasmetal;base:riflemagazine,
+    }
+
+    item AR10_Mag_20
+    {
+        DisplayName = AR 7.62 Magazine,
+        MaxAmmo = 20,
+        StaticModel = CS2Firearms.AR10_Mag_20,
+        WorldStaticModel = CS2Firearms.AR10_Mag_20,
+        Weight = 0.2,
+        AmmoType = base:bullets_308,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = m14clip,
+        CanStack = false,
+        GunType = Base.AssaultRifle2,
+        Tags = base:hasmetal;base:riflemagazine,
+    }
+
+    item SMG_9_Mag_30
+    {
+        DisplayName = SMG 9mm Mag,
+        MaxAmmo = 30,
+        StaticModel = CS2Firearms.SMG_9_Mag_30,
+        WorldStaticModel = CS2Firearms.SMG_9_Mag_30,
+        Weight = 0.2,
+        AmmoType = base:bullets_9mm,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = BerettaClip,
+        CanStack = false,
+        GunType = Base.Pistol,
+        Tags = base:hasmetal;base:pistolmagazine,
+    }
+
+    item SMG_45_Mag_30
+    {
+        DisplayName = SMG .45 ACP Mag,
+        MaxAmmo = 30,
+        StaticModel = CS2Firearms.SMG_45_Mag_30,
+        WorldStaticModel = CS2Firearms.SMG_45_Mag_30,
+        Weight = 0.2,
+        AmmoType = base:bullets_45,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = BerettaClip,
+        CanStack = false,
+        GunType = Base.Pistol,
+        Tags = base:hasmetal;base:pistolmagazine,
+    }
+    
+    item Bizon_Mag_64
+    {
+        DisplayName = Bizon Mag,
+        MaxAmmo = 64,
+        StaticModel = CS2Firearms.Bizon_Mag_64,
+        WorldStaticModel = CS2Firearms.Bizon_Mag_64,
+        Weight = 0.3,
+        AmmoType = base:bullets_9mm,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = BerettaClip,
+        CanStack = false,
+        GunType = Base.Pistol,
+        Tags = base:hasmetal;base:pistolmagazine,
+    }
+
+    item 9mm_Mag_15
+    {
+        DisplayName = Beretta Mag,
+        MaxAmmo = 15,
+        StaticModel = GunMagazine,
+        WorldStaticModel = Gun_Pistol_Magazine,
+        Weight = 0.2,
+        AmmoType = base:bullets_9mm,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = BerettaClip,
+        CanStack = false,
+        GunType = Base.Pistol,
+        Tags = base:hasmetal;base:pistolmagazine,
+    }
+
+    item TEC9_Mag_18
+    {
+        DisplayName = Tec-9 Mag,
+        MaxAmmo = 18,
+        StaticModel = CS2Firearms.TEC9_Mag_18,
+        WorldStaticModel = CS2Firearms.TEC9_Mag_18,
+        Weight = 0.2,
+        AmmoType = base:bullets_9mm,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = BerettaClip,
+        CanStack = false,
+        GunType = Base.Pistol,
+        Tags = base:hasmetal;base:pistolmagazine,
+    }
+
+    item 45_Mag_12
+    {
+        DisplayName = .45 ACP Mag,
+        MaxAmmo = 12,
+        StaticModel = GunMagazine,
+        WorldStaticModel = Gun_Pistol_Magazine,
+        Weight = 0.2,
+        AmmoType = base:bullets_45,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = BerettaClip,
+        CanStack = false,
+        GunType = Base.Pistol,
+        Tags = base:hasmetal;base:pistolmagazine,
+    }
+
+    item MAG7_Mag_5
+    {
+        DisplayName = MAG-7 Mag,
+        MaxAmmo = 5,
+        StaticModel = CS2Firearms.MAG7_Mag_5,
+        WorldStaticModel = CS2Firearms.MAG7_Mag_5,
+        Weight = 0.2,
+        AmmoType = base:shotgun_shells,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = BerettaClip,
+        CanStack = false,
+        GunType = Base.Shotgun,
+        Tags = base:hasmetal;base:riflemagazine,
+    }
+
+    item P90_Mag_50
+    {
+        DisplayName = P90 Mag,
+        MaxAmmo = 50,
+        StaticModel = CS2Firearms.P90_Mag_50,
+        WorldStaticModel = CS2Firearms.P90_Mag_50,
+        Weight = 0.3,
+        AmmoType = base:bullets_45,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = BerettaClip,
+        CanStack = false,
+        GunType = Base.Pistol,
+        Tags = base:hasmetal;base:pistolmagazine,
+    }
+
+    item AK_Mag_30
+    {
+        DisplayName = AK 7.62 Magazine,
+        MaxAmmo = 30,
+        StaticModel = CS2Firearms.AK_Mag_30,
+        WorldStaticModel = CS2Firearms.AK_Mag_30,
+        Weight = 0.2,
+        AmmoType = base:bullets_308,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = m14clip,
+        CanStack = false,
+        GunType = Base.AssaultRifle2,
+        Tags = base:hasmetal;base:riflemagazine,
+    }
+
+    item 44_Mag_8
+    {
+        DisplayName = Desert Eagle .44 Mag,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Weight = 0.2,
+        Icon = BerettaClip,
+        AmmoType = base:bullets_44,
+        CanStack = false,
+        GunType = Base.Pistol3,
+        MaxAmmo = 8,
+        StaticModel = GunMagazine,
+        WorldStaticModel = Gun_Pistol_Magazine,
+        Tags = base:hasmetal;base:pistolmagazine;base:ignorezombiedensity,
+    }
+
+    item Sniper_Mag_10
+    {
+        DisplayName = Sniper 7.62 Magazine,
+        MaxAmmo = 10,
+        StaticModel = CS2Firearms.Sniper_Mag_10,
+        WorldStaticModel = CS2Firearms.Sniper_Mag_10,
+        Weight = 0.2,
+        AmmoType = base:bullets_308,
+
+        DisplayCategory = Ammo,
+        ItemType = base:normal,
+        Icon = m14clip,
+        CanStack = false,
+        GunType = Base.AssaultRifle2,
+        Tags = base:hasmetal;base:riflemagazine,
+    }
+}

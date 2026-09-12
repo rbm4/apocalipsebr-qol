@@ -1,0 +1,9 @@
+{
+    "Sandbox_IAmBruceLeeNow": "Agora Eu Sou Bruce Lee",
+    "Sandbox_IAmBruceLeeNow_CraftableHandwraps": "Bandagens de Artes Marciais Fabricáveis",
+    "Sandbox_IAmBruceLeeNow_CraftableHandwraps_tooltip": "Quando ativado, sobreviventes que leram a Revista de Kung Fu podem criar Bandagens do Bruce Lee. Desativado por padrão. Bandagens garantidas em delegacias não são afetadas.",
+    "Sandbox_IAmBruceLeeNow_MartialArtsMuscleStrain": "Distensão Muscular de Artes Marciais (%%)",
+    "Sandbox_IAmBruceLeeNow_MartialArtsMuscleStrain_tooltip": "Controla a distensão muscular causada por combinações de artes marciais. 0%% desativa, 100%% usa a taxa padrão do mod, 200%% dobra e 300%% triplica. O Fator de Distensão Muscular do jogo ainda se aplica.",
+    "Sandbox_IAmBruceLeeNow_MartialArtsXpMultiplier": "Multiplicador de XP de Artes Marciais",
+    "Sandbox_IAmBruceLeeNow_MartialArtsXpMultiplier_tooltip": "Multiplica o XP de Artes Marciais obtido com golpes bem-sucedidos."
+}

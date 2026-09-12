@@ -1,0 +1,158 @@
+module CS2Firearms
+{
+    item Hawke_10x
+    {
+        DisplayName = Hawke 10x Scope,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SCAR20;CS2Firearms.SG553;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.M249;CS2Firearms.Negev;CS2Firearms.AK47,
+        WeightModifier = 1.0,
+        AimingTimeModifier = 15,
+        MaxSightRange = 30.0,
+        MinSightRange = 5,
+        HitChanceModifier = 15,
+        WorldStaticModel = Hawke_10x,
+        Tooltip = "max range = +30, min range = +5, hit chance = +10, aiming time = +10",
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Scope8x,
+        Tags = base:optics,
+        PartType = Scope,
+        MetalValue = 22.0,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+
+    item Vortex_8x
+    {
+        DisplayName = Vortex 8x Scope,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.MP5SD;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SCAR20;CS2Firearms.SG553;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.M249;CS2Firearms.Negev;CS2Firearms.AK47;Base.AssaultRifle2;Base.DoubleBarrelShotgun;Base.Shotgun;Base.JS3T_Shotgun;Base.DoubleBarrelShotgunSawnoff;Base.ShotgunSawnoff;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine,
+        WeightModifier = 1.0,
+        AimingTimeModifier = 5,
+        MaxSightRange = 25.0,
+        MinSightRange = 5,
+        WorldStaticModel = Vortex_8x,
+        Tooltip = "max range = +25, min range = +5, aiming time = +5",
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Scope8x,
+        Tags = base:optics,
+        PartType = Scope,
+        MetalValue = 22.0,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+
+    item SB_2_8x
+    {
+        DisplayName = S&B 2-8x Scope,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.MP5SD;CS2Firearms.UMP45;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SCAR20;CS2Firearms.SG553;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.M249;CS2Firearms.Negev;CS2Firearms.AK47;Base.AssaultRifle2;Base.DoubleBarrelShotgun;Base.Shotgun;Base.JS3T_Shotgun;Base.DoubleBarrelShotgunSawnoff;Base.ShotgunSawnoff;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine,
+        WeightModifier = 1.0,
+        AimingTimeModifier = 5,
+        MaxSightRange = 20.0,
+        MinSightRange = 5,
+        HitChanceModifier = 5,
+        WorldStaticModel = SB_2_8x,
+        Tooltip = "max range = +20, min range = +5, hit chance = +5, aiming time = +5",
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Scope8x,
+        Tags = base:optics,
+        PartType = Scope,
+        MetalValue = 22.0,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+
+    item ACOG_4x
+    {
+        DisplayName = ACOG 4x Scope,
+        MountOn = Base.AssaultRifle;CS2Firearms.M4A4;CS2Firearms.P90;CS2Firearms.MAG7;CS2Firearms.SawedOff;CS2Firearms.R8Revolver;CS2Firearms.Bizon;CS2Firearms.MAC10;CS2Firearms.MP5SD;CS2Firearms.UMP45;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SCAR20;CS2Firearms.SG553;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.M249;CS2Firearms.Negev;CS2Firearms.XM1014;CS2Firearms.Nova;CS2Firearms.MP7;CS2Firearms.MP9;CS2Firearms.TEC9;CS2Firearms.AK47;CS2Firearms.DesertEagle;Base.AssaultRifle2;Base.DoubleBarrelShotgun;Base.Shotgun;Base.JS3T_Shotgun;Base.DoubleBarrelShotgunSawnoff;Base.ShotgunSawnoff;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine;Base.Revolver_Long;Base.Revolver;Base.Revolver_Short,
+        WeightModifier = 0.3,
+        AimingTimeModifier = -10,
+        MaxSightRange = 15.0,
+        MinSightRange = 5,
+        HitChanceModifier = 5,
+        WorldStaticModel = ACOG_4x,
+        Tooltip = "max range = +15, min range = +5, hit chance = +5, aiming time = -10",
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = Scope2x,
+        Tags = base:optics,
+        PartType = Scope,
+        MetalValue = 22.0,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+
+    item EOTECH_2x
+    {
+        DisplayName = EOTECH 2x Scope,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.P90;CS2Firearms.MAG7;CS2Firearms.SawedOff;CS2Firearms.R8Revolver;CS2Firearms.Bizon;CS2Firearms.MAC10;CS2Firearms.MP5SD;CS2Firearms.UMP45;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SCAR20;CS2Firearms.SG553;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.M249;CS2Firearms.Negev;CS2Firearms.XM1014;CS2Firearms.Nova;CS2Firearms.MP7;CS2Firearms.MP9;CS2Firearms.AK47;Base.AssaultRifle;Base.AssaultRifle2;Base.DoubleBarrelShotgun;Base.Shotgun;Base.JS3T_Shotgun;Base.DoubleBarrelShotgunSawnoff;Base.ShotgunSawnoff;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine,
+        Weight = 0.2,
+        WeightModifier = 0.1,
+        AimingTimeModifier = -10,
+        MaxSightRange = 10.0,
+        MinSightRange = 5,
+        HitChanceModifier = 5,
+        WorldStaticModel = EOTECH_2x,
+        Tooltip = "max range = +10, min range = +5, hit chance = +5, aiming time = -10"
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = RedDot,
+        PartType = Scope,
+        Tags = base:optics,
+        MetalValue = 15.0,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+
+    item Micro_2x
+    {
+        DisplayName = Micro 2x Scope,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.P90;CS2Firearms.MAG7;CS2Firearms.SawedOff;CS2Firearms.R8Revolver;CS2Firearms.Bizon;CS2Firearms.MAC10;CS2Firearms.MP5SD;CS2Firearms.UMP45;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SCAR20;CS2Firearms.SG553;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.M249;CS2Firearms.Negev;CS2Firearms.XM1014;CS2Firearms.Nova;CS2Firearms.MP7;CS2Firearms.MP9;CS2Firearms.CZ75;CS2Firearms.TEC9;CS2Firearms.AK47;CS2Firearms.DesertEagle;Base.AssaultRifle;Base.Pistol3;Base.AssaultRifle2;Base.Revolver_Long;Base.Revolver;Base.Revolver_Short;Base.DoubleBarrelShotgun;Base.Shotgun;Base.JS3T_Shotgun;Base.DoubleBarrelShotgunSawnoff;Base.ShotgunSawnoff;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine,
+        Weight = 0.2,
+        WeightModifier = 0.1,
+        AimingTimeModifier = -10,
+        MaxSightRange = 10.0,
+        MinSightRange = 5,
+        HitChanceModifier = 5,
+        WorldStaticModel = Micro_2x,
+        Tooltip = "max range = +10, min range = +5, hit chance = +5, aiming time = -10"
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = RedDot,
+        PartType = Scope,
+        Tags = base:optics,
+        MetalValue = 15.0,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+
+    item Razor_1x
+    {
+        DisplayName = Razor RedDot 1x Scope,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.P90;CS2Firearms.MAG7;CS2Firearms.SawedOff;CS2Firearms.USP;CS2Firearms.P250;CS2Firearms.P2000;CS2Firearms.Beretta;CS2Firearms.R8Revolver;CS2Firearms.Bizon;CS2Firearms.MAC10;CS2Firearms.MP5SD;CS2Firearms.UMP45;CS2Firearms.AUG;CS2Firearms.FAMAS;CS2Firearms.SCAR20;CS2Firearms.SG553;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.M249;CS2Firearms.Negev;CS2Firearms.Glock18;CS2Firearms.XM1014;CS2Firearms.Nova;CS2Firearms.MP7;CS2Firearms.MP9;CS2Firearms.CZ75;CS2Firearms.TEC9;CS2Firearms.FiveSeven;CS2Firearms.AK47;CS2Firearms.DesertEagle;Base.AssaultRifle;Base.Pistol3;Base.AssaultRifle2;Base.Pistol2;Base.Pistol;Base.Revolver_Long;Base.Revolver;Base.Revolver_Short;Base.DoubleBarrelShotgun;Base.Shotgun;Base.JS3T_Shotgun;Base.DoubleBarrelShotgunSawnoff;Base.ShotgunSawnoff;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine,
+        Weight = 0.2,
+        WeightModifier = 0.1,
+        AimingTimeModifier = -15,
+        MaxSightRange = 10.0,
+        MinSightRange = 5,
+        HitChanceModifier = 5,
+        WorldStaticModel = Razor_1x,
+        Tooltip = "max range = +10, min range = +5, hit chance = +5, aiming time = -15"
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = RedDot,
+        PartType = Scope,
+        Tags = base:optics,
+        MetalValue = 15.0,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+}

@@ -1,0 +1,9 @@
+name=Missing Skill Books
+id=MissingSkillBooks
+author=Normal
+description=Adds skill books for skills that lack them.
+poster=poster.png
+icon=icon.png
+modversion=1.0.0
+versionMin=42.20.0
+category=features

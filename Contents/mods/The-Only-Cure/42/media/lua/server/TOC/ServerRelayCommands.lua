@@ -94,7 +94,7 @@ function ServerRelayCommands.RelayAddXp(playerObj, args)
     --TOC_DEBUG.print("received Add exp," .. tostring(args.perkName) .. " . " .. tostring(args.xp))
     if not args or not BeyondTenCompat.IsTOCPerk(args.perkName) then return end
 
-    local xp = tonumber(args.xp)
+    local xp = BeyondTenCompat.ToNumber(args.xp)
     if not xp or xp <= 0 then return end
     if xp > 0.05 and playerObj:isAccessLevel("None") then return end
 

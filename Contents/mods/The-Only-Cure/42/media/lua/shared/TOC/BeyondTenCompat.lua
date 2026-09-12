@@ -9,6 +9,20 @@ local TOC_PERKS = {
 local didTryRequire = false
 local didRegister = false
 
+local function ToNumber(value, fallback)
+    if type(value) == "number" then return value end
+
+    local ok, numberValue = pcall(tonumber, value)
+    if ok and numberValue ~= nil then return numberValue end
+
+    ok, numberValue = pcall(function()
+        return value ~= nil and tonumber(tostring(value)) or nil
+    end)
+    if ok and numberValue ~= nil then return numberValue end
+
+    return fallback
+end
+
 local function GetBeyondTen()
     if BeyondTen then return BeyondTen end
     if didTryRequire then return BeyondTen end
@@ -47,7 +61,10 @@ end
 
 function BeyondTenCompat.GetMaxLevel()
     local BT = GetBeyondTen()
-    if BT and tonumber(BT.MAX_LEVEL) then return tonumber(BT.MAX_LEVEL) end
+    if BT then
+        local maxLevel = ToNumber(BT.MAX_LEVEL)
+        if maxLevel then return maxLevel end
+    end
     return 10
 end
 
@@ -59,16 +76,17 @@ function BeyondTenCompat.GetEffectiveLevel(character, perkName)
     if BT then
         BeyondTenCompat.RegisterPerks()
         if type(BT.GetEffectiveLevel) == "function" and type(BT.IsTrainablePerk) == "function" and BT.IsTrainablePerk(perk) then
-            return tonumber(BT.GetEffectiveLevel(character, perk)) or 0
+            local ok, level = pcall(BT.GetEffectiveLevel, character, perk)
+            if ok then return ToNumber(level, 0) end
         end
     end
 
-    return tonumber(character:getPerkLevel(perk)) or 0
+    return ToNumber(character:getPerkLevel(perk), 0)
 end
 
 function BeyondTenCompat.AddXP(character, perkName, amount)
     local perk = BeyondTenCompat.GetPerk(perkName)
-    amount = tonumber(amount)
+    amount = ToNumber(amount)
     if not character or not perk or not amount or amount <= 0 then return 0, 0, 0, 0, 0 end
 
     local BT = GetBeyondTen()
@@ -79,13 +97,15 @@ function BeyondTenCompat.AddXP(character, perkName, amount)
         end
     end
 
-    local oldLevel = tonumber(character:getPerkLevel(perk)) or 0
+    local oldLevel = ToNumber(character:getPerkLevel(perk), 0)
     if oldLevel >= 10 then return 0, 0, 0, oldLevel, oldLevel end
 
     addXpNoMultiplier(character, perk, amount)
-    local newLevel = tonumber(character:getPerkLevel(perk)) or oldLevel
+    local newLevel = ToNumber(character:getPerkLevel(perk), oldLevel)
     return amount, amount, 0, oldLevel, newLevel
 end
+
+BeyondTenCompat.ToNumber = ToNumber
 
 BeyondTenCompat.RegisterPerks()
 

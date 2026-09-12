@@ -1,0 +1,22 @@
+module ResidentEvilHunters
+{
+    item HunterBetaBody
+    {
+        DisplayCategory = Clothing,
+        ItemType = base:clothing,
+        ClothingItem = HunterBetaBody,
+        BodyLocation = base:fullsuit,
+        BloodLocation = Head;Neck;Trousers;Jumper;Hands;Shoes,
+        WorldRender = false,
+        Weight = 0.1,
+        CanHaveHoles = false,
+        RunSpeedModifier = 1.0,
+        CombatSpeedModifier = 1.0,
+        ScratchDefense = 0,
+        BiteDefense = 0,
+        BulletDefense = 0,
+        Insulation = 0,
+        WindResistance = 0,
+        Tags = base:noragdoll,
+    }
+}

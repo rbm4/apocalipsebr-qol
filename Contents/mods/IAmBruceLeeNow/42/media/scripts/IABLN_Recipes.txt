@@ -1,0 +1,31 @@
+module IAmBruceLeeNow
+{
+    imports
+    {
+        Base,
+    }
+
+    craftRecipe CraftMartialArtsHandWraps
+    {
+        timedAction = IAmBruceLeeNow.IABLNForgeHandwraps,
+        time = 300,
+        Tags = AnySurfaceCraft,
+        category = Tailoring,
+        SkillRequired = Tailoring:5,
+        NeedToBeLearn = true,
+        OnTest = IABLN_RecipeCodeOnTest.craftMartialArtsHandWraps,
+        inputs
+        {
+            item 1 [Base.Gloves_BoxingRed;Base.Gloves_BoxingBlue],
+            item 1 [Base.TrousersMesh_Leather],
+            item 4 tags[base:thread],
+            item 1 [Base.BarbedWire],
+            item 1 [Base.Sledgehammer] mode:keep flags[Prop1;MayDegradeLight],
+            item 1 [Base.WeldingMask] mode:keep,
+        }
+        outputs
+        {
+            item 1 IAmBruceLeeNow.MartialArtsHandWraps,
+        }
+    }
+}

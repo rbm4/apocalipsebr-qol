@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animNode x_extends="IABLN_Combo01.xml">
+	<m_Name>IABLN_Combo01_CritGuard</m_Name>
+	<m_Priority>100</m_Priority>
+	<m_Conditions>
+		<m_Name>CriticalHit</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+</animNode>

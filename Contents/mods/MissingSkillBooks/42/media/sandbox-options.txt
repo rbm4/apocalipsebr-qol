@@ -1,0 +1,749 @@
+VERSION = 1,
+
+option MissingSkillBooks.RunningEnabled
+{
+    type = boolean,
+    default = true,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_RunninghEnabled,
+}
+
+option MissingSkillBooks.RunningSpawnMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 10.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_RunningSpawnMultiplier,
+}
+
+option MissingSkillBooks.RunningXP1
+{
+    type = double,
+    min = 0.1,
+    default = 1.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_RunningXP1,
+}
+
+option MissingSkillBooks.RunningXP2
+{
+    type = double,
+    min = 0.1,
+    default = 3.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_RunningXP2,
+}
+
+option MissingSkillBooks.RunningXP3
+{
+    type = double,
+    min = 0.1,
+    default = 5.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_RunningXP3,
+}
+
+option MissingSkillBooks.RunningXP4
+{
+    type = double,
+    min = 0.1,
+    default = 7.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_RunningXP4,
+}
+
+option MissingSkillBooks.RunningXP5
+{
+    type = double,
+    min = 0.1,
+    default = 9.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_RunningXP5,
+}
+
+option MissingSkillBooks.FitnessEnabled
+{
+    type = boolean,
+    default = true,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_FitnessEnabled,
+}
+
+option MissingSkillBooks.FitnessSpawnMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 10.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_FitnessSpawnMultiplier,
+}
+
+option MissingSkillBooks.FitnessXP1
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_FitnessXP1,
+}
+
+option MissingSkillBooks.FitnessXP2
+{
+    type = double,
+    min = 0.1,
+    default = 2.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_FitnessXP2,
+}
+
+option MissingSkillBooks.FitnessXP3
+{
+    type = double,
+    min = 0.1,
+    default = 3.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_FitnessXP3,
+}
+
+option MissingSkillBooks.FitnessXP4
+{
+    type = double,
+    min = 0.1,
+    default = 4.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_FitnessXP4,
+}
+
+option MissingSkillBooks.FitnessXP5
+{
+    type = double,
+    min = 0.1,
+    default = 5.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_FitnessXP5,
+}
+
+option MissingSkillBooks.StrengthEnabled
+{
+    type = boolean,
+    default = true,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_StrengthEnabled,
+}
+
+option MissingSkillBooks.StrengthSpawnMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 10.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_StrengthSpawnMultiplier,
+}
+
+option MissingSkillBooks.StrengthXP1
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_StrengthXP1,
+}
+
+option MissingSkillBooks.StrengthXP2
+{
+    type = double,
+    min = 0.1,
+    default = 2.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_StrengthXP2,
+}
+
+option MissingSkillBooks.StrengthXP3
+{
+    type = double,
+    min = 0.1,
+    default = 3.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_StrengthXP3,
+}
+
+option MissingSkillBooks.StrengthXP4
+{
+    type = double,
+    min = 0.1,
+    default = 4.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_StrengthXP4,
+}
+
+option MissingSkillBooks.StrengthXP5
+{
+    type = double,
+    min = 0.1,
+    default = 5.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_StrengthXP5,
+}
+
+option MissingSkillBooks.LightfootedEnabled
+{
+    type = boolean,
+    default = true,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LightfootedEnabled,
+}
+
+option MissingSkillBooks.LightfootedSpawnMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 10.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LightfootedSpawnMultiplier,
+}
+
+option MissingSkillBooks.LightfootedXP1
+{
+    type = double,
+    min = 0.1,
+    default = 1.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LightfootedXP1,
+}
+
+option MissingSkillBooks.LightfootedXP2
+{
+    type = double,
+    min = 0.1,
+    default = 2.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LightfootedXP2,
+}
+
+option MissingSkillBooks.LightfootedXP3
+{
+    type = double,
+    min = 0.1,
+    default = 4.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LightfootedXP3,
+}
+
+option MissingSkillBooks.LightfootedXP4
+{
+    type = double,
+    min = 0.1,
+    default = 6.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LightfootedXP4,
+}
+
+option MissingSkillBooks.LightfootedXP5
+{
+    type = double,
+    min = 0.1,
+    default = 9.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LightfootedXP5,
+}
+
+option MissingSkillBooks.NimbleEnabled
+{
+    type = boolean,
+    default = true,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_NimbleEnabled,
+}
+
+option MissingSkillBooks.NimbleSpawnMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 10.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_NimbleSpawnMultiplier,
+}
+
+option MissingSkillBooks.NimbleXP1
+{
+    type = double,
+    min = 0.1,
+    default = 1.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_NimbleXP1,
+}
+
+option MissingSkillBooks.NimbleXP2
+{
+    type = double,
+    min = 0.1,
+    default = 3.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_NimbleXP2,
+}
+
+option MissingSkillBooks.NimbleXP3
+{
+    type = double,
+    min = 0.1,
+    default = 5.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_NimbleXP3,
+}
+
+option MissingSkillBooks.NimbleXP4
+{
+    type = double,
+    min = 0.1,
+    default = 7.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_NimbleXP4,
+}
+
+option MissingSkillBooks.NimbleXP5
+{
+    type = double,
+    min = 0.1,
+    default = 9.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_NimbleXP5,
+}
+
+option MissingSkillBooks.SneakingEnabled
+{
+    type = boolean,
+    default = true,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SneakingEnabled,
+}
+
+option MissingSkillBooks.SneakingSpawnMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 10.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SneakingSpawnMultiplier,
+}
+
+option MissingSkillBooks.SneakingXP1
+{
+    type = double,
+    min = 0.1,
+    default = 1.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SneakingXP1,
+}
+
+option MissingSkillBooks.SneakingXP2
+{
+    type = double,
+    min = 0.1,
+    default = 3.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SneakingXP2,
+}
+
+option MissingSkillBooks.SneakingXP3
+{
+    type = double,
+    min = 0.1,
+    default = 5.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SneakingXP3,
+}
+
+option MissingSkillBooks.SneakingXP4
+{
+    type = double,
+    min = 0.1,
+    default = 7.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SneakingXP4,
+}
+
+option MissingSkillBooks.SneakingXP5
+{
+    type = double,
+    min = 0.1,
+    default = 9.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SneakingXP5,
+}
+
+option MissingSkillBooks.AxeEnabled
+{
+    type = boolean,
+    default = true,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_AxeEnabled,
+}
+
+option MissingSkillBooks.AxeSpawnMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 10.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_AxeSpawnMultiplier,
+}
+
+option MissingSkillBooks.AxeXP1
+{
+    type = double,
+    min = 0.1,
+    default = 1.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_AxeXP1,
+}
+
+option MissingSkillBooks.AxeXP2
+{
+    type = double,
+    min = 0.1,
+    default = 2.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_AxeXP2,
+}
+
+option MissingSkillBooks.AxeXP3
+{
+    type = double,
+    min = 0.1,
+    default = 4.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_AxeXP3,
+}
+
+option MissingSkillBooks.AxeXP4
+{
+    type = double,
+    min = 0.1,
+    default = 6.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_AxeXP4,
+}
+
+option MissingSkillBooks.AxeXP5
+{
+    type = double,
+    min = 0.1,
+    default = 8.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_AxeXP5,
+}
+
+option MissingSkillBooks.LongBluntEnabled
+{
+    type = boolean,
+    default = true,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LongBluntEnabled,
+}
+
+option MissingSkillBooks.LongBluntSpawnMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 10.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LongBluntSpawnMultiplier,
+}
+
+option MissingSkillBooks.LongBluntXP1
+{
+    type = double,
+    min = 0.1,
+    default = 1.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LongBluntXP1,
+}
+
+option MissingSkillBooks.LongBluntXP2
+{
+    type = double,
+    min = 0.1,
+    default = 2.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LongBluntXP2,
+}
+
+option MissingSkillBooks.LongBluntXP3
+{
+    type = double,
+    min = 0.1,
+    default = 4.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LongBluntXP3,
+}
+
+option MissingSkillBooks.LongBluntXP4
+{
+    type = double,
+    min = 0.1,
+    default = 6.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LongBluntXP4,
+}
+
+option MissingSkillBooks.LongBluntXP5
+{
+    type = double,
+    min = 0.1,
+    default = 8.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_LongBluntXP5,
+}
+
+option MissingSkillBooks.ShortBluntEnabled
+{
+    type = boolean,
+    default = true,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBluntEnabled,
+}
+
+option MissingSkillBooks.ShortBluntSpawnMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 10.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBluntSpawnMultiplier,
+}
+
+option MissingSkillBooks.ShortBluntXP1
+{
+    type = double,
+    min = 0.1,
+    default = 1.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBluntXP1,
+}
+
+option MissingSkillBooks.ShortBluntXP2
+{
+    type = double,
+    min = 0.1,
+    default = 2.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBluntXP2,
+}
+
+option MissingSkillBooks.ShortBluntXP3
+{
+    type = double,
+    min = 0.1,
+    default = 4.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBluntXP3,
+}
+
+option MissingSkillBooks.ShortBluntXP4
+{
+    type = double,
+    min = 0.1,
+    default = 6.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBluntXP4,
+}
+
+option MissingSkillBooks.ShortBluntXP5
+{
+    type = double,
+    min = 0.1,
+    default = 8.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBluntXP5,
+}
+
+option MissingSkillBooks.ShortBladeEnabled
+{
+    type = boolean,
+    default = true,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBladeEnabled,
+}
+
+option MissingSkillBooks.ShortBladeSpawnMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 10.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBladeSpawnMultiplier,
+}
+
+option MissingSkillBooks.ShortBladeXP1
+{
+    type = double,
+    min = 0.1,
+    default = 1.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBladeXP1,
+}
+
+option MissingSkillBooks.ShortBladeXP2
+{
+    type = double,
+    min = 0.1,
+    default = 2.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBladeXP2,
+}
+
+option MissingSkillBooks.ShortBladeXP3
+{
+    type = double,
+    min = 0.1,
+    default = 4.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBladeXP3,
+}
+
+option MissingSkillBooks.ShortBladeXP4
+{
+    type = double,
+    min = 0.1,
+    default = 6.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBladeXP4,
+}
+
+option MissingSkillBooks.ShortBladeXP5
+{
+    type = double,
+    min = 0.1,
+    default = 8.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_ShortBladeXP5,
+}
+
+option MissingSkillBooks.SpearEnabled
+{
+    type = boolean,
+    default = true,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SpearEnabled,
+}
+
+option MissingSkillBooks.SpearSpawnMultiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 10.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SpearSpawnMultiplier,
+}
+
+option MissingSkillBooks.SpearXP1
+{
+    type = double,
+    min = 0.1,
+    default = 1.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SpearXP1,
+}
+
+option MissingSkillBooks.SpearXP2
+{
+    type = double,
+    min = 0.1,
+    default = 2.5,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SpearXP2,
+}
+
+option MissingSkillBooks.SpearXP3
+{
+    type = double,
+    min = 0.1,
+    default = 4.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SpearXP3,
+}
+
+option MissingSkillBooks.SpearXP4
+{
+    type = double,
+    min = 0.1,
+    default = 6.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SpearXP4,
+}
+
+option MissingSkillBooks.SpearXP5
+{
+    type = double,
+    min = 0.1,
+    default = 8.0,
+    max = 100.0,
+    page = MissingSkillBooks,
+    translation = MissingSkillBooks_SpearXP5,
+}

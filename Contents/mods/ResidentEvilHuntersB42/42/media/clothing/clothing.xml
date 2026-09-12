@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<outfitManager>
+    <m_FemaleOutfits>
+        <m_Name>HunterBetaOutfit</m_Name>
+        <m_Guid>76f360d1-aefe-46aa-a4dc-d71e202b282e</m_Guid>
+        <m_Top>false</m_Top><m_Pants>false</m_Pants>
+        <m_AllowPantsHue>false</m_AllowPantsHue><m_AllowTopTint>false</m_AllowTopTint><m_AllowTShirtDecal>false</m_AllowTShirtDecal>
+        <m_items><itemGUID>6d8f8878-ffcc-49dd-bf88-cb18ec9f92f1</itemGUID></m_items>
+    </m_FemaleOutfits>
+    <m_FemaleOutfits>
+        <m_Name>HunterAlphaOutfit</m_Name>
+        <m_Guid>6a0a59d2-6942-46f3-b9e1-5e2d1fa42420</m_Guid>
+        <m_Top>false</m_Top><m_Pants>false</m_Pants>
+        <m_AllowPantsHue>false</m_AllowPantsHue><m_AllowTopTint>false</m_AllowTopTint><m_AllowTShirtDecal>false</m_AllowTShirtDecal>
+        <m_items><itemGUID>1f2b7fa6-4d78-45d2-b70b-72cc147af401</itemGUID></m_items>
+    </m_FemaleOutfits>
+    <m_FemaleOutfits>
+        <m_Name>HunterGammaOutfit</m_Name>
+        <m_Guid>ac5143e9-9a5c-4f56-94d6-53973d137ea4</m_Guid>
+        <m_Top>false</m_Top><m_Pants>false</m_Pants>
+        <m_AllowPantsHue>false</m_AllowPantsHue><m_AllowTopTint>false</m_AllowTopTint><m_AllowTShirtDecal>false</m_AllowTShirtDecal>
+        <m_items><itemGUID>87f3bf6e-0f99-4b39-8db2-5af5b7f62491</itemGUID></m_items>
+    </m_FemaleOutfits>
+
+    <m_MaleOutfits>
+        <m_Name>HunterBetaOutfit</m_Name>
+        <m_Guid>76f360d1-aefe-46aa-a4dc-d71e202b282e</m_Guid>
+        <m_Top>false</m_Top><m_Pants>false</m_Pants>
+        <m_AllowPantsHue>false</m_AllowPantsHue><m_AllowTopTint>false</m_AllowTopTint><m_AllowTShirtDecal>false</m_AllowTShirtDecal>
+        <m_items><itemGUID>6d8f8878-ffcc-49dd-bf88-cb18ec9f92f1</itemGUID></m_items>
+    </m_MaleOutfits>
+    <m_MaleOutfits>
+        <m_Name>HunterAlphaOutfit</m_Name>
+        <m_Guid>6a0a59d2-6942-46f3-b9e1-5e2d1fa42420</m_Guid>
+        <m_Top>false</m_Top><m_Pants>false</m_Pants>
+        <m_AllowPantsHue>false</m_AllowPantsHue><m_AllowTopTint>false</m_AllowTopTint><m_AllowTShirtDecal>false</m_AllowTShirtDecal>
+        <m_items><itemGUID>1f2b7fa6-4d78-45d2-b70b-72cc147af401</itemGUID></m_items>
+    </m_MaleOutfits>
+    <m_MaleOutfits>
+        <m_Name>HunterGammaOutfit</m_Name>
+        <m_Guid>ac5143e9-9a5c-4f56-94d6-53973d137ea4</m_Guid>
+        <m_Top>false</m_Top><m_Pants>false</m_Pants>
+        <m_AllowPantsHue>false</m_AllowPantsHue><m_AllowTopTint>false</m_AllowTopTint><m_AllowTShirtDecal>false</m_AllowTShirtDecal>
+        <m_items><itemGUID>87f3bf6e-0f99-4b39-8db2-5af5b7f62491</itemGUID></m_items>
+    </m_MaleOutfits>
+</outfitManager>

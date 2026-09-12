@@ -1,0 +1,1806 @@
+module Base
+{
+    item AssaultRifle
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.Bipod CS2Firearms.Bipod CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim CS2Firearms.SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    model AssaultRifle
+    {
+        mesh = weapons/firearm/M16_Rifle,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0234 0.0686,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+        attachment CS2_Laser
+        {
+            offset = -0.0231 0.2049 0.0224,
+            rotate = 0.0000 0.0000 0.0000
+        }
+        attachment CS2_Light
+        {
+            offset = 0.0241 0.2101 0.0234,
+            rotate = 0.0000 0.0000 0.0000
+        }
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.1744 0.0073,
+            rotate = 0.0000 0.0000 0.0000
+        }
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.3643 0.0237,
+            rotate = 0.0000 0.0000 0.0000
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3993 0.0237,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0350 0.0688,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope2
+        {
+            offset = 0.0000 0.0103 0.0683,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment recoilpad
+        {
+            offset = 0.0000 -0.1536 -0.0036,
+            rotate = 0.0000 0.0000 0.0000,
+            scale = 1.0350,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0000 0.0308 0.0610,
+            rotate = 180.0000 0.0000 -180.0000,
+            scale = 0.8153,
+        }
+
+        attachment laser
+        {
+            offset = 0.0000 0.2340 0.0020,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment world
+        {
+            offset = 0.0200 0.1300 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+
+    item Pistol3
+    {
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+	model Handgun
+    {
+        mesh = weapons/firearm/D_E_Pistol,
+        attachment muzzle
+        {
+            offset = 0.0000 0.1466 -0.0236,
+            rotate = -90.0000 0.0000 0.0000,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0010 0.0440 -0.0400,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment gunlight
+        {
+            offset = 0.0000 0.0953 0.0227,
+            rotate = 0.0000 0.0000 0.0000,
+            scale = 0.7750,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0324 -0.0495,
+            rotate = 180.0000 0.0000 -180.0000,
+            scale = 1.2850,
+        }
+
+        attachment laser
+        {
+            offset = 0.0000 0.0968 0.0141,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment world
+        {
+            offset = -0.0110 0.0670 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = -0.0338 0.0424 0.0000,
+            rotate = 90.0008 1.1964 -90.0396,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.1456 -0.0235,
+            rotate = 180.0000 -0.3605 180.0000,
+        }
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0043 -0.0416,
+            rotate = 180.0000 -0.4406 180.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0016 0.0878 0.0086,
+            rotate = 0.0000 88.7900 0.0000,
+            scale = 0.7900,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0000 0.0675 0.0041,
+            rotate = 180.0000 -89.8231 180.0000,
+            scale = 0.8650,
+        }
+    }
+	model Shotgun
+    {
+        mesh = weapons/firearm/PumpAction_Shotgun,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0541 0.0478,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0158 0.2313 0.0125,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0159 0.2193 0.0099,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.2099 0.0025,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.3738 0.0251,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3824 0.0257,
+            rotate = -90.0000 0.0000 180.0000,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0408 0.0499,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope2
+        {
+            offset = 0.0000 0.0426 0.0499,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment recoilpad
+        {
+            offset = 0.0000 -0.1673 -0.0427,
+            rotate = 10.0000 0.0000 0.0000,
+            scale = 1.2091,
+        }
+
+        attachment world
+        {
+            offset = 0.0158 0.1660 0.0000,
+            rotate = -180.0000 1.0000 -180.0000,
+        }
+
+        attachment choketube
+        {
+            offset = 0.0000 0.3738 0.0258,
+            rotate = -180.0000 0.0000 -180.0000,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model HuntingRifle
+    {
+        mesh = weapons/firearm/MSR788_Rifle,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.1091 0.0507,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0187 0.2528 0.0224,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0164 0.2484 0.0234,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.2042 0.0073,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.4899 0.0306,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4968 0.0308,
+            rotate = -90.0000 0.0000 180.0000,
+        }
+
+        attachment bayonnet
+        {
+            offset = 0.0000 0.3702 0.0130,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0351 0.0502,
+            rotate = 0.0000 0.0000 0.0000,
+            scale = 0.9650,
+        }
+
+        attachment scope2
+        {
+            offset = 0.0000 0.0585 0.0535,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment recoilpad
+        {
+            offset = 0.0000 -0.1630 -0.0210,
+            rotate = 6.0000 0.0000 0.0000,
+            scale = 1.1500,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0000 -0.1676 -0.0148,
+            rotate = -180.0000 0.0000 -180.0000,
+            scale = 1.6720,
+        }
+
+        attachment world
+        {
+            offset = 0.0120 0.1500 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model MSR7T_Rifle
+    {
+        mesh = weapons/firearm/MSR788_Rifle,
+        texture = weapons/firearm/MSR788_Rifle_Tactical,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.1141 0.0514,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0168 0.2564 0.0224,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0172 0.2500 0.0234,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.2074 0.0093,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.4890 0.0306,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4968 0.0308,
+            rotate = -90.0000 0.0000 180.0000,
+        }
+
+        attachment bayonnet
+        {
+            offset = 0.0000 0.3702 0.0130,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0351 0.0502,
+            rotate = 0.0000 0.0000 0.0000,
+            scale = 0.9650,
+        }
+
+        attachment scope2
+        {
+            offset = 0.0000 0.0585 0.0535,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment recoilpad
+        {
+            offset = 0.0000 -0.1676 -0.0148,
+            rotate = -0.5487 0.0000 0.0000,
+            scale = 1.1672,
+        }
+
+        attachment reddot
+        {
+            offset = -0.0010 0.1366 0.0394,
+            rotate = -180.0000 0.0000 -180.0000,
+            scale = 0.7500,
+        }
+
+        attachment world
+        {
+            offset = 0.0120 0.1500 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model VarmintRifle
+    {
+        mesh = weapons/firearm/MSR700_Rifle,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.1056 0.0485,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0179 0.2021 0.0151,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0181 0.2101 0.0157,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.1994 0.0081,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.4388 0.0269,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment bayonet
+        {
+            offset = 0.0000 0.3179 0.0092,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4472 0.0267,
+            rotate = -90.0000 0.0000 180.0000,
+        }
+
+        attachment bayonnet
+        {
+            offset = 0.0000 0.3510 0.0160,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0775 0.0450,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope2
+        {
+            offset = -0.0010 0.0572 0.0466,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment recoilpad
+        {
+            offset = 0.0000 -0.1650 -0.0270,
+            rotate = 0.0000 0.0000 0.0000,
+            scale = 1.1172,
+        }
+
+        attachment reddot
+        {
+            offset = -0.0010 0.1575 0.0347,
+            rotate = -180.0000 0.0000 -180.0000,
+            scale = 0.7400,
+        }
+
+        attachment world
+        {
+            offset = 0.0110 0.1600 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model JS14_Rifle
+    {
+        mesh = weapons/firearm/JS14,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0973 0.0572,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0153 0.2057 0.0202,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0175 0.1891 0.0186,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.1740 0.0089,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.3829 0.0354,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3822 0.0321,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0010 0.1196 0.0439,
+            rotate = -180.0000 0.0000 -0.0000,
+            scale = 0.7500,
+        }
+
+        attachment scope
+        {
+            offset = -0.0000 0.0443 0.0546,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope2
+        {
+            offset = 0.0000 0.0346 0.0573,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment laser
+        {
+            offset = 0.0000 0.2122 0.0010,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment world
+        {
+            offset = 0.0200 0.1300 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model JS3T_Shotgun
+    {
+        mesh = weapons/firearm/JS-3T_Tactical_Shotgun,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0787 0.0480,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0169 0.2798 0.0080,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0178 0.2469 0.0096,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.2066 0.0005,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.3740 0.0255,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3822 0.0250,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0000 0.1132 0.0362,
+            rotate = -180.0000 0.0000 -0.0000,
+            scale = 0.6637,
+        }
+
+        attachment world
+        {
+            offset = 0.0200 0.1300 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model L92_Carbine
+    {
+        mesh = weapons/firearm/L92_Carbine,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0844 0.0491,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0171 0.2547 0.0139,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0161 0.2372 0.0149,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.1596 0.0076,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.3975 0.0275,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3866 0.0263,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment world
+        {
+            offset = 0.0200 0.1300 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model L94_Rifle
+    {
+        mesh = weapons/firearm/L92_Carbine,
+                attachment CS2_Scope
+        {
+            offset = 0.0000 0.0234 0.0686,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+        attachment CS2_Laser
+        {
+            offset = -0.0231 0.2049 0.0224,
+            rotate = 0.0000 0.0000 0.0000
+        }
+        attachment CS2_Light
+        {
+            offset = 0.0241 0.2101 0.0234,
+            rotate = 0.0000 0.0000 0.0000
+        }
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.1744 0.0073,
+            rotate = 0.0000 0.0000 0.0000
+        }
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.3643 0.0237,
+            rotate = 0.0000 0.0000 0.0000
+        }texture = weapons/firearm/L94_Rifle,
+        attachment muzzle
+        {
+            offset = 0.0 0.3866 0.0263,
+            rotate = -90.0 0.0 -180.0,
+        }
+        attachment world
+        {
+            offset = 0.02 0.13 0.0,
+            rotate = 180.0 0.0 180.0,
+        }
+    }
+	model Trapper_Carbine
+    {
+        mesh = weapons/firearm/T_Carabine,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0391 0.0468,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0136 0.1687 0.0105,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0133 0.1572 0.0115,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.1930 0.0057,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.3450 0.0208,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3530 0.0210,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0010 0.0864 0.0342,
+            rotate = -180.0000 0.0000 -0.0000,
+            scale = 0.7500,
+        }
+
+        attachment scope
+        {
+            offset = -0.0000 0.0207 0.0423,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope2
+        {
+            offset = 0.0000 0.0247 0.0441,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment laser
+        {
+            offset = 0.0000 0.2157 -0.0012,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment world
+        {
+            offset = 0.0200 0.1300 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+    model AssaultRifle02
+    {
+        mesh = weapons/firearm/AssaultRifle02,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.1251 0.0503,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0199 0.2301 0.0156,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0208 0.2196 0.0170,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.2011 0.0043,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.3873 0.0314,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4270 0.0310,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment scope
+        {
+            offset = -0.0050 0.0350 0.0780,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope2
+        {
+            offset = 0.0000 0.0210 0.0610,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment recoilpad
+        {
+            offset = 0.0000 -0.1450 0.0050,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0010 0.0150 0.0670,
+            rotate = 179.0000 0.0000 -180.0000,
+        }
+
+        attachment laser
+        {
+            offset = 0.0000 0.2340 0.0020,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment world
+        {
+            offset = 0.0156 0.1500 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+	model M14
+    {
+        mesh = weapons/firearm/M14_Rifle,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.1044 0.0553,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0176 0.2500 0.0219,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0168 0.2497 0.0234,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.2077 0.0089,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.4530 0.0306,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4955 0.0310,
+            rotate = -90.0000 0.0000 -180.0000,
+        }
+
+        attachment scope
+        {
+            offset = -0.0000 0.1265 0.0529,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope2
+        {
+            offset = 0.0000 0.1139 0.0551,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment recoilpad
+        {
+            offset = 0.0000 -0.1415 -0.0198,
+            rotate = 4.5736 0.0000 0.0000,
+            scale = 1.0450,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0000 0.1340 0.0430,
+            rotate = 180.0000 0.0000 -180.0000,
+            scale = 0.8000,
+        }
+
+        attachment laser
+        {
+            offset = 0.0000 0.3275 0.0050,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment world
+        {
+            offset = 0.0143 0.1800 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+    model ShotgunSawnOff
+    {
+        mesh = weapons/firearm/PumpAction_Shotgun_Sawn,
+        texture = weapons/firearm/PumpAction_Shotgun,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0608 0.0514,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0166 0.2283 0.0110,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0157 0.2285 0.0112,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.2286 0.0009,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.3159 0.0272,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3200 0.0300,
+            rotate = -90.0000 0.0000 0.0000,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0500 0.0528,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment scope2
+        {
+            offset = 0.0000 0.0530 0.0498,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment recoilpad
+        {
+            offset = 0.0000 -0.1540 -0.0410,
+            rotate = 10.0000 0.0000 0.0000,
+            scale = 1.1300,
+        }
+
+        attachment world
+        {
+            offset = 0.0152 0.1000 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+    model DoubleBarrelShotgun
+    {
+        mesh = weapons/firearm/JS_2000,
+        texture = weapons/firearm/DoubleBarrelShotgun,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.1063 0.0489,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0166 0.1911 0.0131,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0176 0.1644 0.0114,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.1744 0.0027,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.4673 0.0271,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.4707 0.0205,
+            rotate = -90.0000 0.0000 0.0000,
+        }
+
+        attachment recoilpad
+        {
+            offset = 0.0000 -0.1604 -0.0420,
+            rotate = 10.0000 0.0000 0.0000,
+            scale = 1.2204,
+        }
+
+        attachment world
+        {
+            offset = 0.0143 0.2000 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+    model ShotgunDoubleBarrelSawn
+    {
+        mesh = weapons/firearm/JS_2000_Sawn,
+        texture = weapons/firearm/DoubleBarrelShotgun,
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0234 0.0686,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0231 0.2049 0.0224,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0241 0.2101 0.0234,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Grip
+        {
+            offset = 0.0000 0.1744 0.0073,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.3124 0.0272,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.3138 0.0198,
+            rotate = -90.0000 0.0000 0.0000,
+        }
+
+        attachment world
+        {
+            offset = 0.0143 0.2000 0.0000,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+    }
+    model Revolver
+    {
+        mesh = weapons/firearm/M625_Revolver,
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.1435 -0.0305,
+            rotate = 180.0000 -0.3605 180.0000,
+        }
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0406 -0.0530,
+            rotate = 180.0000 -0.4406 180.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0016 0.0878 0.0086,
+            rotate = 0.0000 88.7900 0.0000,
+            scale = 0.7900,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0000 0.0675 0.0041,
+            rotate = 180.0000 -89.8231 180.0000,
+            scale = 0.8650,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.1444 -0.0290,
+            rotate = -90.0000 0.0000 0.0000,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0573 -0.0502,
+            rotate = -180.0000 0.0000 -180.0000,
+            scale = 0.8450,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0006 0.0670 -0.0386,
+            rotate = 1.0000 1.0000 1.0000,
+            scale = 0.5363,
+        }
+
+        attachment world
+        {
+            offset = -0.0136 0.0690 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = -0.0542 0.0363 0.0009,
+            rotate = 90.0038 0.2177 -90.9911,
+        }
+    }
+	model Revolver_Long
+    {
+        mesh = weapons/firearm/Magnum_Revolver,
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.1721 -0.0277,
+            rotate = 180.0000 -0.3605 180.0000,
+        }
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0364 -0.0502,
+            rotate = 180.0000 -0.4406 180.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0016 0.0878 0.0086,
+            rotate = 0.0000 88.7900 0.0000,
+            scale = 0.7900,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0000 0.0675 0.0041,
+            rotate = 180.0000 -89.8231 180.0000,
+            scale = 0.8650,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.1734 -0.0280,
+            rotate = -90.0000 0.0000 0.0000,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0670 -0.0460,
+            rotate = 0.0000 180.0000 0.0000,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0000 0.0670 -0.0370,
+            rotate = 0.0000 0.0000 0.0000,
+            scale = 0.6039,
+        }
+
+        attachment world
+        {
+            offset = -0.0128 0.0810 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = -0.0542 0.0363 0.0009,
+            rotate = 90.0038 0.2177 -90.9911,
+        }
+    }
+	model Revolver_Short
+    {
+        mesh = weapons/firearm/M36_Revolver,
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.1118 -0.0272,
+            rotate = 180.0000 -0.3605 180.0000,
+        }
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0386 -0.0401,
+            rotate = 180.0000 -0.4406 180.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0016 0.0878 0.0086,
+            rotate = 0.0000 88.7900 0.0000,
+            scale = 0.7900,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0000 0.0675 0.0041,
+            rotate = 180.0000 -89.8231 180.0000,
+            scale = 0.8650,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.1129 -0.0271,
+            rotate = -90.0000 0.0000 0.0000,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0464 -0.0452,
+            rotate = 180.0000 -0.2502 180.0000,
+            scale = 0.8900,
+        }
+
+        attachment world
+        {
+            offset = -0.0119 0.0580 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = -0.0542 0.0363 0.0009,
+            rotate = 90.0038 0.2177 -90.9911,
+        }
+    }
+    model Handgun02
+    {
+        mesh = weapons/firearm/1911_Pistol,
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.1401 -0.0224,
+            rotate = 180.0000 -0.3605 180.0000,
+        }
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0176 -0.0356,
+            rotate = 180.0000 -0.4406 180.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0016 0.0878 0.0009,
+            rotate = 0.0000 88.7900 0.0000,
+            scale = 0.7900,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0000 0.0675 -0.0010,
+            rotate = 180.0000 -89.8231 180.0000,
+            scale = 0.8650,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.1432 -0.0225,
+            rotate = -90.0000 0.0000 0.0000,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0010 0.0571 -0.0358,
+            rotate = 1.0000 1.0000 1.0000,
+            scale = 0.8600,
+        }
+
+        attachment gunlight
+        {
+            offset = 0.0000 0.0997 0.0132,
+            rotate = 0.0000 0.0000 0.0000,
+            scale = 0.7750,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0380 -0.0426,
+            rotate = 180.0000 0.0000 180.0000,
+        }
+
+        attachment laser
+        {
+            offset = 0.0000 0.0900 0.0080,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment world
+        {
+            offset = 0.0000 0.0900 0.0080,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = -0.0338 0.0424 0.0000,
+            rotate = 90.0008 1.1964 -90.0396,
+        }
+    }
+	model Handgun03
+    {
+        mesh = weapons/firearm/M9_Pistol,
+
+        attachment CS2_Canon
+        {
+            offset = 0.0000 0.1390 -0.0276,
+            rotate = 180.0000 -0.3605 180.0000,
+        }
+
+        attachment CS2_Scope
+        {
+            offset = 0.0000 0.0213 -0.0394,
+            rotate = 180.0000 -0.4406 180.0000,
+        }
+
+        attachment CS2_Laser
+        {
+            offset = -0.0016 0.0904 -0.0021,
+            rotate = 0.0000 88.7900 0.0000,
+            scale = 0.7900,
+        }
+
+        attachment CS2_Light
+        {
+            offset = 0.0000 0.0645 -0.0060,
+            rotate = 180.0000 -89.8231 180.0000,
+            scale = 0.8650,
+        }
+
+        attachment muzzle
+        {
+            offset = 0.0000 0.1443 -0.0279,
+            rotate = -90.0000 0.0000 0.0000,
+        }
+
+        attachment reddot
+        {
+            offset = 0.0010 0.0440 -0.0400,
+            rotate = 1.0000 1.0000 1.0000,
+            scale = 0.8500,
+        }
+
+        attachment gunlight
+        {
+            offset = 0.0000 0.0929 0.0030,
+            rotate = 0.0000 0.0000 0.0000,
+            scale = 0.6699,
+        }
+
+        attachment scope
+        {
+            offset = 0.0000 0.0503 -0.0458,
+            rotate = 180.0000 0.0000 -180.0000,
+        }
+
+        attachment laser
+        {
+            offset = 0.0000 0.0915 -0.0053,
+            rotate = 0.0000 0.0000 0.0000,
+            scale = 0.8750,
+        }
+
+        attachment world
+        {
+            offset = -0.0090 0.0620 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = -0.0338 0.0424 0.0000,
+            rotate = 90.0008 1.1964 -90.0396,
+        }
+    }
+
+    item AssaultRifle2
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.Bipod CS2Firearms.Bipod CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim CS2Firearms.SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item Pistol2
+    {
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item Pistol
+    {
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item Revolver_Long
+    {
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item Revolver
+    {
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item Revolver_Short
+    {
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item DoubleBarrelShotgun
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item Shotgun
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item JS3T_Shotgun
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item DoubleBarrelShotgunSawnoff
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item ShotgunSawnoff
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item JS14_Rifle
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.Bipod CS2Firearms.Bipod CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim CS2Firearms.SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+
+    item L92_Carbine
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.Bipod CS2Firearms.Bipod CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim CS2Firearms.SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+    item L94_Rifle
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.Bipod CS2Firearms.Bipod CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim CS2Firearms.SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+    item AssaultRifle
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.Bipod CS2Firearms.Bipod CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim CS2Firearms.SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+    item AssaultRifle2
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.Bipod CS2Firearms.Bipod CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim CS2Firearms.SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+    item VarmintRifle
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.Bipod CS2Firearms.Bipod CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim CS2Firearms.SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+    item HuntingRifle
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.Bipod CS2Firearms.Bipod CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim CS2Firearms.SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+    item MSR7T_Rifle
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.Bipod CS2Firearms.Bipod CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim CS2Firearms.SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+    item TrapperCarbine
+    {
+        ModelWeaponPart = CS2Firearms.EOTECH_2x CS2Firearms.EOTECH_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Razor_1x CS2Firearms.Razor_1x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Micro_2x CS2Firearms.Micro_2x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.ACOG_4x CS2Firearms.ACOG_4x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.SB_2_8x CS2Firearms.SB_2_8x CS2_Scope CS2_Scope,
+        ModelWeaponPart = CS2Firearms.Vortex_8x CS2Firearms.Vortex_8x CS2_Scope CS2_Scope,
+
+        ModelWeaponPart = CS2Firearms.Anpeq_15_Laser CS2Firearms.Anpeq_15_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.Anpeq_2_Laser CS2Firearms.Anpeq_2_Laser CS2_Laser CS2_Laser,
+        ModelWeaponPart = CS2Firearms.SunfireTacticalLight CS2Firearms.SunfireTacticalLight CS2_Light CS2_Light,
+
+        ModelWeaponPart = CS2Firearms.AngularGrip CS2Firearms.AngularGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.TacticalGrip CS2Firearms.TacticalGrip CS2_Grip CS2_Grip,
+        ModelWeaponPart = CS2Firearms.Bipod CS2Firearms.Bipod CS2_Grip CS2_Grip,
+
+        ModelWeaponPart = CS2Firearms.SupressorSlim CS2Firearms.SupressorSlim CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorBulk SupressorBulk CS2_Canon CS2_Canon,
+        ModelWeaponPart = CS2Firearms.SupressorOsprey CS2Firearms.SupressorOsprey CS2_Canon CS2_Canon,
+    }
+}

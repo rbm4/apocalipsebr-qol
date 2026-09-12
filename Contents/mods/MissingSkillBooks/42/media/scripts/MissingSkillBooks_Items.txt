@@ -1,0 +1,670 @@
+module MissingSkillBooks
+{
+    item BookRunning1
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = RunningBook,
+
+        NumberOfPages = 220,
+        SkillTrained = Running,
+        LvlSkillTrained = 1,
+        NumLevelsTrained = 2,
+    }
+
+        item BookRunning2
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = RunningBook,
+        NumberOfPages = 260,
+        SkillTrained = Running,
+        LvlSkillTrained = 3,
+        NumLevelsTrained = 2,
+    }
+
+    item BookRunning3
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = RunningBook,
+        NumberOfPages = 300,
+        SkillTrained = Running,
+        LvlSkillTrained = 5,
+        NumLevelsTrained = 2,
+    }
+
+    item BookRunning4
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = RunningBook,
+        NumberOfPages = 340,
+        SkillTrained = Running,
+        LvlSkillTrained = 7,
+        NumLevelsTrained = 2,
+    }
+
+    item BookRunning5
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = RunningBook,
+        NumberOfPages = 380,
+        SkillTrained = Running,
+        LvlSkillTrained = 9,
+        NumLevelsTrained = 2,
+    }
+
+    item BookFitness1
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = FitnessBook,
+        NumberOfPages = 220,
+        SkillTrained = Fitness,
+        LvlSkillTrained = 1,
+        NumLevelsTrained = 2,
+    }
+
+    item BookFitness2
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = FitnessBook,
+        NumberOfPages = 260,
+        SkillTrained = Fitness,
+        LvlSkillTrained = 3,
+        NumLevelsTrained = 2,
+    }
+
+    item BookFitness3
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = FitnessBook,
+        NumberOfPages = 300,
+        SkillTrained = Fitness,
+        LvlSkillTrained = 5,
+        NumLevelsTrained = 2,
+    }
+
+    item BookFitness4
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = FitnessBook,
+        NumberOfPages = 340,
+        SkillTrained = Fitness,
+        LvlSkillTrained = 7,
+        NumLevelsTrained = 2,
+    }
+
+    item BookFitness5
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = FitnessBook,
+        NumberOfPages = 380,
+        SkillTrained = Fitness,
+        LvlSkillTrained = 9,
+        NumLevelsTrained = 2,
+    }
+    item BookStrength1
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = StrengthBook,
+        NumberOfPages = 220,
+        SkillTrained = Strength,
+        LvlSkillTrained = 1,
+        NumLevelsTrained = 2,
+    }
+
+    item BookStrength2
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = StrengthBook,
+        NumberOfPages = 260,
+        SkillTrained = Strength,
+        LvlSkillTrained = 3,
+        NumLevelsTrained = 2,
+    }
+
+    item BookStrength3
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = StrengthBook,
+        NumberOfPages = 300,
+        SkillTrained = Strength,
+        LvlSkillTrained = 5,
+        NumLevelsTrained = 2,
+    }
+
+    item BookStrength4
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = StrengthBook,
+        NumberOfPages = 340,
+        SkillTrained = Strength,
+        LvlSkillTrained = 7,
+        NumLevelsTrained = 2,
+    }
+
+    item BookStrength5
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = StrengthBook,
+        NumberOfPages = 380,
+        SkillTrained = Strength,
+        LvlSkillTrained = 9,
+        NumLevelsTrained = 2,
+    }
+
+
+    item BookLightfooted1
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = LightfootedBook,
+        NumberOfPages = 220,
+        SkillTrained = Lightfooted,
+        LvlSkillTrained = 1,
+        NumLevelsTrained = 2,
+    }
+
+    item BookLightfooted2
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = LightfootedBook,
+        NumberOfPages = 260,
+        SkillTrained = Lightfooted,
+        LvlSkillTrained = 3,
+        NumLevelsTrained = 2,
+    }
+
+    item BookLightfooted3
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = LightfootedBook,
+        NumberOfPages = 300,
+        SkillTrained = Lightfooted,
+        LvlSkillTrained = 5,
+        NumLevelsTrained = 2,
+    }
+
+    item BookLightfooted4
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = LightfootedBook,
+        NumberOfPages = 340,
+        SkillTrained = Lightfooted,
+        LvlSkillTrained = 7,
+        NumLevelsTrained = 2,
+    }
+
+    item BookLightfooted5
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = LightfootedBook,
+        NumberOfPages = 380,
+        SkillTrained = Lightfooted,
+        LvlSkillTrained = 9,
+        NumLevelsTrained = 2,
+    }
+
+
+    item BookNimble1
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = NimbleBook,
+        NumberOfPages = 220,
+        SkillTrained = Nimble,
+        LvlSkillTrained = 1,
+        NumLevelsTrained = 2,
+    }
+
+    item BookNimble2
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = NimbleBook,
+        NumberOfPages = 260,
+        SkillTrained = Nimble,
+        LvlSkillTrained = 3,
+        NumLevelsTrained = 2,
+    }
+
+    item BookNimble3
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = NimbleBook,
+        NumberOfPages = 300,
+        SkillTrained = Nimble,
+        LvlSkillTrained = 5,
+        NumLevelsTrained = 2,
+    }
+
+    item BookNimble4
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = NimbleBook,
+        NumberOfPages = 340,
+        SkillTrained = Nimble,
+        LvlSkillTrained = 7,
+        NumLevelsTrained = 2,
+    }
+
+    item BookNimble5
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = NimbleBook,
+        NumberOfPages = 380,
+        SkillTrained = Nimble,
+        LvlSkillTrained = 9,
+        NumLevelsTrained = 2,
+    }
+
+
+    item BookSneaking1
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = SneakingBook,
+        NumberOfPages = 220,
+        SkillTrained = Sneaking,
+        LvlSkillTrained = 1,
+        NumLevelsTrained = 2,
+    }
+
+    item BookSneaking2
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = SneakingBook,
+        NumberOfPages = 260,
+        SkillTrained = Sneaking,
+        LvlSkillTrained = 3,
+        NumLevelsTrained = 2,
+    }
+
+    item BookSneaking3
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = SneakingBook,
+        NumberOfPages = 300,
+        SkillTrained = Sneaking,
+        LvlSkillTrained = 5,
+        NumLevelsTrained = 2,
+    }
+
+    item BookSneaking4
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = SneakingBook,
+        NumberOfPages = 340,
+        SkillTrained = Sneaking,
+        LvlSkillTrained = 7,
+        NumLevelsTrained = 2,
+    }
+
+    item BookSneaking5
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = SneakingBook,
+        NumberOfPages = 380,
+        SkillTrained = Sneaking,
+        LvlSkillTrained = 9,
+        NumLevelsTrained = 2,
+    }
+
+
+    item BookAxe1
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = AxeBook,
+        NumberOfPages = 220,
+        SkillTrained = Axe,
+        LvlSkillTrained = 1,
+        NumLevelsTrained = 2,
+    }
+
+    item BookAxe2
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = AxeBook,
+        NumberOfPages = 260,
+        SkillTrained = Axe,
+        LvlSkillTrained = 3,
+        NumLevelsTrained = 2,
+    }
+
+    item BookAxe3
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = AxeBook,
+        NumberOfPages = 300,
+        SkillTrained = Axe,
+        LvlSkillTrained = 5,
+        NumLevelsTrained = 2,
+    }
+
+    item BookAxe4
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = AxeBook,
+        NumberOfPages = 340,
+        SkillTrained = Axe,
+        LvlSkillTrained = 7,
+        NumLevelsTrained = 2,
+    }
+
+    item BookAxe5
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = AxeBook,
+        NumberOfPages = 380,
+        SkillTrained = Axe,
+        LvlSkillTrained = 9,
+        NumLevelsTrained = 2,
+    }
+
+
+    item BookLongBlunt1
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = LongBluntBook,
+        NumberOfPages = 220,
+        SkillTrained = LongBlunt,
+        LvlSkillTrained = 1,
+        NumLevelsTrained = 2,
+    }
+
+    item BookLongBlunt2
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = LongBluntBook,
+        NumberOfPages = 260,
+        SkillTrained = LongBlunt,
+        LvlSkillTrained = 3,
+        NumLevelsTrained = 2,
+    }
+
+    item BookLongBlunt3
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = LongBluntBook,
+        NumberOfPages = 300,
+        SkillTrained = LongBlunt,
+        LvlSkillTrained = 5,
+        NumLevelsTrained = 2,
+    }
+
+    item BookLongBlunt4
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = LongBluntBook,
+        NumberOfPages = 340,
+        SkillTrained = LongBlunt,
+        LvlSkillTrained = 7,
+        NumLevelsTrained = 2,
+    }
+
+    item BookLongBlunt5
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = LongBluntBook,
+        NumberOfPages = 380,
+        SkillTrained = LongBlunt,
+        LvlSkillTrained = 9,
+        NumLevelsTrained = 2,
+    }
+
+
+    item BookShortBlunt1
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = ShortBluntBook,
+        NumberOfPages = 220,
+        SkillTrained = ShortBlunt,
+        LvlSkillTrained = 1,
+        NumLevelsTrained = 2,
+    }
+
+    item BookShortBlunt2
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = ShortBluntBook,
+        NumberOfPages = 260,
+        SkillTrained = ShortBlunt,
+        LvlSkillTrained = 3,
+        NumLevelsTrained = 2,
+    }
+
+    item BookShortBlunt3
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = ShortBluntBook,
+        NumberOfPages = 300,
+        SkillTrained = ShortBlunt,
+        LvlSkillTrained = 5,
+        NumLevelsTrained = 2,
+    }
+
+    item BookShortBlunt4
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = ShortBluntBook,
+        NumberOfPages = 340,
+        SkillTrained = ShortBlunt,
+        LvlSkillTrained = 7,
+        NumLevelsTrained = 2,
+    }
+
+    item BookShortBlunt5
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = ShortBluntBook,
+        NumberOfPages = 380,
+        SkillTrained = ShortBlunt,
+        LvlSkillTrained = 9,
+        NumLevelsTrained = 2,
+    }
+
+
+    item BookShortBlade1
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = ShortBladeBook,
+        NumberOfPages = 220,
+        SkillTrained = ShortBlade,
+        LvlSkillTrained = 1,
+        NumLevelsTrained = 2,
+    }
+
+    item BookShortBlade2
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = ShortBladeBook,
+        NumberOfPages = 260,
+        SkillTrained = ShortBlade,
+        LvlSkillTrained = 3,
+        NumLevelsTrained = 2,
+    }
+
+    item BookShortBlade3
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = ShortBladeBook,
+        NumberOfPages = 300,
+        SkillTrained = ShortBlade,
+        LvlSkillTrained = 5,
+        NumLevelsTrained = 2,
+    }
+
+    item BookShortBlade4
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = ShortBladeBook,
+        NumberOfPages = 340,
+        SkillTrained = ShortBlade,
+        LvlSkillTrained = 7,
+        NumLevelsTrained = 2,
+    }
+
+    item BookShortBlade5
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = ShortBladeBook,
+        NumberOfPages = 380,
+        SkillTrained = ShortBlade,
+        LvlSkillTrained = 9,
+        NumLevelsTrained = 2,
+    }
+
+
+    item BookSpear1
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = SpearBook,
+        NumberOfPages = 220,
+        SkillTrained = Spear,
+        LvlSkillTrained = 1,
+        NumLevelsTrained = 2,
+    }
+
+    item BookSpear2
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = SpearBook,
+        NumberOfPages = 260,
+        SkillTrained = Spear,
+        LvlSkillTrained = 3,
+        NumLevelsTrained = 2,
+    }
+
+    item BookSpear3
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = SpearBook,
+        NumberOfPages = 300,
+        SkillTrained = Spear,
+        LvlSkillTrained = 5,
+        NumLevelsTrained = 2,
+    }
+
+    item BookSpear4
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = SpearBook,
+        NumberOfPages = 340,
+        SkillTrained = Spear,
+        LvlSkillTrained = 7,
+        NumLevelsTrained = 2,
+    }
+
+    item BookSpear5
+    {
+        DisplayCategory = SkillBook,
+        ItemType = base:literature,
+        Weight = 1.0,
+        Icon = SpearBook,
+        NumberOfPages = 380,
+        SkillTrained = Spear,
+        LvlSkillTrained = 9,
+        NumLevelsTrained = 2,
+    }
+}

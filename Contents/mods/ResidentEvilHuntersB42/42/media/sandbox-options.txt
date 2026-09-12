@@ -1,0 +1,55 @@
+VERSION = 1,
+
+option ResidentEvilHunters.EnableHunterAlpha
+{
+    type = boolean,
+    default = true,
+    page = ResidentEvilHunters,
+    translation = ResidentEvilHunters_EnableHunterAlpha,
+}
+
+option ResidentEvilHunters.HunterAlphaSpawnRate
+{
+    type = double,
+    min = 0.0,
+    max = 100.0,
+    default = 1.0,
+    page = ResidentEvilHunters,
+    translation = ResidentEvilHunters_HunterAlphaSpawnRate,
+}
+
+option ResidentEvilHunters.EnableHunterBeta
+{
+    type = boolean,
+    default = true,
+    page = ResidentEvilHunters,
+    translation = ResidentEvilHunters_EnableHunterBeta,
+}
+
+option ResidentEvilHunters.HunterBetaSpawnRate
+{
+    type = double,
+    min = 0.0,
+    max = 100.0,
+    default = 1.0,
+    page = ResidentEvilHunters,
+    translation = ResidentEvilHunters_HunterBetaSpawnRate,
+}
+
+option ResidentEvilHunters.EnableHunterGamma
+{
+    type = boolean,
+    default = true,
+    page = ResidentEvilHunters,
+    translation = ResidentEvilHunters_EnableHunterGamma,
+}
+
+option ResidentEvilHunters.HunterGammaSpawnRate
+{
+    type = double,
+    min = 0.0,
+    max = 100.0,
+    default = 1.0,
+    page = ResidentEvilHunters,
+    translation = ResidentEvilHunters_HunterGammaSpawnRate,
+}

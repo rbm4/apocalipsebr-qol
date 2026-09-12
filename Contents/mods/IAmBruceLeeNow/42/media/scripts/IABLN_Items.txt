@@ -1,0 +1,77 @@
+module IAmBruceLeeNow
+{
+    imports
+    {
+        Base,
+    }
+
+    item MartialArtsHandWraps
+    {
+        DisplayCategory = Accessory,
+        ItemType = base:clothing,
+        Weight = 0.1,
+        Icon = GlovesLeatherBlackpng,
+        BiteDefense = 0,
+        BloodLocation = Hands,
+        BodyLocation = base:hands,
+        CanHaveHoles = false,
+        ClothingItem = Gloves_LeatherGloves,
+        FabricType = Leather,
+        Insulation = 0.75,
+        ScratchDefense = 0,
+        WindResistance = 0.75,
+        WorldStaticModel = Gloves_Ground,
+    }
+
+    item KungFuMagazine
+    {
+        DisplayCategory = RecipeResource,
+        ItemType = base:literature,
+        Weight = 0.5,
+        Icon = Magazine,
+        BoredomChange = -20,
+        StressChange = -15,
+        LearnedRecipes = CraftMartialArtsHandWraps,
+        StaticModel = Magazine,
+        WorldStaticModel = MagazineGround,
+        Tags = base:magazine,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+    }
+
+    item MartialArtsFightingStyle
+    {
+        hidden = true,
+        DisplayCategory = Weapon,
+        ItemType = base:weapon,
+        Weight = 0.0,
+        Icon = GlovesLeatherBlackpng,
+        BaseSpeed = 1.0,
+        ConditionLowerChanceOneIn = 1000000,
+        ConditionMax = 10,
+        CriticalChance = -100.0,
+        CritDmgMultiplier = 1.0,
+        DamageCategory = Blunt,
+        EnduranceMod = 3.0,
+        HitSound = IABLN_SilentImpact,
+        KnockBackOnNoDeath = true,
+        KnockdownMod = 1.5,
+        MaxDamage = 0.33335,
+        // The controller raises this to 3 only for Combo02's single sweep.
+        MaxHitcount = 1,
+        MaxRange = 1.2,
+        MinAngle = 0.72,
+        MinDamage = 0.13335,
+        MinRange = 0.0,
+        MinimumSwingtime = 3.0,
+        PushBackMod = 0.15,
+        SubCategory = Swinging,
+        SwingAnim = Bat,
+        SwingSound = IABLN_WhooshLight,
+        Swingtime = 4.0,
+        WeaponLength = 0.4,
+        WeaponSprite = null,
+        Tags = base:barehands,
+        UseEndurance = true,
+    }
+
+}

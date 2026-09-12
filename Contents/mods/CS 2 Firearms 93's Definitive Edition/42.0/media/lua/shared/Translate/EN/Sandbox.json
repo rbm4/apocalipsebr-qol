@@ -1,0 +1,5 @@
+{
+    "Sandbox_CS2Firearms_General" : "CS2 Firearms",
+    "Sandbox_CS2Firearms.replaceVanilla" : "Replace vanilla firearms",
+    "Sandbox_CS2Firearms.replaceVanilla_tooltip" : "Enable to remove vanilla firearms/attachments from the loot pool(mod attachments work on vanilla firearms)"
+}

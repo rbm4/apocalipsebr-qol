@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>IABLN_AimBounce</m_Name>
+	<m_Priority>20</m_Priority>
+	<m_AnimName>Bob_TABLN_AimBounce</m_AnimName>
+	<m_Looped>true</m_Looped>
+	<m_BlendTime>0.30</m_BlendTime>
+	<m_SpeedScale>1.00</m_SpeedScale>
+	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
+	<m_Conditions>
+		<m_Name>IABLNActive</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions>
+		<m_Name>IABLNLeftStance</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>false</m_Value>
+	</m_Conditions>
+</animNode>

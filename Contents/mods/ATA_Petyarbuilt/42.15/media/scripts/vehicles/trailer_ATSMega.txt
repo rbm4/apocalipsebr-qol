@@ -114,7 +114,7 @@ module Base
 		mass = 300,
 		physicsChassisShape = 3.4154 3.4154 15.0769,
 		centerOfMassOffset = 0.0000 2.7385 2.9538,
-		shadowExtents = 3.7385 16.4923,
+		shadowExtents = 3.7385 13.2000,
 		shadowOffset = 0.0000 1.0308,
 		brakingForce = 1,
 		stoppingMovementForce = 2.0f,
@@ -374,7 +374,7 @@ module Base
 
 		attachment trailerTruck
 		{
-			offset = 0.0000 0.3231 8.5385,
+			offset = 0.0000 0.7000 8.5385,
 			rotate = 0.0000 0.0000 0.0000,
 		}
 	}

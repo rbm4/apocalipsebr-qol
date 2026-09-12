@@ -1,0 +1,64 @@
+module CS2Firearms
+{
+    item TacticalGrip
+    {
+        DisplayName = Tactical Grip,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.MP5SD;CS2Firearms.UMP45;CS2Firearms.SG552;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.SCAR20;CS2Firearms.G3SG1;CS2Firearms.XM1014;CS2Firearms.Nova;CS2Firearms.AK47;Base.AssaultRifle;Base.AssaultRifle2;Base.DoubleBarrelShotgun;Base.Shotgun;Base.JS3T_Shotgun;Base.DoubleBarrelShotgunSawnoff;Base.ShotgunSawnoff;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine;CS2Firearms.FAMAS;CS2Firearms.G3SG1,
+        Weight = 0.1,
+        WeightModifier = 0.1,
+        HitChanceModifier = 10,
+        RecoilDelayModifier = -5,
+        AimingTimeModifier = -5,
+        WorldStaticModel = TacticalGrip,
+        Tooltip = recoil delay = -5, aiming time = -5"
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = RifleRecoilPad,
+        PartType = Grip,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+
+    item AngularGrip
+    {
+        DisplayName = Angular Grip,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.MP5SD;CS2Firearms.UMP45;CS2Firearms.SG552;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.SCAR20;CS2Firearms.G3SG1;CS2Firearms.XM1014;CS2Firearms.Nova;CS2Firearms.AK47;Base.AssaultRifle;Base.AssaultRifle2;Base.DoubleBarrelShotgun;Base.Shotgun;Base.JS3T_Shotgun;Base.DoubleBarrelShotgunSawnoff;Base.ShotgunSawnoff;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine;CS2Firearms.FAMAS;CS2Firearms.G3SG1,
+
+        Weight = 0.1,
+        WeightModifier = 0.1,
+        HitChanceModifier = 5,
+        RecoilDelayModifier = -5,
+        AimingTimeModifier = -15,
+        WorldStaticModel = AngularGrip,
+        Tooltip = recoil delay = -5, aiming time = -15"
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = RifleRecoilPad,
+        PartType = Grip,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+
+    item Bipod
+    {
+        DisplayName = Bipod,
+        MountOn = CS2Firearms.M4A4;CS2Firearms.MP5SD;CS2Firearms.UMP45;CS2Firearms.SG552;CS2Firearms.Galil;CS2Firearms.M4A1;CS2Firearms.SCAR20;CS2Firearms.G3SG1;CS2Firearms.AK47;Base.AssaultRifle;Base.AssaultRifle2;Base.JS14_Rifle;Base.L92_Carbine;Base.L94_Rifle;Base.VarmintRifle;Base.HuntingRifle;Base.MSR7T_Rifle;Base.TrapperCarbine;CS2Firearms.FAMAS;CS2Firearms.Galil;CS2Firearms.AWP;CS2Firearms.SSG69,
+
+        Weight = 0.5,
+        WeightModifier = 0.2,
+        HitChanceModifier = 15,
+        RecoilDelayModifier = -10,
+        AimingTimeModifier = -15,
+        WorldStaticModel = Bipod,
+        Tooltip = recoil delay = -10, aiming time = -15"
+
+        DisplayCategory = WeaponPart,
+        ItemType = base:weaponpart,
+        Icon = RifleRecoilPad,
+        PartType = Grip,
+        CanAttach = ItemCodeOnTest.hasScrewdriver,
+        CanDetach = ItemCodeOnTest.hasScrewdriver,
+    }
+}

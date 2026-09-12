@@ -1,0 +1,6 @@
+VERSION = 1,
+
+option CS2Firearms.replaceVanilla = {
+    type = boolean, default = true,
+    page = CS2Firearms_General, translation = CS2Firearms.replaceVanilla,
+}

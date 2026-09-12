@@ -1,0 +1,231 @@
+module Base
+{
+    fixing Fix Glock18
+    {
+        Require = CS2Firearms.Glock18,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=1,
+    }
+
+    fixing Fix M4A4
+    {
+        Require = CS2Firearms.M4A4,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=2,
+    }
+
+    fixing Fix M4A1
+    {
+        Require = CS2Firearms.M4A1,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=3,
+    }
+
+    fixing Fix Galil
+    {
+        Require = CS2Firearms.Galil,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=3,
+    }
+
+    fixing Fix AK47
+    {
+        Require = CS2Firearms.AK47,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=2,
+    }
+    
+    fixing Fix M249
+    {
+        Require = CS2Firearms.M249,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=5,
+    }
+    
+    fixing Fix Negev
+    {
+        Require = CS2Firearms.Negev,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=5,
+    }
+
+    fixing Fix XM1014
+    {
+        Require = CS2Firearms.XM1014,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=2,
+    }
+
+    fixing Fix Nova
+    {
+        Require = CS2Firearms.Nova,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=2,
+    }
+    
+    fixing Fix MP7
+    {
+        Require = CS2Firearms.MP7,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=2,
+    }
+
+    fixing Fix TMP
+    {
+        Require = CS2Firearms.TMP,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=2,
+    }
+
+    fixing Fix Beretta
+    {
+        Require = CS2Firearms.Beretta,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=1,
+    }
+
+    fixing Fix SawedOff
+    {
+        Require = CS2Firearms.SawedOff,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=1,
+    }
+
+    fixing Fix CZ75
+    {
+        Require = CS2Firearms.CZ75,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=2,
+    }
+
+    fixing Fix TEC9
+    {
+        Require = CS2Firearms.TEC9,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=2,
+    }
+
+    fixing Fix FiveSeven
+    {
+        Require = CS2Firearms.FiveSeven,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=1,
+    }
+    
+    fixing Fix DesertEagle
+    {
+        Require = CS2Firearms.DesertEagle,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=2,
+    }
+    
+    fixing Fix P2000
+    {
+        Require = CS2Firearms.P2000,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=1,
+    }
+    
+    fixing Fix P250
+    {
+        Require = CS2Firearms.P250,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=1,
+    }
+    
+    fixing Fix USP
+    {
+        Require = CS2Firearms.USP,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=1,
+    }
+
+    fixing Fix R8Revolver
+    {
+        Require = CS2Firearms.R8Revolver,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=1,
+    }
+
+    fixing Fix P90
+    {
+        Require = CS2Firearms.P90,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=3,
+    }
+    fixing Fix MAC10
+    {
+        Require = CS2Firearms.MAC10,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=3,
+    }
+    fixing Fix SG552
+    {
+        Require = CS2Firearms.SG552,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=3,
+    }
+    fixing Fix SCAR20
+    {
+        Require = CS2Firearms.,SCAR20
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=4,
+    }
+    fixing Fix G3SG1
+    {
+        Require = CS2Firearms.G3SG1,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=5,
+    }
+    fixing Fix AUG
+    {
+        Require = CS2FirearmAUGs.,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=4,
+    }
+    fixing Fix FAMAS
+    {
+        Require = CS2Firearms.FAMAS,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=3,
+    }
+    fixing Fix MP5SD
+    {
+        Require = CS2Firearms.MP5SD,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=3,
+    }
+    fixing Fix UMP45
+    {
+        Require = CS2Firearms.UMP45,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=3,
+    }
+    fixing Fix Bizon
+    {
+        Require = CS2Firearms.Bizon,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=3,
+    }
+    fixing Fix MAG7
+    {
+        Require = CS2FirearmsMAG7.,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=2,
+    }
+    fixing Fix SSG69
+    {
+        Require = CS2Firearms.SSG69,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=5,
+    }
+    fixing Fix AWP
+    {
+        Require = CS2Firearms.AWP,
+        ConditionModifier = 0.8,
+        Fixer = Base.DuctTape=2; Aiming=5,
+    }
+
+}
+
+

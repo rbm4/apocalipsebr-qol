@@ -1,0 +1,19 @@
+VERSION = 1,
+
+perk MartialArts
+{
+    parent = Combat,
+    name = MartialArts,
+    translation = MartialArts,
+    passive = false,
+    xp1 = 50,
+    xp2 = 100,
+    xp3 = 200,
+    xp4 = 500,
+    xp5 = 1000,
+    xp6 = 2500,
+    xp7 = 4000,
+    xp8 = 5000,
+    xp9 = 7000,
+    xp10 = 9000,
+}
