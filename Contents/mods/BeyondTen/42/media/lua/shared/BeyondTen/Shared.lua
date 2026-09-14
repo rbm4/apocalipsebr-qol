@@ -2,7 +2,7 @@ BeyondTen = BeyondTen or {}
 
 local BT = BeyondTen
 
-BT.VERSION = "1.1.1"
+BT.VERSION = "1.1.2"
 BT.API_VERSION = 1
 BT.GAME_BUILD = 42
 BT.MODULE = "BeyondTen"

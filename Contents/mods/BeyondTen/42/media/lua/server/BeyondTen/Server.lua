@@ -66,6 +66,8 @@ local function loadMirrorXP(player)
     return result
 end
 
+local sanitizeCanonicalXP
+
 local function getStoreRoot()
     if not ModData or type(ModData.getOrCreate) ~= "function" then return nil end
     local root = ModData.getOrCreate(Server.STORE_KEY)
@@ -87,7 +89,7 @@ local function identityToken(value)
     return tostring(math.floor(first)) .. "-" .. tostring(math.floor(second))
 end
 
-local function getPlayerStoreKey(player)
+local function getPlayerIdentityParts(player)
     local username = ""
     local okUsername, valueUsername = pcall(function() return player:getUsername() end)
     if okUsername and valueUsername ~= nil then username = tostring(valueUsername) end
@@ -97,10 +99,57 @@ local function getPlayerStoreKey(player)
     local playerIndex = -1
     local okIndex, valueIndex = pcall(function() return player:getIndex() end)
     if okIndex and valueIndex ~= nil then playerIndex = tonumber(valueIndex) or -1 end
-    return identityToken("user:" .. username .. "|slot:" .. tostring(playerIndex))
+
+    local steamID = nil
+    local okSteam, valueSteam = pcall(function() return player:getSteamID() end)
+    if okSteam and valueSteam ~= nil then
+        local value = tostring(valueSteam)
+        if value ~= "" and value ~= "0" then steamID = value end
+    end
+
+    return username, playerIndex, steamID
 end
 
-local function sanitizeCanonicalXP(values)
+local function appendUnique(list, seen, value)
+    if value and not seen[value] then
+        list[#list + 1] = value
+        seen[value] = true
+    end
+end
+
+local function getPlayerStoreKeys(player)
+    local username, playerIndex, steamID = getPlayerIdentityParts(player)
+    local rawKeys = {}
+    local seen = {}
+
+    -- Prefer Steam identity when present, but keep username aliases readable so
+    -- existing 1.1.1 records and non-Steam servers do not appear wiped.
+    if steamID then
+        appendUnique(rawKeys, seen, "steam:" .. steamID .. "|slot:" .. tostring(playerIndex))
+    end
+    appendUnique(rawKeys, seen, "user:" .. username .. "|slot:" .. tostring(playerIndex))
+
+    local keys = {}
+    for index, rawKey in ipairs(rawKeys) do
+        keys[index] = identityToken(rawKey)
+    end
+    return keys
+end
+
+local function getPlayerStoreKey(player)
+    return getPlayerStoreKeys(player)[1]
+end
+
+local function mergeCanonicalXP(target, source)
+    if type(target) ~= "table" or type(source) ~= "table" then return target end
+    for id, value in pairs(sanitizeCanonicalXP(source)) do
+        local current = tonumber(target[id]) or 0
+        if value > current then target[id] = value end
+    end
+    return target
+end
+
+sanitizeCanonicalXP = function(values)
     local result = {}
     if type(values) ~= "table" then return result end
 
@@ -131,26 +180,57 @@ local function sanitizeCanonicalXP(values)
 end
 
 local function loadCanonicalXP(player)
-    local storeKey = getPlayerStoreKey(player)
+    local storeKeys = getPlayerStoreKeys(player)
+    local storeKey = storeKeys[1]
     local root = getStoreRoot()
     if not root then return loadMirrorXP(player), storeKey, nil end
 
     local record = root.players[storeKey]
-    local values
-    local isCanonical = type(record) == "table"
-        and (record.migrated == true or type(record.perks) == "table")
-    if isCanonical then
-        values = sanitizeCanonicalXP(record.perks)
-    else
+    local values = nil
+    local sourceKey = nil
+
+    for _, candidateKey in ipairs(storeKeys) do
+        local candidate = root.players[candidateKey]
+        local isCanonical = type(candidate) == "table"
+            and (candidate.migrated == true or type(candidate.perks) == "table")
+        if isCanonical then
+            if values == nil then
+                values = sanitizeCanonicalXP(candidate.perks)
+                sourceKey = candidateKey
+            else
+                mergeCanonicalXP(values, candidate.perks)
+            end
+        end
+    end
+
+    if values == nil then
         -- One-time migration from the character-owned B41/B42 schema. After
         -- this record exists, inbound player ModData is never trusted again.
         values = loadMirrorXP(player)
-        record = {}
-        root.players[storeKey] = record
     end
+
+    if sourceKey and sourceKey ~= storeKey then
+        print("[BeyondTen/B42] migrated mastery XP identity alias to primary store key")
+    end
+
+    record = type(record) == "table" and record or {}
+    root.players[storeKey] = record
     record.version = 1
     record.migrated = true
     record.perks = values
+
+    -- Keep aliases pointing at the same XP table. This avoids progress splits
+    -- while still surviving a later Steam/username identity-mode change.
+    for _, candidateKey in ipairs(storeKeys) do
+        if candidateKey ~= storeKey then
+            local aliasRecord = type(root.players[candidateKey]) == "table" and root.players[candidateKey] or {}
+            root.players[candidateKey] = aliasRecord
+            aliasRecord.version = 1
+            aliasRecord.migrated = true
+            aliasRecord.perks = values
+        end
+    end
+
     return values, storeKey, record
 end
 

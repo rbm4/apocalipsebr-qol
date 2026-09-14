@@ -269,6 +269,9 @@ function ReadSkillRecoveryJournal:update()
 
 				local xpRate = math.sqrt(greatestXp)/25
 				local readXP = SRJ.modDataHandler.getReadXP(player)
+				local passiveSkillsInit = SRJ.modDataHandler.getPassiveLevels(player)
+				local startingLevels = SRJ.getFreeLevelsFromTraitsAndProfession(player)
+				local deductibleXP = SRJ.modDataHandler.getDeductedXP(player)
 
 				JMD.recoveryJournalXpLog = JMD.recoveryJournalXpLog or {}
 				local jmdUsedXP = JMD.recoveryJournalXpLog
@@ -286,6 +289,11 @@ function ReadSkillRecoveryJournal:update()
 						local currentlyReadXP = readXP[skill]
 						if isBeyondTenSkill and readXP.BeyondTen and readXP.BeyondTen[skill] then
 							currentlyReadXP = math.max(currentlyReadXP, readXP.BeyondTen[skill])
+						end
+						if isBeyondTenSkill then
+							local actualRecoveredXP = SRJ.calculateGainedSkill(player, perk, passiveSkillsInit, startingLevels, deductibleXP, self.isFullJournal) or 0
+							local sessionReadXP = self.sessionReadXP[skill] or 0
+							currentlyReadXP = math.min(currentlyReadXP, math.max(actualRecoveredXP, sessionReadXP))
 						end
 						totalRedXP = totalRedXP + currentlyReadXP
 
@@ -323,6 +331,9 @@ function ReadSkillRecoveryJournal:update()
 								-- store amount already red in player data
 								local resultingReadXP = currentlyReadXP+perPerkXpRate
 								readXP[skill] = resultingReadXP
+								if isBeyondTenSkill then
+									self.sessionReadXP[skill] = resultingReadXP
+								end
 								-- and in journal for decay
 								jmdUsedXP[skill] = resultingReadXP
 								if isBeyondTenSkill then
@@ -477,6 +488,7 @@ function ReadSkillRecoveryJournal:new(character, item)
 	o.haloTextDelay = 0
 	o.chargesExhausted = false
 	o.xpWasAwarded = false
+	o.sessionReadXP = {}
 
 	-- Pre-calculate charge exhaustion state (actual increment happens in start())
 	if o.isFullJournal then
