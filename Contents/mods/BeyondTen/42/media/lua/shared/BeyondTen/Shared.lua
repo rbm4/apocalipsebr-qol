@@ -282,6 +282,14 @@ function BT.GetVirtualXP(character, perkOrId)
     local nativeXP = 0
     local xp = character:getXp()
     if xp then nativeXP = tonumber(xp:getXP(perk)) or 0 end
+
+    -- Once level 10 is reached, BeyondTen parks the raw native XP at the
+    -- level-9 reservoir. Use the native cap as the completed vanilla budget
+    -- before adding the server-authoritative mastery XP.
+    if BT.GetNativeLevel(character, perk) >= BT.NATIVE_MAX_LEVEL then
+        nativeXP = BT.GetNativeCapXP(perk)
+    end
+
     return nativeXP + BT.GetStoredXP(character, perk)
 end
 

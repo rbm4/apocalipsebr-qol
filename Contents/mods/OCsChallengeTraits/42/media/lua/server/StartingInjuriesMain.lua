@@ -67,6 +67,88 @@ local DIRT_BLOOD_PARTS = {
     BloodBodyPartType.UpperLeg_R
 }
 
+local FEVER_DATA_VERSION = 1
+local FEVER_DURATION_HOURS = 24 * 30
+local LEGACY_FEVER_CLEAR_HOURS = 30 * 24
+
+local function hasStartingFeverTrait(player)
+    return player:hasTrait(WoundTraitRegistry.SQUALOR)
+        or player:hasTrait(WoundTraitRegistry.LEFT_FOR_DEAD)
+end
+
+local function startFeverRecovery(player)
+    local modData = player:getModData()
+    local hoursSurvived = player:getHoursSurvived()
+    local sickness = player:getStats():get(CharacterStat.SICKNESS)
+
+    modData.StartingInjuriesMod_FeverDataVersion = FEVER_DATA_VERSION
+    modData.StartingInjuriesMod_FeverStartHours = hoursSurvived
+    modData.StartingInjuriesMod_FeverEndHours = hoursSurvived + FEVER_DURATION_HOURS
+    modData.StartingInjuriesMod_FeverInitialSickness = sickness
+    modData.StartingInjuriesMod_FeverActive = sickness > 0
+end
+
+local function finishFeverRecovery(player, modData)
+    player:getStats():reset(CharacterStat.SICKNESS)
+    modData.StartingInjuriesMod_FeverActive = false
+    modData.StartingInjuriesMod_FeverEndHours = nil
+    modData.StartingInjuriesMod_FeverInitialSickness = nil
+end
+
+local function updateFeverRecovery(player)
+    if not player or not hasStartingFeverTrait(player) then return end
+
+    local modData = player:getModData()
+    local stats = player:getStats()
+    local hoursSurvived = player:getHoursSurvived()
+
+    -- One-time migration for characters created before fever recovery existed.
+    if modData.StartingInjuriesMod_FeverDataVersion ~= FEVER_DATA_VERSION then
+        modData.StartingInjuriesMod_FeverDataVersion = FEVER_DATA_VERSION
+
+        if stats:get(CharacterStat.SICKNESS) <= 0 then
+            modData.StartingInjuriesMod_FeverActive = false
+            return
+        end
+
+        if hoursSurvived > LEGACY_FEVER_CLEAR_HOURS then
+            finishFeverRecovery(player, modData)
+            return
+        end
+
+        startFeverRecovery(player)
+    end
+
+    if not modData.StartingInjuriesMod_FeverActive then return end
+
+    local endHours = modData.StartingInjuriesMod_FeverEndHours
+    local initialSickness = modData.StartingInjuriesMod_FeverInitialSickness
+    if not endHours or not initialSickness or initialSickness <= 0 then
+        finishFeverRecovery(player, modData)
+        return
+    end
+
+    local remainingHours = endHours - hoursSurvived
+    if remainingHours <= 0 then
+        finishFeverRecovery(player, modData)
+        return
+    end
+
+    local remainingRatio = math.min(1, math.max(0, remainingHours / FEVER_DURATION_HOURS))
+    stats:set(CharacterStat.SICKNESS, initialSickness * remainingRatio)
+end
+
+local function updateAllFeverRecovery()
+    if isServer() then
+        local players = getOnlinePlayers()
+        for i = 0, players:size() - 1 do
+            updateFeverRecovery(players:get(i))
+        end
+    else
+        updateFeverRecovery(getPlayer())
+    end
+end
+
 
 
 local function getRandomBodyPart(bodyDamage, bodyPartTypes)
@@ -184,6 +266,8 @@ local function applySqualor(player, includeDrunk, hungerLevel)
     bodyDamage:setColdStrength(20.0)
     bodyDamage:setTimeToSneezeOrCough(0)
     bodyDamage:setIsFakeInfected(true)
+
+    startFeverRecovery(player)
     
     for _, bodyPartType in ipairs(ALL_BODY_PARTS) do
         bodyDamage:getBodyPart(bodyPartType):setWetness(100)
@@ -557,3 +641,4 @@ local function initWounds(player)
 end
 
 Events.OnNewGame.Add(initWounds)
+Events.EveryOneMinute.Add(updateAllFeverRecovery)

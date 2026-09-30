@@ -1,9 +1,17 @@
 -- Zombie Kill Counter - Server-Side Handler
 -- Tracks kills on the server and writes aggregated player data to file
 
+ZKC_ServerHandler = ZKC_ServerHandler or {}
+
+-- Hosted games may load files from media/lua/server in the client Lua
+-- environment as well. Stop before requiring dependencies, initializing
+-- server state, or registering callbacks there.
+if not isServer() then
+    return ZKC_ServerHandler
+end
+
 require "ZombieKillCounter/ZKC_Config"
 
-ZKC_ServerHandler = ZKC_ServerHandler or {}
 ZKC_ServerHandler.playerStatsById = ZKC_ServerHandler.playerStatsById or {}
 ZKC_ServerHandler.playerKeys = ZKC_ServerHandler.playerKeys or {}
 ZKC_ServerHandler.lastFlushTime = ZKC_ServerHandler.lastFlushTime or os.time()
@@ -55,9 +63,7 @@ local function getOrCreatePlayerStats(player)
         playerKey = playerKey,
         updateNumber = 0,
         killsSinceLastUpdate = 0,
-        totalSessionKills = 0,
-        baselineZombieKills = nil,
-        lastKnownZombieKills = nil
+        totalSessionKills = 0
     }
 
     ZKC_ServerHandler.playerStatsById[playerKey] = stats
@@ -77,24 +83,22 @@ local function hasTableValues(values)
     return false
 end
 
-local function collectBeyondTenData(player)
-    local BT = getBeyondTen()
-    if not BT or type(BT.ExportXP) ~= "function" then return nil, nil end
-
-    local masteryXP = BT.ExportXP(player)
-    if not hasTableValues(masteryXP) then return nil, nil end
-
-    local effectiveLevels = {}
-    if type(BT.GetEffectiveLevel) == "function" and type(BT.ResolvePerk) == "function" then
-        for perkId, _xp in pairs(masteryXP) do
-            local perk = BT.ResolvePerk(perkId)
-            if perk then
-                effectiveLevels[perkId] = BT.GetEffectiveLevel(player, perk)
-            end
-        end
+local function getEffectiveSkillData(BT, player, perk, nativeXP)
+    if not BT or type(BT.IsTrainablePerk) ~= "function" or not BT.IsTrainablePerk(perk) then
+        return nativeXP, nil
     end
 
-    return masteryXP, hasTableValues(effectiveLevels) and effectiveLevels or nil
+    local totalXP = nativeXP
+    if type(BT.GetVirtualXP) == "function" then
+        totalXP = tonumber(BT.GetVirtualXP(player, perk)) or nativeXP
+    end
+
+    local effectiveLevel = nil
+    if type(BT.GetEffectiveLevel) == "function" then
+        effectiveLevel = tonumber(BT.GetEffectiveLevel(player, perk))
+    end
+
+    return totalXP, effectiveLevel
 end
 
 local function collectPlayerData(player, stats)
@@ -139,20 +143,25 @@ local function collectPlayerData(player, stats)
         data.hoursSurvived = math.floor(player:getHoursSurvived())
 
         local skills = {}
+        local effectiveSkillLevels = {}
+        local BT = getBeyondTen()
         local xpObj = player:getXp()
         for i = 1, Perks.getMaxIndex() - 1 do
             local perk = Perks.fromIndex(i)
             if perk and perk:getParent():getId() ~= "None" then
-                skills[perk:getId()] = xpObj:getXP(perk)
+                local perkId = perk:getId()
+                local totalXP, effectiveLevel = getEffectiveSkillData(BT, player, perk, xpObj:getXP(perk))
+                skills[perkId] = totalXP
+                if effectiveLevel ~= nil then
+                    effectiveSkillLevels[perkId] = effectiveLevel
+                end
             end
         end
         data.skills = skills
 
-        local beyondTenSkills, effectiveSkillLevels = collectBeyondTenData(player)
-        if beyondTenSkills then
-            data.beyondTenSkills = beyondTenSkills
-        end
-        if effectiveSkillLevels then
+        -- skills already contains complete XP, so do not emit the old
+        -- beyondTenSkills delta that downstream consumers would add again.
+        if hasTableValues(effectiveSkillLevels) then
             data.effectiveSkillLevels = effectiveSkillLevels
         end
     end
@@ -199,6 +208,10 @@ local function queueTrackedPlayers()
 end
 
 function ZKC_ServerHandler.flushPendingPayloads()
+    if not isServer() then
+        return false
+    end
+
     local payloads, flushedStats = queueTrackedPlayers()
     local payloadCount = #payloads
     if payloadCount == 0 then
@@ -241,91 +254,45 @@ function ZKC_ServerHandler.flushPendingPayloads()
     return true
 end
 
-local function samplePlayerKillDelta(player)
-    if not ZKC_Config.enabled or not isServer() or not player then
+local function onZombieDead(zombie)
+    if not ZKC_Config.enabled or not isServer() or not zombie then
         return
     end
 
-    local currentZombieKills = player:getZombieKills()
-    if type(currentZombieKills) ~= "number" then
+    -- Kill attribution is read from the server-owned zombie at the moment its
+    -- death event fires. Never accept a client-provided counter or kill claim.
+    local player = zombie:getAttackedBy()
+    if not player or not instanceof(player, "IsoPlayer") then
+        return
+    end
+
+    -- Only credit a currently connected server player. This also prevents a
+    -- stale or synthetic IsoPlayer reference from creating a stats entry.
+    local onlineId = player:getOnlineID()
+    if onlineId == nil or onlineId < 0 or getPlayerByOnlineID(onlineId) ~= player then
         return
     end
 
     local stats = getOrCreatePlayerStats(player)
     stats.playerName = player:getUsername()
-
-    if not stats.lastKnownZombieKills then
-        stats.baselineZombieKills = currentZombieKills
-        stats.lastKnownZombieKills = currentZombieKills
-        log("Baseline kill count for " .. tostring(stats.playerName) .. ": " .. tostring(currentZombieKills))
-        return
-    end
-
-    if currentZombieKills < stats.lastKnownZombieKills then
-        if stats.killsSinceLastUpdate > 0 then
-            ZKC_ServerHandler.flushPendingPayloads()
-        end
-
-        log(
-            "Kill count reset for " .. tostring(stats.playerName) .. " (" ..
-                tostring(stats.lastKnownZombieKills) .. " -> " .. tostring(currentZombieKills) .. "); rebasing"
-        )
-        stats.baselineZombieKills = currentZombieKills
-        stats.lastKnownZombieKills = currentZombieKills
-        stats.killsSinceLastUpdate = 0
-        stats.totalSessionKills = 0
-        return
-    end
-
-    local delta = currentZombieKills - stats.lastKnownZombieKills
-    if delta <= 0 then
-        return
-    end
-
-    stats.lastKnownZombieKills = currentZombieKills
-    stats.killsSinceLastUpdate = stats.killsSinceLastUpdate + delta
-    stats.totalSessionKills = currentZombieKills - (stats.baselineZombieKills or currentZombieKills)
+    stats.killsSinceLastUpdate = stats.killsSinceLastUpdate + 1
+    stats.totalSessionKills = stats.totalSessionKills + 1
 
     if ZKC_Config.Storage.debug then
         log(
-            "Kill delta for " .. tostring(stats.playerName) .. ": +" .. tostring(delta) ..
-                " (vanilla: " .. tostring(currentZombieKills) ..
-                ", pending: " .. tostring(stats.killsSinceLastUpdate) ..
+            "Server-confirmed kill for " .. tostring(stats.playerName) ..
+                " (pending: " .. tostring(stats.killsSinceLastUpdate) ..
                 ", session: " .. tostring(stats.totalSessionKills) .. ")"
         )
     end
-end
 
-function ZKC_ServerHandler.sampleOnlinePlayers()
-    if not ZKC_Config.enabled or not isServer() then
-        return
-    end
-
-    local onlinePlayers = getOnlinePlayers()
-    if not onlinePlayers then
-        return
-    end
-
-    local shouldFlush = false
-    for playerIndex = 0, onlinePlayers:size() - 1 do
-        local player = onlinePlayers:get(playerIndex)
-        if player then
-            samplePlayerKillDelta(player)
-
-            local stats = ZKC_ServerHandler.playerStatsById[getPlayerKey(player)]
-            if ZKC_Config.Batch.enabled and stats and stats.killsSinceLastUpdate >= ZKC_Config.Batch.maxBatchSize then
-                shouldFlush = true
-            end
-        end
-    end
-
-    if shouldFlush then
+    if ZKC_Config.Batch.enabled and stats.killsSinceLastUpdate >= ZKC_Config.Batch.maxBatchSize then
         ZKC_ServerHandler.flushPendingPayloads()
     end
 end
 
 function ZKC_ServerHandler.checkPeriodicFlush()
-    if not ZKC_Config.enabled or not ZKC_Config.Batch.enabled then
+    if not isServer() or not ZKC_Config.enabled or not ZKC_Config.Batch.enabled then
         return
     end
 
@@ -335,15 +302,12 @@ function ZKC_ServerHandler.checkPeriodicFlush()
     end
 end
 
-function ZKC_ServerHandler.updateOnlinePlayersAndFlush()
-    ZKC_ServerHandler.sampleOnlinePlayers()
-    ZKC_ServerHandler.checkPeriodicFlush()
+if isServer() then
+    Events.EveryHours.Add(ZKC_ServerHandler.flushPendingPayloads)
+    Events.EveryOneMinute.Add(ZKC_ServerHandler.checkPeriodicFlush)
+    Events.OnZombieDead.Add(onZombieDead)
 end
 
-
-Events.EveryHours.Add(ZKC_ServerHandler.flushPendingPayloads)
-Events.EveryOneMinute.Add(ZKC_ServerHandler.updateOnlinePlayersAndFlush)
-
-log("Server handler initialized for vanilla kill-count sampling")
+log("Server handler initialized for server-side OnZombieDead tracking")
 
 return ZKC_ServerHandler
