@@ -49,11 +49,11 @@ end
 
 -- Run on both clients and the authoritative server. The periodic pass also
 -- reapplies resistance after a vehicle part is installed or replaced.
-Events.OnGameStart.Add(strengthenLoadedVehicles)
-Events.LoadChunk.Add(strengthenLoadedVehicles)
-Events.EveryOneMinute.Add(strengthenLoadedVehicles)
+-- Events.OnGameStart.Add(strengthenLoadedVehicles)
+-- Events.LoadChunk.Add(strengthenLoadedVehicles)
+-- Events.EveryOneMinute.Add(strengthenLoadedVehicles)
 
-if Events.OnServerStarted then
-    Events.OnServerStarted.Add(strengthenLoadedVehicles)
-end
+-- if Events.OnServerStarted then
+--     Events.OnServerStarted.Add(strengthenLoadedVehicles)
+-- end
 

@@ -1,0 +1,9 @@
+VERSION = 1,
+
+option APOCALISEBR_PACK.EnableMigrationItemGeneration
+{
+    type = boolean,
+    default = true,
+    page = APOCALISEBR_PACK,
+    translation = APOCALISEBR_PACK_EnableMigrationItemGeneration,
+}

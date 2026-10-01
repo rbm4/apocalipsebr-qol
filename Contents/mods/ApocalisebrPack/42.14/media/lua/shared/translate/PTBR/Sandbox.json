@@ -1,0 +1,5 @@
+{
+    "Sandbox_APOCALISEBR_PACK": "Pacote ApocalipseBR",
+    "Sandbox_APOCALISEBR_PACK_EnableMigrationItemGeneration": "Gerar itens dos veículos migrados",
+    "Sandbox_APOCALISEBR_PACK_EnableMigrationItemGeneration_tooltip": "Quando ativado, os itens listados nas entradas de migração são gerados nos contêineres correspondentes dos veículos. Desative para migrar os veículos sem os itens armazenados."
+}

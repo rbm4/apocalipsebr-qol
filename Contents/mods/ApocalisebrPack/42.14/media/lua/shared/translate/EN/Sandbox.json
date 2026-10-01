@@ -1,0 +1,5 @@
+{
+    "Sandbox_APOCALISEBR_PACK": "ApocalipseBR Pack",
+    "Sandbox_APOCALISEBR_PACK_EnableMigrationItemGeneration": "Generate Migrated Vehicle Items",
+    "Sandbox_APOCALISEBR_PACK_EnableMigrationItemGeneration_tooltip": "When enabled, items listed in vehicle migration entries are generated inside their designated vehicle containers. Disable this to migrate vehicles without their stored items."
+}

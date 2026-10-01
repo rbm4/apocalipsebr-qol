@@ -1,6 +1,6 @@
 --[[
     MM_MainServer.lua
-    Vehicle Migration Module — Server-side vehicle spawning from JSONL
+    Vehicle Migration Module - Server-side vehicle spawning from JSONL
 
     Periodically checks for a JSONL file written by an external backend.
     Each line describes a vehicle to spawn (script, coordinates, items).
@@ -195,6 +195,15 @@ local function installMissingParts(vehicle)
                                 item:setCondition(item:getConditionMax())
                                 part:setInventoryItem(item)
                                 vehicle:transmitPartItem(part)
+
+                                local installTable = part:getTable("install")
+                                if installTable and installTable.complete then
+                                    VehicleUtils.callLua(installTable.complete, vehicle, part)
+                                end
+
+                                part:setCondition(100)
+                                vehicle:transmitPartCondition(part)
+                                vehicle:transmitPartModData(part)
                                 installedCount = installedCount + 1
                             end
                         else
@@ -214,6 +223,67 @@ local function installMissingParts(vehicle)
     end
 end
 
+local function getFullArmorModel(vehicle, part)
+    if type(ATA2TuningTable) ~= "table" then
+        return nil
+    end
+
+    local vehicleTable = ATA2TuningTable[vehicle:getScript():getName()]
+    local partTable = vehicleTable and vehicleTable.parts and vehicleTable.parts[part:getId()]
+    if not partTable then
+        return nil
+    end
+
+    local selectedModel = nil
+    local selectedStrength = nil
+    for modelName, modelInfo in pairs(partTable) do
+        if type(modelInfo) == "table" and modelInfo.protection then
+            local strength = tonumber(modelInfo.protectionHealthDelta) or 0
+            if not selectedModel or strength > selectedStrength or
+                    (strength == selectedStrength and tostring(modelName) > tostring(selectedModel)) then
+                selectedModel = modelName
+                selectedStrength = strength
+            end
+        end
+    end
+    return selectedModel
+end
+
+local function installFullArmor(vehicle)
+    if type(ATA2Commands) ~= "table" or type(ATA2Commands.installTuning) ~= "function" then
+        return
+    end
+
+    local ok, err = pcall(function()
+        local installedCount = 0
+        for i = 0, vehicle:getPartCount() - 1 do
+            local part = vehicle:getPartByIndex(i)
+            local modelName = part and getFullArmorModel(vehicle, part)
+            if modelName then
+                local tuningData = part:getModData().tuning2
+                local currentModel = tuningData and tuningData.model
+                if not part:getInventoryItem() or currentModel ~= modelName then
+                    if part:getInventoryItem() and currentModel and
+                            type(ATA2Commands.uninstallTuning) == "function" then
+                        ATA2Commands.uninstallTuning(vehicle, part, currentModel, nil)
+                    end
+                    ATA2Commands.installTuning(vehicle, part, modelName, 100)
+                    if part:getInventoryItem() then
+                        installedCount = installedCount + 1
+                    end
+                end
+            end
+        end
+        if installedCount > 0 then
+            log("Installed or upgraded " .. installedCount .. " TsarLib armor parts to full armor")
+        end
+    end)
+
+    if not ok then
+        log("ERROR: Failed to install full TsarLib armor: " .. tostring(err))
+    end
+end
+
 -----------------------------------------------------------
 -- Vehicle Spawning
 -----------------------------------------------------------
@@ -229,7 +299,7 @@ local function spawnVehicle(entry)
 
     local square = getCell():getGridSquare(x, y, z)
     if not square then
-        log("RETRY: Could not get grid square at (" .. tostring(x) .. ", " .. tostring(y) .. ", " .. tostring(z) .. ") — chunk not loaded, will retry")
+        log("RETRY: Could not get grid square at (" .. tostring(x) .. ", " .. tostring(y) .. ", " .. tostring(z) .. ") - chunk not loaded, will retry")
         return nil, "retry"
     end
 
@@ -320,6 +390,11 @@ local function insertItems(vehicle, items, containers)
     log("Inserted " .. addedCount .. " items into vehicle (" .. skippedCount .. " skipped)")
 end
 
+local function isMigrationItemGenerationEnabled()
+    local options = SandboxVars and SandboxVars.APOCALISEBR_PACK
+    return not options or options.EnableMigrationItemGeneration ~= false
+end
+
 -----------------------------------------------------------
 -- Key Creation
 -----------------------------------------------------------
@@ -398,8 +473,12 @@ local function processEntry(entry, index)
     -- Clear default spawned items and fill gas tank
     prepareVehicle(vehicle, containers)
 
+    installFullArmor(vehicle)
+
     -- Insert items into their specific containers
-    insertItems(vehicle, entry.items, containers)
+    if isMigrationItemGenerationEnabled() then
+        insertItems(vehicle, entry.items, containers)
+    end
 
     -- Create key (default: true)
     local shouldCreateKey = true
@@ -417,7 +496,7 @@ end
 -- Periodic Hook
 -----------------------------------------------------------
 
---- Main processing function — called every in-game minute
+--- Main processing function - called every in-game minute
 --- Checks for the JSONL file, processes all entries, then clears the file.
 --- Entries that failed due to unloaded chunks are written back for retry.
 local function onPeriodicCheck()
@@ -425,7 +504,7 @@ local function onPeriodicCheck()
 
     local entries, rawLines = MigrationFileHandler.readEntries(MIGRATION_FILENAME)
     if #entries == 0 then
-        return -- No file or empty file — silent, no log spam
+        return -- No file or empty file - silent, no log spam
     end
 
     log("Read " .. #entries .. " entries from " .. MIGRATION_FILENAME)
@@ -452,7 +531,7 @@ local function onPeriodicCheck()
         log("Processing complete: " .. successCount .. " succeeded, " .. failCount .. " failed, " .. #retryLines .. " pending retry")
     else
         MigrationFileHandler.clearFile(MIGRATION_FILENAME)
-        log("Processing complete: " .. successCount .. " succeeded, " .. failCount .. " failed — file cleared")
+        log("Processing complete: " .. successCount .. " succeeded, " .. failCount .. " failed - file cleared")
     end
 end
 
@@ -462,4 +541,4 @@ end
 
 Events.EveryOneMinute.Add(onPeriodicCheck)
 
-log("MM_MainServer module loaded — checking '" .. MIGRATION_FILENAME .. "' every minute")
+log("MM_MainServer module loaded - checking '" .. MIGRATION_FILENAME .. "' every minute")
