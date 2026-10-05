@@ -1,0 +1,10 @@
+require "Items/ProceduralDistributions"
+-- 87fordB700Tire2
+table.insert(ProceduralDistributions.list["GarageMechanics"].items, "Base.87fordB700Tire2");
+table.insert(ProceduralDistributions.list["GarageMechanics"].items, 0.05);
+table.insert(ProceduralDistributions.list["CrateMechanics"].items, "Base.87fordB700Tire2");
+table.insert(ProceduralDistributions.list["CrateMechanics"].items, 0.03);
+table.insert(ProceduralDistributions.list["MechanicShelfMisc"].items, "Base.87fordB700Tire2");
+table.insert(ProceduralDistributions.list["MechanicShelfMisc"].items, 0.04);
+table.insert(ProceduralDistributions.list["MechanicShelfTools"].items, "Base.87fordB700Tire2");
+table.insert(ProceduralDistributions.list["MechanicShelfTools"].items, 0.03);

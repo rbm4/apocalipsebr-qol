@@ -1,2 +1,0 @@
--- Intentionally left blank. Kept as an empty stub rather than deleted, because Steam Workshop does
--- not reliably remove files dropped from an update

@@ -1,0 +1,14 @@
+VERSION = 1,
+
+option DAMN.AllowMrBusSpawns = {
+	type = boolean, default = true, page = DAMN_Spawns, translation = DAMN_AllowMrBusSpawns,
+}
+option DAMN.AllowChonkerSpawns = {
+	type = boolean, default = true, page = DAMN_Spawns, translation = DAMN_AllowChonkerSpawns,
+}
+option DAMN.AllowCashcowSpawns = {
+	type = boolean, default = true, page = DAMN_Spawns, translation = DAMN_AllowCashcowSpawns,
+}
+option DAMN.AllowMcBoxySpawns = {
+	type = boolean, default = true, page = DAMN_Spawns, translation = DAMN_AllowMcBoxySpawns,
+}
