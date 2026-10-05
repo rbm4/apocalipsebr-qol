@@ -45,7 +45,7 @@ module Base
 		maxSpeed = 60f,
 		brakingForce = 1,
 		stoppingMovementForce = 2.0f,
-		rollInfluence = 0.6f,
+		rollInfluence = 0.15f,
 		steeringIncrement = 0.001f,
 		steeringClamp = 0.3f,
 		suspensionStiffness = 100,

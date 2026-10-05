@@ -73,9 +73,9 @@ module Base
 
 		sound
 		{
-			engine = VehicleEngineSUV,
-			engineStart = VehicleEngineSUV,
-			engineTurnOff = VehicleEngineSUV,
+			engine = APOC87FordEngine,
+			engineStart = APOC87FordEngine,
+			engineTurnOff = APOC87FordEngine,
 			horn = VehicleHornStandard,
 			ignitionFail = VehicleIgnitionFailSUV,
 		}
@@ -98,10 +98,10 @@ module Base
 		gearRatio4 = 1.0,
 		brakingForce = 50,
 		stoppingMovementForce = 4.0f,
-		rollInfluence = 0.90f,
+		rollInfluence = 0.35f,
 		steeringIncrement = 0.03,
 		steeringClamp = 0.25,
-		suspensionStiffness = 60,
+		suspensionStiffness = 120,
 		suspensionCompression = 4.83,
 		suspensionDamping = 3.88,
 		maxSuspensionTravelCm = 14,
@@ -115,7 +115,7 @@ module Base
 		wheel FrontLeft
 		{
 			front = true,
-			offset = 1.0222 -0.8333 3.1778,
+			offset = 1.0222 -0.9444 3.1778,
 			radius = 0.47f,
 			width = 0.30f,
 		}
@@ -123,7 +123,7 @@ module Base
 		wheel FrontRight
 		{
 			front = true,
-			offset = -1.0222 -0.8333 3.1778,
+			offset = -1.0222 -0.9444 3.1778,
 			radius = 0.47f,
 			width = 0.30f,
 		}
@@ -131,7 +131,7 @@ module Base
 		wheel RearLeft
 		{
 			front = false,
-			offset = 0.8889 -0.8333 -2.6778,
+			offset = 0.8889 -0.9444 -2.6778,
 			radius = 0.47f,
 			width = 0.60f,
 		}
@@ -139,7 +139,7 @@ module Base
 		wheel RearRight
 		{
 			front = false,
-			offset = -0.8889 -0.8333 -2.6778,
+			offset = -0.8889 -0.9444 -2.6778,
 			radius = 0.47f,
 			width = 0.60f,
 		}

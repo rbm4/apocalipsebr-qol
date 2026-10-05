@@ -1,5 +1,16 @@
 module Base
 {
+	sound APOC87FordEngine
+	{
+		category = Vehicle,
+		master = VehicleEngine,
+		clip
+		{
+			event = Vehicle/Van/Engine,
+			volume = 1.6,
+			distanceMax = 200,
+		}
+	}
 
 	sound B700Alarm
 	{

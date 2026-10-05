@@ -80,9 +80,9 @@ module Base
 
         sound
         {
-            engine = VehicleEngineSUV,
-            engineStart = VehicleEngineSUV,
-            engineTurnOff = VehicleEngineSUV,
+            engine = APOC87FordEngine,
+            engineStart = APOC87FordEngine,
+            engineTurnOff = APOC87FordEngine,
             horn = VehicleHornStandard,
             ignitionFail = VehicleIgnitionFailSUV,
         }
