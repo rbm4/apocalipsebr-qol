@@ -1,0 +1,7 @@
+name=Survivor Briefing
+id=SurvivorBriefing
+author=El-Soplya
+description=A short on-screen briefing at the start of your survival, at midnight and when you wake up: the day of survival, the time and date, your name and occupation, where you are, the weather and your kill count. Every line can be switched off, and an optional mode shows only what your character can know (no watch, no exact time).
+poster=poster.png
+modversion=1.0.1
+versionMin=42.0

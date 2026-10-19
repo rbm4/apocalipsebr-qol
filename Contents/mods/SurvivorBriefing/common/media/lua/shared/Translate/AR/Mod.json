@@ -1,0 +1,4 @@
+{
+    "name": "Survivor Briefing",
+    "description": "Un breve informe en pantalla al empezar a sobrevivir, a medianoche y al despertar: el día de supervivencia, la hora y la fecha, tu nombre y profesión, dónde estás, el clima y los zombis que has matado. Cada línea se puede desactivar, y un modo opcional muestra solo lo que tu personaje puede saber."
+}
