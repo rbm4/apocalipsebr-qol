@@ -1,0 +1,20 @@
+{
+  "Sandbox_TrueSwimming": "True Swimming",
+  "Sandbox_TrueSwimming_Enabled": "Yüzmeyi etkinleştir",
+  "Sandbox_TrueSwimming_Enabled_tooltip": "Devre dışı: su, temel oyundaki gibi yeniden geçilmez olur.",
+  "Sandbox_TrueSwimming_KnowsSwimming": "Hayatta kalan yüzme biliyor",
+  "Sandbox_TrueSwimming_KnowsSwimming_tooltip": "Devre dışı: yüzmek 2,5 kat daha fazla dayanıklılık harcar (Aquatsar'daki yüzme bilmeyen gibi).",
+  "Sandbox_TrueSwimming_StaminaMul": "Dayanıklılık maliyeti",
+  "Sandbox_TrueSwimming_StaminaMul_tooltip": "Yüzme yorgunluğunu çarpar. 1 = Aquatsar Yacht Club ayarı, 2 = iki kat zor, 0,5 = yarısı.",
+  "Sandbox_TrueSwimming_Drowning": "Boğulma",
+  "Sandbox_TrueSwimming_Drowning_tooltip": "Yüzerken dayanıklılık bittiğinde ne olacağı.",
+  "Sandbox_TrueSwimming_Drowning_option1": "Kademeli yaralanmalar (Aquatsar)",
+  "Sandbox_TrueSwimming_Drowning_option2": "Anında ölüm",
+  "Sandbox_TrueSwimming_Drowning_option3": "Hiçbiri",
+  "Sandbox_TrueSwimming_ItemLoss": "Aşırı yükte eşya kaybı",
+  "Sandbox_TrueSwimming_ItemLoss_tooltip": "Bitkin ve aşırı yüklü yüzücü en ağır eşyaları düşürür (giyilenler asla).",
+  "Sandbox_TrueSwimming_ShowBar": "Baş üstünde dayanıklılık çubuğu",
+  "Sandbox_TrueSwimming_ShowBar_tooltip": "Yüzücünün üstünde küçük bir dayanıklılık göstergesi gösterir.",
+  "Sandbox_TrueSwimming_Washing": "Su seni yıkar",
+  "Sandbox_TrueSwimming_Washing_tooltip": "Suya girdikten üç saniye sonra kan ve kir, vücuttan ve giyilen kıyafetlerden sabunsuz temizlenir."
+}

@@ -1,0 +1,22 @@
+{
+  "Sandbox_TrueSwimming": "True Swimming",
+  "Sandbox_TrueSwimming_Enabled": "Enable swimming",
+  "Sandbox_TrueSwimming_Enabled_tooltip": "Disabled: water is impassable again, as in the base game.",
+  "Sandbox_TrueSwimming_KnowsSwimming": "The survivor knows how to swim",
+  "Sandbox_TrueSwimming_KnowsSwimming_tooltip": "Disabled: swimming costs 2.5x more stamina (like a non-swimmer in Aquatsar).",
+  "Sandbox_TrueSwimming_StaminaMul": "Stamina cost",
+  "Sandbox_TrueSwimming_StaminaMul_tooltip": "Multiplies swimming fatigue. 1 = Aquatsar Yacht Club calibration, 2 = twice as hard, 0.5 = half.",
+  "Sandbox_TrueSwimming_Drowning": "Drowning",
+  "Sandbox_TrueSwimming_Drowning_tooltip": "What happens when stamina runs out while swimming.",
+  "Sandbox_TrueSwimming_Drowning_option1": "Progressive injuries (Aquatsar)",
+  "Sandbox_TrueSwimming_Drowning_option2": "Instant death",
+  "Sandbox_TrueSwimming_Drowning_option3": "None",
+  "Sandbox_TrueSwimming_ItemLoss": "Item loss when overloaded",
+  "Sandbox_TrueSwimming_ItemLoss_tooltip": "Exhausted and overloaded, the swimmer drops the heaviest items (never what is worn).",
+  "Sandbox_TrueSwimming_ShowBar": "Stamina bar above the head",
+  "Sandbox_TrueSwimming_ShowBar_tooltip": "Shows a small stamina gauge above the swimmer.",
+  "Sandbox_TrueSwimming_Washing": "Water washes you",
+  "Sandbox_TrueSwimming_Washing_tooltip": "Three seconds after entering the water, blood and dirt are washed off your body and worn clothes, no soap needed.",
+  "Sandbox_MultiplierConfig_Swimming": "Swimming",
+  "Sandbox_MultiplierConfig_Swimming_tooltip": "XP multiplier of the Swimming skill (True Swimming), used when the global XP multiplier is disabled."
+}

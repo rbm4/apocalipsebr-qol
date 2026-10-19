@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>tswim_cadavre</m_Name>
+	<m_AnimName>Bob_Nage_Cadavre</m_AnimName>
+	<m_BlendTime>0.20</m_BlendTime>
+	<m_SpeedScale>0.80</m_SpeedScale>
+	<m_ConditionPriority>10</m_ConditionPriority>
+	<m_Conditions x_name="tswim_cadavre-chute">
+		<m_Name>KilledByFall</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="tswim_cadavre-face">
+		<m_Name>FallOnFront</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+</animNode>

@@ -1,0 +1,11 @@
+{
+  "UI_TSWIM_ItemsSink": "Minhas coisas... estão afundando!",
+  "UI_TSWIM_Drowning": "Eu... eu estou afundando...",
+  "UI_TSWIM_Tired1": "Estou ficando cansado...",
+  "UI_TSWIM_Tired2": "Meus braços...",
+  "UI_TSWIM_Tired3": "Quase... sem... fôlego.",
+  "UI_TSWIM_Tired4": "A margem, rápido.",
+  "UI_TSWIM_Planche": "Boiar de costas",
+  "UI_options_TSWIM_Volume": "Volume dos sons de natação",
+  "UI_options_TSWIM_Volume_tooltip": "Volume dos sons de nadar, entrar e sair da água (0 = mudo). Segue também o controle « Som » do jogo."
+}

@@ -1,0 +1,20 @@
+{
+  "Sandbox_TrueSwimming": "True Swimming",
+  "Sandbox_TrueSwimming_Enabled": "Schwimmen aktivieren",
+  "Sandbox_TrueSwimming_Enabled_tooltip": "Deaktiviert: Wasser ist wieder unpassierbar, wie im Grundspiel.",
+  "Sandbox_TrueSwimming_KnowsSwimming": "Der Überlebende kann schwimmen",
+  "Sandbox_TrueSwimming_KnowsSwimming_tooltip": "Deaktiviert: Schwimmen kostet 2,5-mal mehr Ausdauer (wie ein Nichtschwimmer in Aquatsar).",
+  "Sandbox_TrueSwimming_StaminaMul": "Ausdauerkosten",
+  "Sandbox_TrueSwimming_StaminaMul_tooltip": "Multipliziert die Erschöpfung beim Schwimmen. 1 = Kalibrierung von Aquatsar Yacht Club, 2 = doppelt so hart, 0,5 = halb.",
+  "Sandbox_TrueSwimming_Drowning": "Ertrinken",
+  "Sandbox_TrueSwimming_Drowning_tooltip": "Was passiert, wenn die Ausdauer beim Schwimmen aufgebraucht ist.",
+  "Sandbox_TrueSwimming_Drowning_option1": "Fortschreitende Verletzungen (Aquatsar)",
+  "Sandbox_TrueSwimming_Drowning_option2": "Sofortiger Tod",
+  "Sandbox_TrueSwimming_Drowning_option3": "Nichts",
+  "Sandbox_TrueSwimming_ItemLoss": "Gegenstandsverlust bei Überladung",
+  "Sandbox_TrueSwimming_ItemLoss_tooltip": "Erschöpft und überladen lässt der Schwimmer die schwersten Gegenstände fallen (niemals Getragenes).",
+  "Sandbox_TrueSwimming_ShowBar": "Ausdauerleiste über dem Kopf",
+  "Sandbox_TrueSwimming_ShowBar_tooltip": "Zeigt eine kleine Ausdaueranzeige über dem Schwimmer.",
+  "Sandbox_TrueSwimming_Washing": "Das Wasser wäscht dich",
+  "Sandbox_TrueSwimming_Washing_tooltip": "Drei Sekunden nach dem Eintauchen werden Blut und Schmutz von Körper und getragener Kleidung abgewaschen, ganz ohne Seife."
+}

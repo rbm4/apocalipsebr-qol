@@ -1,0 +1,20 @@
+{
+  "Sandbox_TrueSwimming": "True Swimming",
+  "Sandbox_TrueSwimming_Enabled": "Включить плавание",
+  "Sandbox_TrueSwimming_Enabled_tooltip": "Выключено: вода снова непроходима, как в базовой игре.",
+  "Sandbox_TrueSwimming_KnowsSwimming": "Выживший умеет плавать",
+  "Sandbox_TrueSwimming_KnowsSwimming_tooltip": "Выключено: плавание расходует в 2,5 раза больше выносливости (как не умеющий плавать в Aquatsar).",
+  "Sandbox_TrueSwimming_StaminaMul": "Расход выносливости",
+  "Sandbox_TrueSwimming_StaminaMul_tooltip": "Множитель усталости при плавании. 1 = калибровка Aquatsar Yacht Club, 2 = вдвое тяжелее, 0,5 = вдвое легче.",
+  "Sandbox_TrueSwimming_Drowning": "Утопление",
+  "Sandbox_TrueSwimming_Drowning_tooltip": "Что происходит, когда выносливость заканчивается во время плавания.",
+  "Sandbox_TrueSwimming_Drowning_option1": "Нарастающие травмы (Aquatsar)",
+  "Sandbox_TrueSwimming_Drowning_option2": "Мгновенная смерть",
+  "Sandbox_TrueSwimming_Drowning_option3": "Ничего",
+  "Sandbox_TrueSwimming_ItemLoss": "Потеря предметов при перегрузе",
+  "Sandbox_TrueSwimming_ItemLoss_tooltip": "Обессиленный и перегруженный пловец роняет самые тяжёлые предметы (надетое никогда).",
+  "Sandbox_TrueSwimming_ShowBar": "Полоска выносливости над головой",
+  "Sandbox_TrueSwimming_ShowBar_tooltip": "Показывает небольшой индикатор выносливости над пловцом.",
+  "Sandbox_TrueSwimming_Washing": "Вода смывает грязь",
+  "Sandbox_TrueSwimming_Washing_tooltip": "Через три секунды после входа в воду кровь и грязь смываются с тела и надетой одежды, без мыла."
+}

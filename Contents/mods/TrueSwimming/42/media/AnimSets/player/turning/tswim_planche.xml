@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>tswim_planche_turn</m_Name>
+	<m_AnimName>Bob_Nage_Planche</m_AnimName>
+	<m_Looped>true</m_Looped>
+	<m_BlendTime>0.50</m_BlendTime>
+	<m_ConditionPriority>11</m_ConditionPriority>
+	<m_Conditions x_name="tswim_planche_turn-on">
+		<m_Name>tswim</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="tswim_planche_turn-planche">
+		<m_Name>tswimPlanche</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+</animNode>

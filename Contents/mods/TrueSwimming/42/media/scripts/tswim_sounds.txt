@@ -1,0 +1,40 @@
+module Base
+{
+    /* True Swimming - nage (dragon-studio, swimming sounds ; 22 s, relance tant que le nageur avance) */
+    sound TSWIM_Swim
+    {
+        category = Water,
+        loop = false,
+        is3D = true,
+        clip
+        {
+            file = media/sound/tswim/swimming.ogg,
+            distanceMax = 12,
+        }
+    }
+
+    /* True Swimming - entree dans l'eau (dragon-studio, water splash effect) et sortie (magiaz, diving) */
+    sound TSWIM_Enter
+    {
+        category = Water,
+        loop = false,
+        is3D = true,
+        clip
+        {
+            file = media/sound/tswim/water_splash.ogg,
+            distanceMax = 15,
+        }
+    }
+
+    sound TSWIM_Leave
+    {
+        category = Water,
+        loop = false,
+        is3D = true,
+        clip
+        {
+            file = media/sound/tswim/leave_water.ogg,
+            distanceMax = 12,
+        }
+    }
+}

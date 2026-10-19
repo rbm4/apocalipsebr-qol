@@ -1,0 +1,20 @@
+{
+  "Sandbox_TrueSwimming": "True Swimming",
+  "Sandbox_TrueSwimming_Enabled": "水泳を有効にする",
+  "Sandbox_TrueSwimming_Enabled_tooltip": "無効：バニラと同じく、水は通行不能になります。",
+  "Sandbox_TrueSwimming_KnowsSwimming": "生存者は泳げる",
+  "Sandbox_TrueSwimming_KnowsSwimming_tooltip": "無効：泳ぐと消費するスタミナが2.5倍になります（Aquatsarの泳げない人と同じ）。",
+  "Sandbox_TrueSwimming_StaminaMul": "スタミナ消費",
+  "Sandbox_TrueSwimming_StaminaMul_tooltip": "水泳の疲労倍率。1 = Aquatsar Yacht Club 基準、2 = 2倍きつい、0.5 = 半分。",
+  "Sandbox_TrueSwimming_Drowning": "溺死",
+  "Sandbox_TrueSwimming_Drowning_tooltip": "泳いでいる間にスタミナが尽きたときに起こること。",
+  "Sandbox_TrueSwimming_Drowning_option1": "徐々に負傷（Aquatsar）",
+  "Sandbox_TrueSwimming_Drowning_option2": "即死",
+  "Sandbox_TrueSwimming_Drowning_option3": "なし",
+  "Sandbox_TrueSwimming_ItemLoss": "過積載時のアイテム紛失",
+  "Sandbox_TrueSwimming_ItemLoss_tooltip": "疲れ果てて過積載のとき、泳者は最も重いアイテムを落とします（装備中のものは落としません）。",
+  "Sandbox_TrueSwimming_ShowBar": "頭上にスタミナバー",
+  "Sandbox_TrueSwimming_ShowBar_tooltip": "泳者の頭上に小さなスタミナゲージを表示します。",
+  "Sandbox_TrueSwimming_Washing": "水で体が洗われる",
+  "Sandbox_TrueSwimming_Washing_tooltip": "入水から3秒後、体と着ている服から血と汚れが落ちます。石鹸は不要です。"
+}

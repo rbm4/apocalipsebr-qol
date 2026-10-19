@@ -1,0 +1,20 @@
+{
+  "Sandbox_TrueSwimming": "True Swimming",
+  "Sandbox_TrueSwimming_Enabled": "Ativar a natação",
+  "Sandbox_TrueSwimming_Enabled_tooltip": "Desativado: a água volta a ser intransponível, como no jogo base.",
+  "Sandbox_TrueSwimming_KnowsSwimming": "O sobrevivente sabe nadar",
+  "Sandbox_TrueSwimming_KnowsSwimming_tooltip": "Desativado: nadar custa 2,5 vezes mais resistência (como um não nadador no Aquatsar).",
+  "Sandbox_TrueSwimming_StaminaMul": "Custo de resistência",
+  "Sandbox_TrueSwimming_StaminaMul_tooltip": "Multiplica a fadiga ao nadar. 1 = calibração do Aquatsar Yacht Club, 2 = duas vezes mais difícil, 0,5 = metade.",
+  "Sandbox_TrueSwimming_Drowning": "Afogamento",
+  "Sandbox_TrueSwimming_Drowning_tooltip": "O que acontece quando a resistência acaba enquanto você nada.",
+  "Sandbox_TrueSwimming_Drowning_option1": "Ferimentos progressivos (Aquatsar)",
+  "Sandbox_TrueSwimming_Drowning_option2": "Morte instantânea",
+  "Sandbox_TrueSwimming_Drowning_option3": "Nenhum",
+  "Sandbox_TrueSwimming_ItemLoss": "Perda de itens com sobrecarga",
+  "Sandbox_TrueSwimming_ItemLoss_tooltip": "Exausto e sobrecarregado, o nadador solta os itens mais pesados (nunca o que está vestindo).",
+  "Sandbox_TrueSwimming_ShowBar": "Barra de resistência sobre a cabeça",
+  "Sandbox_TrueSwimming_ShowBar_tooltip": "Mostra um pequeno indicador de resistência acima do nadador.",
+  "Sandbox_TrueSwimming_Washing": "A água lava você",
+  "Sandbox_TrueSwimming_Washing_tooltip": "Três segundos depois de entrar na água, sangue e sujeira são lavados do corpo e das roupas vestidas, sem sabão."
+}

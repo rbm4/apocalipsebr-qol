@@ -511,7 +511,7 @@ VehicleDistributions.CommonTemplatesDist = {
     shelves = CommonVehicleDistributions.Shelves,
     sidetable = CommonVehicleDistributions.Sidetable,
     medicine = CommonVehicleDistributions.Medicine,
-    seatboxwooden = CommonVehicleDistributions.FishermanTruckBed,
+    seatboxwooden = CommonVehicleDistributions.Null, -- Let Aquatsar supply boat-specific loot.
     GloveBox = CommonVehicleDistributions.GloveBox,
     
     

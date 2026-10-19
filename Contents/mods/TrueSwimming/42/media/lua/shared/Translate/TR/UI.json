@@ -1,0 +1,11 @@
+{
+  "UI_TSWIM_ItemsSink": "Eşyalarım... batıyor!",
+  "UI_TSWIM_Drowning": "Ben... ben batıyorum...",
+  "UI_TSWIM_Tired1": "Yoruluyorum...",
+  "UI_TSWIM_Tired2": "Kollarım...",
+  "UI_TSWIM_Tired3": "Nefesim... neredeyse... bitti.",
+  "UI_TSWIM_Tired4": "Kıyıya, çabuk.",
+  "UI_TSWIM_Planche": "Sırtüstü yüzmek",
+  "UI_options_TSWIM_Volume": "Yüzme seslerinin düzeyi",
+  "UI_options_TSWIM_Volume_tooltip": "Yüzme, suya girme ve sudan çıkma seslerinin düzeyi (0 = sessiz). Oyunun « Ses » kaydırıcısını da takip eder."
+}

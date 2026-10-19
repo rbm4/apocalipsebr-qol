@@ -1,0 +1,11 @@
+{
+  "UI_TSWIM_ItemsSink": "My stuff... it's sinking!",
+  "UI_TSWIM_Drowning": "I'm... I'm going under...",
+  "UI_TSWIM_Tired1": "I'm getting tired...",
+  "UI_TSWIM_Tired2": "My arms...",
+  "UI_TSWIM_Tired3": "Not... much... breath left.",
+  "UI_TSWIM_Tired4": "The shore, quick.",
+  "UI_TSWIM_Planche": "Float on your back",
+  "UI_options_TSWIM_Volume": "Swimming sounds volume",
+  "UI_options_TSWIM_Volume_tooltip": "Volume of the swimming, entering and leaving water sounds (0 = silent). Also follows the game's Sound slider."
+}

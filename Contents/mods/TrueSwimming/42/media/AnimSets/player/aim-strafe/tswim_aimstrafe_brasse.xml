@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>tswim_aimstrafe_brasse</m_Name>
+	<m_AnimName>Bob_Nage_Brasse</m_AnimName>
+	<m_Looped>true</m_Looped>
+	<m_BlendTime>0.30</m_BlendTime>
+	<m_SpeedScale>0.80</m_SpeedScale>
+	<m_ConditionPriority>10</m_ConditionPriority>
+	<m_Conditions x_name="tswim_aimstrafe_brasse-on">
+		<m_Name>tswim</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+</animNode>

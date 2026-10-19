@@ -1,0 +1,21 @@
+VERSION = 1,
+
+/* True Swimming - the Swimming skill (read by the engine's CustomPerks loader, like the vanilla perks).
+   Same XP curve as Sprinting (x1.5 applied by the engine). Parent = the Physical category (with Fitness, Sprinting...).
+   If another mod already declares a perk with the same id "Swimming" (e.g. Swim Skill), the engine reuses the same perk. */
+perk Swimming {
+    parent = PhysicalCategory,
+    translation = Swimming,
+    passive = false,
+
+    xp1  = 50,
+    xp2  = 100,
+    xp3  = 200,
+    xp4  = 500,
+    xp5  = 1000,
+    xp6  = 2000,
+    xp7  = 3000,
+    xp8  = 4000,
+    xp9  = 5000,
+    xp10 = 6000,
+}

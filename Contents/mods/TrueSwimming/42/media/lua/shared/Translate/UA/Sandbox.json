@@ -1,0 +1,20 @@
+{
+  "Sandbox_TrueSwimming": "True Swimming",
+  "Sandbox_TrueSwimming_Enabled": "Увімкнути плавання",
+  "Sandbox_TrueSwimming_Enabled_tooltip": "Вимкнено: вода знову непрохідна, як у базовій грі.",
+  "Sandbox_TrueSwimming_KnowsSwimming": "Вцілілий уміє плавати",
+  "Sandbox_TrueSwimming_KnowsSwimming_tooltip": "Вимкнено: плавання витрачає у 2,5 раза більше витривалості (як той, хто не вміє плавати в Aquatsar).",
+  "Sandbox_TrueSwimming_StaminaMul": "Витрата витривалості",
+  "Sandbox_TrueSwimming_StaminaMul_tooltip": "Множник утоми під час плавання. 1 = калібрування Aquatsar Yacht Club, 2 = удвічі важче, 0,5 = удвічі легше.",
+  "Sandbox_TrueSwimming_Drowning": "Утоплення",
+  "Sandbox_TrueSwimming_Drowning_tooltip": "Що відбувається, коли витривалість закінчується під час плавання.",
+  "Sandbox_TrueSwimming_Drowning_option1": "Поступові травми (Aquatsar)",
+  "Sandbox_TrueSwimming_Drowning_option2": "Миттєва смерть",
+  "Sandbox_TrueSwimming_Drowning_option3": "Нічого",
+  "Sandbox_TrueSwimming_ItemLoss": "Втрата предметів при перевантаженні",
+  "Sandbox_TrueSwimming_ItemLoss_tooltip": "Знесилений і перевантажений плавець упускає найважчі предмети (одягнене — ніколи).",
+  "Sandbox_TrueSwimming_ShowBar": "Смужка витривалості над головою",
+  "Sandbox_TrueSwimming_ShowBar_tooltip": "Показує невеликий індикатор витривалості над плавцем.",
+  "Sandbox_TrueSwimming_Washing": "Вода змиває бруд",
+  "Sandbox_TrueSwimming_Washing_tooltip": "Через три секунди після входу у воду кров і бруд змиваються з тіла та одягу, без мила."
+}

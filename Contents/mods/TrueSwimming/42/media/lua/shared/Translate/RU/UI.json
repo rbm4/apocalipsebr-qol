@@ -1,0 +1,11 @@
+{
+  "UI_TSWIM_ItemsSink": "Мои вещи... они тонут!",
+  "UI_TSWIM_Drowning": "Я... я тону...",
+  "UI_TSWIM_Tired1": "Я устаю...",
+  "UI_TSWIM_Tired2": "Мои руки...",
+  "UI_TSWIM_Tired3": "Почти... не осталось... дыхания.",
+  "UI_TSWIM_Tired4": "К берегу, быстрее.",
+  "UI_TSWIM_Planche": "Лечь на воду",
+  "UI_options_TSWIM_Volume": "Громкость звуков плавания",
+  "UI_options_TSWIM_Volume_tooltip": "Громкость звуков плавания, входа в воду и выхода из неё (0 = без звука). Также учитывает ползунок «Звук» игры."
+}

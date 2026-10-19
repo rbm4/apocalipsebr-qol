@@ -1,0 +1,11 @@
+{
+  "UI_TSWIM_ItemsSink": "我的東西……在往下沉！",
+  "UI_TSWIM_Drowning": "我……我要沉下去了……",
+  "UI_TSWIM_Tired1": "我開始累了……",
+  "UI_TSWIM_Tired2": "我的手臂……",
+  "UI_TSWIM_Tired3": "快……喘不……過氣了。",
+  "UI_TSWIM_Tired4": "快，去岸邊。",
+  "UI_TSWIM_Planche": "仰面漂浮",
+  "UI_options_TSWIM_Volume": "游泳音效音量",
+  "UI_options_TSWIM_Volume_tooltip": "游泳、入水和出水音效的音量（0 = 靜音）。同時受遊戲「音效」滑桿影響。"
+}

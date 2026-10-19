@@ -1,0 +1,11 @@
+{
+  "UI_TSWIM_ItemsSink": "荷物が……沈んでいく！",
+  "UI_TSWIM_Drowning": "沈む……沈んでしまう……",
+  "UI_TSWIM_Tired1": "疲れてきた……",
+  "UI_TSWIM_Tired2": "腕が……",
+  "UI_TSWIM_Tired3": "息が……もう……もたない。",
+  "UI_TSWIM_Tired4": "岸へ、早く。",
+  "UI_TSWIM_Planche": "背浮きで休む",
+  "UI_options_TSWIM_Volume": "水泳サウンドの音量",
+  "UI_options_TSWIM_Volume_tooltip": "泳ぐ音、入水音、水から上がる音の音量（0 = 無音）。ゲームの「効果音」スライダーにも従います。"
+}

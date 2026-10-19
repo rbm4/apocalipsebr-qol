@@ -1,0 +1,11 @@
+{
+  "UI_TSWIM_ItemsSink": "내 물건들이... 가라앉아!",
+  "UI_TSWIM_Drowning": "나... 나 가라앉고 있어...",
+  "UI_TSWIM_Tired1": "지치기 시작해...",
+  "UI_TSWIM_Tired2": "팔이...",
+  "UI_TSWIM_Tired3": "숨이... 거의... 안 남았어.",
+  "UI_TSWIM_Tired4": "물가로, 빨리.",
+  "UI_TSWIM_Planche": "물 위에 눕기",
+  "UI_options_TSWIM_Volume": "수영 소리 볼륨",
+  "UI_options_TSWIM_Volume_tooltip": "수영, 입수, 물에서 나오는 소리의 볼륨 (0 = 무음). 게임의 「효과음」 슬라이더도 함께 적용됩니다."
+}

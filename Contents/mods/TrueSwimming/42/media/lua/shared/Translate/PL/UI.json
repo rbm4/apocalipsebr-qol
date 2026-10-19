@@ -1,0 +1,11 @@
+{
+  "UI_TSWIM_ItemsSink": "Moje rzeczy... toną!",
+  "UI_TSWIM_Drowning": "Ja... ja tonę...",
+  "UI_TSWIM_Tired1": "Zaczynam się męczyć...",
+  "UI_TSWIM_Tired2": "Moje ręce...",
+  "UI_TSWIM_Tired3": "Prawie... nie mam... tchu.",
+  "UI_TSWIM_Tired4": "Do brzegu, szybko.",
+  "UI_TSWIM_Planche": "Położyć się na wodzie",
+  "UI_options_TSWIM_Volume": "Głośność dźwięków pływania",
+  "UI_options_TSWIM_Volume_tooltip": "Głośność dźwięków pływania, wchodzenia do wody i wychodzenia z niej (0 = wyciszone). Uwzględnia też suwak „Dźwięk” gry."
+}

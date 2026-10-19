@@ -1,0 +1,76 @@
+VERSION = 1,
+
+option TrueSwimming.Enabled
+{
+	type = boolean,
+	default = true,
+	page = TrueSwimming,
+	translation = TrueSwimming_Enabled,
+}
+
+option TrueSwimming.KnowsSwimming
+{
+	type = boolean,
+	default = true,
+	page = TrueSwimming,
+	translation = TrueSwimming_KnowsSwimming,
+}
+
+option TrueSwimming.StaminaMul
+{
+	type = double,
+	min = 0.1,
+	max = 5.0,
+	default = 1.0,
+	page = TrueSwimming,
+	translation = TrueSwimming_StaminaMul,
+}
+
+option TrueSwimming.Drowning
+{
+	type = enum,
+	numValues = 3,
+	default = 1,
+	page = TrueSwimming,
+	translation = TrueSwimming_Drowning,
+	valueTranslation = TrueSwimming_Drowning,
+}
+
+option TrueSwimming.ItemLoss
+{
+	type = boolean,
+	default = true,
+	page = TrueSwimming,
+	translation = TrueSwimming_ItemLoss,
+}
+
+option TrueSwimming.ShowBar
+{
+	type = boolean,
+	default = true,
+	page = TrueSwimming,
+	translation = TrueSwimming_ShowBar,
+}
+
+option TrueSwimming.Washing
+{
+	type = boolean,
+	default = true,
+	page = TrueSwimming,
+	translation = TrueSwimming_Washing,
+}
+
+/* XP multiplier of the Swimming skill. The engine (IsoGameCharacter$XP.AddXP, 42.21) looks up the sandbox option
+   "MultiplierConfig.<skill>" whenever the global XP multiplier toggle is OFF, but it only creates that option for
+   vanilla skills: a custom skill then throws a NullPointerException on every XP gain. Declaring the option here with
+   that exact id registers it under the same name, so the lookup succeeds. The vanilla XP multipliers are listed at the
+   end of the sandbox page named "Character" (ServerSettingsScreen.lua), so this page name puts the slider right after them. */
+option MultiplierConfig.Swimming
+{
+	type = double,
+	min = 0.0,
+	max = 1000.0,
+	default = 1.0,
+	page = Character,
+	translation = MultiplierConfig_Swimming,
+}

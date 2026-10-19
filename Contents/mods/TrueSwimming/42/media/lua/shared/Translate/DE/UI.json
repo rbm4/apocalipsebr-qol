@@ -1,0 +1,11 @@
+{
+  "UI_TSWIM_ItemsSink": "Meine Sachen... sie gehen unter!",
+  "UI_TSWIM_Drowning": "Ich... ich gehe unter...",
+  "UI_TSWIM_Tired1": "Ich werde müde...",
+  "UI_TSWIM_Tired2": "Meine Arme...",
+  "UI_TSWIM_Tired3": "Kaum... noch... Luft.",
+  "UI_TSWIM_Tired4": "Zum Ufer, schnell.",
+  "UI_TSWIM_Planche": "Auf dem Rücken treiben",
+  "UI_options_TSWIM_Volume": "Lautstärke der Schwimmgeräusche",
+  "UI_options_TSWIM_Volume_tooltip": "Lautstärke der Geräusche beim Schwimmen sowie beim Betreten und Verlassen des Wassers (0 = stumm). Folgt auch dem Regler „Sound“ des Spiels."
+}

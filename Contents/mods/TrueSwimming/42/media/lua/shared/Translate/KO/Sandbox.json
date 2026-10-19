@@ -1,0 +1,20 @@
+{
+  "Sandbox_TrueSwimming": "True Swimming",
+  "Sandbox_TrueSwimming_Enabled": "수영 활성화",
+  "Sandbox_TrueSwimming_Enabled_tooltip": "비활성화: 기본 게임처럼 물을 다시 건널 수 없게 됩니다.",
+  "Sandbox_TrueSwimming_KnowsSwimming": "생존자가 수영할 줄 앎",
+  "Sandbox_TrueSwimming_KnowsSwimming_tooltip": "비활성화: 수영 시 체력이 2.5배 더 소모됩니다 (Aquatsar의 수영 못하는 사람과 동일).",
+  "Sandbox_TrueSwimming_StaminaMul": "체력 소모",
+  "Sandbox_TrueSwimming_StaminaMul_tooltip": "수영 피로 배율. 1 = Aquatsar Yacht Club 기준, 2 = 두 배 힘듦, 0.5 = 절반.",
+  "Sandbox_TrueSwimming_Drowning": "익사",
+  "Sandbox_TrueSwimming_Drowning_tooltip": "수영 중 체력이 바닥났을 때 일어나는 일.",
+  "Sandbox_TrueSwimming_Drowning_option1": "점진적 부상 (Aquatsar)",
+  "Sandbox_TrueSwimming_Drowning_option2": "즉사",
+  "Sandbox_TrueSwimming_Drowning_option3": "없음",
+  "Sandbox_TrueSwimming_ItemLoss": "과적 시 아이템 분실",
+  "Sandbox_TrueSwimming_ItemLoss_tooltip": "탈진하고 과적 상태이면 가장 무거운 아이템을 떨어뜨립니다 (착용 중인 것은 제외).",
+  "Sandbox_TrueSwimming_ShowBar": "머리 위 체력 바",
+  "Sandbox_TrueSwimming_ShowBar_tooltip": "수영하는 사람 머리 위에 작은 체력 게이지를 표시합니다.",
+  "Sandbox_TrueSwimming_Washing": "물이 몸을 씻어 줌",
+  "Sandbox_TrueSwimming_Washing_tooltip": "물에 들어간 지 3초 후, 몸과 입고 있는 옷의 피와 때가 비누 없이 씻겨 나갑니다."
+}

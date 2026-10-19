@@ -1,0 +1,20 @@
+{
+  "Sandbox_TrueSwimming": "True Swimming",
+  "Sandbox_TrueSwimming_Enabled": "Włącz pływanie",
+  "Sandbox_TrueSwimming_Enabled_tooltip": "Wyłączone: woda znów jest nieprzekraczalna, jak w podstawowej grze.",
+  "Sandbox_TrueSwimming_KnowsSwimming": "Ocalały umie pływać",
+  "Sandbox_TrueSwimming_KnowsSwimming_tooltip": "Wyłączone: pływanie kosztuje 2,5 raza więcej wytrzymałości (jak osoba nieumiejąca pływać w Aquatsar).",
+  "Sandbox_TrueSwimming_StaminaMul": "Koszt wytrzymałości",
+  "Sandbox_TrueSwimming_StaminaMul_tooltip": "Mnożnik zmęczenia podczas pływania. 1 = kalibracja Aquatsar Yacht Club, 2 = dwa razy trudniej, 0,5 = o połowę łatwiej.",
+  "Sandbox_TrueSwimming_Drowning": "Tonięcie",
+  "Sandbox_TrueSwimming_Drowning_tooltip": "Co się dzieje, gdy podczas pływania skończy się wytrzymałość.",
+  "Sandbox_TrueSwimming_Drowning_option1": "Narastające obrażenia (Aquatsar)",
+  "Sandbox_TrueSwimming_Drowning_option2": "Natychmiastowa śmierć",
+  "Sandbox_TrueSwimming_Drowning_option3": "Nic",
+  "Sandbox_TrueSwimming_ItemLoss": "Utrata przedmiotów przy przeciążeniu",
+  "Sandbox_TrueSwimming_ItemLoss_tooltip": "Wyczerpany i przeciążony pływak upuszcza najcięższe przedmioty (nigdy tego, co ma na sobie).",
+  "Sandbox_TrueSwimming_ShowBar": "Pasek wytrzymałości nad głową",
+  "Sandbox_TrueSwimming_ShowBar_tooltip": "Pokazuje mały wskaźnik wytrzymałości nad pływakiem.",
+  "Sandbox_TrueSwimming_Washing": "Woda cię obmywa",
+  "Sandbox_TrueSwimming_Washing_tooltip": "Trzy sekundy po wejściu do wody krew i brud znikają z ciała i noszonych ubrań, bez mydła."
+}

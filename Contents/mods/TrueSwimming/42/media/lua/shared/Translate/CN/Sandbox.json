@@ -1,0 +1,20 @@
+{
+  "Sandbox_TrueSwimming": "True Swimming",
+  "Sandbox_TrueSwimming_Enabled": "启用游泳",
+  "Sandbox_TrueSwimming_Enabled_tooltip": "关闭后：水域将像原版游戏一样无法通行。",
+  "Sandbox_TrueSwimming_KnowsSwimming": "幸存者会游泳",
+  "Sandbox_TrueSwimming_KnowsSwimming_tooltip": "关闭后：游泳消耗 2.5 倍耐力（相当于 Aquatsar 中不会游泳的人）。",
+  "Sandbox_TrueSwimming_StaminaMul": "耐力消耗",
+  "Sandbox_TrueSwimming_StaminaMul_tooltip": "游泳疲劳倍率。1 = Aquatsar Yacht Club 的标准，2 = 难度加倍，0.5 = 减半。",
+  "Sandbox_TrueSwimming_Drowning": "溺水",
+  "Sandbox_TrueSwimming_Drowning_tooltip": "游泳时耐力耗尽后会发生什么。",
+  "Sandbox_TrueSwimming_Drowning_option1": "逐渐受伤（Aquatsar）",
+  "Sandbox_TrueSwimming_Drowning_option2": "立即死亡",
+  "Sandbox_TrueSwimming_Drowning_option3": "无",
+  "Sandbox_TrueSwimming_ItemLoss": "超重时丢失物品",
+  "Sandbox_TrueSwimming_ItemLoss_tooltip": "筋疲力尽且超重时，游泳者会丢掉最重的物品（穿戴中的物品除外）。",
+  "Sandbox_TrueSwimming_ShowBar": "头顶显示耐力条",
+  "Sandbox_TrueSwimming_ShowBar_tooltip": "在游泳者头顶显示一个小型耐力条。",
+  "Sandbox_TrueSwimming_Washing": "水会清洗身体",
+  "Sandbox_TrueSwimming_Washing_tooltip": "入水三秒后，身体和所穿衣物上的血迹和污垢都会被洗净，无需肥皂。"
+}

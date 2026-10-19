@@ -1,0 +1,8 @@
+name=True Swimming
+id=TrueSwimming
+poster=poster.png
+description=[FR] Le survivant sait nager. Entrez dans l'eau pour fuir ou franchir une riviere : brasse, crawl, planche sur le dos, endurance qui fond selon la forme, le poids porte et l'equipement, perte d'objets et noyade si l'on s'epuise. Solo et multijoueur.
+description=[EN] The survivor can swim. Enter the water to flee or cross a river: breaststroke, front crawl, back float, stamina drained by fitness, carried weight and gear, item loss and drowning when exhausted. Singleplayer and multiplayer.
+description=[ES] El superviviente sabe nadar. Entra en el agua para huir o cruzar un rio: braza, crol, flotar de espaldas, resistencia que baja segun la forma fisica, el peso y el equipo, perdida de objetos y ahogamiento al agotarse. Un jugador y multijugador.
+versionMin=42.0
+modversion=1.9

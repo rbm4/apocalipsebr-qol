@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animNode>
+	<m_Name>tswim_crawl_sprint</m_Name>
+	<m_AnimName>Bob_Nage_Crawl</m_AnimName>
+	<m_Looped>true</m_Looped>
+	<m_BlendTime>0.50</m_BlendTime>
+	<m_SpeedScale>1.40</m_SpeedScale>
+	<m_ConditionPriority>10</m_ConditionPriority>
+	<m_Conditions x_name="tswim_crawl_sprint-on">
+		<m_Name>tswim</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>true</m_Value>
+	</m_Conditions>
+	<m_Conditions x_name="tswim_crawl_sprint-t180">
+		<m_Name>isTurningAround</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_Value>false</m_Value>
+	</m_Conditions>
+</animNode>
