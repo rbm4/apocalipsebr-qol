@@ -374,7 +374,7 @@ module Base
 
 		attachment trailerTruck
 		{
-			offset = 0.0000 0.7000 8.5385,
+			offset = 0.0000 0.0000 8.5385,
 			rotate = 0.0000 0.0000 0.0000,
 		}
 	}

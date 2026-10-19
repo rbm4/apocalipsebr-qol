@@ -12,7 +12,7 @@ module Base
 			repairMechanic = true,
 			container
 			{
-				capacity = 100,
+				capacity = 130,
 				test = DAMN.ContainerAccess.TrunkInner,
 			}
 			lua
@@ -31,7 +31,7 @@ module Base
 			repairMechanic = true,
 			container
 			{
-				capacity = 12,
+				capacity = 16,
 				test = B700.ContainerAccess.TrunkLeft,
 			}
 			lua
@@ -50,7 +50,7 @@ module Base
 			repairMechanic = true,
 			container
 			{
-                capacity = 12,
+                capacity = 16,
 				test = B700.ContainerAccess.TrunkRight,
 			}
 			lua

@@ -274,7 +274,7 @@ module Base
 
             container
             {
-                capacity = 10,
+                capacity = 13,
                 test = B700.ContainerAccess.GloveBox,
             }
 

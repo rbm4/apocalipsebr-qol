@@ -76,6 +76,7 @@ module Base
 				skills = Mechanics:1,
 				recipes = Intermediate Mechanics,
 				test = Vehicles.InstallTest.Default,
+				complete = B700.InstallComplete.F700FrontSeatStorage,
 			}
 			table uninstall
 			{
@@ -98,6 +99,7 @@ module Base
 			lua
 			{
 				create = Vehicles.Create.Default,
+				init = B700.Init.F700FrontSeatStorage,
 			}
 		}
 
@@ -140,6 +142,7 @@ module Base
 				skills = Mechanics:1,
 				recipes = Intermediate Mechanics,
 				test = Vehicles.InstallTest.Default,
+				complete = B700.InstallComplete.F700FrontSeatStorage,
 			}
 			table uninstall
 			{
@@ -162,6 +165,7 @@ module Base
 			lua
 			{
 				create = Vehicles.Create.Default,
+				init = B700.Init.F700FrontSeatStorage,
 			}
 		}
 	}

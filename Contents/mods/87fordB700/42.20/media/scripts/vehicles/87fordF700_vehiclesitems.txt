@@ -11,7 +11,7 @@ module Base
         VehicleType =   2,
         DisplayName	=	87 Ford F700 Seat,
         Icon	=	F700_seat,
-        MaxCapacity = 20,
+        MaxCapacity = 26,
         ChanceToSpawnDamaged = 20,
         ConditionMax = 100,
         MechanicsItem = TRUE,

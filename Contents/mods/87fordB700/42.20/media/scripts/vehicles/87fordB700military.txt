@@ -77,10 +77,10 @@ module Base
 		centerOfMassOffset = 0.0000 1.2444 0.0000,
 		shadowExtents = 2.5112 10.6223,
 		shadowOffset = 0.0000 0.0111,
-		engineForce = 5050,
+		engineForce = 7070,
 		maxSpeed = 55f,
 		engineLoudness = 130,
-		engineQuality = 85,
+		engineQuality = 95,
 		gearRatioCount = 4,
 		gearRatioR = 4,
 		gearRatio1 = 4,
@@ -92,7 +92,7 @@ module Base
 		rollInfluence = 0.35f,
 		steeringIncrement = 0.03,
 		steeringClamp = 0.25,
-		suspensionStiffness = 120,
+		suspensionStiffness = 180,
 		suspensionCompression = 4.83,
 		suspensionDamping = 3.88,
 		maxSuspensionTravelCm = 14,
@@ -240,7 +240,7 @@ module Base
 
 			container
 			{
-				capacity = 10,
+				capacity = 20,
 				test = Vehicles.ContainerAccess.GloveBox,
 			}
 
@@ -263,6 +263,59 @@ module Base
 		template = B700Mudflaps,
 		template = B700Armor,
 		template = B700Roofrack,
+		part B700Trunk
+		{
+			container
+			{
+				capacity = 195,
+			}
+		}
+		part B700TrunkLeft
+		{
+			container
+			{
+				capacity = 24,
+			}
+		}
+		part B700TrunkRight
+		{
+			container
+			{
+				capacity = 24,
+			}
+		}
+		part Seat*
+		{
+			container
+			{
+				capacity = 20,
+			}
+			lua
+			{
+				init = B700.Init.MilitarySeatStorage,
+				create = Vehicles.Create.Default,
+			}
+			table install
+			{
+				complete = B700.InstallComplete.MilitarySeatStorage,
+			}
+		}
+		part B700Roofrack
+		{
+			container
+			{
+				capacity = 195,
+			}
+			lua
+			{
+				init = B700.Init.MilitaryRoofrackStorage,
+				create = B700.Create.Roofrack,
+			}
+			table install
+			{
+				complete = B700.InstallComplete.MilitaryRoofrackStorage,
+			}
+		}
 		template = B700SpareTires,
 		template = B700NomadGear,
 		template = B700GasTank,

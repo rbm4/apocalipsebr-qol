@@ -185,164 +185,200 @@ DAMN.Parts:processConfigV2("B700", {
 });
 
 
+-- Installed seat/roofrack items supply their own capacity. Apply the
+-- vehicle-specific bonus after the original part setup on load and install.
+local function setStorageCapacity(part, capacity)
+    if part:getItemContainer() and part:getInventoryItem() then
+        part:setContainerCapacity(capacity)
+    end
+end
+
+function B700.Init.MilitarySeatStorage(vehicle, part)
+    setStorageCapacity(part, 20)
+end
+
+function B700.InstallComplete.MilitarySeatStorage(vehicle, part)
+    Vehicles.InstallComplete.Default(vehicle, part)
+    setStorageCapacity(part, 20)
+end
+
+function B700.Init.F700FrontSeatStorage(vehicle, part)
+    setStorageCapacity(part, 26)
+end
+
+function B700.InstallComplete.F700FrontSeatStorage(vehicle, part)
+    Vehicles.InstallComplete.Default(vehicle, part)
+    setStorageCapacity(part, 26)
+end
+
+function B700.Init.MilitaryRoofrackStorage(vehicle, part)
+    B700.Init.Roofrack(vehicle, part)
+    setStorageCapacity(part, 195)
+end
+
+function B700.InstallComplete.MilitaryRoofrackStorage(vehicle, part)
+    B700.InstallComplete.Roofrack(vehicle, part)
+    setStorageCapacity(part, 195)
+end
+
 DAMN.Spawns:add("Base.87fordB700school", 10638, 9967, {
     direction = IsoDirections.S, 
-    chance = 30,
+    chance = 2,
     sandboxVar = "AllowMrBusSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordB700school", 2932, 9115, {
     direction = IsoDirections.N, 
-    chance = 28,
+    chance = 2,
     sandboxVar = "AllowMrBusSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordB700school", 12346, 3291, {
     direction = IsoDirections.W, 
-    chance = 29,
+    chance = 2,
     sandboxVar = "AllowMrBusSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordB700school", 13606, 2760, {
     direction = IsoDirections.S, 
-    chance = 31,
+    chance = 2,
     sandboxVar = "AllowMrBusSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordB700school", 13058, 1741, {
     direction = IsoDirections.S, 
-    chance = 28,
+    chance = 2,
     sandboxVar = "AllowMrBusSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordB700school", 10002, 12695, {
     direction = IsoDirections.W, 
-    chance = 29,
+    chance = 2,
     sandboxVar = "AllowMrBusSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordB700prison", 6421, 5413, {
     direction = IsoDirections.E, 
-    chance = 20,
+    chance = 2,
     sandboxVar = "AllowMrBusSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordB700prison", 7824, 11881, {
     direction = IsoDirections.W, 
-    chance = 30,
+    chance = 2,
     sandboxVar = "AllowMrBusSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordB700military", 8353, 11586, {
     direction = IsoDirections.E, 
-    chance = 28,
+    chance = 1,
     sandboxVar = "AllowMrBusSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordB700military", 8332, 11587, {
     direction = IsoDirections.E, 
-    chance = 25,
+    chance = 1,
     sandboxVar = "AllowMrBusSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordB700military", 12516, 4206, {
     direction = IsoDirections.S, 
-    chance = 30,
+    chance = 1,
     sandboxVar = "AllowMrBusSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700box", 10628, 10647, {
     direction = IsoDirections.S, 
-    chance = 70,
+    chance = 2,
     sandboxVar = "AllowMcBoxySpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700box", 10715, 9808, {
     direction = IsoDirections.N, 
-    chance = 30,
+    chance = 2,
     skinIndex = 4,
     sandboxVar = "AllowMcBoxySpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700box", 13123, 1743, {
     direction = IsoDirections.E, 
-    chance = 25,
+    chance = 2,
     skinIndex = 4,
     sandboxVar = "AllowMcBoxySpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700box", 13059, 1650, {
     direction = IsoDirections.W, 
-    chance = 50,
+    chance = 2,
     skinIndex = 3,
     sandboxVar = "AllowMcBoxySpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700box", 10632, 9652, {
     direction = IsoDirections.S, 
-    chance = 36,
+    chance = 2,
     skinIndex = 3,
     sandboxVar = "AllowMcBoxySpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700box", 13309, 1340, {
     direction = IsoDirections.E, 
-    chance = 30,
+    chance = 2,
     skinIndex = 3,
     sandboxVar = "AllowMcBoxySpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700box", 14005, 5800, {
     direction = IsoDirections.E, 
-    chance = 80,
+    chance = 2,
     sandboxVar = "AllowMcBoxySpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700bank", 12591, 1707, {
     direction = IsoDirections.S, 
-    chance = 50,
+    chance = 2,
     skinIndex = 2,
     sandboxVar = "AllowCashcowSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700bank", 13435, 1359, {
     direction = IsoDirections.N, 
-    chance = 50,
+    chance = 2,
     skinIndex = 2,
     sandboxVar = "AllowCashcowSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700bank", 12641, 1572, {
     direction = IsoDirections.N, 
-    chance = 40,
+    chance = 2,
     skinIndex = 2,
     sandboxVar = "AllowCashcowSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700bank", 13585, 3029, {
     direction = IsoDirections.s, 
-    chance = 30,
+    chance = 2,
     skinIndex = 2,
     sandboxVar = "AllowCashcowSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700swat", 5591, 12483, {
     direction = IsoDirections.W, 
-    chance = 80,
+    chance = 2,
     skinIndex = 2,
     sandboxVar = "AllowChonkerSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700swat", 12514, 4145, {
     direction = IsoDirections.S, 
-    chance = 60,
+    chance = 2,
     skinIndex = 2,
     sandboxVar = "AllowChonkerSpawns",
 });
 
 DAMN.Spawns:add("Base.87fordF700swat", 8066, 11752, {
     direction = IsoDirections.S, 
-    chance = 21,
+    chance = 2,
     skinIndex = 1,
     sandboxVar = "AllowChonkerSpawns",
 });
