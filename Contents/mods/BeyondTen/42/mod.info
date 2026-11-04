@@ -1,5 +1,6 @@
 name=Beyond Ten - Level 15 Skills
 id=BeyondTen
+require=APOCALISEBR_PACK
 author=Patryk
 description=Extend trainable skills to level 15 with mastery XP, a native-looking 15-slot Skills panel, and continued bonuses. Build 42 implementation.
 poster=poster.png

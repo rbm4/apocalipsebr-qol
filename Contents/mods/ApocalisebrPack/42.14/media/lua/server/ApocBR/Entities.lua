@@ -51,6 +51,15 @@ function API.isCurrentCharacter(player, context)
         and current.characterId == context.characterId
 end
 
+-- Opaque Java capability; no character UUID supplied by Lua is trusted for append.
+function API.messageContext(player)
+    return bridge().messageContext(player)
+end
+
+function API.newMessageId()
+    return bridge().newMessageId()
+end
+
 local function characterRequest(model, operation, player, context, rows, callback)
     if type(callback) ~= "function" then error("Entity callback required") end
     local accepted = bridge().submitCharacter(model.name, operation, player, context.session, rows)
@@ -279,13 +288,24 @@ function CharacterSnapshot:patch(player, context, rows, callback)
 end
 
 function API.define(name, definition)
-    local declaration = { table = definition.table, fields = {} }
+    local declaration = { table = definition.table, appendOnly = definition.appendOnly == true, fields = {} }
     for field, spec in pairs(definition.fields) do declaration.fields[field] = copy(spec) end
     bridge().define(name, declaration)
     local model = { name = name, fields = declaration.fields, keys = {} }
     for field, spec in pairs(model.fields) do if spec.id then model.keys[#model.keys + 1] = field end end
     table.sort(model.keys)
     local repository = {}
+    function repository:append(context, messageId, values, callback)
+        if not declaration.appendOnly then error("Append-only mapping required") end
+        if type(callback) ~= "function" then error("Entity callback required") end
+        local accepted = bridge().append(model.name, context.token, messageId, copy(values))
+        if not accepted.accepted then
+            deliver(callback, { status = accepted.status })
+            return false
+        end
+        pending[accepted.id] = callback
+        return true
+    end
     function repository:new(values)
         return instance(model, values)
     end

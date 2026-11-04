@@ -27,9 +27,10 @@ GlobalModData, and queued mod writes are not durable journal entries.
 - `42/media/lua/client/BeyondTen/ClientController.lua` and `ClientMasteryService.lua`:
   empty-payload sync requests, retry until full sync, and local-player mirror updates.
   Clients do not receive a database API, session token or character UUID in commands.
-- `42/media/lua/server/ApocBR/Entities.lua`: reusable server Lua repository/entity
-  facade. Require it as `ApocBR/Entities`.
-- `Z:/git/Github/apocalipsebr-zomboid-patches/42.22.0/src/zombie/savefile/ApocBRModEntities.java`:
+- `../ApocalisebrPack/42.14/media/lua/server/ApocBR/Entities.lua`: shared server Lua
+  repository/entity facade. BeyondTen Build 42 requires `APOCALISEBR_PACK`; require
+  the module as `ApocBR/Entities`. No facade copy remains in BeyondTen.
+- `Z:/git/Github/apocalipsebr-zomboid-patches/42.22.1/src/zombie/savefile/ApocBRModEntities.java`:
   current Java bridge, mapping rules, asynchronous execution and schema checks.
 - The patched `zombie/network/GameServer.java` installs `ApocBRModEntities` before
   server Lua loads. Verify the active patch version when changing this contract.

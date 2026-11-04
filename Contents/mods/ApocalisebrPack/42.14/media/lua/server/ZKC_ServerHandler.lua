@@ -1,313 +1,160 @@
--- Zombie Kill Counter - Server-Side Handler
--- Tracks kills on the server and writes aggregated player data to file
+-- Server-confirmed kills only. No file export or character-stat snapshots.
+if not isServer() then return end
+require "ZKC_Config"
+require "ApocBR/BackendMessages"
 
 ZKC_ServerHandler = ZKC_ServerHandler or {}
+local Service = ZKC_ServerHandler
+local entries, unresolved = {}, {}
+local entryCount, unresolvedCount = 0, 0
+local nextCheck = 0
+local lastWarning = -30000
 
--- Hosted games may load files from media/lua/server in the client Lua
--- environment as well. Stop before requiring dependencies, initializing
--- server state, or registering callbacks there.
-if not isServer() then
-    return ZKC_ServerHandler
-end
-
-require "ZombieKillCounter/ZKC_Config"
-
-ZKC_ServerHandler.playerStatsById = ZKC_ServerHandler.playerStatsById or {}
-ZKC_ServerHandler.playerKeys = ZKC_ServerHandler.playerKeys or {}
-ZKC_ServerHandler.lastFlushTime = ZKC_ServerHandler.lastFlushTime or os.time()
-
--- Logging helper
-local function log(message)
-    if ZKC_Config.Storage.debug then
-        print("[ZKC_Server] " .. tostring(message))
+local function warn(reason)
+    local now = getTimestampMs()
+    if now - lastWarning >= 30000 then
+        print("[ZKC_Server] " .. reason)
+        lastWarning = now
     end
 end
 
-local function serializeValue(value)
-    local valueType = type(value)
-    if valueType == "string" then
-        return '"' .. value:gsub("\\", "\\\\"):gsub('"', '\\"') .. '"'
-    elseif valueType == "number" then
-        if value == math.floor(value) then
-            return string.format("%.0f", value)
+local function connected(player)
+    if not player or player:isDead() then return false end
+    local id = player:getOnlineID()
+    return id and id >= 0 and getPlayerByOnlineID(id) == player
+end
+
+local function contextFor(player)
+    local ok, context = pcall(BackendMessages.context, player)
+    if ok and context.status == "OK" then return context end
+    return nil
+end
+
+local function add(context, count)
+    local key = context.session .. ":" .. context.characterId
+    local entry = entries[key]
+    if not entry then
+        if entryCount + unresolvedCount >= ZKC_Config.maxEntries then
+            warn("capacity reached; new-life kills dropped")
+            return
         end
-        return tostring(value)
-    elseif valueType == "boolean" then
-        return value and "true" or "false"
-    elseif valueType == "table" then
-        local parts = {}
-        for key, nestedValue in pairs(value) do
-            parts[#parts + 1] = '"' .. tostring(key) .. '":' .. serializeValue(nestedValue)
-        end
-        return "{" .. table.concat(parts, ",") .. "}"
+        entry = { key = key, context = context, pending = 0,
+            due = getTimestampMs() + ZKC_Config.flushIntervalMs }
+        entries[key] = entry
+        entryCount = entryCount + 1
     end
-    return '"' .. tostring(value) .. '"'
+    if entry.pending > 2147483647 - count then
+        warn("pending kill count limit reached; excess kills dropped")
+        return
+    end
+    entry.pending = entry.pending + count
 end
 
-local function getPlayerKey(player)
-    local steamId = player:getSteamID()
-    if steamId and steamId ~= 0 then
-        return tostring(steamId)
+local function flush(entry)
+    if entry.inFlight or entry.blocked then return end
+    if not entry.batch then
+        if entry.pending == 0 then return end
+        entry.batch = { count = entry.pending }
+        entry.pending = 0
     end
-    return "online:" .. tostring(player:getOnlineID())
-end
-
-local function getOrCreatePlayerStats(player)
-    local playerKey = getPlayerKey(player)
-    local stats = ZKC_ServerHandler.playerStatsById[playerKey]
-    if stats then
-        return stats, playerKey
-    end
-
-    stats = {
-        playerKey = playerKey,
-        updateNumber = 0,
-        killsSinceLastUpdate = 0,
-        totalSessionKills = 0
-    }
-
-    ZKC_ServerHandler.playerStatsById[playerKey] = stats
-    ZKC_ServerHandler.playerKeys[#ZKC_ServerHandler.playerKeys + 1] = playerKey
-    return stats, playerKey
-end
-
-local function getBeyondTen()
-    if BeyondTen then return BeyondTen end
-    pcall(require, "BeyondTen/Shared")
-    return BeyondTen
-end
-
-local function hasTableValues(values)
-    if type(values) ~= "table" then return false end
-    for _key, _value in pairs(values) do return true end
-    return false
-end
-
-local function getEffectiveSkillData(BT, player, perk, nativeXP)
-    if not BT or type(BT.IsTrainablePerk) ~= "function" or not BT.IsTrainablePerk(perk) then
-        return nativeXP, nil
-    end
-
-    local totalXP = nativeXP
-    if type(BT.GetVirtualXP) == "function" then
-        totalXP = tonumber(BT.GetVirtualXP(player, perk)) or nativeXP
-    end
-
-    local effectiveLevel = nil
-    if type(BT.GetEffectiveLevel) == "function" then
-        effectiveLevel = tonumber(BT.GetEffectiveLevel(player, perk))
-    end
-
-    return totalXP, effectiveLevel
-end
-
-local function collectPlayerData(player, stats)
-    local steamId = player:getSteamID()
-    local high = math.floor(steamId / 4294967296)
-    local low = steamId % 4294967296
-    local data = {
-        playerName = player:getUsername(),
-        playerId = steamId,
-        playerIdHigh = high,
-        playerIdLow = low,
-        timestamp = os.time(),
-        serverName = " ",
-        updateNumber = stats.updateNumber,
-        killsSinceLastUpdate = stats.killsSinceLastUpdate,
-        totalSessionKills = stats.totalSessionKills,
-        updateReason = "timer"
-    }
-
-    if ZKC_Config.PlayerData.includePosition then
-        data.x = math.floor(player:getX())
-        data.y = math.floor(player:getY())
-        data.z = math.floor(player:getZ())
-    end
-
-    if ZKC_Config.PlayerData.includeHealth then
-        local bodyDamage = player:getBodyDamage()
-        data.health = math.floor(bodyDamage:getOverallBodyHealth())
-        data.infected = bodyDamage:IsInfected()
-        data.isDead = player:isDead()
-    end
-
-    if ZKC_Config.PlayerData.includeVehicle then
-        local vehicle = player:getVehicle()
-        data.inVehicle = vehicle ~= nil
-        if vehicle then
-            data.vehicleType = vehicle:getScriptName()
-        end
-    end
-
-    if ZKC_Config.PlayerData.includeCharacterInfo then
-        data.hoursSurvived = math.floor(player:getHoursSurvived())
-
-        local skills = {}
-        local effectiveSkillLevels = {}
-        local BT = getBeyondTen()
-        local xpObj = player:getXp()
-        for i = 1, Perks.getMaxIndex() - 1 do
-            local perk = Perks.fromIndex(i)
-            if perk and perk:getParent():getId() ~= "None" then
-                local perkId = perk:getId()
-                local totalXP, effectiveLevel = getEffectiveSkillData(BT, player, perk, xpObj:getXP(perk))
-                skills[perkId] = totalXP
-                if effectiveLevel ~= nil then
-                    effectiveSkillLevels[perkId] = effectiveLevel
-                end
+    local batch = entry.batch
+    entry.inFlight = true
+    local function completed(result)
+        entry.inFlight = false
+        entry.due = getTimestampMs() + ZKC_Config.retryIntervalMs
+        if result.status == "OK" then
+            entry.batch = nil
+            entry.lastStatus = nil
+            if entry.pending == 0 then
+                entries[entry.key] = nil
+                entryCount = entryCount - 1
             end
-        end
-        data.skills = skills
-
-        -- skills already contains complete XP, so do not emit the old
-        -- beyondTenSkills delta that downstream consumers would add again.
-        if hasTableValues(effectiveSkillLevels) then
-            data.effectiveSkillLevels = effectiveSkillLevels
-        end
-    end
-
-    return data
-end
-
-local function queueTrackedPlayers()
-    local payloads = {}
-    local flushedStats = {}
-    local flushedByKey = {}
-
-    local onlinePlayers = getOnlinePlayers()
-    if onlinePlayers then
-        for playerIndex = 0, onlinePlayers:size() - 1 do
-            local player = onlinePlayers:get(playerIndex)
-            if player then
-                local stats, playerKey = getOrCreatePlayerStats(player)
-                stats.playerName = player:getUsername()
-                payloads[#payloads + 1] = serializeValue(collectPlayerData(player, stats))
-                flushedStats[#flushedStats + 1] = stats
-                flushedByKey[playerKey] = true
+        else
+            if result.status == "CONFLICT" or result.status == "SCHEMA_ERROR" or result.status == "INVALID_DATA" then
+                entry.blocked = true
+            end
+            if entry.lastStatus ~= result.status then
+                print("[ZKC_Server] publication " .. tostring(result.status) .. "; batch retained in memory")
+                entry.lastStatus = result.status
             end
         end
     end
-
-    local playerKeys = ZKC_ServerHandler.playerKeys
-    local playerStatsById = ZKC_ServerHandler.playerStatsById
-    for i = 1, #playerKeys do
-        local playerKey = playerKeys[i]
-        local stats = playerStatsById[playerKey]
-        if stats and stats.killsSinceLastUpdate > 0 and not flushedByKey[playerKey] then
-            local player = getPlayerByOnlineID(tonumber(playerKey:match("^online:(%-?%d+)$")) or -1)
-            if player then
-                payloads[#payloads + 1] = serializeValue(collectPlayerData(player, stats))
-                flushedStats[#flushedStats + 1] = stats
-            else
-                log("Skipping flush for missing player session: " .. tostring(playerKey))
-            end
+    local ok, failure = pcall(function()
+        if batch.publication then
+            batch.publication:retry(completed)
+        else
+            batch.publication = BackendMessages.publish("ZombieKillsRecorded.v1", entry.context,
+                { count = batch.count }, completed)
         end
-    end
-
-    return payloads, flushedStats
-end
-
-function ZKC_ServerHandler.flushPendingPayloads()
-    if not isServer() then
-        return false
-    end
-
-    local payloads, flushedStats = queueTrackedPlayers()
-    local payloadCount = #payloads
-    if payloadCount == 0 then
-        ZKC_ServerHandler.lastFlushTime = os.time()
-        return true
-    end
-
-    local filename = ZKC_Config.Storage.filename
-    local success, written, errorMessage = pcall(function()
-        local writer = getFileWriter(filename, true, true)
-        if not writer then
-            return false, "Failed to open file for writing: " .. filename
-        end
-
-        for i = 1, payloadCount do
-            writer:write(payloads[i])
-            writer:write("\n")
-        end
-        writer:close()
-        return true
     end)
-
-    if not success then
-        log("Error flushing " .. payloadCount .. " queued entries: " .. tostring(written))
-        return false
+    if not ok then
+        entry.inFlight = false
+        entry.due = getTimestampMs() + ZKC_Config.retryIntervalMs
+        warn("bridge unavailable; batch retained in memory: " .. tostring(failure))
     end
-    if not written then
-        log("ERROR: " .. tostring(errorMessage))
-        return false
-    end
+end
 
-    for i = 1, #flushedStats do
-        local stats = flushedStats[i]
-        stats.killsSinceLastUpdate = 0
-        stats.updateNumber = stats.updateNumber + 1
+local function dropUnresolved(player)
+    if unresolved[player] then
+        unresolved[player] = nil
+        unresolvedCount = unresolvedCount - 1
+        warn("unbound player disconnected/died; unresolved kills dropped")
     end
+end
 
-    log("Flushed " .. payloadCount .. " queued entries to " .. filename)
-    ZKC_ServerHandler.lastFlushTime = os.time()
-    return true
+local function resolvePending()
+    for player, pending in pairs(unresolved) do
+        if not connected(player) then
+            dropUnresolved(player)
+        else
+            local context = contextFor(player)
+            if context then
+                unresolved[player] = nil
+                unresolvedCount = unresolvedCount - 1
+                add(context, pending)
+            end
+        end
+    end
+end
+
+function Service.flushPending()
+    resolvePending()
+    for _, entry in pairs(entries) do flush(entry) end
 end
 
 local function onZombieDead(zombie)
-    if not ZKC_Config.enabled or not isServer() or not zombie then
-        return
-    end
-
-    -- Kill attribution is read from the server-owned zombie at the moment its
-    -- death event fires. Never accept a client-provided counter or kill claim.
+    if not ZKC_Config.enabled or not zombie then return end
     local player = zombie:getAttackedBy()
-    if not player or not instanceof(player, "IsoPlayer") then
-        return
-    end
-
-    -- Only credit a currently connected server player. This also prevents a
-    -- stale or synthetic IsoPlayer reference from creating a stats entry.
-    local onlineId = player:getOnlineID()
-    if onlineId == nil or onlineId < 0 or getPlayerByOnlineID(onlineId) ~= player then
-        return
-    end
-
-    local stats = getOrCreatePlayerStats(player)
-    stats.playerName = player:getUsername()
-    stats.killsSinceLastUpdate = stats.killsSinceLastUpdate + 1
-    stats.totalSessionKills = stats.totalSessionKills + 1
-
-    if ZKC_Config.Storage.debug then
-        log(
-            "Server-confirmed kill for " .. tostring(stats.playerName) ..
-                " (pending: " .. tostring(stats.killsSinceLastUpdate) ..
-                ", session: " .. tostring(stats.totalSessionKills) .. ")"
-        )
-    end
-
-    if ZKC_Config.Batch.enabled and stats.killsSinceLastUpdate >= ZKC_Config.Batch.maxBatchSize then
-        ZKC_ServerHandler.flushPendingPayloads()
+    if not player or not instanceof(player, "IsoPlayer") or not connected(player) then return end
+    local context = contextFor(player)
+    if context then
+        local count = (unresolved[player] or 0) + 1
+        if unresolved[player] then unresolved[player] = nil; unresolvedCount = unresolvedCount - 1 end
+        add(context, count)
+    else
+        if not unresolved[player] then
+            if entryCount + unresolvedCount >= ZKC_Config.maxEntries then
+                warn("capacity reached; unbound kills dropped")
+                return
+            end
+            unresolved[player] = 0
+            unresolvedCount = unresolvedCount + 1
+        end
+        if unresolved[player] < 2147483647 then unresolved[player] = unresolved[player] + 1 end
     end
 end
 
-function ZKC_ServerHandler.checkPeriodicFlush()
-    if not isServer() or not ZKC_Config.enabled or not ZKC_Config.Batch.enabled then
-        return
+-- Wall-clock cadence, including PauseEmpty; never use accelerated game-minute events.
+Events.OnTickEvenPaused.Add(function()
+    local now = getTimestampMs()
+    if now < nextCheck then return end
+    nextCheck = now + 1000
+    resolvePending()
+    for _, entry in pairs(entries) do
+        if now >= entry.due then flush(entry) end
     end
-
-    local elapsedSeconds = os.time() - (ZKC_ServerHandler.lastFlushTime or 0)
-    if elapsedSeconds >= ZKC_Config.Batch.maxBatchTimeSeconds then
-        ZKC_ServerHandler.flushPendingPayloads()
-    end
-end
-
-if isServer() then
-    Events.EveryHours.Add(ZKC_ServerHandler.flushPendingPayloads)
-    Events.EveryOneMinute.Add(ZKC_ServerHandler.checkPeriodicFlush)
-    Events.OnZombieDead.Add(onZombieDead)
-end
-
-log("Server handler initialized for server-side OnZombieDead tracking")
-
-return ZKC_ServerHandler
+end)
+Events.OnZombieDead.Add(onZombieDead)
+Events.OnPlayerDeath.Add(dropUnresolved)
+Events.OnSave.Add(Service.flushPending)
+return Service

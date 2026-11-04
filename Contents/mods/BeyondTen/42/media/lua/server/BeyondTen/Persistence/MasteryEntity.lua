@@ -1,6 +1,6 @@
 -- Mapping and log-only startup validation. ServerMasteryService owns gameplay I/O.
 if not isServer() then return end
-require "ApocBR/Entities"
+require "ApocBR/Entities" -- Provided by required APOCALISEBR_PACK (shared mod Lua path).
 
 BeyondTenPersistence = BeyondTenPersistence or {}
 local function masteryRepository()
