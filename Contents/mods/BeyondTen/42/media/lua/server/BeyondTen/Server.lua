@@ -1,11 +1,13 @@
 require "BeyondTen/Shared"
 
 if not isServer() then return end
+require "BeyondTen/ServerController"
 
 BeyondTenServer = BeyondTenServer or {}
 
 local BT = BeyondTen
 local Server = BeyondTenServer
+local MasteryService = BeyondTenServerMasteryService
 
 Server._players = Server._players or setmetatable({}, { __mode = "k" })
 Server._tick = Server._tick or 0
@@ -47,23 +49,6 @@ end
 local function clampPerkXPFast(perk, value)
     local cached = getCostCache(perk)
     return BT.Clamp(value, 0, cached and cached.maximum or BT.GetTotalMasteryCost(perk, BT.MAX_LEVEL))
-end
-
-local function loadMirrorXP(player)
-    local result = {}
-    local data = BT.GetData(player, false)
-    local perks = data and data.perks
-    if type(perks) ~= "table" then return result end
-
-    for id, record in pairs(perks) do
-        local value = type(record) == "table" and tonumber(record.xp) or tonumber(record)
-        local perk = BT.ResolvePerk(id)
-        if type(id) == "string" and #id <= 128 and BT.IsFinite(value)
-            and perk and BT.IsTrainablePerk(perk) then
-            result[id] = clampPerkXP(perk, value)
-        end
-    end
-    return result
 end
 
 local sanitizeCanonicalXP
@@ -183,17 +168,25 @@ local function loadCanonicalXP(player)
     local storeKeys = getPlayerStoreKeys(player)
     local storeKey = storeKeys[1]
     local root = getStoreRoot()
-    if not root then return loadMirrorXP(player), storeKey, nil end
+    if not root then return {}, storeKey, nil end
 
     local record = root.players[storeKey]
     local values = nil
     local sourceKey = nil
+    local recordedCharacter = nil
 
     for _, candidateKey in ipairs(storeKeys) do
         local candidate = root.players[candidateKey]
         local isCanonical = type(candidate) == "table"
             and (candidate.migrated == true or type(candidate.perks) == "table")
         if isCanonical then
+            if candidate.characterId then
+                if recordedCharacter and recordedCharacter ~= candidate.characterId then
+                    recordedCharacter = "ambiguous"
+                else
+                    recordedCharacter = candidate.characterId
+                end
+            end
             if values == nil then
                 values = sanitizeCanonicalXP(candidate.perks)
                 sourceKey = candidateKey
@@ -204,9 +197,8 @@ local function loadCanonicalXP(player)
     end
 
     if values == nil then
-        -- One-time migration from the character-owned B41/B42 schema. After
-        -- this record exists, inbound player ModData is never trusted again.
-        values = loadMirrorXP(player)
+        -- Only server GlobalModData may seed PostgreSQL. Player mirrors are untrusted.
+        values = {}
     end
 
     if sourceKey and sourceKey ~= storeKey then
@@ -217,6 +209,7 @@ local function loadCanonicalXP(player)
     root.players[storeKey] = record
     record.version = 1
     record.migrated = true
+    record.characterId = recordedCharacter
     record.perks = values
 
     -- Keep aliases pointing at the same XP table. This avoids progress splits
@@ -327,8 +320,8 @@ local function getState(player)
             lastUpdateTick = Server._tick or 0,
         }
         Server._players[player] = state
-        publishCanonicalXP(player, state, true)
     end
+    MasteryService.Initialize(player, state)
     return state
 end
 
@@ -336,6 +329,7 @@ local function readCanonicalXP(player, perk)
     if not player or not perk then return nil end
     if player:isDead() then return 0 end
     local state = getState(player)
+    if not state.persistenceReady then return 0 end
     local id = perk:getId()
     local value = clampPerkXPFast(perk, state.canonicalXP[id] or 0)
     state.canonicalXP[id] = value
@@ -346,8 +340,15 @@ local function writeCanonicalXP(player, perk, value)
     if not player or not perk then return end
     if player:isDead() then return end
     local state = getState(player)
+    if not state.persistenceReady then
+        MasteryService.Defer(state, "set", perk, value)
+        return
+    end
     local id = perk:getId()
-    state.canonicalXP[id] = clampPerkXPFast(perk, value)
+    local updated = clampPerkXPFast(perk, value)
+    if state.canonicalXP[id] == updated then return end
+    state.canonicalXP[id] = updated
+    MasteryService.MarkDirty(state)
     invalidatePerkCache(state, id)
     markBonusDirty(player, perk)
     markMirrorDirty(state, id)
@@ -357,6 +358,7 @@ local function exportCanonicalXP(player)
     if not player then return nil end
     if player:isDead() then return {} end
     local state = getState(player)
+    if not state.persistenceReady then return {} end
     local result = {}
     for id, value in pairs(state.canonicalXP) do result[id] = value end
     return result
@@ -366,6 +368,11 @@ local function clearCanonicalXP(player)
     if not player then return end
     if player:isDead() then return end
     local state = getState(player)
+    if not state.persistenceReady then
+        MasteryService.Defer(state, "clear")
+        return
+    end
+    if next(state.canonicalXP) ~= nil then MasteryService.MarkDirty(state) end
     for id, _value in pairs(state.canonicalXP) do
         state.canonicalXP[id] = nil
         invalidatePerkCache(state, id)
@@ -374,8 +381,8 @@ local function clearCanonicalXP(player)
 end
 
 -- All shared mastery APIs (including bonus providers) read a server-authoritative
--- table persisted in GlobalModData. Player ModData is only a migration/client mirror
--- and cannot author XP once the server record has been created.
+-- table backed by PostgreSQL and retained in GlobalModData. Player ModData is only
+-- a client mirror and cannot author XP or seed database initialization.
 BT._storedXPReader = readCanonicalXP
 BT._storedXPWriter = writeCanonicalXP
 BT._storedXPExporter = exportCanonicalXP
@@ -384,6 +391,7 @@ BT._storedXPClearer = clearCanonicalXP
 local function getCachedMasteryState(player, perk)
     if not player or not perk or player:isDead() then return BT.NATIVE_MAX_LEVEL, 0, 0 end
     local state = getState(player)
+    if not state.persistenceReady then return BT.NATIVE_MAX_LEVEL, 0, 0 end
     local id = perk:getId()
     local nativeLevel = BT.GetNativeLevel(player, perk)
     if nativeLevel < BT.NATIVE_MAX_LEVEL then return nil end
@@ -478,6 +486,7 @@ local function addStoredXPFast(player, perk, state, amount)
     local applied = after - before
     if math.abs(applied) > 0.0001 then
         state.canonicalXP[id] = after
+        MasteryService.MarkDirty(state)
         invalidatePerkCache(state, id)
         markBonusDirty(player, perk)
         markMirrorDirty(state, id)
@@ -490,6 +499,11 @@ end
 local function addRecoveredXP(player, perk, amount)
     if not player or not perk or player:isDead() then return 0, 0, 0, 0, 0 end
     if not BT.IsTrainablePerk(perk) then return 0, 0, 0, 0, 0 end
+    local pendingState = getState(player)
+    if not pendingState.persistenceReady then
+        MasteryService.Defer(pendingState, "recovered", perk, amount)
+        return 0, 0, 0, BT.GetNativeLevel(player, perk), BT.GetNativeLevel(player, perk)
+    end
 
     amount = tonumber(amount)
     if not BT.IsFinite(amount) then amount = 0 end
@@ -596,6 +610,10 @@ end
 function Server.OnPlayerUpdate(player, elapsedTicks)
     if not player or player:isDead() then return end
     local state = getState(player)
+    if not state.persistenceReady then
+        if not state.initialized then Server.ScanPlayer(player, false) end
+        return
+    end
     elapsedTicks = math.max(1, tonumber(elapsedTicks) or 1)
     -- ObjectModDataPacket can replace a player's whole ModData table. Keep a
     -- bounded periodic repair, but avoid rewriting the mirror for every player
@@ -617,13 +635,16 @@ end
 
 function Server.OnPlayerDeath(player)
     if not player then return end
+    MasteryService.Forget(player)
     local state = Server._players[player]
     local storeKey = state and state.storeKey or getPlayerStoreKey(player)
     local root = getStoreRoot()
     if root and root.players then
         -- Keep an authoritative empty tombstone. Deleting the slot would let a
         -- respawned client's ModData re-enter the one-time migration path.
-        root.players[storeKey] = { version = 1, migrated = true, perks = {} }
+        for _, key in ipairs(getPlayerStoreKeys(player)) do
+            root.players[key] = { version = 1, migrated = true, perks = {} }
+        end
     end
 
     local data = BT.GetData(player, true)
@@ -688,25 +709,28 @@ function Server.OnAddXP(character, perk, amount)
         return
     end
 
+    if not state.persistenceReady then
+        if MasteryService.Defer(state, "xp", perk, tonumber(amount) or 0) then
+            setRawXP(character, perk, BT.RESERVOIR_LEVEL)
+        end
+        return
+    end
+
     captureMasteryDelta(character, perk, state, id, tonumber(amount) or 0)
 end
 
 function Server.OnClientCommand(module, command, player, args)
-    if module ~= BT.MODULE or not player then return end
-    if command ~= "RequestSync" then return end
-    if player:isDead() then return end
-    publishCanonicalXP(player, getState(player), true)
-    Server.ScanPlayer(player, true)
-    sendFullSync(player)
+    BeyondTenServerController.OnClientCommand(module, command, player, args)
 end
 
 function Server.OnSave()
+    MasteryService.Flush()
     -- B42's world-save path triggers this before character serialisation.
     -- Exit/autosave PlayerDB paths can run independently, so the package does
     -- not promise perfectly uninstall-clean raw XP for every shutdown path.
     for player, state in pairs(Server._players) do
         if player then
-            publishCanonicalXP(player, state, true)
+            if state.persistenceReady then publishCanonicalXP(player, state, true) end
             for _, active in pairs(state.active) do
                 if active.perk and BT.GetNativeLevel(player, active.perk) >= BT.NATIVE_MAX_LEVEL then
                     setRawXP(player, active.perk, BT.NATIVE_MAX_LEVEL)
@@ -747,6 +771,7 @@ local function installPassiveProtection()
 end
 
 local function onServerStarted()
+    MasteryService.Reset()
     Server._players = setmetatable({}, { __mode = "k" })
     Server._onlinePlayers = {}
     Server._playerCursor = 1
@@ -758,6 +783,7 @@ local function onServerStarted()
 end
 
 local function onInitGlobalModData()
+    MasteryService.Reset()
     -- GlobalModData.init() replaces every loaded table. Drop any pre-init
     -- references defensively; the next player tick binds to the loaded store.
     Server._players = setmetatable({}, { __mode = "k" })
@@ -766,13 +792,53 @@ local function onInitGlobalModData()
     Server._lastPlayerRefreshTick = -Server.PLAYER_CACHE_REFRESH_TICKS
 end
 
+MasteryService.Configure({
+    sanitize = sanitizeCanonicalXP,
+    sync = function(player, state)
+        publishCanonicalXP(player, state, true)
+        Server.ScanPlayer(player, true)
+        sendFullSync(player)
+    end,
+    loaded = function(player, state, values, context)
+        -- Preserve the table shared by the server's Steam/username GlobalModData aliases.
+        for id in pairs(state.canonicalXP) do state.canonicalXP[id] = nil end
+        for id, xp in pairs(values) do state.canonicalXP[id] = xp end
+        local root = getStoreRoot()
+        if root then
+            for _, key in ipairs(getPlayerStoreKeys(player)) do
+                if root.players[key] then root.players[key].characterId = context.characterId end
+            end
+        end
+        state.masteryCache = {}
+        state.rankBundle = nil
+        for _, perk in ipairs(BT.GetTrainablePerks()) do markBonusDirty(player, perk) end
+        markMirrorDirty(state)
+        -- Compare sanitized values against the committed snapshot; clean loads do no SQL.
+        MasteryService.MarkDirty(state)
+        local pending = state.pendingMasteryXP
+        state.pendingMasteryXP = {}
+        for _, change in ipairs(pending) do
+            if change.kind == "clear" then clearCanonicalXP(player)
+            elseif change.kind == "set" then writeCanonicalXP(player, change.perk, change.value)
+            elseif change.kind == "xp" then
+                captureMasteryDelta(player, change.perk, state, change.perk:getId(), change.value)
+            elseif change.kind == "recovered" then
+                addRecoveredXP(player, change.perk, change.value)
+            end
+        end
+        publishCanonicalXP(player, state, true)
+        Server.ScanPlayer(player, true)
+        sendFullSync(player)
+    end,
+})
+BeyondTenServerController.Install({ getState = getState })
+
 if not Server._eventsInstalled then
     Server._eventsInstalled = true
     Events.OnServerStarted.Add(onServerStarted)
     Events.OnInitGlobalModData.Add(onInitGlobalModData)
     Events.OnTick.Add(Server.OnTick)
     Events.AddXP.Add(Server.OnAddXP)
-    Events.OnClientCommand.Add(Server.OnClientCommand)
     Events.OnSave.Add(Server.OnSave)
     Events.OnServerStartSaving.Add(Server.OnSave)
     Events.OnCharacterDeath.Add(Server.OnCharacterDeath)

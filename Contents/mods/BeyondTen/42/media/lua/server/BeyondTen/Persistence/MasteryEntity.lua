@@ -1,5 +1,4 @@
--- Startup schema validation only; gameplay persistence remains a scaffold.
--- Does not read/write BeyondTen's existing global or player ModData.
+-- Mapping and log-only startup validation. ServerMasteryService owns gameplay I/O.
 if not isServer() then return end
 require "ApocBR/Entities"
 

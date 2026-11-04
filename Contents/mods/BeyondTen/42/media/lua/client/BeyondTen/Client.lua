@@ -1,4 +1,5 @@
 require "BeyondTen/Shared"
+require "BeyondTen/ClientController"
 
 BeyondTenClient = BeyondTenClient or {}
 
@@ -140,7 +141,7 @@ function Client.InitializePlayer(player)
     Client.ScanPlayer(player, true)
     if isClient() and not state.requestedSync then
         state.requestedSync = true
-        sendClientCommand(player, BT.MODULE, "RequestSync", {})
+        BeyondTenClientController.RequestSync(player)
     end
 end
 
@@ -191,6 +192,7 @@ end
 
 function Client.OnPlayerUpdate(player)
     if not player or not isLocalPlayer(player) then return end
+    BeyondTenClientController.RequestSync(player)
     local state = getState(player)
     pollActivePerks(player, state)
     state.scanTimer = state.scanTimer + 1
@@ -223,30 +225,20 @@ function Client.OnAddXP(character, perk, amount)
 end
 
 function Client.OnServerCommand(module, command, args)
-    if module ~= BT.MODULE or type(args) ~= "table" then return end
-    local player = nil
-    local onlineID = tonumber(args.player)
-    for playerIndex = 0, getNumActivePlayers() - 1 do
-        local candidate = getSpecificPlayer(playerIndex)
-        if candidate and (onlineID == nil or tonumber(candidate:getOnlineID()) == onlineID) then
-            player = candidate
-            break
-        end
-    end
-    if onlineID ~= nil and not player then return end
-    player = player or getPlayer()
-    if not player then return end
+    BeyondTenClientController.OnServerCommand(module, command, args)
+end
 
-    if command == "Sync" and type(args.perks) == "table" then
-        BT.ImportXP(player, args.perks, true)
-        Client.ScanPlayer(player, true)
-    elseif command == "SyncPerk" then
-        local perk = BT.ResolvePerk(args.perk)
-        if perk then
-            local oldLevel = BT.GetEffectiveLevel(player, perk)
-            BT.SetStoredXP(player, perk, tonumber(args.xp) or 0)
-            notifyLevelUp(player, perk, oldLevel, BT.GetEffectiveLevel(player, perk))
-        end
+function Client.ApplyFullSync(player, perks)
+    BT.ImportXP(player, perks, true)
+    Client.ScanPlayer(player, true)
+end
+
+function Client.ApplyPerkSync(player, id, value)
+    local perk = BT.ResolvePerk(id)
+    if perk then
+        local oldLevel = BT.GetEffectiveLevel(player, perk)
+        BT.SetStoredXP(player, perk, tonumber(value) or 0)
+        notifyLevelUp(player, perk, oldLevel, BT.GetEffectiveLevel(player, perk))
     end
 end
 
@@ -296,7 +288,6 @@ if not Client._eventsInstalled then
     Events.OnPlayerUpdate.Add(Client.OnPlayerUpdate)
     Events.AddXP.Add(Client.OnAddXP)
     Events.OnSave.Add(Client.OnSave)
-    Events.OnServerCommand.Add(Client.OnServerCommand)
 end
 
 installPassiveProtection()

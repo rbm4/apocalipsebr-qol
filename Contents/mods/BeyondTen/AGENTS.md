@@ -6,22 +6,35 @@ BeyondTen is the first mod adopting the ApocBR server patch's Lua entity pathway
 for mod-specific PostgreSQL persistence. The goal is to store this data directly
 through server repositories instead of native global/player ModData.
 
-This migration is incremental. Gameplay in `42/media/lua/server/BeyondTen/Server.lua`
-still uses its existing ModData store and player mirrors. The entity scaffold only
-registers and validates the mastery mapping at server startup. It does not import,
-find, save, or delete mastery rows automatically. Do not treat the migration as
-complete or switch the source of truth without an explicit migration design.
+Implemented 2026-10-29: gameplay in `42/media/lua/server/BeyondTen/Server.lua`
+keeps its existing XP calculations, GlobalModData cache and player mirrors.
+PostgreSQL wins at initialization when character rows exist. Otherwise, an atomic
+load-or-create operation imports sanitized server GlobalModData, seeding real
+zero-valued perk rows as initialization evidence. Player ModData never seeds the
+database. Changed XP fields are patched to PostgreSQL at five-second intervals
+and requested on save. This is an incremental dual-storage flow, not removal of
+GlobalModData, and queued mod writes are not durable journal entries.
 
 ## Controlling files and bridge
 
 - `42/media/lua/server/BeyondTen/Persistence/MasteryEntity.lua`: mastery mapping and
   log-only startup validation.
+- `42/media/lua/server/BeyondTen/ServerMasteryService.lua`: asynchronous initialization,
+  dirty generations, bounded pending XP, retries and database batch saves.
+- `42/media/lua/server/BeyondTen/ServerController.lua`: authenticated vanilla
+  `OnClientCommand` entry point. Accept only `RequestSync`; ignore all client
+  payload fields and rate-limit requests. The player argument is supplied by vanilla.
+- `42/media/lua/client/BeyondTen/ClientController.lua` and `ClientMasteryService.lua`:
+  empty-payload sync requests, retry until full sync, and local-player mirror updates.
+  Clients do not receive a database API, session token or character UUID in commands.
 - `42/media/lua/server/ApocBR/Entities.lua`: reusable server Lua repository/entity
   facade. Require it as `ApocBR/Entities`.
 - `Z:/git/Github/apocalipsebr-zomboid-patches/42.22.0/src/zombie/savefile/ApocBRModEntities.java`:
   current Java bridge, mapping rules, asynchronous execution and schema checks.
 - The patched `zombie/network/GameServer.java` installs `ApocBRModEntities` before
   server Lua loads. Verify the active patch version when changing this contract.
+- `ApocBRPlayerRelationalMutations.entityContext`: obtains the real character UUID
+  and session from the live relational binding. No ID is derived from client data.
 
 Keep this pathway under server Lua with an `isServer()` guard. Lua submits detached
 scalar values through `ApocBRModEntities`; Java owns SQL, JDBC connections, worker
@@ -77,24 +90,68 @@ database migration workflow; do not create or repair schema from mod startup.
 column or key failed. Database failures can report `DATABASE_ERROR`, and runtime
 validation failures can report `INVALID_DATA`. Startup continues on all failures.
 
-## Future gameplay integration
+## Active gameplay and identity contract
 
-- Obtain `character_id` from trusted server reconstruction, not client input,
-  usernames alone, or an assumed player/descriptor ID. Verify the supported bridge
-  for this identity before implementing gameplay persistence.
-- Check that the player incarnation and transfer ownership are still current when
-  an asynchronous request completes. Do not mutate stale/disconnected player state.
+- `ApocBREntities.resolveCharacter(player, callback)` is server-only and delivers
+  the bound UUID/session on the next completion tick. A binding may precede the
+  initial character commit: the scoped worker must verify the persisted active life.
+- Use `loadOrCreateForCharacter(player, context, seeds, callback)` for initialization
+  and `repository:characterSnapshot(result.rows)` to retain the committed baseline.
+  Call `snapshot:patch(player, context, rows, callback)` with full current row values
+  for gameplay. Each row is
+  `{ values = { perk_id = ..., xp = ... }, revision = "..." }`. Java injects the
+  character key; supplying it in a row is rejected. Loads return all character rows.
+  Patch snapshots obtain revisions from their own acknowledged baseline; supplied
+  row revisions do not override it. Composite keys and changed fields are generic,
+  not perk-specific. Only changed rows/columns cross the worker boundary, and patch
+  results contain only changed rows and their new revisions (not the full collection).
+- `entity:patch(callback)` provides the same dirty comparison for ordinary entities;
+  new entities insert all fields through save. Full `save`/`saveAllForCharacter` remain
+  explicit compatibility operations, but should not be used for routine mastery sync.
+- Previous snapshots advance only on committed `OK`; failures/uncertain outcomes
+  retain them. Capture submitted values separately from live changes so edits
+  or reverts during a patch remain dirty for the next call. Unchanged calls return
+  `OK, unchanged=true` immediately without SQL or revision increments. A mutation
+  followed by a revert before submission also does no SQL. Omitted rows are not deleted.
+- Keep presentation mirror dirtiness separate from database dirtiness. Only actual
+  mastery mutations or initialization normalization schedule a snapshot comparison;
+  RequestSync, scans and periodic mirror repair must not schedule database writes.
+- Admission and worker execution check the session. The worker locks the actual
+  `player_rel.player_slot`, verifies its active character, and atomically seeds or
+  writes the collection using per-row revisions. Completion rechecks the live
+  session before handing results to the service. Workers never access live players.
+- Bounds: 256 collection rows, 512 service entries, 4096 pending initialization
+  changes per player. New catalog zero rows fill only remaining collection capacity.
+- Existing database rows replace the local cache in place, preserving alias table
+  references. Mark GlobalModData records with their character UUID so another life
+  cannot seed old progress. Death invalidates callbacks and clears all local aliases.
+- Retain zero rows after clears; deleting all rows would permit a legacy re-import.
+  Empty DB results are initialized once in one transaction; existing collections
+  are never partially merged with legacy data. No migration marker table is needed
+  for this zero-row-preserving policy. Do not add hard deletes without revisiting it.
+- While loading, mastery bonuses and client sync are gated. Native mastery XP events,
+  explicit setters, clears and recovered-XP calls are deferred and replayed in order
+  over the database result. Deferred legacy synchronous APIs cannot report their final
+  result immediately; the recovered-XP handler returns zero applied until replay.
 - Use `repository:find(keys, callback)`, `repository:new(values)`, entity `get/set`,
   `save(callback)` and `delete(callback)`. `new` and `set` only change local objects.
 - Treat callback `OK` on save/delete as committed. Handle `NOT_FOUND`, `CONFLICT`,
   `BUSY`, `UNAVAILABLE`, `DATABASE_ERROR`, `SCHEMA_ERROR`, `INVALID_DATA`, and
   `OUTCOME_UNKNOWN` explicitly. Reload/reconcile conflicts or uncertain commits;
   do not blindly retry non-idempotent changes.
-- Preserve dirty tracking: one save/delete may be in flight per entity; mutations
+- Preserve dirty tracking: one save/patch/delete may be in flight per entity; mutations
   made during a save remain dirty after that save completes.
-- Plan legacy import, identity transitions, durability and any client mirrors
-  separately before replacing existing mastery storage. Keep clients unable to
-  submit arbitrary entity names, keys, values or database operations.
+- Retry temporary `BUSY`, `UNAVAILABLE`, `IDENTITY_PENDING`, database and bridge
+  failures after five seconds. Conflicts, uncertain commits, stale sessions, schema
+  and invalid-data errors stop automatic writes and retain local state for diagnosis;
+  reconnect/restart reloads the database. A stale session also revokes readiness.
+- This has no durable mod journal, atomic world-save barrier or distributed server
+  ownership lease. Revision checks and active-life validation do not establish
+  exclusive ownership across servers. Transfers need an acknowledged flush and
+  ownership design before claiming durability. Do not blindly replay uncertain writes.
+- The V32 mastery table currently has no foreign key; old-life rows can remain after
+  relational replacement deletes old characters. They are not loaded for new lives.
+  A future backend migration may add cleanup/FK policy; startup must never run DDL.
 
 ## Verification when developing
 
@@ -104,3 +161,9 @@ missing bridge, admission rejection and synchronous exception paths. Live server
 verification must confirm both the request and terminal callback logs against the
 actual PostgreSQL schema; a mocked callback cannot prove schema compatibility.
 Update this file as the entity contract and migration progress change.
+
+Regression fixtures live in `Z:/git/Github/apocalipsebr-zomboid-patches/tools/`:
+`test_mod_entities.py --version 42.22.0`, `test_character_mod_entities.py`, and
+`test_beyondten_persistence.py`, plus `test_entity_patches.py` for generic snapshot
+semantics. They exercise production bridge/Lua code with
+JDBC/game doubles; they do not replace live dedicated-server/PostgreSQL testing.
