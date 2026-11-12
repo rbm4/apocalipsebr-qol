@@ -27,6 +27,34 @@ local function bridge()
     return ApocBRModEntities
 end
 
+-- Engine-scoped identifiers and bounded data-only JSON for entity payloads.
+function API.serverScope() return bridge().serverScope() end
+function API.encode(values) return bridge().encode(values) end
+function API.decode(text) return bridge().decode(text) end
+
+-- Scoped record mutations: one optimistic transaction, no document snapshot save.
+-- Java captures server/world and copies the bounded operation array before return.
+function API.document(name)
+    local function submit(method,args,callback)
+        if type(callback)~='function' then error('Document callback required') end
+        local b=bridge()
+        if not b[method] then deliver(callback,{status='BRIDGE_OUTDATED'}); return false end
+        local accepted
+        if method=='documentLoad' then accepted=b.documentLoad(name)
+        else accepted=b.documentMutate(name,args.revision,args.mutationId,args.operations) end
+        if not accepted.accepted then deliver(callback,{status=accepted.status}); return false end
+        pending[accepted.id]=callback
+        return true
+    end
+    return {
+        load=function(_,callback) return submit('documentLoad',nil,callback) end,
+        mutate=function(_,revision,mutationId,operations,callback)
+            return submit('documentMutate',{revision=revision,mutationId=mutationId,operations=operations},callback)
+        end,
+    }
+end
+function API.newMutationId() return bridge().newMessageId() end
+
 local function request(model, operation, keys, values, revision, callback)
     if type(callback) ~= "function" then error("Entity callback required") end
     local accepted = bridge().submit(model.name, operation, keys, values, revision)
@@ -336,6 +364,25 @@ function API.define(name, definition)
         if not characterId then error("Character snapshot requires persisted rows") end
         return setmetatable({ _model = model, _characterId = characterId,
             _previous = previous, _current = current }, CharacterSnapshot)
+    end
+    -- Bounded async collection read; server ID and world are captured by Java.
+    function repository:listForServer(callback)
+        if type(callback) ~= "function" then error("Entity callback required") end
+        local accepted = bridge().listForServer(model.name)
+        if not accepted.accepted then
+            deliver(callback, { status = accepted.status })
+            return false
+        end
+        pending[accepted.id] = function(result)
+            if result.status == "OK" then
+                result.entities = {}
+                for index, row in ipairs(result.rows) do
+                    result.entities[index] = instance(model, row.values, row.revision)
+                end
+            end
+            deliver(callback, result)
+        end
+        return true
     end
     function repository:find(keys, callback)
         if type(callback) ~= "function" then error("Entity callback required") end
