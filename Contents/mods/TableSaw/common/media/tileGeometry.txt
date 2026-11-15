@@ -1,0 +1,429 @@
+tileGeometry
+{
+    VERSION = 2,
+
+    tileset
+    {
+        name = TableSaw,
+
+        /* TableSaw_0 */
+        tile
+        {
+            xy = 0x0,
+
+            box
+            {
+                translate = -529x857x-405,
+                rotate = 0x0x0,
+                min = -2419x0x-3469,
+                max = 2419x6752x3469,
+            }
+
+            box
+            {
+                translate = 915x7577x-16,
+                rotate = 0x0x0,
+                min = -3893x0x-4425,
+                max = 3893x585x4425,
+            }
+
+            box
+            {
+                translate = -2511x0x3000,
+                rotate = 0x0x0,
+                min = -430x0x-72,
+                max = 430x858x72,
+            }
+
+            box
+            {
+                translate = 1464x0x3000,
+                rotate = 0x0x0,
+                min = -430x0x-72,
+                max = 430x858x72,
+            }
+
+            box
+            {
+                translate = 1813x0x2563,
+                rotate = 0x0x0,
+                min = -81x0x-365,
+                max = 81x858x365,
+            }
+
+            box
+            {
+                translate = -2859x0x2563,
+                rotate = 0x0x0,
+                min = -81x0x-365,
+                max = 81x858x365,
+            }
+
+            box
+            {
+                translate = 1813x0x-3507,
+                rotate = 0x0x0,
+                min = -81x0x-365,
+                max = 81x858x365,
+            }
+
+            box
+            {
+                translate = 1459x0x-3779,
+                rotate = 0x0x0,
+                min = -435x0x-93,
+                max = 435x858x93,
+            }
+
+            box
+            {
+                translate = 2072x8168x247,
+                rotate = 0x0x0,
+                min = -325x0x-4892,
+                max = 325x1041x4892,
+            }
+
+            box
+            {
+                translate = 4526x8155x-4338,
+                rotate = 0x0x0,
+                min = -270x0x-104,
+                max = 270x1294x104,
+            }
+
+            box
+            {
+                translate = 2374x-77x1805,
+                rotate = 0x0x187472,
+                min = -148x0x-181,
+                max = 148x1085x181,
+            }
+
+            box
+            {
+                translate = -2527x5714x3282,
+                rotate = 0x0x0,
+                min = -421x0x-179,
+                max = 421x895x179,
+            }
+
+            properties
+            {
+                Translucent = true,
+            }
+        }
+
+        /* TableSaw_1 */
+        tile
+        {
+            xy = 1x0,
+
+            box
+            {
+                translate = -230x857x450,
+                rotate = 1799855x899802x-1799855,
+                min = -2419x0x-3469,
+                max = 2419x6752x3469,
+            }
+
+            box
+            {
+                translate = 210x7577x-982,
+                rotate = 1799855x899802x-1799855,
+                min = -3893x0x-4480,
+                max = 3893x585x4480,
+            }
+
+            box
+            {
+                translate = 3132x0x2444,
+                rotate = 1799855x899802x-1799855,
+                min = -430x0x-72,
+                max = 430x858x72,
+            }
+
+            box
+            {
+                translate = 3132x0x-1531,
+                rotate = 1799855x899802x-1799855,
+                min = -430x0x-72,
+                max = 430x858x72,
+            }
+
+            box
+            {
+                translate = 2694x0x-1880,
+                rotate = 1799855x899802x-1799855,
+                min = -81x0x-365,
+                max = 81x858x365,
+            }
+
+            box
+            {
+                translate = 2694x0x2792,
+                rotate = 1799855x899802x-1799855,
+                min = -81x0x-365,
+                max = 81x858x365,
+            }
+
+            box
+            {
+                translate = -3647x0x2442,
+                rotate = 1799855x899802x-1799855,
+                min = -430x0x-93,
+                max = 430x858x93,
+            }
+
+            box
+            {
+                translate = -3376x0x2791,
+                rotate = 1799855x899802x-1799855,
+                min = -81x0x-365,
+                max = 81x858x365,
+            }
+
+            box
+            {
+                translate = 379x8168x-1945,
+                rotate = 1799855x899802x-1799855,
+                min = -325x0x-4892,
+                max = 325x1041x4892,
+            }
+
+            box
+            {
+                translate = -3982x8155x-4765,
+                rotate = 1799855x899802x-1799855,
+                min = -98x0x-228,
+                max = 98x1467x228,
+            }
+
+            box
+            {
+                translate = 3411x3688x-3660,
+                rotate = 1799855x899802x-1799855,
+                min = -1684x0x-179,
+                max = 1684x2920x179,
+            }
+
+            properties
+            {
+                Translucent = true,
+            }
+        }
+
+        /* TableSaw_2 */
+        tile
+        {
+            xy = 2x0,
+
+            box
+            {
+                translate = 1006x857x316,
+                rotate = -1800000x-198x-1800000,
+                min = -2419x0x-3469,
+                max = 2419x6752x3469,
+            }
+
+            box
+            {
+                translate = -438x7577x-72,
+                rotate = -1800000x-198x-1800000,
+                min = -3893x0x-4425,
+                max = 3893x585x4425,
+            }
+
+            box
+            {
+                translate = 2988x0x-3089,
+                rotate = -1800000x-198x-1800000,
+                min = -430x0x-72,
+                max = 430x858x72,
+            }
+
+            box
+            {
+                translate = 3335x0x-2692,
+                rotate = -1800000x-198x-1800000,
+                min = -81x0x-325,
+                max = 81x858x325,
+            }
+
+            box
+            {
+                translate = -1336x0x3419,
+                rotate = -1800000x-198x-1800000,
+                min = -81x0x-365,
+                max = 81x858x365,
+            }
+
+            box
+            {
+                translate = -1016x0x3690,
+                rotate = -1800000x-198x-1800000,
+                min = -401x0x-93,
+                max = 401x858x93,
+            }
+
+            box
+            {
+                translate = 2986x0x3690,
+                rotate = -1800000x-198x-1800000,
+                min = -429x0x-93,
+                max = 429x858x93,
+            }
+
+            box
+            {
+                translate = 3335x0x3281,
+                rotate = -1800000x-198x-1800000,
+                min = -81x0x-502,
+                max = 81x858x502,
+            }
+
+            box
+            {
+                translate = -1595x8168x-336,
+                rotate = -1800000x-198x-1800000,
+                min = -325x0x-4892,
+                max = 325x1041x4892,
+            }
+
+            box
+            {
+                translate = -4197x8155x4119,
+                rotate = -1800000x-198x-1800000,
+                min = -143x0x-189,
+                max = 143x1583x189,
+            }
+
+            box
+            {
+                translate = 3004x5937x-3370,
+                rotate = -1800000x-198x-1800000,
+                min = -421x0x-179,
+                max = 421x895x179,
+            }
+
+            box
+            {
+                translate = -1422x7745x-6452,
+                rotate = -1294627x-126x-1799847,
+                min = -143x0x-238,
+                max = 143x1755x238,
+            }
+
+            properties
+            {
+                Translucent = true,
+            }
+        }
+
+        /* TableSaw_3 */
+        tile
+        {
+            xy = 3x0,
+
+            box
+            {
+                translate = 405x857x-663,
+                rotate = 0x-899802x0,
+                min = -2419x0x-3469,
+                max = 2419x6752x3469,
+            }
+
+            box
+            {
+                translate = 16x7577x684,
+                rotate = 0x-899802x0,
+                min = -3980x0x-4425,
+                max = 3980x585x4425,
+            }
+
+            box
+            {
+                translate = -3000x0x1331,
+                rotate = 0x-899802x0,
+                min = -430x0x-72,
+                max = 430x858x72,
+            }
+
+            box
+            {
+                translate = -2563x0x1680,
+                rotate = 0x-899802x0,
+                min = -81x0x-365,
+                max = 81x858x365,
+            }
+
+            box
+            {
+                translate = 3413x0x1680,
+                rotate = 0x-899802x0,
+                min = -81x0x-459,
+                max = 81x858x459,
+            }
+
+            box
+            {
+                translate = 3779x0x1326,
+                rotate = 0x-899802x0,
+                min = -435x0x-93,
+                max = 435x858x93,
+            }
+
+            box
+            {
+                translate = 3779x0x-2672,
+                rotate = 0x-899802x0,
+                min = -400x0x-93,
+                max = 400x858x93,
+            }
+
+            box
+            {
+                translate = 3507x0x-2991,
+                rotate = 0x-899802x0,
+                min = -81x0x-365,
+                max = 81x858x365,
+            }
+
+            box
+            {
+                translate = -247x8168x1938,
+                rotate = 0x-899802x0,
+                min = -325x0x-4892,
+                max = 325x1041x4892,
+            }
+
+            box
+            {
+                translate = -1805x34x2241,
+                rotate = 900001x-639266x1042501,
+                min = -148x0x-181,
+                max = 148x1085x181,
+            }
+
+            box
+            {
+                translate = -3262x2974x2383,
+                rotate = 0x-899802x0,
+                min = -615x0x-179,
+                max = 615x2955x179,
+            }
+
+            box
+            {
+                translate = -6233x7743x1977,
+                rotate = -899820x-423432x-899732,
+                min = -208x0x-179,
+                max = 208x1392x179,
+            }
+
+            properties
+            {
+                Translucent = true,
+            }
+        }
+    }
+}

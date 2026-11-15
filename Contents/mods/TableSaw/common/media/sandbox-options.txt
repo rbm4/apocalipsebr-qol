@@ -1,0 +1,155 @@
+
+VERSION = 1,
+
+
+option TableSawIsUnGiveWoodworkXp
+{
+    type = boolean,
+    default = false,
+    page = TableSaw,
+    translation = TableSawIsUnGiveWoodworkXp,
+}
+
+option TableSawIsEnableDamageHand
+{
+    type = boolean,
+    default = false,
+    page = TableSaw,
+    translation = TableSawIsEnableDamageHand,
+}
+
+option TableSawPlankArrangeNeatly
+{
+    type = boolean,
+    default = true,
+    page = TableSaw,
+    translation = TableSawPlankArrangeNeatly,
+}
+
+option TableSawCreatePlankNum
+{
+	type = integer,
+	min = 5,
+	max = 100,
+	default = 6,
+	page = TableSaw,
+	translation = TableSawCreatePlankNum,
+}
+
+option TableSawDurable
+{
+	type = double,
+	default = 80.0,
+	min = 50.0,
+	max = 500.0,
+	page = TableSaw,
+	translation = TableSawDurable,
+}
+
+option TableSawSawBladeDurable
+{
+	type = double,
+	default = 100.0,
+	min = 100.0,
+	max = 500.0,
+	page = TableSaw,
+	translation = TableSawSawBladeDurable,
+}
+
+option SawingWoodAcceleration
+{
+	type = double,
+	default = 100.0,
+	min = 1.0,
+	max = 100.0,
+	page = TableSaw,
+	translation = SawingWoodAcceleration,
+}
+
+option TableSawDivider1
+{
+    type = boolean,
+    default = false,
+    page = TableSaw,
+    translation = TableSawDivider1,
+}
+
+option TableSawIsEnableWeightReduction
+{
+    type = boolean,
+    default = false,
+    page = TableSaw,
+    translation = TableSawIsEnableWeightReduction,
+}
+
+option TableSawLogPro
+{
+	type = double,
+	default = 100.0,
+	min = 1.0,
+	max = 100.0,
+	page = TableSaw,
+	translation = TableSawLogPro,
+}
+
+option TableSawLargeBranchPro
+{
+	type = double,
+	default = 100.0,
+	min = 1.0,
+	max = 100.0,
+	page = TableSaw,
+	translation = TableSawLargeBranchPro,
+}
+
+option TableSawSaplingPro
+{
+	type = double,
+	default = 100.0,
+	min = 1.0,
+	max = 100.0,
+	page = TableSaw,
+	translation = TableSawSaplingPro,
+}
+
+option TableSawPlankPro
+{
+	type = double,
+	default = 100.0,
+	min = 1.0,
+	max = 100.0,
+	page = TableSaw,
+	translation = TableSawPlankPro,
+}
+
+option TableSawTreeBranch2Pro
+{
+	type = double,
+	default = 100.0,
+	min = 1.0,
+	max = 100.0,
+	page = TableSaw,
+	translation = TableSawTreeBranch2Pro,
+}
+
+option TableSawSplintersPro
+{
+	type = double,
+	default = 100.0,
+	min = 1.0,
+	max = 100.0,
+	page = TableSaw,
+	translation = TableSawSplintersPro,
+}
+
+option TableSawTwigsPro
+{
+	type = double,
+	default = 100.0,
+	min = 1.0,
+	max = 100.0,
+	page = TableSaw,
+	translation = TableSawTwigsPro,
+}
+
+
