@@ -108,8 +108,29 @@ function ISTableSawTimedAction:stop()
 	ISBaseTimedAction.stop(self);
 end
 
+-- Integrated from TableSawMPFix: network item references can be missing or stale.
+local function findSawWood(character, item)
+	local inventory = character and character:getInventory()
+	if not inventory then return nil end
+	if item then
+		if inventory:contains(item) and CanSawLogList[item:getType()] then
+			return item
+		end
+		local same = inventory:getItemWithID(item:getID())
+		if same and CanSawLogList[same:getType()] then return same end
+	end
+	for _, itemType in ipairs({ "Log", "LargeBranch", "Sapling" }) do
+		if CanSawLogList[itemType] then
+			local found = inventory:getFirstType(itemType)
+			if found then return found end
+		end
+	end
+	return nil
+end
+
 function ISTableSawTimedAction:SawWood()
-	if not self.character:getInventory():contains(self.item) then 
+	self.item = findSawWood(self.character, self.item)
+	if not self.item then
 		return -1
 	end 
 	local givename = CanSawLogList[self.item:getType()]

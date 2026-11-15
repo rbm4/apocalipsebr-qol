@@ -1,4 +1,6 @@
 require("ISUI/ISCollapsableWindowJoypad")
+require "TimedActions/ISTimedActionQueue"
+require "TimedActions/WalkToTimedAction"
 
 TableSawUI = ISCollapsableWindowJoypad:derive("TableSawUI")
 
@@ -241,6 +243,47 @@ function TableSawUI.SawingActionCallback(tablesaw, player, Sprite)
 end 
 
 -- 开始锯木头
+function TableSawUI.walkToSaw(myself, destination)
+	local pending = myself.walkToSawAction
+	if pending and ISTimedActionQueue.hasAction(pending) then return end
+	local character = myself.character
+	if character:getVehicle() then return end
+	local sawSquare = myself.tablesaw:getSquare()
+	local action = ISWalkToTimedAction:new(character, destination)
+	myself.walkToSawAction = action
+
+	local function current()
+		return myself.walkToSawAction == action and TableSawUI.g_hWnd == myself
+			and myself:getIsVisible() and not character:isDead()
+			and myself.tablesaw:getSquare() == sawSquare
+			and myself.tablesaw:getObjectIndex() >= 0
+	end
+	local originalIsValid = action.isValid
+	function action:isValid()
+		return current() and originalIsValid(self)
+	end
+	local function clearPending()
+		if myself.walkToSawAction == action then myself.walkToSawAction = nil end
+	end
+	local originalStop = action.stop
+	function action:stop()
+		clearPending()
+		originalStop(self)
+	end
+	local originalForceCancel = action.forceCancel
+	function action:forceCancel()
+		clearPending()
+		originalForceCancel(self)
+	end
+	action:setOnComplete(function()
+		local arrived = current() and character:getSquare() == destination
+		clearPending()
+		if arrived then TableSawUI.onStartSawWood(myself) end
+	end)
+	ISTimedActionQueue.add(action)
+	if not ISTimedActionQueue.hasAction(action) then clearPending() end
+end
+
 function TableSawUI.onStartSawWood(myself)
 	local Square = myself.tablesaw:getSquare()
 	if Square then 
@@ -305,16 +348,7 @@ function TableSawUI.onStartSawWood(myself)
 			myself.character:setZ(newsq:getZ())
 			myself.executeSawingActions(myself.tablesaw, myself.character, Sprite)
 		else
-			--print('walk')
-			if luautils.walk(myself.character, newsq, true) then
-				local function onPlayerMove()
-					if myself.character:getSquare() == newsq then
-						Events.OnPlayerMove.Remove(onPlayerMove)
-						myself.executeSawingActions(myself.tablesaw, myself.character, Sprite)
-					end
-				end
-				Events.OnPlayerMove.Add(onPlayerMove)
-			end
+			myself.walkToSaw(myself, newsq)
 		end 
 	end 
 end 
@@ -560,6 +594,8 @@ end
 
 -- 关闭回调
 function TableSawUI:close()
+	-- Invalidate the approach; its native validity check cancels further walking.
+	self.walkToSawAction = nil
     local modData = self.character:getModData();
     modData.TableSawUIData = { x = self:getX(), y = self:getY()};
 
