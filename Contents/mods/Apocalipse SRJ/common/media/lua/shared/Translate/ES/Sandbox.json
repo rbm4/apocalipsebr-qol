@@ -25,7 +25,7 @@
     "Sandbox_SkillRecoveryJournalUsed": "XP del Diario Utilizado al Leer",
     "Sandbox_SkillRecoveryJournalUsed_tooltip": "Normalmente, puedes releer el diario tantas veces como quieras; con esto activado, cada punto de XP solo puede ser recuperado una vez. Aún puedes agregar al diario, pero cada punto solo puede ser recuperado una vez por diario. Nota: La descripción del diario ahora mostrará una fracción para los puntos no utilizados.",
     "Sandbox_SkillRecoveryJournalCraftRecipe": "Receta de Diario",
-    "Sandbox_SkillRecoveryJournalCraftRecipe_tooltip": "Dejar esto en blanco significa que los diarios no se pueden crear.\n\nLa sintaxis sigue los ingredientes de la receta, como sigue:\nCada artículo está separado por '|'.\nEsto se introduce directamente en el input{} del script de recetas.",
+    "Sandbox_SkillRecoveryJournalCrafttooltip": "Dejar esto en blanco significa que los diarios no se pueden crear.\n\nLa sintaxis sigue los ingredientes de la receta, como sigue:\nCada artículo está separado por '|'.\nEsto se introduce directamente en el input{} del script de recetas.",
     "Sandbox_SkillRecoveryJournalModDataTrack": "Rastrear Valores de ModData",
     "Sandbox_SkillRecoveryJournalModDataTrack_tooltip": "USAR CON PRECAUCIÓN.\n\nEjemplo de sintaxis: ModDataKey1|ModDataKey2\nLa transcripción almacenará una copia de la tabla correspondiente de los datos del mod del jugador.\nEsto puede crear problemas significativos si los datos son grandes.\nSi no estás seguro de lo que significa, ignóralo y déjalo en blanco.",
     "Sandbox_SkillRecoveryJournalKillsTrack": "Porcentaje de Recuperación de Muertes de Zombis/Supervivientes"

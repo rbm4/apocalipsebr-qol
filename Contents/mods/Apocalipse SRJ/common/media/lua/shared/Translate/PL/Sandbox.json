@@ -25,7 +25,7 @@
     "Sandbox_SkillRecoveryJournalUsed": "XP Dziennika Używane przy Czytaniu",
     "Sandbox_SkillRecoveryJournalUsed_tooltip": "Normalnie możesz czytać dziennik tyle razy, ile chcesz; włączając tę opcję, każdy punkt XP może być odzyskany tylko raz. Nadal możesz dodawać do dziennika, ale każdy punkt może być odzyskany tylko raz w każdym dzienniku. Uwaga: Wskazówka dziennika będzie teraz wyświetlać ułamek dla niewykorzystanych punktów.",
     "Sandbox_SkillRecoveryJournalCraftRecipe": "Przepis na Dziennik",
-    "Sandbox_SkillRecoveryJournalCraftRecipe_tooltip": "Pozostawienie pustego oznacza, że dzienniki nie mogą być tworzone.\n\nSkładnia opiera się na składnikach przepisu, jak następuje:\nKażdy element jest oddzielony przez '|'.\nSą one wprowadzane bezpośrednio do input{} skryptu przepisu.",
+    "Sandbox_SkillRecoveryJournalCrafttooltip": "Pozostawienie pustego oznacza, że dzienniki nie mogą być tworzone.\n\nSkładnia opiera się na składnikach przepisu, jak następuje:\nKażdy element jest oddzielony przez '|'.\nSą one wprowadzane bezpośrednio do input{} skryptu przepisu.",
     "Sandbox_SkillRecoveryJournalModDataTrack": "Śledź Wartości ModData",
     "Sandbox_SkillRecoveryJournalModDataTrack_tooltip": "UŻYWAJ OSTROŻNIE.\n\nPrzykład składni: ModDataKey1|ModDataKey2\nTranskrypcja zapisze kopię odpowiadającej tabeli z danych moda gracza.\nMoże to powodować znaczące problemy, jeśli dane są duże.\nJeśli nie wiesz, co to znaczy, zignoruj to i pozostaw puste.",
     "Sandbox_SkillRecoveryJournalKillsTrack": "Procent Odzyskiwania Zabójstw Zombi/Przetrwania"

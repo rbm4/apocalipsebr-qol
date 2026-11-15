@@ -1,0 +1,119 @@
+module Base
+{
+	craftRecipe MakeCowCheese
+	{
+		time = 100,
+		timedAction = MixingBowl,
+		tags = AnySurfaceCraft;Cooking,
+		category = Cooking,
+		xpAward = Cooking:3,
+		inputs
+		{
+			item 1 [Base.CheeseCloth] mode:keep,
+			item 1 tags[Bowl] mode:keep,
+			item 1 [*],
+			-fluid 2.5 [CowMilk],
+		}
+		outputs
+		{
+			item 1 Base.Cheese,
+		}
+	}
+	craftRecipe MakeSheepCheese
+	{
+		time = 100,
+		timedAction = MixingBowl,
+		tags = AnySurfaceCraft;Cooking,
+		category = Cooking,
+		xpAward = Cooking:3,
+		inputs
+		{
+			item 1 [Base.CheeseCloth] mode:keep,
+			item 1 tags[Bowl] mode:keep,
+			item 1 [*],
+			-fluid 2.5 [SheepMilk],
+		}
+		outputs
+		{
+			item 1 Base.Cheese,
+		}
+	}
+	craftRecipe MakeIcecreamWithCowMilk
+	{
+		time = 100,
+		timedAction = MixingBowl,
+		tags = AnySurfaceCraft;Cooking,
+		category = Cooking,
+		xpAward = Cooking:3,
+		inputs
+		{
+			item 1 tags[Bowl] mode:keep,
+			item 1 [*],
+			-fluid 5.0 [CowMilk],
+			item 1 [Base.Whisk] mode:keep,
+			item 1 [Base.Coldpack] mode:keep,
+		}
+		outputs
+		{
+			item 1 Base.Icecream,
+		}
+	}
+	craftRecipe MakeIcecreamWithSheepMilk
+	{
+		time = 100,
+		timedAction = MixingBowl,
+		tags = AnySurfaceCraft;Cooking,
+		category = Cooking,
+		xpAward = Cooking:3,
+		inputs
+		{
+			item 1 tags[Bowl] mode:keep,
+			item 1 [*],
+			-fluid 5.0 [SheepMilk],
+			item 1 [Base.Whisk] mode:keep,
+			item 1 [Base.Coldpack] mode:keep,
+		}
+		outputs
+		{
+			item 1 Base.Icecream,
+		}
+	}
+	craftRecipe MakeYoghurtWithCowMilk
+	{
+		time = 100,
+		timedAction = MixingBowl,
+		tags = AnySurfaceCraft;Cooking,
+		category = Cooking,
+		xpAward = Cooking:3,
+		inputs
+		{
+			item 1 tags[Bowl] mode:keep,
+			item 1 [*],
+			-fluid 2.5 [CowMilk],
+			item 1 [Base.Yeast],
+		}
+		outputs
+		{
+			item 2 Base.Yoghurt,
+		}
+	}
+	craftRecipe MakeYoghurtWithSheepMilk
+	{
+		time = 100,
+		timedAction = MixingBowl,
+		tags = AnySurfaceCraft;Cooking,
+		category = Cooking,
+		xpAward = Cooking:3,
+		inputs
+		{
+			item 1 tags[Bowl] mode:keep,
+			item 1 [*],
+			-fluid 2.5 [SheepMilk],
+			item 1 [Base.Yeast],
+		}
+		outputs
+		{
+			item 1 Base.Yoghurt,
+		}
+	}
+}

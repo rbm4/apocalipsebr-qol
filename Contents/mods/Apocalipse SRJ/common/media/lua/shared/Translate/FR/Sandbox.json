@@ -25,7 +25,7 @@
     "Sandbox_SkillRecoveryJournalUsed": "XP du Journal Utilisée lors de la Lecture",
     "Sandbox_SkillRecoveryJournalUsed_tooltip": "Normalement, vous pouvez relire le journal autant de fois que vous le souhaitez ; avec cette option activée, chaque point d'XP ne peut être récupéré qu'une fois. Vous pouvez toujours ajouter au journal, mais chaque point ne peut être récupéré qu'une fois par journal. Remarque : l'infobulle du journal affichera désormais une fraction pour les points inutilisés.",
     "Sandbox_SkillRecoveryJournalCraftRecipe": "Recette du Journal",
-    "Sandbox_SkillRecoveryJournalCraftRecipe_tooltip": "Laisser vide signifie que les journaux ne peuvent pas être fabriqués.\n\nLa syntaxe suit les ingrédients de recette, comme suit :\nChaque élément est séparé par '|'.\nCeux-ci sont directement introduits dans le input{} du script de recette.",
+    "Sandbox_SkillRecoveryJournalCrafttooltip": "Laisser vide signifie que les journaux ne peuvent pas être fabriqués.\n\nLa syntaxe suit les ingrédients de recette, comme suit :\nChaque élément est séparé par '|'.\nCeux-ci sont directement introduits dans le input{} du script de recette.",
     "Sandbox_SkillRecoveryJournalModDataTrack": "Suivre les Valeurs de ModData",
     "Sandbox_SkillRecoveryJournalModDataTrack_tooltip": "UTILISER AVEC PRUDENCE.\n\nExemple de syntaxe : ModDataKey1|ModDataKey2\nLa transcription stockera une copie de la table correspondante des données de mod du joueur.\nCela peut créer des problèmes significatifs si les données sont importantes.\nSi vous ne savez pas ce que cela signifie, ignorez-le et laissez vide.",
     "Sandbox_SkillRecoveryJournalKillsTrack": "Pourcentage de Récupération des Tués (Zombies/Survivants)"
