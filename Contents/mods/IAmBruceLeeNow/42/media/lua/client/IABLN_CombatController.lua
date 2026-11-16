@@ -44,6 +44,7 @@ local queuedCombo = {}
 local lastAimButton = {}
 local leftStance = {}
 local pendingLeftStance = {}
+local remoteAnimationState = setmetatable({}, { __mode = "k" })
 local reconnectRepair = {}
 local styleProxyRequestAt = {}
 local styleProxyRemovalRequestAt = {}
@@ -367,6 +368,82 @@ end
 local function isEmptyCombatHand(item)
     return item == nil or item:getFullType() == "Base.BareHands"
 end
+
+-- Observers derive presentation from native equipment, aim and swing updates.
+-- Their random choices are cosmetic and may differ from the owner's combo.
+local function updateRemoteAnimation(player)
+    if not player or IsoPlayer.isLocalPlayer(player) then return end
+
+    local primary = player:getPrimaryHandItem()
+    local state = remoteAnimationState[player]
+    -- The hidden proxy can arrive after worn clothing during player loading.
+    local active = not player:isDead() and getWornWraps(player) ~= nil and
+        (isType(primary, STYLE_TYPE) or isEmptyCombatHand(primary))
+    if not active then
+        if state then
+            player:setVariable("IABLNActive", false)
+            player:setVariable("IABLNCombo", "0")
+            player:setVariable("IABLNLeftStance", false)
+            player:setVariable("Weapon", WeaponType.getWeaponType(player):getType())
+            remoteAnimationState[player] = nil
+        end
+        return
+    end
+
+    local secondary = player:getSecondaryHandItem()
+    local secondaryOccupied = not isEmptyCombatHand(secondary) and
+        not isType(secondary, STYLE_TYPE)
+    local aiming = player:isAiming()
+    if not state then
+        state = {
+            combo = chooseNextCombo(secondaryOccupied),
+            left = ZombRand(2) == 0,
+            aiming = false,
+            secondaryOccupied = secondaryOccupied,
+        }
+        remoteAnimationState[player] = state
+    end
+    if not player:isPerformingAttackAnimation() then
+        if aiming and not state.aiming then state.left = ZombRand(2) == 0 end
+        if secondaryOccupied ~= state.secondaryOccupied then
+            state.combo = chooseNextCombo(secondaryOccupied)
+            state.secondaryOccupied = secondaryOccupied
+        end
+    end
+    state.aiming = aiming
+    player:setVariable("IABLNActive", true)
+    player:setVariable("IABLNCombo", tostring(state.combo))
+    player:setVariable("IABLNLeftStance", not secondaryOccupied and state.left)
+    player:setVariable("Weapon", "1handed")
+end
+
+local function onRemoteWeaponSwing(player, weapon)
+    if not player or IsoPlayer.isLocalPlayer(player) or
+            not isType(weapon, STYLE_TYPE) then return end
+
+    updateRemoteAnimation(player)
+    local state = remoteAnimationState[player]
+    if not state then return end
+
+    local secondary = player:getSecondaryHandItem()
+    state.secondaryOccupied = not isEmptyCombatHand(secondary) and
+        not isType(secondary, STYLE_TYPE)
+    state.combo = chooseNextCombo(state.secondaryOccupied)
+    if not player:isAiming() then state.left = ZombRand(2) == 0 end
+    player:setVariable("IABLNCombo", tostring(state.combo))
+    player:setVariable("IABLNLeftStance", not state.secondaryOccupied and state.left)
+end
+
+local function updateRemoteAnimations()
+    if not isClient() then return end
+    local players = getOnlinePlayers()
+    for index = 0, players:size() - 1 do
+        updateRemoteAnimation(players:get(index))
+    end
+end
+
+Events.OnWeaponSwing.Add(onRemoteWeaponSwing)
+Events.OnTick.Add(updateRemoteAnimations)
 
 local function removeStyleItems(player)
     local equippedStyleRemoved = false
