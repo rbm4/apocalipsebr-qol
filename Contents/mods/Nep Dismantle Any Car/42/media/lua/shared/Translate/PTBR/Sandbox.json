@@ -1,0 +1,11 @@
+{
+    "Sandbox_NepWRSandbox": "Desmontar Qualquer Veículo",
+    "Sandbox_NepWRFuelUsed": "Desmontagem de veículos: consumo de combustível",
+    "Sandbox_NepWRFuelUsed_tooltip": "O padrão do jogo é 10, o que equivale à carga completa de um maçarico de solda.",
+    "Sandbox_NepWRNeedMask": "Desmontagem de veículos: exigir máscara de solda",
+    "Sandbox_NepWRNeedMask_tooltip": "Se esta opção estiver desativada, você pode apertar os olhos em vez de usar uma máscara de solda.",
+    "Sandbox_NepWRDebugMode": "Desmontagem de veículos: modo de depuração",
+    "Sandbox_NepWRDebugMode_tooltip": "Exibe informações adicionais de depuração no console.",
+    "Sandbox_NepWRLootMult": "Desmontagem de veículos: multiplicador de materiais recuperados",
+    "Sandbox_NepWRLootMult_tooltip": "Multiplica a quantidade de itens recuperados ao desmontar veículos."
+}

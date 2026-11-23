@@ -1,0 +1,27 @@
+VERSION = 1,
+
+option NepWrecks.FuelUsed
+{
+	type = integer, min = 0, max = 100, default = 10,
+	page = Vehicle, translation = NepWRFuelUsed,
+}
+
+option NepWrecks.NeedMask
+{
+	type = boolean, default = true,
+	page = Vehicle, translation = NepWRNeedMask,
+}
+
+option NepWrecks.LootMult
+{
+	type = double, min = 0.0, max = 100.0, default = 1.0,
+	page = Vehicle, translation = NepWRLootMult,
+}
+
+option NepWrecks.DebugMode
+{
+	type = boolean, default = false,
+	page = Vehicle, translation = NepWRDebugMode,
+
+}
+

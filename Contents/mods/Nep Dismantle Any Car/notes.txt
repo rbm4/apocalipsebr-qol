@@ -1,0 +1,47 @@
+Are you sick and tired or looking at all the vehicles around you and thinking "I wish I could use this welding torch to convert those cars to scrap metal but alas!  The creators have decreed that only wrecked or burnt cars may be dismantled, and no matter how many parts I break off or how many molotovs I throw at this car it shall never be considered a wreck, for to be a wreck is a condition a car must be born with."
+
+This mod has you covered!  It extends the "Dismantle Wrecked Car" context menu to include "Dismantle Car" when you right click on a non-wrecked, non-burnt vehicle.  
+
+Additional sandbox options on the [b]Vehicle[/b] page allow you to adjust the amount of fuel needed for disassembly, change the amount of material generated and replace use of a welding mask with good ol' Kentucky safety squints.
+
+
+[h2]FAQ[/h2]
+
+[b]Is it safe to add/remove this mod on an existing save?[/b]
+
+Yes.  If you change the sandbox settings you will need to quit and restart the game before the new setting take effect.
+
+[b]Is it safe to squint tightly while welding instead of using a welding mask?[/b]
+
+The Australian prime minister has [url=https://i.imgur.com/7qDwU0J.png]personally certified the use of safety squints when welding.[/url]
+
+
+[b]Does dismantling a functional car produce more raw materials than a wreck/burnt out car?[/b]
+
+Additional materials are generated based on the condition of the vehicle's parts.  A car with all parts at 100% will generate approximately 80% more raw materials.  The type of materials generated is unchanged.  
+
+
+[b]What if I want to keep some of the car parts?[/b]
+
+Remove them before dismantling.
+
+
+[b]What happens to items inside a car when I dismantle it?[/b]
+
+They get dropped on the ground with the rest of the scrap metal.
+
+
+[b]What happens to animals inside an animal trailer when I dismantle it?[/b]
+
+They get teleported to a farm upstate to happily live out the rest of their lives in a place of peace and contentment with a friendly farmer who takes care of all of their needs.
+
+
+[b]Really?[/b]
+
+There is no evidence that this is not true.
+
+
+
+
+Workshop ID: 3428369137
+Mod ID: NepWreckWorkingCars

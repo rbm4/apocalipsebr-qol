@@ -1,0 +1,6 @@
+{
+    "Tooltip_NepRemoveIntactVehicle": "Desmontar um veículo com uma máscara de solda e um maçarico destrói o veículo e rende materiais de metalurgia. <LINE> Quanto maior a habilidade de Soldagem, mais sucata aproveitável será recuperada.",
+    "Tooltip_NepRemoveIntactVehicleSS": "Desmontar um veículo com um maçarico destrói o veículo e rende materiais de metalurgia. <LINE> Se você apertar os olhos, não precisa usar uma máscara de solda.",
+    "Tooltip_NepVehicleClaimedBy": "Veículo reivindicado por: %1",
+    "Tooltip_NepVehicleClaimUnknownOwner": "Desconhecido"
+}
