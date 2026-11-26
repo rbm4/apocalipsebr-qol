@@ -1,15 +1,12 @@
 -- ============================================================
 -- ApocBR Safehouse Module - Server
--- Handles safehouse creation triggered by RCON relay.
+-- Handles safehouse creation and upgrades from server console commands.
 --
--- RCON usage (via servermsg):
---   servermsg ##APOCBR_SH##<requestId>##<username>##<x>##<y>##<w>##<h>
+-- RCON usage:
+--   servercommand ##APOCBR_SH##<requestId>##<username>##<x>##<y>##<w>##<h>
+--   servercommand ##APOCBR_SH_UPGRADE##<requestId>##<username>##<x>##<y>##<w>##<h>
 --
--- Example:
---   servermsg ##APOCBR_SH##req001##PlayerName##1234##5678##30##30
---
--- Any online client that receives the alert relays it here via
--- sendClientCommand. The server deduplicates by requestId and
+-- The server deduplicates by requestId and
 -- creates the safehouse with SafeHouse.addSafeHouse(x, y, w, h, username).
 -- Coordinates are the TOP-LEFT corner; w and h are tile counts.
 -- ============================================================
@@ -391,6 +388,22 @@ local function onClientCommand(module, command, playerObj, args)
     end
 end
 
+local function onServerCommand(metadata)
+    if type(metadata) ~= "string" then return end
+    local prefix, requestId, username, x, y, w, h = metadata:match(
+        "^##(APOCBR_SH[%u_]*)##([^#]+)##(.+)##(-?%d+)##(-?%d+)##(%d+)##(%d+)$")
+    if not username or username:match("^%s*$") or username:find("##", 1, true) or username:find("%c") then
+        return
+    end
+
+    local args = { requestId = requestId, username = username, x = x, y = y, w = w, h = h }
+    if prefix == "APOCBR_SH" then
+        claimNewSafehouse(args)
+    elseif prefix == "APOCBR_SH_UPGRADE" then
+        upgradeExistingSafehouse(args)
+    end
+end
+
 -- Clean up old cached claims periodically to prevent unbounded memory growth.
 -- Keep claims for up to 1 hour after creation/failure for idempotent handling.
 Events.EveryTenMinutes.Add(function()
@@ -403,4 +416,8 @@ Events.EveryTenMinutes.Add(function()
     end
 end)
 
-Events.OnClientCommand.Add(onClientCommand)
+if Events.OnApocBRServerCommand then
+    Events.OnApocBRServerCommand.Add(onServerCommand)
+else
+    Events.OnClientCommand.Add(onClientCommand)
+end

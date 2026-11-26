@@ -1,52 +1,18 @@
---[[
-    MM_MainServer.lua
-    Vehicle Migration Module - Server-side vehicle spawning from JSONL
+-- Authenticated vehicle migration jobs stored in the game-runtime database.
+require "ApocBR/Entities"
+local Entities = ApocBREntities
 
-    Periodically checks for a JSONL file written by an external backend.
-    Each line describes a vehicle to spawn (script, coordinates, items).
-    Vehicles are created via addVehicleDebug, items placed into the correct
-    part containers by ID, and a vehicle key is created in the first container.
+local DEFAULT_Z = 0
+local DEFAULT_DIR = IsoDirections.S
+local MAX_PAYLOAD_LENGTH = 131072
+local MAX_ITEM_ROWS = 2048
+local CELL_TIMEOUT_MS = 30000
+local RETRY_DELAY_MS = 5000
+local MAX_DB_ATTEMPTS = 4
+local MAX_QUEUED_JOBS = 32
 
-    After all entries are processed the file is cleared (contents emptied).
-
-    ---------------------------------------------------------------
-    JSONL Entry Schema (one JSON object per line):
-    ---------------------------------------------------------------
-    {
-        "scriptName": "Base.SportsCar",        -- required: vehicle script full type
-        "x": 7073.5,                           -- required: world X coordinate
-        "y": 7677.37,                          -- required: world Y coordinate
-        "items": [                             -- optional: array of items
-            {
-                "fullType": "Base.WaterBottle", -- required: item full type
-                "count": 1,                     -- optional: defaults to 1
-                "container": "TruckBed"         -- required: must match a vehicle part ID
-            }
-        ]
-    }
-
-    Defaults (not required in the file):
-        z         = 0          (ground level)
-        createKey = true       (vehicle key placed in first available container)
-    ---------------------------------------------------------------
-]]
-
-require "MigrationModule/MM_FileHandler"
-
------------------------------------------------------------
--- Constants
------------------------------------------------------------
-
-local MIGRATION_FILENAME = "VehicleMigration.txt"
-local DEFAULT_Z          = 0
-local DEFAULT_DIR        = IsoDirections.S
-
------------------------------------------------------------
--- Helpers
------------------------------------------------------------
-
-local function log(msg)
-    MigrationFileHandler.log(msg)
+local function log(message)
+    print("[MigrationModule] " .. message)
 end
 
 --- Build a lookup table of part containers: { [partId] = ItemContainer }
@@ -94,23 +60,26 @@ end
 
 --- Clear all default items from every container and fill the gas tank
 --- so the migrated vehicle is ready to drive with only the player's items.
---- @param vehicle IsoVehicle
+--- @param vehicle BaseVehicle
 --- @param containers table Container map from buildContainerMap
 local function prepareVehicle(vehicle, containers)
     -- Clear all containers so the spawned default loot doesn't conflict with migrated items
-    pcall(function()
+    do
         local clearedCount = 0
-        for partId, container in pairs(containers) do
+        for _, container in pairs(containers) do
             local itemCount = container:getItems():size()
             if itemCount > 0 then
                 container:removeAllItems()
+                if container:getItems():size() ~= 0 then
+                    error("Could not clear default vehicle cargo")
+                end
                 clearedCount = clearedCount + itemCount
             end
         end
         if clearedCount > 0 then
             log("Cleared " .. clearedCount .. " default items from all containers")
         end
-    end)
+    end
 
     -- Fill gas tank to full so the player can use the vehicle immediately
     pcall(function()
@@ -284,261 +253,346 @@ local function installFullArmor(vehicle)
     end
 end
 
------------------------------------------------------------
--- Vehicle Spawning
------------------------------------------------------------
-
---- Spawn a vehicle from a migration entry
---- @param entry table Parsed JSONL entry
---- @return IsoVehicle|nil vehicle The spawned vehicle, or nil on failure
---- @return string reason 'retry' if chunk not loaded (retryable), 'failed' otherwise
-local function spawnVehicle(entry)
-    local x = entry.x
-    local y = entry.y
-    local z = DEFAULT_Z
-
-    local square = getCell():getGridSquare(x, y, z)
-    if not square then
-        log("RETRY: Could not get grid square at (" .. tostring(x) .. ", " .. tostring(y) .. ", " .. tostring(z) .. ") - chunk not loaded, will retry")
-        return nil, "retry"
-    end
-
-    local ok, vehicle = pcall(function()
-        return addVehicleDebug(entry.scriptName, DEFAULT_DIR, nil, square)
-    end)
-
-    if not ok or not vehicle then
-        log("ERROR: Failed to spawn vehicle '" .. tostring(entry.scriptName) .. "' at (" .. tostring(x) .. ", " .. tostring(y) .. "): " .. tostring(vehicle))
-        return nil, "failed"
-    end
-
-    log("Spawned vehicle '" .. entry.scriptName .. "' at (" .. tostring(x) .. ", " .. tostring(y) .. ")")
-    return vehicle, "success"
+local function validCoordinate(value)
+    return type(value) == "number" and value >= 0 and value <= 1000000
 end
 
------------------------------------------------------------
--- Item Insertion (container-aware)
------------------------------------------------------------
+local function validateEntry(entry)
+    if type(entry) ~= "table" or type(entry.scriptName) ~= "string" or entry.scriptName == "" or
+            not ScriptManager.instance:getVehicle(entry.scriptName) then
+        error("Unknown or missing vehicle script")
+    end
+    if not validCoordinate(entry.x) or not validCoordinate(entry.y) then
+        error("Invalid destination coordinates")
+    end
+    if entry.createKey ~= nil and type(entry.createKey) ~= "boolean" then
+        error("createKey must be a boolean")
+    end
 
---- Insert items into the vehicle's specific part containers
---- @param vehicle IsoVehicle
---- @param items table Array of item entries from the JSONL
---- @param containers table Container map from buildContainerMap
-local function insertItems(vehicle, items, containers)
-    if not items or #items == 0 then
+    if entry.items == nil then
+        entry.items = {}
+    elseif type(entry.items) ~= "table" then
+        error("items must be an array")
+    end
+    local size = #entry.items
+    if size > MAX_ITEM_ROWS then
+        error("Too many cargo rows")
+    end
+    local rows = 0
+    for index, item in pairs(entry.items) do
+        if type(index) ~= "number" or index < 1 or index > size or index ~= math.floor(index) then
+            error("items must be a dense array")
+        end
+        if type(item) ~= "table" or type(item.fullType) ~= "string" or item.fullType == "" or
+                type(item.container) ~= "string" or item.container == "" then
+            error("Invalid cargo row " .. index)
+        end
+        local count = item.count
+        if count ~= nil and (type(count) ~= "number" or count < 1 or count > 2147483647 or
+                count ~= math.floor(count)) then
+            error("Invalid quantity in cargo row " .. index)
+        end
+        rows = rows + 1
+    end
+    if rows ~= size then
+        error("items must be a dense array")
+    end
+end
+
+local function spawnMigration(job, square)
+    local entry = job.entry
+    local vehicle = addVehicleDebug(entry.scriptName, DEFAULT_DIR, nil, square)
+    if not vehicle or not vehicle:getSquare() or vehicle:getSqlId() < 0 then
+        error("Engine did not register the spawned vehicle")
+    end
+    job.vehicleId = vehicle:getSqlId()
+
+    installMissingParts(vehicle)
+    installFullArmor(vehicle)
+    local containers = buildContainerMap(vehicle)
+    local keyContainer = entry.createKey ~= false and getFirstContainer(containers)
+    if entry.createKey ~= false and not keyContainer then
+        error("No container available for the vehicle key")
+    end
+    local options = SandboxVars and SandboxVars.APOCALISEBR_PACK
+    local restoreCargo = not options or options.EnableMigrationItemGeneration ~= false
+    if restoreCargo then
+        for _, item in ipairs(entry.items) do
+            if not containers[item.container] then
+                error("Missing vehicle container: " .. item.container)
+            end
+        end
+    end
+    prepareVehicle(vehicle, containers)
+    if restoreCargo then
+        for _, item in ipairs(entry.items) do
+            local instance = instanceItem(item.fullType)
+            if not instance then
+                error("Could not create cargo item: " .. item.fullType)
+            end
+            local count = item.count or 1
+            instance:setCount(count)
+            if containers[item.container]:AddItem(instance) ~= instance or instance:getCount() ~= count then
+                error("Could not place cargo item: " .. item.fullType)
+            end
+        end
+    end
+    if keyContainer then
+        local key = vehicle:createVehicleKey()
+        if not key or keyContainer:AddItem(key) ~= key then
+            error("Could not place the vehicle key")
+        end
+    end
+    return restoreCargo or #entry.items == 0
+end
+
+local repository, scope
+local waiting, queued = {}, {}
+local current
+local startupAttempts = 0
+local startupAt
+local onTick
+local tickSubscribed = false
+
+local function subscribeTick()
+    if tickSubscribed then return end
+    Events.OnTickEvenPaused.Add(onTick)
+    tickSubscribed = true
+end
+
+local function finish(job)
+    queued[job.id] = nil
+    current = nil
+end
+
+local function enqueue(id, entity)
+    if queued[id] then return end
+    if #waiting + (current and 1 or 0) >= MAX_QUEUED_JOBS then
+        log("Queue full. Job " .. id .. " remains in PostgreSQL.")
         return
     end
-
-    local addedCount = 0
-    local skippedCount = 0
-
-    for _, itemData in ipairs(items) do
-        local ok, err = pcall(function()
-            -- Validate required fields
-            if not itemData.fullType then
-                log("WARNING: Item entry missing 'fullType', skipping")
-                skippedCount = skippedCount + 1
-                return
-            end
-            if not itemData.container then
-                log("WARNING: Item '" .. itemData.fullType .. "' missing 'container' field, skipping")
-                skippedCount = skippedCount + 1
-                return
-            end
-
-            -- Find the target container by part ID
-            local targetContainer = containers[itemData.container]
-            if not targetContainer then
-                log("WARNING: Container '" .. itemData.container .. "' not found on vehicle for item '" .. itemData.fullType .. "', skipping")
-                skippedCount = skippedCount + 1
-                return
-            end
-
-            -- Validate item type exists in script definitions before creating (avoids Java NPE on invalid types)
-            local fullType = itemData.fullType
-            local scriptItem = ScriptManager.instance:FindItem(fullType)
-            if not scriptItem then
-                log("WARNING: Item type '" .. fullType .. "' not found in script definitions, skipping")
-                skippedCount = skippedCount + 1
-                return
-            end
-
-            local newItem = instanceItem(fullType)
-            if not newItem then
-                log("WARNING: Could not create item instance for '" .. fullType .. "', skipping")
-                skippedCount = skippedCount + 1
-                return
-            end
-
-            -- Set count if > 1
-            local count = itemData.count or 1
-            if count > 1 then
-                newItem:setCount(count)
-            end
-
-            -- Add to the correct container
-            targetContainer:AddItem(newItem)
-            addedCount = addedCount + 1
-        end)
-
-        if not ok then
-            log("ERROR: Exception inserting item: " .. tostring(err))
-            skippedCount = skippedCount + 1
-        end
-    end
-
-    log("Inserted " .. addedCount .. " items into vehicle (" .. skippedCount .. " skipped)")
+    queued[id] = true
+    table.insert(waiting, { id = id, entity = entity })
+    subscribeTick()
 end
 
-local function isMigrationItemGenerationEnabled()
-    local options = SandboxVars and SandboxVars.APOCALISEBR_PACK
-    return not options or options.EnableMigrationItemGeneration ~= false
+local function setOutcome(job, status, detail, cargoRestored)
+    job.entity:set("status", status)
+    job.entity:set("detail", string.sub(detail, 1, 512))
+    job.entity:set("vehicle_id", job.vehicleId or -1)
+    job.entity:set("cargo_restored", cargoRestored == true)
+    job.phase = "record_outcome"
+    job.attempts = 0
 end
 
------------------------------------------------------------
--- Key Creation
------------------------------------------------------------
-
---- Create a vehicle key and place it in the first available container
---- @param vehicle IsoVehicle
---- @param containers table Container map from buildContainerMap
-local function createAndPlaceKey(vehicle, containers)
-    local ok, err = pcall(function()
-        local key = vehicle:createVehicleKey()
-        if not key then
-            log("WARNING: createVehicleKey() returned nil")
-            return
-        end
-
-        local container = getFirstContainer(containers)
-        if container then
-            container:AddItem(key)
-            log("Created vehicle key and placed in container")
+local function recordOutcome(job, now)
+    job.attempts = job.attempts + 1
+    job.phase = "writing_outcome"
+    job.entity:patch(function(result)
+        if result.status == "OK" then
+            log("Job " .. job.id .. " recorded as " .. job.entity:get("status"))
+            finish(job)
+        elseif result.status ~= "CONFLICT" and job.attempts < MAX_DB_ATTEMPTS then
+            job.phase = "record_outcome"
+            job.retryAt = now + RETRY_DELAY_MS
         else
-            log("WARNING: No container available to place vehicle key")
+            log("Job " .. job.id .. " outcome could not be recorded (" .. result.status .. "). Review before replay.")
+            finish(job)
         end
     end)
+end
 
+local function prepareJob(job, now)
+    local status = job.entity:get("status")
+    if status ~= "pending" then
+        if status == "applying" then
+            log("Job " .. job.id .. " was interrupted during application. Review before replay.")
+        end
+        finish(job)
+        return
+    end
+    local ok, entry = pcall(function()
+        local payload = job.entity:get("payload")
+        if #payload > MAX_PAYLOAD_LENGTH then error("Payload is too large") end
+        local decoded = Entities.decode(payload)
+        validateEntry(decoded)
+        local options = SandboxVars and SandboxVars.APOCALISEBR_PACK
+        if not options or options.EnableMigrationItemGeneration ~= false then
+            for _, item in ipairs(decoded.items) do
+                if not ScriptManager.instance:FindItem(item.fullType) then
+                    error("Unknown cargo item: " .. item.fullType)
+                end
+            end
+        end
+        return decoded
+    end)
     if not ok then
-        log("ERROR: Failed to create vehicle key: " .. tostring(err))
+        setOutcome(job, "review_required", tostring(entry))
+        return
     end
+    job.entry = entry
+    job.deadline = now + CELL_TIMEOUT_MS
+    job.phase = "waiting_for_cell"
 end
 
------------------------------------------------------------
--- Entry Processing
------------------------------------------------------------
-
---- Validate that a JSONL entry has the required fields
---- @param entry table
---- @param index number Line/entry index for logging
---- @return boolean
-local function validateEntry(entry, index)
-    if not entry.scriptName or type(entry.scriptName) ~= "string" or entry.scriptName == "" then
-        log("ERROR: Entry #" .. index .. " missing or invalid 'scriptName', skipping")
-        return false
-    end
-    if not entry.x or type(entry.x) ~= "number" then
-        log("ERROR: Entry #" .. index .. " missing or invalid 'x' coordinate, skipping")
-        return false
-    end
-    if not entry.y or type(entry.y) ~= "number" then
-        log("ERROR: Entry #" .. index .. " missing or invalid 'y' coordinate, skipping")
-        return false
-    end
-    return true
-end
-
---- Process a single migration entry: spawn vehicle, insert items, create key
---- @param entry table Parsed JSONL entry
---- @param index number Entry index for logging
---- @return string result 'success', 'failed' (permanent), or 'retry' (chunk not loaded)
-local function processEntry(entry, index)
-    if not validateEntry(entry, index) then
-        return "failed"
-    end
-
-    -- Spawn the vehicle
-    local vehicle, reason = spawnVehicle(entry)
-    if not vehicle then
-        return reason -- 'retry' for unloaded chunk, 'failed' for other errors
-    end
-
-    -- Install any missing parts before building the container map,
-    -- so newly installed parts (e.g. modded roof racks) have their containers available
-    installMissingParts(vehicle)
-
-    -- Build container map once for item insertion and key placement
-    local containers = buildContainerMap(vehicle)
-
-    -- Clear default spawned items and fill gas tank
-    prepareVehicle(vehicle, containers)
-
-    installFullArmor(vehicle)
-
-    -- Insert items into their specific containers
-    if isMigrationItemGenerationEnabled() then
-        insertItems(vehicle, entry.items, containers)
-    end
-
-    -- Create key (default: true)
-    local shouldCreateKey = true
-    if entry.createKey == false then
-        shouldCreateKey = false
-    end
-    if shouldCreateKey then
-        createAndPlaceKey(vehicle, containers)
-    end
-
-    return "success"
-end
-
------------------------------------------------------------
--- Periodic Hook
------------------------------------------------------------
-
---- Main processing function - called every in-game minute
---- Checks for the JSONL file, processes all entries, then clears the file.
---- Entries that failed due to unloaded chunks are written back for retry.
-local function onPeriodicCheck()
-    if not isServer() then return end
-
-    local entries, rawLines = MigrationFileHandler.readEntries(MIGRATION_FILENAME)
-    if #entries == 0 then
-        return -- No file or empty file - silent, no log spam
-    end
-
-    log("Read " .. #entries .. " entries from " .. MIGRATION_FILENAME)
-
-    local successCount = 0
-    local failCount = 0
-    local retryLines = {}
-
-    for i, entry in ipairs(entries) do
-        local result = processEntry(entry, i)
-        if result == "success" then
-            successCount = successCount + 1
-        elseif result == "retry" then
-            -- Keep the raw line for retry on next cycle
-            table.insert(retryLines, rawLines[i])
+-- Claim before entering any native spawn code. A lost claim response leaves an
+-- applying row for review, so the next startup cannot accidentally spawn twice.
+local function claim(job)
+    job.phase = "claiming"
+    job.entity:set("status", "applying")
+    job.entity:patch(function(result)
+        if result.status == "OK" then
+            job.claimed = true
+            job.deadline = getTimestampMs() + CELL_TIMEOUT_MS
+            job.phase = "waiting_for_cell"
         else
-            failCount = failCount + 1
+            log("Job " .. job.id .. " could not be claimed (" .. result.status .. ")")
+            finish(job)
+        end
+    end)
+end
+
+local function waitForCell(job, now)
+    local x, y = math.floor(job.entry.x), math.floor(job.entry.y)
+    local status = ApocBRLobbyStreaming.keepCellLoaded(x, y)
+    if status < 0 then
+        setOutcome(job, "review_required", "Invalid destination cell")
+        return
+    end
+    local square = status == 1 and getCell():getGridSquare(x, y, DEFAULT_Z)
+    if not square then
+        if now >= job.deadline then
+            if job.claimed then
+                setOutcome(job, "pending", "Destination cell load timed out before spawn")
+            else
+                log("Job " .. job.id .. " is still pending after destination cell load timeout")
+                finish(job)
+            end
+        end
+        return
+    end
+    if not job.claimed then
+        claim(job)
+        return
+    end
+    local ok, result = pcall(spawnMigration, job, square)
+    if ok then
+        local detail = result and "Vehicle delivery finished" or "Vehicle delivery finished with cargo disabled by sandbox"
+        setOutcome(job, "delivered", detail, result)
+    else
+        setOutcome(job, "review_required", tostring(result))
+    end
+end
+
+local function recoverJobs()
+    startupAttempts = startupAttempts + 1
+    startupAt = nil
+    repository:listForServer(function(result)
+        if result.status ~= "OK" then
+            log("Startup recovery query failed (" .. result.status .. ")")
+            if startupAttempts < MAX_DB_ATTEMPTS then
+                startupAt = getTimestampMs() + RETRY_DELAY_MS
+                subscribeTick()
+            end
+            return
+        end
+        for _, entity in ipairs(result.entities) do
+            local id = entity:get("job_id")
+            local status = entity:get("status")
+            if status == "pending" then
+                enqueue(id, entity)
+            elseif status == "applying" then
+                log("Job " .. id .. " was interrupted during application. Review before replay.")
+            end
+        end
+    end)
+end
+
+local function advanceJob(job, now)
+    if not job.phase then
+        job.phase = "finding"
+        if job.entity then
+            prepareJob(job, now)
+        else
+            repository:find({ server_id = scope.server_id, world = scope.world, job_id = job.id }, function(result)
+                if result.status == "OK" then
+                    job.entity = result.entity
+                    prepareJob(job, getTimestampMs())
+                else
+                    log("Job " .. job.id .. " lookup returned " .. result.status)
+                    finish(job)
+                end
+            end)
+        end
+    elseif job.phase == "waiting_for_cell" then
+        waitForCell(job, now)
+    elseif job.phase == "record_outcome" and (not job.retryAt or now >= job.retryAt) then
+        recordOutcome(job, now)
+    end
+end
+
+onTick = function()
+    local now = getTimestampMs()
+    if startupAt and now >= startupAt then
+        recoverJobs()
+    end
+    if not current then current = table.remove(waiting, 1) end
+    if current then
+        local job = current
+        local ok, err = pcall(advanceJob, job, now)
+        if not ok then
+            log("Job " .. job.id .. " stopped: " .. tostring(err))
+            finish(job)
         end
     end
-
-    -- Write back only the retryable entries, or clear if none remain
-    if #retryLines > 0 then
-        MigrationFileHandler.writeLines(MIGRATION_FILENAME, retryLines)
-        log("Processing complete: " .. successCount .. " succeeded, " .. failCount .. " failed, " .. #retryLines .. " pending retry")
-    else
-        MigrationFileHandler.clearFile(MIGRATION_FILENAME)
-        log("Processing complete: " .. successCount .. " succeeded, " .. failCount .. " failed - file cleared")
+    if not startupAt and not current and #waiting == 0 then
+        Events.OnTickEvenPaused.Remove(onTick)
+        tickSubscribed = false
     end
 end
 
------------------------------------------------------------
--- Event Registration
------------------------------------------------------------
+local function onServerCommand(metadata)
+    if type(metadata) ~= "string" then return end
+    local id = metadata:match("^vehicle%-migration%s+(%S+)%s*$")
+    if not id then return end
+    local a, b, c, d, e = id:match("^(%x+)%-(%x+)%-(%x+)%-(%x+)%-(%x+)$")
+    if not a or #a ~= 8 or #b ~= 4 or #c ~= 4 or #d ~= 4 or #e ~= 12 then
+        log("Ignored vehicle-migration command with invalid job UUID")
+        return
+    end
+    if not repository then
+        log("Vehicle migration queue is unavailable")
+        return
+    end
+    enqueue(string.lower(id))
+end
 
-Events.EveryOneMinute.Add(onPeriodicCheck)
+local function onServerStarted()
+    if not isServer() then return end
+    if not ApocBRModEntities or not ApocBRLobbyStreaming or not Events.OnApocBRServerCommand then
+        log("Disabled: the servercommand, entity, and cell streaming hooks are required")
+        return
+    end
+    local ok, err = pcall(function()
+        scope = Entities.serverScope()
+        local jobs = Entities.define("VehicleMigration.Job", {
+            table = "vehicle_migration_job",
+            fields = {
+                server_id = { type = "integer", id = true },
+                world = { type = "string", id = true },
+                job_id = { type = "uuid", id = true },
+                status = { type = "string" },
+                payload = { type = "text" },
+                detail = { type = "string" },
+                vehicle_id = { type = "integer" },
+                cargo_restored = { type = "boolean" },
+            }
+        })
+        Events.OnApocBRServerCommand.Add(onServerCommand)
+        repository = jobs
+        recoverJobs()
+    end)
+    if not ok then log("Could not initialize vehicle migration: " .. tostring(err)) end
+end
 
-log("MM_MainServer module loaded - checking '" .. MIGRATION_FILENAME .. "' every minute")
+Events.OnServerStarted.Add(onServerStarted)

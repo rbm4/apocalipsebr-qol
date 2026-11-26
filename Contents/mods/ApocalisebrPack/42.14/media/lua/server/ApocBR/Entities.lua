@@ -169,10 +169,14 @@ function Entity:patch(callback)
     if self._revision == "0" then return self:save(callback) end
     local captured = copy(self._values)
     local changes = {}
+    local hasChanges = false
     for name, spec in pairs(self._model.fields) do
-        if not spec.id and captured[name] ~= self._snapshot[name] then changes[name] = captured[name] end
+        if not spec.id and captured[name] ~= self._snapshot[name] then
+            changes[name] = captured[name]
+            hasChanges = true
+        end
     end
-    if next(changes) == nil then
+    if not hasChanges then
         deliver(callback, { status = "OK", unchanged = true, revision = self._revision, entity = self })
         return true
     end
