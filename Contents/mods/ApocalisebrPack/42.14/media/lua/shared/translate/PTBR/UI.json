@@ -1,0 +1,15 @@
+{
+    "UI_ApocBR_Server_One_Description": "O principal servidor da comunidade Apocalipse BR, onde se concentra a maior parte dos nossos sobreviventes.<br><br><br>-> Um servidor de sobrevivência cooperativa e guerra de facções<br>-> Maior concentração de jogadores da comunidade.<br>-> Experiência de sobrevivência equilibrada.<br>-> Claim de Safehouse após 2 dias de sobrevivência.",
+    "UI_ApocBR_Server_Two_Description": "Uma experiência destinada aos sobreviventes mais experientes, elevada presença de Sprinters.<br><br>Até mesmo uma simples expedição por suprimentos pode se transformar em uma luta desesperada pela vida<br><br>-> Obtenha dinheiro eliminando infectados e troque por pontos<br>-> Claim de Safehouse somente após 60 dias de sobrevivência.<br>-> Experiência de alta dificuldade.",
+    "UI_ApocBR_Server_Extraction_Description": "Uma nova proposta de gameplay dentro do universo Apocalipse BR, atualmente em desenvolvimento, focada em operações mercenárias, incursões estratégicas e missões de extração.<br><br>Sem a proteção de Safehouses, o foco da experiência está na mobilidade, na execução de operações e na capacidade de extrair com sucesso. <br><br><br>-> Servidor em desenvolvimento. <br>-> Mapa aquático voltado para operações de extração.<br>-> Gameplay focado em operações mercenárias.<br>-> Sem sistema de claim de Safehouse.",
+    "UI_ApocBR_Server_Connect": "CONECTAR",
+    "UI_ApocBR_Auth_SteamUnavailable": "Steam indisponível.",
+    "UI_ApocBR_Auth_BackendUnavailable": "Serviço de autenticação indisponível.",
+    "UI_ApocBR_Auth_Pending": "Autenticando com a Steam...",
+    "UI_ApocBR_Auth_UsernamePending": "Buscando sua conta de jogo...",
+    "UI_ApocBR_Auth_UsernameReady": "Login autorizado para %1.",
+    "UI_ApocBR_Auth_Failed": "Falha na autenticação (%1).",
+    "UI_ApocBR_Server_One":"Apocalipse - Umbrella Corp.",
+    "UI_ApocBR_Server_Two":"Apocalipse - Hardcore",
+    "UI_ApocBR_Server_Three":"Apocalipse - Extração"
+}

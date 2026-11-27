@@ -1,0 +1,12 @@
+{
+    "UI_ApocBR_Server_One_Description": "The main server of the Apocalipse BR community, where most of our survivors gather.<br><br>-> A cooperative survival and faction warfare server.<br>Largest player population in the community.<br>Balanced survival experience.<br>-> Safehouse claiming after 2 days of survival.",
+    "UI_ApocBR_Server_Two_Description": "An experience designed for seasoned survivors, featuring a high concentration of Sprinters.<br>Even a simple supply run can turn into a desperate fight for survival.<br><br>-> Earn money by eliminating infected and exchange it for points.<br>-> Safehouse claiming only after 60 days of survival.<br>-> High-difficulty survival experience.",
+    "UI_ApocBR_Server_Extraction_Description": "A new gameplay experience within the Apocalipse BR universe, currently under development, focused on mercenary operations, strategic incursions, and extraction missions.<br>Without the protection of Safehouses, the experience focuses on mobility, operational execution, and successful extraction.<br><br>-> Server currently under development.<br>-> Water-based map designed for extraction operations.<br>-> Gameplay focused on mercenary operations.<br>-> No Safehouse claiming system.",
+    "UI_ApocBR_Server_Connect": "CONNECT",
+    "UI_ApocBR_Auth_SteamUnavailable": "Steam is unavailable.",
+    "UI_ApocBR_Auth_BackendUnavailable": "The authentication service is unavailable.",
+    "UI_ApocBR_Auth_Pending": "Authenticating with Steam...",
+    "UI_ApocBR_Auth_UsernamePending": "Finding your game account...",
+    "UI_ApocBR_Auth_UsernameReady": "Login authorized for %1.",
+    "UI_ApocBR_Auth_Failed": "Authentication failed (%1)."
+}
