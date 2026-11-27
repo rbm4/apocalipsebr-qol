@@ -356,21 +356,23 @@ local function layoutMenu(screen)
         card:setHeight(cardHeight)
     end
 
-    local warningX = (width - warningWidth) / 2
-    local warningY = cardY + cardHeight + warningGap
-    screen:drawRect(warningX, warningY, warningWidth, warningHeight,
-        0.88, 0.04, 0.045, 0.06)
-    screen:drawRectBorder(warningX, warningY, warningWidth, warningHeight,
-        0.9, 1, 0.66, 0.28)
-    local warningLineY = warningY + 10
-    for _, line in ipairs(warningTitle) do
-        screen:drawTextCentre(line, width / 2, warningLineY, 1, 0.72, 0.36, 1, UIFont.Medium)
-        warningLineY = warningLineY + warningTitleLineHeight
-    end
-    warningLineY = warningLineY + 6
-    for _, line in ipairs(warningText) do
-        screen:drawTextCentre(line, width / 2, warningLineY, 0.92, 0.92, 0.92, 1, UIFont.Small)
-        warningLineY = warningLineY + warningTextLineHeight
+    if screen.bottomPanel:isVisible() then
+        local warningX = (width - warningWidth) / 2
+        local warningY = cardY + cardHeight + warningGap
+        screen:drawRect(warningX, warningY, warningWidth, warningHeight,
+            0.88, 0.04, 0.045, 0.06)
+        screen:drawRectBorder(warningX, warningY, warningWidth, warningHeight,
+            0.9, 1, 0.66, 0.28)
+        local warningLineY = warningY + 10
+        for _, line in ipairs(warningTitle) do
+            screen:drawTextCentre(line, width / 2, warningLineY, 1, 0.72, 0.36, 1, UIFont.Medium)
+            warningLineY = warningLineY + warningTitleLineHeight
+        end
+        warningLineY = warningLineY + 6
+        for _, line in ipairs(warningText) do
+            screen:drawTextCentre(line, width / 2, warningLineY, 0.92, 0.92, 0.92, 1, UIFont.Small)
+            warningLineY = warningLineY + warningTextLineHeight
+        end
     end
 end
 

@@ -80,8 +80,14 @@ function API.isCurrentCharacter(player, context)
 end
 
 -- Opaque Java capability; no character UUID supplied by Lua is trusted for append.
-function API.messageContext(player)
-    return bridge().messageContext(player)
+function API.messageContext(player, expectedSteamId)
+    local b = bridge()
+    if expectedSteamId then
+        local character = b.character(player)
+        if character.status ~= "OK" then return character end
+        if character.steamId ~= expectedSteamId then return { status = "STEAM_ID_MISMATCH" } end
+    end
+    return b.messageContext(player)
 end
 
 function API.newMessageId()

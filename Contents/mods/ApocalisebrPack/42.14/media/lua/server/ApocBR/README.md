@@ -35,3 +35,12 @@ The `text` field type supports bounded large state/native-item payloads; ordinar
 Repositories now support `repo:listForServer(callback)`. The mapping must include integer `server_id` and string `world` ID fields. Java captures the engine server ID and save-world name; Lua supplies neither. Successful results contain `entities` (getters, revision strings and normal entity lifecycle) and detached `rows`. The read is ordered by primary key and limited to 256 rows per server/world; overflow yields `LIMIT_EXCEEDED` without partial rows. Admission rejection returns false and invokes the callback with BUSY/UNAVAILABLE; accepted work completes asynchronously. This requires the updated 42.22.2 `ApocBRModEntities` patch.
 
 ExtractionMapUtils uses this method for backend-managed fixed-electricity areas. Its documentation owns policy, retry and startup application; the entity facade owns transport only. No SQL or arbitrary client query interface is exposed.
+
+`BackendMessages.context(player, expectedSteamId)` can match the live
+character's exact engine-provided SteamID64 before issuing the usual detached
+message capability. Cars uses it for `VehiclePurchaseSpawnFailed.v1`. The
+producer appends to `mod_data.backend_message` using the purchase UUID as the
+message ID, and retries preserve the original context and body. The
+character and session fields are engine-managed. The producer requires the
+existing backend-message schema and the updated pack Lua files on the
+destination server.

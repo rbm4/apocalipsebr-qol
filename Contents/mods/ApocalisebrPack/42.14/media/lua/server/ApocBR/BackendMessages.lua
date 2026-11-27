@@ -29,8 +29,8 @@ local function messages()
     return repository
 end
 
-function API.context(player)
-    return ApocBREntities.messageContext(player)
+function API.context(player, expectedSteamId)
+    return ApocBREntities.messageContext(player, expectedSteamId)
 end
 
 local Publication = {}
@@ -53,21 +53,45 @@ function Publication:retry(callback)
     return accepted
 end
 
-function API.publish(eventType, playerContext, payload, callback)
-    if type(callback) ~= "function" then error("Publication callback required") end
-    if not playerContext or playerContext.status ~= "OK" then error("Trusted player context required") end
-    -- Explicit allowlist. Add future contracts here rather than accepting arbitrary commands.
-    if eventType ~= "ZombieKillsRecorded.v1" then error("Unsupported backend event") end
+local function killMessage(payload)
     if type(payload) ~= "table" then error("Kill payload required") end
     for key in pairs(payload) do if key ~= "count" then error("Unknown kill payload field") end end
     local count = payload.count
     if type(count) ~= "number" or count < 1 or count > 2147483647 or count ~= math.floor(count) then
         error("Positive integer kill count required")
     end
+    return ApocBREntities.newMessageId(), '{"count":' .. string.format("%.0f", count) .. '}'
+end
+
+local function vehicleSpawnFailure(payload)
+    if type(payload) ~= "table" then error("Vehicle failure payload required") end
+    local requestId, steamId = payload.requestId, payload.steamId
+    local id = type(requestId) == "string" and requestId:match("^car%-(%x%x%x%x%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%x%x%x%x%x%x%x%x)$")
+    if not id or type(steamId) ~= "string" or #steamId ~= 17 or not steamId:match("^[1-9]%d+$")
+            or (payload.stage ~= "rejected" and payload.stage ~= "spawn") or type(payload.reviewRequired) ~= "boolean" then
+        error("Invalid vehicle failure payload")
+    end
+    return id, ApocBREntities.encode({
+        requestId = requestId, steamId = steamId, stage = payload.stage, reviewRequired = payload.reviewRequired,
+    })
+end
+
+-- Explicit allowlist. Add future contracts here rather than accepting arbitrary commands.
+local messagesByType = {
+    ["ZombieKillsRecorded.v1"] = killMessage,
+    ["VehiclePurchaseSpawnFailed.v1"] = vehicleSpawnFailure,
+}
+
+function API.publish(eventType, playerContext, payload, callback)
+    if type(callback) ~= "function" then error("Publication callback required") end
+    if not playerContext or playerContext.status ~= "OK" then error("Trusted player context required") end
+    local prepare = messagesByType[eventType]
+    if not prepare then error("Unsupported backend event") end
+    local id, body = prepare(payload)
     local publication = setmetatable({}, Publication)
     publications[publication] = {
-        id = ApocBREntities.newMessageId(), context = { token = playerContext.token },
-        values = { event_type = eventType, payload = '{"count":' .. string.format("%.0f", count) .. '}' },
+        id = id, context = { token = playerContext.token },
+        values = { event_type = eventType, payload = body },
     }
     publication:retry(callback)
     return publication
