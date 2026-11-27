@@ -336,12 +336,41 @@ local function layoutMenu(screen)
     local cardGap = 24
     local cardWidth = (width - cardGap * 4) / 3
     local cardHeight = 475
-    local cardY = (height - cardHeight) / 2
+    local warningWidth = math.max(1, math.min(width - 48, 1200))
+    local warningTextWidth = math.max(1, warningWidth - 32)
+    local warningTitle = wrapText(getText("UI_ApocBR_Server_SwitchWarning_Title"),
+        UIFont.Medium, warningTextWidth)
+    local warningText = wrapText(getText("UI_ApocBR_Server_SwitchWarning_Text"),
+        UIFont.Small, warningTextWidth)
+    local textManager = getTextManager()
+    local warningTitleLineHeight = textManager:getFontHeight(UIFont.Medium)
+    local warningTextLineHeight = textManager:getFontHeight(UIFont.Small)
+    local warningHeight = 20 + #warningTitle * warningTitleLineHeight
+        + 6 + #warningText * warningTextLineHeight
+    local warningGap = 16
+    local cardY = math.max(0, math.floor((height - cardHeight - warningGap - warningHeight) / 2))
     for index, card in ipairs(screen.apocBRCards or {}) do
         card:setX(cardGap + (index - 1) * (cardWidth + cardGap))
         card:setY(cardY)
         card:setWidth(cardWidth)
         card:setHeight(cardHeight)
+    end
+
+    local warningX = (width - warningWidth) / 2
+    local warningY = cardY + cardHeight + warningGap
+    screen:drawRect(warningX, warningY, warningWidth, warningHeight,
+        0.88, 0.04, 0.045, 0.06)
+    screen:drawRectBorder(warningX, warningY, warningWidth, warningHeight,
+        0.9, 1, 0.66, 0.28)
+    local warningLineY = warningY + 10
+    for _, line in ipairs(warningTitle) do
+        screen:drawTextCentre(line, width / 2, warningLineY, 1, 0.72, 0.36, 1, UIFont.Medium)
+        warningLineY = warningLineY + warningTitleLineHeight
+    end
+    warningLineY = warningLineY + 6
+    for _, line in ipairs(warningText) do
+        screen:drawTextCentre(line, width / 2, warningLineY, 0.92, 0.92, 0.92, 1, UIFont.Small)
+        warningLineY = warningLineY + warningTextLineHeight
     end
 end
 

@@ -11,5 +11,7 @@
     "UI_ApocBR_Auth_Failed": "Falha na autenticação (%1).",
     "UI_ApocBR_Server_One":"Apocalipse - Umbrella Corp.",
     "UI_ApocBR_Server_Two":"Apocalipse - Hardcore",
-    "UI_ApocBR_Server_Three":"Apocalipse - Extração"
+    "UI_ApocBR_Server_Three":"Apocalipse - Extração",
+    "UI_ApocBR_Server_SwitchWarning_Title": "AVISO SOBRE TROCA DE SERVIDOR",
+    "UI_ApocBR_Server_SwitchWarning_Text": "Ao trocar de servidor, você aparecerá no Lobby, uma área comunitária do mapa onde os jogadores surgem ao mudar de servidor. Cada Lobby possui um guia com uma opção de diálogo para teleportar você até sua Safehouse a cada 6 horas de intervalo."
 }

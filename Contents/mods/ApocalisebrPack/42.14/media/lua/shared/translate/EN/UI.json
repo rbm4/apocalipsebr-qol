@@ -8,5 +8,7 @@
     "UI_ApocBR_Auth_Pending": "Authenticating with Steam...",
     "UI_ApocBR_Auth_UsernamePending": "Finding your game account...",
     "UI_ApocBR_Auth_UsernameReady": "Login authorized for %1.",
-    "UI_ApocBR_Auth_Failed": "Authentication failed (%1)."
+    "UI_ApocBR_Auth_Failed": "Authentication failed (%1).",
+    "UI_ApocBR_Server_SwitchWarning_Title": "SERVER SWITCHING WARNING",
+    "UI_ApocBR_Server_SwitchWarning_Text": "Changing servers will place you in the Lobby, a communal area where players spawn when switching servers. Each Lobby has a guide with a dialogue option to teleport you to your safehouse."
 }
